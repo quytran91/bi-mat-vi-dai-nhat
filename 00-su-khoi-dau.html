@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sự khởi đầu — Bí mật vĩ đại nhất | Rhonda Byrne</title>
+<style>
+:root{
+  --bg:#F8F2E7; --card:#FFFCF7; --ink:#302820; --ink2:#6F6257;
+  --gold:#B88A3B; --gold-l:#F5E7BE;
+  --green:#47705A; --green-l:#E8F1EB;
+  --blue:#4F7396; --blue-l:#EAF2F8;
+  --purple:#755E8B; --purple-l:#F0EAF5;
+  --red:#9B4A42; --red-l:#FBEDEB;
+  --rule:rgba(184,138,59,.28);
+  --shadow:0 1px 2px rgba(48,40,32,.05), 0 8px 24px rgba(48,40,32,.05);
+  --ui:system-ui,"Segoe UI",Roboto,Arial,"Noto Sans","Liberation Sans",sans-serif;
+  --serif:"Times New Roman",Tinos,"Liberation Serif","Noto Serif","DejaVu Serif",Times,serif;
+}
+html[data-theme="dark"]{
+  --bg:#1A1714; --card:#231F1B; --ink:#EFE6D8; --ink2:#B6A895;
+  --gold:#D9AC5E; --gold-l:#3A2F1C;
+  --green:#8FBFA4; --green-l:#1E2B24;
+  --blue:#9CC0DE; --blue-l:#1C262F;
+  --purple:#BFA8D4; --purple-l:#262030;
+  --red:#E09A92; --red-l:#2E1F1D;
+  --rule:rgba(217,172,94,.28);
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:70px}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *{animation:none !important; transition:none !important}
+}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:var(--serif); font-size:19px; line-height:1.85;
+  font-synthesis:none; text-rendering:optimizeLegibility;
+  -webkit-text-size-adjust:100%;
+}
+p{margin:0 0 1.15em}
+.wrap{max-width:900px; margin:0 auto; padding:0 22px}
+
+/* ---------- progress + toolbar ---------- */
+#progress{position:fixed; top:0; left:0; height:4px; width:0%;
+  background:linear-gradient(90deg,var(--gold),#E0BD72); z-index:60}
+#toolbar{position:sticky; top:0; z-index:50; background:color-mix(in srgb,var(--bg) 92%, transparent);
+  backdrop-filter:blur(6px); border-bottom:1px solid var(--rule)}
+#toolbar .wrap{display:flex; gap:10px; flex-wrap:wrap; align-items:center; padding-top:9px; padding-bottom:9px}
+#toolbar .tb-title{font-family:var(--ui); font-size:12px; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--ink2); margin-right:auto}
+.btn{font-family:var(--ui); font-size:13px; line-height:1.2; padding:8px 13px; cursor:pointer;
+  background:var(--card); color:var(--ink); border:1px solid var(--rule); border-radius:999px}
+.btn:hover{border-color:var(--gold)}
+a:focus-visible,.btn:focus-visible,summary:focus-visible{
+  outline:3px solid var(--gold); outline-offset:2px; border-radius:4px}
+
+/* ---------- header ---------- */
+header.book{
+  background:linear-gradient(135deg,#241D16 0%,#3A2D1C 55%,#6B5220 100%);
+  color:#F5E7BE; padding:56px 0 46px; text-align:center}
+header.book .kicker{font-family:var(--ui); font-size:12px; letter-spacing:.3em;
+  text-transform:uppercase; color:#D9BE85; margin:0 0 18px}
+header.book h1{font-size:clamp(30px,6vw,50px); line-height:1.2; margin:0 0 6px; color:#F7E9C4}
+header.book .chapno{font-family:var(--ui); font-size:13px; letter-spacing:.24em;
+  text-transform:uppercase; color:#D9AC5E; margin:0 0 14px}
+header.book .sub{font-size:19px; font-style:italic; color:#E9DCBE; max-width:640px;
+  margin:16px auto 0; line-height:1.7}
+header.book .author{font-family:var(--ui); font-size:13px; letter-spacing:.18em;
+  text-transform:uppercase; color:#CBB48B; margin-top:24px}
+.rule-orn{display:flex; align-items:center; justify-content:center; gap:12px; margin:22px auto 0; max-width:280px}
+.rule-orn span{height:1px; flex:1; background:linear-gradient(90deg,transparent,#B88A3B,transparent)}
+.rule-orn b{color:#B88A3B; font-size:13px}
+
+/* ---------- generic blocks ---------- */
+.tag{display:inline-block; font-family:var(--ui); font-size:11px; font-weight:700;
+  letter-spacing:.16em; text-transform:uppercase; padding:3px 10px; border-radius:999px;
+  background:var(--gold-l); color:#7A5A1E; margin-bottom:10px}
+html[data-theme="dark"] .tag{color:var(--gold)}
+.box{border-radius:14px; padding:22px 24px; margin:26px 0; box-shadow:var(--shadow)}
+
+.map{background:var(--card); border:1px solid var(--rule); border-top:4px solid var(--gold)}
+.map h2{font-family:var(--ui); font-size:17px; letter-spacing:.04em; margin:0 0 4px}
+.map .meta{font-family:var(--ui); font-size:13px; color:var(--ink2); margin:0 0 16px}
+.map .goal{background:var(--gold-l); border-radius:10px; padding:12px 16px; margin:0 0 18px;
+  font-size:17px}
+html[data-theme="dark"] .map .goal{background:#332918}
+.stages{list-style:none; margin:0; padding:0; counter-reset:st}
+.stages li{counter-increment:st; position:relative; padding:6px 0 6px 42px; font-size:17px}
+.stages li::before{content:counter(st); position:absolute; left:0; top:8px; width:26px; height:26px;
+  border-radius:50%; background:var(--gold); color:#fff; font-family:var(--ui); font-size:12px;
+  font-weight:700; display:flex; align-items:center; justify-content:center}
+.howto{margin-top:18px; padding-top:14px; border-top:1px dashed var(--rule);
+  font-family:var(--ui); font-size:14px; color:var(--ink2); line-height:1.7}
+
+nav.toc{background:var(--card); border:1px solid var(--rule)}
+nav.toc h2{font-family:var(--ui); font-size:17px; margin:0 0 14px}
+nav.toc ol{list-style:none; margin:0; padding:0; columns:2; column-gap:34px}
+nav.toc li{break-inside:avoid; margin:0 0 9px}
+nav.toc a{display:block; color:var(--ink); text-decoration:none; font-size:16.5px;
+  padding:7px 10px; border-radius:8px; border-left:3px solid var(--gold)}
+nav.toc a:hover{background:var(--gold-l)}
+nav.toc a .n{font-family:var(--ui); font-size:12px; color:var(--gold); font-weight:700; margin-right:8px}
+@media (max-width:720px){nav.toc ol{columns:1}}
+
+aside.srctoc{background:var(--card); border:1px solid var(--rule); border-left:5px solid var(--ink2)}
+aside.srctoc ul{list-style:none; margin:0; padding:0}
+aside.srctoc li{padding:4px 0 4px 20px; position:relative; font-size:16.5px}
+aside.srctoc li::before{content:"◆"; position:absolute; left:0; color:var(--gold); font-size:11px; top:7px}
+
+/* ---------- sections ---------- */
+main section{margin:54px 0}
+.sec-head{display:flex; gap:16px; align-items:flex-start; margin-bottom:6px}
+.badge{flex:0 0 auto; width:44px; height:44px; border-radius:50%; background:var(--gold);
+  color:#fff; font-family:var(--ui); font-weight:700; font-size:17px;
+  display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow)}
+.sec-head h2{font-size:clamp(22px,3.6vw,29px); line-height:1.32; margin:4px 0 0}
+.willlearn{font-family:var(--ui); font-size:14.5px; color:var(--ink2); line-height:1.7;
+  border-left:3px solid var(--gold); padding:6px 0 6px 14px; margin:12px 0 22px}
+.willlearn b{color:var(--gold); letter-spacing:.04em}
+
+.body-card{background:var(--card); border:1px solid var(--rule); border-radius:14px;
+  padding:26px 28px; box-shadow:var(--shadow)}
+@media (max-width:600px){.body-card{padding:20px 18px}}
+.body-card h3{font-family:var(--ui); font-size:16px; letter-spacing:.03em; color:var(--gold);
+  margin:26px 0 10px}
+.body-card h3:first-child{margin-top:0}
+
+mark{padding-block:.06em; background:linear-gradient(180deg,rgba(245,231,190,0) 46%, #F5E7BE 46%);
+  color:inherit; padding:0 2px}
+html[data-theme="dark"] mark{padding-block:.06em; background:linear-gradient(180deg,rgba(58,47,28,0) 46%, #4A3A1E 46%); color:#F7E9C4}
+
+ul.dia{list-style:none; margin:0 0 1.15em; padding:0}
+ul.dia li{position:relative; padding:5px 0 5px 24px}
+ul.dia li::before{content:"◆"; position:absolute; left:0; top:8px; color:var(--gold); font-size:11px}
+ol.steps{padding-left:22px}
+ol.steps li{margin:0 0 10px}
+
+/* labelled boxes */
+.keyidea{position:relative; border:2px dashed var(--gold); background:transparent;
+  border-radius:14px; padding:26px 24px 20px; margin:28px 0}
+.keyidea .lbl{position:absolute; top:-12px; left:20px; background:var(--bg); padding:0 10px;
+  font-family:var(--ui); font-size:11px; font-weight:700; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--gold)}
+.keyidea p:last-child{margin-bottom:0}
+
+blockquote{position:relative; margin:28px 0; padding:26px 26px 20px 52px;
+  background:var(--gold-l); border-left:5px solid var(--gold); border-radius:0 14px 14px 0;
+  font-size:19.5px; font-style:italic; line-height:1.75}
+html[data-theme="dark"] blockquote{background:#332918}
+blockquote::before{content:"\201C"; position:absolute; left:14px; top:14px; font-size:52px;
+  line-height:1; color:var(--gold); opacity:.55; font-family:var(--serif)}
+blockquote .qtag{display:block; font-family:var(--ui); font-style:normal; font-size:10.5px;
+  font-weight:700; letter-spacing:.2em; color:#7A5A1E; margin-bottom:10px}
+html[data-theme="dark"] blockquote .qtag{color:var(--gold)}
+blockquote p{margin:0 0 .6em}
+blockquote cite{display:block; font-style:normal; font-family:var(--ui); font-size:14px;
+  color:var(--ink2); margin-top:10px}
+blockquote cite b{color:var(--ink)}
+
+.concept{background:var(--blue-l); border:1px solid rgba(79,115,150,.3); border-radius:14px;
+  padding:22px 24px; margin:26px 0}
+.concept .lbl{font-family:var(--ui); font-size:11px; font-weight:700; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--blue); display:block; margin-bottom:6px}
+.concept h4{font-size:21px; margin:0 0 12px}
+.concept dl{margin:0}
+.concept dt{font-family:var(--ui); font-size:12.5px; letter-spacing:.06em; color:var(--blue);
+  font-weight:700; margin-top:12px}
+.concept dd{margin:3px 0 0; font-size:17px}
+
+.example{background:var(--card); border:1px solid var(--rule); border-top:4px solid var(--gold);
+  border-radius:14px; padding:22px 24px; margin:26px 0}
+.example .lbl{font-family:var(--ui); font-size:11px; font-weight:700; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--gold); display:block; margin-bottom:8px}
+
+.practice{background:var(--green-l); border:1px solid rgba(71,112,90,.35); border-left:5px solid var(--green);
+  border-radius:0 14px 14px 0; padding:22px 24px; margin:26px 0}
+.practice .lbl{font-family:var(--ui); font-size:11px; font-weight:700; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--green); display:block; margin-bottom:8px}
+.notepad{margin-top:14px; border:1px dashed var(--green); border-radius:10px; padding:12px 14px;
+  background:var(--card)}
+.notepad .nl{font-family:var(--ui); font-size:12px; color:var(--ink2); letter-spacing:.08em;
+  text-transform:uppercase}
+.notepad .lines{height:14px; border-bottom:1px solid var(--rule); margin-top:14px}
+
+.hint{background:var(--purple-l); border:1px solid rgba(117,94,139,.3); border-left:5px solid var(--purple);
+  border-radius:0 14px 14px 0; padding:18px 22px; margin:24px 0; font-size:17px}
+.hint .lbl{font-family:var(--ui); font-size:11px; font-weight:700; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--purple); display:block; margin-bottom:6px}
+.hint p:last-child{margin-bottom:0}
+
+.check{background:var(--red-l); border:1px solid rgba(155,74,66,.35); border-left:5px solid var(--red);
+  border-radius:0 12px 12px 0; padding:14px 18px; margin:22px 0; font-size:15.5px;
+  font-family:var(--ui); line-height:1.7}
+.check .lbl{font-size:11px; font-weight:700; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--red); display:block; margin-bottom:4px}
+
+.pause{background:var(--card); border:1px solid var(--rule); border-radius:14px; padding:20px 24px;
+  margin:28px 0; text-align:center}
+.pause .lbl{font-family:var(--ui); font-size:11px; font-weight:700; letter-spacing:.2em;
+  text-transform:uppercase; color:var(--gold); display:block; margin-bottom:8px}
+.pause p{margin:0; font-style:italic; font-size:18.5px}
+
+/* flow / mạch lập luận */
+.flow{background:var(--card); border:1px solid var(--rule); border-radius:14px; padding:22px 24px; margin:28px 0}
+.flow .lbl{font-family:var(--ui); font-size:11px; font-weight:700; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--gold); display:block; margin-bottom:14px}
+.flow-grid{display:flex; flex-wrap:wrap; align-items:stretch; gap:10px}
+.fstep{flex:1 1 180px; background:var(--bg); border:1px solid var(--rule); border-radius:10px; padding:13px 15px}
+.fstep .k{display:block; font-family:var(--ui); font-size:10.5px; font-weight:700; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--ink2); margin-bottom:5px}
+.fstep .v{font-size:16px; line-height:1.6}
+.farrow{display:flex; align-items:center; color:var(--gold); font-size:20px; padding:0 2px}
+@media (max-width:700px){
+  .flow-grid{flex-direction:column}
+  .farrow{justify-content:center; transform:rotate(90deg); padding:2px 0}
+}
+
+.totop{display:block; text-align:right; margin:16px 0 0}
+.totop a{font-family:var(--ui); font-size:13px; color:var(--ink2); text-decoration:none;
+  border:1px solid var(--rule); border-radius:999px; padding:6px 14px}
+.totop a:hover{border-color:var(--gold); color:var(--gold)}
+
+.origsum{background:var(--gold-l); border:1px solid var(--gold); border-radius:14px; padding:24px}
+html[data-theme="dark"] .origsum{background:#332918}
+.recall{background:var(--blue-l); border:1px solid rgba(79,115,150,.3); border-radius:14px; padding:24px}
+.recall h3{font-family:var(--ui); font-size:15px; letter-spacing:.05em; color:var(--blue); margin:22px 0 8px}
+.recall h3:first-of-type{margin-top:8px}
+.chain{display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-top:10px}
+.chain span{background:var(--card); border:1px solid var(--rule); border-radius:999px;
+  padding:6px 13px; font-family:var(--ui); font-size:13.5px}
+.chain i{color:var(--gold); font-style:normal}
+
+details.audit{background:var(--card); border:1px solid var(--rule); border-radius:14px;
+  padding:16px 20px; margin:34px 0}
+details.audit summary{cursor:pointer; font-family:var(--ui); font-size:14px; font-weight:700;
+  letter-spacing:.1em; text-transform:uppercase; color:var(--gold)}
+details.audit .in{padding-top:14px; font-family:var(--ui); font-size:15px; line-height:1.8}
+details.audit ul{list-style:none; padding:0}
+details.audit li{padding:4px 0 4px 22px; position:relative}
+details.audit li::before{content:"◆"; position:absolute; left:0; top:6px; color:var(--gold); font-size:10px}
+
+footer.pagefoot{border-top:1px solid var(--rule); margin-top:50px; padding:26px 0 60px;
+  font-family:var(--ui); font-size:13.5px; color:var(--ink2); text-align:center; line-height:1.8}
+
+/* ---------- print ---------- */
+@media print{
+  :root{--bg:#fff; --card:#fff}
+  body{font-size:12pt; line-height:1.6; background:#fff; color:#000}
+  #toolbar,#progress,.totop,.btn{display:none !important}
+  header.book{background:#fff !important; color:#000; border-bottom:3px solid #B88A3B; padding:0 0 18pt}
+  header.book h1,header.book .sub,header.book .author,header.book .kicker,header.book .chapno{color:#000}
+  .wrap{max-width:100%; padding:0}
+  @page{size:A4; margin:18mm 16mm}
+  .box,.body-card,blockquote,.concept,.practice,.example,.hint,.keyidea,.pause,.flow,
+  .origsum,.recall,details.audit{break-inside:avoid; page-break-inside:avoid; box-shadow:none}
+  h2,h3,h4,.sec-head{break-after:avoid; page-break-after:avoid}
+  main section{break-inside:auto; margin:22pt 0}
+  blockquote{border-left:3pt solid #B88A3B; background:#fff}
+  .concept{border:1.2pt solid #4F7396}
+  .practice{border:1.2pt solid #47705A}
+  .hint{border:1.2pt solid #755E8B}
+  .check{border:1.2pt solid #9B4A42}
+  nav.toc a{border-left:2pt solid #B88A3B}
+  details.audit{display:block}
+  details.audit[open] .in,details.audit .in{display:block}
+  a{color:#000; text-decoration:none}
+}
+
+/* ===== bổ sung cho bộ nhiều file ===== */
+.pager{display:flex; gap:12px; margin:44px 0 8px; flex-wrap:wrap}
+.pager a,.pager span{flex:1 1 230px; border:1px solid var(--rule); border-radius:12px;
+  padding:14px 18px; text-decoration:none; background:var(--card); color:var(--ink);
+  font-family:var(--ui); font-size:15px; line-height:1.5; box-shadow:var(--shadow)}
+.pager .k{display:block; font-size:10.5px; font-weight:700; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--ink2); margin-bottom:5px}
+.pager a:hover{border-color:var(--gold)}
+.pager .next{text-align:right}
+.pager span.off{opacity:.42; box-shadow:none}
+
+/* trang mục lục tổng */
+.hub-intro{background:var(--card); border:1px solid var(--rule); border-top:4px solid var(--gold);
+  border-radius:14px; padding:24px 26px; margin:30px 0; box-shadow:var(--shadow)}
+.hub-intro p:last-child{margin-bottom:0}
+.meter{height:10px; border-radius:999px; background:var(--gold-l); overflow:hidden; margin:14px 0 8px}
+.meter i{display:block; height:100%; background:linear-gradient(90deg,var(--gold),#E0BD72)}
+.meter-lbl{font-family:var(--ui); font-size:13.5px; color:var(--ink2)}
+.group{margin:44px 0}
+.group > h2{font-family:var(--ui); font-size:13px; font-weight:700; letter-spacing:.2em;
+  text-transform:uppercase; color:var(--gold); margin:0 0 4px}
+.group > .gsub{font-family:var(--ui); font-size:14px; color:var(--ink2); margin:0 0 18px}
+.cards{display:grid; grid-template-columns:repeat(auto-fill,minmax(268px,1fr)); gap:16px}
+.card{display:block; background:var(--card); border:1px solid var(--rule); border-radius:14px;
+  padding:20px 22px; text-decoration:none; color:var(--ink); box-shadow:var(--shadow);
+  position:relative; transition:border-color .15s, transform .15s}
+.card:hover{border-color:var(--gold); transform:translateY(-2px)}
+.card.off{opacity:.55; box-shadow:none; cursor:default}
+.card.off:hover{border-color:var(--rule); transform:none}
+.card .num{font-family:var(--ui); font-size:11px; font-weight:700; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--gold); display:block; margin-bottom:8px}
+.card h3{font-size:20px; line-height:1.35; margin:0 0 8px}
+.card .sub{font-family:var(--ui); font-size:14px; color:var(--ink2); line-height:1.6; margin:0}
+.card .status{display:inline-block; margin-top:14px; font-family:var(--ui); font-size:10.5px;
+  font-weight:700; letter-spacing:.14em; text-transform:uppercase; padding:3px 10px;
+  border-radius:999px; background:var(--green-l); color:var(--green)}
+.card.off .status{background:transparent; color:var(--ink2); border:1px dashed var(--rule)}
+@media print{.card{break-inside:avoid} .pager{display:none}}
+
+/* cặp đối chiếu hai vế (giữ nguyên câu chữ nguồn, không phải bảng bố cục) */
+ul.pairs{list-style:none; margin:0 0 1.15em; padding:0}
+ul.pairs li{display:flex; gap:10px; margin:0 0 10px; flex-wrap:wrap}
+ul.pairs .a,ul.pairs .b{flex:1 1 240px; border-radius:10px; padding:11px 15px; font-size:16.5px; line-height:1.6}
+ul.pairs .a{background:var(--bg); border:1px solid var(--rule)}
+ul.pairs .b{background:var(--gold-l); border:1px solid var(--gold)}
+html[data-theme="dark"] ul.pairs .b{background:#332918}
+ul.pairs .lbl-row{font-family:var(--ui); font-size:10.5px; font-weight:700; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--ink2); display:block; margin-bottom:3px}
+@media print{ul.pairs li{break-inside:avoid}}
+
+/* sơ đồ tầng (ẩn dụ ngọn núi của ý thức) */
+ol.mtn{list-style:none; margin:0; padding:0}
+ol.mtn li{background:var(--card); border:1px solid var(--rule); border-left:5px solid var(--gold);
+  border-radius:0 12px 12px 0; padding:14px 18px; margin:0 0 9px; box-shadow:var(--shadow)}
+ol.mtn li .lvl{display:block; font-family:var(--ui); font-size:11px; font-weight:700;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--gold); margin-bottom:5px}
+ol.mtn li .txt{font-size:16.5px; line-height:1.65}
+ol.mtn li:nth-child(1){margin-left:0}
+ol.mtn li:nth-child(2){margin-left:22px}
+ol.mtn li:nth-child(3){margin-left:44px}
+ol.mtn li:nth-child(4){margin-left:66px; border-left-width:7px; background:var(--gold-l)}
+html[data-theme="dark"] ol.mtn li:nth-child(4){background:#332918}
+@media (max-width:620px){
+  ol.mtn li:nth-child(2){margin-left:10px}
+  ol.mtn li:nth-child(3){margin-left:20px}
+  ol.mtn li:nth-child(4){margin-left:30px}
+}
+@media print{ol.mtn li{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div id="progress" aria-hidden="true"></div>
+<div id="toolbar"><div class="wrap">
+  <span class="tb-title">Bí mật vĩ đại nhất</span>
+  <a class="btn" href="index.html">← Mục lục sách</a>
+  <button class="btn" id="themeBtn" type="button" aria-pressed="false">Chế độ đọc tối</button>
+  <button class="btn" id="printBtn" type="button">In / Lưu PDF</button>
+  <a class="btn" href="#top">Về đầu trang</a>
+</div></div>
+<header class="book" id="top"><div class="wrap">
+  <p class="kicker">Sách &middot; Bí mật vĩ đại nhất</p>
+  <p class="chapno">Mở đầu</p>
+  <h1>Sự khởi đầu</h1>
+  <div class="rule-orn"><span></span><b>◆</b><span></span></div>
+  <p class="sub">Vì sao tác giả vẫn tiếp tục tìm kiếm sau Bí mật, hành trình mười năm, và khoảnh khắc bà thấy rằng điều mình tìm kiếm luôn ở ngay đây.</p>
+  <p class="author">Rhonda Byrne</p>
+</div></header>
+<div class="wrap">
+<!-- B. BẢN ĐỒ CHƯƠNG -->
+  <div class="box map" id="ban-do-chuong">
+    <span class="tag">Bản đồ chương</span>
+    <h2>Bạn sắp đi qua điều gì</h2>
+    <p class="meta">Thời gian đọc ước tính: khoảng 10–12 phút &middot; Phần mở đầu của sách</p>
+    <p class="goal"><strong>Mục tiêu của phần này:</strong> Rhonda Byrne kể lại vì sao và bằng cách nào bà đi tìm sự thật suốt mười năm sau <em>Bí mật</em>, bà đã khám phá ra điều gì, ai đã giúp bà, và cuốn sách này hứa hẹn điều gì với người đọc.</p>
+    <ol class="stages">
+      <li>Cuộc sống sau <em>Bí mật</em> (2006) — và điều gì đó vẫn thúc đẩy bà tìm kiếm tiếp.</li>
+      <li>Hành trình mười năm qua các truyền thống cổ xưa và những người thầy gần đây.</li>
+      <li>Tháng 1 năm 2016: một tình huống đầy thử thách trở thành món quà.</li>
+      <li>David Bingham và câu nói &ldquo;Nó ở ngay đây&rdquo; — cuộc tìm kiếm kết thúc.</li>
+      <li>Sau khám phá: nhìn thấy sự thật ở khắp mọi nơi trong những gì đã đọc.</li>
+      <li>Những ghi chép trở thành nền tảng của cuốn sách này.</li>
+      <li>Người thầy giấu tên và những người thầy khác trong sách.</li>
+      <li>Lời hứa với người đọc, và sự khác nhau giữa <em>Bí mật</em> và <em>Bí mật vĩ đại nhất</em>.</li>
+    </ol>
+    <p class="howto"><strong>Cách đọc trang này:</strong> phần thân màu kem là nội dung đầy đủ của tác giả — đọc phần này là đủ. Các khối màu quanh nó chỉ để hỗ trợ: vàng là trích dẫn, xanh dương là khái niệm, tím là lời giải thích của biên tập viên. Mỗi khối đều có nhãn chữ.</p>
+  </div>
+
+  <!-- C. MỤC LỤC TƯƠNG TÁC -->
+  <nav class="box toc" id="muc-luc" aria-label="Mục lục trang">
+    <h2>Mục lục trang này</h2>
+    <ol>
+      <li><a href="#p1"><span class="n">01</span>Cuộc sống trong mơ — và điều vẫn còn thiếu</a></li>
+      <li><a href="#p2"><span class="n">02</span>Hành trình mười năm đi tìm sự thật</a></li>
+      <li><a href="#p3"><span class="n">03</span>Tháng 1 năm 2016: thất vọng trở thành món quà</a></li>
+      <li><a href="#p4"><span class="n">04</span>&ldquo;Nó ở ngay đây&rdquo;: cuộc tìm kiếm kết thúc</a></li>
+      <li><a href="#p5"><span class="n">05</span>Một khám phá đơn giản, và nó ở khắp mọi nơi</a></li>
+      <li><a href="#p6"><span class="n">06</span>Từ ý định chia sẻ đến thư mục &ldquo;Cuốn sách tiếp theo của tôi&rdquo;</a></li>
+      <li><a href="#p7"><span class="n">07</span>Người thầy giấu tên và những người thầy khác</a></li>
+      <li><a href="#p8"><span class="n">08</span>Cuốn sách này hứa hẹn điều gì với bạn</a></li>
+      <li><a href="#p9"><span class="n">09</span><em>Bí mật</em> và <em>Bí mật vĩ đại nhất</em></a></li>
+      <li><a href="#tom-tat-goc"><span class="n">★</span>Tóm tắt gốc của chương</a></li>
+      <li><a href="#ban-do-ghi-nho"><span class="n">★</span>Bản đồ ghi nhớ</a></li>
+    </ol>
+  </nav>
+
+  <!-- MỤC LỤC CỦA SÁCH (theo nguồn) -->
+  <aside class="box srctoc" id="muc-luc-sach">
+    <span class="tag">Nguyên văn từ nguồn &middot; Mục lục của sách</span>
+    <ul>
+      <li>Lời cảm ơn</li>
+      <li>Sự khởi đầu</li>
+      <li>Chương 01 &mdash; Ẩn hiện</li>
+      <li>Chương 02 &mdash; Bí mật vĩ đại nhất: Được tiết lộ</li>
+      <li>Chương 03 &mdash; Tiết lộ tiếp theo</li>
+      <li>Chương 04 &mdash; Bạn có đang mơ&hellip; Đã đến lúc thức dậy</li>
+      <li>Chương 05 &mdash; Giải thoát khỏi tâm trí</li>
+      <li>Chương 06 &mdash; Hiểu được sức mạnh của cảm xúc</li>
+      <li>Chương 07 &mdash; Kết thúc cảm xúc tiêu cực</li>
+      <li>Chương 08 &mdash; Không còn đau khổ</li>
+      <li>Chương 09 &mdash; Giải tỏa niềm tin hạn chế</li>
+      <li>Chương 10 &mdash; Hạnh phúc vĩnh cửu</li>
+      <li>Chương 11 &mdash; Thế giới: Mọi thứ đều tốt đẹp</li>
+      <li>Chương 12 &mdash; Kết thúc không có hồi kết</li>
+      <li>Những thực hành Bí mật vĩ đại nhất</li>
+      <li>Nổi bật trong Bí mật vĩ đại nhất</li>
+      <li>Về tác giả</li>
+    </ul>
+  </aside>
+
+<main>
+
+  <!-- PHẦN 1 -->
+  <section id="p1">
+    <div class="sec-head"><div class="badge">01</div>
+      <h2>Cuộc sống trong mơ — và điều vẫn còn thiếu</h2></div>
+    <p class="willlearn"><b>Bạn sẽ hiểu gì ở phần này?</b><br>Sau <em>Bí mật</em>, cuộc sống của tác giả đã thay đổi thế nào, và vì sao điều đó vẫn chưa làm bà ngừng tìm kiếm.</p>
+
+    <article class="body-card">
+      <p>Sau khi phát hành <em>Bí mật</em> vào năm 2006, cuộc sống của tôi trở thành thứ mà tôi chỉ có thể mô tả là cuộc sống trong mơ.</p>
+      <p>Thông qua việc thực hành các nguyên tắc của <em>Bí mật</em> một cách tôn giáo, tâm trí tôi đã trở nên chủ yếu là tích cực, và vì vậy cuộc sống của tôi phản ánh trạng thái tích cực đó trong hạnh phúc, sức khỏe, các mối quan hệ và tài chính của tôi. Tôi cũng thấy mình có tình yêu và lòng biết ơn tự nhiên đối với mọi thứ trong cuộc sống.</p>
+      <p>Nhưng bất chấp tất cả những điều đó, <mark>có điều gì đó bên trong tôi vẫn tiếp tục thúc đẩy tôi tìm kiếm nhiều sự thật hơn</mark>; có điều gì đó thúc đẩy tôi tiếp tục tìm kiếm, mặc dù tôi vẫn chưa biết tìm kiếm điều gì.</p>
+    </article>
+
+    <div class="keyidea">
+      <span class="lbl">Ý chính</span>
+      <p>Một cuộc sống đã tốt đẹp về mọi mặt vẫn không làm dừng lại thôi thúc bên trong đi tìm sự thật — và tác giả nói rõ rằng khi ấy bà chưa biết mình đang tìm điều gì.</p>
+    </div>
+
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+  <!-- PHẦN 2 -->
+  <section id="p2">
+    <div class="sec-head"><div class="badge">02</div>
+      <h2>Hành trình mười năm đi tìm sự thật</h2></div>
+    <p class="willlearn"><b>Bạn sẽ hiểu gì ở phần này?</b><br>Tác giả đã nghiên cứu những truyền thống và những người thầy nào trong mười năm, và kết quả của việc nghiên cứu ấy là gì.</p>
+
+    <article class="body-card">
+      <p>Lúc đó, tôi không hề biết rằng mình đã bắt đầu một hành trình kéo dài mười năm!</p>
+      <p>Hành trình bắt đầu bằng việc nghiên cứu những lời dạy của một truyền thống cổ xưa ở Châu Âu, Thập tự Hoa hồng, và tôi đã nghiên cứu những lời dạy sâu sắc của họ trong nhiều năm. Tôi cũng dành một vài năm để nghiên cứu Phật giáo, nhiều tác phẩm của các nhà thần bí Cơ đốc giáo, thần học, Ấn Độ giáo, Đạo giáo và Chủ nghĩa Sufi.</p>
+      <p>Sau khi nghiên cứu các truyền thống cổ xưa và những lời dạy lịch sử của họ, cuộc tìm kiếm của tôi quay trở lại thời điểm hiện tại, và tôi bắt đầu theo dõi những giáo viên gần đây như J. Krishnamurti, Robert Adams, Lester Levenson và Ramana Maharshi, cũng như một số giáo viên vẫn còn sống cho đến ngày nay.</p>
+      <p>Trong suốt hành trình của mình, tôi đã học được nhiều điều mà công chúng không biết đến, và mặc dù chúng rất hấp dẫn, nhưng <mark>không có điều nào trong số chúng khiến tôi cảm thấy rằng mình đã tìm thấy sự thật</mark>.</p>
+      <p>Theo năm tháng trôi qua, tôi thậm chí còn nghĩ rằng việc tìm kiếm có thể là cuộc sống của tôi mãi mãi. Lúc đó tôi không nhận ra điều đó, nhưng tôi đang tìm kiếm sự thật trên thế giới, khi mà nó gần gũi với tôi hơn tôi từng tưởng tượng.</p>
+    </article>
+
+    <div class="concept">
+      <span class="lbl">Khái niệm cốt lõi</span>
+      <h4>Việc tìm kiếm (cuộc tìm kiếm sự thật)</h4>
+      <dl>
+        <dt>Tác giả dùng khái niệm này thế nào trong chương</dt>
+        <dd>Là hành trình mười năm nghiên cứu hết truyền thống này đến truyền thống khác, hết người thầy này đến người thầy khác, để đi tìm &ldquo;sự thật&rdquo; mà bà chưa gọi tên được.</dd>
+        <dt>Ý nghĩa trong mạch lập luận</dt>
+        <dd>Việc tìm kiếm là điểm xuất phát của toàn bộ câu chuyện: nó kéo dài, nó không kết thúc bằng những gì học được từ bên ngoài, và nó chỉ chấm dứt khi bà nhìn thấy điều ở ngay đây.</dd>
+        <dt>Lưu ý để tránh hiểu sai</dt>
+        <dd>Theo chính lời tác giả, những điều bà học được &ldquo;rất hấp dẫn&rdquo; — bà không nói chúng vô giá trị, mà nói rằng không điều nào trong số đó khiến bà cảm thấy mình đã tìm thấy sự thật.</dd>
+      </dl>
+    </div>
+
+    <div class="flow">
+      <span class="lbl">Mạch lập luận &middot; Phần 01–02</span>
+      <div class="flow-grid">
+        <div class="fstep"><span class="k">Nhận định ban đầu</span><span class="v">Cuộc sống sau <em>Bí mật</em> là cuộc sống trong mơ, tâm trí chủ yếu tích cực.</span></div>
+        <div class="farrow">→</div>
+        <div class="fstep"><span class="k">Nhưng</span><span class="v">Vẫn có điều gì đó bên trong thúc đẩy tìm kiếm nhiều sự thật hơn.</span></div>
+        <div class="farrow">→</div>
+        <div class="fstep"><span class="k">Diễn tiến</span><span class="v">Mười năm nghiên cứu các truyền thống cổ xưa rồi đến những người thầy gần đây.</span></div>
+        <div class="farrow">→</div>
+        <div class="fstep"><span class="k">Kết quả</span><span class="v">Không điều nào khiến bà cảm thấy đã tìm thấy sự thật; bà đang tìm nó &ldquo;trên thế giới&rdquo;, trong khi nó gần gũi hơn bà tưởng.</span></div>
+      </div>
+    </div>
+
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+  <!-- PHẦN 3 -->
+  <section id="p3">
+    <div class="sec-head"><div class="badge">03</div>
+      <h2>Tháng 1 năm 2016: thất vọng trở thành món quà</h2></div>
+    <p class="willlearn"><b>Bạn sẽ hiểu gì ở phần này?</b><br>Sự kiện đã kích hoạt bước ngoặt, và cách tác giả nhìn lại sự kiện đó.</p>
+
+    <article class="body-card">
+      <p>Mười năm sau khi cuộc tìm kiếm của tôi bắt đầu, vào đầu tháng 1 năm 2016, một tình huống đầy thử thách đã nảy sinh trong cuộc đời tôi khiến tôi cảm thấy vô cùng thất vọng.</p>
+      <p>Tôi đã rất ngạc nhiên về mức độ cảm xúc tiêu cực mà tôi cảm thấy. Làm sao tôi có thể cảm thấy tệ đến vậy khi tôi thường cảm thấy rất tốt?</p>
+      <p>Nhưng <mark>tình huống đáng thất vọng đó đã trở thành món quà tuyệt vời nhất trong hành trình tìm kiếm sự thật của tôi.</mark></p>
+    </article>
+
+    <div class="pause">
+      <span class="lbl">Dừng lại 30 giây</span>
+      <p>&ldquo;Làm sao tôi có thể cảm thấy tệ đến vậy khi tôi thường cảm thấy rất tốt?&rdquo;</p>
+    </div>
+
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+  <!-- PHẦN 4 -->
+  <section id="p4">
+    <div class="sec-head"><div class="badge">04</div>
+      <h2>&ldquo;Nó ở ngay đây&rdquo;: cuộc tìm kiếm kết thúc</h2></div>
+    <p class="willlearn"><b>Bạn sẽ hiểu gì ở phần này?</b><br>David Bingham là ai, điều tác giả nghe được trong podcast, và khoảnh khắc bà nhìn thấy điều mình tìm kiếm.</p>
+
+    <article class="body-card">
+      <p>Để đảo ngược sự thất vọng, tôi lấy iPad và xem một cuộc phỏng vấn trên Conscious TV với một người đàn ông tên là David Bingham.</p>
+      <p>Vào thời điểm phỏng vấn, David không phải là giáo viên mà chỉ là một người bình thường như bạn và tôi, với một điểm khác biệt: sau hai mươi năm tìm kiếm, ông đã khám phá ra sự thật!</p>
+      <p>Tôi đã xem cuộc phỏng vấn và sau đó tôi nghe một podcast do David giới thiệu. Tôi đã chăm chú lắng nghe podcast và trong suốt quá trình đó, tôi nghe nói rằng <mark>hầu hết mọi người bỏ qua khám phá này không phải vì nó khó mà vì nó quá đơn giản.</mark></p>
+      <p>Sau đó, tôi đã có thể nói chuyện với David qua điện thoại và trong cuộc trò chuyện, ông ấy nói:</p>
+    </article>
+
+    <blockquote>
+      <span class="qtag">Trích dẫn</span>
+      <p>Hãy nhìn vào thứ tôi đang chỉ. Nó ở ngay đây.</p>
+      <cite><b>David Bingham</b> — lời nói trong cuộc trò chuyện qua điện thoại với Rhonda Byrne, theo tường thuật của tác giả</cite>
+    </blockquote>
+
+    <blockquote>
+      <span class="qtag">Trích dẫn</span>
+      <p>Hầu hết mọi người bỏ qua khám phá này không phải vì nó khó mà vì nó quá đơn giản.</p>
+      <cite>Điều <b>Rhonda Byrne</b> nghe được trong một <b>podcast do David Bingham giới thiệu</b> (nguồn không nêu tên người nói trong văn bản)</cite>
+    </blockquote>
+
+    <article class="body-card">
+      <p>Và đột nhiên tôi thấy thứ mình đang tìm kiếm. Nó rất đơn giản và nó ở ngay đây.</p>
+      <p>Cứ như vậy, sau mười năm, cuộc tìm kiếm của tôi đã kết thúc!</p>
+      <p>Tôi có thể nói mà không chút do dự rằng niềm hạnh phúc và niềm vui mà tôi cảm thấy từ khám phá này xứng đáng với từng giây trong hành trình dài nhiều năm của tôi. Ngay cả khi phải mất cả cuộc đời để khám phá ra nó, thì nó vẫn xứng đáng.</p>
+    </article>
+
+    <div class="concept">
+      <span class="lbl">Khái niệm cốt lõi</span>
+      <h4>Khám phá (sự thật &ldquo;ở ngay đây&rdquo;)</h4>
+      <dl>
+        <dt>Tác giả dùng khái niệm này thế nào trong chương</dt>
+        <dd>Là điều bà nhìn thấy sau khi David Bingham nói &ldquo;Hãy nhìn vào thứ tôi đang chỉ. Nó ở ngay đây&rdquo;. Bà mô tả nó bằng hai đặc điểm: <em>rất đơn giản</em> và <em>ở ngay đây</em>.</dd>
+        <dt>Ý nghĩa trong mạch lập luận</dt>
+        <dd>Đây là bước ngoặt chấm dứt mười năm tìm kiếm, và là chủ đề mà cả cuốn sách sẽ triển khai.</dd>
+        <dt>Lưu ý để tránh hiểu sai</dt>
+        <dd>Trong phần mở đầu này, tác giả chưa nói khám phá đó <em>là gì</em> — bà chỉ kể lại việc mình đã nhìn thấy nó và nó đơn giản đến mức hầu hết mọi người bỏ qua.</dd>
+      </dl>
+    </div>
+
+    <div class="flow">
+      <span class="lbl">Mạch lập luận &middot; Phần 03–04</span>
+      <div class="flow-grid">
+        <div class="fstep"><span class="k">Nhận định ban đầu</span><span class="v">Tháng 1/2016: một tình huống thử thách gây thất vọng sâu sắc.</span></div>
+        <div class="farrow">→</div>
+        <div class="fstep"><span class="k">Hành động</span><span class="v">Để đảo ngược sự thất vọng, bà xem phỏng vấn David Bingham trên Conscious TV, rồi nghe podcast ông giới thiệu.</span></div>
+        <div class="farrow">→</div>
+        <div class="fstep"><span class="k">Trích dẫn</span><span class="v">David Bingham: &ldquo;Hãy nhìn vào thứ tôi đang chỉ. Nó ở ngay đây.&rdquo;</span></div>
+        <div class="farrow">→</div>
+        <div class="fstep"><span class="k">Kết luận</span><span class="v">Bà nhìn thấy điều mình tìm kiếm; cuộc tìm kiếm mười năm kết thúc; tình huống thất vọng trở thành món quà tuyệt vời nhất.</span></div>
+      </div>
+    </div>
+
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+  <!-- PHẦN 5 -->
+  <section id="p5">
+    <div class="sec-head"><div class="badge">05</div>
+      <h2>Một khám phá đơn giản, và nó ở khắp mọi nơi</h2></div>
+    <p class="willlearn"><b>Bạn sẽ hiểu gì ở phần này?</b><br>Tác giả nhìn lại mười năm nghiên cứu của mình như thế nào sau khi đã khám phá ra sự thật.</p>
+
+    <article class="body-card">
+      <p>Cuối cùng, chỉ một khám phá đơn giản đã là toàn bộ sự thật mà tôi đã tìm kiếm, <mark>đó thực sự là điều mà mọi người đang tìm kiếm, bất kể họ có nhận ra hay không.</mark></p>
+      <p>Và một khi tôi đã nhìn thấy sự thật, tôi có thể thấy rằng nó ở khắp mọi nơi. Mọi thứ tôi đã đọc và học trong mười năm đều chứa đựng nó; chỉ là lúc đó tôi không có mắt để nhìn thấy nó.</p>
+      <p>Tôi đã tìm kiếm trong nhiều năm, trích từ truyền thống và triết lý này đến truyền thống và triết lý khác, và những gì tôi đã tìm kiếm đã ở ngay trước mắt tôi!</p>
+    </article>
+
+    <div class="example">
+      <span class="lbl">Ví dụ giúp dễ hình dung</span>
+      <p>Hình ảnh tác giả dùng ở đây là hình ảnh của <strong>đôi mắt</strong>: những gì bà đọc và học trong mười năm đều đã chứa đựng sự thật, nhưng lúc đó bà &ldquo;không có mắt để nhìn thấy nó&rdquo;. Điều thay đổi không phải là tài liệu, mà là khả năng nhìn thấy.</p>
+      <div class="flow-grid" style="margin-top:14px">
+        <div class="fstep"><span class="k">Trước khám phá</span><span class="v">Đọc rất nhiều · Sự thật đã có sẵn trong đó · Không nhìn thấy</span></div>
+        <div class="farrow">→</div>
+        <div class="fstep"><span class="k">Sau khám phá</span><span class="v">Cùng những tài liệu ấy · Nhìn thấy sự thật ở khắp mọi nơi</span></div>
+      </div>
+    </div>
+
+    <div class="pause">
+      <span class="lbl">Dừng lại 30 giây</span>
+      <p>Tác giả nói điều bà tìm kiếm &ldquo;đã ở ngay trước mắt&rdquo; suốt mười năm. Hãy để câu đó lắng lại một chút trước khi đọc tiếp.</p>
+    </div>
+
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+  <!-- PHẦN 6 -->
+  <section id="p6">
+    <div class="sec-head"><div class="badge">06</div>
+      <h2>Từ ý định chia sẻ đến thư mục &ldquo;Cuốn sách tiếp theo của tôi&rdquo;</h2></div>
+    <p class="willlearn"><b>Bạn sẽ hiểu gì ở phần này?</b><br>Điều tác giả quyết định làm ngay sau khám phá, hy vọng của bà, và cuốn sách này đã hình thành ra sao.</p>
+
+    <article class="body-card">
+      <p>Ngay từ khoảnh khắc tôi khám phá ra điều đó, tôi biết rằng không có gì quan trọng hơn việc hiểu rõ hơn về khám phá này, sống trọn vẹn với nó, rồi chia sẻ nó với thế giới.</p>
+      <p>Hy vọng của tôi là chỉ ra lối thoát cho những người đang gặp khó khăn, giúp chấm dứt nỗi đau và sự đau khổ mà rất nhiều người đang phải chịu đựng, và soi sáng cho một tương lai mà chúng ta có thể sống mà không lo lắng hay sợ hãi.</p>
+      <p>Tôi đã ghi chép mọi thứ tôi học được vào một thư mục trên máy tính có tên là &ldquo;Cuốn sách tiếp theo của tôi&rdquo;. Chính trực giác đã truyền cảm hứng cho tôi ghi lại mọi thứ tôi khám phá được, với hy vọng rằng cuối cùng tôi có thể chia sẻ chúng với thế giới. <mark>Những ghi chép quý giá đó, khi tôi hoàn thành việc đối chiếu chúng, đã trở thành nền tảng cho cuốn sách này.</mark></p>
+    </article>
+
+    <div class="concept">
+      <span class="lbl">Khái niệm cốt lõi</span>
+      <h4>Ba bước tác giả tự đặt ra cho mình</h4>
+      <dl>
+        <dt>Tác giả dùng khái niệm này thế nào trong chương</dt>
+        <dd>Ngay sau khám phá, bà nói không có gì quan trọng hơn: (1) hiểu rõ hơn về khám phá này, (2) sống trọn vẹn với nó, (3) chia sẻ nó với thế giới.</dd>
+        <dt>Ý nghĩa trong mạch lập luận</dt>
+        <dd>Ba bước này giải thích vì sao cuốn sách tồn tại, và cũng là trình tự mà bà mô tả cho chính hành trình của mình ở các phần sau.</dd>
+        <dt>Lưu ý để tránh hiểu sai</dt>
+        <dd>Đây là điều tác giả kể về bản thân mình trong đoạn này; trong phần mở đầu, bà không trình bày ba bước đó như một bài tập dành cho người đọc.</dd>
+      </dl>
+    </div>
+
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+  <!-- PHẦN 7 -->
+  <section id="p7">
+    <div class="sec-head"><div class="badge">07</div>
+      <h2>Người thầy giấu tên và những người thầy khác</h2></div>
+    <p class="willlearn"><b>Bạn sẽ hiểu gì ở phần này?</b><br>Cuộc gặp hai tháng sau khám phá, người thầy của tác giả là ai, và vai trò của những người thầy trong cuốn sách.</p>
+
+    <article class="body-card">
+      <p>Chỉ hai tháng sau khi khám phá ra sự thật thông qua David Bingham, tôi đã gặp một người khác có ảnh hưởng to lớn đến cuộc đời tôi và đến việc tạo ra cuốn sách này.</p>
+      <p>Cô ấy bước vào một căn phòng nơi tôi đang ở trong một buổi tĩnh tâm, và khi tôi bước đến để nói chuyện với cô ấy, <mark>sự hiện diện của cô ấy đã có tác động sâu sắc đến tôi đến nỗi mọi dấu vết tiêu cực trong toàn bộ cuộc sống của tôi đều biến mất ngay lập tức!</mark></p>
+      <p>Cô ấy từng là học trò của một trong những người thầy mà tôi yêu thích nhất mọi thời đại, cố Robert Adams. Tôi biết ngay rằng cô ấy chính là giáo viên của tôi, người sẽ giúp tôi nhận ra và sống trọn vẹn với sự thật trong kiếp này, và cô ấy vẫn là giáo viên của tôi trong bốn năm qua.</p>
+      <p>Những lời dạy của cô ấy rất thẳng thắn, giản dị và tuyệt đẹp, và cô ấy không bao giờ ngần ngại chỉ ra cho tôi biết nếu tôi đi sai hướng.</p>
+      <p>Mặc dù tên cô vẫn được giấu theo yêu cầu của cô, tôi đã chia sẻ nhiều bài học thay đổi cuộc đời của cô đã đưa cuộc sống của tôi đến với niềm vui và hạnh phúc liên tục. Mong muốn sâu sắc nhất của tôi là họ cũng sẽ làm như vậy với bạn.</p>
+      <p>Cô, cùng với những người thầy khác được giới thiệu trong cuốn sách này, đã giúp tôi thoát khỏi bóng tối của sự thiếu hiểu biết bằng cách làm sáng tỏ khám phá này. Mỗi người trong số họ đã giúp tôi hiểu sâu sắc hơn về chân lý mà tôi đã khám phá ra và sống trọn vẹn hơn với chân lý đó, và tình yêu mà tôi dành cho họ là vô hạn. Những lời nói của họ đã thay đổi cuộc đời tôi mãi mãi được nêu trong cuốn sách này.</p>
+    </article>
+
+    <div class="hint">
+      <span class="lbl">Gợi ý để dễ hiểu</span>
+      <p>Trong đoạn này, tác giả phân biệt hai vai trò: David Bingham là người đã chỉ cho bà thấy khám phá, còn người phụ nữ giấu tên là <em>giáo viên</em> đồng hành lâu dài giúp bà nhận ra và sống trọn vẹn với sự thật. Cả hai đều được bà nhắc tới trong cuốn sách.</p>
+    </div>
+
+    <div class="flow">
+      <span class="lbl">Mạch lập luận &middot; Phần 05–07</span>
+      <div class="flow-grid">
+        <div class="fstep"><span class="k">Nhận định ban đầu</span><span class="v">Khám phá là đơn giản, và là điều mọi người đang tìm kiếm dù có nhận ra hay không.</span></div>
+        <div class="farrow">→</div>
+        <div class="fstep"><span class="k">Giải thích</span><span class="v">Sau khi thấy nó, bà thấy nó ở khắp mọi nơi trong mọi thứ đã đọc suốt mười năm.</span></div>
+        <div class="farrow">→</div>
+        <div class="fstep"><span class="k">Diễn tiến</span><span class="v">Bà ghi chép mọi điều học được vào thư mục &ldquo;Cuốn sách tiếp theo của tôi&rdquo;; hai tháng sau bà gặp người thầy của mình.</span></div>
+        <div class="farrow">→</div>
+        <div class="fstep"><span class="k">Kết luận</span><span class="v">Những ghi chép ấy trở thành nền tảng của cuốn sách, và lời của những người thầy được nêu trong sách.</span></div>
+      </div>
+    </div>
+
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+  <!-- PHẦN 8 -->
+  <section id="p8">
+    <div class="sec-head"><div class="badge">08</div>
+      <h2>Cuốn sách này hứa hẹn điều gì với bạn</h2></div>
+    <p class="willlearn"><b>Bạn sẽ hiểu gì ở phần này?</b><br>Những gì tác giả nói người đọc sẽ nhận được khi đi qua từng bước của cuốn sách, và vai trò của các bài tập.</p>
+
+    <article class="body-card">
+      <p>Với mỗi bước bạn thực hiện trong cuốn sách này, bạn sẽ trở nên hạnh phúc hơn và cuộc sống của bạn sẽ trở nên dễ dàng hơn, và <mark>hạnh phúc và sự dễ dàng đó sẽ tiếp tục tăng lên mà không có hồi kết.</mark></p>
+      <p>Mọi nỗi sợ hãi và sự không chắc chắn về tương lai sẽ không còn làm phiền bạn nữa. Mọi lo lắng và căng thẳng về những cuộc đấu tranh hàng ngày hoặc các sự kiện thế giới của bạn sẽ tan biến.</p>
+      <p>Bạn có thể thoát khỏi mọi hình thức đau khổ mà bạn có thể đang trải qua ngay bây giờ. Và bạn sẽ làm được.</p>
+      <p>Mặc dù chắc chắn có một số tiết lộ lớn trong những trang này, nhưng cũng có nhiều bài tập đơn giản để đưa những tiết lộ đó vào thực tế ngay lập tức.</p>
+      <p>Chỉ riêng các bài tập đã đáng giá ngàn vàng. Tôi biết. Tôi là bằng chứng sống cho thấy chúng hiệu quả như thế nào.</p>
+    </article>
+
+    <div class="practice">
+      <span class="lbl">Thực hành từ sách</span>
+      <p><strong>Trong phần &ldquo;Sự khởi đầu&rdquo; này, tác giả chưa đưa ra bài thực hành nào.</strong> Bà chỉ báo trước rằng cuốn sách có &ldquo;nhiều bài tập đơn giản để đưa những tiết lộ đó vào thực tế ngay lập tức&rdquo;, và khẳng định: &ldquo;Chỉ riêng các bài tập đã đáng giá ngàn vàng. Tôi biết. Tôi là bằng chứng sống cho thấy chúng hiệu quả như thế nào.&rdquo;</p>
+      <p>Khung ghi chú bên dưới dành cho bạn nếu muốn ghi lại điều mình mang theo từ phần mở đầu. Đây là công cụ của biên tập viên, không phải bài tập của tác giả.</p>
+      <div class="notepad">
+        <span class="nl">Ghi chú của bạn (in ra để viết tay)</span>
+        <div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div>
+      </div>
+    </div>
+
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+  <!-- PHẦN 9 -->
+  <section id="p9">
+    <div class="sec-head"><div class="badge">09</div>
+      <h2><em>Bí mật</em> và <em>Bí mật vĩ đại nhất</em></h2></div>
+    <p class="willlearn"><b>Bạn sẽ hiểu gì ở phần này?</b><br>Tác giả đặt cuốn sách mới bên cạnh <em>Bí mật</em> như thế nào, và lời chào đón khép lại phần mở đầu.</p>
+
+    <article class="body-card">
+      <p><em>Bí mật</em> đã chỉ cho bạn cách tạo ra bất cứ điều gì bạn muốn trở thành, làm hoặc có. Không có gì thay đổi, nó vẫn đúng cho đến ngày nay như trước đây.</p>
+      <p><mark>Cuốn sách này tiết lộ khám phá vĩ đại nhất mà con người có thể thực hiện và chỉ cho bạn cách thoát khỏi sự tiêu cực, vấn đề và những gì bạn không muốn, để có được cuộc sống hạnh phúc và an lạc vĩnh cửu.</mark></p>
+      <p>Không có gì tuyệt vời hơn thế này.</p>
+      <p>Tôi rất vui mừng được chào đón bạn đến với <em>Bí mật vĩ đại nhất</em>.</p>
+    </article>
+
+    <div class="concept">
+      <span class="lbl">Khái niệm cốt lõi</span>
+      <h4>Sự khác nhau giữa hai cuốn sách, theo tác giả</h4>
+      <dl>
+        <dt><em>Bí mật</em></dt>
+        <dd>Chỉ cho bạn cách tạo ra bất cứ điều gì bạn muốn trở thành, làm hoặc có. Tác giả nói rõ: không có gì thay đổi, nó vẫn đúng cho đến ngày nay như trước đây.</dd>
+        <dt><em>Bí mật vĩ đại nhất</em></dt>
+        <dd>Tiết lộ khám phá vĩ đại nhất mà con người có thể thực hiện, và chỉ cách thoát khỏi sự tiêu cực, vấn đề và những gì bạn không muốn, để có cuộc sống hạnh phúc và an lạc vĩnh cửu.</dd>
+        <dt>Lưu ý để tránh hiểu sai</dt>
+        <dd>Trong đoạn này tác giả không nói cuốn sách mới thay thế hay phủ nhận <em>Bí mật</em>; bà khẳng định <em>Bí mật</em> vẫn đúng.</dd>
+      </dl>
+    </div>
+
+    <div class="flow">
+      <span class="lbl">Mạch lập luận &middot; Phần 08–09</span>
+      <div class="flow-grid">
+        <div class="fstep"><span class="k">Nhận định ban đầu</span><span class="v">Mỗi bước trong sách làm bạn hạnh phúc hơn và cuộc sống dễ dàng hơn, tăng lên không hồi kết.</span></div>
+        <div class="farrow">→</div>
+        <div class="fstep"><span class="k">Giải thích</span><span class="v">Sợ hãi, lo lắng, căng thẳng tan biến; bạn có thể thoát khỏi mọi hình thức đau khổ.</span></div>
+        <div class="farrow">→</div>
+        <div class="fstep"><span class="k">Bằng chứng theo tác giả</span><span class="v">Ngoài các tiết lộ còn có nhiều bài tập đơn giản; bà nói mình là bằng chứng sống cho hiệu quả của chúng.</span></div>
+        <div class="farrow">→</div>
+        <div class="fstep"><span class="k">Kết luận</span><span class="v"><em>Bí mật</em> vẫn đúng; cuốn sách này tiết lộ khám phá vĩ đại nhất và lối ra khỏi tiêu cực, hướng tới hạnh phúc và an lạc vĩnh cửu.</span></div>
+      </div>
+    </div>
+
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+  <!-- K. TÓM TẮT GỐC -->
+  <section id="tom-tat-goc">
+    <div class="sec-head"><div class="badge">★</div><h2>Tóm tắt gốc của chương</h2></div>
+    <div class="box origsum">
+      <span class="tag">Tóm tắt gốc của chương</span>
+      <p><strong>Phần nguồn &ldquo;Sự khởi đầu&rdquo; không có mục &ldquo;Tóm tắt chương&rdquo; do tác giả viết.</strong> Vì vậy không có nội dung nào được đặt ở đây. Theo nguyên tắc trung thành với nguồn, biên tập viên không tạo một bản tóm tắt rồi trình bày như tóm tắt của tác giả.</p>
+      <p>Nếu bản gốc đầy đủ của phần này có mục tóm tắt mà bản nguồn được cung cấp bị thiếu, cần bổ sung vào đây khi đối chiếu.</p>
+    </div>
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+  <!-- L. BẢN ĐỒ GHI NHỚ -->
+  <section id="ban-do-ghi-nho">
+    <div class="sec-head"><div class="badge">★</div><h2>Bản đồ ghi nhớ cuối chương</h2></div>
+    <div class="box recall">
+      <span class="tag" style="background:var(--blue-l); color:var(--blue)">Bản đồ ghi nhớ do biên tập viên tạo</span>
+      <p style="font-family:var(--ui); font-size:14.5px; color:var(--ink2); margin-top:4px">Đây chỉ là công cụ ôn tập dựa hoàn toàn trên nội dung phần này, không thay thế nội dung của tác giả.</p>
+
+      <h3>Ý cốt lõi</h3>
+      <ul class="dia">
+        <li>Sau <em>Bí mật</em> (2006), cuộc sống của Rhonda Byrne trở thành &ldquo;cuộc sống trong mơ&rdquo;, nhưng vẫn có điều gì đó thúc đẩy bà tìm kiếm nhiều sự thật hơn.</li>
+        <li>Cuộc tìm kiếm kéo dài mười năm, qua các truyền thống cổ xưa và những người thầy gần đây, nhưng không điều nào khiến bà cảm thấy đã tìm thấy sự thật.</li>
+        <li>Đầu tháng 1 năm 2016, một tình huống đầy thử thách gây thất vọng sâu sắc — và trở thành món quà tuyệt vời nhất trong hành trình của bà.</li>
+        <li>Qua David Bingham và câu &ldquo;Hãy nhìn vào thứ tôi đang chỉ. Nó ở ngay đây&rdquo;, bà nhìn thấy điều mình tìm kiếm; cuộc tìm kiếm kết thúc.</li>
+        <li>Khám phá ấy rất đơn giản — và theo điều bà nghe được, chính vì quá đơn giản nên hầu hết mọi người bỏ qua nó.</li>
+        <li>Sau khi thấy nó, bà thấy nó ở khắp mọi nơi trong mọi thứ đã đọc suốt mười năm; trước đó bà &ldquo;không có mắt để nhìn thấy nó&rdquo;.</li>
+        <li>Những ghi chép trong thư mục &ldquo;Cuốn sách tiếp theo của tôi&rdquo; trở thành nền tảng của cuốn sách này.</li>
+        <li>Hai tháng sau, bà gặp người thầy giấu tên — học trò của cố Robert Adams — người đã đồng hành với bà bốn năm.</li>
+        <li><em>Bí mật</em> vẫn đúng; cuốn sách này tiết lộ khám phá vĩ đại nhất và lối thoát khỏi tiêu cực, hướng tới hạnh phúc và an lạc vĩnh cửu.</li>
+      </ul>
+
+      <h3>Khái niệm cần nhớ</h3>
+      <ul class="dia">
+        <li><strong>Việc tìm kiếm</strong> — hành trình mười năm đi tìm sự thật ở bên ngoài.</li>
+        <li><strong>Khám phá &ldquo;ở ngay đây&rdquo;</strong> — đơn giản, gần, và bị bỏ qua vì quá đơn giản.</li>
+        <li><strong>Ba bước của tác giả</strong> — hiểu rõ hơn, sống trọn vẹn, chia sẻ với thế giới.</li>
+        <li><strong>Người thầy</strong> — David Bingham chỉ ra khám phá; người thầy giấu tên đồng hành lâu dài.</li>
+        <li><strong>Bí mật vĩ đại nhất so với Bí mật</strong> — không thay thế, mà tiết lộ khám phá vĩ đại nhất và lối ra khỏi tiêu cực.</li>
+      </ul>
+
+      <h3>Bài thực hành xuất hiện trong phần này</h3>
+      <ul class="dia">
+        <li>Không có bài thực hành nào trong phần &ldquo;Sự khởi đầu&rdquo;. Tác giả chỉ báo trước rằng cuốn sách có nhiều bài tập đơn giản để đưa các tiết lộ vào thực tế ngay lập tức.</li>
+      </ul>
+
+      <h3>Chuỗi logic của phần này</h3>
+      <div class="chain">
+        <span>Cuộc sống trong mơ sau <em>Bí mật</em></span><i>→</i>
+        <span>Vẫn thôi thúc tìm kiếm</span><i>→</i>
+        <span>Mười năm nghiên cứu</span><i>→</i>
+        <span>Thất vọng tháng 1/2016</span><i>→</i>
+        <span>&ldquo;Nó ở ngay đây&rdquo;</span><i>→</i>
+        <span>Thấy nó ở khắp mọi nơi</span><i>→</i>
+        <span>Ghi chép &amp; những người thầy</span><i>→</i>
+        <span>Cuốn sách này &amp; lời hứa với bạn</span>
+      </div>
+    </div>
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+  <!-- M. KIỂM TRA ĐỘ TRUNG THÀNH -->
+
+</main>
+<nav class="pager" aria-label="Chuyển phần">
+  <span class="off prev"><span class="k">← Phần trước</span>Chưa có nội dung</span>
+  <a class="home" href="index.html"><span class="k">Mục lục</span>Toàn bộ cuốn sách</a>
+  <a class="next" href="01-an-hien.html"><span class="k">Phần sau →</span>Chương 01 — Ẩn hiện</a>
+</nav>
+<footer class="pagefoot"><p><strong>Bí mật vĩ đại nhất</strong> — Rhonda Byrne<br>Bản trình bày lại phục vụ việc đọc và ôn tập. Bản quyền nội dung thuộc về tác giả và nhà xuất bản.</p></footer>
+</div>
+<script>
+(function(){
+  var bar=document.getElementById('progress');
+  if(bar){function u(){var h=document.documentElement,m=h.scrollHeight-h.clientHeight;
+    bar.style.width=(m>0?(h.scrollTop||document.body.scrollTop)/m*100:0).toFixed(2)+'%';}
+    addEventListener('scroll',u,{passive:true});addEventListener('resize',u);u();}
+  var root=document.documentElement,b=document.getElementById('themeBtn');
+  function set(d){root.setAttribute('data-theme',d?'dark':'light');
+    b.textContent=d?'Chế độ sáng':'Chế độ đọc tối';b.setAttribute('aria-pressed',d?'true':'false');
+    try{localStorage.setItem('bmvdn-theme',d?'dark':'light')}catch(e){}}
+  var saved='light';try{saved=localStorage.getItem('bmvdn-theme')||'light'}catch(e){}
+  set(saved==='dark');
+  b.addEventListener('click',function(){set(root.getAttribute('data-theme')!=='dark')});
+  var p=document.getElementById('printBtn'); if(p)p.addEventListener('click',function(){print()});
+})();
+</script>
+</body>
+</html>

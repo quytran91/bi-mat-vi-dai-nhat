@@ -1,0 +1,1846 @@
+<!DOCTYPE html>
+<html lang="vi" class="chap" data-c="2">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Không còn đau khổ — Bí mật vĩ đại nhất | Rhonda Byrne</title>
+<style>/* ============================================================
+   BÍ MẬT VĨ ĐẠI NHẤT — ngôn ngữ thiết kế "màu mè"
+   8 màu luân phiên · bút dạ quang vàng cố định · emoji iPhone
+   ============================================================ */
+:root{
+  /* --- 8 màu chủ đề (hệ màu iOS) --- */
+  --c1:#FF3B30; --c1l:#FFE9E7; --c1b:#FFC7C2;   /* đỏ      */
+  --c2:#FF8A00; --c2l:#FFF1DF; --c2b:#FFD6A3;   /* cam     */
+  --c3:#E8A500; --c3l:#FFF8DC; --c3b:#FFE48A;   /* vàng    */
+  --c4:#28B446; --c4l:#E6F8EA; --c4b:#A8E6B6;   /* xanh lá */
+  --c5:#00B3A6; --c5l:#DFF7F5; --c5b:#95E3DD;   /* xanh ngọc */
+  --c6:#0A84FF; --c6l:#E4F0FF; --c6b:#AED3FF;   /* xanh dương */
+  --c7:#9B51E0; --c7l:#F3E9FD; --c7b:#D9BCF5;   /* tím     */
+  --c8:#FF2D78; --c8l:#FFE7EF; --c8b:#FFBDD3;   /* hồng    */
+
+  /* --- màu nhấn của trang (build gán qua data-c) --- */
+  --ac:var(--c6); --acl:var(--c6l); --acb:var(--c6b);
+
+  /* --- bút dạ quang: CỐ ĐỊNH, không đổi theo chương --- */
+  --hl1:#FFE600; --hl2:#FFD400; --hl-ink:#2B2200;
+
+  /* --- nền, chữ, khung --- */
+  --bg:#FBF9FF; --card:#FFFFFF; --soft:#F4F3FA;
+  --ink:#1C1B2E; --ink2:#67657F; --ink3:#9A98AE;
+  --rule:#E8E6F2;
+  --r:24px; --r2:16px; --r3:999px;
+  --sh:0 1px 2px rgba(28,27,46,.04), 0 10px 30px rgba(28,27,46,.07);
+  --sh2:0 2px 6px rgba(28,27,46,.06), 0 18px 48px rgba(28,27,46,.10);
+
+  /* --- font: emoji Apple đứng đầu mọi stack --- */
+  --emo:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji","Twemoji Mozilla",sans-serif;
+  --ui:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,"Noto Sans",Arial,
+       "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif;
+  --serif:"Times New Roman",Tinos,"Liberation Serif","Noto Serif",Times,serif;
+
+  --fs:18px;
+}
+html[data-theme="dark"]{
+  --c1:#FF6961; --c1l:#3A1E1C; --c1b:#5E2E29;
+  --c2:#FFA64D; --c2l:#3A2A14; --c2b:#5E4320;
+  --c3:#FFD24D; --c3l:#3A3316; --c3b:#5E5122;
+  --c4:#52DD6E; --c4l:#15311C; --c4b:#24512F;
+  --c5:#35D6C8; --c5l:#10322F; --c5b:#1D524D;
+  --c6:#4DA3FF; --c6l:#132B44; --c6b:#1E466F;
+  --c7:#C185F5; --c7l:#2A1A3C; --c7b:#452C61;
+  --c8:#FF6AA0; --c8l:#3B1727; --c8b:#5F2641;
+  --bg:#0F0E17; --card:#1A1927; --soft:#232232;
+  --ink:#F2F0FF; --ink2:#A9A6C4; --ink3:#7D7A99;
+  --rule:#2E2C42;
+  --sh:0 1px 2px rgba(0,0,0,.4), 0 10px 30px rgba(0,0,0,.35);
+  --sh2:0 2px 6px rgba(0,0,0,.45), 0 18px 48px rgba(0,0,0,.45);
+}
+
+/* --- bảng gán màu nhấn theo chương --- */
+html[data-c="1"]{--ac:var(--c1);--acl:var(--c1l);--acb:var(--c1b)}
+html[data-c="2"]{--ac:var(--c2);--acl:var(--c2l);--acb:var(--c2b)}
+html[data-c="3"]{--ac:var(--c3);--acl:var(--c3l);--acb:var(--c3b)}
+html[data-c="4"]{--ac:var(--c4);--acl:var(--c4l);--acb:var(--c4b)}
+html[data-c="5"]{--ac:var(--c5);--acl:var(--c5l);--acb:var(--c5b)}
+html[data-c="6"]{--ac:var(--c6);--acl:var(--c6l);--acb:var(--c6b)}
+html[data-c="7"]{--ac:var(--c7);--acl:var(--c7l);--acb:var(--c7b)}
+html[data-c="8"]{--ac:var(--c8);--acl:var(--c8l);--acb:var(--c8b)}
+
+/* --- bí danh cho SVG trong nội dung (giữ nguyên tên biến cũ) --- */
+:root,html[data-theme="dark"]{
+  --gold:var(--c3); --gold-l:var(--c3l);
+  --green:var(--c4); --green-l:var(--c4l);
+  --blue:var(--c6); --blue-l:var(--c6l);
+  --purple:var(--c7); --purple-l:var(--c7l);
+  --red:var(--c1); --red-l:var(--c1l);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:84px; -webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:var(--ui); font-size:var(--fs); line-height:1.75;
+  text-rendering:optimizeLegibility; overflow-x:hidden;
+}
+html[data-fs="l"]{--fs:20px}
+html[data-fs="xl"]{--fs:22px}
+p{margin:0 0 1.1em}
+a{color:var(--ac)}
+.wrap{max-width:860px; margin:0 auto; padding:0 20px}
+::selection{background:var(--hl1); color:var(--hl-ink)}
+
+/* ---------- nền nhiều màu + blob trôi ---------- */
+body::before{
+  content:""; position:fixed; inset:0; z-index:-2; pointer-events:none;
+  background:
+    radial-gradient(900px 600px at 8% -5%,  rgba(10,132,255,.10), transparent 60%),
+    radial-gradient(800px 600px at 95% 5%,  rgba(255,45,120,.09), transparent 60%),
+    radial-gradient(900px 700px at 50% 108%,rgba(155,81,224,.10), transparent 60%),
+    radial-gradient(700px 500px at -5% 70%, rgba(0,179,166,.09), transparent 60%);
+}
+#blobs{position:fixed; inset:0; z-index:-1; pointer-events:none; overflow:hidden; filter:blur(60px); opacity:.5}
+html[data-theme="dark"] #blobs{opacity:.34}
+#blobs i{position:absolute; display:block; border-radius:50%}
+#blobs i:nth-child(1){width:46vmin;height:46vmin;left:-8vmin;top:4vmin;  background:var(--c6); animation:drift1 34s ease-in-out infinite}
+#blobs i:nth-child(2){width:38vmin;height:38vmin;right:-6vmin;top:18vmin;background:var(--c8); animation:drift2 41s ease-in-out infinite}
+#blobs i:nth-child(3){width:42vmin;height:42vmin;left:24vmin;bottom:-12vmin;background:var(--c7); animation:drift3 47s ease-in-out infinite}
+#blobs i:nth-child(4){width:30vmin;height:30vmin;right:14vmin;bottom:4vmin; background:var(--c5); animation:drift1 39s ease-in-out infinite reverse}
+#blobs i:nth-child(5){width:26vmin;height:26vmin;left:52vmin;top:-8vmin;   background:var(--c3); animation:drift2 44s ease-in-out infinite}
+@keyframes drift1{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(8vmin,6vmin) scale(1.12)}66%{transform:translate(-5vmin,10vmin) scale(.94)}}
+@keyframes drift2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-9vmin,8vmin) scale(1.15)}}
+@keyframes drift3{0%,100%{transform:translate(0,0) scale(1)}40%{transform:translate(7vmin,-7vmin) scale(.9)}75%{transform:translate(-6vmin,4vmin) scale(1.08)}}
+
+/* ---------- thanh tiến độ + toolbar ---------- */
+#progress{position:fixed; top:0; left:0; height:4px; width:0%; z-index:70;
+  background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3),var(--c4),var(--c5),var(--c6),var(--c7),var(--c8));
+  border-radius:0 4px 4px 0}
+#toolbar{position:sticky; top:0; z-index:60; backdrop-filter:saturate(180%) blur(14px);
+  background:color-mix(in srgb,var(--bg) 78%, transparent); border-bottom:1px solid var(--rule)}
+#toolbar .wrap{display:flex; gap:8px; flex-wrap:wrap; align-items:center; padding:10px 20px}
+#toolbar .tb-title{font-size:12.5px; font-weight:800; letter-spacing:.04em; color:var(--ink2);
+  margin-right:auto; display:flex; align-items:center; gap:7px}
+#toolbar .tb-title::before{content:"📘"; font-family:var(--emo); font-size:15px}
+.btn{font:inherit; font-size:13px; font-weight:650; line-height:1.2; padding:9px 15px; cursor:pointer;
+  background:var(--card); color:var(--ink); border:1.5px solid var(--rule); border-radius:var(--r3);
+  text-decoration:none; display:inline-flex; align-items:center; gap:6px;
+  transition:transform .16s, border-color .16s, box-shadow .16s}
+.btn:hover{transform:translateY(-2px); border-color:var(--ac); box-shadow:0 6px 18px color-mix(in srgb,var(--ac) 26%, transparent)}
+#toolbar a.btn[href="index.html"]::before{content:"🗂️"; font-family:var(--emo)}
+#toolbar a.btn[href="#top"]::before{content:"⬆️"; font-family:var(--emo)}
+#themeBtn::before{content:"🌙"; font-family:var(--emo)}
+html[data-theme="dark"] #themeBtn::before{content:"☀️"}
+#printBtn::before{content:"🖨️"; font-family:var(--emo)}
+a:focus-visible,.btn:focus-visible,summary:focus-visible,[tabindex]:focus-visible{
+  outline:3px solid var(--ac); outline-offset:3px; border-radius:8px}
+
+/* ---------- HERO ---------- */
+header.book{
+  position:relative; overflow:hidden; text-align:center;
+  padding:66px 0 60px; margin-bottom:8px; color:#fff;
+  background:linear-gradient(115deg,#FF3B30,#FF8A00,#E8A500,#28B446,#00B3A6,#0A84FF,#9B51E0,#FF2D78);
+  background-size:300% 300%; animation:heroShift 26s ease infinite;
+}
+@keyframes heroShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+header.book::after{content:""; position:absolute; inset:0;
+  background:radial-gradient(120% 90% at 50% 120%, rgba(0,0,0,.34), transparent 70%)}
+header.book > .wrap{position:relative; z-index:2}
+header.book .kicker{display:inline-flex; align-items:center; gap:8px; margin:0 0 20px;
+  font-size:12px; font-weight:800; letter-spacing:.14em; text-transform:uppercase;
+  background:rgba(255,255,255,.22); border:1px solid rgba(255,255,255,.4);
+  padding:7px 16px; border-radius:var(--r3); backdrop-filter:blur(6px)}
+header.book .kicker::before{content:"🎨"; font-family:var(--emo); font-size:14px}
+header.book h1{margin:0; font-size:clamp(34px,7.6vw,68px); line-height:1.08; font-weight:850;
+  letter-spacing:-.02em; text-shadow:0 4px 26px rgba(0,0,0,.3)}
+header.book .chapno{display:inline-block; margin:0 0 14px; font-size:13px; font-weight:800;
+  letter-spacing:.2em; text-transform:uppercase; background:rgba(255,255,255,.95);
+  color:#1C1B2E; padding:6px 18px; border-radius:var(--r3)}
+header.book .sub{max-width:620px; margin:20px auto 0; font-size:17.5px; line-height:1.7;
+  color:rgba(255,255,255,.95); font-style:normal}
+header.book .author{display:inline-flex; align-items:center; gap:8px; margin-top:26px;
+  font-size:13px; font-weight:750; letter-spacing:.1em; text-transform:uppercase;
+  color:#fff; background:rgba(0,0,0,.22); padding:8px 18px; border-radius:var(--r3)}
+header.book .author::before{content:"✍️"; font-family:var(--emo); font-size:14px}
+.rule-orn{display:flex; align-items:center; justify-content:center; gap:10px; margin:24px auto 0; max-width:300px}
+.rule-orn span{height:3px; flex:1; border-radius:3px; background:linear-gradient(90deg,transparent,#fff)}
+.rule-orn span:last-child{background:linear-gradient(90deg,#fff,transparent)}
+.rule-orn b{font-size:0; width:auto}
+.rule-orn b::after{content:"✨"; font-family:var(--emo); font-size:20px; display:block;
+  animation:twinkle 3.6s ease-in-out infinite}
+@keyframes twinkle{0%,100%{transform:scale(1) rotate(0)}50%{transform:scale(1.28) rotate(16deg)}}
+/* emoji trang trí bay lơ lửng */
+header.book .wrap::before,header.book .wrap::after{
+  font-family:var(--emo); position:absolute; font-size:36px; opacity:.85; pointer-events:none}
+header.book .wrap::before{content:"🔑"; left:2%;  top:6%;  animation:float1 9s ease-in-out infinite}
+header.book .wrap::after {content:"💡"; right:3%; bottom:4%; animation:float2 11s ease-in-out infinite}
+@keyframes float1{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-16px) rotate(8deg)}}
+@keyframes float2{0%,100%{transform:translateY(0) rotate(6deg)}50%{transform:translateY(-20px) rotate(-10deg)}}
+@media (max-width:700px){header.book .wrap::before,header.book .wrap::after{font-size:26px; opacity:.6}}
+
+/* ---------- nhãn pill ---------- */
+.tag{display:inline-flex; align-items:center; gap:7px; font-size:11.5px; font-weight:800;
+  letter-spacing:.12em; text-transform:uppercase; padding:6px 14px; border-radius:var(--r3);
+  background:var(--acl); color:var(--ac); border:1.5px solid var(--acb); margin-bottom:12px}
+
+/* ---------- khối giới thiệu trang mục lục ---------- */
+.hub-intro{position:relative; overflow:hidden; background:var(--card); border:1.5px solid var(--rule);
+  border-radius:var(--r); padding:30px 30px 26px; margin:30px 0 40px; box-shadow:var(--sh)}
+.hub-intro::before{content:""; position:absolute; left:0; right:0; top:0; height:6px;
+  background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3),var(--c4),var(--c5),var(--c6),var(--c7),var(--c8))}
+.hub-intro .tag::before{content:"📊"; font-family:var(--emo); font-size:13px}
+.hub-intro p:last-child{margin-bottom:0}
+.hub-intro p{font-size:16.5px; color:var(--ink2); line-height:1.75}
+.hub-intro p strong{color:var(--ink)}
+.hub-intro code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:.9em;
+  background:var(--soft); border:1px solid var(--rule); border-radius:8px; padding:2px 7px; color:var(--c7)}
+.meter{height:14px; border-radius:var(--r3); background:var(--soft); overflow:hidden;
+  margin:16px 0 10px; border:1px solid var(--rule)}
+.meter i{display:block; height:100%; border-radius:var(--r3); position:relative;
+  background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3),var(--c4),var(--c5),var(--c6),var(--c7),var(--c8));
+  background-size:200% 100%; animation:meterShift 8s linear infinite}
+@keyframes meterShift{0%{background-position:0 0}100%{background-position:200% 0}}
+.meter-lbl{font-size:15px; font-weight:650; color:var(--ink2); margin:0 0 4px}
+.meter-lbl::before{content:"🚀 "; font-family:var(--emo); font-size:16px}
+.meter-lbl strong{color:var(--ink); font-size:16px}
+
+/* ---------- nhóm phần ---------- */
+.group{margin:52px 0}
+.group > h2{display:inline-flex; align-items:center; gap:9px; margin:0 0 8px;
+  font-size:15px; font-weight:850; letter-spacing:.1em; text-transform:uppercase;
+  color:#fff; padding:9px 20px; border-radius:var(--r3); box-shadow:var(--sh)}
+.group:nth-of-type(1) > h2{background:linear-gradient(100deg,var(--c6),var(--c5))}
+.group:nth-of-type(2) > h2{background:linear-gradient(100deg,var(--c7),var(--c8))}
+.group:nth-of-type(3) > h2{background:linear-gradient(100deg,var(--c2),var(--c3))}
+.group:nth-of-type(1) > h2::before{content:"🌅"; font-family:var(--emo); font-size:17px}
+.group:nth-of-type(2) > h2::before{content:"📚"; font-family:var(--emo); font-size:17px}
+.group:nth-of-type(3) > h2::before{content:"🎁"; font-family:var(--emo); font-size:17px}
+.group > .gsub{font-size:15.5px; color:var(--ink2); margin:0 0 22px; max-width:640px}
+
+/* ---------- thẻ chương ---------- */
+.cards{display:grid; grid-template-columns:repeat(auto-fill,minmax(272px,1fr)); gap:18px}
+.card{position:relative; overflow:hidden; display:block; background:var(--card);
+  border:1.5px solid var(--rule); border-radius:var(--r); padding:26px 24px 22px;
+  text-decoration:none; color:var(--ink); box-shadow:var(--sh);
+  transition:transform .2s cubic-bezier(.2,.8,.3,1), box-shadow .2s, border-color .2s}
+.card::before{content:""; position:absolute; left:0; right:0; top:0; height:6px;
+  background:linear-gradient(90deg,var(--cc),color-mix(in srgb,var(--cc) 45%, #fff))}
+.card::after{content:attr(data-emo); font-family:var(--emo); position:absolute; right:18px; top:20px;
+  font-size:30px; line-height:1; transition:transform .25s}
+.card:hover{transform:translateY(-6px); border-color:var(--cc);
+  box-shadow:0 10px 20px color-mix(in srgb,var(--cc) 14%, transparent), 0 26px 56px color-mix(in srgb,var(--cc) 20%, transparent)}
+.card:hover::after{transform:scale(1.22) rotate(-10deg)}
+.card .num{display:block; font-size:12px; font-weight:850; letter-spacing:.14em;
+  text-transform:uppercase; margin:0 0 10px; color:var(--cc)}
+.card h3{margin:0 0 10px; font-size:21px; line-height:1.3; font-weight:800; letter-spacing:-.01em;
+  padding-right:44px}
+.card .sub{margin:0; font-size:14.8px; line-height:1.65; color:var(--ink2)}
+.card .status{display:inline-flex; align-items:center; gap:6px; margin-top:16px; font-size:11.5px;
+  font-weight:800; letter-spacing:.08em; text-transform:uppercase; padding:6px 13px;
+  border-radius:var(--r3); background:var(--c4l); color:var(--c4); border:1.5px solid var(--c4b)}
+.card .status::before{content:"✅"; font-family:var(--emo); font-size:12px}
+.card.off{opacity:.62; box-shadow:none; cursor:default; background:var(--soft)}
+.card.off::before{background:var(--rule)}
+.card.off::after{filter:grayscale(1); opacity:.5}
+.card.off:hover{transform:none; border-color:var(--rule); box-shadow:none}
+.card.off .num{color:var(--ink3)}
+.card.off .status{background:transparent; color:var(--ink3); border:1.5px dashed var(--rule)}
+.card.off .status::before{content:"🕓"}
+/* 8 màu luân phiên — build gán data-c cho từng thẻ */
+.card[data-c="1"]{--cc:var(--c1)} .card[data-c="2"]{--cc:var(--c2)}
+.card[data-c="3"]{--cc:var(--c3)} .card[data-c="4"]{--cc:var(--c4)}
+.card[data-c="5"]{--cc:var(--c5)} .card[data-c="6"]{--cc:var(--c6)}
+.card[data-c="7"]{--cc:var(--c7)} .card[data-c="8"]{--cc:var(--c8)}
+
+/* ---------- footer ---------- */
+footer.pagefoot{margin-top:60px; padding:30px 0 90px; text-align:center;
+  font-size:14px; color:var(--ink2); line-height:1.8; border-top:1.5px solid var(--rule)}
+footer.pagefoot strong{color:var(--ink)}
+footer.pagefoot p::before{content:"📘"; font-family:var(--emo); display:block; font-size:24px; margin-bottom:10px}
+
+/* ---------- nút nổi ---------- */
+#fabs{position:fixed; right:16px; bottom:16px; z-index:65; display:flex; flex-direction:column; gap:10px}
+#fabs button{width:50px; height:50px; border-radius:50%; cursor:pointer; border:1.5px solid var(--rule);
+  background:var(--card); box-shadow:var(--sh2); font-family:var(--emo); font-size:21px; line-height:1;
+  display:grid; place-items:center; transition:transform .18s, box-shadow .18s}
+#fabs button:hover{transform:translateY(-3px) scale(1.07)}
+#fabs button[aria-pressed="true"]{background:var(--acl); border-color:var(--ac)}
+#fabs .fab-top{opacity:0; pointer-events:none; transition:opacity .25s}
+#fabs .fab-top.on{opacity:1; pointer-events:auto}
+@media (max-width:560px){
+  #fabs{right:10px; bottom:10px; gap:8px}
+  #fabs button{width:42px;height:42px;font-size:17px}
+  header.book{padding:48px 0 44px}
+  header.book .kicker{font-size:10.5px; letter-spacing:.08em; padding:6px 12px}
+  header.book .author{font-size:11.5px}
+  .hub-intro{padding:24px 20px 22px}
+  .card{padding:22px 20px 20px}
+  .group > h2{font-size:13px; padding:8px 16px}
+}
+
+/* ---------- giảm chuyển động ---------- */
+html.still *, html.still *::before, html.still *::after{animation:none !important; transition:none !important}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none !important; transition:none !important}
+}
+
+/* ---------- hiện dần khi cuộn ---------- */
+html.js .rv{opacity:0; transform:translateY(16px)}
+html.js .rv.in{opacity:1; transform:none; transition:opacity .55s ease, transform .55s cubic-bezier(.2,.8,.3,1)}
+
+/* ---------- in ---------- */
+@media print{
+  :root{--bg:#fff;--card:#fff;--soft:#fff}
+  html,body{background:#fff !important; color:#000}
+  *{-webkit-print-color-adjust:exact; print-color-adjust:exact}
+  #toolbar,#progress,#fabs,#blobs,body::before{display:none !important}
+  header.book{background:#fff !important; color:#000; animation:none; border-bottom:4px solid var(--c7); padding:0 0 18pt}
+  header.book h1,header.book .sub,header.book .author,header.book .kicker{color:#000}
+  header.book::after{display:none}
+  .card,.hub-intro{break-inside:avoid; box-shadow:none}
+  @page{size:A4; margin:16mm 14mm}
+}
+
+/* ============================================================
+   TRANG CHƯƠNG
+   ============================================================ */
+/* màu hero theo chương: màu nhấn + 3 màu lân cận */
+html[data-c="1"]{--h1:var(--c1);--h2:var(--c2);--h3:var(--c8);--h4:var(--c7)}
+html[data-c="2"]{--h1:var(--c2);--h2:var(--c3);--h3:var(--c1);--h4:var(--c8)}
+html[data-c="3"]{--h1:var(--c3);--h2:var(--c2);--h3:var(--c8);--h4:var(--c1)}
+html[data-c="4"]{--h1:var(--c4);--h2:var(--c5);--h3:var(--c3);--h4:var(--c6)}
+html[data-c="5"]{--h1:var(--c5);--h2:var(--c6);--h3:var(--c4);--h4:var(--c7)}
+html[data-c="6"]{--h1:var(--c6);--h2:var(--c7);--h3:var(--c5);--h4:var(--c8)}
+html[data-c="7"]{--h1:var(--c7);--h2:var(--c8);--h3:var(--c6);--h4:var(--c2)}
+html[data-c="8"]{--h1:var(--c8);--h2:var(--c7);--h3:var(--c2);--h4:var(--c1)}
+html.chap header.book{
+  background:linear-gradient(120deg,var(--h1),var(--h2),var(--h3),var(--h4),var(--h1));
+  background-size:300% 300%}
+html.chap header.book .wrap::before{content:attr(data-e1)}
+html.chap header.book .wrap::after {content:attr(data-e2)}
+html.chap header.book h1{font-size:clamp(38px,8vw,76px)}
+header.book .chapno::before{content:"📖 "; font-family:var(--emo)}
+
+/* ô số liệu */
+.stats{display:grid; grid-template-columns:repeat(5,1fr); gap:12px; max-width:720px; margin:30px auto 0}
+.stat{background:rgba(255,255,255,.2); border:1px solid rgba(255,255,255,.42); border-radius:20px;
+  padding:14px 8px 12px; backdrop-filter:blur(8px); color:#fff; text-align:center;
+  transition:transform .2s}
+.stat:hover{transform:translateY(-4px) scale(1.04)}
+.stat .se{display:block; font-family:var(--emo); font-size:24px; line-height:1; margin-bottom:6px}
+.stat b{display:block; font-size:28px; font-weight:850; line-height:1.1; font-variant-numeric:tabular-nums}
+.stat small{display:block; font-size:11.5px; font-weight:700; letter-spacing:.04em; opacity:.95; margin-top:3px; line-height:1.35}
+@media (max-width:640px){.stats{grid-template-columns:repeat(3,1fr)} .stat:nth-child(n+4){grid-column:span 1}}
+@media (max-width:380px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+/* chỉ báo phần đang đọc trên toolbar */
+#nowsec{display:none; font-size:12.5px; font-weight:750; color:var(--ac); background:var(--acl);
+  border:1.5px solid var(--acb); padding:6px 12px; border-radius:var(--r3); max-width:340px;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+#nowsec.on{display:inline-block}
+#nowsec::before{content:"📍 "; font-family:var(--emo)}
+@media (max-width:820px){#nowsec{order:9; max-width:100%; flex-basis:100%}}
+
+/* ---------- mục lục dính bên trái ---------- */
+#rail{display:none}
+@media (min-width:1330px){
+  #rail{display:block; position:fixed; top:92px; left:max(14px, calc(50% - 430px - 290px)); width:262px;
+    max-height:calc(100vh - 116px); overflow:auto; z-index:40; padding:16px 12px 14px;
+    background:color-mix(in srgb,var(--card) 82%, transparent); backdrop-filter:blur(14px);
+    border:1.5px solid var(--rule); border-radius:var(--r); box-shadow:var(--sh);
+    opacity:0; transform:translateX(-12px); transition:opacity .3s, transform .3s; pointer-events:none}
+  #rail.on{opacity:1; transform:none; pointer-events:auto}
+}
+#rail .rt{font-size:11.5px; font-weight:850; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--ink2); margin:0 6px 10px}
+#rail .rt::before{content:"🧭 "; font-family:var(--emo)}
+#rail a{display:flex; gap:9px; align-items:flex-start; padding:7px 9px; border-radius:12px;
+  text-decoration:none; color:var(--ink2); font-size:13.2px; line-height:1.4; font-weight:600;
+  transition:background .2s, color .2s}
+#rail a .n{flex:0 0 auto; min-width:24px; height:24px; border-radius:8px; display:grid; place-items:center;
+  font-size:11px; font-weight:850; background:var(--soft); color:var(--ink2); transition:all .2s}
+#rail a:hover{background:var(--soft); color:var(--ink)}
+#rail a.act{background:color-mix(in srgb,var(--rc) 14%, transparent); color:var(--ink)}
+#rail a.act .n{background:var(--rc); color:#fff; transform:scale(1.08)}
+
+/* ---------- bản đồ chương ---------- */
+.box{position:relative; border-radius:var(--r); padding:28px 28px 24px; margin:30px 0;
+  background:var(--card); border:1.5px solid var(--rule); box-shadow:var(--sh)}
+.box.map::before,nav.toc::before{content:""; position:absolute; left:0; right:0; top:0; height:6px;
+  border-radius:var(--r) var(--r) 0 0;
+  background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3),var(--c4),var(--c5),var(--c6),var(--c7),var(--c8))}
+.map .tag::before{content:"🗺️"; font-family:var(--emo); font-size:13px}
+.map h2,nav.toc h2{font-size:24px; font-weight:850; letter-spacing:-.01em; margin:0 0 4px; line-height:1.3}
+.map .meta{font-size:14px; font-weight:650; color:var(--ink2); margin:0 0 18px}
+.map .meta::before{content:"⏱️ "; font-family:var(--emo)}
+.map .goal{background:linear-gradient(120deg,var(--c3l),var(--c2l)); border:1.5px solid var(--c3b);
+  border-radius:var(--r2); padding:16px 18px 16px 52px; margin:0 0 20px; font-size:16.5px; position:relative}
+.map .goal::before{content:"🎯"; font-family:var(--emo); position:absolute; left:16px; top:15px; font-size:22px}
+.stages{list-style:none; margin:0; padding:0; counter-reset:st; display:grid; gap:8px}
+.stages li{counter-increment:st; position:relative; padding:9px 12px 9px 52px; font-size:16px; line-height:1.6;
+  border-radius:14px; background:var(--soft); transition:transform .18s, background .18s}
+.stages li:hover{transform:translateX(5px); background:color-mix(in srgb,var(--sc) 12%, var(--soft))}
+.stages li::before{content:counter(st); position:absolute; left:10px; top:9px; width:30px; height:30px;
+  border-radius:10px; background:var(--sc); color:#fff; font-size:13px; font-weight:850;
+  display:grid; place-items:center; box-shadow:0 4px 12px color-mix(in srgb,var(--sc) 40%, transparent)}
+.stages li:nth-child(8n+1){--sc:var(--c1)} .stages li:nth-child(8n+2){--sc:var(--c2)}
+.stages li:nth-child(8n+3){--sc:var(--c3)} .stages li:nth-child(8n+4){--sc:var(--c4)}
+.stages li:nth-child(8n+5){--sc:var(--c5)} .stages li:nth-child(8n+6){--sc:var(--c6)}
+.stages li:nth-child(8n+7){--sc:var(--c7)} .stages li:nth-child(8n+8){--sc:var(--c8)}
+.howto{margin-top:20px; padding:14px 16px 14px 48px; border-radius:var(--r2); background:var(--soft);
+  font-size:14.5px; color:var(--ink2); line-height:1.7; position:relative}
+.howto::before{content:"👀"; font-family:var(--emo); position:absolute; left:15px; top:13px; font-size:19px}
+
+/* ---------- mục lục chương ---------- */
+nav.toc ol{list-style:none; margin:16px 0 0; padding:0; display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:10px}
+nav.toc h2::before{content:"🧭 "; font-family:var(--emo)}
+nav.toc li{margin:0}
+nav.toc a{display:flex; gap:11px; align-items:center; height:100%; padding:11px 14px; border-radius:16px;
+  text-decoration:none; color:var(--ink); font-size:15px; font-weight:650; line-height:1.4;
+  background:color-mix(in srgb,var(--sc) 9%, var(--card)); border:1.5px solid color-mix(in srgb,var(--sc) 26%, transparent);
+  transition:transform .18s, box-shadow .18s}
+nav.toc a:hover{transform:translateY(-3px); box-shadow:0 10px 24px color-mix(in srgb,var(--sc) 24%, transparent)}
+nav.toc a .n{flex:0 0 auto; width:32px; height:32px; border-radius:10px; display:grid; place-items:center;
+  background:var(--sc); color:#fff; font-size:12.5px; font-weight:850}
+nav.toc li:nth-child(8n+1){--sc:var(--c1)} nav.toc li:nth-child(8n+2){--sc:var(--c2)}
+nav.toc li:nth-child(8n+3){--sc:var(--c3)} nav.toc li:nth-child(8n+4){--sc:var(--c4)}
+nav.toc li:nth-child(8n+5){--sc:var(--c5)} nav.toc li:nth-child(8n+6){--sc:var(--c6)}
+nav.toc li:nth-child(8n+7){--sc:var(--c7)} nav.toc li:nth-child(8n+8){--sc:var(--c8)}
+
+aside.srctoc{border-left:6px solid var(--c7)}
+aside.srctoc ul{list-style:none; margin:0; padding:0}
+aside.srctoc li{padding:5px 0 5px 26px; position:relative; font-size:16px}
+aside.srctoc li::before{content:"📑"; font-family:var(--emo); position:absolute; left:0; top:5px; font-size:14px}
+
+/* ---------- phần (section) — mỗi phần một màu ---------- */
+main > section{--sc:var(--c6); --scl:var(--c6l); --scb:var(--c6b); margin:72px 0; scroll-margin-top:84px}
+main > section:nth-of-type(8n+1){--sc:var(--c1);--scl:var(--c1l);--scb:var(--c1b)}
+main > section:nth-of-type(8n+2){--sc:var(--c2);--scl:var(--c2l);--scb:var(--c2b)}
+main > section:nth-of-type(8n+3){--sc:var(--c3);--scl:var(--c3l);--scb:var(--c3b)}
+main > section:nth-of-type(8n+4){--sc:var(--c4);--scl:var(--c4l);--scb:var(--c4b)}
+main > section:nth-of-type(8n+5){--sc:var(--c5);--scl:var(--c5l);--scb:var(--c5b)}
+main > section:nth-of-type(8n+6){--sc:var(--c6);--scl:var(--c6l);--scb:var(--c6b)}
+main > section:nth-of-type(8n+7){--sc:var(--c7);--scl:var(--c7l);--scb:var(--c7b)}
+main > section:nth-of-type(8n+8){--sc:var(--c8);--scl:var(--c8l);--scb:var(--c8b)}
+
+.sec-head{display:flex; gap:18px; align-items:center; margin-bottom:14px}
+.badge{flex:0 0 auto; position:relative; width:62px; height:62px; border-radius:20px;
+  display:grid; place-items:center; color:#fff; font-size:22px; font-weight:900;
+  background:linear-gradient(135deg,var(--sc),color-mix(in srgb,var(--sc) 55%, #fff));
+  box-shadow:0 10px 26px color-mix(in srgb,var(--sc) 40%, transparent); transform:rotate(-6deg)}
+.badge::after{content:""; position:absolute; inset:-6px; border-radius:24px; border:2.5px solid var(--sc);
+  opacity:0; animation:ring 2.8s ease-out infinite}
+@keyframes ring{0%{opacity:.6; transform:scale(.85)}80%,100%{opacity:0; transform:scale(1.22)}}
+.sec-head h2{margin:0; font-size:clamp(25px,4.2vw,36px); line-height:1.22; font-weight:850; letter-spacing:-.015em}
+.sec-head h2{background:linear-gradient(100deg,var(--ink) 30%, var(--sc)); -webkit-background-clip:text;
+  background-clip:text; color:transparent}
+@media print{.sec-head h2{color:var(--ink); background:none}}
+
+.willlearn{position:relative; margin:4px 0 24px; padding:15px 18px 15px 56px; border-radius:var(--r2);
+  background:var(--scl); border:1.5px solid var(--scb); font-size:15.5px; color:var(--ink); line-height:1.7}
+.willlearn::before{content:"🎯"; font-family:var(--emo); position:absolute; left:17px; top:14px; font-size:22px;
+  animation:bob 3.4s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.willlearn b{color:var(--sc); font-weight:850}
+.willlearn em{color:var(--ink2)}
+
+/* thân bài — "phần thân màu kem" */
+.body-card{position:relative; background:#FFFCF4; border:1.5px solid #F1E8D2; border-radius:var(--r);
+  padding:30px 32px 14px; box-shadow:var(--sh); margin:22px 0; font-size:var(--fs); line-height:1.82}
+html[data-theme="dark"] .body-card{background:#1F1C17; border-color:#3A3326}
+.body-card::before{content:""; position:absolute; left:0; top:22px; bottom:22px; width:5px;
+  border-radius:0 5px 5px 0; background:linear-gradient(180deg,var(--sc),color-mix(in srgb,var(--sc) 35%, transparent))}
+@media (max-width:600px){.body-card{padding:22px 20px 10px}}
+.body-card h3{font-size:18px; font-weight:850; color:var(--sc); margin:26px 0 10px}
+.body-card h3:first-child{margin-top:0}
+
+/* ---------- BÚT DẠ QUANG VÀNG — cố định ---------- */
+mark{color:var(--hl-ink); padding:.04em .18em; margin:0 -.06em; border-radius:.3em;
+  -webkit-box-decoration-break:clone; box-decoration-break:clone;
+  background:linear-gradient(100deg,var(--hl1),var(--hl2)) no-repeat 0 0 / 100% 100%}
+html.js mark{background-size:0% 100%; transition:background-size .8s cubic-bezier(.6,.1,.2,1)}
+html.js mark.lit,html.still mark{background-size:100% 100%}
+html.js mark:not(.lit){color:inherit}
+html.js mark.lit{color:var(--hl-ink); transition:background-size .8s cubic-bezier(.6,.1,.2,1), color .3s .2s}
+mark.flash{animation:flash 1.4s ease 2}
+@keyframes flash{50%{box-shadow:0 0 0 6px color-mix(in srgb,var(--hl1) 55%, transparent)}}
+
+ul.dia{list-style:none; margin:0 0 1.1em; padding:0}
+ul.dia li{position:relative; padding:5px 0 5px 30px}
+ul.dia li::before{content:""; position:absolute; left:4px; top:.82em; width:11px; height:11px; border-radius:4px;
+  background:var(--sc,var(--ac)); transform:rotate(45deg); box-shadow:0 2px 6px color-mix(in srgb,var(--sc,var(--ac)) 40%, transparent)}
+ol.steps{padding-left:24px}
+ol.steps li{margin:0 0 10px}
+ol.steps li::marker{color:var(--sc); font-weight:850}
+
+/* ---------- TRÍCH DẪN — bóng chat có avatar ---------- */
+blockquote{--qc:var(--c6); position:relative; margin:28px 0; padding:0 0 0 66px; font-style:normal}
+blockquote[data-q="1"]{--qc:var(--c1)} blockquote[data-q="2"]{--qc:var(--c2)}
+blockquote[data-q="4"]{--qc:var(--c4)} blockquote[data-q="5"]{--qc:var(--c5)}
+blockquote[data-q="6"]{--qc:var(--c6)} blockquote[data-q="7"]{--qc:var(--c7)}
+blockquote[data-q="8"]{--qc:var(--c8)}
+blockquote::before{content:attr(data-ini); position:absolute; left:0; top:4px; width:50px; height:50px;
+  border-radius:50%; display:grid; place-items:center; color:#fff; font-size:16px; font-weight:850; letter-spacing:.02em;
+  background:linear-gradient(135deg,var(--qc),color-mix(in srgb,var(--qc) 55%, #fff));
+  box-shadow:0 6px 16px color-mix(in srgb,var(--qc) 38%, transparent), 0 0 0 3px var(--bg)}
+blockquote > .qbody{position:relative; background:var(--c3l); border:1.5px solid var(--c3b);
+  border-radius:6px var(--r) var(--r) var(--r); padding:16px 22px 16px; box-shadow:var(--sh)}
+blockquote > .qbody::before{content:""; position:absolute; left:-9px; top:16px; width:16px; height:16px;
+  background:var(--c3l); border-left:1.5px solid var(--c3b); border-bottom:1.5px solid var(--c3b);
+  transform:rotate(45deg); border-radius:0 0 0 4px}
+blockquote .qtag{display:inline-flex; align-items:center; gap:6px; font-size:10.5px; font-weight:850;
+  letter-spacing:.14em; text-transform:uppercase; padding:4px 11px; border-radius:var(--r3);
+  background:var(--hl1); color:var(--hl-ink); margin-bottom:10px}
+blockquote .qtag::before{content:"💬"; font-family:var(--emo); font-size:11.5px}
+blockquote p{margin:0 0 .65em; font-size:calc(var(--fs) + .5px); line-height:1.78}
+blockquote p:last-of-type{margin-bottom:.4em}
+blockquote cite{display:block; font-style:normal; font-size:14px; color:var(--ink2); margin-top:8px;
+  padding-top:10px; border-top:1.5px dashed var(--c3b)}
+blockquote cite b{color:var(--qc); font-weight:850; font-size:15px}
+.cpy{position:absolute; right:10px; top:10px; width:36px; height:36px; border-radius:12px; cursor:pointer;
+  border:1.5px solid var(--c3b); background:var(--card); display:grid; place-items:center;
+  font-family:var(--emo); font-size:16px; line-height:1; opacity:.6; transition:opacity .2s, transform .2s}
+.cpy::before{content:"📋"}
+.cpy.ok::before{content:"✅"}
+.cpy:hover,.cpy:focus-visible{opacity:1; transform:scale(1.1)}
+@media (max-width:560px){blockquote{padding-left:0} blockquote::before{position:relative; display:grid;
+  width:40px; height:40px; font-size:13px; margin:0 0 8px 6px} blockquote > .qbody::before{left:20px; top:-9px; transform:rotate(135deg)}}
+
+/* ---------- khái niệm ---------- */
+.concept{position:relative; background:linear-gradient(135deg,var(--c6l),var(--c5l)); border:1.5px solid var(--c6b);
+  border-radius:var(--r); padding:26px 26px 22px; margin:30px 0; box-shadow:var(--sh)}
+.concept .lbl,.example .lbl,.practice .lbl,.hint .lbl,.pause .lbl,.flow .lbl,.keyidea .lbl,figure.fig .fig-lbl{
+  display:inline-flex; align-items:center; gap:7px; font-size:11.5px; font-weight:850; letter-spacing:.12em;
+  text-transform:uppercase; padding:6px 14px; border-radius:var(--r3); margin-bottom:12px; color:#fff}
+.concept .lbl{background:var(--c6)}
+.concept .lbl::before{content:"🧠"; font-family:var(--emo); font-size:13px}
+.concept h4{font-size:24px; font-weight:850; margin:0 0 14px; line-height:1.3; color:var(--ink)}
+.concept dl{margin:0; display:grid; gap:10px}
+.concept dt{font-size:12.5px; font-weight:850; letter-spacing:.04em; color:var(--c6); margin:0}
+.concept dd{margin:-6px 0 0; font-size:16.5px; line-height:1.7; background:var(--card); border-radius:14px;
+  padding:11px 15px; border:1px solid var(--c6b)}
+.concept dt:nth-of-type(1)::before{content:"📘 "; font-family:var(--emo)}
+.concept dt:nth-of-type(2)::before{content:"🧩 "; font-family:var(--emo)}
+.concept dt:nth-of-type(3)::before{content:"⚠️ "; font-family:var(--emo)}
+
+/* ---------- ví dụ ---------- */
+.example{position:relative; border-radius:var(--r); padding:26px 26px 20px; margin:30px 0; background:var(--card);
+  border:2px solid transparent; box-shadow:var(--sh);
+  background:linear-gradient(var(--card),var(--card)) padding-box,
+             linear-gradient(120deg,var(--c2),var(--c8),var(--c7)) border-box}
+.example .lbl{background:linear-gradient(100deg,var(--c2),var(--c8))}
+.example .lbl::before{content:"💡"; font-family:var(--emo); font-size:13px}
+
+/* ---------- thực hành ---------- */
+.practice{position:relative; background:var(--c4l); border:1.5px solid var(--c4b); border-radius:var(--r);
+  padding:26px 26px 22px; margin:30px 0; box-shadow:var(--sh)}
+.practice .lbl{background:var(--c4)}
+.practice .lbl::before{content:"🧘"; font-family:var(--emo); font-size:13px}
+.notepad{margin-top:16px; border:2px dashed var(--c4b); border-radius:16px; padding:14px 16px; background:var(--card)}
+.notepad .nl{font-size:12.5px; font-weight:800; color:var(--c4); letter-spacing:.06em; text-transform:uppercase}
+.notepad .nl::before{content:"✍️ "; font-family:var(--emo)}
+.notepad .lines{height:16px; border-bottom:1.5px solid var(--rule); margin-top:16px}
+
+/* ---------- gợi ý (lời biên tập viên) ---------- */
+.hint{position:relative; background:var(--c7l); border:1.5px solid var(--c7b); border-radius:var(--r);
+  padding:24px 24px 18px; margin:28px 0; font-size:16.5px; box-shadow:var(--sh)}
+.hint .lbl{background:var(--c7)}
+.hint .lbl::before{content:"🪄"; font-family:var(--emo); font-size:13px}
+.hint p:last-child{margin-bottom:0}
+
+/* ---------- câu cốt lõi ---------- */
+.keyidea{position:relative; border-radius:var(--r); padding:28px 26px 20px; margin:30px 0;
+  background:radial-gradient(120% 140% at 0% 0%, var(--c3l), var(--card) 60%); border:2px solid var(--c3b); box-shadow:var(--sh)}
+.keyidea .lbl{background:linear-gradient(100deg,var(--c3),var(--c2))}
+.keyidea .lbl::before{content:"⭐"; font-family:var(--emo); font-size:13px}
+.keyidea p{font-size:calc(var(--fs) + 1px); font-weight:600}
+.keyidea p:last-child{margin-bottom:0}
+
+/* ---------- dừng lại 30 giây ---------- */
+.pause{position:relative; text-align:center; border-radius:var(--r); padding:30px 26px 28px; margin:34px 0;
+  background:linear-gradient(135deg,var(--c5l),var(--c6l),var(--c7l)); border:1.5px solid var(--c5b); box-shadow:var(--sh); overflow:hidden}
+.pause .lbl{background:var(--c5)}
+.pause .lbl::before{content:"⏳"; font-family:var(--emo); font-size:13px}
+.pause p{margin:0 auto; max-width:620px; font-size:calc(var(--fs) + 2px); font-weight:650; line-height:1.65}
+.pause .tmr{position:relative; width:74px; height:74px; margin:4px auto 14px; display:grid; place-items:center}
+.pause .tmr svg{position:absolute; inset:0; transform:rotate(-90deg)}
+.pause .tmr circle{fill:none; stroke-width:6}
+.pause .tmr .bg{stroke:color-mix(in srgb,var(--c5) 22%, transparent)}
+.pause .tmr .fg{stroke:var(--c5); stroke-linecap:round; stroke-dasharray:201; stroke-dashoffset:201}
+.pause.go .tmr .fg{animation:tmr 30s linear forwards}
+@keyframes tmr{to{stroke-dashoffset:0}}
+.pause .tmr::after{content:attr(data-s); font-size:21px; font-weight:900; color:var(--c5); font-variant-numeric:tabular-nums}
+.pause .tmr.done::after{content:"🌿"; font-family:var(--emo); font-size:26px}
+.pause::after{content:""; position:absolute; width:240px; height:240px; border-radius:50%; left:50%; top:50%;
+  margin:-120px 0 0 -120px; background:radial-gradient(circle,color-mix(in srgb,var(--c5) 22%, transparent),transparent 70%);
+  z-index:0; animation:breathe 8s ease-in-out infinite; pointer-events:none}
+.pause > *{position:relative; z-index:1}
+@keyframes breathe{0%,100%{transform:scale(.7); opacity:.5}50%{transform:scale(1.5); opacity:1}}
+
+/* ---------- mạch lập luận ---------- */
+.flow{position:relative; background:var(--card); border:1.5px solid var(--rule); border-radius:var(--r);
+  padding:26px 24px 24px; margin:32px 0; box-shadow:var(--sh)}
+.flow .lbl{background:linear-gradient(100deg,var(--c6),var(--c7))}
+.flow .lbl::before{content:"🔗"; font-family:var(--emo); font-size:13px}
+.flow-grid{display:flex; flex-wrap:wrap; align-items:stretch; gap:10px}
+.fstep{--fc:var(--c6); flex:1 1 170px; position:relative; border-radius:18px; padding:16px 16px 14px;
+  background:color-mix(in srgb,var(--fc) 9%, var(--card)); border:1.5px solid color-mix(in srgb,var(--fc) 32%, transparent);
+  transition:transform .2s, box-shadow .2s}
+.fstep:hover{transform:translateY(-4px); box-shadow:0 12px 26px color-mix(in srgb,var(--fc) 22%, transparent)}
+.flow-grid .fstep:nth-of-type(4n+1){--fc:var(--c1)} .flow-grid .fstep:nth-of-type(4n+2){--fc:var(--c2)}
+.flow-grid .fstep:nth-of-type(4n+3){--fc:var(--c6)} .flow-grid .fstep:nth-of-type(4n+4){--fc:var(--c4)}
+.fstep .k{display:block; font-size:11px; font-weight:850; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--fc); margin-bottom:6px}
+.fstep .v{font-size:15.5px; line-height:1.6; display:block}
+.farrow{display:flex; align-items:center; justify-content:center; color:transparent; font-size:0; width:22px; position:relative}
+.farrow::before{content:""; width:22px; height:22px; border-radius:50%; background:var(--ink);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12h12m-5-6 6 6-6 6' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;
+          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12h12m-5-6 6 6-6 6' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;
+  background:linear-gradient(90deg,var(--c6),var(--c8)); animation:nudge 1.6s ease-in-out infinite}
+@keyframes nudge{0%,100%{transform:translateX(-3px)}50%{transform:translateX(4px)}}
+@media (max-width:700px){
+  .flow-grid{flex-direction:column}
+  .farrow{width:100%; height:22px}
+  .farrow::before{transform:rotate(90deg); animation:nudgeV 1.6s ease-in-out infinite}
+}
+@keyframes nudgeV{0%,100%{transform:rotate(90deg) translateX(-3px)}50%{transform:rotate(90deg) translateX(4px)}}
+
+/* ---------- cặp đối chiếu & ngọn núi ---------- */
+ul.pairs{list-style:none; margin:0 0 1.1em; padding:0}
+ul.pairs li{display:flex; gap:10px; margin:0 0 10px; flex-wrap:wrap}
+ul.pairs .a,ul.pairs .b{flex:1 1 240px; border-radius:16px; padding:12px 16px; font-size:16px; line-height:1.6}
+ul.pairs .a{background:var(--soft); border:1.5px solid var(--rule)}
+ul.pairs .b{background:var(--c4l); border:1.5px solid var(--c4b)}
+ul.pairs .lbl-row{font-size:10.5px; font-weight:850; letter-spacing:.1em; text-transform:uppercase; color:var(--ink2); display:block; margin-bottom:3px}
+ol.mtn{list-style:none; margin:0; padding:0}
+ol.mtn li{--mc:var(--c6); background:color-mix(in srgb,var(--mc) 8%, var(--card)); border:1.5px solid color-mix(in srgb,var(--mc) 30%, transparent);
+  border-left:6px solid var(--mc); border-radius:6px 16px 16px 6px; padding:14px 18px; margin:0 0 10px}
+ol.mtn li:nth-child(1){--mc:var(--c1)} ol.mtn li:nth-child(2){--mc:var(--c2); margin-left:22px}
+ol.mtn li:nth-child(3){--mc:var(--c5); margin-left:44px} ol.mtn li:nth-child(4){--mc:var(--c4); margin-left:66px}
+ol.mtn li .lvl{display:block; font-size:11px; font-weight:850; letter-spacing:.1em; text-transform:uppercase; color:var(--mc); margin-bottom:5px}
+ol.mtn li .txt{font-size:16px; line-height:1.65}
+@media (max-width:620px){ol.mtn li:nth-child(2){margin-left:10px} ol.mtn li:nth-child(3){margin-left:20px} ol.mtn li:nth-child(4){margin-left:30px}}
+
+/* ---------- hình minh họa ---------- */
+figure.fig{position:relative; background:var(--card); border:1.5px solid var(--rule); border-radius:var(--r);
+  padding:24px 22px 18px; margin:34px 0; box-shadow:var(--sh); overflow:hidden}
+figure.fig::before{content:""; position:absolute; inset:0; pointer-events:none; opacity:.55;
+  background:radial-gradient(70% 60% at 100% 0%, color-mix(in srgb,var(--sc,var(--ac)) 12%, transparent), transparent 70%),
+             radial-gradient(60% 60% at 0% 100%, color-mix(in srgb,var(--c7) 9%, transparent), transparent 70%)}
+figure.fig > *{position:relative}
+figure.fig .fig-lbl{background:linear-gradient(100deg,var(--c8),var(--c7))}
+figure.fig .fig-lbl::before{content:"🎨"; font-family:var(--emo); font-size:13px}
+figure.fig svg{display:block; width:100%; height:auto; max-width:560px; margin:6px auto 0; overflow:visible}
+figure.fig figcaption{font-size:14.5px; color:var(--ink2); line-height:1.7; margin-top:16px; padding-top:14px;
+  border-top:1.5px dashed var(--rule)}
+figure.fig figcaption strong{color:var(--ink)}
+.svg-t{font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif; fill:var(--ink)}
+.svg-t2{font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif; fill:var(--ink2)}
+.svg-cap{font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif; font-weight:800; letter-spacing:.06em}
+.svg-w{font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif; fill:#fff; font-weight:800}
+.svg-e{font-family:var(--emo)}
+/* chuyển động trong SVG */
+.a-pulse{animation:aPulse 2.4s ease-in-out infinite; transform-box:fill-box; transform-origin:center}
+@keyframes aPulse{0%,100%{transform:scale(1); opacity:1}50%{transform:scale(1.25); opacity:.75}}
+.a-glow{animation:aGlow 3s ease-in-out infinite; transform-box:fill-box; transform-origin:center}
+@keyframes aGlow{0%,100%{opacity:.55; transform:scale(.94)}50%{opacity:1; transform:scale(1.06)}}
+.a-crumble{animation:aCrumble 9s cubic-bezier(.5,0,.7,.4) infinite; transform-box:fill-box; transform-origin:center}
+@keyframes aCrumble{0%,24%{transform:none; opacity:1}50%,86%{transform:translateY(64px) rotate(var(--rot,6deg)); opacity:0}87%{transform:none; opacity:0}100%{transform:none; opacity:1}}
+.a-spin{animation:aSpin 40s linear infinite; transform-box:view-box}
+.a-spin-r{animation:aSpin 40s linear infinite reverse; transform-box:fill-box; transform-origin:center}
+@keyframes aSpin{to{transform:rotate(360deg)}}
+.a-float{animation:aFloat 5s ease-in-out infinite; transform-box:fill-box}
+.a-float2{animation:aFloat 6.5s ease-in-out infinite reverse; transform-box:fill-box}
+@keyframes aFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.a-drift{animation:aDrift 9s ease-in-out infinite; transform-box:fill-box}
+@keyframes aDrift{0%,100%{transform:translateX(0)}50%{transform:translateX(16px)}}
+.a-dash{stroke-dasharray:6 7; animation:aDash 1.2s linear infinite}
+@keyframes aDash{to{stroke-dashoffset:-26}}
+.a-blink{animation:aBlink 2.6s ease-in-out infinite}
+@keyframes aBlink{0%,100%{opacity:1}50%{opacity:.25}}
+.a-rise{animation:aRise 4.5s ease-in-out infinite; transform-box:fill-box}
+@keyframes aRise{0%,100%{transform:translateY(10px); opacity:.55}50%{transform:translateY(-4px); opacity:1}}
+.a-fall{animation:aFall 4.5s ease-in infinite; transform-box:fill-box; transform-origin:center}
+@keyframes aFall{0%,30%{transform:translateY(0) rotate(0); opacity:1}80%,100%{transform:translateY(46px) rotate(18deg); opacity:0}}
+.a-sway{animation:aSway 4s ease-in-out infinite; transform-box:fill-box; transform-origin:50% 100%}
+@keyframes aSway{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
+.a-scan{animation:aScan 7s ease-in-out infinite; transform-box:view-box}
+.a-orbit{offset-rotate:0deg; animation:aOrbit 9s linear infinite}
+@keyframes aOrbit{from{offset-distance:0%}to{offset-distance:100%}}
+
+/* ---------- về đầu trang ---------- */
+.totop{display:block; text-align:right; margin:18px 0 0}
+.totop a{display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:750; color:var(--ink2);
+  text-decoration:none; border:1.5px solid var(--rule); border-radius:var(--r3); padding:7px 15px; background:var(--card)}
+.totop a:hover{border-color:var(--sc,var(--ac)); color:var(--sc,var(--ac))}
+
+/* ---------- tóm tắt gốc & bản đồ ghi nhớ ---------- */
+main > section#tom-tat-goc,main > section#ban-do-ghi-nho{--sc:var(--c2);--scl:var(--c2l);--scb:var(--c2b)}
+main > section#ban-do-ghi-nho{--sc:var(--c6);--scl:var(--c6l);--scb:var(--c6b)}
+.origsum{background:linear-gradient(135deg,var(--c3l),var(--c2l)) !important; border:2px solid var(--c3b) !important}
+.origsum .tag{background:var(--c2); color:#fff; border-color:transparent}
+.origsum .tag::before{content:"📌"; font-family:var(--emo); font-size:13px}
+.origsum h3{color:var(--c2)}
+.origsum ul.dia li{--sc:var(--c2); background:color-mix(in srgb,var(--card) 70%, transparent); border-radius:12px; padding:9px 12px 9px 34px; margin-bottom:7px}
+.origsum ul.dia li::before{left:13px; top:1.05em}
+.recall{background:linear-gradient(135deg,var(--c6l),var(--c7l)) !important; border:2px solid var(--c6b) !important}
+.recall .tag{background:var(--c6) !important; color:#fff !important; border-color:transparent}
+.recall .tag::before{content:"🧩"; font-family:var(--emo); font-size:13px}
+.recall h3{display:flex; align-items:center; gap:8px; font-size:17px; font-weight:850; color:var(--c6); margin:26px 0 10px}
+.recall h3:nth-of-type(1)::before{content:"💎"; font-family:var(--emo)}
+.recall h3:nth-of-type(2)::before{content:"🔑"; font-family:var(--emo)}
+.recall h3:nth-of-type(3)::before{content:"🧘"; font-family:var(--emo)}
+.recall h3:nth-of-type(4)::before{content:"⛓️"; font-family:var(--emo)}
+.recall h3:nth-of-type(5)::before{content:"✨"; font-family:var(--emo)}
+.recall ul.dia li{--sc:var(--c6)}
+.chain{display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-top:12px}
+.chain span{--cc:var(--c6); background:color-mix(in srgb,var(--cc) 14%, var(--card)); border:1.5px solid color-mix(in srgb,var(--cc) 40%, transparent);
+  color:var(--ink); border-radius:var(--r3); padding:7px 14px; font-size:13.5px; font-weight:700}
+.chain span:nth-of-type(8n+1){--cc:var(--c1)} .chain span:nth-of-type(8n+2){--cc:var(--c2)}
+.chain span:nth-of-type(8n+3){--cc:var(--c3)} .chain span:nth-of-type(8n+4){--cc:var(--c4)}
+.chain span:nth-of-type(8n+5){--cc:var(--c5)} .chain span:nth-of-type(8n+6){--cc:var(--c6)}
+.chain span:nth-of-type(8n+7){--cc:var(--c7)} .chain span:nth-of-type(8n+8){--cc:var(--c8)}
+.chain i{font-style:normal; color:var(--ink3); font-weight:900}
+html.js .chain.rv span{opacity:0; transform:scale(.8)}
+html.js .chain.rv.in span{opacity:1; transform:none; transition:opacity .4s, transform .4s cubic-bezier(.3,1.6,.5,1)}
+
+/* ---------- điều hướng chương ---------- */
+.pager{display:grid; grid-template-columns:1fr auto 1fr; gap:12px; margin:56px 0 8px}
+.pager a,.pager span{position:relative; border:1.5px solid var(--rule); border-radius:var(--r); padding:18px 20px;
+  text-decoration:none; background:var(--card); color:var(--ink); font-size:15px; font-weight:700; line-height:1.45;
+  box-shadow:var(--sh); transition:transform .2s, box-shadow .2s, border-color .2s}
+.pager a:hover{transform:translateY(-4px); border-color:var(--ac); box-shadow:0 14px 34px color-mix(in srgb,var(--ac) 22%, transparent)}
+.pager .k{display:block; font-size:11px; font-weight:850; letter-spacing:.1em; text-transform:uppercase; color:var(--ac); margin-bottom:5px}
+.pager .prev .k::before{content:"⬅️ "; font-family:var(--emo)}
+.pager .next .k::after{content:" ➡️"; font-family:var(--emo)}
+.pager .home{text-align:center}
+.pager .home .k::before{content:"🗂️ "; font-family:var(--emo)}
+.pager .next{text-align:right}
+.pager span.off{opacity:.45; box-shadow:none}
+@media (max-width:720px){.pager{grid-template-columns:1fr}.pager .next,.pager .home{text-align:left}}
+
+/* ---------- tìm kiếm & bảng câu bôi vàng ---------- */
+#findbar{position:fixed; left:50%; top:76px; z-index:80; width:min(560px,calc(100% - 24px)); transform:translate(-50%,-20px);
+  opacity:0; pointer-events:none; transition:opacity .2s, transform .2s; display:flex; gap:8px; align-items:center;
+  background:var(--card); border:1.5px solid var(--ac); border-radius:var(--r3); padding:7px 8px 7px 16px; box-shadow:var(--sh2)}
+#findbar.on{opacity:1; transform:translate(-50%,0); pointer-events:auto}
+#findbar::before{content:"🔍"; font-family:var(--emo)}
+#findbar input{flex:1; min-width:0; border:0; outline:0; background:transparent; font:inherit; font-size:16px; color:var(--ink)}
+#findbar .fc{font-size:12.5px; font-weight:750; color:var(--ink2); white-space:nowrap; font-variant-numeric:tabular-nums}
+#findbar button{border:0; background:var(--soft); color:var(--ink); border-radius:50%; width:34px; height:34px; cursor:pointer; font-size:14px; font-weight:800}
+span.fnd{background:color-mix(in srgb,var(--c8) 30%, transparent); border-radius:4px; box-shadow:0 0 0 2px color-mix(in srgb,var(--c8) 30%, transparent)}
+span.fnd.cur{background:var(--c8); color:#fff}
+#hlpanel{position:fixed; inset:0; z-index:90; display:none; background:rgba(15,14,23,.45); backdrop-filter:blur(4px);
+  padding:70px 14px 20px; overflow:auto}
+#hlpanel.on{display:block}
+#hlpanel .in{max-width:680px; margin:0 auto; background:var(--card); border-radius:var(--r); padding:24px 22px 18px; box-shadow:var(--sh2);
+  animation:pop .3s cubic-bezier(.3,1.4,.5,1)}
+@keyframes pop{from{transform:scale(.92); opacity:0}}
+#hlpanel h2{margin:0 0 4px; font-size:22px; font-weight:850}
+#hlpanel h2::before{content:"🖍️ "; font-family:var(--emo)}
+#hlpanel .hs{font-size:13.5px; color:var(--ink2); margin:0 0 14px}
+#hlpanel ol{margin:0; padding:0; list-style:none; counter-reset:h; display:grid; gap:8px}
+#hlpanel li{counter-increment:h}
+#hlpanel li a{display:block; position:relative; padding:11px 14px 11px 44px; border-radius:14px; text-decoration:none; color:var(--hl-ink);
+  background:linear-gradient(100deg,var(--hl1),var(--hl2)); font-size:15.5px; line-height:1.55; font-weight:600}
+#hlpanel li a::before{content:counter(h); position:absolute; left:12px; top:11px; width:22px; height:22px; border-radius:7px;
+  background:rgba(43,34,0,.14); display:grid; place-items:center; font-size:11.5px; font-weight:850}
+#hlpanel li a:hover{filter:brightness(1.04); transform:translateX(3px)}
+#hlpanel .x{float:right; border:0; width:36px; height:36px; border-radius:50%; background:var(--soft); cursor:pointer; font-size:16px; color:var(--ink)}
+
+/* ---------- confetti ---------- */
+.cf{position:fixed; z-index:100; width:9px; height:9px; border-radius:2px; pointer-events:none; animation:cf 1.1s cubic-bezier(.2,.7,.4,1) forwards}
+@keyframes cf{to{transform:translate(var(--dx),var(--dy)) rotate(var(--rt)); opacity:0}}
+
+/* ---------- footer chương ---------- */
+html.chap footer.pagefoot{margin-top:40px}
+
+@media print{
+  #rail,#findbar,#hlpanel,.cpy,.stats,#nowsec{display:none !important}
+  .body-card,blockquote,.concept,.practice,.example,.hint,.keyidea,.pause,.flow,figure.fig,.origsum,.recall{break-inside:avoid; box-shadow:none}
+  html.js mark{background-size:100% 100% !important; color:var(--hl-ink) !important}
+  html.js .rv{opacity:1 !important; transform:none !important}
+  .sec-head h2{-webkit-text-fill-color:var(--ink)}
+}
+
+/* ===== tinh chỉnh sau khi xem bản chụp ===== */
+/* hero: các pill xếp từng dòng */
+header.book .kicker,header.book .chapno{display:flex; width:fit-content; margin-left:auto; margin-right:auto}
+header.book .chapno{gap:8px}
+html.chap header.book .wrap::after{bottom:auto; top:14%}
+/* chữ trên nền vàng phải tối */
+.stages li:nth-child(8n+3),nav.toc li:nth-child(8n+3),main > section:nth-of-type(8n+3){--on:#3A2A00}
+.stages li::before,nav.toc a .n,.badge{color:var(--on,#fff)}
+#rail a.act .n{color:var(--ron,#fff)}
+/* tiêu đề phần: chữ đặc + vạch màu */
+.sec-head h2{color:var(--ink); background:linear-gradient(90deg,var(--sc),color-mix(in srgb,var(--sc) 0%, transparent)) left bottom / 140px 5px no-repeat;
+  -webkit-background-clip:border-box; background-clip:border-box; padding-bottom:12px}
+/* toolbar trang chương: một dòng trên máy tính */
+html.chap #toolbar .wrap{flex-wrap:nowrap; max-width:1180px}
+html.chap #toolbar .tb-title{margin-right:auto; flex:0 0 auto}
+html.chap #nowsec{flex:1 1 auto; min-width:0; max-width:none; margin:0 6px 0 4px}
+html.chap #toolbar .btn{flex:0 0 auto}
+html.chap #toolbar .tb-spacer{flex:1 1 auto}
+@media (max-width:1180px){html.chap #toolbar a.btn[href="#top"],html.chap #printBtn{display:none}}
+@media (max-width:760px){
+  html.chap #toolbar .wrap{flex-wrap:wrap; padding:8px 12px; gap:6px}
+  html.chap #themeBtn{display:none}
+  html.chap #toolbar .tb-title{flex:1 1 auto; font-size:12px}
+  html.chap #toolbar .btn{padding:7px 12px; font-size:12.5px}
+  html.chap #nowsec{order:9; flex:1 1 100%; margin:0; font-size:12px; padding:5px 11px}
+  html.chap #nowsec:not(.on){display:none}
+}
+/* nút nổi trên điện thoại: một thanh ngang dưới đáy */
+@media (max-width:700px){
+  html.chap #fabs{left:50%; right:auto; bottom:10px; transform:translateX(-50%); flex-direction:row; gap:4px;
+    padding:5px; border-radius:var(--r3); background:color-mix(in srgb,var(--card) 86%, transparent);
+    backdrop-filter:blur(12px); border:1.5px solid var(--rule); box-shadow:var(--sh2)}
+  html.chap #fabs button{width:40px; height:40px; font-size:17px; box-shadow:none; border:0; background:transparent}
+  html.chap #fabs .fab-top{opacity:1; pointer-events:auto}
+  html.chap footer.pagefoot{padding-bottom:110px}
+}
+/* điện thoại: bớt đệm */
+@media (max-width:600px){
+  html.chap .wrap{padding:0 14px}
+  .box{padding:22px 18px 18px}
+  .map .goal{padding:14px 14px 14px 46px; font-size:15.5px}
+  .map .goal::before{left:13px; font-size:19px}
+  .stages li{padding:9px 10px 9px 48px; font-size:15px}
+  .concept,.example,.practice,.hint,.keyidea,.flow,figure.fig{padding-left:18px; padding-right:18px}
+  .sec-head{gap:14px} .badge{width:52px; height:52px; font-size:19px; border-radius:17px}
+  .willlearn{padding:13px 14px 13px 48px; font-size:15px} .willlearn::before{left:13px; font-size:19px}
+  .stats{gap:8px} .stat{padding:11px 4px 10px; border-radius:16px} .stat b{font-size:23px} .stat .se{font-size:20px}
+}
+
+/* ---------- chuyển động bổ sung cho hình (từ chương 02) ---------- */
+.a-pop{animation:aPop 6s ease-in-out infinite; transform-box:fill-box; transform-origin:center}
+@keyframes aPop{0%{opacity:0; transform:scale(.6)}12%,42%{opacity:1; transform:scale(1)}58%,100%{opacity:0; transform:scale(.92)}}
+.a-drain{animation:aDrain 5s ease-in-out infinite; transform-box:fill-box; transform-origin:0% 50%}
+@keyframes aDrain{0%,100%{transform:scaleX(1)}50%{transform:scaleX(.3)}}
+.a-swapA{animation:aSwapA 7s ease-in-out infinite}
+.a-swapB{animation:aSwapB 7s ease-in-out infinite}
+@keyframes aSwapA{0%,38%{opacity:1}50%,88%{opacity:.13}100%{opacity:1}}
+@keyframes aSwapB{0%,38%{opacity:.13}50%,88%{opacity:1}100%{opacity:.13}}
+.a-sink{animation:aSink 4.5s ease-in-out infinite; transform-box:fill-box; transform-origin:50% 100%}
+@keyframes aSink{0%,100%{transform:rotate(-3deg) translateY(0)}50%{transform:rotate(-9deg) translateY(7px)}}
+.a-flicker{animation:aFlick .9s ease-in-out infinite; transform-box:fill-box; transform-origin:50% 100%}
+@keyframes aFlick{0%,100%{transform:scale(1,1)}25%{transform:scale(.88,1.14) skewX(4deg)}50%{transform:scale(1.06,.92)}75%{transform:scale(.94,1.08) skewX(-4deg)}}
+.a-peel{animation:aPeel 11s ease-in-out infinite}
+@keyframes aPeel{0%,12%{opacity:1}24%,74%{opacity:0}88%,100%{opacity:1}}
+.a-wheel{animation:aSpin 1.6s linear infinite; transform-box:fill-box; transform-origin:center}
+.a-tick{stroke-dasharray:30; animation:aTick 8s ease-out infinite}
+@keyframes aTick{0%{stroke-dashoffset:30}6%,90%{stroke-dashoffset:0}100%{stroke-dashoffset:30}}
+html.still .a-tick{stroke-dashoffset:0}
+.a-fog{animation:aFog 9s ease-in-out infinite}
+@keyframes aFog{0%,15%{transform:translateX(0); opacity:.92}55%,80%{transform:translateX(140px); opacity:0}100%{transform:translateX(0); opacity:.92}}
+.a-fogL{animation:aFogL 9s ease-in-out infinite}
+@keyframes aFogL{0%,15%{transform:translateX(0); opacity:.92}55%,80%{transform:translateX(-140px); opacity:0}100%{transform:translateX(0); opacity:.92}}
+.a-spinc{animation:aSpin 1.4s linear infinite}
+.a-rain{animation:aRain 1.4s linear infinite}
+@keyframes aRain{0%{transform:translateY(-14px); opacity:0}20%{opacity:.9}100%{transform:translateY(40px); opacity:0}}
+.a-ticker{animation:aTicker 14s linear infinite}
+@keyframes aTicker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.a-tip{animation:aTip 3.2s ease-in-out infinite; transform-box:fill-box; transform-origin:50% 50%}
+@keyframes aTip{0%,100%{transform:rotate(-9deg)}50%{transform:rotate(9deg)}}
+.a-wave{animation:aWave 1.6s linear infinite}
+@keyframes aWave{to{transform:translateX(var(--wl,-40px))}}
+.a-flipA{animation:aFlipA 6s ease-in-out infinite; transform-box:fill-box; transform-origin:center}
+.a-flipB{animation:aFlipB 6s ease-in-out infinite; transform-box:fill-box; transform-origin:center}
+@keyframes aFlipA{0%,40%{transform:scaleX(1)}48%,92%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+@keyframes aFlipB{0%,48%{transform:scaleX(0)}56%,92%{transform:scaleX(1)}100%{transform:scaleX(0)}}
+html.still .a-flipB{transform:scaleX(0)}
+.a-bounce{animation:aBounce .7s ease-in-out infinite alternate; transform-box:fill-box}
+@keyframes aBounce{from{transform:translateY(0)}to{transform:translateY(-16px)}}
+.a-shrink{animation:aShrink 6s ease-in infinite; transform-box:fill-box; transform-origin:50% 100%}
+@keyframes aShrink{0%,10%{transform:scale(1); opacity:1}80%{transform:scale(.08); opacity:.2}100%{transform:scale(.08); opacity:0}}
+.a-mergeL{animation:aMergeL 6s ease-in-out infinite}
+.a-mergeR{animation:aMergeR 6s ease-in-out infinite}
+@keyframes aMergeL{0%,20%{transform:translateX(0)}55%,85%{transform:translateX(70px)}100%{transform:translateX(0)}}
+@keyframes aMergeR{0%,20%{transform:translateX(0)}55%,85%{transform:translateX(-70px)}100%{transform:translateX(0)}}
+.a-heal{animation:aHeal 12s ease-in-out infinite}
+@keyframes aHeal{0%,8%{opacity:1}14%,88%{opacity:.18}100%{opacity:1}}
+.a-strike{stroke-dasharray:200; stroke-dashoffset:200; animation:aStrike 12s ease-in-out infinite}
+@keyframes aStrike{0%,6%{stroke-dashoffset:200}12%,88%{stroke-dashoffset:0}100%{stroke-dashoffset:200}}
+html.still .a-strike{stroke-dashoffset:200}
+.a-fill{animation:aFill 12s linear infinite; transform-box:fill-box; transform-origin:0 50%}
+@keyframes aFill{0%{transform:scaleX(0)}88%{transform:scaleX(1)}100%{transform:scaleX(1)}}
+</style>
+</head>
+<body>
+<div id="blobs" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+<div id="progress" aria-hidden="true"></div>
+<div id="toolbar"><div class="wrap">
+  <span class="tb-title">Bí mật vĩ đại nhất</span>
+  <a class="btn" href="index.html">Mục lục sách</a>
+  <span id="nowsec" aria-live="polite"></span>
+  <button class="btn" id="themeBtn" type="button" aria-pressed="false">Chế độ đọc tối</button>
+  <button class="btn" id="printBtn" type="button">In / Lưu PDF</button>
+  <a class="btn" href="#top">Về đầu trang</a>
+</div></div>
+<header class="book" id="top"><div class="wrap" data-e1="🕊️" data-e2="🔥">
+  <p class="kicker">Sách &middot; Bí mật vĩ đại nhất</p>
+  <p class="chapno">Chương 08</p>
+  <h1>Không còn đau khổ</h1>
+  <div class="rule-orn"><span></span><b>◆</b><span></span></div>
+  <p class="sub">Đau khổ là tùy chọn; vấn đề chỉ tồn tại trong tâm trí, và rời sự chú ý khỏi nó thì nó phải sụp đổ.</p>
+  <p class="author">Rhonda Byrne</p>
+  <div class="stats"><div class="stat"><span class="se" aria-hidden="true">🧩</span><b data-n="4">4</b><small>phần</small></div><div class="stat"><span class="se" aria-hidden="true">💬</span><b data-n="31">31</b><small>trích dẫn</small></div><div class="stat"><span class="se" aria-hidden="true">👥</span><b data-n="12">12</b><small>người được trích</small></div><div class="stat"><span class="se" aria-hidden="true">🎨</span><b data-n="13">13</b><small>hình minh họa</small></div><div class="stat"><span class="se" aria-hidden="true">⏱️</span><b data-n="32">32</b><small>phút đọc</small></div></div>
+</div></header>
+<div class="wrap">
+  <!-- BẢN ĐỒ CHƯƠNG -->
+  <div class="box map" id="ban-do-chuong">
+    <span class="tag">Bản đồ chương</span>
+    <h2>Bạn sắp đi qua điều gì</h2>
+    <p class="meta">Thời gian đọc ước tính: khoảng 30–33 phút &middot; Chương 08 &middot; 5 sơ đồ minh họa</p>
+    <p class="goal"><strong>Mục tiêu của chương:</strong> Chỉ ra rằng đau khổ là do tự mình áp đặt qua việc tin vào suy nghĩ tiêu cực, rằng &ldquo;vấn đề&rdquo; chỉ tồn tại trong tâm trí, và cách rời sự chú ý khỏi vấn đề để nó tự sụp đổ.</p>
+    <ol class="stages">
+      <li>Đau khổ là tùy chọn — nó đến từ việc tin vào suy nghĩ tiêu cực.</li>
+      <li>&ldquo;Không&rdquo; giữ chặt, &ldquo;Có&rdquo; giải phóng.</li>
+      <li><em>Một kết thúc tức thời cho sự đau khổ</em> — bạn là người nhận thức được đau khổ, không phải người đang đau khổ.</li>
+      <li>Niềm tin là gốc rễ của mọi đau khổ: niềm tin rằng ta tách biệt.</li>
+      <li><em>Sự kết thúc của vấn đề</em> — vấn đề chỉ tồn tại trong tâm trí.</li>
+      <li>Nơi nào có tình yêu, nơi đó không vấn đề nào tồn tại được.</li>
+      <li><em>Làm thế nào để thoát khỏi rắc rối mãi mãi</em> — rời sự chú ý, như lấy oxy ra khỏi lửa.</li>
+    </ol>
+    <p class="howto"><strong>Cách đọc trang này:</strong> phần thân màu kem là nội dung đầy đủ của Rhonda Byrne. Các tiêu đề in nghiêng ở trên là <strong>tiểu mục do chính tác giả đặt trong sách</strong>. Khối vàng là trích dẫn của người khác; khối xanh lá là bài thực hành; khối xanh dương là khái niệm; khối tím là lời biên tập viên. <strong>Các hình vẽ là do biên tập viên dựng</strong> để minh họa đúng cơ chế tác giả mô tả.</p>
+  </div>
+
+  <!-- MỤC LỤC TRANG -->
+  <nav class="box toc" id="muc-luc" aria-label="Mục lục chương">
+    <h2>Mục lục chương này</h2>
+    <ol>
+      <li><a href="#c8-p1"><span class="n">01</span>Đau khổ là tùy chọn</a></li>
+      <li><a href="#c8-p2"><span class="n">02</span>Một kết thúc tức thời cho sự đau khổ</a></li>
+      <li><a href="#c8-p3"><span class="n">03</span>Sự kết thúc của vấn đề</a></li>
+      <li><a href="#c8-p4"><span class="n">04</span>Làm thế nào để thoát khỏi rắc rối mãi mãi</a></li>
+      <li><a href="#tom-tat-goc"><span class="n">★</span>Tóm tắt gốc của chương</a></li>
+      <li><a href="#ban-do-ghi-nho"><span class="n">★</span>Bản đồ ghi nhớ</a></li>
+    </ol>
+  </nav>
+
+<main>
+
+  <!-- 1 -->
+  <section id="c8-p1">
+    <div class="sec-head"><div class="badge">01</div>
+      <h2>Đau khổ là tùy chọn</h2></div>
+    <p class="willlearn"><b>Bạn sẽ hiểu gì ở phần này?</b><br>Đau khổ khác với nỗi đau thể xác như thế nào, nó sinh ra từ đâu, và vì sao &ldquo;Không&rdquo; lại giữ chặt điều bạn không muốn. <em>Tiêu đề phần này do biên tập viên đặt — đoạn mở chương không có tiểu mục trong sách.</em></p>
+
+    <blockquote data-q="8" data-ini="BK"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Đây là điểm mấu chốt: đau khổ là tùy chọn.</p>
+      <cite><b>Byron Katie</b> — trích từ <em>Một tâm trí ở nhà</em></cite>
+    </div></blockquote>
+
+    <article class="body-card">
+      <p>Bạn không có nghĩa là phải đau khổ. Và khi bạn sống như chính con người thật của mình, Nhận thức, bạn sẽ không bao giờ đau khổ.</p>
+      <p>Thật khó để tưởng tượng một cuộc sống không có đau khổ, nhưng chắc chắn đó có thể là cuộc sống của bạn, ngay bây giờ.</p>
+    </article>
+
+    <blockquote data-q="1" data-ini="AM"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Có nỗi đau về thể xác, nhưng đau khổ là của tâm trí.</p>
+      <cite><b>Anthony de Mello, S.J.</b></cite>
+    </div></blockquote>
+
+    <!-- FIG-C8 -->
+    <figure class="fig">
+      <span class="fig-lbl">Hình 1 &middot; Nỗi đau và đau khổ</span>
+      <svg viewBox="0 0 520 244" role="img" aria-label="Bên trái: một người có một điểm đau đỏ trên cơ thể — nỗi đau thể xác. Bên phải: một người có đám mây suy nghĩ tím xoáy trên đầu — đau khổ là của tâm trí">
+<rect x="10" y="10" width="240" height="200" rx="22" fill="var(--c2l)" stroke="var(--c2b)" stroke-width="1.5"/><rect x="270" y="10" width="240" height="200" rx="22" fill="var(--c7l)" stroke="var(--c7b)" stroke-width="1.5"/><text x="130.0" y="36.0" class="svg-cap" font-size="12" text-anchor="middle" fill="var(--c2)">NỖI ĐAU THỂ XÁC</text><text x="390.0" y="36.0" class="svg-cap" font-size="12" text-anchor="middle" fill="var(--c7)">ĐAU KHỔ</text><g ><circle cx="130" cy="89.2" r="19.2" fill="var(--ink3)"/><path d="M106.0,190 Q106.0,118.0 130,114.2 Q154.0,118.0 154.0,190 Z" fill="var(--ink3)"/></g><circle cx="104" cy="150" r="14" fill="var(--c1)" fill-opacity=".3" class="a-glow"/><circle cx="104" cy="150" r="6" fill="var(--c1)" class="a-pulse"/><text x="130.0" y="204.0" class="svg-t2" font-size="12" text-anchor="middle" font-weight="800">có ở cơ thể</text><g ><circle cx="390" cy="89.2" r="19.2" fill="var(--ink3)"/><path d="M366.0,190 Q366.0,118.0 390,114.2 Q414.0,118.0 414.0,190 Z" fill="var(--ink3)"/></g><g class="a-float" style="" opacity="1"><circle cx="374.6" cy="74" r="12.6" fill="var(--c7)"/><circle cx="390" cy="67.0" r="16.8" fill="var(--c7)"/><circle cx="405.4" cy="74" r="11.9" fill="var(--c7)"/><rect x="363.4" y="74" width="53.2" height="12.6" rx="6.3" fill="var(--c7)"/></g><path d="M368,70 q5,-7 10,0 t10,0" stroke="#fff" stroke-width="2" fill="none" class="a-blink" style="animation-delay:0.0s"/><path d="M384,78 q5,-7 10,0 t10,0" stroke="#fff" stroke-width="2" fill="none" class="a-blink" style="animation-delay:0.3s"/><path d="M400,70 q5,-7 10,0 t10,0" stroke="#fff" stroke-width="2" fill="none" class="a-blink" style="animation-delay:0.6s"/><text x="390.0" y="204.0" class="svg-t2" font-size="12" text-anchor="middle" font-weight="800">là của tâm trí</text><text x="260.0" y="234.0" class="svg-t" font-size="13.5" text-anchor="middle" font-weight="800">“Có nỗi đau về thể xác, nhưng đau khổ là của tâm trí.”</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng</strong> theo câu của Anthony de Mello mà tác giả dẫn: &ldquo;Có nỗi đau về thể xác, nhưng đau khổ là của tâm trí.&rdquo; Theo bà, khổ đau là do tin vào những suy nghĩ tiêu cực — vì vậy đau khổ là do tự mình áp đặt.</figcaption>
+    </figure>
+
+    <blockquote data-q="8" data-ini="JF"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Bản ngã cao hơn của bạn không đau khổ. Bản ngã quen thuộc của bạn khó có thể tìm ra cách để không đau khổ.</p>
+      <cite><b>Jan Frazier</b> — trích từ <em>Sự tự do hiện hữu</em></cite>
+    </div></blockquote>
+
+    <article class="body-card">
+      <p><mark>Khổ đau là do tin vào những suy nghĩ tiêu cực. Vì vậy, đau khổ là do tự mình áp đặt.</mark></p>
+    </article>
+
+    <figure class="fig">
+      <span class="fig-lbl">Hình 2 &middot; Cơ chế của đau khổ</span>
+      <svg viewBox="0 0 460 320" role="img" aria-label="Sơ đồ: một suy nghĩ tiêu cực xuất hiện, nếu bạn tin nó thì dẫn đến đau khổ, nếu bạn không tin nó thì không có đau khổ">
+        <defs>
+          <marker id="f1a" markerWidth="9" markerHeight="9" refX="4.5" refY="4.5" orient="auto">
+            <path d="M0 1 L8 4.5 L0 8 Z" fill="var(--gold)"/>
+          </marker>
+          <marker id="f1r" markerWidth="9" markerHeight="9" refX="4.5" refY="4.5" orient="auto">
+            <path d="M0 1 L8 4.5 L0 8 Z" fill="var(--red)"/>
+          </marker>
+          <marker id="f1g" markerWidth="9" markerHeight="9" refX="4.5" refY="4.5" orient="auto">
+            <path d="M0 1 L8 4.5 L0 8 Z" fill="var(--green)"/>
+          </marker>
+        </defs>
+
+        <rect x="100" y="6" width="260" height="54" rx="12" fill="var(--blue-l)" stroke="var(--blue)" stroke-width="1.5"/>
+        <text class="svg-t" x="230" y="30" text-anchor="middle" font-size="15">Một suy nghĩ tiêu cực</text>
+        <text class="svg-t2" x="230" y="49" text-anchor="middle" font-size="13">xuất hiện trong tâm trí</text>
+
+        <line x1="230" y1="60" x2="230" y2="82" stroke="var(--gold)" stroke-width="2"/>
+        <path d="M230 82 L120 82 L120 100" fill="none" stroke="var(--red)" stroke-width="2" marker-end="url(#f1r)"/>
+        <path d="M230 82 L340 82 L340 100" fill="none" stroke="var(--green)" stroke-width="2" marker-end="url(#f1g)"/>
+
+        <rect x="18" y="108" width="204" height="52" rx="12" fill="var(--red-l)" stroke="var(--red)" stroke-width="1.5"/>
+        <text class="svg-cap" x="120" y="131" text-anchor="middle" font-size="13" fill="var(--red)">BẠN TIN NÓ</text>
+        <text class="svg-t2" x="120" y="150" text-anchor="middle" font-size="12.5">&#8220;Tôi không thích điều này&#8221;</text>
+
+        <rect x="238" y="108" width="204" height="52" rx="12" fill="var(--green-l)" stroke="var(--green)" stroke-width="1.5"/>
+        <text class="svg-cap" x="340" y="131" text-anchor="middle" font-size="13" fill="var(--green)">BẠN KHÔNG TIN NÓ</text>
+        <text class="svg-t2" x="340" y="150" text-anchor="middle" font-size="12.5">chỉ là năng lượng đi qua</text>
+
+        <line x1="120" y1="160" x2="120" y2="186" stroke="var(--red)" stroke-width="2" marker-end="url(#f1r)"/>
+        <line x1="340" y1="160" x2="340" y2="186" stroke="var(--green)" stroke-width="2" marker-end="url(#f1g)"/>
+
+        <rect x="18" y="194" width="204" height="50" rx="12" fill="var(--red)" stroke="var(--red)"/>
+        <text class="svg-cap" x="120" y="224" text-anchor="middle" font-size="15" fill="#FFF8F6">ĐAU KHỔ</text>
+
+        <rect x="238" y="194" width="204" height="50" rx="12" fill="var(--green)" stroke="var(--green)"/>
+        <text class="svg-cap" x="340" y="224" text-anchor="middle" font-size="15" fill="#F4FBF6">KHÔNG ĐAU KHỔ</text>
+
+        <text class="svg-t2" x="230" y="288" text-anchor="middle" font-size="12.5">Cả hai đường đều bắt đầu từ cùng một suy nghĩ.</text>
+        <text class="svg-t2" x="230" y="307" text-anchor="middle" font-size="12.5">Điều quyết định là bạn có tin nó hay không.</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng</strong> theo đúng lập luận của tác giả và câu của Byron Katie: &ldquo;khi tôi tin vào những suy nghĩ của mình, tôi đau khổ, nhưng khi tôi không tin vào chúng, tôi không đau khổ&rdquo;. Suy nghĩ xuất hiện là điều chung; chỗ rẽ nhánh nằm ở niềm tin.</figcaption>
+    </figure>
+
+    <blockquote data-q="8" data-ini="BK"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Tôi phát hiện ra rằng khi tôi tin vào những suy nghĩ của mình, tôi đau khổ, nhưng khi tôi không tin vào chúng, tôi không đau khổ, và điều này đúng với mọi con người. Tự do đơn giản như vậy.</p>
+      <cite><b>Byron Katie</b> — trích từ <em>Một ngàn cái tên cho niềm vui</em></cite>
+    </div></blockquote>
+
+    <blockquote data-q="4" data-ini="RS"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Bất cứ khi nào bạn đau khổ, nỗi đau khổ của bạn được gói gọn trong một suy nghĩ duy nhất: &ldquo;Tôi không thích điều này.&rdquo; Nói cách khác, chúng ta cho phép một suy nghĩ duy nhất, mỏng manh, không có thực phá hỏng hạnh phúc của mình.</p>
+      <cite><b>Rupert Spira</b> — trích từ bài nói chuyện <em>&ldquo;Nỗi đau khổ được gói gọn trong một suy nghĩ duy nhất&rdquo;</em></cite>
+    </div></blockquote>
+
+    <article class="body-card">
+      <p>Tâm trí chúng ta có xu hướng phản ứng với hoàn cảnh của cuộc sống bằng Không, Không, Không, trong khi Nhận thức luôn phản ứng bằng Có, Có, Có, với mọi thứ.</p>
+    </article>
+
+    <blockquote data-q="7" data-ini="🙏"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Nhận thức thậm chí còn nói &ldquo;có&rdquo; với &ldquo;không&rdquo;!</p>
+      <cite><b>Người thầy của tôi</b> — người thầy giấu tên của Rhonda Byrne</cite>
+    </div></blockquote>
+
+    <!-- FIG-C8 -->
+    <figure class="fig">
+      <span class="fig-lbl">Hình 3 &middot; Nhận thức nói “có” với cả “không”</span>
+      <svg viewBox="0 0 520 246" role="img" aria-label="Một vòng tròn vàng lớn mang chữ Có, Có, Có chứa bên trong năm nhãn Không màu đỏ đang trôi lơ lửng">
+<defs><radialGradient id="g8b"><stop offset="0" stop-color="var(--c3)"/><stop offset="1" stop-color="var(--c2)"/></radialGradient></defs>
+<circle cx="262" cy="118" r="104" fill="var(--c3)" fill-opacity=".2" class="a-glow"/><circle cx="262" cy="118" r="92" fill="var(--c3l)" stroke="var(--c3)" stroke-width="3"/><text x="262.0" y="58.0" class="svg-cap" font-size="13" text-anchor="middle" fill="var(--c2)">CÓ · CÓ · CÓ</text><g class="a-float" style="animation-delay:0.0s"><rect x="178" y="78" width="60" height="28" rx="14" fill="var(--c1l)" stroke="var(--c1)" stroke-width="1.5"/><text x="208.0" y="97.0" class="svg-t" font-size="12.5" text-anchor="middle" font-weight="800" style="fill:var(--c1)">Không</text></g><g class="a-float" style="animation-delay:0.4s"><rect x="288" y="68" width="60" height="28" rx="14" fill="var(--c1l)" stroke="var(--c1)" stroke-width="1.5"/><text x="318.0" y="87.0" class="svg-t" font-size="12.5" text-anchor="middle" font-weight="800" style="fill:var(--c1)">Không</text></g><g class="a-float" style="animation-delay:0.8s"><rect x="202" y="140" width="60" height="28" rx="14" fill="var(--c1l)" stroke="var(--c1)" stroke-width="1.5"/><text x="232.0" y="159.0" class="svg-t" font-size="12.5" text-anchor="middle" font-weight="800" style="fill:var(--c1)">Không</text></g><g class="a-float" style="animation-delay:1.2000000000000002s"><rect x="276" y="136" width="60" height="28" rx="14" fill="var(--c1l)" stroke="var(--c1)" stroke-width="1.5"/><text x="306.0" y="155.0" class="svg-t" font-size="12.5" text-anchor="middle" font-weight="800" style="fill:var(--c1)">Không</text></g><g class="a-float" style="animation-delay:1.6s"><rect x="240" y="104" width="60" height="28" rx="14" fill="var(--c1l)" stroke="var(--c1)" stroke-width="1.5"/><text x="270.0" y="123.0" class="svg-t" font-size="12.5" text-anchor="middle" font-weight="800" style="fill:var(--c1)">Không</text></g><text x="70.0" y="96.0" class="svg-t" font-size="13" text-anchor="middle" font-weight="800" style="fill:var(--c1)">tâm trí:</text><text x="70.0" y="114.0" class="svg-t2" font-size="12.5" text-anchor="middle" font-weight="700">Không, Không,</text><text x="70.0" y="130.0" class="svg-t2" font-size="12.5" text-anchor="middle" font-weight="700">Không</text><text x="450.0" y="96.0" class="svg-t" font-size="13" text-anchor="middle" font-weight="800" style="fill:var(--c2)">Nhận thức:</text><text x="450.0" y="114.0" class="svg-t2" font-size="12.5" text-anchor="middle" font-weight="700">Có, Có, Có —</text><text x="450.0" y="130.0" class="svg-t2" font-size="12.5" text-anchor="middle" font-weight="700">với mọi thứ</text><text x="262.0" y="236.0" class="svg-t" font-size="14" text-anchor="middle" font-weight="800">“Nhận thức thậm chí còn nói ‘có’ với ‘không’!”</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng</strong> theo lời tác giả và người thầy của bà: tâm trí phản ứng với hoàn cảnh bằng &ldquo;Không, Không, Không&rdquo;, trong khi Nhận thức luôn phản ứng bằng &ldquo;Có, Có, Có, với mọi thứ&rdquo; — và &ldquo;Nhận thức thậm chí còn nói ‘có’ với ‘không’!&rdquo;</figcaption>
+    </figure>
+
+    <article class="body-card">
+      <p>Nói &ldquo;Không&rdquo; giữ những gì bạn không muốn ở lại với bạn. <mark>Nói &ldquo;Có&rdquo; với những gì bạn không muốn sẽ giải phóng sự kháng cự của bạn, cho phép những gì bạn không muốn thay đổi.</mark></p>
+      <p>Điều này trái ngược với trực giác, nhưng đó là cách nó hoạt động. Khi bạn nói &ldquo;Không, tôi không muốn điều này&rdquo;, bạn đang kháng cự, và như bạn đã hiểu, bất cứ điều gì bạn kháng cự đều tồn tại.</p>
+    </article>
+
+    <figure class="fig">
+      <span class="fig-lbl">Hình 4 &middot; &ldquo;Không&rdquo; giữ chặt, &ldquo;Có&rdquo; để trôi qua</span>
+      <svg viewBox="0 0 460 250" role="img" aria-label="Sơ đồ hai hàng: nói Không tạo ra bức tường khiến hoàn cảnh dội lại và ở lại; nói Có mở cửa cho hoàn cảnh trôi qua">
+        <defs>
+          <marker id="f2r" markerWidth="9" markerHeight="9" refX="4.5" refY="4.5" orient="auto">
+            <path d="M0 1 L8 4.5 L0 8 Z" fill="var(--red)"/>
+          </marker>
+          <marker id="f2g" markerWidth="9" markerHeight="9" refX="4.5" refY="4.5" orient="auto">
+            <path d="M0 1 L8 4.5 L0 8 Z" fill="var(--green)"/>
+          </marker>
+        </defs>
+
+        <!-- hàng 1: KHÔNG -->
+        <rect x="0" y="4" width="460" height="104" rx="12" fill="var(--red-l)" stroke="var(--red)" stroke-width="1.2" stroke-opacity=".5"/>
+        <text class="svg-cap" x="18" y="28" font-size="13" fill="var(--red)">&#8220;KHÔNG, TÔI KHÔNG MUỐN ĐIỀU NÀY!&#8221;</text>
+        <circle cx="58" cy="68" r="24" fill="var(--card)" stroke="var(--ink2)" stroke-width="1.5"/>
+        <text class="svg-t2" x="58" y="65" text-anchor="middle" font-size="10.5">hoàn</text>
+        <text class="svg-t2" x="58" y="77" text-anchor="middle" font-size="10.5">cảnh</text>
+        <path d="M86 68 L150 68" stroke="var(--red)" stroke-width="2" marker-end="url(#f2r)"/>
+        <path d="M150 84 L86 84" stroke="var(--red)" stroke-width="2" marker-end="url(#f2r)"/>
+        <rect x="160" y="52" width="13" height="48" rx="3" fill="var(--red)"/>
+        <text class="svg-t2" x="166" y="46" text-anchor="middle" font-size="10.5" fill="var(--red)">kháng cự</text>
+        <text class="svg-t" x="192" y="62" font-size="13.5">Năng lượng dội lại</text>
+        <text class="svg-t2" x="192" y="80" font-size="12.5">Hoàn cảnh bị giữ chặt &middot; đau khổ tiếp tục</text>
+
+        <!-- hàng 2: CÓ -->
+        <rect x="0" y="124" width="460" height="104" rx="12" fill="var(--green-l)" stroke="var(--green)" stroke-width="1.2" stroke-opacity=".5"/>
+        <text class="svg-cap" x="18" y="148" font-size="13" fill="var(--green)">&#8220;CÓ, BẠN ĐƯỢC CHÀO ĐÓN Ở ĐÂY&#8221;</text>
+        <circle cx="58" cy="188" r="24" fill="var(--card)" stroke="var(--ink2)" stroke-width="1.5"/>
+        <text class="svg-t2" x="58" y="185" text-anchor="middle" font-size="10.5">hoàn</text>
+        <text class="svg-t2" x="58" y="197" text-anchor="middle" font-size="10.5">cảnh</text>
+        <path d="M86 188 L300 188" stroke="var(--green)" stroke-width="2" marker-end="url(#f2g)"/>
+        <path d="M160 152 L160 172" stroke="var(--green)" stroke-width="3" stroke-linecap="round"/>
+        <path d="M160 204 L160 224" stroke="var(--green)" stroke-width="3" stroke-linecap="round"/>
+        
+        <text class="svg-t" x="316" y="184" font-size="13.5">Trôi qua</text>
+        <text class="svg-t2" x="316" y="202" font-size="12.5">và thay đổi được</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng.</strong> Bức tường đỏ là sự kháng cự: nó không ngăn được hoàn cảnh, nó chỉ giữ hoàn cảnh ở lại. Khi &ldquo;Có&rdquo; mở lối, năng lượng của tình huống đi qua — và theo tác giả, chính lúc đó tình huống mới có thể thay đổi.</figcaption>
+    </figure>
+
+    <blockquote data-q="6" data-ini="ET"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Nếu bạn ở trong trạng thái chấp nhận này, bạn sẽ không tạo ra thêm tiêu cực, không còn đau khổ, không còn bất hạnh. Khi đó, bạn sẽ sống trong trạng thái không kháng cự, trạng thái của sự duyên dáng và nhẹ nhàng, không đấu tranh.</p>
+      <cite><b>Eckhart Tolle</b> — trích từ <em>Sức mạnh của hiện tại</em></cite>
+    </div></blockquote>
+
+    <blockquote data-q="8" data-ini="BK"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Tôi là người yêu những gì đang có, không phải vì tôi là người tâm linh, mà vì tôi thấy đau khi tranh luận với thực tế.</p>
+      <cite><b>Byron Katie</b> — trích từ <em>Yêu những gì đang có</em></cite>
+    </div></blockquote>
+
+    <blockquote data-q="8" data-ini="JF"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Nếu bạn hoàn toàn buông bỏ sự kháng cự ngay lúc này, không bao giờ bắt đầu lại nữa, chỉ bằng một cử chỉ đó, bạn sẽ giải thoát bản thân khỏi gánh nặng đau khổ to lớn.</p>
+      <cite><b>Jan Frazier</b> — trích từ <em>Sự tự do hiện hữu</em></cite>
+    </div></blockquote>
+
+    <article class="body-card">
+      <p>Nếu chúng ta không kháng cự những gì đã xảy ra, sẽ không có xung đột và năng lượng của tình huống đó sẽ qua đi. Nếu không có sự kháng cự của chúng ta đối với một điều gì đó, nó không thể tồn tại trong cuộc sống của chúng ta.</p>
+      <p>Mặt khác, nếu chúng ta kháng cự những gì đã xảy ra, chúng ta sẽ giữ tình huống đó bên mình và chúng ta sẽ tiếp tục đau khổ.</p>
+      <p>Người thầy tuyệt vời Sailor Bob Adamson nói rằng hãy để những trải nghiệm đến rồi đi mà không phán xét chúng.</p>
+    </article>
+
+    <!-- FIG-C8 -->
+    <figure class="fig">
+      <span class="fig-lbl">Hình 5 &middot; Để trải nghiệm đến rồi đi</span>
+      <svg viewBox="0 0 520 240" role="img" aria-label="Một dòng sông chảy ngang, trên đó trôi qua các nhãn lời khen, tắc đường, tin vui, lời chê, cơn mưa; bên dưới là hai kiểu tay tạo ràng buộc: nắm bắt bám víu, và chống cự đẩy ra">
+<defs><clipPath id="c8c"><rect x="10" y="40" width="500" height="160"/></clipPath></defs>
+<path d="M10,130 C110,104 190,156 260,130 S410,104 510,130" fill="none" stroke="var(--c6l)" stroke-width="64" stroke-linecap="round"/><path d="M10,130 C110,104 190,156 260,130 S410,104 510,130" fill="none" stroke="var(--c6)" stroke-width="2" stroke-dasharray="6 10" class="a-dash" opacity=".6"/><g clip-path="url(#c8c)"><g><g><rect x="-40.8" y="-13.0" width="81.7" height="26" rx="13.0" fill="var(--c4l)" stroke="var(--c4)" stroke-width="1.6"/><text x="0.0" y="4.3" class="svg-t" font-size="12" text-anchor="middle" font-weight="700">lời khen</text></g><animateMotion dur="10s" begin="-0s" repeatCount="indefinite" path="M10,130 C110,104 190,156 260,130 S410,104 510,130"/></g><g><g><rect x="-44.3" y="-13.0" width="88.6" height="26" rx="13.0" fill="var(--c1l)" stroke="var(--c1)" stroke-width="1.6"/><text x="0.0" y="4.3" class="svg-t" font-size="12" text-anchor="middle" font-weight="700">tắc đường</text></g><animateMotion dur="10s" begin="-2s" repeatCount="indefinite" path="M10,130 C110,104 190,156 260,130 S410,104 510,130"/></g><g><g><rect x="-37.4" y="-13.0" width="74.7" height="26" rx="13.0" fill="var(--c6l)" stroke="var(--c6)" stroke-width="1.6"/><text x="0.0" y="4.3" class="svg-t" font-size="12" text-anchor="middle" font-weight="700">tin vui</text></g><animateMotion dur="10s" begin="-4s" repeatCount="indefinite" path="M10,130 C110,104 190,156 260,130 S410,104 510,130"/></g><g><g><rect x="-37.4" y="-13.0" width="74.7" height="26" rx="13.0" fill="var(--c8l)" stroke="var(--c8)" stroke-width="1.6"/><text x="0.0" y="4.3" class="svg-t" font-size="12" text-anchor="middle" font-weight="700">lời chê</text></g><animateMotion dur="10s" begin="-6s" repeatCount="indefinite" path="M10,130 C110,104 190,156 260,130 S410,104 510,130"/></g><g><g><rect x="-37.4" y="-13.0" width="74.7" height="26" rx="13.0" fill="var(--c5l)" stroke="var(--c5)" stroke-width="1.6"/><text x="0.0" y="4.3" class="svg-t" font-size="12" text-anchor="middle" font-weight="700">cơn mưa</text></g><animateMotion dur="10s" begin="-8s" repeatCount="indefinite" path="M10,130 C110,104 190,156 260,130 S410,104 510,130"/></g></g><g transform="translate(100 196)"><path d="M-16,0 C-16,-24 16,-24 16,0" fill="none" stroke="var(--c1)" stroke-width="8" stroke-linecap="round"/><circle r="5" cy="-30" fill="var(--c1)"/></g><text x="100.0" y="228.0" class="svg-t" font-size="12.5" text-anchor="middle" font-weight="800" style="fill:var(--c1)">nắm bắt, bám víu</text><g transform="translate(420 196)"><path d="M-18,-6 H14 M8,-14 L16,-6 L8,2" fill="none" stroke="var(--c1)" stroke-width="5" stroke-linecap="round" transform="rotate(180)"/></g><text x="420.0" y="228.0" class="svg-t" font-size="12.5" text-anchor="middle" font-weight="800" style="fill:var(--c1)">chống cự, đẩy ra</text><text x="260.0" y="228.0" class="svg-t2" font-size="12.5" text-anchor="middle" font-weight="700">→ ràng buộc của đau khổ</text><text x="260.0" y="30.0" class="svg-t" font-size="13.5" text-anchor="middle" font-weight="800" style="fill:var(--c6)">để những trải nghiệm đến rồi đi mà không phán xét chúng</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng</strong> theo lời Sailor Bob Adamson mà tác giả nhắc — &ldquo;hãy để những trải nghiệm đến rồi đi mà không phán xét chúng&rdquo; — và câu của Peter Lawry ngay bên dưới: chỉ có sự nắm bắt, bám víu, hoặc chống cự và đẩy ra mới tạo ra sự ràng buộc của đau khổ. Các nhãn trên dòng sông chỉ là ví dụ minh họa.</figcaption>
+    </figure>
+
+    <blockquote data-q="1" data-ini="PL"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Chỉ có sự nắm bắt, bám víu, hoặc chống cự và đẩy ra mới tạo ra sự ràng buộc của đau khổ về mặt tâm lý.</p>
+      <cite><b>Peter Lawry</b> — trích từ bài nói chuyện <em>&ldquo;Không có sự tách biệt&rdquo;</em></cite>
+    </div></blockquote>
+
+    <blockquote data-q="8" data-ini="JF"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Hầu hết mọi người đều đi đến nấm mồ của mình với niềm tin rằng đau khổ là điều không thể tránh khỏi. Thật đáng buồn. Nếu bạn quay lưng lại với khả năng rằng nó có thể khác đi, bạn sẽ phải chịu đựng một cách vô ích cho đến ngày bạn chết. Nhưng có một điều này: sự chấm dứt của đau khổ sẽ là lợi ích nhỏ nhất, nếu bạn trở nên tự do. Phép màu thực sự không phải là sự giải thoát sâu sắc khỏi nỗi đau khổ, mà là sự giàu có sẽ tràn ngập &ldquo;không gian&rdquo; được giải phóng.</p>
+      <cite><b>Jan Frazier</b> — trích từ <em>Khi nỗi sợ hãi tan biến</em></cite>
+    </div></blockquote>
+
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+  <!-- 2 -->
+  <section id="c8-p2">
+    <div class="sec-head"><div class="badge">02</div>
+      <h2>Một kết thúc tức thời cho sự đau khổ</h2></div>
+    <p class="willlearn"><b>Bạn sẽ hiểu gì ở phần này?</b><br>Câu hỏi có thể chấm dứt đau khổ ngay lập tức, và niềm tin là gốc rễ của mọi đau khổ trên thế giới. <em>Tiêu đề phần này là tiểu mục gốc trong sách.</em></p>
+
+    <article class="body-card">
+      <p>Những gì tôi sắp chia sẻ với bạn có thể không phải là điều dễ hiểu nhất, nhưng nếu bạn có thể hiểu được, nó sẽ giúp bạn thoát khỏi đau khổ ngay lập tức.</p>
+      <p>Tâm trí khiến chúng ta cảm thấy như thể chúng ta là người đang đau khổ, và tất nhiên nếu chúng ta tin tưởng vào tâm trí mình một cách mù quáng, thì đau khổ của chúng ta sẽ vô cùng lớn.</p>
+      <p><mark>Nhưng sự thật là bạn là người nhận thức được đau khổ, chứ không phải là người đang đau khổ.</mark></p>
+      <p>Người đang đau khổ là ý niệm mà bạn có về bản thân mình mà bạn đã tin nhưng không phải là con người thực sự của bạn.</p>
+    </article>
+
+    <figure class="fig">
+      <span class="fig-lbl">Hình 6 &middot; Ai đang đau khổ?</span>
+      <svg viewBox="0 0 460 290" role="img" aria-label="Sơ đồ: vòng tròn lớn là Nhận thức tức là bạn, bên trong có một đám mây nhỏ là đau khổ; bạn là cái nhận thức, không phải đám mây">
+        <defs>
+          <radialGradient id="f3g" cx="50%" cy="45%" r="60%">
+            <stop offset="0%" stop-color="var(--gold-l)"/>
+            <stop offset="100%" stop-color="var(--card)"/>
+          </radialGradient>
+          <marker id="f3a" markerWidth="9" markerHeight="9" refX="4.5" refY="4.5" orient="auto">
+            <path d="M0 1 L8 4.5 L0 8 Z" fill="var(--gold)"/>
+          </marker>
+          <marker id="f3p" markerWidth="9" markerHeight="9" refX="4.5" refY="4.5" orient="auto">
+            <path d="M0 1 L8 4.5 L0 8 Z" fill="var(--purple)"/>
+          </marker>
+        </defs>
+
+        <circle cx="230" cy="130" r="118" fill="url(#f3g)" stroke="var(--gold)" stroke-width="2.5"/>
+        <text class="svg-cap" x="230" y="44" text-anchor="middle" font-size="13.5" fill="var(--gold)">BẠN = NHẬN THỨC</text>
+        <text class="svg-t2" x="230" y="62" text-anchor="middle" font-size="11.5">vô hạn &middot; không bị chạm tới</text>
+
+        <!-- đám mây đau khổ -->
+        <g>
+          <ellipse cx="212" cy="146" rx="38" ry="26" fill="var(--purple-l)" stroke="var(--purple)" stroke-width="1.5"/>
+          <ellipse cx="250" cy="138" rx="26" ry="19" fill="var(--purple-l)" stroke="var(--purple)" stroke-width="1.5"/>
+          <ellipse cx="231" cy="152" rx="44" ry="20" fill="var(--purple-l)" stroke="var(--purple)" stroke-width="1.5"/>
+          <text class="svg-cap" x="230" y="155" text-anchor="middle" font-size="12.5" fill="var(--purple)">ĐAU KHỔ</text>
+        </g>
+
+        <path d="M62 226 C 110 210 150 178 176 160" fill="none" stroke="var(--purple)" stroke-width="1.8" marker-end="url(#f3p)"/>
+        <text class="svg-t2" x="6" y="248" font-size="12">Thứ <tspan font-weight="700">được</tspan> nhận thức</text>
+        <text class="svg-t2" x="6" y="265" font-size="12">— nó đến rồi đi</text>
+
+        <path d="M400 226 C 366 206 350 170 344 126" fill="none" stroke="var(--gold)" stroke-width="1.8" marker-end="url(#f3a)"/>
+        <text class="svg-t2" x="454" y="248" text-anchor="end" font-size="12">Cái <tspan font-weight="700">đang</tspan> nhận thức</text>
+        <text class="svg-t2" x="454" y="265" text-anchor="end" font-size="12">— bạn ở đây</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng.</strong> Theo tác giả, đau khổ nằm <em>trong</em> Nhận thức như đám mây nằm trong bầu trời — nó là thứ được nhận thức, còn bạn là cái đang nhận thức. Câu hỏi ở khung thực hành bên dưới nhắm đúng vào chỗ này.</figcaption>
+    </figure>
+
+    <blockquote data-q="4" data-ini="HD"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Sự chấm dứt của đau khổ xảy ra khi bạn nhận ra rằng không có ai phải đau khổ.</p>
+      <cite><b>Hale Dwoskin</b></cite>
+    </div></blockquote>
+
+    <article class="body-card">
+      <p>Người thầy của tôi sẽ nói rằng hãy tự hỏi mình câu hỏi này:</p>
+      <p style="font-size:21px; font-style:italic; text-align:center; margin:18px 0"><mark>&ldquo;Tôi là người đang đau khổ, hay tôi là người nhận thức được đau khổ?&rdquo;</mark></p>
+      <p>Nếu chúng ta có thể ngừng tin vào gợi ý của tâm trí rằng chúng ta là người đang đau khổ, thì đau khổ sẽ chấm dứt ngay lập tức.</p>
+    </article>
+
+    <div class="practice">
+      <span class="lbl">Thực hành từ sách</span>
+      <p><strong>Mục đích theo nội dung chương:</strong> chấm dứt đau khổ ngay lập tức, bằng cách ngừng tin vào gợi ý của tâm trí rằng bạn là người đang đau khổ.</p>
+      <p><strong>Câu hỏi nguyên văn mà người thầy của tác giả đưa ra:</strong></p>
+      <ol class="steps">
+        <li><strong>&ldquo;Tôi là người đang đau khổ, hay tôi là người nhận thức được đau khổ?&rdquo;</strong></li>
+      </ol>
+      <p><strong>Điều tác giả nói bạn sẽ thấy:</strong> bạn là người nhận thức được đau khổ, chứ không phải người đang đau khổ. &ldquo;Người đang đau khổ&rdquo; chỉ là ý niệm bạn có về bản thân mà bạn đã tin — nó không phải con người thực sự của bạn.</p>
+      <div class="notepad">
+        <span class="nl">Ghi chú của bạn (in ra để viết tay)</span>
+        <div class="lines"></div><div class="lines"></div><div class="lines"></div>
+      </div>
+    </div>
+
+    <blockquote data-q="8" data-ini="BK"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Một khi bản chất của tâm trí được hiểu, đau khổ không thể tồn tại.</p>
+      <cite><b>Byron Katie</b> — trích từ <em>Một tâm trí ở nhà</em></cite>
+    </div></blockquote>
+
+    <blockquote data-q="1" data-ini="AM"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Sự nhận thức mở ra cánh cửa, giải trừ mọi niềm tin, ý kiến và ý tưởng đang cản trở và che phủ trạng thái hạnh phúc tự nhiên của bạn.</p>
+      <cite><b>Anthony de Mello, S.J.</b></cite>
+    </div></blockquote>
+
+    <blockquote data-q="8" data-ini="JF"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Không có gì ngạc nhiên khi cỗ máy đau khổ sụp đổ, và tâm trí trở nên tĩnh lặng, cảm giác là bạn đã trở về nhà. Nhà đã tìm thấy bạn, đó thường là ấn tượng, vì bạn không nhất thiết phải cố gắng tìm đường đến đó, ít nhất là không có ý thức. Hoặc có thể bạn đã từng, nhưng giờ bạn thấy mình đã tìm kiếm sai chỗ.</p>
+      <cite><b>Jan Frazier</b> — trích từ <em>Sự Ngọt Ngào Vĩ Đại: Cuộc Sống Sau Khi Nghĩ</em></cite>
+    </div></blockquote>
+
+    <article class="body-card">
+      <p><mark>Có một niềm tin cụ thể là nguyên nhân gốc rễ của mọi đau khổ trên thế giới. Đó là niềm tin rằng chúng ta là một cá thể riêng biệt.</mark></p>
+      <p>Với suy nghĩ, tâm trí bạn thuyết phục bạn rằng bạn chỉ là một cá thể, và bạn dễ bị tổn thương trước cả một thế giới đầy rẫy những điều có thể xảy ra sai trái.</p>
+      <p>Nếu bạn tin vào câu chuyện tách biệt của tâm trí, bạn sẽ hoàn toàn nằm dưới sự kiểm soát của tâm trí. Tâm trí bạn sẽ liên tục gửi một luồng suy nghĩ sợ hãi rằng bạn dễ bị tổn thương, những điều tồi tệ có thể xảy ra với bạn và rằng bạn và cuộc sống của bạn bị giới hạn.</p>
+      <p>Đáng buồn thay, điều này sẽ trở thành cuộc sống của bạn nếu bạn tin rằng nó là sự thật. Nhưng sự thật lại hoàn toàn trái ngược với điều này. Chúng ta không tách biệt.</p>
+      <p>Có vẻ như chúng ta là một người tách biệt, và chúng ta đang có trải nghiệm là một người tách biệt, nhưng để có một cuộc sống tuyệt vời tràn đầy hạnh phúc lâu dài, hãy luôn nhận thức được sự thật rằng bạn là vô hạn, vĩnh cửu, Ý thức &ndash; Nhận thức, và chỉ có Một trong chúng ta.</p>
+    </article>
+
+    <!-- FIG-C8 -->
+    <figure class="fig">
+      <span class="fig-lbl">Hình 7 &middot; Niềm tin tách biệt</span>
+      <svg viewBox="0 0 520 244" role="img" aria-label="Bên trái: một chấm xám đứng một mình, run rẩy giữa tám mũi tên đỏ chĩa vào. Bên phải: bảy chấm nhiều màu nối với nhau bằng mạng lưới quanh một tâm vàng chung">
+<defs><marker id="m8d" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="var(--c1)"/></marker></defs>
+<rect x="10" y="10" width="190" height="200" rx="22" fill="var(--c1l)" stroke="var(--c1b)" stroke-width="1.5"/><rect x="220" y="10" width="290" height="200" rx="22" fill="var(--c4l)" stroke="var(--c4b)" stroke-width="1.5"/><text x="105.0" y="34.0" class="svg-cap" font-size="11" text-anchor="middle" fill="var(--c1)">CÂU CHUYỆN TÁCH BIỆT</text><text x="365.0" y="34.0" class="svg-cap" font-size="11" text-anchor="middle" fill="var(--c4)">SỰ THẬT: CHÚNG TA KHÔNG TÁCH BIỆT</text><path d="M160.0,112.0 L130.0,112.0" stroke="var(--c1)" stroke-width="2.4" marker-end="url(#m8d)" class="a-dash"/><path d="M142.4,154.4 L121.2,133.2" stroke="var(--c1)" stroke-width="2.4" marker-end="url(#m8d)" class="a-dash"/><path d="M100.0,172.0 L100.0,142.0" stroke="var(--c1)" stroke-width="2.4" marker-end="url(#m8d)" class="a-dash"/><path d="M57.6,154.4 L78.8,133.2" stroke="var(--c1)" stroke-width="2.4" marker-end="url(#m8d)" class="a-dash"/><path d="M40.0,112.0 L70.0,112.0" stroke="var(--c1)" stroke-width="2.4" marker-end="url(#m8d)" class="a-dash"/><path d="M57.6,69.6 L78.8,90.8" stroke="var(--c1)" stroke-width="2.4" marker-end="url(#m8d)" class="a-dash"/><path d="M100.0,52.0 L100.0,82.0" stroke="var(--c1)" stroke-width="2.4" marker-end="url(#m8d)" class="a-dash"/><path d="M142.4,69.6 L121.2,90.8" stroke="var(--c1)" stroke-width="2.4" marker-end="url(#m8d)" class="a-dash"/><circle cx="100" cy="112" r="16" fill="var(--ink3)" class="a-drift" style="animation-duration:.4s"/><text x="105.0" y="190.0" class="svg-t2" font-size="11.5" text-anchor="middle" font-weight="800">một cá thể dễ bị tổn thương</text><line x1="388.0" y1="116.0" x2="366.2" y2="161.3" stroke="var(--c4)" stroke-width="1.6" opacity=".6"/><line x1="388.0" y1="116.0" x2="317.1" y2="172.5" stroke="var(--c4)" stroke-width="1.6" opacity=".6"/><line x1="388.0" y1="116.0" x2="277.7" y2="141.2" stroke="var(--c4)" stroke-width="1.6" opacity=".6"/><line x1="388.0" y1="116.0" x2="277.7" y2="90.8" stroke="var(--c4)" stroke-width="1.6" opacity=".6"/><line x1="388.0" y1="116.0" x2="317.1" y2="59.5" stroke="var(--c4)" stroke-width="1.6" opacity=".6"/><line x1="388.0" y1="116.0" x2="366.2" y2="70.7" stroke="var(--c4)" stroke-width="1.6" opacity=".6"/><line x1="366.2" y1="161.3" x2="317.1" y2="172.5" stroke="var(--c4)" stroke-width="1.6" opacity=".6"/><line x1="366.2" y1="161.3" x2="277.7" y2="141.2" stroke="var(--c4)" stroke-width="1.6" opacity=".6"/><line x1="366.2" y1="161.3" x2="277.7" y2="90.8" stroke="var(--c4)" stroke-width="1.6" opacity=".6"/><line x1="366.2" y1="161.3" x2="317.1" y2="59.5" stroke="var(--c4)" stroke-width="1.6" opacity=".6"/><line x1="366.2" y1="161.3" x2="366.2" y2="70.7" stroke="var(--c4)" stroke-width="1.6" opacity=".6"/><line x1="317.1" y1="172.5" x2="277.7" y2="141.2" stroke="var(--c4)" stroke-width="1.6" opacity=".6"/><line x1="317.1" y1="172.5" x2="277.7" y2="90.8" stroke="var(--c4)" stroke-width="1.6" opacity=".6"/><line x1="317.1" y1="172.5" x2="317.1" y2="59.5" stroke="var(--c4)" stroke-width="1.6" opacity=".6"/><line x1="317.1" y1="172.5" x2="366.2" y2="70.7" stroke="var(--c4)" stroke-width="1.6" opacity=".6"/><line x1="277.7" y1="141.2" x2="277.7" y2="90.8" stroke="var(--c4)" stroke-width="1.6" opacity=".6"/><line x1="277.7" y1="141.2" x2="317.1" y2="59.5" stroke="var(--c4)" stroke-width="1.6" opacity=".6"/><line x1="277.7" y1="141.2" x2="366.2" y2="70.7" stroke="var(--c4)" stroke-width="1.6" opacity=".6"/><line x1="277.7" y1="90.8" x2="317.1" y2="59.5" stroke="var(--c4)" stroke-width="1.6" opacity=".6"/><line x1="277.7" y1="90.8" x2="366.2" y2="70.7" stroke="var(--c4)" stroke-width="1.6" opacity=".6"/><line x1="317.1" y1="59.5" x2="366.2" y2="70.7" stroke="var(--c4)" stroke-width="1.6" opacity=".6"/><circle cx="388.0" cy="116.0" r="12" fill="var(--c1)"/><circle cx="366.2" cy="161.3" r="12" fill="var(--c2)"/><circle cx="317.1" cy="172.5" r="12" fill="var(--c4)"/><circle cx="277.7" cy="141.2" r="12" fill="var(--c5)"/><circle cx="277.7" cy="90.8" r="12" fill="var(--c6)"/><circle cx="317.1" cy="59.5" r="12" fill="var(--c7)"/><circle cx="366.2" cy="70.7" r="12" fill="var(--c8)"/><circle cx="330" cy="116" r="24" fill="var(--c3)" fill-opacity=".3" class="a-glow"/><circle cx="330" cy="116" r="10" fill="var(--c3)"/><text x="470.0" y="190.0" class="svg-t2" font-size="11.5" text-anchor="end" font-weight="800">một Nhận thức</text><text x="260.0" y="234.0" class="svg-t" font-size="12.8" text-anchor="middle" font-weight="800">gốc rễ của mọi đau khổ: niềm tin rằng chúng ta là một cá thể riêng biệt</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng</strong> theo lời tác giả: &ldquo;Có một niềm tin cụ thể là nguyên nhân gốc rễ của mọi đau khổ trên thế giới. Đó là niềm tin rằng chúng ta là một cá thể riêng biệt&rdquo; — tâm trí khiến ta thấy mình dễ bị tổn thương trước cả một thế giới. &ldquo;Nhưng sự thật lại hoàn toàn trái ngược với điều này. Chúng ta không tách biệt.&rdquo;</figcaption>
+    </figure>
+
+    <div class="flow">
+      <span class="lbl">Mạch lập luận &middot; Phần 01–02</span>
+      <div class="flow-grid">
+        <div class="fstep"><span class="k">Nhận định ban đầu</span><span class="v">Đau khổ là tùy chọn — nó đến từ việc tin vào suy nghĩ tiêu cực.</span></div>
+        <div class="farrow">→</div>
+        <div class="fstep"><span class="k">Cơ chế</span><span class="v">&ldquo;Không&rdquo; tạo kháng cự và giữ chặt tình huống; &ldquo;Có&rdquo; để nó trôi qua.</span></div>
+        <div class="farrow">→</div>
+        <div class="fstep"><span class="k">Lối ra tức thời</span><span class="v">Bạn là người <em>nhận thức được</em> đau khổ, không phải người đang đau khổ.</span></div>
+        <div class="farrow">→</div>
+        <div class="fstep"><span class="k">Gốc rễ</span><span class="v">Mọi đau khổ trên thế giới bắt nguồn từ một niềm tin: rằng chúng ta là một cá thể riêng biệt.</span></div>
+      </div>
+    </div>
+
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+  <!-- 3 -->
+  <section id="c8-p3">
+    <div class="sec-head"><div class="badge">03</div>
+      <h2>Sự kết thúc của vấn đề</h2></div>
+    <p class="willlearn"><b>Bạn sẽ hiểu gì ở phần này?</b><br>Vì sao tác giả nói vấn đề chỉ tồn tại trong tâm trí, và vì sao mức độ hạnh phúc của bạn quyết định kích thước của vấn đề. <em>Tiêu đề phần này là tiểu mục gốc trong sách.</em></p>
+
+    <article class="body-card">
+      <p>Chúng ta tin rằng mình có vấn đề khi mọi thứ diễn ra khác với những gì chúng ta mong đợi, hoặc khi chúng ta cảm thấy có điều gì đó &ldquo;không ổn&rdquo;.</p>
+      <p>Phản ứng tức thời của tâm trí chúng ta đối với một vấn đề là: &ldquo;Tôi không muốn điều này!&rdquo; Tuy nhiên:</p>
+    </article>
+
+    <blockquote data-q="1" data-ini="AM"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Vấn đề chỉ tồn tại trong tâm trí con người.</p>
+      <cite><b>Anthony de Mello, S.J.</b> — trích từ <em>Nhận thức: Đối thoại với các bậc thầy</em></cite>
+    </div></blockquote>
+
+    <blockquote data-q="7" data-ini="🙏"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Vấn đề không có thật. Vấn đề chỉ được tưởng tượng ra. Không có vấn đề nào cả. Điều đó là không thể. Con người bạn không có vấn đề. Vấn đề được tạo ra từng cái một.</p>
+      <cite><b>Người thầy của tôi</b> — người thầy giấu tên của Rhonda Byrne</cite>
+    </div></blockquote>
+
+    <blockquote data-q="4" data-ini="HD"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Mọi vấn đề đều dựa trên ký ức; tại thời điểm này, không có vấn đề nào cả.</p>
+      <cite><b>Hale Dwoskin</b></cite>
+    </div></blockquote>
+
+    <blockquote data-q="1" data-ini="AM"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Nếu không có tâm trí con người, sẽ không có vấn đề nào cả. Mọi vấn đề đều tồn tại trong tâm trí con người. Mọi vấn đề đều do tâm trí tạo ra.</p>
+      <cite><b>Anthony de Mello, S.J.</b> — trích từ <em>Khám phá lại cuộc sống</em></cite>
+    </div></blockquote>
+
+    <article class="body-card">
+      <p>Sự thật là vấn đề chỉ là một câu chuyện khác được tạo ra bởi những suy nghĩ trong tâm trí chúng ta. Đó là tâm trí diễn giải cuộc sống bằng cách kể một câu chuyện về điều gì đó đã xảy ra và biến nó thành vấn đề.</p>
+      <p>Để trải nghiệm một cuộc sống không có vấn đề, thay vì tin vào tâm trí, hãy sử dụng sức mạnh của Nhận thức để nhận thức về tâm trí của bạn.</p>
+      <p>Khi bạn sống ngày càng nhiều hơn với Nhận thức, thì bạn sẽ thấy rõ rằng các vấn đề là những giới hạn tưởng tượng. <mark>Làm sao Nhận thức Vô hạn mà bạn có thể có một vấn đề duy nhất?</mark></p>
+    </article>
+
+    <blockquote data-q="6" data-ini="LL"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Giống như bạn đưa tay vào lửa và nói, &ldquo;Ôi, nóng quá! Tay tôi đang nóng! Trời ơi, tôi có vấn đề rồi!&rdquo; Và rồi bạn lại đưa tay vào lửa, cứ thế, cứ thế, cho đến một ngày bạn thấy rằng mình đang làm vậy và bạn dừng lại. Nếu bạn có vấn đề, bạn đang đưa tay vào vấn đề và hét lên, &ldquo;Đau quá!&rdquo; và hành động như thể bạn không đưa tay vào đó. Bạn hành động như thể bạn không làm vậy. Nhưng bạn đang làm vậy.</p>
+      <cite><b>Lester Levenson</b> — trích từ <em>Hạnh phúc là tự do</em>, tập 1–5</cite>
+    </div></blockquote>
+
+    <!-- FIG-C8 -->
+    <figure class="fig">
+      <span class="fig-lbl">Hình 8 &middot; Đưa tay vào lửa</span>
+      <svg viewBox="0 0 520 244" role="img" aria-label="Một người cứ đưa tay vào ngọn lửa rồi kêu Ôi nóng quá, tôi có vấn đề rồi; bên cạnh là lời nhắc: cứ thế, cứ thế, cho đến một ngày bạn thấy và dừng lại">
+<rect x="250" y="170" width="120" height="14" rx="6" fill="var(--ink2)"/><g class="a-flicker"><path d="M300,170 C270,150 274,108 296,84 C298,106 310,108 312,94 C330,112 340,140 326,170 Z" fill="var(--c1)"/><path d="M306,170 C292,156 296,136 306,122 C310,136 320,142 318,170 Z" fill="var(--c3)"/></g><g class="a-bounce" style="animation-duration:1s"><rect x="120" y="110" width="150" height="22" rx="11" fill="var(--c2)"/><circle cx="276" cy="121" r="16" fill="var(--c2)"/></g><g ><circle cx="100" cy="109.2" r="19.2" fill="var(--c2)"/><path d="M76.0,210 Q76.0,138.0 100,134.2 Q124.0,138.0 124.0,210 Z" fill="var(--c2)"/></g><rect x="14" y="20" width="244" height="54" rx="20" fill="var(--card)" stroke="var(--c1)" stroke-width="1.6"/><text x="136.0" y="42.0" class="svg-t" font-size="12.5" text-anchor="middle" font-weight="800">“Ôi, nóng quá! Trời ơi,</text><text x="136.0" y="60.0" class="svg-t" font-size="12.5" text-anchor="middle" font-weight="800">tôi có vấn đề rồi!”</text><text x="370.0" y="60.0" class="svg-t2" font-size="13" text-anchor="start" font-weight="800">cứ thế, cứ thế…</text><rect x="370" y="92" width="136" height="54" rx="18" fill="var(--c4l)" stroke="var(--c4)" stroke-width="1.6"/><text x="438.0" y="114.0" class="svg-t" font-size="12" text-anchor="middle" font-weight="800">…cho đến một ngày</text><text x="438.0" y="132.0" class="svg-t" font-size="12" text-anchor="middle" font-weight="800" style="fill:var(--c4)">bạn thấy và dừng lại</text><text x="260.0" y="234.0" class="svg-t" font-size="12.8" text-anchor="middle" font-weight="800">“Nếu bạn có vấn đề, bạn đang đưa tay vào vấn đề và hét lên, ‘Đau quá!’”</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng</strong> theo hình ảnh của Lester Levenson: bạn đưa tay vào lửa và kêu nóng, rồi lại đưa tay vào, &ldquo;cứ thế, cứ thế, cho đến một ngày bạn thấy rằng mình đang làm vậy và bạn dừng lại.&rdquo;</figcaption>
+    </figure>
+
+    <blockquote data-q="7" data-ini="🙏"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Mọi vấn đề đều xuất phát từ bản ngã. Bạn tự do khi bạn không coi bất kỳ vấn đề nào là hợp lệ.</p>
+      <cite><b>Người thầy của tôi</b> — người thầy giấu tên của Rhonda Byrne</cite>
+    </div></blockquote>
+
+    <article class="body-card">
+      <p>Điều khó khăn là khi bạn tin rằng mình có vấn đề, bạn chắc chắn sẽ trải nghiệm việc có vấn đề.</p>
+      <p>Nhưng nếu bạn có thể nhận thức được rằng thực ra chính tâm trí và suy nghĩ của nó đang kể một câu chuyện tiêu cực khác, bạn cho phép bất kỳ vấn đề nào được cho là tan biến và biến mất vì niềm tin của bạn không còn giữ nó cho bạn hay thế giới nữa.</p>
+    </article>
+
+    <blockquote data-q="6" data-ini="LL"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Bất kỳ ai nói rằng, &ldquo;Tôi gặp rắc rối&rdquo;, thì điều đó chỉ có trong tâm trí của họ. Đó là nơi duy nhất mà nó tồn tại, bởi vì bạn không thể nhìn thấy hoặc hình dung bất cứ điều gì ở bất kỳ nơi nào khác ngoài tâm trí của bạn. Bất cứ điều gì bạn nhìn thấy, bất cứ điều gì bạn nghe thấy, bất cứ điều gì bạn cảm nhận được, đều nằm trong và thông qua tâm trí của bạn. Đó là nơi mọi thứ tồn tại.</p>
+      <cite><b>Lester Levenson</b> — trích từ <em>Hạnh phúc là tự do</em>, tập 1–5</cite>
+    </div></blockquote>
+
+    <blockquote data-q="7" data-ini="🙏"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Tôi sẽ nói với bạn một điều rất mạnh mẽ. Không có vấn đề nào ở bất kỳ đâu vào bất kỳ lúc nào. Chỉ có sự thiếu hụt tình yêu.</p>
+      <cite><b>Người thầy của tôi</b> — người thầy giấu tên của Rhonda Byrne</cite>
+    </div></blockquote>
+
+    <article class="body-card">
+      <p>Khi bạn không chống lại bất cứ điều gì, khi bạn chấp nhận mọi thứ theo đúng bản chất của nó, thì đó chính là tình yêu. <mark>Nơi nào có tình yêu, nơi đó không có vấn đề nào có thể tồn tại.</mark></p>
+      <p>Đó là lý do tại sao không có vấn đề nào có thể chạm đến con người thật của bạn, bởi vì bạn là tình yêu thuần khiết.</p>
+      <p>Đó là một tình yêu thuần khiết đến mức tâm trí chúng ta không thể hình dung được. Nó hoàn toàn chào đón, chấp nhận, cho phép tất cả và hoàn toàn không ràng buộc.</p>
+      <p>Đó là loại tình yêu được thể hiện bởi những bậc giác ngộ đáng chú ý như Đức Phật, Chúa Giê-su, Lão Tử, Krishna và nhiều người khác nữa. Và tình yêu thuần khiết mà bạn đang có không bao giờ có vấn đề.</p>
+      <p>Nhưng theo quan điểm của một người hạn chế, các vấn đề có vẻ là có thật. Tâm trí chúng ta có phản ứng ngược lại với Nhận thức vô hạn, và nó chống lại và phủ nhận cách mà một thứ gì đó đang tồn tại thay vì chấp nhận và cho phép nó.</p>
+    </article>
+
+    <!-- FIG-C8 -->
+    <figure class="fig">
+      <span class="fig-lbl">Hình 9 &middot; Nơi nào có tình yêu</span>
+      <svg viewBox="0 0 520 246" role="img" aria-label="Một trái tim hồng lớn đập ở giữa; các nhãn vấn đề xung quanh lần lượt mờ đi">
+<defs><radialGradient id="g8f"><stop offset="0" stop-color="var(--c8)"/><stop offset="1" stop-color="var(--c7)"/></radialGradient></defs>
+<g class="a-heal" style="animation-delay:0.0s; animation-duration:9s"><rect x="104" y="56" width="92" height="28" rx="14" fill="var(--soft)" stroke="var(--ink3)" stroke-width="1.5"/><text x="150.0" y="75.0" class="svg-t2" font-size="12.5" text-anchor="middle" font-weight="800">“vấn đề”</text></g><g class="a-heal" style="animation-delay:0.8s; animation-duration:9s"><rect x="334" y="56" width="92" height="28" rx="14" fill="var(--soft)" stroke="var(--ink3)" stroke-width="1.5"/><text x="380.0" y="75.0" class="svg-t2" font-size="12.5" text-anchor="middle" font-weight="800">“vấn đề”</text></g><g class="a-heal" style="animation-delay:1.6s; animation-duration:9s"><rect x="74" y="136" width="92" height="28" rx="14" fill="var(--soft)" stroke="var(--ink3)" stroke-width="1.5"/><text x="120.0" y="155.0" class="svg-t2" font-size="12.5" text-anchor="middle" font-weight="800">“vấn đề”</text></g><g class="a-heal" style="animation-delay:2.4s; animation-duration:9s"><rect x="364" y="136" width="92" height="28" rx="14" fill="var(--soft)" stroke="var(--ink3)" stroke-width="1.5"/><text x="410.0" y="155.0" class="svg-t2" font-size="12.5" text-anchor="middle" font-weight="800">“vấn đề”</text></g><g class="a-heal" style="animation-delay:3.2s; animation-duration:9s"><rect x="144" y="182" width="92" height="28" rx="14" fill="var(--soft)" stroke="var(--ink3)" stroke-width="1.5"/><text x="190.0" y="201.0" class="svg-t2" font-size="12.5" text-anchor="middle" font-weight="800">“vấn đề”</text></g><g class="a-heal" style="animation-delay:4.0s; animation-duration:9s"><rect x="294" y="182" width="92" height="28" rx="14" fill="var(--soft)" stroke="var(--ink3)" stroke-width="1.5"/><text x="340.0" y="201.0" class="svg-t2" font-size="12.5" text-anchor="middle" font-weight="800">“vấn đề”</text></g><circle cx="265" cy="128" r="80" fill="var(--c8)" fill-opacity=".14" class="a-glow"/><g class="a-pulse" style="animation-duration:3s"><path d="M265,118 c-22,-28 -60,-14 -48,20 l48,40 l48,-40 c12,-34 -26,-48 -48,-20 Z" fill="url(#g8f)"/></g><text x="265.0" y="140.0" class="svg-w" font-size="14" text-anchor="middle">tình yêu</text><text x="265.0" y="236.0" class="svg-t" font-size="13.5" text-anchor="middle" font-weight="800">“Không có vấn đề nào… Chỉ có sự thiếu hụt tình yêu.”</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng</strong> theo lời người thầy của tác giả: &ldquo;Không có vấn đề nào ở bất kỳ đâu vào bất kỳ lúc nào. Chỉ có sự thiếu hụt tình yêu.&rdquo; Và như tác giả viết: &ldquo;Nơi nào có tình yêu, nơi đó không có vấn đề nào có thể tồn tại.&rdquo;</figcaption>
+    </figure>
+
+    <blockquote data-q="7" data-ini="LT"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Cuộc sống là một chuỗi những thay đổi tự nhiên và tự phát. Đừng chống lại chúng vì chúng chỉ tạo ra nỗi buồn. Hãy để thực tế là thực tế. Hãy để mọi thứ trôi chảy tự nhiên theo bất kỳ cách nào chúng thích.</p>
+      <cite><b>Lão Tử</b></cite>
+    </div></blockquote>
+
+    <blockquote data-q="7" data-ini="KL"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Khi không có sự đầu tư về mặt cảm xúc trong việc cố gắng ép buộc mọi thứ theo cách chúng ta muốn, thì chúng sẽ tự do chuyển động và tự giải quyết.</p>
+      <cite><b>Kalyani Lawry</b></cite>
+    </div></blockquote>
+
+    <article class="body-card">
+      <p>Từ việc sử dụng các nguyên tắc của <em>Bí mật</em>, tôi thấy rằng khi tôi hạnh phúc, hầu như không có vấn đề gì trong cuộc sống của tôi.</p>
+      <p>Đó là vì từ nơi hạnh phúc, các vấn đề hoặc không xuất hiện, hoặc chúng quá nhỏ đến mức không có khả năng làm xáo trộn hạnh phúc của tôi.</p>
+      <p><mark>Khi tôi hạnh phúc, các vấn đề trông giống như những tổ kiến so với khi tôi tuyệt vọng và vấn đề nhỏ nhất dường như là một ngọn núi.</mark></p>
+      <p>Vậy thì có hợp lý không khi từ cấp độ hạnh phúc tối thượng, nơi chúng ta biết mình là ai, thì không có vấn đề nào?</p>
+    </article>
+
+    <figure class="fig">
+      <span class="fig-lbl">Hình 10 &middot; Tổ kiến hay ngọn núi?</span>
+      <svg viewBox="0 0 460 250" role="img" aria-label="Sơ đồ so sánh: cùng một vấn đề, nhìn từ trạng thái hạnh phúc thì nhỏ như tổ kiến, nhìn từ trạng thái tuyệt vọng thì lớn như ngọn núi">
+        <defs>
+          <linearGradient id="f4h" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="var(--green)" stop-opacity=".22"/>
+            <stop offset="100%" stop-color="var(--green)" stop-opacity=".7"/>
+          </linearGradient>
+          <linearGradient id="f4d" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="var(--purple)" stop-opacity=".25"/>
+            <stop offset="100%" stop-color="var(--purple)" stop-opacity=".8"/>
+          </linearGradient>
+        </defs>
+
+        <!-- panel trái: hạnh phúc -->
+        <rect x="0" y="4" width="216" height="242" rx="12" fill="var(--green-l)" stroke="var(--green)" stroke-width="1.2" stroke-opacity=".45"/>
+        <text class="svg-cap" x="108" y="28" text-anchor="middle" font-size="12.5" fill="var(--green)">TỪ NƠI HẠNH PHÚC</text>
+        <line x1="24" y1="196" x2="192" y2="196" stroke="var(--green)" stroke-width="2"/>
+        <path d="M74 196 Q 108 176 142 196 Z" fill="url(#f4h)" stroke="var(--green)" stroke-width="1.5"/>
+        <text class="svg-t2" x="108" y="216" text-anchor="middle" font-size="12">nhỏ như một tổ kiến</text>
+        <text class="svg-t2" x="108" y="234" text-anchor="middle" font-size="11.5">không đủ sức làm xáo trộn</text>
+        <circle cx="108" cy="72" r="15" fill="none" stroke="var(--green)" stroke-width="2"/>
+        <circle cx="103" cy="68" r="1.8" fill="var(--green)"/><circle cx="113" cy="68" r="1.8" fill="var(--green)"/>
+        <path d="M101 76 Q 108 82 115 76" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round"/>
+        <text class="svg-t2" x="108" y="104" text-anchor="middle" font-size="11">góc nhìn của bạn</text>
+        <line x1="108" y1="112" x2="108" y2="170" stroke="var(--green)" stroke-width="1.5" stroke-dasharray="3 4"/>
+
+        <!-- panel phải: tuyệt vọng -->
+        <rect x="244" y="4" width="216" height="242" rx="12" fill="var(--purple-l)" stroke="var(--purple)" stroke-width="1.2" stroke-opacity=".45"/>
+        <text class="svg-cap" x="352" y="28" text-anchor="middle" font-size="12.5" fill="var(--purple)">TỪ NƠI TUYỆT VỌNG</text>
+        <line x1="268" y1="196" x2="436" y2="196" stroke="var(--purple)" stroke-width="2"/>
+        <path d="M282 196 L352 76 L422 196 Z" fill="url(#f4d)" stroke="var(--purple)" stroke-width="1.5"/>
+        <text class="svg-t2" x="352" y="216" text-anchor="middle" font-size="12">lớn như một ngọn núi</text>
+        <text class="svg-t2" x="352" y="234" text-anchor="middle" font-size="11.5">che hết tầm nhìn</text>
+        <circle cx="300" cy="150" r="13" fill="var(--card)" stroke="var(--purple)" stroke-width="2"/>
+        <circle cx="296" cy="147" r="1.6" fill="var(--purple)"/><circle cx="304" cy="147" r="1.6" fill="var(--purple)"/>
+        <path d="M295 157 Q 300 152 305 157" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round"/>
+
+        <text class="svg-t" x="230" y="128" text-anchor="middle" font-size="13" font-weight="700" fill="var(--gold)">=</text>
+        <text class="svg-t2" x="230" y="146" text-anchor="middle" font-size="10.5">cùng một</text>
+        <text class="svg-t2" x="230" y="158" text-anchor="middle" font-size="10.5">vấn đề</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng</strong> theo đúng phép so sánh của tác giả. Vấn đề không đổi — chỉ có mức độ hạnh phúc của người nhìn đổi. Đó là lý do bà đặt câu hỏi: vậy từ cấp độ hạnh phúc tối thượng, liệu còn vấn đề nào?</figcaption>
+    </figure>
+
+    <blockquote data-q="6" data-ini="LL"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Không có hồi kết cho các vấn đề trên thế giới. Nếu bạn cố gắng tìm ra hồi kết, bạn sẽ mãi mãi giải quyết các vấn đề trên thế giới và bạn sẽ luôn tìm thấy ngày càng nhiều hơn. Miễn là bạn ý thức được các vấn đề thì chúng vẫn tồn tại. Chỉ khi bạn khám phá ra con người thật của mình, bạn mới khám phá ra hồi kết cho các vấn đề.</p>
+      <cite><b>Lester Levenson</b> — trích từ <em>Hạnh phúc là tự do</em>, tập 1–5</cite>
+    </div></blockquote>
+
+    <div class="concept">
+      <span class="lbl">Khái niệm cốt lõi</span>
+      <h4>Vấn đề</h4>
+      <dl>
+        <dt>Cách tác giả sử dụng khái niệm này trong chương</dt>
+        <dd>Không phải một sự vật ngoài kia, mà là <em>một câu chuyện nữa</em> do tâm trí kể: nó diễn giải một điều đã xảy ra và biến điều đó thành vấn đề.</dd>
+        <dt>Ý nghĩa trong mạch lập luận</dt>
+        <dd>Nếu vấn đề là câu chuyện, thì niềm tin của bạn là thứ giữ nó lại — và việc nhận thức được rằng đó chỉ là câu chuyện cho phép nó tan biến.</dd>
+        <dt>Lưu ý để tránh hiểu sai</dt>
+        <dd>Tác giả nói rõ theo quan điểm của một người hạn chế thì &ldquo;các vấn đề có vẻ là có thật&rdquo; — bà không phủ nhận trải nghiệm ấy, mà chỉ ra nó đến từ đâu.</dd>
+      </dl>
+    </div>
+
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+  <!-- 4 -->
+  <section id="c8-p4">
+    <div class="sec-head"><div class="badge">04</div>
+      <h2>Làm thế nào để thoát khỏi rắc rối mãi mãi</h2></div>
+    <p class="willlearn"><b>Bạn sẽ hiểu gì ở phần này?</b><br>Lời khuyên thẳng thắn của người thầy tác giả, và vì sao rời sự chú ý lại làm vấn đề sụp đổ. <em>Tiêu đề phần này là tiểu mục gốc trong sách.</em></p>
+
+    <blockquote data-q="7" data-ini="🙏"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Bạn có thể thoát khỏi mọi thứ. Bạn có muốn dành sự chú ý của mình cho một vấn đề bằng cách thay đổi nó, sửa chữa nó hoặc cố gắng tìm ra nó, hay bạn muốn thoát khỏi nó?</p>
+      <cite><b>Người thầy của tôi</b> — người thầy giấu tên của Rhonda Byrne</cite>
+    </div></blockquote>
+
+    <article class="body-card">
+      <p>Khi tôi chia sẻ với người thầy của mình về những gì tôi nghĩ là một vấn đề lớn, cô ấy đã nói với tôi những lời sau đây. Bạn không thể có những lời nào rõ ràng hơn thế này:</p>
+    </article>
+
+    <blockquote data-q="7" data-ini="🙏"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Đừng tập trung vào vấn đề. Đừng muốn nó nhiều hơn hay ít hơn. Đừng muốn nó biến mất. Đừng muốn thay đổi nó. Đừng muốn tìm ra nó. Đừng muốn kiểm soát nó. Nó sẽ tự nhiên sụp đổ khi bạn quyết định trở thành Nhận thức. Mọi thứ không phải là tình yêu đều sụp đổ trước tình yêu. Mọi thứ không thực sự đều sụp đổ trước Nhận thức.</p>
+      <cite><b>Người thầy của tôi</b> — người thầy giấu tên của Rhonda Byrne</cite>
+    </div></blockquote>
+
+    <article class="body-card">
+      <p>Như <em>Bí mật</em> đã giải thích, khi chúng ta chú ý đến một điều gì đó, chúng ta tiếp thêm năng lượng cho nó, vì vậy khi chúng ta chú ý đến một vấn đề, chúng ta tiếp thêm năng lượng cho vấn đề và nó sẽ trở nên lớn hơn.</p>
+      <p>Cố gắng sửa chữa một vấn đề, cố gắng giải quyết nó, kiểm soát nó hoặc xóa bỏ nó, có nghĩa là chúng ta đang chú ý đến vấn đề!</p>
+      <p>Khi chúng ta chuyển sự chú ý của mình khỏi vấn đề, vấn đề sẽ biến mất vì tất cả năng lượng đã bị loại bỏ khỏi nó. Nó phải sụp đổ. <mark>Giống như lấy oxy ra khỏi lửa, ngọn lửa sẽ tắt.</mark></p>
+    </article>
+
+    <figure class="fig">
+      <span class="fig-lbl">Hình 11 &middot; Lấy oxy ra khỏi lửa</span>
+      <svg viewBox="0 0 460 260" role="img" aria-label="Sơ đồ: khi sự chú ý được đưa vào vấn đề như oxy vào lửa thì ngọn lửa lớn lên; khi rời sự chú ý thì ngọn lửa tắt">
+        <defs>
+          <linearGradient id="f5big" x1="0" y1="1" x2="0" y2="0">
+            <stop offset="0%" stop-color="var(--red)"/>
+            <stop offset="55%" stop-color="var(--gold)"/>
+            <stop offset="100%" stop-color="var(--gold-l)"/>
+          </linearGradient>
+          <linearGradient id="f5sm" x1="0" y1="1" x2="0" y2="0">
+            <stop offset="0%" stop-color="var(--ink2)" stop-opacity=".55"/>
+            <stop offset="100%" stop-color="var(--ink2)" stop-opacity=".12"/>
+          </linearGradient>
+          <marker id="f5a" markerWidth="9" markerHeight="9" refX="4.5" refY="4.5" orient="auto">
+            <path d="M0 1 L8 4.5 L0 8 Z" fill="var(--gold)"/>
+          </marker>
+          <marker id="f5b" markerWidth="9" markerHeight="9" refX="4.5" refY="4.5" orient="auto">
+            <path d="M0 1 L8 4.5 L0 8 Z" fill="var(--blue)"/>
+          </marker>
+        </defs>
+
+        <!-- trái: có chú ý -->
+        <rect x="0" y="4" width="216" height="252" rx="12" fill="var(--gold-l)" stroke="var(--gold)" stroke-width="1.2" stroke-opacity=".5"/>
+        <text class="svg-cap" x="108" y="28" text-anchor="middle" font-size="12.5" fill="var(--gold)">CHÚ Ý VÀO VẤN ĐỀ</text>
+        <path d="M108 214 C 56 176 84 116 108 62 C 132 116 162 158 140 196 C 132 208 120 214 108 214 Z" fill="url(#f5big)"/>
+        <path d="M108 214 C 88 194 96 164 108 136 C 120 164 132 190 120 206 C 116 212 112 214 108 214 Z" fill="var(--gold-l)" opacity=".85"/>
+        <line x1="26" y1="188" x2="66" y2="188" stroke="var(--gold)" stroke-width="2.5" marker-end="url(#f5a)"/>
+        <line x1="26" y1="168" x2="60" y2="168" stroke="var(--gold)" stroke-width="2.5" marker-end="url(#f5a)"/>
+        <text class="svg-t2" x="20" y="150" font-size="11">sự chú ý</text>
+        <text class="svg-t2" x="20" y="162" font-size="11">= oxy</text>
+        <line x1="26" y1="222" x2="192" y2="222" stroke="var(--gold)" stroke-width="2"/>
+        <text class="svg-t2" x="108" y="242" text-anchor="middle" font-size="12">Vấn đề lớn lên</text>
+
+        <!-- phải: rời chú ý -->
+        <rect x="244" y="4" width="216" height="252" rx="12" fill="var(--blue-l)" stroke="var(--blue)" stroke-width="1.2" stroke-opacity=".5"/>
+        <text class="svg-cap" x="352" y="28" text-anchor="middle" font-size="12.5" fill="var(--blue)">RỜI SỰ CHÚ Ý</text>
+        <path d="M352 214 C 338 204 342 190 352 176 C 362 190 368 202 360 210 C 357 213 355 214 352 214 Z" fill="url(#f5sm)"/>
+        <path d="M340 160 C 344 150 336 144 340 134" fill="none" stroke="var(--ink2)" stroke-width="1.6" stroke-opacity=".6" stroke-linecap="round"/>
+        <path d="M356 156 C 360 146 352 140 356 130" fill="none" stroke="var(--ink2)" stroke-width="1.6" stroke-opacity=".45" stroke-linecap="round"/>
+        <line x1="270" y1="188" x2="302" y2="188" stroke="var(--blue)" stroke-width="2.5" stroke-dasharray="4 4"/>
+        <line x1="286" y1="178" x2="300" y2="198" stroke="var(--blue)" stroke-width="2.5"/>
+        <line x1="300" y1="178" x2="286" y2="198" stroke="var(--blue)" stroke-width="2.5"/>
+        <text class="svg-t2" x="266" y="146" font-size="11">không tiếp</text>
+        <text class="svg-t2" x="266" y="158" font-size="11">năng lượng</text>
+        <line x1="270" y1="222" x2="436" y2="222" stroke="var(--blue)" stroke-width="2"/>
+        <text class="svg-t2" x="352" y="242" text-anchor="middle" font-size="12">Nó <tspan font-weight="700">phải</tspan> sụp đổ</text>
+
+        <path d="M226 108 L234 118 L226 128" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng</strong> theo đúng phép so sánh của tác giả. Điểm bất ngờ trong lập luận: <em>sửa chữa</em>, <em>giải quyết</em>, <em>kiểm soát</em> hay <em>cố xóa bỏ</em> một vấn đề đều là chú ý đến nó — nên đều là tiếp thêm oxy cho ngọn lửa.</figcaption>
+    </figure>
+
+    <blockquote data-q="6" data-ini="LL"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Bây giờ, cố gắng thoát khỏi một vấn đề là giữ nó lại. Bất cứ điều gì chúng ta cố gắng thoát khỏi, chúng ta đang giữ trong tâm trí và do đó duy trì vấn đề đó. Vì vậy, cách duy nhất để giải quyết vấn đề là buông bỏ nó. Đừng nhìn vào vấn đề. Chỉ nhìn vào những gì bạn muốn.</p>
+      <cite><b>Lester Levenson</b> — trích từ <em>Bản ghi Sức mạnh ý chí</em></cite>
+    </div></blockquote>
+
+    <article class="body-card">
+      <p>Và một khi bạn đã rời sự chú ý khỏi bất kỳ vấn đề nào, thì bạn có thể sử dụng tâm trí của mình để tạo ra những gì bạn muốn, bằng cách tập trung tâm trí và suy nghĩ của bạn vào những gì bạn muốn.</p>
+    </article>
+
+    <blockquote data-q="8" data-ini="MB"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Năng lượng chảy đến nơi sự chú ý hướng đến.</p>
+      <cite><b>Michael Bernard Beckwith</b> — trích từ <em>Bí mật</em></cite>
+    </div></blockquote>
+
+    <!-- FIG-C8 -->
+    <figure class="fig">
+      <span class="fig-lbl">Hình 12 &middot; Năng lượng chảy theo sự chú ý</span>
+      <svg viewBox="0 0 520 252" role="img" aria-label="Hai đèn chiếu: một đèn rọi vào đám mây xám vấn đề làm nó phình to; một đèn rọi vào một quả cầu vàng là những gì bạn muốn">
+<defs><radialGradient id="g8g"><stop offset="0" stop-color="var(--c3)"/><stop offset="1" stop-color="var(--c2)"/></radialGradient></defs>
+<path d="M70,40 L110,160 L190,160 Z" fill="var(--c3)" fill-opacity=".25" class="a-glow"/><rect x="50" y="26" width="36" height="22" rx="6" fill="var(--ink2)" transform="rotate(30 68 37)"/><g class="a-pulse" style="animation-duration:2.4s"><g class="" style="" opacity="1"><circle cx="132.4" cy="160" r="14.4" fill="var(--ink2)"/><circle cx="150" cy="152.0" r="19.2" fill="var(--ink2)"/><circle cx="167.6" cy="160" r="13.6" fill="var(--ink2)"/><rect x="119.6" y="160" width="60.8" height="14.4" rx="7.2" fill="var(--ink2)"/></g></g><text x="150.0" y="204.0" class="svg-t" font-size="12.5" text-anchor="middle" font-weight="800" style="fill:var(--c1)">chú ý vào vấn đề</text><text x="150.0" y="220.0" class="svg-t2" font-size="12" text-anchor="middle" font-weight="700">→ nó lớn thêm</text><path d="M450,40 L330,160 L410,160 Z" fill="var(--c4)" fill-opacity=".22" class="a-glow"/><rect x="434" y="26" width="36" height="22" rx="6" fill="var(--ink2)" transform="rotate(-30 452 37)"/><g class="a-pulse" style="animation-duration:2.4s"><circle cx="370" cy="160" r="22" fill="url(#g8g)"/></g><text x="370.0" y="166.0" class="svg-t" font-size="16" text-anchor="middle">✨</text><text x="370.0" y="204.0" class="svg-t" font-size="12.5" text-anchor="middle" font-weight="800" style="fill:var(--c4)">nhìn vào những gì bạn muốn</text><text x="260.0" y="242.0" class="svg-t" font-size="14" text-anchor="middle" font-weight="800">“Năng lượng chảy đến nơi sự chú ý hướng đến.”</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng</strong> theo câu của Michael Bernard Beckwith trong <em>Bí mật</em> và lời tác giả: khi chúng ta chú ý đến một vấn đề — kể cả bằng cách cố sửa, giải quyết, kiểm soát hay xóa bỏ nó — chúng ta tiếp thêm năng lượng cho nó; rời sự chú ý đi, nó phải sụp đổ.</figcaption>
+    </figure>
+
+    <article class="body-card">
+      <p>Chúng ta dành sự chú ý của mình vào những gì chúng ta không muốn, mong đợi điều đó sẽ thay đổi nó, trong khi điều ngược lại mới đúng. Chúng ta phải rời sự chú ý của mình để cho phép một vấn đề tan biến.</p>
+      <p>Tôi đã từng nghe ai đó nói rằng <mark>các vấn đề giống như một vị khách không mời mà đến; nếu bạn không chú ý đến khách, họ sẽ bỏ đi!</mark></p>
+      <p>Hãy sử dụng sức mạnh của Nhận thức để nhận thức được những suy nghĩ và câu chuyện tiêu cực trong tâm trí bạn, từ đó giải tỏa chúng, và bạn sẽ thoát khỏi mọi vấn đề và đau khổ.</p>
+      <p>Đây chỉ là một ví dụ khác về niềm vui và hạnh phúc của bạn khi bạn ở lại với Nhận thức mà bạn đang là.</p>
+    </article>
+
+    <!-- FIG-C8 -->
+    <figure class="fig">
+      <span class="fig-lbl">Hình 13 &middot; Vị khách không mời</span>
+      <svg viewBox="0 0 520 242" role="img" aria-label="Một người ngồi trong nhà đọc sách, không để ý ra cửa; một vị khách màu xám đứng chờ ở cửa một lúc rồi bỏ đi">
+<rect x="40" y="40" width="190" height="160" rx="10" fill="var(--c3l)" stroke="var(--rule)" stroke-width="2"/><rect x="196" y="80" width="56" height="120" rx="4" fill="var(--card)" stroke="var(--ink3)" stroke-width="2.5"/><circle cx="240" cy="142" r="4" fill="var(--ink2)"/><g ><circle cx="110" cy="118.7" r="14.7" fill="var(--c6)"/><path d="M91.6,196 Q91.6,140.8 110,137.9 Q128.4,140.8 128.4,196 Z" fill="var(--c6)"/></g><path d="M90,110 q20,-10 40,0" stroke="var(--c6)" stroke-width="0" fill="none"/><g transform="translate(150 70)"><rect x="-34" y="-18" width="70" height="28" rx="12" fill="var(--card)" stroke="var(--c6)" stroke-width="1.5"/><text x="1.0" y="1.0" class="svg-t" font-size="12" text-anchor="middle" font-weight="800">đọc sách</text></g><g><g ><circle cx="0" cy="-75.6" r="14.4" fill="var(--ink3)"/><path d="M-18.0,0 Q-18.0,-54.0 0,-56.9 Q18.0,-54.0 18.0,0 Z" fill="var(--ink3)"/></g><animateMotion dur="6s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;.3;.8;1" calcMode="linear" path="M290,196 L480,196"/></g><text x="300.0" y="60.0" class="svg-t" font-size="13.5" text-anchor="start" font-weight="800">vấn đề —</text><text x="300.0" y="78.0" class="svg-t2" font-size="12.5" text-anchor="start" font-weight="700">“vị khách không mời mà đến”</text><line x1="270" y1="198" x2="510" y2="198" stroke="var(--rule)" stroke-width="2"/><text x="260.0" y="232.0" class="svg-t" font-size="13.5" text-anchor="middle" font-weight="800">không chú ý đến khách — khách sẽ bỏ đi</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng</strong> theo hình ảnh tác giả kể lại: &ldquo;các vấn đề giống như một vị khách không mời mà đến; nếu bạn không chú ý đến khách, họ sẽ bỏ đi!&rdquo; Chi tiết người trong nhà đang đọc sách là của biên tập viên, chỉ để minh họa việc không dành sự chú ý.</figcaption>
+    </figure>
+
+    <blockquote data-q="8" data-ini="JF"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Đây là một phép màu nhẹ nhàng diễn ra. Hãy kiên nhẫn. Cả cuộc đời bạn, bạn đã làm theo cách khác, tin rằng mình đang ở trong sự thương xót của cuộc sống. Đừng mong đợi mọi thứ sẽ tự hủy hoại cùng một lúc.</p>
+      <cite><b>Jan Frazier</b> — trích từ <em>Sự tự do hiện hữu</em></cite>
+    </div></blockquote>
+
+    <div class="flow">
+      <span class="lbl">Mạch lập luận &middot; Phần 03–04</span>
+      <div class="flow-grid">
+        <div class="fstep"><span class="k">Nhận định ban đầu</span><span class="v">Vấn đề chỉ là một câu chuyện nữa do tâm trí kể — nó chỉ tồn tại trong tâm trí.</span></div>
+        <div class="farrow">→</div>
+        <div class="fstep"><span class="k">Bằng chứng</span><span class="v">Cùng một vấn đề: từ nơi hạnh phúc là tổ kiến, từ nơi tuyệt vọng là ngọn núi.</span></div>
+        <div class="farrow">→</div>
+        <div class="fstep"><span class="k">Sai lầm thường gặp</span><span class="v">Sửa chữa, giải quyết, kiểm soát, cố xóa bỏ — tất cả đều là chú ý, nên đều tiếp năng lượng cho vấn đề.</span></div>
+        <div class="farrow">→</div>
+        <div class="fstep"><span class="k">Kết luận</span><span class="v">Rời sự chú ý và nó phải sụp đổ; rồi dùng tâm trí cho những gì bạn muốn.</span></div>
+      </div>
+    </div>
+
+    <div class="pause">
+      <span class="lbl">Dừng lại 30 giây</span><div class="tmr" data-s="30" role="button" tabindex="0" aria-label="Bắt đầu lại 30 giây"><svg viewBox="0 0 74 74" aria-hidden="true"><circle class="bg" cx="37" cy="37" r="32"/><circle class="fg" cx="37" cy="37" r="32"/></svg></div>
+      <p>Tôi là người đang đau khổ, hay tôi là người nhận thức được đau khổ?</p>
+    </div>
+
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+  <!-- TÓM TẮT GỐC -->
+  <section id="tom-tat-goc">
+    <div class="sec-head"><div class="badge">★</div><h2>Tóm tắt gốc của chương</h2></div>
+    <div class="box origsum">
+      <span class="tag">Tóm tắt gốc của chương &middot; Nguyên văn của tác giả</span>
+      <h3 style="font-family:var(--ui); font-size:16px; letter-spacing:.06em; margin:10px 0 12px">TÓM TẮT CHƯƠNG 08</h3>
+      <ul class="dia">
+        <li>Bạn không phải chịu đau khổ. Và khi bạn sống như chính con người thật của mình, Nhận thức, bạn sẽ không bao giờ đau khổ.</li>
+        <li>Đau khổ là do tin vào những suy nghĩ tiêu cực. Vì vậy, đau khổ là do tự mình áp đặt.</li>
+        <li>Nếu chúng ta chống lại những gì đã xảy ra, chúng ta sẽ giữ tình huống đó cho riêng mình và chúng ta sẽ tiếp tục đau khổ.</li>
+        <li>Hãy tự hỏi mình câu hỏi này: &ldquo;Tôi là người đang đau khổ, hay tôi là người nhận thức được đau khổ?&rdquo; Sự thật là bạn là người nhận thức được đau khổ, chứ không phải là người đang đau khổ.</li>
+        <li>Có một niềm tin cụ thể là nguyên nhân gốc rễ của mọi đau khổ trên thế giới. Đó là niềm tin rằng chúng ta là một cá thể riêng biệt.</li>
+        <li>Vấn đề chỉ tồn tại trong tâm trí con người. Vấn đề không có thật. Vấn đề chỉ là tưởng tượng.</li>
+        <li>Để trải nghiệm một cuộc sống không có vấn đề, thay vì tin vào tâm trí của bạn, hãy sử dụng sức mạnh của Nhận thức để nhận thức được tâm trí của bạn.</li>
+        <li>Khi chúng ta chú ý đến một vấn đề, chúng ta tiếp thêm năng lượng cho vấn đề đó và nó sẽ trở nên lớn hơn. Khi chúng ta chuyển sự chú ý của mình khỏi vấn đề, vấn đề sẽ biến mất vì tất cả năng lượng đã được loại bỏ khỏi nó.</li>
+        <li>Khi bạn đã chuyển sự chú ý của mình khỏi bất kỳ vấn đề nào, thì bạn có thể sử dụng tâm trí của mình để tạo ra những gì bạn muốn, bằng cách tập trung tâm trí và suy nghĩ của bạn vào những gì bạn muốn.</li>
+        <li>Sử dụng sức mạnh của Nhận thức để nhận thức được những suy nghĩ và câu chuyện tiêu cực của tâm trí bạn, do đó giải tỏa chúng, và bạn sẽ thoát khỏi mọi vấn đề và đau khổ.</li>
+      </ul>
+    </div>
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+  <!-- BẢN ĐỒ GHI NHỚ -->
+  <section id="ban-do-ghi-nho">
+    <div class="sec-head"><div class="badge">★</div><h2>Bản đồ ghi nhớ cuối chương</h2></div>
+    <div class="box recall">
+      <span class="tag" style="background:var(--blue-l); color:var(--blue)">Bản đồ ghi nhớ do biên tập viên tạo</span>
+      <p style="font-family:var(--ui); font-size:14.5px; color:var(--ink2); margin-top:4px">Công cụ ôn tập dựa hoàn toàn trên chương này, không thay thế nội dung của tác giả và không thay thế phần Tóm tắt gốc ở trên.</p>
+
+      <h3>Ý cốt lõi</h3>
+      <ul class="dia">
+        <li>Có nỗi đau về thể xác, nhưng đau khổ là của tâm trí — và nó là tùy chọn.</li>
+        <li>Đau khổ được gói gọn trong một suy nghĩ duy nhất: &ldquo;Tôi không thích điều này.&rdquo;</li>
+        <li>Tâm trí phản ứng bằng Không, Không, Không; Nhận thức phản ứng bằng Có với mọi thứ — kể cả với &ldquo;không&rdquo;.</li>
+        <li>Nói &ldquo;Không&rdquo; giữ chặt điều bạn không muốn; nói &ldquo;Có&rdquo; giải phóng kháng cự và cho phép nó thay đổi.</li>
+        <li>Bạn là người <em>nhận thức được</em> đau khổ, không phải người đang đau khổ.</li>
+        <li>Gốc rễ của mọi đau khổ trên thế giới là một niềm tin: rằng ta là một cá thể riêng biệt.</li>
+        <li>Vấn đề chỉ là một câu chuyện nữa của tâm trí; niềm tin của bạn là thứ giữ nó lại.</li>
+        <li>Cùng một vấn đề: từ nơi hạnh phúc là tổ kiến, từ nơi tuyệt vọng là ngọn núi.</li>
+        <li>Nơi nào có tình yêu, nơi đó không vấn đề nào tồn tại được — không có vấn đề, chỉ có sự thiếu hụt tình yêu.</li>
+        <li>Chú ý đến vấn đề là tiếp oxy cho nó; rời sự chú ý thì nó phải sụp đổ.</li>
+      </ul>
+
+      <h3>Khái niệm cần nhớ</h3>
+      <ul class="dia">
+        <li><strong>Đau khổ là tùy chọn</strong> — nó sinh ra từ việc tin vào một suy nghĩ.</li>
+        <li><strong>&ldquo;Không&rdquo; và &ldquo;Có&rdquo;</strong> — kháng cự giữ chặt, chấp nhận để trôi qua.</li>
+        <li><strong>Người nhận thức, không phải người đau khổ</strong> — câu hỏi chấm dứt đau khổ tức thời.</li>
+        <li><strong>Niềm tin tách biệt</strong> — gốc rễ của mọi đau khổ.</li>
+        <li><strong>Sự chú ý là năng lượng</strong> — như oxy với lửa.</li>
+      </ul>
+
+      <h3>Bài thực hành xuất hiện trong chương</h3>
+      <ul class="dia">
+        <li><strong>Phần 02 —</strong> Câu hỏi của người thầy tác giả: &ldquo;Tôi là người đang đau khổ, hay tôi là người nhận thức được đau khổ?&rdquo;</li>
+      </ul>
+
+      <h3>Chuỗi logic của chương</h3>
+      <div class="chain">
+        <span>Đau khổ là tùy chọn</span><i>→</i>
+        <span>Nó đến từ việc tin một suy nghĩ</span><i>→</i>
+        <span>&ldquo;Không&rdquo; giữ chặt nó</span><i>→</i>
+        <span>Bạn là cái nhận thức, không phải người đau khổ</span><i>→</i>
+        <span>Vấn đề cũng chỉ là câu chuyện</span><i>→</i>
+        <span>Rời sự chú ý</span><i>→</i>
+        <span>Nó sụp đổ</span>
+      </div>
+    </div>
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+</main>
+
+<nav class="pager" aria-label="Chuyển phần">
+  <a class="prev" href="07-ket-thuc-cam-xuc-tieu-cuc.html"><span class="k">Phần trước</span>Chương 07 — Kết thúc cảm xúc tiêu cực</a>
+  <a class="home" href="index.html"><span class="k">Mục lục</span>Toàn bộ cuốn sách</a>
+  <a class="next" href="09-giai-toa-niem-tin-han-che.html"><span class="k">Phần sau</span>Chương 09 — Giải tỏa niềm tin hạn chế</a>
+</nav>
+<footer class="pagefoot"><p><strong>Bí mật vĩ đại nhất</strong> — Rhonda Byrne<br>Bản trình bày lại phục vụ việc đọc và ôn tập. Bản quyền nội dung thuộc về tác giả và nhà xuất bản.</p></footer>
+</div>
+<div id="fabs">
+  <button id="fabFind" type="button" aria-label="Tìm trong trang" title="Tìm trong trang (Ctrl+F)">🔍</button>
+  <button id="fabHl" type="button" aria-label="Xem các câu bôi vàng" title="Các câu bôi vàng">🖍️</button>
+  <button id="fabFont" type="button" aria-label="Đổi cỡ chữ" title="Cỡ chữ">🔤</button>
+  <button id="fabStill" type="button" aria-label="Tạm dừng chuyển động" aria-pressed="false" title="Tạm dừng chuyển động">⏸️</button>
+  <button id="fabDark" type="button" aria-label="Chế độ tối" aria-pressed="false" title="Chế độ tối">🌙</button>
+  <button id="fabTop" class="fab-top" type="button" aria-label="Về đầu trang" title="Về đầu trang">⬆️</button>
+</div>
+<div id="findbar" role="search"><input type="search" aria-label="Tìm trong trang" placeholder="Tìm trong chương…"><span class="fc"></span><button type="button" class="fp" aria-label="Kết quả trước">↑</button><button type="button" class="fn" aria-label="Kết quả sau">↓</button><button type="button" class="fx" aria-label="Đóng tìm kiếm">✕</button></div>
+<div id="hlpanel" role="dialog" aria-modal="true" aria-label="Các câu được bôi vàng"><div class="in"><button type="button" class="x" aria-label="Đóng">✕</button><h2>Các câu được bôi vàng</h2><p class="hs">Bấm vào một câu để nhảy tới đúng chỗ đó trong chương.</p><ol></ol></div></div>
+<nav id="rail" aria-label="Mục lục dính"><p class="rt">Trong chương này</p></nav>
+<script>(function(){
+  var root=document.documentElement, D=document; root.classList.add('js');
+  function $(s,c){return (c||D).querySelector(s)} function $$(s,c){return [].slice.call((c||D).querySelectorAll(s))}
+  function ls(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}}
+  var COLORS=['#FF3B30','#FF8A00','#FFD400','#28B446','#00B3A6','#0A84FF','#9B51E0','#FF2D78'];
+
+  /* ---- tắt chuyển động ---- */
+  var sb=$('#fabStill'), still=ls('bmvdn-still')==='1' || (matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches);
+  function setStill(v){still=v; root.classList.toggle('still',v);
+    if(sb){sb.textContent=v?'▶️':'⏸️'; sb.setAttribute('aria-pressed',v?'true':'false'); sb.title=v?'Bật lại chuyển động':'Tạm dừng chuyển động';}
+    if(v){$$('.rv').forEach(function(e){e.classList.add('in')}); $$('mark').forEach(function(m){m.classList.add('lit')});}
+    $$('svg').forEach(function(g){try{v?g.pauseAnimations():g.unpauseAnimations()}catch(e){}});
+    ls('bmvdn-still',v?'1':'0')}
+  setStill(still); if(sb)sb.addEventListener('click',function(){setStill(!still)});
+
+  /* ---- thanh tiến độ + nút lên đầu ---- */
+  var bar=$('#progress'), ft=$('#fabTop');
+  function prog(){var m=root.scrollHeight-root.clientHeight, y=root.scrollTop||D.body.scrollTop;
+    if(bar)bar.style.width=(m>0?y/m*100:0).toFixed(2)+'%'; if(ft)ft.classList.toggle('on',y>500)}
+  if(ft)ft.addEventListener('click',function(){scrollTo({top:0,behavior:still?'auto':'smooth'})});
+
+  /* ---- chế độ tối ---- */
+  var tb=$('#themeBtn'), fd=$('#fabDark');
+  function setDark(d){root.setAttribute('data-theme',d?'dark':'light');
+    if(tb){tb.textContent=d?'Chế độ sáng':'Chế độ đọc tối';tb.setAttribute('aria-pressed',d?'true':'false')}
+    if(fd){fd.textContent=d?'☀️':'🌙';fd.setAttribute('aria-pressed',d?'true':'false')}
+    ls('bmvdn-theme',d?'dark':'light')}
+  setDark(ls('bmvdn-theme')==='dark');
+  function tog(){setDark(root.getAttribute('data-theme')!=='dark')}
+  if(tb)tb.addEventListener('click',tog); if(fd)fd.addEventListener('click',tog);
+  var pb=$('#printBtn'); if(pb)pb.addEventListener('click',function(){print()});
+
+  /* ---- cỡ chữ ---- */
+  var fz=$('#fabFont'), steps=['','l','xl'], fi=Math.max(0,steps.indexOf(ls('bmvdn-fs')||''));
+  function setFs(){if(steps[fi])root.setAttribute('data-fs',steps[fi]);else root.removeAttribute('data-fs');ls('bmvdn-fs',steps[fi])}
+  setFs(); if(fz)fz.addEventListener('click',function(){fi=(fi+1)%steps.length;setFs()});
+
+  /* ---- hiện dần + bút dạ quang quét ---- */
+  $$('.body-card,blockquote,.concept,.example,.practice,.hint,.keyidea,.pause,.flow,figure.fig,.box,.willlearn,.sec-head,.chain,.pager > *,.stages li,nav.toc li')
+    .forEach(function(e){e.classList.add('rv')});
+  var IO='IntersectionObserver' in window;
+  if(IO && !still){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){
+      var t=e.target; t.classList.add('in'); io.unobserve(t);
+      if(t.classList.contains('chain')) $$('span',t).forEach(function(s,i){s.style.transitionDelay=(i*70)+'ms'});
+    }})},{threshold:.06,rootMargin:'0px 0px -5% 0px'});
+    var groups={}; $$('.rv').forEach(function(e){var p=e.parentNode; var k=groups[p.__k||(p.__k=Math.random())]=(groups[p.__k]||0)+1;
+      e.style.transitionDelay=(Math.min(k-1,5)*60)+'ms'; io.observe(e)});
+    var mo=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){
+      setTimeout(function(){e.target.classList.add('lit')},180); mo.unobserve(e.target)}})},{threshold:.9,rootMargin:'0px 0px -12% 0px'});
+    $$('mark').forEach(function(m){mo.observe(m)});
+  } else { $$('.rv').forEach(function(e){e.classList.add('in')}); $$('mark').forEach(function(m){m.classList.add('lit')}); }
+
+  /* ---- số liệu đếm lên ---- */
+  $$('.stat b[data-n]').forEach(function(b){var n=+b.getAttribute('data-n'); if(still||!n)return;
+    var t0=null; b.textContent='0'; function step(t){if(!t0)t0=t; var p=Math.min(1,(t-t0)/1100);
+      b.textContent=Math.round(n*(1-Math.pow(1-p,3))); if(p<1)requestAnimationFrame(step)}
+    setTimeout(function(){requestAnimationFrame(step)},350)});
+
+  /* ---- mục lục dính + phần đang đọc ---- */
+  var rail=$('#rail'), now=$('#nowsec'), toc=$('nav.toc'), items=[];
+  if(rail && toc){
+    $$('a',toc).forEach(function(a){var id=a.getAttribute('href').slice(1), s=D.getElementById(id); if(!s)return;
+      var c=a.cloneNode(true); rail.appendChild(c);
+      var n=$('.n',a), num=n?n.textContent:'', title=a.textContent.replace(num,'').trim();
+      items.push({a:c,s:s,num:num,title:title})});
+  }
+  function spy(){ if(!items.length)return;
+    var y=innerHeight*.32, cur=null; items.forEach(function(it){if(it.s.getBoundingClientRect().top<y)cur=it});
+    var tocBottom=toc.getBoundingClientRect().bottom;
+    rail.classList.toggle('on',tocBottom<0);
+    items.forEach(function(it){var on=it===cur; it.a.classList.toggle('act',on);
+      if(on){var cs=getComputedStyle(it.s), c=cs.getPropertyValue('--sc'), o=cs.getPropertyValue('--on'); it.a.style.setProperty('--rc',c&&c.trim()?c:'var(--ac)'); it.a.style.setProperty('--ron',o&&o.trim()?o:'#fff')}});
+    if(now){ if(cur&&tocBottom<0){now.textContent=cur.num+' · '+cur.title; now.classList.add('on')} else now.classList.remove('on') }
+    if(cur&&rail.classList.contains('on')){var r=cur.a.offsetTop-rail.clientHeight/2; if(Math.abs(rail.scrollTop-r)>80)rail.scrollTop=r}
+  }
+  var tick=false; function onScroll(){if(tick)return; tick=true; requestAnimationFrame(function(){tick=false; prog(); spy()})}
+  addEventListener('scroll',onScroll,{passive:true}); addEventListener('resize',onScroll); prog(); spy();
+
+  /* ---- confetti ---- */
+  function confetti(x,y){ if(still)return;
+    for(var i=0;i<28;i++){var c=D.createElement('i'); c.className='cf'; var a=Math.random()*Math.PI*2, r=60+Math.random()*90;
+      c.style.left=x+'px'; c.style.top=y+'px'; c.style.background=COLORS[i%8];
+      c.style.setProperty('--dx',Math.cos(a)*r+'px'); c.style.setProperty('--dy',(Math.sin(a)*r-40)+'px');
+      c.style.setProperty('--rt',(Math.random()*720-360)+'deg'); if(i%3===0)c.style.borderRadius='50%';
+      D.body.appendChild(c); setTimeout(function(n){return function(){n.remove()}}(c),1200)} }
+
+  /* ---- sao chép trích dẫn ---- */
+  function copyText(t){ if(navigator.clipboard&&isSecureContext) return navigator.clipboard.writeText(t);
+    return new Promise(function(ok){var ta=D.createElement('textarea'); ta.value=t; ta.style.position='fixed'; ta.style.opacity='0';
+      D.body.appendChild(ta); ta.select(); try{D.execCommand('copy')}catch(e){} ta.remove(); ok()}) }
+  $$('.cpy').forEach(function(b){b.addEventListener('click',function(){
+    var q=b.closest('blockquote'), ps=$$('p',q).map(function(p){return p.textContent.trim()}).join('\n'),
+        c=$('cite',q), who=c?c.textContent.trim():'';
+    copyText('“'+ps+'”'+(who?'\n— '+who:'')).then(function(){b.classList.add('ok'); b.setAttribute('aria-label','Đã sao chép');
+      var r=b.getBoundingClientRect(); confetti(r.left+r.width/2,r.top+r.height/2);
+      setTimeout(function(){b.classList.remove('ok'); b.setAttribute('aria-label','Sao chép trích dẫn')},1800)})})});
+
+  /* ---- đồng hồ 30 giây ---- */
+  function runTimer(p){ var t=$('.tmr',p); if(!t||still)return; var fg=$('.fg',t);
+    clearInterval(t.__iv); t.classList.remove('done'); p.classList.remove('go'); void fg.getBoundingClientRect(); p.classList.add('go');
+    var s=30; t.setAttribute('data-s',s); t.__iv=setInterval(function(){s--; t.setAttribute('data-s',s);
+      if(s<=0){clearInterval(t.__iv); t.classList.add('done')}},1000) }
+  if(IO){var po=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){runTimer(e.target); po.unobserve(e.target)}})},{threshold:.75});
+    $$('.pause').forEach(function(p){if($('.tmr',p))po.observe(p)})}
+  $$('.pause .tmr').forEach(function(t){function go(){runTimer(t.closest('.pause'))}
+    t.addEventListener('click',go); t.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();go()}})});
+
+  /* ---- bảng các câu bôi vàng ---- */
+  var hp=$('#hlpanel'), hb=$('#fabHl');
+  if(hp&&hb){ var ol=$('ol',hp);
+    $$('main mark').forEach(function(m,i){ if(!m.id)m.id='hl-'+(i+1);
+      var li=D.createElement('li'), a=D.createElement('a'); a.href='#'+m.id; a.textContent=m.textContent; li.appendChild(a); ol.appendChild(li);
+      a.addEventListener('click',function(ev){ev.preventDefault(); closeHl(); m.classList.add('lit');
+        m.scrollIntoView({behavior:still?'auto':'smooth',block:'center'}); m.classList.remove('flash'); void m.offsetWidth; m.classList.add('flash')})});
+    function openHl(){hp.classList.add('on'); var f=$('a',hp)||$('.x',hp); if(f)f.focus()}
+    function closeHl(){hp.classList.remove('on'); hb.focus({preventScroll:true})}
+    hb.addEventListener('click',openHl); $('.x',hp).addEventListener('click',closeHl);
+    hp.addEventListener('click',function(e){if(e.target===hp)closeHl()});
+    D.addEventListener('keydown',function(e){if(e.key==='Escape'&&hp.classList.contains('on'))closeHl()});
+  }
+
+  /* ---- tìm trong trang ---- */
+  var fb=$('#findbar'), ff=$('#fabFind');
+  if(fb&&ff){ var inp=$('input',fb), fc=$('.fc',fb), hits=[], hi=-1, scope=$('body > .wrap')||D.body;
+    function clear(){ hits.forEach(function(s){var p=s.parentNode; if(!p)return; p.replaceChild(D.createTextNode(s.textContent),s); p.normalize()}); hits=[]; hi=-1 }
+    function norm(s){return s.normalize('NFC').toLowerCase()}
+    function search(q){ clear(); q=norm(q.trim()); if(q.length<2){fc.textContent='';return}
+      var w=D.createTreeWalker(scope,NodeFilter.SHOW_TEXT,{acceptNode:function(n){
+        if(!n.nodeValue.trim())return NodeFilter.FILTER_REJECT; var p=n.parentNode;
+        if(p.closest('script,style,svg,#hlpanel,#findbar,.cpy'))return NodeFilter.FILTER_REJECT; return NodeFilter.FILTER_ACCEPT}});
+      var nodes=[]; while(w.nextNode())nodes.push(w.currentNode);
+      nodes.forEach(function(n){ var t=n.nodeValue, lt=norm(t), i=lt.indexOf(q); if(i<0)return;
+        var frag=D.createDocumentFragment(), last=0;
+        while(i>=0){ frag.appendChild(D.createTextNode(t.slice(last,i))); var s=D.createElement('span'); s.className='fnd';
+          s.textContent=t.slice(i,i+q.length); frag.appendChild(s); hits.push(s); last=i+q.length; i=lt.indexOf(q,last)}
+        frag.appendChild(D.createTextNode(t.slice(last))); n.parentNode.replaceChild(frag,n)});
+      $$('.rv',scope).forEach(function(e){e.classList.add('in')});
+      fc.textContent=hits.length?('0/'+hits.length):'Không thấy'; if(hits.length)go(0) }
+    function go(k){ if(!hits.length)return; if(hi>=0&&hits[hi])hits[hi].classList.remove('cur');
+      hi=(k+hits.length)%hits.length; var s=hits[hi]; s.classList.add('cur'); fc.textContent=(hi+1)+'/'+hits.length;
+      s.scrollIntoView({behavior:'auto',block:'center'}) }
+    var tmo; inp.addEventListener('input',function(){clearTimeout(tmo); tmo=setTimeout(function(){search(inp.value)},180)});
+    inp.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();go(hi+(e.shiftKey?-1:1))} if(e.key==='Escape')closeF()});
+    $('.fn',fb).addEventListener('click',function(){go(hi+1)}); $('.fp',fb).addEventListener('click',function(){go(hi-1)});
+    function openF(){fb.classList.add('on'); inp.focus(); inp.select()}
+    function closeF(){fb.classList.remove('on'); clear(); fc.textContent=''; ff.focus({preventScroll:true})}
+    $('.fx',fb).addEventListener('click',closeF); ff.addEventListener('click',function(){fb.classList.contains('on')?closeF():openF()});
+    D.addEventListener('keydown',function(e){if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='f'){e.preventDefault();openF()}});
+  }
+})();
+</script>
+</body>
+</html>

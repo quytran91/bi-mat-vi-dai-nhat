@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="vi" data-c="7">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Bí mật vĩ đại nhất — Mục lục | Rhonda Byrne</title>
+<style>/* ============================================================
+   BÍ MẬT VĨ ĐẠI NHẤT — ngôn ngữ thiết kế "màu mè"
+   8 màu luân phiên · bút dạ quang vàng cố định · emoji iPhone
+   ============================================================ */
+:root{
+  /* --- 8 màu chủ đề (hệ màu iOS) --- */
+  --c1:#FF3B30; --c1l:#FFE9E7; --c1b:#FFC7C2;   /* đỏ      */
+  --c2:#FF8A00; --c2l:#FFF1DF; --c2b:#FFD6A3;   /* cam     */
+  --c3:#E8A500; --c3l:#FFF8DC; --c3b:#FFE48A;   /* vàng    */
+  --c4:#28B446; --c4l:#E6F8EA; --c4b:#A8E6B6;   /* xanh lá */
+  --c5:#00B3A6; --c5l:#DFF7F5; --c5b:#95E3DD;   /* xanh ngọc */
+  --c6:#0A84FF; --c6l:#E4F0FF; --c6b:#AED3FF;   /* xanh dương */
+  --c7:#9B51E0; --c7l:#F3E9FD; --c7b:#D9BCF5;   /* tím     */
+  --c8:#FF2D78; --c8l:#FFE7EF; --c8b:#FFBDD3;   /* hồng    */
+
+  /* --- màu nhấn của trang (build gán qua data-c) --- */
+  --ac:var(--c6); --acl:var(--c6l); --acb:var(--c6b);
+
+  /* --- bút dạ quang: CỐ ĐỊNH, không đổi theo chương --- */
+  --hl1:#FFE600; --hl2:#FFD400; --hl-ink:#2B2200;
+
+  /* --- nền, chữ, khung --- */
+  --bg:#FBF9FF; --card:#FFFFFF; --soft:#F4F3FA;
+  --ink:#1C1B2E; --ink2:#67657F; --ink3:#9A98AE;
+  --rule:#E8E6F2;
+  --r:24px; --r2:16px; --r3:999px;
+  --sh:0 1px 2px rgba(28,27,46,.04), 0 10px 30px rgba(28,27,46,.07);
+  --sh2:0 2px 6px rgba(28,27,46,.06), 0 18px 48px rgba(28,27,46,.10);
+
+  /* --- font: emoji Apple đứng đầu mọi stack --- */
+  --emo:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji","Twemoji Mozilla",sans-serif;
+  --ui:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,"Noto Sans",Arial,
+       "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif;
+  --serif:"Times New Roman",Tinos,"Liberation Serif","Noto Serif",Times,serif;
+
+  --fs:18px;
+}
+html[data-theme="dark"]{
+  --c1:#FF6961; --c1l:#3A1E1C; --c1b:#5E2E29;
+  --c2:#FFA64D; --c2l:#3A2A14; --c2b:#5E4320;
+  --c3:#FFD24D; --c3l:#3A3316; --c3b:#5E5122;
+  --c4:#52DD6E; --c4l:#15311C; --c4b:#24512F;
+  --c5:#35D6C8; --c5l:#10322F; --c5b:#1D524D;
+  --c6:#4DA3FF; --c6l:#132B44; --c6b:#1E466F;
+  --c7:#C185F5; --c7l:#2A1A3C; --c7b:#452C61;
+  --c8:#FF6AA0; --c8l:#3B1727; --c8b:#5F2641;
+  --bg:#0F0E17; --card:#1A1927; --soft:#232232;
+  --ink:#F2F0FF; --ink2:#A9A6C4; --ink3:#7D7A99;
+  --rule:#2E2C42;
+  --sh:0 1px 2px rgba(0,0,0,.4), 0 10px 30px rgba(0,0,0,.35);
+  --sh2:0 2px 6px rgba(0,0,0,.45), 0 18px 48px rgba(0,0,0,.45);
+}
+
+/* --- bảng gán màu nhấn theo chương --- */
+html[data-c="1"]{--ac:var(--c1);--acl:var(--c1l);--acb:var(--c1b)}
+html[data-c="2"]{--ac:var(--c2);--acl:var(--c2l);--acb:var(--c2b)}
+html[data-c="3"]{--ac:var(--c3);--acl:var(--c3l);--acb:var(--c3b)}
+html[data-c="4"]{--ac:var(--c4);--acl:var(--c4l);--acb:var(--c4b)}
+html[data-c="5"]{--ac:var(--c5);--acl:var(--c5l);--acb:var(--c5b)}
+html[data-c="6"]{--ac:var(--c6);--acl:var(--c6l);--acb:var(--c6b)}
+html[data-c="7"]{--ac:var(--c7);--acl:var(--c7l);--acb:var(--c7b)}
+html[data-c="8"]{--ac:var(--c8);--acl:var(--c8l);--acb:var(--c8b)}
+
+/* --- bí danh cho SVG trong nội dung (giữ nguyên tên biến cũ) --- */
+:root,html[data-theme="dark"]{
+  --gold:var(--c3); --gold-l:var(--c3l);
+  --green:var(--c4); --green-l:var(--c4l);
+  --blue:var(--c6); --blue-l:var(--c6l);
+  --purple:var(--c7); --purple-l:var(--c7l);
+  --red:var(--c1); --red-l:var(--c1l);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:84px; -webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:var(--ui); font-size:var(--fs); line-height:1.75;
+  text-rendering:optimizeLegibility; overflow-x:hidden;
+}
+html[data-fs="l"]{--fs:20px}
+html[data-fs="xl"]{--fs:22px}
+p{margin:0 0 1.1em}
+a{color:var(--ac)}
+.wrap{max-width:860px; margin:0 auto; padding:0 20px}
+::selection{background:var(--hl1); color:var(--hl-ink)}
+
+/* ---------- nền nhiều màu + blob trôi ---------- */
+body::before{
+  content:""; position:fixed; inset:0; z-index:-2; pointer-events:none;
+  background:
+    radial-gradient(900px 600px at 8% -5%,  rgba(10,132,255,.10), transparent 60%),
+    radial-gradient(800px 600px at 95% 5%,  rgba(255,45,120,.09), transparent 60%),
+    radial-gradient(900px 700px at 50% 108%,rgba(155,81,224,.10), transparent 60%),
+    radial-gradient(700px 500px at -5% 70%, rgba(0,179,166,.09), transparent 60%);
+}
+#blobs{position:fixed; inset:0; z-index:-1; pointer-events:none; overflow:hidden; filter:blur(60px); opacity:.5}
+html[data-theme="dark"] #blobs{opacity:.34}
+#blobs i{position:absolute; display:block; border-radius:50%}
+#blobs i:nth-child(1){width:46vmin;height:46vmin;left:-8vmin;top:4vmin;  background:var(--c6); animation:drift1 34s ease-in-out infinite}
+#blobs i:nth-child(2){width:38vmin;height:38vmin;right:-6vmin;top:18vmin;background:var(--c8); animation:drift2 41s ease-in-out infinite}
+#blobs i:nth-child(3){width:42vmin;height:42vmin;left:24vmin;bottom:-12vmin;background:var(--c7); animation:drift3 47s ease-in-out infinite}
+#blobs i:nth-child(4){width:30vmin;height:30vmin;right:14vmin;bottom:4vmin; background:var(--c5); animation:drift1 39s ease-in-out infinite reverse}
+#blobs i:nth-child(5){width:26vmin;height:26vmin;left:52vmin;top:-8vmin;   background:var(--c3); animation:drift2 44s ease-in-out infinite}
+@keyframes drift1{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(8vmin,6vmin) scale(1.12)}66%{transform:translate(-5vmin,10vmin) scale(.94)}}
+@keyframes drift2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-9vmin,8vmin) scale(1.15)}}
+@keyframes drift3{0%,100%{transform:translate(0,0) scale(1)}40%{transform:translate(7vmin,-7vmin) scale(.9)}75%{transform:translate(-6vmin,4vmin) scale(1.08)}}
+
+/* ---------- thanh tiến độ + toolbar ---------- */
+#progress{position:fixed; top:0; left:0; height:4px; width:0%; z-index:70;
+  background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3),var(--c4),var(--c5),var(--c6),var(--c7),var(--c8));
+  border-radius:0 4px 4px 0}
+#toolbar{position:sticky; top:0; z-index:60; backdrop-filter:saturate(180%) blur(14px);
+  background:color-mix(in srgb,var(--bg) 78%, transparent); border-bottom:1px solid var(--rule)}
+#toolbar .wrap{display:flex; gap:8px; flex-wrap:wrap; align-items:center; padding:10px 20px}
+#toolbar .tb-title{font-size:12.5px; font-weight:800; letter-spacing:.04em; color:var(--ink2);
+  margin-right:auto; display:flex; align-items:center; gap:7px}
+#toolbar .tb-title::before{content:"📘"; font-family:var(--emo); font-size:15px}
+.btn{font:inherit; font-size:13px; font-weight:650; line-height:1.2; padding:9px 15px; cursor:pointer;
+  background:var(--card); color:var(--ink); border:1.5px solid var(--rule); border-radius:var(--r3);
+  text-decoration:none; display:inline-flex; align-items:center; gap:6px;
+  transition:transform .16s, border-color .16s, box-shadow .16s}
+.btn:hover{transform:translateY(-2px); border-color:var(--ac); box-shadow:0 6px 18px color-mix(in srgb,var(--ac) 26%, transparent)}
+#toolbar a.btn[href="index.html"]::before{content:"🗂️"; font-family:var(--emo)}
+#toolbar a.btn[href="#top"]::before{content:"⬆️"; font-family:var(--emo)}
+#themeBtn::before{content:"🌙"; font-family:var(--emo)}
+html[data-theme="dark"] #themeBtn::before{content:"☀️"}
+#printBtn::before{content:"🖨️"; font-family:var(--emo)}
+a:focus-visible,.btn:focus-visible,summary:focus-visible,[tabindex]:focus-visible{
+  outline:3px solid var(--ac); outline-offset:3px; border-radius:8px}
+
+/* ---------- HERO ---------- */
+header.book{
+  position:relative; overflow:hidden; text-align:center;
+  padding:66px 0 60px; margin-bottom:8px; color:#fff;
+  background:linear-gradient(115deg,#FF3B30,#FF8A00,#E8A500,#28B446,#00B3A6,#0A84FF,#9B51E0,#FF2D78);
+  background-size:300% 300%; animation:heroShift 26s ease infinite;
+}
+@keyframes heroShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+header.book::after{content:""; position:absolute; inset:0;
+  background:radial-gradient(120% 90% at 50% 120%, rgba(0,0,0,.34), transparent 70%)}
+header.book > .wrap{position:relative; z-index:2}
+header.book .kicker{display:inline-flex; align-items:center; gap:8px; margin:0 0 20px;
+  font-size:12px; font-weight:800; letter-spacing:.14em; text-transform:uppercase;
+  background:rgba(255,255,255,.22); border:1px solid rgba(255,255,255,.4);
+  padding:7px 16px; border-radius:var(--r3); backdrop-filter:blur(6px)}
+header.book .kicker::before{content:"🎨"; font-family:var(--emo); font-size:14px}
+header.book h1{margin:0; font-size:clamp(34px,7.6vw,68px); line-height:1.08; font-weight:850;
+  letter-spacing:-.02em; text-shadow:0 4px 26px rgba(0,0,0,.3)}
+header.book .chapno{display:inline-block; margin:0 0 14px; font-size:13px; font-weight:800;
+  letter-spacing:.2em; text-transform:uppercase; background:rgba(255,255,255,.95);
+  color:#1C1B2E; padding:6px 18px; border-radius:var(--r3)}
+header.book .sub{max-width:620px; margin:20px auto 0; font-size:17.5px; line-height:1.7;
+  color:rgba(255,255,255,.95); font-style:normal}
+header.book .author{display:inline-flex; align-items:center; gap:8px; margin-top:26px;
+  font-size:13px; font-weight:750; letter-spacing:.1em; text-transform:uppercase;
+  color:#fff; background:rgba(0,0,0,.22); padding:8px 18px; border-radius:var(--r3)}
+header.book .author::before{content:"✍️"; font-family:var(--emo); font-size:14px}
+.rule-orn{display:flex; align-items:center; justify-content:center; gap:10px; margin:24px auto 0; max-width:300px}
+.rule-orn span{height:3px; flex:1; border-radius:3px; background:linear-gradient(90deg,transparent,#fff)}
+.rule-orn span:last-child{background:linear-gradient(90deg,#fff,transparent)}
+.rule-orn b{font-size:0; width:auto}
+.rule-orn b::after{content:"✨"; font-family:var(--emo); font-size:20px; display:block;
+  animation:twinkle 3.6s ease-in-out infinite}
+@keyframes twinkle{0%,100%{transform:scale(1) rotate(0)}50%{transform:scale(1.28) rotate(16deg)}}
+/* emoji trang trí bay lơ lửng */
+header.book .wrap::before,header.book .wrap::after{
+  font-family:var(--emo); position:absolute; font-size:36px; opacity:.85; pointer-events:none}
+header.book .wrap::before{content:"🔑"; left:2%;  top:6%;  animation:float1 9s ease-in-out infinite}
+header.book .wrap::after {content:"💡"; right:3%; bottom:4%; animation:float2 11s ease-in-out infinite}
+@keyframes float1{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-16px) rotate(8deg)}}
+@keyframes float2{0%,100%{transform:translateY(0) rotate(6deg)}50%{transform:translateY(-20px) rotate(-10deg)}}
+@media (max-width:700px){header.book .wrap::before,header.book .wrap::after{font-size:26px; opacity:.6}}
+
+/* ---------- nhãn pill ---------- */
+.tag{display:inline-flex; align-items:center; gap:7px; font-size:11.5px; font-weight:800;
+  letter-spacing:.12em; text-transform:uppercase; padding:6px 14px; border-radius:var(--r3);
+  background:var(--acl); color:var(--ac); border:1.5px solid var(--acb); margin-bottom:12px}
+
+/* ---------- khối giới thiệu trang mục lục ---------- */
+.hub-intro{position:relative; overflow:hidden; background:var(--card); border:1.5px solid var(--rule);
+  border-radius:var(--r); padding:30px 30px 26px; margin:30px 0 40px; box-shadow:var(--sh)}
+.hub-intro::before{content:""; position:absolute; left:0; right:0; top:0; height:6px;
+  background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3),var(--c4),var(--c5),var(--c6),var(--c7),var(--c8))}
+.hub-intro .tag::before{content:"📊"; font-family:var(--emo); font-size:13px}
+.hub-intro p:last-child{margin-bottom:0}
+.hub-intro p{font-size:16.5px; color:var(--ink2); line-height:1.75}
+.hub-intro p strong{color:var(--ink)}
+.hub-intro code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:.9em;
+  background:var(--soft); border:1px solid var(--rule); border-radius:8px; padding:2px 7px; color:var(--c7)}
+.meter{height:14px; border-radius:var(--r3); background:var(--soft); overflow:hidden;
+  margin:16px 0 10px; border:1px solid var(--rule)}
+.meter i{display:block; height:100%; border-radius:var(--r3); position:relative;
+  background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3),var(--c4),var(--c5),var(--c6),var(--c7),var(--c8));
+  background-size:200% 100%; animation:meterShift 8s linear infinite}
+@keyframes meterShift{0%{background-position:0 0}100%{background-position:200% 0}}
+.meter-lbl{font-size:15px; font-weight:650; color:var(--ink2); margin:0 0 4px}
+.meter-lbl::before{content:"🚀 "; font-family:var(--emo); font-size:16px}
+.meter-lbl strong{color:var(--ink); font-size:16px}
+
+/* ---------- nhóm phần ---------- */
+.group{margin:52px 0}
+.group > h2{display:inline-flex; align-items:center; gap:9px; margin:0 0 8px;
+  font-size:15px; font-weight:850; letter-spacing:.1em; text-transform:uppercase;
+  color:#fff; padding:9px 20px; border-radius:var(--r3); box-shadow:var(--sh)}
+.group:nth-of-type(1) > h2{background:linear-gradient(100deg,var(--c6),var(--c5))}
+.group:nth-of-type(2) > h2{background:linear-gradient(100deg,var(--c7),var(--c8))}
+.group:nth-of-type(3) > h2{background:linear-gradient(100deg,var(--c2),var(--c3))}
+.group:nth-of-type(1) > h2::before{content:"🌅"; font-family:var(--emo); font-size:17px}
+.group:nth-of-type(2) > h2::before{content:"📚"; font-family:var(--emo); font-size:17px}
+.group:nth-of-type(3) > h2::before{content:"🎁"; font-family:var(--emo); font-size:17px}
+.group > .gsub{font-size:15.5px; color:var(--ink2); margin:0 0 22px; max-width:640px}
+
+/* ---------- thẻ chương ---------- */
+.cards{display:grid; grid-template-columns:repeat(auto-fill,minmax(272px,1fr)); gap:18px}
+.card{position:relative; overflow:hidden; display:block; background:var(--card);
+  border:1.5px solid var(--rule); border-radius:var(--r); padding:26px 24px 22px;
+  text-decoration:none; color:var(--ink); box-shadow:var(--sh);
+  transition:transform .2s cubic-bezier(.2,.8,.3,1), box-shadow .2s, border-color .2s}
+.card::before{content:""; position:absolute; left:0; right:0; top:0; height:6px;
+  background:linear-gradient(90deg,var(--cc),color-mix(in srgb,var(--cc) 45%, #fff))}
+.card::after{content:attr(data-emo); font-family:var(--emo); position:absolute; right:18px; top:20px;
+  font-size:30px; line-height:1; transition:transform .25s}
+.card:hover{transform:translateY(-6px); border-color:var(--cc);
+  box-shadow:0 10px 20px color-mix(in srgb,var(--cc) 14%, transparent), 0 26px 56px color-mix(in srgb,var(--cc) 20%, transparent)}
+.card:hover::after{transform:scale(1.22) rotate(-10deg)}
+.card .num{display:block; font-size:12px; font-weight:850; letter-spacing:.14em;
+  text-transform:uppercase; margin:0 0 10px; color:var(--cc)}
+.card h3{margin:0 0 10px; font-size:21px; line-height:1.3; font-weight:800; letter-spacing:-.01em;
+  padding-right:44px}
+.card .sub{margin:0; font-size:14.8px; line-height:1.65; color:var(--ink2)}
+.card .status{display:inline-flex; align-items:center; gap:6px; margin-top:16px; font-size:11.5px;
+  font-weight:800; letter-spacing:.08em; text-transform:uppercase; padding:6px 13px;
+  border-radius:var(--r3); background:var(--c4l); color:var(--c4); border:1.5px solid var(--c4b)}
+.card .status::before{content:"✅"; font-family:var(--emo); font-size:12px}
+.card.off{opacity:.62; box-shadow:none; cursor:default; background:var(--soft)}
+.card.off::before{background:var(--rule)}
+.card.off::after{filter:grayscale(1); opacity:.5}
+.card.off:hover{transform:none; border-color:var(--rule); box-shadow:none}
+.card.off .num{color:var(--ink3)}
+.card.off .status{background:transparent; color:var(--ink3); border:1.5px dashed var(--rule)}
+.card.off .status::before{content:"🕓"}
+/* 8 màu luân phiên — build gán data-c cho từng thẻ */
+.card[data-c="1"]{--cc:var(--c1)} .card[data-c="2"]{--cc:var(--c2)}
+.card[data-c="3"]{--cc:var(--c3)} .card[data-c="4"]{--cc:var(--c4)}
+.card[data-c="5"]{--cc:var(--c5)} .card[data-c="6"]{--cc:var(--c6)}
+.card[data-c="7"]{--cc:var(--c7)} .card[data-c="8"]{--cc:var(--c8)}
+
+/* ---------- footer ---------- */
+footer.pagefoot{margin-top:60px; padding:30px 0 90px; text-align:center;
+  font-size:14px; color:var(--ink2); line-height:1.8; border-top:1.5px solid var(--rule)}
+footer.pagefoot strong{color:var(--ink)}
+footer.pagefoot p::before{content:"📘"; font-family:var(--emo); display:block; font-size:24px; margin-bottom:10px}
+
+/* ---------- nút nổi ---------- */
+#fabs{position:fixed; right:16px; bottom:16px; z-index:65; display:flex; flex-direction:column; gap:10px}
+#fabs button{width:50px; height:50px; border-radius:50%; cursor:pointer; border:1.5px solid var(--rule);
+  background:var(--card); box-shadow:var(--sh2); font-family:var(--emo); font-size:21px; line-height:1;
+  display:grid; place-items:center; transition:transform .18s, box-shadow .18s}
+#fabs button:hover{transform:translateY(-3px) scale(1.07)}
+#fabs button[aria-pressed="true"]{background:var(--acl); border-color:var(--ac)}
+#fabs .fab-top{opacity:0; pointer-events:none; transition:opacity .25s}
+#fabs .fab-top.on{opacity:1; pointer-events:auto}
+@media (max-width:560px){
+  #fabs{right:10px; bottom:10px; gap:8px}
+  #fabs button{width:42px;height:42px;font-size:17px}
+  header.book{padding:48px 0 44px}
+  header.book .kicker{font-size:10.5px; letter-spacing:.08em; padding:6px 12px}
+  header.book .author{font-size:11.5px}
+  .hub-intro{padding:24px 20px 22px}
+  .card{padding:22px 20px 20px}
+  .group > h2{font-size:13px; padding:8px 16px}
+}
+
+/* ---------- giảm chuyển động ---------- */
+html.still *, html.still *::before, html.still *::after{animation:none !important; transition:none !important}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none !important; transition:none !important}
+}
+
+/* ---------- hiện dần khi cuộn ---------- */
+html.js .rv{opacity:0; transform:translateY(16px)}
+html.js .rv.in{opacity:1; transform:none; transition:opacity .55s ease, transform .55s cubic-bezier(.2,.8,.3,1)}
+
+/* ---------- in ---------- */
+@media print{
+  :root{--bg:#fff;--card:#fff;--soft:#fff}
+  html,body{background:#fff !important; color:#000}
+  *{-webkit-print-color-adjust:exact; print-color-adjust:exact}
+  #toolbar,#progress,#fabs,#blobs,body::before{display:none !important}
+  header.book{background:#fff !important; color:#000; animation:none; border-bottom:4px solid var(--c7); padding:0 0 18pt}
+  header.book h1,header.book .sub,header.book .author,header.book .kicker{color:#000}
+  header.book::after{display:none}
+  .card,.hub-intro{break-inside:avoid; box-shadow:none}
+  @page{size:A4; margin:16mm 14mm}
+}
+</style>
+</head>
+<body>
+<div id="blobs" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+<div id="progress" aria-hidden="true"></div>
+<div id="toolbar"><div class="wrap">
+  <span class="tb-title">Bí mật vĩ đại nhất</span>
+  
+  <button class="btn" id="themeBtn" type="button" aria-pressed="false">Chế độ đọc tối</button>
+  <button class="btn" id="printBtn" type="button">In / Lưu PDF</button>
+  <a class="btn" href="#top">Về đầu trang</a>
+</div></div>
+<header class="book" id="top"><div class="wrap">
+  <p class="kicker">Thiết kế lại để đọc và ghi nhớ</p>
+  <h1>Bí mật vĩ đại nhất</h1>
+  <div class="rule-orn"><span></span><b>◆</b><span></span></div>
+  <p class="sub">Mục lục tổng. Bấm vào một phần để mở trang đầy đủ của phần đó.</p>
+  <p class="author">Rhonda Byrne</p>
+</div></header>
+<div class="wrap">
+<div class="hub-intro rv">
+<span class="tag">Tiến trình</span>
+<div class="meter"><i style="width:65%"></i></div>
+<p class="meter-lbl">Đã dựng xong <strong>11/17</strong> phần của cuốn sách.</p>
+<p style="margin-top:16px">Mỗi phần là một trang riêng, tự chứa đầy đủ nội dung và định dạng. <strong>Hãy giữ tất cả các file trong cùng một thư mục</strong> — các liên kết ở đây là liên kết tương đối, nếu tách file ra nơi khác thì mục lục sẽ không mở được chương.</p>
+<p>Những phần chưa có nội dung được để mờ và không bấm được. Khi bạn gửi thêm chương, trang mục lục này sẽ được cập nhật và bạn chỉ cần tải lại file <code>index.html</code> vào đúng thư mục cũ.</p>
+</div>
+<section class="group"><h2>Phần mở đầu</h2><p class="gsub">Lời mở của tác giả trước khi vào các chương.</p><div class="cards">
+<div class="card off rv" data-c="1" data-emo="🙏"><span class="num">Mở đầu</span><h3>Lời cảm ơn</h3><p class="sub">Chờ nội dung từ bản nguồn.</p><span class="status">Chưa có</span></div>
+<a class="card rv" data-c="2" data-emo="🌅" href="00-su-khoi-dau.html"><span class="num">Mở đầu</span><h3>Sự khởi đầu</h3><p class="sub">Vì sao tác giả vẫn tiếp tục tìm kiếm sau Bí mật, hành trình mười năm, và khoảnh khắc bà thấy rằng điều mình tìm kiếm luôn ở ngay đây.</p><span class="status">Đã có · 11 phút đọc</span></a>
+</div></section>
+<section class="group"><h2>Mười hai chương</h2><p class="gsub">Trình tự tư tưởng chính của cuốn sách, giữ nguyên thứ tự của tác giả.</p><div class="cards">
+<a class="card rv" data-c="3" data-emo="👁️" href="01-an-hien.html"><span class="num">Chương 01</span><h3>Ẩn hiện</h3><p class="sub">Bí mật vĩ đại nhất được giấu ở nơi hiển nhiên nhất, nó tiết lộ con người thật của bạn, và mọi đau khổ đều bắt nguồn từ một trường hợp nhầm lẫn danh tính.</p><span class="status">Đã có · 23 phút đọc</span></a>
+<a class="card rv" data-c="4" data-emo="🔓" href="02-duoc-tiet-lo.html"><span class="num">Chương 02</span><h3>Bí mật vĩ đại nhất: Được tiết lộ</h3><p class="sub">Một niềm tin duy nhất — rằng ta là cơ thể và tâm trí — đã che khuất khám phá; tháo gỡ nó rồi, điều còn lại là Nhận thức.</p><span class="status">Đã có · 40 phút đọc</span></a>
+<a class="card rv" data-c="5" data-emo="🪞" href="03-tiet-lo-tiep-theo.html"><span class="num">Chương 03</span><h3>Tiết lộ tiếp theo</h3><p class="sub">Chỉ có một Nhận thức duy nhất hoạt động thông qua mọi người — và bài thực hành ba bước để sống một cách có ý thức như Nhận thức.</p><span class="status">Đã có · 30 phút đọc</span></a>
+<a class="card rv" data-c="6" data-emo="😴" href="04-ban-co-dang-mo.html"><span class="num">Chương 04</span><h3>Bạn có đang mơ… Đã đến lúc thức dậy</h3><p class="sub">Thế giới được làm từ cùng chất liệu như giấc mơ; thức tỉnh nghĩa là gì, ngọn núi của ý thức, và rào cản duy nhất còn lại là tâm trí.</p><span class="status">Đã có · 26 phút đọc</span></a>
+<a class="card rv" data-c="7" data-emo="🧠" href="05-giai-thoat-khoi-tam-tri.html"><span class="num">Chương 05</span><h3>Giải thoát khỏi tâm trí</h3><p class="sub">Rắc rối không nằm ở tâm trí mà ở việc tin vào nó; ba loại suy nghĩ, những câu chuyện nó kể, và vì sao Nhận thức là lối thoát.</p><span class="status">Đã có · 33 phút đọc</span></a>
+<a class="card rv" data-c="8" data-emo="⚡" href="06-suc-manh-cua-cam-xuc.html"><span class="num">Chương 06</span><h3>Hiểu được sức mạnh của cảm xúc</h3><p class="sub">Cảm xúc là chuyển động của năng lượng; cơ chế kìm nén từ thời thơ ấu, và vì sao thay đổi cảm xúc luôn là một công việc bên trong.</p><span class="status">Đã có · 32 phút đọc</span></a>
+<a class="card rv" data-c="1" data-emo="🌊" href="07-ket-thuc-cam-xuc-tieu-cuc.html"><span class="num">Chương 07</span><h3>Kết thúc cảm xúc tiêu cực</h3><p class="sub">Ba phương pháp để giải phóng vĩnh viễn cảm xúc tiêu cực: ngừng chống lại, Chào đón, và Thực hành siêu việt.</p><span class="status">Đã có · 35 phút đọc</span></a>
+<a class="card rv" data-c="2" data-emo="🕊️" href="08-khong-con-dau-kho.html"><span class="num">Chương 08</span><h3>Không còn đau khổ</h3><p class="sub">Đau khổ là tùy chọn; vấn đề chỉ tồn tại trong tâm trí, và rời sự chú ý khỏi nó thì nó phải sụp đổ.</p><span class="status">Đã có · 32 phút đọc</span></a>
+<a class="card rv" data-c="3" data-emo="🧱" href="09-giai-toa-niem-tin-han-che.html"><span class="num">Chương 09</span><h3>Giải tỏa niềm tin hạn chế</h3><p class="sub">Niềm tin là suy nghĩ được lặp đến mức được tin; nó tự chứng minh mình đúng — và tan ngay khi bạn nhận thức được nó.</p><span class="status">Đã có · 28 phút đọc</span></a>
+<a class="card rv" data-c="4" data-emo="☀️" href="10-hanh-phuc-vinh-cuu.html"><span class="num">Chương 10</span><h3>Hạnh phúc vĩnh cửu</h3><p class="sub">Bạn không có hạnh phúc — bạn là hạnh phúc; vì sao tìm nó ở thế giới luôn thất bại, và hai thứ duy nhất che nó đi.</p><span class="status">Đã có · 36 phút đọc</span></a>
+<div class="card off rv" data-c="5" data-emo="🌍"><span class="num">Chương 11</span><h3>Thế giới: Mọi thứ đều tốt đẹp</h3><p class="sub">Chờ nội dung từ bản nguồn.</p><span class="status">Chưa có</span></div>
+<div class="card off rv" data-c="6" data-emo="♾️"><span class="num">Chương 12</span><h3>Kết thúc không có hồi kết</h3><p class="sub">Chờ nội dung từ bản nguồn.</p><span class="status">Chưa có</span></div>
+</div></section>
+<section class="group"><h2>Phần cuối sách</h2><p class="gsub">Tổng hợp thực hành, các đoạn nổi bật và thông tin tác giả.</p><div class="cards">
+<div class="card off rv" data-c="7" data-emo="🧘"><span class="num">Phần cuối</span><h3>Những thực hành Bí mật vĩ đại nhất</h3><p class="sub">Chờ nội dung từ bản nguồn.</p><span class="status">Chưa có</span></div>
+<div class="card off rv" data-c="8" data-emo="✨"><span class="num">Phần cuối</span><h3>Nổi bật trong Bí mật vĩ đại nhất</h3><p class="sub">Chờ nội dung từ bản nguồn.</p><span class="status">Chưa có</span></div>
+<div class="card off rv" data-c="1" data-emo="🖋️"><span class="num">Phần cuối</span><h3>Về tác giả</h3><p class="sub">Chờ nội dung từ bản nguồn.</p><span class="status">Chưa có</span></div>
+</div></section>
+<footer class="pagefoot"><p><strong>Bí mật vĩ đại nhất</strong> — Rhonda Byrne<br>Bản trình bày lại phục vụ việc đọc và ôn tập. Bản quyền nội dung thuộc về tác giả và nhà xuất bản.</p></footer>
+</div>
+<div id="fabs">
+  <button id="fabFont" type="button" aria-label="Đổi cỡ chữ" title="Cỡ chữ">🔤</button>
+  <button id="fabStill" type="button" aria-label="Tạm dừng chuyển động" aria-pressed="false" title="Tạm dừng chuyển động">⏸️</button>
+  <button id="fabDark" type="button" aria-label="Chế độ tối" aria-pressed="false" title="Chế độ tối">🌙</button>
+  <button id="fabTop" class="fab-top" type="button" aria-label="Về đầu trang" title="Về đầu trang">⬆️</button>
+</div>
+<script>
+(function(){
+  var root=document.documentElement; root.classList.add('js');
+  /* thanh tiến độ đọc */
+  var bar=document.getElementById('progress');
+  function up(){var h=root,m=h.scrollHeight-h.clientHeight;
+    bar.style.width=(m>0?(h.scrollTop||document.body.scrollTop)/m*100:0).toFixed(2)+'%';
+    var t=document.querySelector('.fab-top'); if(t){t.classList.toggle('on',h.scrollTop>500);}}
+  addEventListener('scroll',up,{passive:true}); addEventListener('resize',up); up();
+
+  /* chế độ tối */
+  var tb=document.getElementById('themeBtn'), fd=document.getElementById('fabDark');
+  function setDark(d){root.setAttribute('data-theme',d?'dark':'light');
+    if(tb){tb.textContent=d?'Chế độ sáng':'Chế độ đọc tối';tb.setAttribute('aria-pressed',d?'true':'false');}
+    if(fd){fd.textContent=d?'☀️':'🌙';fd.setAttribute('aria-pressed',d?'true':'false');}
+    try{localStorage.setItem('bmvdn-theme',d?'dark':'light')}catch(e){}}
+  var sv='light'; try{sv=localStorage.getItem('bmvdn-theme')||'light'}catch(e){}
+  setDark(sv==='dark');
+  function tog(){setDark(root.getAttribute('data-theme')!=='dark')}
+  if(tb)tb.addEventListener('click',tog); if(fd)fd.addEventListener('click',tog);
+
+  /* in */
+  var pb=document.getElementById('printBtn'); if(pb)pb.addEventListener('click',function(){print()});
+
+  /* cỡ chữ */
+  var fz=document.getElementById('fabFont'), steps=['','l','xl'];
+  var fi=0; try{fi=Math.max(0,steps.indexOf(localStorage.getItem('bmvdn-fs')||''))}catch(e){}
+  function setFs(){ if(steps[fi]) root.setAttribute('data-fs',steps[fi]); else root.removeAttribute('data-fs');
+    try{localStorage.setItem('bmvdn-fs',steps[fi])}catch(e){} }
+  setFs();
+  if(fz)fz.addEventListener('click',function(){fi=(fi+1)%steps.length; setFs();});
+
+  /* tắt chuyển động */
+  var sb=document.getElementById('fabStill');
+  var st=false; try{st=localStorage.getItem('bmvdn-still')==='1'}catch(e){}
+  function setStill(v){st=v; root.classList.toggle('still',v);
+    if(sb){sb.textContent=v?'▶️':'⏸️'; sb.setAttribute('aria-pressed',v?'true':'false');}
+    if(v){[].forEach.call(document.querySelectorAll('.rv'),function(e){e.classList.add('in')});}
+    try{localStorage.setItem('bmvdn-still',v?'1':'0')}catch(e){}}
+  setStill(st);
+  if(sb)sb.addEventListener('click',function(){setStill(!st)});
+
+  /* về đầu trang */
+  var ft=document.getElementById('fabTop');
+  if(ft)ft.addEventListener('click',function(){scrollTo({top:0,behavior:'smooth'})});
+
+  /* hiện dần */
+  var rv=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window && !st){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in'); io.unobserve(e.target);}})},{threshold:.08,rootMargin:'0px 0px -6% 0px'});
+    [].forEach.call(rv,function(e,i){e.style.transitionDelay=(Math.min(i,6)*45)+'ms'; io.observe(e)});
+  } else {[].forEach.call(rv,function(e){e.classList.add('in')});}
+})();
+</script>
+</body>
+</html>

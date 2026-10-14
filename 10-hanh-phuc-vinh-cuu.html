@@ -1,0 +1,1466 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hạnh phúc vĩnh cửu — Bí mật vĩ đại nhất | Rhonda Byrne</title>
+<style>
+:root{
+  --bg:#F8F2E7; --card:#FFFCF7; --ink:#302820; --ink2:#6F6257;
+  --gold:#B88A3B; --gold-l:#F5E7BE;
+  --green:#47705A; --green-l:#E8F1EB;
+  --blue:#4F7396; --blue-l:#EAF2F8;
+  --purple:#755E8B; --purple-l:#F0EAF5;
+  --red:#9B4A42; --red-l:#FBEDEB;
+  --rule:rgba(184,138,59,.28);
+  --shadow:0 1px 2px rgba(48,40,32,.05), 0 8px 24px rgba(48,40,32,.05);
+  --ui:system-ui,"Segoe UI",Roboto,Arial,"Noto Sans","Liberation Sans",sans-serif;
+  --serif:"Times New Roman",Tinos,"Liberation Serif","Noto Serif","DejaVu Serif",Times,serif;
+}
+html[data-theme="dark"]{
+  --bg:#1A1714; --card:#231F1B; --ink:#EFE6D8; --ink2:#B6A895;
+  --gold:#D9AC5E; --gold-l:#3A2F1C;
+  --green:#8FBFA4; --green-l:#1E2B24;
+  --blue:#9CC0DE; --blue-l:#1C262F;
+  --purple:#BFA8D4; --purple-l:#262030;
+  --red:#E09A92; --red-l:#2E1F1D;
+  --rule:rgba(217,172,94,.28);
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:70px}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *{animation:none !important; transition:none !important}
+}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:var(--serif); font-size:19px; line-height:1.85;
+  font-synthesis:none; text-rendering:optimizeLegibility;
+  -webkit-text-size-adjust:100%;
+}
+p{margin:0 0 1.15em}
+.wrap{max-width:900px; margin:0 auto; padding:0 22px}
+
+/* ---------- progress + toolbar ---------- */
+#progress{position:fixed; top:0; left:0; height:4px; width:0%;
+  background:linear-gradient(90deg,var(--gold),#E0BD72); z-index:60}
+#toolbar{position:sticky; top:0; z-index:50; background:color-mix(in srgb,var(--bg) 92%, transparent);
+  backdrop-filter:blur(6px); border-bottom:1px solid var(--rule)}
+#toolbar .wrap{display:flex; gap:10px; flex-wrap:wrap; align-items:center; padding-top:9px; padding-bottom:9px}
+#toolbar .tb-title{font-family:var(--ui); font-size:12px; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--ink2); margin-right:auto}
+.btn{font-family:var(--ui); font-size:13px; line-height:1.2; padding:8px 13px; cursor:pointer;
+  background:var(--card); color:var(--ink); border:1px solid var(--rule); border-radius:999px}
+.btn:hover{border-color:var(--gold)}
+a:focus-visible,.btn:focus-visible,summary:focus-visible{
+  outline:3px solid var(--gold); outline-offset:2px; border-radius:4px}
+
+/* ---------- header ---------- */
+header.book{
+  background:linear-gradient(135deg,#241D16 0%,#3A2D1C 55%,#6B5220 100%);
+  color:#F5E7BE; padding:56px 0 46px; text-align:center}
+header.book .kicker{font-family:var(--ui); font-size:12px; letter-spacing:.3em;
+  text-transform:uppercase; color:#D9BE85; margin:0 0 18px}
+header.book h1{font-size:clamp(30px,6vw,50px); line-height:1.2; margin:0 0 6px; color:#F7E9C4}
+header.book .chapno{font-family:var(--ui); font-size:13px; letter-spacing:.24em;
+  text-transform:uppercase; color:#D9AC5E; margin:0 0 14px}
+header.book .sub{font-size:19px; font-style:italic; color:#E9DCBE; max-width:640px;
+  margin:16px auto 0; line-height:1.7}
+header.book .author{font-family:var(--ui); font-size:13px; letter-spacing:.18em;
+  text-transform:uppercase; color:#CBB48B; margin-top:24px}
+.rule-orn{display:flex; align-items:center; justify-content:center; gap:12px; margin:22px auto 0; max-width:280px}
+.rule-orn span{height:1px; flex:1; background:linear-gradient(90deg,transparent,#B88A3B,transparent)}
+.rule-orn b{color:#B88A3B; font-size:13px}
+
+/* ---------- generic blocks ---------- */
+.tag{display:inline-block; font-family:var(--ui); font-size:11px; font-weight:700;
+  letter-spacing:.16em; text-transform:uppercase; padding:3px 10px; border-radius:999px;
+  background:var(--gold-l); color:#7A5A1E; margin-bottom:10px}
+html[data-theme="dark"] .tag{color:var(--gold)}
+.box{border-radius:14px; padding:22px 24px; margin:26px 0; box-shadow:var(--shadow)}
+
+.map{background:var(--card); border:1px solid var(--rule); border-top:4px solid var(--gold)}
+.map h2{font-family:var(--ui); font-size:17px; letter-spacing:.04em; margin:0 0 4px}
+.map .meta{font-family:var(--ui); font-size:13px; color:var(--ink2); margin:0 0 16px}
+.map .goal{background:var(--gold-l); border-radius:10px; padding:12px 16px; margin:0 0 18px;
+  font-size:17px}
+html[data-theme="dark"] .map .goal{background:#332918}
+.stages{list-style:none; margin:0; padding:0; counter-reset:st}
+.stages li{counter-increment:st; position:relative; padding:6px 0 6px 42px; font-size:17px}
+.stages li::before{content:counter(st); position:absolute; left:0; top:8px; width:26px; height:26px;
+  border-radius:50%; background:var(--gold); color:#fff; font-family:var(--ui); font-size:12px;
+  font-weight:700; display:flex; align-items:center; justify-content:center}
+.howto{margin-top:18px; padding-top:14px; border-top:1px dashed var(--rule);
+  font-family:var(--ui); font-size:14px; color:var(--ink2); line-height:1.7}
+
+nav.toc{background:var(--card); border:1px solid var(--rule)}
+nav.toc h2{font-family:var(--ui); font-size:17px; margin:0 0 14px}
+nav.toc ol{list-style:none; margin:0; padding:0; columns:2; column-gap:34px}
+nav.toc li{break-inside:avoid; margin:0 0 9px}
+nav.toc a{display:block; color:var(--ink); text-decoration:none; font-size:16.5px;
+  padding:7px 10px; border-radius:8px; border-left:3px solid var(--gold)}
+nav.toc a:hover{background:var(--gold-l)}
+nav.toc a .n{font-family:var(--ui); font-size:12px; color:var(--gold); font-weight:700; margin-right:8px}
+@media (max-width:720px){nav.toc ol{columns:1}}
+
+aside.srctoc{background:var(--card); border:1px solid var(--rule); border-left:5px solid var(--ink2)}
+aside.srctoc ul{list-style:none; margin:0; padding:0}
+aside.srctoc li{padding:4px 0 4px 20px; position:relative; font-size:16.5px}
+aside.srctoc li::before{content:"◆"; position:absolute; left:0; color:var(--gold); font-size:11px; top:7px}
+
+/* ---------- sections ---------- */
+main section{margin:54px 0}
+.sec-head{display:flex; gap:16px; align-items:flex-start; margin-bottom:6px}
+.badge{flex:0 0 auto; width:44px; height:44px; border-radius:50%; background:var(--gold);
+  color:#fff; font-family:var(--ui); font-weight:700; font-size:17px;
+  display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow)}
+.sec-head h2{font-size:clamp(22px,3.6vw,29px); line-height:1.32; margin:4px 0 0}
+.willlearn{font-family:var(--ui); font-size:14.5px; color:var(--ink2); line-height:1.7;
+  border-left:3px solid var(--gold); padding:6px 0 6px 14px; margin:12px 0 22px}
+.willlearn b{color:var(--gold); letter-spacing:.04em}
+
+.body-card{background:var(--card); border:1px solid var(--rule); border-radius:14px;
+  padding:26px 28px; box-shadow:var(--shadow)}
+@media (max-width:600px){.body-card{padding:20px 18px}}
+.body-card h3{font-family:var(--ui); font-size:16px; letter-spacing:.03em; color:var(--gold);
+  margin:26px 0 10px}
+.body-card h3:first-child{margin-top:0}
+
+mark{padding-block:.06em; background:linear-gradient(180deg,rgba(245,231,190,0) 46%, #F5E7BE 46%);
+  color:inherit; padding:0 2px}
+html[data-theme="dark"] mark{padding-block:.06em; background:linear-gradient(180deg,rgba(58,47,28,0) 46%, #4A3A1E 46%); color:#F7E9C4}
+
+ul.dia{list-style:none; margin:0 0 1.15em; padding:0}
+ul.dia li{position:relative; padding:5px 0 5px 24px}
+ul.dia li::before{content:"◆"; position:absolute; left:0; top:8px; color:var(--gold); font-size:11px}
+ol.steps{padding-left:22px}
+ol.steps li{margin:0 0 10px}
+
+/* labelled boxes */
+.keyidea{position:relative; border:2px dashed var(--gold); background:transparent;
+  border-radius:14px; padding:26px 24px 20px; margin:28px 0}
+.keyidea .lbl{position:absolute; top:-12px; left:20px; background:var(--bg); padding:0 10px;
+  font-family:var(--ui); font-size:11px; font-weight:700; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--gold)}
+.keyidea p:last-child{margin-bottom:0}
+
+blockquote{position:relative; margin:28px 0; padding:26px 26px 20px 52px;
+  background:var(--gold-l); border-left:5px solid var(--gold); border-radius:0 14px 14px 0;
+  font-size:19.5px; font-style:italic; line-height:1.75}
+html[data-theme="dark"] blockquote{background:#332918}
+blockquote::before{content:"\201C"; position:absolute; left:14px; top:14px; font-size:52px;
+  line-height:1; color:var(--gold); opacity:.55; font-family:var(--serif)}
+blockquote .qtag{display:block; font-family:var(--ui); font-style:normal; font-size:10.5px;
+  font-weight:700; letter-spacing:.2em; color:#7A5A1E; margin-bottom:10px}
+html[data-theme="dark"] blockquote .qtag{color:var(--gold)}
+blockquote p{margin:0 0 .6em}
+blockquote cite{display:block; font-style:normal; font-family:var(--ui); font-size:14px;
+  color:var(--ink2); margin-top:10px}
+blockquote cite b{color:var(--ink)}
+
+.concept{background:var(--blue-l); border:1px solid rgba(79,115,150,.3); border-radius:14px;
+  padding:22px 24px; margin:26px 0}
+.concept .lbl{font-family:var(--ui); font-size:11px; font-weight:700; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--blue); display:block; margin-bottom:6px}
+.concept h4{font-size:21px; margin:0 0 12px}
+.concept dl{margin:0}
+.concept dt{font-family:var(--ui); font-size:12.5px; letter-spacing:.06em; color:var(--blue);
+  font-weight:700; margin-top:12px}
+.concept dd{margin:3px 0 0; font-size:17px}
+
+.example{background:var(--card); border:1px solid var(--rule); border-top:4px solid var(--gold);
+  border-radius:14px; padding:22px 24px; margin:26px 0}
+.example .lbl{font-family:var(--ui); font-size:11px; font-weight:700; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--gold); display:block; margin-bottom:8px}
+
+.practice{background:var(--green-l); border:1px solid rgba(71,112,90,.35); border-left:5px solid var(--green);
+  border-radius:0 14px 14px 0; padding:22px 24px; margin:26px 0}
+.practice .lbl{font-family:var(--ui); font-size:11px; font-weight:700; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--green); display:block; margin-bottom:8px}
+.notepad{margin-top:14px; border:1px dashed var(--green); border-radius:10px; padding:12px 14px;
+  background:var(--card)}
+.notepad .nl{font-family:var(--ui); font-size:12px; color:var(--ink2); letter-spacing:.08em;
+  text-transform:uppercase}
+.notepad .lines{height:14px; border-bottom:1px solid var(--rule); margin-top:14px}
+
+.hint{background:var(--purple-l); border:1px solid rgba(117,94,139,.3); border-left:5px solid var(--purple);
+  border-radius:0 14px 14px 0; padding:18px 22px; margin:24px 0; font-size:17px}
+.hint .lbl{font-family:var(--ui); font-size:11px; font-weight:700; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--purple); display:block; margin-bottom:6px}
+.hint p:last-child{margin-bottom:0}
+
+.check{background:var(--red-l); border:1px solid rgba(155,74,66,.35); border-left:5px solid var(--red);
+  border-radius:0 12px 12px 0; padding:14px 18px; margin:22px 0; font-size:15.5px;
+  font-family:var(--ui); line-height:1.7}
+.check .lbl{font-size:11px; font-weight:700; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--red); display:block; margin-bottom:4px}
+
+.pause{background:var(--card); border:1px solid var(--rule); border-radius:14px; padding:20px 24px;
+  margin:28px 0; text-align:center}
+.pause .lbl{font-family:var(--ui); font-size:11px; font-weight:700; letter-spacing:.2em;
+  text-transform:uppercase; color:var(--gold); display:block; margin-bottom:8px}
+.pause p{margin:0; font-style:italic; font-size:18.5px}
+
+/* flow / mạch lập luận */
+.flow{background:var(--card); border:1px solid var(--rule); border-radius:14px; padding:22px 24px; margin:28px 0}
+.flow .lbl{font-family:var(--ui); font-size:11px; font-weight:700; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--gold); display:block; margin-bottom:14px}
+.flow-grid{display:flex; flex-wrap:wrap; align-items:stretch; gap:10px}
+.fstep{flex:1 1 180px; background:var(--bg); border:1px solid var(--rule); border-radius:10px; padding:13px 15px}
+.fstep .k{display:block; font-family:var(--ui); font-size:10.5px; font-weight:700; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--ink2); margin-bottom:5px}
+.fstep .v{font-size:16px; line-height:1.6}
+.farrow{display:flex; align-items:center; color:var(--gold); font-size:20px; padding:0 2px}
+@media (max-width:700px){
+  .flow-grid{flex-direction:column}
+  .farrow{justify-content:center; transform:rotate(90deg); padding:2px 0}
+}
+
+.totop{display:block; text-align:right; margin:16px 0 0}
+.totop a{font-family:var(--ui); font-size:13px; color:var(--ink2); text-decoration:none;
+  border:1px solid var(--rule); border-radius:999px; padding:6px 14px}
+.totop a:hover{border-color:var(--gold); color:var(--gold)}
+
+.origsum{background:var(--gold-l); border:1px solid var(--gold); border-radius:14px; padding:24px}
+html[data-theme="dark"] .origsum{background:#332918}
+.recall{background:var(--blue-l); border:1px solid rgba(79,115,150,.3); border-radius:14px; padding:24px}
+.recall h3{font-family:var(--ui); font-size:15px; letter-spacing:.05em; color:var(--blue); margin:22px 0 8px}
+.recall h3:first-of-type{margin-top:8px}
+.chain{display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-top:10px}
+.chain span{background:var(--card); border:1px solid var(--rule); border-radius:999px;
+  padding:6px 13px; font-family:var(--ui); font-size:13.5px}
+.chain i{color:var(--gold); font-style:normal}
+
+details.audit{background:var(--card); border:1px solid var(--rule); border-radius:14px;
+  padding:16px 20px; margin:34px 0}
+details.audit summary{cursor:pointer; font-family:var(--ui); font-size:14px; font-weight:700;
+  letter-spacing:.1em; text-transform:uppercase; color:var(--gold)}
+details.audit .in{padding-top:14px; font-family:var(--ui); font-size:15px; line-height:1.8}
+details.audit ul{list-style:none; padding:0}
+details.audit li{padding:4px 0 4px 22px; position:relative}
+details.audit li::before{content:"◆"; position:absolute; left:0; top:6px; color:var(--gold); font-size:10px}
+
+footer.pagefoot{border-top:1px solid var(--rule); margin-top:50px; padding:26px 0 60px;
+  font-family:var(--ui); font-size:13.5px; color:var(--ink2); text-align:center; line-height:1.8}
+
+/* ---------- print ---------- */
+@media print{
+  :root{--bg:#fff; --card:#fff}
+  body{font-size:12pt; line-height:1.6; background:#fff; color:#000}
+  #toolbar,#progress,.totop,.btn{display:none !important}
+  header.book{background:#fff !important; color:#000; border-bottom:3px solid #B88A3B; padding:0 0 18pt}
+  header.book h1,header.book .sub,header.book .author,header.book .kicker,header.book .chapno{color:#000}
+  .wrap{max-width:100%; padding:0}
+  @page{size:A4; margin:18mm 16mm}
+  .box,.body-card,blockquote,.concept,.practice,.example,.hint,.keyidea,.pause,.flow,
+  .origsum,.recall,details.audit{break-inside:avoid; page-break-inside:avoid; box-shadow:none}
+  h2,h3,h4,.sec-head{break-after:avoid; page-break-after:avoid}
+  main section{break-inside:auto; margin:22pt 0}
+  blockquote{border-left:3pt solid #B88A3B; background:#fff}
+  .concept{border:1.2pt solid #4F7396}
+  .practice{border:1.2pt solid #47705A}
+  .hint{border:1.2pt solid #755E8B}
+  .check{border:1.2pt solid #9B4A42}
+  nav.toc a{border-left:2pt solid #B88A3B}
+  details.audit{display:block}
+  details.audit[open] .in,details.audit .in{display:block}
+  a{color:#000; text-decoration:none}
+}
+
+/* ===== bổ sung cho bộ nhiều file ===== */
+.pager{display:flex; gap:12px; margin:44px 0 8px; flex-wrap:wrap}
+.pager a,.pager span{flex:1 1 230px; border:1px solid var(--rule); border-radius:12px;
+  padding:14px 18px; text-decoration:none; background:var(--card); color:var(--ink);
+  font-family:var(--ui); font-size:15px; line-height:1.5; box-shadow:var(--shadow)}
+.pager .k{display:block; font-size:10.5px; font-weight:700; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--ink2); margin-bottom:5px}
+.pager a:hover{border-color:var(--gold)}
+.pager .next{text-align:right}
+.pager span.off{opacity:.42; box-shadow:none}
+
+/* trang mục lục tổng */
+.hub-intro{background:var(--card); border:1px solid var(--rule); border-top:4px solid var(--gold);
+  border-radius:14px; padding:24px 26px; margin:30px 0; box-shadow:var(--shadow)}
+.hub-intro p:last-child{margin-bottom:0}
+.meter{height:10px; border-radius:999px; background:var(--gold-l); overflow:hidden; margin:14px 0 8px}
+.meter i{display:block; height:100%; background:linear-gradient(90deg,var(--gold),#E0BD72)}
+.meter-lbl{font-family:var(--ui); font-size:13.5px; color:var(--ink2)}
+.group{margin:44px 0}
+.group > h2{font-family:var(--ui); font-size:13px; font-weight:700; letter-spacing:.2em;
+  text-transform:uppercase; color:var(--gold); margin:0 0 4px}
+.group > .gsub{font-family:var(--ui); font-size:14px; color:var(--ink2); margin:0 0 18px}
+.cards{display:grid; grid-template-columns:repeat(auto-fill,minmax(268px,1fr)); gap:16px}
+.card{display:block; background:var(--card); border:1px solid var(--rule); border-radius:14px;
+  padding:20px 22px; text-decoration:none; color:var(--ink); box-shadow:var(--shadow);
+  position:relative; transition:border-color .15s, transform .15s}
+.card:hover{border-color:var(--gold); transform:translateY(-2px)}
+.card.off{opacity:.55; box-shadow:none; cursor:default}
+.card.off:hover{border-color:var(--rule); transform:none}
+.card .num{font-family:var(--ui); font-size:11px; font-weight:700; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--gold); display:block; margin-bottom:8px}
+.card h3{font-size:20px; line-height:1.35; margin:0 0 8px}
+.card .sub{font-family:var(--ui); font-size:14px; color:var(--ink2); line-height:1.6; margin:0}
+.card .status{display:inline-block; margin-top:14px; font-family:var(--ui); font-size:10.5px;
+  font-weight:700; letter-spacing:.14em; text-transform:uppercase; padding:3px 10px;
+  border-radius:999px; background:var(--green-l); color:var(--green)}
+.card.off .status{background:transparent; color:var(--ink2); border:1px dashed var(--rule)}
+@media print{.card{break-inside:avoid} .pager{display:none}}
+
+/* cặp đối chiếu hai vế (giữ nguyên câu chữ nguồn, không phải bảng bố cục) */
+ul.pairs{list-style:none; margin:0 0 1.15em; padding:0}
+ul.pairs li{display:flex; gap:10px; margin:0 0 10px; flex-wrap:wrap}
+ul.pairs .a,ul.pairs .b{flex:1 1 240px; border-radius:10px; padding:11px 15px; font-size:16.5px; line-height:1.6}
+ul.pairs .a{background:var(--bg); border:1px solid var(--rule)}
+ul.pairs .b{background:var(--gold-l); border:1px solid var(--gold)}
+html[data-theme="dark"] ul.pairs .b{background:#332918}
+ul.pairs .lbl-row{font-family:var(--ui); font-size:10.5px; font-weight:700; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--ink2); display:block; margin-bottom:3px}
+@media print{ul.pairs li{break-inside:avoid}}
+
+/* sơ đồ tầng (ẩn dụ ngọn núi của ý thức) */
+ol.mtn{list-style:none; margin:0; padding:0}
+ol.mtn li{background:var(--card); border:1px solid var(--rule); border-left:5px solid var(--gold);
+  border-radius:0 12px 12px 0; padding:14px 18px; margin:0 0 9px; box-shadow:var(--shadow)}
+ol.mtn li .lvl{display:block; font-family:var(--ui); font-size:11px; font-weight:700;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--gold); margin-bottom:5px}
+ol.mtn li .txt{font-size:16.5px; line-height:1.65}
+ol.mtn li:nth-child(1){margin-left:0}
+ol.mtn li:nth-child(2){margin-left:22px}
+ol.mtn li:nth-child(3){margin-left:44px}
+ol.mtn li:nth-child(4){margin-left:66px; border-left-width:7px; background:var(--gold-l)}
+html[data-theme="dark"] ol.mtn li:nth-child(4){background:#332918}
+@media (max-width:620px){
+  ol.mtn li:nth-child(2){margin-left:10px}
+  ol.mtn li:nth-child(3){margin-left:20px}
+  ol.mtn li:nth-child(4){margin-left:30px}
+}
+@media print{ol.mtn li{break-inside:avoid}}
+
+/* ===== hình vẽ SVG ===== */
+figure.fig{background:var(--card); border:1px solid var(--rule); border-radius:14px;
+  padding:22px 20px 18px; margin:30px 0; box-shadow:var(--shadow)}
+figure.fig .fig-lbl{display:inline-block; font-family:var(--ui); font-size:11px; font-weight:700;
+  letter-spacing:.16em; text-transform:uppercase; padding:3px 10px; border-radius:999px;
+  background:var(--gold-l); color:#7A5A1E; margin-bottom:16px}
+html[data-theme="dark"] figure.fig .fig-lbl{color:var(--gold)}
+figure.fig svg{display:block; width:100%; height:auto; max-width:520px; margin:0 auto; overflow:visible}
+figure.fig figcaption{font-family:var(--ui); font-size:14px; color:var(--ink2);
+  line-height:1.65; margin-top:16px; padding-top:13px; border-top:1px dashed var(--rule)}
+figure.fig figcaption strong{color:var(--ink)}
+.svg-t{font-family:Arial,Helvetica,sans-serif; fill:var(--ink)}
+.svg-t2{font-family:Arial,Helvetica,sans-serif; fill:var(--ink2)}
+.svg-cap{font-family:Arial,Helvetica,sans-serif; font-weight:700; letter-spacing:.08em}
+@media print{figure.fig{break-inside:avoid; box-shadow:none}}
+</style>
+</head>
+<body>
+<div id="progress" aria-hidden="true"></div>
+<div id="toolbar"><div class="wrap">
+  <span class="tb-title">Bí mật vĩ đại nhất</span>
+  <a class="btn" href="index.html">← Mục lục sách</a>
+  <button class="btn" id="themeBtn" type="button" aria-pressed="false">Chế độ đọc tối</button>
+  <button class="btn" id="printBtn" type="button">In / Lưu PDF</button>
+  <a class="btn" href="#top">Về đầu trang</a>
+</div></div>
+<header class="book" id="top"><div class="wrap">
+  <p class="kicker">Sách &middot; Bí mật vĩ đại nhất</p>
+  <p class="chapno">Chương 10</p>
+  <h1>Hạnh phúc vĩnh cửu</h1>
+  <div class="rule-orn"><span></span><b>◆</b><span></span></div>
+  <p class="sub">Bạn không có hạnh phúc — bạn là hạnh phúc; vì sao tìm nó ở thế giới luôn thất bại, và hai thứ duy nhất che nó đi.</p>
+  <p class="author">Rhonda Byrne</p>
+</div></header>
+<div class="wrap">
+  <!-- BẢN ĐỒ CHƯƠNG -->
+  <div class="box map" id="ban-do-chuong">
+    <span class="tag">Bản đồ chương</span>
+    <h2>Bạn sắp đi qua điều gì</h2>
+    <p class="meta">Thời gian đọc ước tính: khoảng 34–37 phút &middot; Chương 10 &middot; 6 hình minh họa</p>
+    <p class="goal"><strong>Mục tiêu của chương:</strong> Chỉ ra rằng hạnh phúc không phải thứ bạn <em>có</em> mà là thứ bạn <em>là</em>; vì sao tìm nó ngoài thế giới luôn thất bại; và hai thứ duy nhất che nó đi — sự chống lại hạnh phúc và sự gắn bó.</p>
+    <ol class="stages">
+      <li>Bạn <em>là</em> hạnh phúc — nó không phải thứ phải đạt được.</li>
+      <li><em>Nhận thức đồng nghĩa với hạnh phúc</em> — và khi bạn hạnh phúc, cuộc sống dễ đi.</li>
+      <li><em>Không có hạnh phúc trên thế giới</em> — vì sao hạnh phúc từ bên ngoài luôn phù du.</li>
+      <li><em>Tôi sẽ hạnh phúc khi…</em> — thói quen trì hoãn hạnh phúc.</li>
+      <li><em>Chống lại hạnh phúc</em> — ta tốn năng lượng để <em>không</em> hạnh phúc.</li>
+      <li><em>Gắn kết</em> — thứ duy nhất gây ra bất hạnh, và vì sao nó không phải tình yêu.</li>
+      <li><em>Nhận thức so với sự gắn bó</em> — hai câu chuyện riêng của tác giả.</li>
+      <li><em>Bắt đầu với Hạnh phúc</em> — bắt đầu <em>từ</em> hạnh phúc, không phải đi tới nó.</li>
+    </ol>
+    <p class="howto"><strong>Cách đọc trang này:</strong> phần thân màu kem là nội dung đầy đủ của Rhonda Byrne. Các tiêu đề in nghiêng ở trên là <strong>tiểu mục do chính tác giả đặt trong sách</strong>. Khối vàng là trích dẫn của người khác; khối xanh dương là khái niệm; khối tím là lời biên tập viên. <strong>Các hình vẽ do biên tập viên dựng</strong> để minh họa đúng cơ chế tác giả mô tả.</p>
+  </div>
+
+  <!-- MỤC LỤC TRANG -->
+  <nav class="box toc" id="muc-luc" aria-label="Mục lục chương">
+    <h2>Mục lục chương này</h2>
+    <ol>
+      <li><a href="#c10-p1"><span class="n">01</span>Bạn là hạnh phúc</a></li>
+      <li><a href="#c10-p2"><span class="n">02</span>Nhận thức đồng nghĩa với hạnh phúc</a></li>
+      <li><a href="#c10-p3"><span class="n">03</span>Không có hạnh phúc trên thế giới</a></li>
+      <li><a href="#c10-p4"><span class="n">04</span>Tôi sẽ hạnh phúc khi…</a></li>
+      <li><a href="#c10-p5"><span class="n">05</span>Chống lại hạnh phúc</a></li>
+      <li><a href="#c10-p6"><span class="n">06</span>Gắn kết</a></li>
+      <li><a href="#c10-p7"><span class="n">07</span>Nhận thức so với sự gắn bó</a></li>
+      <li><a href="#c10-p8"><span class="n">08</span>Bắt đầu với Hạnh phúc</a></li>
+      <li><a href="#tom-tat-goc"><span class="n">★</span>Tóm tắt gốc của chương</a></li>
+      <li><a href="#ban-do-ghi-nho"><span class="n">★</span>Bản đồ ghi nhớ</a></li>
+    </ol>
+  </nav>
+
+<main>
+
+  <!-- 1 -->
+  <section id="c10-p1">
+    <div class="sec-head"><div class="badge">01</div>
+      <h2>Bạn là hạnh phúc</h2></div>
+    <p class="willlearn"><b>Bạn sẽ hiểu gì ở phần này?</b><br>Vì sao hạnh phúc không thể đạt được, và trải nghiệm của chính tác giả về niềm hạnh phúc đến từ hư không. <em>Tiêu đề phần này do biên tập viên đặt — đoạn mở chương không có tiểu mục trong sách.</em></p>
+
+    <blockquote>
+      <span class="qtag">Trích dẫn</span>
+      <p>Tôi đang sống trong hiện tại hạnh phúc vĩnh cửu. Đó không phải là hạnh phúc tầm thường, thứ trở nên nhàm chán sau một thời gian để bạn chào đón một chút khó khăn chỉ để thay đổi. Niềm vui đến với tôi say đắm hơn gấp ngàn triệu lần, luôn thay đổi, luôn mới mẻ. Trong ý thức đó, bạn cảm thấy tất cả hạnh phúc trên thế giới đang trôi qua bạn.</p>
+      <cite><b>Paramahansa Yogananda</b></cite>
+    </blockquote>
+
+    <article class="body-card">
+      <p><mark>Bạn là hạnh phúc. Đó là bản chất thực sự của bạn!</mark></p>
+      <p>Hạnh phúc không phải là thứ sẽ xảy ra khi bạn nhận được thứ mình muốn, khi bạn cảm thấy tốt hơn, vượt qua điều gì đó đầy thử thách hoặc đạt được một mục tiêu cụ thể.</p>
+      <p>Hạnh phúc là nguồn hạnh phúc bất tận đang ở ngay bên trong bạn!</p>
+    </article>
+
+    <figure class="fig">
+      <span class="fig-lbl">Hình 1 &middot; Bạn đang tìm hạnh phúc ở đâu?</span>
+      <svg viewBox="0 0 460 320" role="img" aria-label="Sơ đồ: người tìm hạnh phúc ở các thứ bên ngoài như tiền, nhà, xe, công việc, nhưng nguồn hạnh phúc thật nằm ngay bên trong">
+        <defs>
+          <radialGradient id="h1core" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#FFF6DC"/>
+            <stop offset="55%" stop-color="var(--gold-l)"/>
+            <stop offset="100%" stop-color="var(--gold)" stop-opacity=".5"/>
+          </radialGradient>
+          <marker id="h1in" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+            <path d="M0 1 L9 5 L0 9 Z" fill="var(--gold)"/>
+          </marker>
+          <marker id="h1out" markerWidth="9" markerHeight="9" refX="4.5" refY="4.5" orient="auto">
+            <path d="M0 1 L8 4.5 L0 8 Z" fill="var(--ink2)"/>
+          </marker>
+        </defs>
+
+        <!-- tia sáng -->
+        <g stroke="var(--gold)" stroke-width="2" stroke-linecap="round" opacity=".45">
+          <line x1="230" y1="92" x2="230" y2="72"/>
+          <line x1="230" y1="228" x2="230" y2="248"/>
+          <line x1="162" y1="160" x2="142" y2="160"/>
+          <line x1="298" y1="160" x2="318" y2="160"/>
+          <line x1="182" y1="112" x2="168" y2="98"/>
+          <line x1="278" y1="112" x2="292" y2="98"/>
+          <line x1="182" y1="208" x2="168" y2="222"/>
+          <line x1="278" y1="208" x2="292" y2="222"/>
+        </g>
+
+        <circle cx="230" cy="160" r="66" fill="url(#h1core)" stroke="var(--gold)" stroke-width="2.5"/>
+        <text class="svg-cap" x="230" y="152" text-anchor="middle" font-size="12.5" fill="#7A5A1E">NGUỒN BẤT TẬN</text>
+        <text class="svg-t2" x="230" y="172" text-anchor="middle" font-size="11.5">ngay bên trong bạn</text>
+
+        <!-- các thứ bên ngoài -->
+        <g>
+          <rect x="12" y="18" width="104" height="38" rx="10" fill="var(--blue-l)" stroke="var(--blue)" stroke-width="1.5"/>
+          <text class="svg-t" x="64" y="42" text-anchor="middle" font-size="12.5">tiền bạc</text>
+
+          <rect x="344" y="18" width="104" height="38" rx="10" fill="var(--purple-l)" stroke="var(--purple)" stroke-width="1.5"/>
+          <text class="svg-t" x="396" y="42" text-anchor="middle" font-size="12.5">thành công</text>
+
+          <rect x="0" y="134" width="104" height="38" rx="10" fill="var(--green-l)" stroke="var(--green)" stroke-width="1.5"/>
+          <text class="svg-t" x="52" y="158" text-anchor="middle" font-size="12.5">nhà, xe</text>
+
+          <rect x="356" y="134" width="104" height="38" rx="10" fill="var(--red-l)" stroke="var(--red)" stroke-width="1.5"/>
+          <text class="svg-t" x="408" y="158" text-anchor="middle" font-size="12.5">người khác</text>
+
+          <rect x="12" y="250" width="104" height="38" rx="10" fill="var(--purple-l)" stroke="var(--purple)" stroke-width="1.5"/>
+          <text class="svg-t" x="64" y="274" text-anchor="middle" font-size="12.5">công việc</text>
+
+          <rect x="344" y="250" width="104" height="38" rx="10" fill="var(--blue-l)" stroke="var(--blue)" stroke-width="1.5"/>
+          <text class="svg-t" x="396" y="274" text-anchor="middle" font-size="12.5">kỳ nghỉ</text>
+        </g>
+
+        <!-- hướng tìm sai: ra ngoài -->
+        <g stroke="var(--ink2)" stroke-width="1.6" stroke-dasharray="5 5" opacity=".65">
+          <line x1="186" y1="118" x2="124" y2="60" marker-end="url(#h1out)"/>
+          <line x1="274" y1="118" x2="336" y2="60" marker-end="url(#h1out)"/>
+          <line x1="164" y1="160" x2="112" y2="157" marker-end="url(#h1out)"/>
+          <line x1="296" y1="160" x2="348" y2="157" marker-end="url(#h1out)"/>
+          <line x1="186" y1="202" x2="124" y2="250" marker-end="url(#h1out)"/>
+          <line x1="274" y1="202" x2="336" y2="250" marker-end="url(#h1out)"/>
+        </g>
+
+        <text class="svg-t2" x="230" y="310" text-anchor="middle" font-size="12">Mũi tên đứt nét là hướng ta vẫn tìm. Nguồn thì ở giữa.</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng.</strong> Theo tác giả, hàng tỷ người suốt nhiều nghìn năm đã tìm hạnh phúc theo đúng những mũi tên đứt nét này — hướng ra ngoài. Nơi duy nhất tìm thấy nó lại nằm ở chính giữa, trong bản chất thực sự của bạn.</figcaption>
+    </figure>
+
+    <blockquote>
+      <span class="qtag">Trích dẫn</span>
+      <p>Người ta phải nhận ra Bản ngã để mở ra kho hạnh phúc thuần khiết.</p>
+      <cite><b>Ramana Maharshi</b> — trích từ <em>Hãy là chính bạn</em></cite>
+    </blockquote>
+
+    <blockquote>
+      <span class="qtag">Trích dẫn</span>
+      <p>Đừng mong đợi đạt được sự bình yên và hạnh phúc thuần khiết từ cuộc sống trần thế. Đây phải là thái độ mới của bạn: bất kể trải nghiệm của bạn là gì, hãy tận hưởng chúng theo cách khách quan, như bạn sẽ tận hưởng một bộ phim. Bạn phải tìm thấy sự bình yên và hạnh phúc thực sự bên trong chính mình.</p>
+      <cite><b>Paramahansa Yogananda</b> — trích từ <em>Cuộc tìm kiếm vĩnh cửu của con người</em></cite>
+    </blockquote>
+
+    <blockquote>
+      <span class="qtag">Trích dẫn</span>
+      <p>Hạnh phúc là trạng thái tự nhiên của chúng ta. Hạnh phúc là trạng thái tự nhiên của trẻ nhỏ, những người mà vương quốc thuộc về cho đến khi chúng bị xã hội và văn hóa làm ô nhiễm và vấy bẩn. Để có được hạnh phúc, bạn không cần phải làm bất cứ điều gì, bởi vì hạnh phúc không thể đạt được. Có ai biết tại sao không? Bởi vì chúng ta đã có nó rồi. Làm sao bạn có thể đạt được những gì bạn đã có? Vậy tại sao bạn không trải nghiệm nó? Bạn phải từ bỏ ảo tưởng. Bạn không cần phải thêm bất cứ điều gì để được hạnh phúc; bạn phải từ bỏ một thứ gì đó. Cuộc sống thật dễ dàng, cuộc sống thật thú vị. Nó chỉ khó khăn với ảo tưởng của bạn mà thôi.</p>
+      <cite><b>Anthony de Mello, S.J.</b> — trích từ <em>Nhận thức: Đối thoại với các bậc thầy</em></cite>
+    </blockquote>
+
+    <article class="body-card">
+      <p>Giờ đây, tôi sống với một dòng chảy hạnh phúc tiềm ẩn luôn ở bên tôi, xuất phát từ việc chào đón những cảm xúc tiêu cực và duy trì trạng thái Nhận thức.</p>
+      <p>Tuy nhiên, đã có một số lần tôi cảm thấy một niềm hạnh phúc thực sự tràn ngập trong tôi, vượt xa mọi cảm giác tôi từng cảm thấy trước đây. Dường như nó đến từ hư không. Ý tôi là không có gì gây ra điều đó.</p>
+      <p>Khi nó xuất hiện, mọi tiêu cực đều hoàn toàn biến mất. <mark>Mọi ký ức đau buồn trong cuộc đời tôi đều biến mất vào khoảnh khắc đó, như thể chúng chưa từng thực sự xảy ra.</mark></p>
+      <p>Niềm hạnh phúc tuyệt vời này ngay lập tức được tôi nhận ra là niềm hạnh phúc của bản chất thực sự của chúng ta. Nó không thể so sánh với niềm hạnh phúc mà chúng ta cảm thấy khi có được thứ mình muốn. Đây là mức độ hạnh phúc vượt xa mọi thứ khác mà tôi từng cảm thấy.</p>
+      <p>Tôi hy vọng, khi chia sẻ điều này với bạn, rằng bạn cũng có thể mở lòng mình để trải nghiệm nó. Khi bạn đã cảm nhận được trạng thái hạnh phúc tự nhiên của mình, từ đó trở đi, bạn sẽ chỉ muốn sống cuộc sống của mình trong trạng thái đó.</p>
+    </article>
+
+    <blockquote>
+      <span class="qtag">Trích dẫn</span>
+      <p>Tôi đã tìm thấy niềm vui bên trong mình mà chưa bao giờ biến mất, không một khoảnh khắc nào. Niềm vui đó luôn hiện hữu trong mọi người.</p>
+      <cite><b>Byron Katie</b> — trích từ <em>Một ngàn cái tên cho niềm vui</em></cite>
+    </blockquote>
+
+    <article class="body-card">
+      <p>Niềm hạnh phúc này giống như cảm giác phải lòng, dù là phải lòng một người bạn đời hay một người mẹ phải lòng đứa con mới sinh của mình.</p>
+      <p>Bạn biết cảm giác hạnh phúc khi yêu say đắm, hoàn toàn và trọn vẹn không? Bạn không bao giờ muốn cảm giác đó kết thúc.</p>
+      <p><mark>Lý do tại sao chúng ta trải nghiệm cảm giác hạnh phúc như vậy khi yêu là vì chúng ta đánh mất &ldquo;bản thân&rdquo; trong người kia, và khi chúng ta đánh mất tâm trí bản ngã, Nhận thức ngay lập tức hiện diện ở phía trước, vui tươi rạng rỡ và hạnh phúc tột cùng.</mark></p>
+    </article>
+
+    <div class="hint">
+      <span class="lbl">Gợi ý để dễ hiểu</span>
+      <p>Đoạn này giải thích một điều ta vẫn hiểu ngược: khi yêu, ta nghĩ hạnh phúc đến <em>từ người kia</em>. Theo tác giả, cái xảy ra là ta tạm quên mất bản ngã của mình — và chính lúc tâm trí bản ngã lùi đi thì Nhận thức, vốn đã hạnh phúc sẵn, hiện ra ở phía trước.</p>
+    </div>
+
+    <blockquote>
+      <span class="qtag">Trích dẫn</span>
+      <p>Mọi người đều tìm kiếm chính xác cùng một điều trong mọi hành động của mình. Thế giới gọi đó là hạnh phúc tột cùng. Chúng ta gọi đó là &ldquo;Tôi&rdquo; mà tôi là. Khám phá bản thân và bạn khám phá ra hạnh phúc lớn nhất và bạn có được sự mãn nguyện lớn nhất.</p>
+      <cite><b>Lester Levenson</b></cite>
+    </blockquote>
+
+    <blockquote>
+      <span class="qtag">Trích dẫn</span>
+      <p>Nói một cách đơn giản, hạnh phúc là bạn là chính mình. Không phải là bản thân hạn chế mà bạn giả vờ là hầu hết thời gian, mà là Bản thân không giới hạn mà bạn là và luôn là. Đây là Bản thân luôn hiện diện một cách dễ dàng trước, trong và sau mọi thứ khác xuất hiện trong trải nghiệm của bạn. Bạn là nền tảng rạng rỡ nhưng không thay đổi cho phép mọi thứ khác tồn tại.</p>
+      <cite><b>Hale Dwoskin</b> — trích từ <em>Hạnh phúc là tự do</em></cite>
+    </blockquote>
+
+    <blockquote>
+      <span class="qtag">Trích dẫn</span>
+      <p>Để tìm ra Chân lý hay Hạnh phúc, bạn phải đi vào bên trong, bạn phải thấy Sự hợp nhất, bạn phải thấy Vũ trụ như nó thực sự là, không gì khác ngoài ý thức của bạn, không gì khác ngoài Bản ngã của bạn. Thật khó để diễn tả điều này, đó là điều phải trải nghiệm. Chỉ khi ai đó trải nghiệm, người đó mới biết. Không thể học được điều đó bằng cách lắng nghe bất kỳ ai. Sách vở và giáo viên chỉ có thể chỉ ra hướng đi. Chúng ta phải tự mình thực hiện. Đó là một trong những điều tuyệt vời của con đường. Không có gì để tin, mọi thứ phải được mỗi người trải nghiệm và chứng minh theo sự hài lòng của riêng mình trước khi được chấp nhận.</p>
+      <cite><b>Lester Levenson</b> — trích từ <em>Hạnh phúc là tự do</em>, tập 1–5</cite>
+    </blockquote>
+
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+  <!-- 2 -->
+  <section id="c10-p2">
+    <div class="sec-head"><div class="badge">02</div>
+      <h2>Nhận thức đồng nghĩa với hạnh phúc</h2></div>
+    <p class="willlearn"><b>Bạn sẽ hiểu gì ở phần này?</b><br>Chỉ có một thứ hạnh phúc duy nhất, và điều gì xảy ra với hoàn cảnh sống khi bạn hạnh phúc. <em>Tiêu đề phần này là tiểu mục gốc trong sách.</em></p>
+
+    <article class="body-card">
+      <p><mark>Bạn không phải là người hạnh phúc, bạn chính là hạnh phúc.</mark> Bản chất thực sự của bạn, Nhận thức, là hạnh phúc.</p>
+      <p>Không có hạnh phúc nào khác ngoài hạnh phúc của bản chất thực sự của bạn. Hạnh phúc mà bạn cảm thấy bất cứ lúc nào trong cuộc sống của mình chính là hạnh phúc của Nhận thức!</p>
+      <p>Trong những lúc bạn cảm thấy hạnh phúc, bạn đã thoáng thấy sự vĩ đại của chính mình.</p>
+    </article>
+
+    <blockquote>
+      <span class="qtag">Trích dẫn</span>
+      <p>Hiểu rằng khoảnh khắc hạnh phúc đến từ ân sủng, và khoảnh khắc hạnh phúc này đang dạy chúng ta rằng hạnh phúc không nằm ở một vật thể. Chúng ta phải biết rằng chúng ta chính là hạnh phúc trong khoảnh khắc này. Vật thể gần như không liên quan. Vật thể là một phần của giấc mơ, nhưng hạnh phúc là có thật.</p>
+      <cite><b>Francis Lucille</b> — trích từ <em>Hương thơm của sự im lặng</em></cite>
+    </blockquote>
+
+    <article class="body-card">
+      <p>Và khi bạn hạnh phúc, cuộc sống sẽ diễn ra theo cách của bạn. Không có gì tốt hơn cho hoàn cảnh sống của bạn hơn là bạn cảm thấy hạnh phúc.</p>
+      <p>Khi bạn hạnh phúc, các vấn đề có xu hướng tự giải quyết và mọi thứ sẽ diễn ra dễ dàng, không cần bạn phải nỗ lực.</p>
+      <p>Khi bạn hạnh phúc, dường như toàn bộ Vũ trụ đang âm mưu thay mặt bạn và mang đến bất cứ điều gì bạn cần vào đúng thời điểm bạn cần.</p>
+      <p><mark>Bạn càng hạnh phúc, cuộc sống của bạn càng dễ dàng hơn. Bạn càng bất hạnh, bạn càng phải nỗ lực nhiều hơn cho mọi việc bạn làm.</mark></p>
+    </article>
+
+    <blockquote>
+      <span class="qtag">Trích dẫn</span>
+      <p>Bạn càng bị thúc đẩy bởi cái tôi, bạn càng khó hoàn thành một việc gì đó, sự hòa hợp càng ít và đau khổ càng lớn.</p>
+      <cite><b>Lester Levenson</b> — trích từ <em>Hạnh phúc là tự do</em>, tập 1–5</cite>
+    </blockquote>
+
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+  <!-- 3 -->
+  <section id="c10-p3">
+    <div class="sec-head"><div class="badge">03</div>
+      <h2>Không có hạnh phúc trên thế giới</h2></div>
+    <p class="willlearn"><b>Bạn sẽ hiểu gì ở phần này?</b><br>Vì sao hạnh phúc từ bên ngoài luôn đến rồi đi, và con số 35.000 quyết định mỗi ngày. <em>Tiêu đề phần này là tiểu mục gốc trong sách.</em></p>
+
+    <blockquote>
+      <span class="qtag">Trích dẫn</span>
+      <p>Một số người trong chúng ta tìm kiếm Hạnh phúc ở nơi nó hiện hữu và kết quả là trở nên hạnh phúc hơn. Và những người khác tìm kiếm nó một cách mù quáng trong thế giới không có nó và ngày càng trở nên thất vọng hơn.</p>
+      <cite><b>Lester Levenson</b> — trích từ <em>Hạnh phúc là tự do</em>, tập 1–5</cite>
+    </blockquote>
+
+    <article class="body-card">
+      <p>Khi chúng ta tìm kiếm hạnh phúc trong thế giới, hạnh phúc của chúng ta chỉ là phù du.</p>
+      <p>Bất kể chúng ta có bao nhiêu thứ, hay có bao nhiêu trải nghiệm, thì hạnh phúc từ những thứ vật chất hay trải nghiệm nhất định sẽ đến rồi đi. Và rồi chúng ta lại quay lại tìm kiếm hạnh phúc thông qua những thứ vật chất hay trải nghiệm tiếp theo.</p>
+      <p><mark>Hạnh phúc lâu dài, thứ mà chúng ta tự thuyết phục mình là có trong thế giới, thì đơn giản là không có.</mark></p>
+    </article>
+
+    <figure class="fig">
+      <span class="fig-lbl">Hình 2 &middot; Hạnh phúc phù du và hạnh phúc nền</span>
+      <svg viewBox="0 0 460 250" role="img" aria-label="Biểu đồ: hạnh phúc từ những thứ bên ngoài vọt lên rồi rơi về mức cũ sau mỗi lần, trong khi hạnh phúc của Nhận thức là một mức nền cao và không đổi">
+        <defs>
+          <linearGradient id="h2f" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="var(--purple)" stop-opacity=".3"/>
+            <stop offset="100%" stop-color="var(--purple)" stop-opacity="0"/>
+          </linearGradient>
+          <linearGradient id="h2g" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="var(--gold)" stop-opacity=".35"/>
+            <stop offset="100%" stop-color="var(--gold)" stop-opacity=".05"/>
+          </linearGradient>
+        </defs>
+
+        <!-- trục -->
+        <line x1="44" y1="208" x2="446" y2="208" stroke="var(--ink2)" stroke-width="1.5"/>
+        <line x1="44" y1="28" x2="44" y2="208" stroke="var(--ink2)" stroke-width="1.5"/>
+        <text class="svg-t2" x="38" y="34" text-anchor="end" font-size="10.5">cao</text>
+        <text class="svg-t2" x="38" y="206" text-anchor="end" font-size="10.5">thấp</text>
+        <text class="svg-t2" x="446" y="228" text-anchor="end" font-size="10.5">thời gian →</text>
+
+        <!-- mức nền Nhận thức -->
+        <rect x="44" y="46" width="402" height="18" fill="url(#h2g)"/>
+        <line x1="44" y1="56" x2="446" y2="56" stroke="var(--gold)" stroke-width="3"/>
+        <text class="svg-cap" x="50" y="44" font-size="11.5" fill="#7A5A1E">HẠNH PHÚC CỦA NHẬN THỨC — không đổi</text>
+
+        <!-- đường phù du -->
+        <path d="M44 180 L84 180 L104 106 L126 178 L166 178 L186 94 L208 176 L252 176 L272 100 L294 178 L338 178 L358 88 L380 177 L446 177 L446 208 L44 208 Z" fill="url(#h2f)"/>
+        <path d="M44 180 L84 180 L104 106 L126 178 L166 178 L186 94 L208 176 L252 176 L272 100 L294 178 L338 178 L358 88 L380 177 L446 177" fill="none" stroke="var(--purple)" stroke-width="2.5" stroke-linejoin="round"/>
+        <line x1="44" y1="179" x2="446" y2="179" stroke="var(--purple)" stroke-width="1.2" stroke-dasharray="4 5" opacity=".7"/>
+        <text class="svg-t2" x="50" y="196" font-size="10.5" fill="var(--purple)">mức cũ trở lại</text>
+
+        <g fill="var(--purple)">
+          <circle cx="104" cy="106" r="4.5"/><circle cx="186" cy="94" r="4.5"/>
+          <circle cx="272" cy="100" r="4.5"/><circle cx="358" cy="88" r="4.5"/>
+        </g>
+        <text class="svg-t2" x="104" y="96" text-anchor="middle" font-size="10">thứ mới</text>
+        <text class="svg-t2" x="186" y="84" text-anchor="middle" font-size="10">thành công</text>
+        <text class="svg-t2" x="272" y="90" text-anchor="middle" font-size="10">kỳ nghỉ</text>
+        <text class="svg-t2" x="358" y="78" text-anchor="middle" font-size="10">giấc mơ lớn</text>
+
+        <text class="svg-t2" x="230" y="246" text-anchor="middle" font-size="11.5">Mỗi lần đạt được, hạnh phúc vọt lên — rồi luôn rơi về chỗ cũ.</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng</strong> theo đúng mô tả của tác giả. Đường tím là hạnh phúc tìm ở thế giới: lên rồi xuống, kể cả khi &ldquo;một giấc mơ thực sự lớn&rdquo; thành hiện thực. Vạch vàng là mức nền mà tác giả nói vốn đã có sẵn và không đổi.</figcaption>
+    </figure>
+
+    <blockquote>
+      <span class="qtag">Trích dẫn</span>
+      <p>Nhưng chỉ khi chúng ta hướng nội, chúng ta mới khám phá ra rằng mọi hạnh phúc đều ở đó. Nơi duy nhất mà chúng ta có thể cảm thấy hạnh phúc là ngay bên trong chính mình. Đó chính xác là nơi hạnh phúc ở đó. Mỗi khi chúng ta gán hạnh phúc này cho một thứ gì đó bên ngoài, cho một người hay một thứ gì đó bên ngoài, chúng ta sẽ nhận được nhiều đau khổ hơn là niềm vui.</p>
+      <cite><b>Lester Levenson</b> — trích từ <em>Hạnh phúc là tự do</em>, tập 1–5</cite>
+    </blockquote>
+
+    <blockquote>
+      <span class="qtag">Trích dẫn</span>
+      <p>Chúng ta không cần phải chờ đợi hoàn cảnh phù hợp để được hạnh phúc.</p>
+      <cite><b>Rupert Spira</b></cite>
+    </blockquote>
+
+    <article class="body-card">
+      <p>Mọi người đã từng sống hoặc đang sống đều được thúc đẩy bởi cùng một mục đích duy nhất là mong muốn hạnh phúc.</p>
+      <p>Mọi thứ chúng ta làm, mọi thứ chúng ta không làm, mọi thứ chúng ta phấn đấu, thiết kế, âm mưu, sống vì, mong muốn và mơ ước đều là vì chúng ta nghĩ rằng mình sẽ hạnh phúc hơn khi có được nó hoặc không có nó.</p>
+      <p><mark>Mong muốn hạnh phúc là động lực duy nhất đằng sau mọi quyết định mà mỗi người đưa ra và ước tính chúng ta đưa ra 35.000 quyết định mỗi ngày!</mark></p>
+      <p>Tuy nhiên, tất cả những âm mưu, kế hoạch, hành động, mồ hôi, nước mắt và quá trình ra quyết định đều không đưa chúng ta đến gần hơn với hạnh phúc mà chúng ta vô vọng tìm kiếm trên thế giới.</p>
+      <p>Từ trước đến nay, hạnh phúc mà chúng ta tìm kiếm đã ở ngay bên trong chúng ta.</p>
+    </article>
+
+    <blockquote>
+      <span class="qtag">Trích dẫn</span>
+      <p>Vậy lối thoát là gì? Không phải tìm kiếm hạnh phúc ở thế giới, mà là tìm kiếm nơi hạnh phúc ở ngay bên trong chúng ta, bên trong ý thức của chính chúng ta.</p>
+      <cite><b>Lester Levenson</b> — trích từ <em>Hạnh phúc là tự do</em>, tập 1–5</cite>
+    </blockquote>
+
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+  <!-- 4 -->
+  <section id="c10-p4">
+    <div class="sec-head"><div class="badge">04</div>
+      <h2>Tôi sẽ hạnh phúc khi&hellip;</h2></div>
+    <p class="willlearn"><b>Bạn sẽ hiểu gì ở phần này?</b><br>Thói quen trì hoãn hạnh phúc, và điều xảy ra khi một giấc mơ lớn thực sự thành hiện thực. <em>Tiêu đề phần này là tiểu mục gốc trong sách.</em></p>
+
+    <article class="body-card">
+      <p>Khi chúng ta tin rằng hạnh phúc đến từ bên ngoài, chúng ta dễ dàng rơi vào thói quen trì hoãn hạnh phúc cho đến khi điều kiện phù hợp.</p>
+      <p>Bạn đã bao giờ nghĩ hoặc nói rằng, &ldquo;Tôi sẽ hạnh phúc khi . . .&rdquo; và kết thúc câu bằng một sự kiện nào đó trong tương lai chưa?</p>
+      <ul class="dia">
+        <li>&ldquo;Tôi sẽ hạnh phúc khi kỳ thi kết thúc và tôi tốt nghiệp&rdquo;</li>
+        <li>&ldquo;Tôi sẽ hạnh phúc khi tôi có một chiếc xe mới&rdquo;</li>
+        <li>&ldquo;Tôi sẽ hạnh phúc khi tôi tìm được một người bạn đời&rdquo;</li>
+        <li>&ldquo;Tôi sẽ hạnh phúc khi tôi kết hôn&rdquo;</li>
+        <li>&ldquo;Tôi sẽ hạnh phúc khi tôi có nhiều tiền hơn&rdquo;</li>
+        <li>&ldquo;Tôi sẽ hạnh phúc khi tôi thành công&rdquo;</li>
+        <li>&ldquo;Tôi sẽ hạnh phúc khi tôi đi nghỉ&rdquo;</li>
+        <li>&ldquo;Tôi sẽ hạnh phúc khi tôi giảm cân&rdquo;</li>
+        <li>&ldquo;Tôi sẽ hạnh phúc khi chúng ta có con&rdquo;</li>
+        <li>&ldquo;Tôi sẽ hạnh phúc khi công việc kinh doanh của tôi khởi sắc&rdquo;</li>
+        <li>&ldquo;Tôi sẽ hạnh phúc khi sức khỏe của tôi được cải thiện và tôi cảm thấy tốt hơn&rdquo;, v.v.</li>
+      </ul>
+      <p>Chúng ta trì hoãn hạnh phúc khi chúng ta tin rằng hạnh phúc đến từ những thứ bên ngoài. Chúng ta chờ đợi điều gì đó hoặc ai đó làm cho chúng ta hạnh phúc, nhưng không thể có được hạnh phúc lâu dài từ những thứ bên ngoài; <mark>điều đó sẽ không bao giờ xảy ra, bất kể chúng ta chờ đợi bao lâu.</mark></p>
+    </article>
+
+    <figure class="fig">
+      <span class="fig-lbl">Hình 3 &middot; Đường chân trời lùi mãi</span>
+      <svg viewBox="0 0 460 230" role="img" aria-label="Sơ đồ: người đứng ở BÂY GIỜ đi theo một chuỗi mốc tương lai tôi sẽ hạnh phúc khi, mỗi mốc lại lùi ra xa hơn và không bao giờ tới">
+        <defs>
+          <marker id="h3a" markerWidth="9" markerHeight="9" refX="4.5" refY="4.5" orient="auto">
+            <path d="M0 1 L8 4.5 L0 8 Z" fill="var(--purple)"/>
+          </marker>
+        </defs>
+
+        <line x1="20" y1="150" x2="446" y2="150" stroke="var(--ink2)" stroke-width="2"/>
+
+        <!-- người ở BÂY GIỜ -->
+        <circle cx="46" cy="118" r="11" fill="var(--gold)"/>
+        <path d="M46 130 L46 150 M38 138 L54 138 M46 150 L39 164 M46 150 L53 164" stroke="var(--gold)" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+        <text class="svg-cap" x="46" y="184" text-anchor="middle" font-size="11.5" fill="var(--gold)">BÂY GIỜ</text>
+        <text class="svg-t2" x="46" y="200" text-anchor="middle" font-size="10.5">hạnh phúc ở đây</text>
+
+        <!-- các mốc -->
+        <g>
+          <line x1="130" y1="150" x2="130" y2="124" stroke="var(--purple)" stroke-width="2"/>
+          <rect x="94" y="96" width="72" height="28" rx="8" fill="var(--purple-l)" stroke="var(--purple)" stroke-width="1.4"/>
+          <text class="svg-t2" x="130" y="114" text-anchor="middle" font-size="10.5">&#8230;khi tốt nghiệp</text>
+
+          <line x1="224" y1="150" x2="224" y2="118" stroke="var(--purple)" stroke-width="2" opacity=".85"/>
+          <rect x="186" y="90" width="76" height="28" rx="8" fill="var(--purple-l)" stroke="var(--purple)" stroke-width="1.4" opacity=".85"/>
+          <text class="svg-t2" x="224" y="108" text-anchor="middle" font-size="10.5">&#8230;khi có tiền</text>
+
+          <line x1="318" y1="150" x2="318" y2="112" stroke="var(--purple)" stroke-width="2" opacity=".7"/>
+          <rect x="278" y="84" width="80" height="28" rx="8" fill="var(--purple-l)" stroke="var(--purple)" stroke-width="1.4" opacity=".7"/>
+          <text class="svg-t2" x="318" y="102" text-anchor="middle" font-size="10.5">&#8230;khi thành công</text>
+
+          <line x1="410" y1="150" x2="410" y2="106" stroke="var(--purple)" stroke-width="2" opacity=".5"/>
+          <rect x="372" y="78" width="80" height="28" rx="8" fill="var(--purple-l)" stroke="var(--purple)" stroke-width="1.4" opacity=".5"/>
+          <text class="svg-t2" x="412" y="96" text-anchor="middle" font-size="10.5">&#8230;khi nghỉ hưu</text>
+        </g>
+
+        <path d="M64 166 C 150 182 300 182 400 170" fill="none" stroke="var(--purple)" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#h3a)"/>
+        <text class="svg-t2" x="236" y="200" text-anchor="middle" font-size="11.5">Mỗi lần tới nơi, cái mốc lại dời đi — và ta vẫn chờ.</text>
+        <text class="svg-t2" x="236" y="220" text-anchor="middle" font-size="11.5" fill="var(--gold)">Chỗ duy nhất hạnh phúc có mặt là chỗ bạn đang đứng.</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng</strong> từ chính danh sách &ldquo;Tôi sẽ hạnh phúc khi&hellip;&rdquo; của tác giả. Các mốc nhạt dần về bên phải vì theo tác giả, kể cả khi một giấc mơ thật lớn thành hiện thực, hạnh phúc đó cũng phù du như mọi thứ khác.</figcaption>
+    </figure>
+
+    <article class="body-card">
+      <p>Có lẽ nếu bạn đã sống đủ lâu, đủ thành công và có nhiều trải nghiệm sống tuyệt vời, bạn đã khám phá ra rằng hạnh phúc không thể tìm thấy trên thế giới này.</p>
+      <p>Bạn đặc biệt có thể thấy sự thật này nếu một giấc mơ thực sự lớn đã trở thành hiện thực đối với bạn. Chúng ta tự thuyết phục mình rằng khi giấc mơ lớn nhất của chúng ta trở thành hiện thực như đạt được thành công lớn, có được sự giàu có, tìm được người bạn đời hoàn hảo hoặc có con, cuối cùng chúng ta sẽ thực sự hạnh phúc.</p>
+      <p>Nhưng khi một giấc mơ lớn trở thành hiện thực, mặc dù nó tuyệt vời và thú vị, chúng ta phát hiện ra rằng hạnh phúc lâu dài mà chúng ta nghĩ mình sẽ có cũng gần như phù du như mọi thứ khác.</p>
+      <p>Cuối cùng, chúng ta có thể nhận ra thông qua trải nghiệm cay đắng của chính mình rằng hạnh phúc không đến từ thế giới bên ngoài. Đối với một số người, đó có thể là một khoảnh khắc khá nản lòng, bởi vì thường đi đến kết luận rằng hạnh phúc lâu dài là một điều viển vông và sẽ không bao giờ xảy ra.</p>
+      <p><mark>Nhưng hạnh phúc lâu dài không phải là một điều viển vông. Đó là sự thật của chính con người bạn và đó là bản chất của bạn.</mark></p>
+      <p>Sau tất cả những tìm kiếm không cần thiết, thật là một khám phá quan trọng khi cuối cùng bạn thấy rằng hạnh phúc mà bạn tìm kiếm hiện đang ở ngay trong chính bản thân bạn!</p>
+      <p>Khi bạn có thể thấy được sự thật của nó, hạnh phúc lâu dài sẽ nằm trong tầm tay bạn, bởi vì bạn sẽ không bao giờ tìm kiếm hạnh phúc của mình một cách vô ích ở người khác hay thế giới nữa.</p>
+    </article>
+
+    <blockquote>
+      <span class="qtag">Trích dẫn</span>
+      <p>Khi bạn thấy được điều đó, con đường sẽ rất thẳng. Bạn ngừng đuổi theo cầu vồng và đi tìm hạnh phúc nơi bạn biết nó nằm ngay trong bạn.</p>
+      <cite><b>Lester Levenson</b> — trích từ <em>Hạnh phúc là tự do</em>, tập 1–5</cite>
+    </blockquote>
+
+    <article class="body-card">
+      <p>Hãy tưởng tượng xem. Hàng tỷ người trong nhiều nghìn năm đã tuyệt vọng tìm kiếm hạnh phúc mỗi ngày trong cuộc đời họ. Họ tìm kiếm nó như thể nó có thể tìm thấy ở mọi nơi trên thế gian.</p>
+      <p>Và chỉ có một nơi duy nhất có thể tìm thấy nó trong bản chất thực sự của chúng ta, đó là Nhận thức.</p>
+      <p>Toàn bộ sự sắp đặt giống như một trò đùa vũ trụ lớn, có lẽ đó là lý do tại sao <mark>Đức Phật cười rất to dưới gốc cây Bồ đề khi sau mười sáu năm tìm kiếm trên thế gian, cuối cùng Ngài đã khám phá ra rằng sự thật nằm trong chính Ngài.</mark></p>
+      <p>Nếu bạn nghĩ về điều đó, lịch sử đã chỉ ra rằng không nhiều người trong chúng ta từng nghĩ đến việc tìm kiếm hạnh phúc bên trong mình.</p>
+      <p>Tuy nhiên, tất cả chúng ta đều đã được trao cho nhiều biển báo trong cuộc sống, thường là thông qua những trải nghiệm cay đắng, cho chúng ta thấy rằng hạnh phúc không đến từ thế gian.</p>
+      <p>Mỗi khi hạnh phúc đến rồi đi trong cuộc sống của bạn, thì đó lại là một biển báo khác hướng dẫn bạn quay lưng lại với thế gian và hướng vào bên trong.</p>
+      <p>Bây giờ chúng ta có thể tìm kiếm hạnh phúc ở nơi nó hiện hữu, thay vì ở nơi nó không hiện hữu.</p>
+      <p>Bạn có thể ngừng trông chờ vào người bạn đời hoặc con cái của mình để có được hạnh phúc lâu dài. Bạn có thể ngừng trông chờ vào công việc, ngôi nhà mới, quần áo, kỳ nghỉ hoặc xe hơi để có được hạnh phúc lâu dài.</p>
+      <p>Không có thứ nào trong số những thứ đó có thể khiến bạn hạnh phúc vĩnh viễn vì chúng luôn thay đổi. Chưa kể đến việc tính cách của bạn luôn thay đổi; những gì bạn thích hôm nay, bạn không thích ngày mai.</p>
+      <p>Hạnh phúc của bạn nằm trong chính con người thực sự, không thay đổi của bạn, Nhận thức. Không ai có thể trao tặng nó cho bạn.</p>
+      <p>Chắc chắn, chúng ta có thể tận hưởng tất cả những điều tuyệt vời mà chúng ta muốn trở thành, làm hoặc có trên thế giới này, nhưng chúng ta có thể tận hưởng những điều đó với sự hiểu biết đầy đủ rằng nơi duy nhất để tìm thấy hạnh phúc thực sự, lâu dài là ở bên trong chúng ta.</p>
+    </article>
+
+    <blockquote>
+      <span class="qtag">Trích dẫn</span>
+      <p>Bạn không đạt được hạnh phúc. Bản chất của bạn là hạnh phúc. Hạnh phúc không phải là thứ mới kiếm được. Tất cả những gì được thực hiện là để loại bỏ sự bất hạnh.</p>
+      <cite><b>Ramana Maharshi</b></cite>
+    </blockquote>
+
+    <article class="body-card">
+      <p>Suy nghĩ của bạn quyết định cảm giác của bạn, vì vậy nếu bạn không hạnh phúc, đó là vì bạn đang nghĩ về điều gì đó mà bạn không muốn.</p>
+      <p>Tâm trí của bạn chỉ có thể hoạt động trong quá khứ hoặc tương lai, vì vậy hoặc là bạn đang nghĩ về điều gì đó trong quá khứ khiến bạn không hạnh phúc hoặc bạn đang nghĩ về điều gì đó trong tương lai khiến bạn không hạnh phúc.</p>
+    </article>
+
+    <blockquote>
+      <span class="qtag">Trích dẫn</span>
+      <p>Suy nghĩ kìm hãm khả năng hạnh phúc.</p>
+      <cite><b>Lester Levenson</b> — trích từ <em>Hạnh phúc là tự do</em>, tập 1–5</cite>
+    </blockquote>
+
+    <article class="body-card">
+      <p>Đứng giữa bạn và hạnh phúc vĩnh cửu và con người thật của bạn là một suy nghĩ.</p>
+      <p>Cho dù đó là một suy nghĩ buồn, một suy nghĩ sợ hãi, một suy nghĩ tức giận hay một suy nghĩ bực bội, <mark>cuối cùng tất cả những suy nghĩ đó đều nói cùng một điều &ldquo;Tôi không muốn điều này&rdquo;</mark> để đáp lại một điều gì đó đã xảy ra.</p>
+      <p>Và vì tin vào một suy nghĩ đó, nỗi bất hạnh ập đến với bạn như một tấm chăn, và che phủ hạnh phúc mà bạn thực sự là.</p>
+    </article>
+
+    <blockquote>
+      <span class="qtag">Trích dẫn</span>
+      <p>Suy nghĩ đến trước, sau đó là cảm giác, rồi đến cảm xúc (như nước mắt). Mọi thứ luôn diễn ra theo cách đó và thường thì mọi người trước tiên cảm thấy cảm xúc, và không nhận ra rằng có một suy nghĩ tinh tế trước tiên đã tạo ra cảm giác và sau đó là cảm xúc.</p>
+      <cite><b>Sailor Bob Adamson</b></cite>
+    </blockquote>
+
+    <blockquote>
+      <span class="qtag">Trích dẫn</span>
+      <p>Lý do duy nhất khiến bạn cảm thấy mình không hạnh phúc là vì bạn đang đồng nhất với một suy nghĩ không hạnh phúc.</p>
+      <cite><b>Người thầy của tôi</b> — người thầy giấu tên của Rhonda Byrne</cite>
+    </blockquote>
+
+    <blockquote>
+      <span class="qtag">Trích dẫn</span>
+      <p>Cuộc sống thật đơn giản. Mọi thứ xảy ra vì bạn, không phải với bạn. Mọi thứ xảy ra vào đúng thời điểm, không quá sớm hay quá muộn. Bạn không cần phải thích nó&hellip; chỉ là sẽ dễ dàng hơn nếu bạn thích nó.</p>
+      <cite><b>Byron Katie</b> — trích từ <em>Một ngàn cái tên cho niềm vui</em></cite>
+    </blockquote>
+
+    <article class="body-card">
+      <p>Hy vọng bạn bắt đầu thấy được sự tàn phá có thể xảy ra trong cuộc sống của bạn khi bạn tin vào tâm trí và những suy nghĩ tiêu cực của nó.</p>
+      <p>Bất cứ khi nào tôi có cơ hội giúp đỡ ai đó vượt qua khó khăn hoặc thử thách mà họ đang phải đối mặt, lý do khiến họ đau khổ luôn là vì tin vào những suy nghĩ tiêu cực của tâm trí họ.</p>
+      <p>Bất cứ khi nào tôi gặp khó khăn trong cuộc sống của mình cũng là vì tôi tin vào tâm trí và những suy nghĩ tiêu cực của nó.</p>
+      <p>Vì vậy, nếu có thể, khi bạn cảm thấy đau đớn hoặc tổn thương vì một tình huống nào đó, <mark>hãy để cảm giác tổn thương đó là lời cảnh tỉnh cho bạn biết rằng ngay lúc này bạn đang tin vào những suy nghĩ tiêu cực không đúng sự thật.</mark></p>
+      <p>Khi bạn ngừng tin vào tâm trí mình, bạn sẽ bắt đầu nhận thấy rằng tâm trí bạn có xu hướng phản đối hầu hết mọi thứ, che giấu đi niềm hạnh phúc bẩm sinh của bạn.</p>
+    </article>
+
+    <blockquote>
+      <span class="qtag">Trích dẫn</span>
+      <p>Có gì sai với hiện tại nếu bạn không nghĩ về nó?</p>
+      <cite><b>Sailor Bob Adamson</b> — trích từ <em>Một phần trang sức</em></cite>
+    </blockquote>
+
+    <blockquote>
+      <span class="qtag">Trích dẫn</span>
+      <p>Sự bình yên mà bạn đang tìm kiếm đã hiện hữu. Sự bình yên đó dường như bị che khuất vì sự chú ý của chúng ta đang bị chuyển hướng vào suy nghĩ.</p>
+      <cite><b>Kalyani Lawry</b></cite>
+    </blockquote>
+
+    <article class="body-card">
+      <p>Với tất cả những lời huyên thuyên của tâm trí, những bình luận không ngừng, bản chất mâu thuẫn và sự đánh đập chúng ta, thật đáng ngạc nhiên khi rất nhiều người trong chúng ta vẫn tin rằng tâm trí của mình là thẩm quyền trên thế giới.</p>
+      <p><mark>Bạn không cần phải dừng lại, làm dịu hoặc làm dịu tâm trí của mình; bạn chỉ cần ngừng tin vào nó!</mark></p>
+      <p>Khi bạn ngừng tin vào nó, nó sẽ tự động trở nên yên tĩnh hơn, và sau đó hạnh phúc sẽ nảy sinh trong bạn như một làn sóng thủy triều của hạnh phúc.</p>
+    </article>
+
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+  <!-- 5 -->
+  <section id="c10-p5">
+    <div class="sec-head"><div class="badge">05</div>
+      <h2>Chống lại hạnh phúc</h2></div>
+    <p class="willlearn"><b>Bạn sẽ hiểu gì ở phần này?</b><br>Niềm tin từ thời thơ ấu khiến ta kìm nén niềm vui, và vì sao <em>không</em> hạnh phúc mới là thứ tốn sức. <em>Tiêu đề phần này là tiểu mục gốc trong sách.</em></p>
+
+    <article class="body-card">
+      <p>Thật khó tin khi nghe điều này, nhưng <mark>nhiều người trong chúng ta lại chống lại việc được hạnh phúc.</mark></p>
+      <p>Chúng ta không nhận ra rằng mình đang làm như vậy vì sự chống đối của chúng ta xuất phát từ một niềm tin bị kìm nén.</p>
+      <p>Niềm tin đó có thể đã xuất hiện khi chúng ta còn nhỏ và chúng ta được bảo phải kiềm chế sự nhiệt tình và niềm vui tự nhiên, phóng khoáng của mình. Bạn đã bao giờ nghe những điều như:</p>
+      <ul class="dia">
+        <li>&ldquo;Hãy hành động theo đúng độ tuổi của mình&rdquo;</li>
+        <li>&ldquo;Trưởng thành lên&rdquo;</li>
+        <li>&ldquo;Đừng khoe khoang nữa&rdquo;</li>
+        <li>&ldquo;Bình tĩnh và im lặng đi&rdquo;</li>
+      </ul>
+      <p>Nếu có, bạn có thể có niềm tin rằng để được chấp thuận, bạn phải bình tĩnh và im lặng, bởi vì khi bạn chạy nhảy khắp nơi trong sự phấn khích và vui vẻ, bạn sẽ gặp rắc rối vì ồn ào.</p>
+      <p>Kết quả là, theo thời gian, chúng ta dần quen với việc kìm hãm và kiềm chế niềm vui tự nhiên của mình.</p>
+      <p>Nhưng <mark>chỉ cần nhận ra rằng chúng ta đã chống lại hạnh phúc, chúng ta đã phá vỡ niềm tin đó và lấy đi hầu hết sức mạnh của nó.</mark></p>
+    </article>
+
+    <blockquote>
+      <span class="qtag">Trích dẫn</span>
+      <p>Chúng ta vốn dĩ đã hạnh phúc, vì vậy nếu chúng ta không trải nghiệm được hạnh phúc, chúng ta đang chống lại hạnh phúc.</p>
+      <cite><b>Người thầy của tôi</b> — người thầy giấu tên của Rhonda Byrne</cite>
+    </blockquote>
+
+    <blockquote>
+      <span class="qtag">Trích dẫn</span>
+      <p>Nếu bạn không chủ động làm cho mình trở nên khốn khổ, bạn sẽ hạnh phúc.</p>
+      <cite><b>Anthony de Mello, S.J.</b> — trích từ <em>Khám phá lại cuộc sống</em></cite>
+    </blockquote>
+
+    <article class="body-card">
+      <p>Chúng ta không cần phải làm bất cứ điều gì để được hạnh phúc. Thay vào đó, chúng ta cần ngừng làm những gì đang làm khiến chúng ta không hạnh phúc!</p>
+    </article>
+
+    <figure class="fig">
+      <span class="fig-lbl">Hình 4 &middot; Giữ quả bóng dưới nước</span>
+      <svg viewBox="0 0 460 260" role="img" aria-label="Hình minh họa: hạnh phúc như quả bóng tự nổi lên mặt nước, phải dùng sức ấn mới giữ nó chìm được; buông tay ra là nó tự nổi lên">
+        <defs>
+          <linearGradient id="h4w" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="var(--blue)" stop-opacity=".22"/>
+            <stop offset="100%" stop-color="var(--blue)" stop-opacity=".45"/>
+          </linearGradient>
+          <radialGradient id="h4b" cx="38%" cy="32%" r="70%">
+            <stop offset="0%" stop-color="#FFF4D4"/>
+            <stop offset="100%" stop-color="var(--gold)"/>
+          </radialGradient>
+          <marker id="h4d" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+            <path d="M0 1 L9 5 L0 9 Z" fill="var(--red)"/>
+          </marker>
+          <marker id="h4u" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+            <path d="M0 1 L9 5 L0 9 Z" fill="var(--gold)"/>
+          </marker>
+        </defs>
+
+        <!-- panel trái -->
+        <rect x="0" y="4" width="216" height="252" rx="12" fill="var(--red-l)" stroke="var(--red)" stroke-width="1.2" stroke-opacity=".4"/>
+        <text class="svg-cap" x="108" y="26" text-anchor="middle" font-size="12" fill="var(--red)">CHỐNG LẠI HẠNH PHÚC</text>
+        <rect x="14" y="78" width="188" height="168" rx="8" fill="url(#h4w)"/>
+        <line x1="14" y1="78" x2="202" y2="78" stroke="var(--blue)" stroke-width="2.5"/>
+        <circle cx="108" cy="170" r="34" fill="url(#h4b)" stroke="var(--gold)" stroke-width="2"/>
+        <text class="svg-cap" x="108" y="168" text-anchor="middle" font-size="10" fill="#6B4E18">HẠNH</text>
+        <text class="svg-cap" x="108" y="180" text-anchor="middle" font-size="10" fill="#6B4E18">PHÚC</text>
+        <line x1="108" y1="52" x2="108" y2="128" stroke="var(--red)" stroke-width="3.4" marker-end="url(#h4d)"/>
+        <text class="svg-t2" x="108" y="46" text-anchor="middle" font-size="11" fill="var(--red)">tốn sức để ấn xuống</text>
+        <g stroke="var(--gold)" stroke-width="1.6" opacity=".6">
+          <line x1="86" y1="130" x2="86" y2="118"/><line x1="130" y1="130" x2="130" y2="118"/>
+        </g>
+
+        <!-- panel phải -->
+        <rect x="244" y="4" width="216" height="252" rx="12" fill="var(--green-l)" stroke="var(--green)" stroke-width="1.2" stroke-opacity=".4"/>
+        <text class="svg-cap" x="352" y="26" text-anchor="middle" font-size="12" fill="var(--green)">NGỪNG CHỐNG LẠI</text>
+        <rect x="258" y="78" width="188" height="168" rx="8" fill="url(#h4w)"/>
+        <line x1="258" y1="78" x2="446" y2="78" stroke="var(--blue)" stroke-width="2.5"/>
+        <circle cx="352" cy="66" r="34" fill="url(#h4b)" stroke="var(--gold)" stroke-width="2"/>
+        <text class="svg-cap" x="352" y="64" text-anchor="middle" font-size="10" fill="#6B4E18">HẠNH</text>
+        <text class="svg-cap" x="352" y="76" text-anchor="middle" font-size="10" fill="#6B4E18">PHÚC</text>
+        <line x1="352" y1="190" x2="352" y2="126" stroke="var(--gold)" stroke-width="3" stroke-dasharray="7 5" marker-end="url(#h4u)"/>
+        <text class="svg-t2" x="352" y="212" text-anchor="middle" font-size="11">nó tự nổi lên</text>
+        <text class="svg-t2" x="352" y="230" text-anchor="middle" font-size="11">— không cần làm gì</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng.</strong> Nếu hạnh phúc là trạng thái tự nhiên của bạn — như quả bóng luôn muốn nổi — thì điều cần giải thích không phải là làm sao để hạnh phúc, mà là <em>lượng năng lượng khổng lồ</em> ta đang bỏ ra để giữ nó chìm xuống.</figcaption>
+    </figure>
+
+    <blockquote>
+      <span class="qtag">Trích dẫn</span>
+      <p>Hạnh phúc không phải là thách thức. Mà là không hạnh phúc mới là thách thức. Khi bạn nói rằng hạnh phúc là thách thức, điều đó ám chỉ rằng hạnh phúc đòi hỏi nỗ lực, sự cảnh giác liên tục, đấu tranh. Nếu chúng ta tin rằng hạnh phúc đòi hỏi nỗ lực và đấu tranh, thì nó chỉ kéo dài sự đau khổ.</p>
+      <cite><b>Francis Lucille</b> — trích từ <em>Hương thơm của sự im lặng</em></cite>
+    </blockquote>
+
+    <blockquote>
+      <span class="qtag">Trích dẫn</span>
+      <p>Bạn không thể cảm nhận được hạnh phúc vô hạn tiềm ẩn trong bản thể của mình sao?</p>
+      <cite><b>Người thầy của tôi</b> — người thầy giấu tên của Rhonda Byrne</cite>
+    </blockquote>
+
+    <article class="body-card">
+      <p>Nếu trạng thái tự nhiên của chúng ta là hạnh phúc, thì hãy tưởng tượng đến lượng năng lượng khổng lồ cần có để không hạnh phúc.</p>
+      <p>Trên khắp thế giới, sự kháng cự là thứ duy nhất đã cướp đi hạnh phúc của phần lớn mọi người.</p>
+      <p>Thay vì để mọi thứ như hiện tại, chúng ta chống lại những gì đang xảy ra hoặc những gì đã xảy ra với suy nghĩ đơn lẻ, lặp đi lặp lại rằng, &ldquo;Tôi không muốn&hellip;&rdquo; Và sau đó điền vào chỗ trống danh sách dài vô tận những điều &ldquo;không muốn&rdquo;.</p>
+    </article>
+
+    <blockquote>
+      <span class="qtag">Trích dẫn</span>
+      <p>Không có gì bên ngoài có thể làm phiền chúng ta. Chúng ta chỉ đau khổ khi chúng ta muốn mọi thứ khác đi so với bản chất của chúng.</p>
+      <cite><b>Byron Katie</b> — trích từ <em>Yêu những gì đang có</em></cite>
+    </blockquote>
+
+    <blockquote>
+      <span class="qtag">Trích dẫn</span>
+      <p>Hạnh phúc đơn giản là để mọi thứ diễn ra chính xác như chúng vốn có từng khoảnh khắc.</p>
+      <cite><b>Rupert Spira</b></cite>
+    </blockquote>
+
+    <article class="body-card">
+      <p>Nếu bạn có thể ngừng chống lại những gì đang xảy ra trong cuộc sống và thế giới của mình, thì hạnh phúc an lạc là của bạn.</p>
+      <p><mark>Giác ngộ chỉ đơn giản là một từ khác để chỉ hạnh phúc an lạc. Giác ngộ là con người bạn vốn có. Hạnh phúc an lạc là con người bạn vốn có.</mark></p>
+      <p>Chúng không phải là thứ mà chỉ một số ít người được chọn mới có thể trải nghiệm, chúng là bạn và tất cả mọi người khác!</p>
+    </article>
+
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+  <!-- 6 -->
+  <section id="c10-p6">
+    <div class="sec-head"><div class="badge">06</div>
+      <h2>Gắn kết</h2></div>
+    <p class="willlearn"><b>Bạn sẽ hiểu gì ở phần này?</b><br>Sự gắn bó khác tình yêu ở chỗ nào, câu chuyện hai người cùng nghe một tin, và cái giá của việc bám víu. <em>Tiêu đề phần này là tiểu mục gốc trong sách.</em></p>
+
+    <blockquote>
+      <span class="qtag">Trích dẫn</span>
+      <p>Nếu bạn nhìn kỹ, bạn sẽ thấy rằng có một thứ và chỉ một thứ duy nhất gây ra bất hạnh. Tên của thứ đó là sự gắn bó.</p>
+      <cite><b>Anthony de Mello, S.J.</b> — trích từ <em>Con đường đến tình yêu</em></cite>
+    </blockquote>
+
+    <article class="body-card">
+      <p>Sự gắn bó xuất hiện khi chúng ta bám víu vào thứ gì đó vì sợ mất nó vì chúng ta tin rằng chúng ta không thể hạnh phúc nếu không có nó.</p>
+      <p><mark>Sự gắn bó thường bị nhầm là tình yêu, nhưng sự gắn bó không phải là tình yêu.</mark></p>
+      <p>Tình yêu không hề có nỗi sợ hãi nào cả. Tình yêu cho phép mọi thứ được tự do, bất kể những thứ đó đến hay đi. Sự gắn bó ngụy trang thành tình yêu, nhưng sự gắn bó muốn nắm giữ một thứ gì đó vì sợ mất nó.</p>
+    </article>
+
+    <figure class="fig">
+      <span class="fig-lbl">Hình 5 &middot; Trái tim trong lồng và trái tim tự do</span>
+      <svg viewBox="0 0 460 258" role="img" aria-label="So sánh: gắn bó là trái tim bị nhốt trong lồng có khóa vì sợ mất; tình yêu là trái tim để ngỏ, mọi thứ được tự do đến và đi">
+        <defs>
+          <linearGradient id="h5r" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="var(--red)" stop-opacity=".85"/>
+            <stop offset="100%" stop-color="var(--red)"/>
+          </linearGradient>
+          <linearGradient id="h5g" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="var(--gold)"/>
+            <stop offset="100%" stop-color="var(--green)"/>
+          </linearGradient>
+          <marker id="h5o" markerWidth="9" markerHeight="9" refX="4.5" refY="4.5" orient="auto">
+            <path d="M0 1 L8 4.5 L0 8 Z" fill="var(--green)"/>
+          </marker>
+        </defs>
+
+        <!-- trái: trong lồng -->
+        <rect x="0" y="4" width="216" height="250" rx="12" fill="var(--red-l)" stroke="var(--red)" stroke-width="1.2" stroke-opacity=".4"/>
+        <text class="svg-cap" x="108" y="30" text-anchor="middle" font-size="12.5" fill="var(--red)">GẮN BÓ</text>
+        <path d="M108 180 C 58 146 70 98 108 122 C 146 98 158 146 108 180 Z" fill="url(#h5r)" opacity=".9"/>
+        <rect x="50" y="84" width="116" height="110" rx="8" fill="none" stroke="var(--red)" stroke-width="3"/>
+        <g stroke="var(--red)" stroke-width="3" stroke-linecap="round">
+          <line x1="79" y1="84" x2="79" y2="194"/>
+          <line x1="108" y1="84" x2="108" y2="194"/>
+          <line x1="137" y1="84" x2="137" y2="194"/>
+        </g>
+        <g>
+          <path d="M101 206 C 101 198 115 198 115 206" fill="none" stroke="var(--red)" stroke-width="2.6"/>
+          <rect x="96" y="206" width="24" height="18" rx="4" fill="var(--red)"/>
+        </g>
+        <text class="svg-t2" x="108" y="242" text-anchor="middle" font-size="11.5">nắm chặt vì <tspan font-weight="700" fill="var(--red)">sợ mất</tspan></text>
+
+        <!-- phải: tự do -->
+        <rect x="244" y="4" width="216" height="250" rx="12" fill="var(--green-l)" stroke="var(--green)" stroke-width="1.2" stroke-opacity=".4"/>
+        <text class="svg-cap" x="352" y="30" text-anchor="middle" font-size="12.5" fill="var(--green)">TÌNH YÊU</text>
+        <path d="M352 180 C 302 146 314 98 352 122 C 390 98 402 146 352 180 Z" fill="url(#h5g)" opacity=".92"/>
+        <g stroke="var(--green)" stroke-width="3" stroke-linecap="round" opacity=".5">
+          <line x1="280" y1="84" x2="268" y2="194"/>
+          <line x1="424" y1="84" x2="436" y2="194"/>
+        </g>
+        <g stroke="var(--green)" stroke-width="2" stroke-dasharray="5 5">
+          <line x1="300" y1="112" x2="266" y2="86" marker-end="url(#h5o)"/>
+          <line x1="404" y1="112" x2="438" y2="86" marker-end="url(#h5o)"/>
+          <line x1="352" y1="192" x2="352" y2="214" marker-end="url(#h5o)"/>
+        </g>
+        <text class="svg-t2" x="352" y="242" text-anchor="middle" font-size="11.5">để mọi thứ <tspan font-weight="700" fill="var(--green)">tự do</tspan> đến và đi</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng.</strong> Cùng một trái tim, cùng một thứ được yêu. Theo tác giả, sự gắn bó <em>ngụy trang</em> thành tình yêu — khác biệt duy nhất, và là khác biệt quyết định, nằm ở chỗ có nỗi sợ mất hay không: một bên khóa lại, một bên để ngỏ.</figcaption>
+    </figure>
+
+    <blockquote>
+      <span class="qtag">Trích dẫn</span>
+      <p>Thứ mù quáng không phải là tình yêu mà là sự gắn bó. Sự gắn bó là trạng thái bám víu xuất phát từ niềm tin sai lầm rằng một thứ gì đó hoặc một ai đó là cần thiết cho hạnh phúc của bạn.</p>
+      <cite><b>Anthony de Mello, S.J.</b> — trích từ <em>Con đường đến tình yêu</em></cite>
+    </blockquote>
+
+    <article class="body-card">
+      <p>Hãy tưởng tượng hai người làm việc trong cùng một công ty. Cả hai đều nói rằng họ yêu công việc của mình và họ vui vẻ đi làm mỗi ngày.</p>
+      <p>Rồi một ngày họ đến công ty và nghe tin nhân viên sẽ bị cắt giảm vào chính ngày hôm đó.</p>
+      <p><strong>Cơ thể của Người A</strong> lập tức tràn ngập nỗi sợ hãi khi nghe tin này. &ldquo;Tôi sẽ làm gì nếu bị cắt giảm? Nếu tôi không thể tìm được việc làm khác thì sao? Tôi sẽ không thể trả các hóa đơn hoặc tiền thế chấp. Tôi sẽ mất nhà.&rdquo;</p>
+      <p>Tất cả những suy nghĩ này đều xuất phát từ sự gắn bó với công việc của anh ta. Bạn có thể nhận ra nỗi sợ hãi trong những suy nghĩ này.</p>
+      <p>Trong khi đó, <strong>người B</strong> lại có một góc nhìn khác. Anh ta biết rằng anh ta sẽ hạnh phúc bất kể điều gì xảy ra. Anh ta biết rằng mọi thứ trong cuộc sống luôn thay đổi và mọi thứ đều diễn ra theo hướng tốt nhất mặc dù đôi khi nó không có vẻ như vậy.</p>
+      <p>Anh ta biết từ kinh nghiệm của chính mình rằng khi có điều gì đó bất ngờ xảy ra, thì điều gì đó tốt đẹp hơn sẽ đến. Nếu vì lý do nào đó mà công việc của anh ta bị cắt giảm, anh ta biết rằng mình sẽ tìm được một công việc khác và anh ta biết rằng mọi chuyện sẽ tốt đẹp hơn. <mark>Đây chính là sự không gắn bó.</mark></p>
+      <p>Bạn nghĩ ai là người hạnh phúc hơn? Bạn nghĩ ai có cuộc sống tốt đẹp hơn?</p>
+    </article>
+
+    <figure class="fig">
+      <span class="fig-lbl">Hình 6 &middot; Cùng một tin, hai thế giới</span>
+      <svg viewBox="0 0 460 268" role="img" aria-label="Sơ đồ: cùng một tin cắt giảm nhân sự, Người A phản ứng bằng chuỗi suy nghĩ sợ hãi, Người B vẫn bình thản vì không gắn bó">
+        <defs>
+          <marker id="h6a" markerWidth="9" markerHeight="9" refX="4.5" refY="4.5" orient="auto">
+            <path d="M0 1 L8 4.5 L0 8 Z" fill="var(--gold)"/>
+          </marker>
+        </defs>
+
+        <rect x="134" y="4" width="192" height="40" rx="10" fill="var(--gold-l)" stroke="var(--gold)" stroke-width="2"/>
+        <text class="svg-t" x="230" y="22" text-anchor="middle" font-size="12.5">CÙNG MỘT TIN</text>
+        <text class="svg-t2" x="230" y="37" text-anchor="middle" font-size="11">&#8220;Hôm nay sẽ cắt giảm nhân sự&#8221;</text>
+        <path d="M160 44 L96 72" stroke="var(--gold)" stroke-width="2" marker-end="url(#h6a)"/>
+        <path d="M300 44 L364 72" stroke="var(--gold)" stroke-width="2" marker-end="url(#h6a)"/>
+
+        <!-- Người A -->
+        <rect x="0" y="80" width="208" height="182" rx="12" fill="var(--red-l)" stroke="var(--red)" stroke-width="1.4"/>
+        <circle cx="34" cy="108" r="14" fill="var(--red)"/>
+        <text class="svg-cap" x="34" y="113" text-anchor="middle" font-size="12" fill="#fff">A</text>
+        <text class="svg-cap" x="58" y="113" font-size="12" fill="var(--red)">GẮN BÓ</text>
+        <text class="svg-t2" x="16" y="140" font-size="11">&#8220;Tôi sẽ làm gì nếu bị cắt giảm?&#8221;</text>
+        <text class="svg-t2" x="16" y="160" font-size="11">&#8220;Nếu không tìm được việc khác?&#8221;</text>
+        <text class="svg-t2" x="16" y="180" font-size="11">&#8220;Không trả nổi hóa đơn, thế chấp&#8221;</text>
+        <text class="svg-t2" x="16" y="200" font-size="11">&#8220;Tôi sẽ mất nhà&#8221;</text>
+        <rect x="16" y="214" width="176" height="32" rx="8" fill="var(--red)" opacity=".85"/>
+        <text class="svg-cap" x="104" y="234" text-anchor="middle" font-size="12" fill="#FFF6F4">NỖI SỢ TRÀN NGẬP</text>
+
+        <!-- Người B -->
+        <rect x="252" y="80" width="208" height="182" rx="12" fill="var(--green-l)" stroke="var(--green)" stroke-width="1.4"/>
+        <circle cx="286" cy="108" r="14" fill="var(--green)"/>
+        <text class="svg-cap" x="286" y="113" text-anchor="middle" font-size="12" fill="#fff">B</text>
+        <text class="svg-cap" x="310" y="113" font-size="12" fill="var(--green)">KHÔNG GẮN BÓ</text>
+        <text class="svg-t2" x="268" y="140" font-size="11">&#8220;Tôi sẽ hạnh phúc dù điều gì xảy ra&#8221;</text>
+        <text class="svg-t2" x="268" y="160" font-size="11">&#8220;Mọi thứ luôn thay đổi&#8221;</text>
+        <text class="svg-t2" x="268" y="180" font-size="11">&#8220;Điều tốt đẹp hơn sẽ đến&#8221;</text>
+        <text class="svg-t2" x="268" y="200" font-size="11">&#8220;Tôi sẽ tìm được việc khác&#8221;</text>
+        <rect x="268" y="214" width="176" height="32" rx="8" fill="var(--green)" opacity=".85"/>
+        <text class="svg-cap" x="356" y="234" text-anchor="middle" font-size="12" fill="#F4FBF6">BÌNH THẢN</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng</strong> từ đúng ví dụ hai người của tác giả, giữ nguyên chuỗi suy nghĩ của mỗi người. Sự kiện bên ngoài giống hệt nhau; thứ khác nhau duy nhất là có gắn bó hay không — và nó quyết định cả hai thế giới.</figcaption>
+    </figure>
+
+    <blockquote>
+      <span class="qtag">Trích dẫn</span>
+      <p>Thực tế là, bạn không biết hạnh phúc là gì cho đến khi bạn buông bỏ sự gắn bó.</p>
+      <cite><b>Anthony de Mello, S.J.</b> — trích từ <em>Khám phá lại cuộc sống</em></cite>
+    </blockquote>
+
+    <blockquote>
+      <span class="qtag">Trích dẫn</span>
+      <p>Cuộc sống của tôi là một chuỗi các sự kiện, giống như cuộc sống của bạn vậy. Chỉ có điều tôi là người tách biệt và xem những sự kiện đang diễn ra như một sự kiện đang diễn ra, trong khi bạn bám chặt vào mọi thứ và di chuyển cùng chúng.</p>
+      <cite><b>Nisargadatta Maharaj</b> — trích từ <em>Tôi Là Đó: Nói chuyện với Sri Nisargadatta Maharaj</em></cite>
+    </blockquote>
+
+    <article class="body-card">
+      <p>Trong trường hợp gắn bó với một người, sự gắn bó đó xuất phát từ niềm tin rằng họ không có tình yêu.</p>
+      <p>Bạn tin rằng người này nắm giữ chìa khóa cho tình yêu và hạnh phúc của bạn, và nếu không có họ, tình yêu và hạnh phúc của bạn sẽ không còn.</p>
+      <p>Niềm tin đó biện minh cho sự gắn bó và khiến bạn rơi vào tình thế cực kỳ nguy hiểm, bởi vì mọi thứ đều thay đổi liên tục, và không có &ldquo;cơ thể&rdquo; nào tồn tại mãi mãi.</p>
+    </article>
+
+    <blockquote>
+      <span class="qtag">Trích dẫn</span>
+      <p>Mọi người cần nhau và nghĩ rằng đó là tình yêu. Không có sự níu kéo hay rào chắn nào đối với người kia khi người ta yêu.</p>
+      <cite><b>Lester Levenson</b></cite>
+    </blockquote>
+
+    <article class="body-card">
+      <p>Sự gắn bó rất sâu sắc. Thường thì những chấp trước của chúng ta tạo nên bản sắc của con người mà chúng ta nghĩ mình là, và chúng ta cảm thấy rằng nếu chúng ta buông bỏ những chấp trước, chúng ta sẽ mất đi bản sắc của mình.</p>
+      <p>Vì vậy, chúng ta bám víu vào những chấp trước của mình, trong khi chúng cướp đi hạnh phúc của chúng ta và giam cầm chúng ta trong đau khổ.</p>
+      <p>Khi bạn tin rằng có một số lượng hữu hạn của một thứ gì đó, bạn sẽ trở nên gắn bó với những gì bạn có.</p>
+      <p>Chúng ta có thể có những chấp trước vào cơ thể, tâm trí, hình ảnh mà chúng ta có về bản thân, đối tác, con cái, cha mẹ, gia đình, bạn bè, thú cưng, sự nghiệp, thành tích cá nhân, danh tiếng, kỹ năng, sở thích, tôn giáo, thành công và các vật chất như xe hơi hoặc nhà cửa, cũng như chấp trước vào ý kiến, niềm tin và quan điểm của chúng ta.</p>
+      <p>Bạn có thể đã thấy mọi người quyết liệt bảo vệ niềm tin của họ vào chính trị, tôn giáo và rất nhiều chủ đề khác vì họ gắn bó sâu sắc với ý kiến của mình.</p>
+    </article>
+
+    <blockquote>
+      <span class="qtag">Trích dẫn</span>
+      <p>Chúng ta đã gắn bó với những suy nghĩ của mình đến nỗi chúng ta thậm chí không bao giờ nghĩ đến việc ly hôn chúng. Và, cho đến khi chúng ta làm được điều đó, chúng ta sẽ tiếp tục, mù quáng gắn bó với cơ thể vật chất và nói chung là có một cuộc sống khốn khổ.</p>
+      <cite><b>Lester Levenson</b> — trích từ <em>Hạnh phúc là tự do</em>, tập 1–5</cite>
+    </blockquote>
+
+    <article class="body-card">
+      <p>Qua nhiều năm, tâm trí chúng ta có thể trở nên gắn bó sâu sắc với vô số ý tưởng cố định.</p>
+      <p>Thật trớ trêu khi những ý tưởng mà chúng ta bám víu thực sự ràng buộc chúng ta vào việc trở thành một con người hạn chế, khiến cuộc sống của chúng ta trở nên nặng nề và kìm hãm hạnh phúc tự nhiên của chúng ta.</p>
+      <p>Lịch sử đã chỉ ra rằng con người có thể gắn bó với niềm tin của mình đến mức họ thà chết còn hơn là buông bỏ chúng. Đối với một số người, sự gắn bó với niềm tin của họ là thứ duy nhất giúp họ tiếp tục bất chấp sự đau khổ của họ.</p>
+    </article>
+
+    <blockquote>
+      <span class="qtag">Trích dẫn</span>
+      <p>Mọi người không muốn hạnh phúc. Để hạnh phúc, họ phải thay đổi niềm tin và ý tưởng của mình và họ bám víu vào chúng. Họ nói, không đời nào. Chúng ta từ chối hạnh phúc trừ khi mong muốn của mình được thỏa mãn.</p>
+      <cite><b>Anthony de Mello, S.J.</b></cite>
+    </blockquote>
+
+    <article class="body-card">
+      <p>Nếu bạn có thể giải thoát bản thân khỏi mọi ý kiến và ý tưởng cố định từng cái một, bạn sẽ được giác ngộ, bởi vì khi bạn thoát khỏi mọi phán xét, bạn cho phép mọi thứ diễn ra như chúng vốn có.</p>
+      <p>Và sau đó, bạn sẽ kinh ngạc trước niềm vui và hạnh phúc tràn ngập trong chính con người bạn, chưa kể đến cách cuộc sống của bạn tự nhiên sẽ đi lên trong mọi lĩnh vực.</p>
+      <p>Như tôi đã viết trong <em>Bí mật, Phiên bản kỷ niệm mười năm</em>, <mark>bạn càng ít ý kiến, bạn càng ít đưa ra kết luận, bạn càng ít giữ những ý tưởng cố định, thì bạn càng có nhiều hạnh phúc và niềm vui.</mark></p>
+      <p>Thứ thực sự gắn bó không phải là bạn, mà là tâm trí của bạn! Sự gắn bó là một chuyến dã ngoại cho tâm trí vì sự gắn bó củng cố tâm trí và giữ chúng ta trong niềm tin rằng chúng ta là một con người hạn chế, tách biệt, thay vì Nhận thức vô hạn, hạnh phúc vô biên mà chúng ta thực sự là.</p>
+      <p>Bởi vì sự gắn bó xuất phát từ tâm trí của bạn, bạn sẽ cảm thấy sợ hãi rõ ràng khi một thứ gì đó mà tâm trí gắn bó bị đe dọa.</p>
+      <p>Và sự gắn bó lớn nhất mà tâm trí bạn có là sự gắn bó với bản ngã và một cá nhân riêng biệt. Mặc dù sự thật rằng chúng ta thực sự là một Nhận thức là điều kỳ diệu như vậy, nhưng tâm trí chúng ta vẫn bám víu vào ý tưởng trở thành một cá thể riêng biệt.</p>
+      <p>Không có kết cục nào cho một cuộc sống với sự ràng buộc ngoài sự đau khổ và tan vỡ, bởi vì không có gì trong thế giới vật chất này là lâu dài hay vĩnh viễn, kể cả cơ thể chúng ta. Mà bạn không nhận ra, tâm trí bạn đã đánh đổi hạnh phúc của bạn để lấy sự ràng buộc.</p>
+      <p>Anthony de Mello đã tóm tắt sự ràng buộc một cách tuyệt đẹp trong cách diễn giải của ông về Tứ diệu đế của Đức Phật:</p>
+    </article>
+
+    <blockquote>
+      <span class="qtag">Trích dẫn</span>
+      <p>Thế giới đầy rẫy đau khổ.</p>
+      <p>Gốc rễ của đau khổ là ham muốn ràng buộc.</p>
+      <p>Giải pháp cho một cuộc sống không có đau khổ là từ bỏ sự ràng buộc.</p>
+      <cite><b>Anthony de Mello, S.J.</b> — trích từ <em>Khám phá lại cuộc sống</em></cite>
+    </blockquote>
+
+    <article class="body-card">
+      <p>Bạn có thể mong muốn và có bất cứ thứ gì bạn muốn; vấn đề chỉ xuất hiện khi bạn ràng buộc vào những thứ đó.</p>
+    </article>
+
+    <div class="concept">
+      <span class="lbl">Khái niệm cốt lõi</span>
+      <h4>Gắn bó</h4>
+      <dl>
+        <dt>Cách tác giả sử dụng khái niệm này trong chương</dt>
+        <dd>Là việc bám víu vào một thứ vì <em>sợ mất nó</em>, dựa trên niềm tin rằng không có nó thì ta không thể hạnh phúc.</dd>
+        <dt>Ý nghĩa trong mạch lập luận</dt>
+        <dd>Theo de Mello mà tác giả dẫn, đây là thứ <em>duy nhất</em> gây ra bất hạnh — nên nó khép lại chương về hạnh phúc.</dd>
+        <dt>Lưu ý để tránh hiểu sai</dt>
+        <dd>Tác giả nói rõ: &ldquo;Bạn có thể mong muốn và có bất cứ thứ gì bạn muốn; vấn đề chỉ xuất hiện khi bạn ràng buộc vào những thứ đó.&rdquo; Không gắn bó không có nghĩa là không yêu hay không muốn gì.</dd>
+      </dl>
+    </div>
+
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+  <!-- 7 -->
+  <section id="c10-p7">
+    <div class="sec-head"><div class="badge">07</div>
+      <h2>Nhận thức so với sự gắn bó</h2></div>
+    <p class="willlearn"><b>Bạn sẽ hiểu gì ở phần này?</b><br>Vì sao không cần đấu tranh để bỏ chấp trước, và hai câu chuyện riêng của tác giả — ngôi nhà và người mẹ. <em>Tiêu đề phần này là tiểu mục gốc trong sách.</em></p>
+
+    <article class="body-card">
+      <p>Bạn không cần phải đấu tranh để cố gắng loại bỏ những chấp trước của mình. Bạn không cần phải nỗ lực nhiều để cố gắng thay đổi cách bạn cảm nhận.</p>
+      <p>Chấp trước xuất phát từ việc đồng nhất với tâm trí, và do đó, để giải thoát bản thân khỏi những chấp trước, <mark>tất cả những gì bạn phải làm là chỉ cần duy trì Nhận thức ngày càng nhiều hơn, và tất cả những chấp trước của bạn sẽ dần dần biến mất!</mark></p>
+      <p>Tôi không thể bắt đầu nói với bạn rằng cuộc sống tuyệt vời như thế nào khi bạn không bị chi phối bởi những chấp trước. Tình yêu mà bạn dành cho mọi người và mọi thứ sâu sắc hơn nhiều, nhưng đồng thời bạn không cảm thấy nỗi buồn không thể chịu đựng được khi một điều gì đó kết thúc hoặc thay đổi.</p>
+    </article>
+
+    <blockquote>
+      <span class="qtag">Trích dẫn</span>
+      <p>Đây là bí mật của tôi. Tôi không bận tâm đến những gì xảy ra.</p>
+      <cite><b>J. Krishnamurti</b> — trích từ bài nói chuyện công khai thứ hai, 1977</cite>
+    </blockquote>
+
+    <article class="body-card">
+      <p>Những lời của Krishnamurti cho chúng ta thấy cảm giác không bị chấp trước vào bất cứ điều gì là như thế nào. Những lời của ông là sự không chấp trước thực sự.</p>
+      <p>Và mặc dù tôi biết rằng có thể bạn khó tin rằng mình có thể cảm thấy theo cách này, nhưng đó chỉ là tâm trí nói với bạn điều đó. Hãy nhớ rằng, không dính mắc là bản chất thực sự của bạn; không dính mắc là bạn, Nhận thức.</p>
+
+      <h3>Câu chuyện ngôi nhà</h3>
+      <p>Nhiều năm trước, gia đình tôi và tôi có một ngôi nhà đẹp ở vùng nông thôn Úc. Hai đứa con tôi thích sống ở nông thôn và chúng thích ngôi nhà đó.</p>
+      <p>Đó là một cuộc sống kỳ diệu, nhưng thật không may, lãi suất tăng lên hơn 18 phần trăm và mặc dù phải làm thêm giờ và làm thêm giờ, cuối cùng chồng tôi và tôi không thể trả được tiền thế chấp.</p>
+      <p>Chúng tôi đã phải hy sinh và đau khổ rất nhiều trong ba năm để cố gắng giữ ngôi nhà đó, và chúng tôi vẫn mất nó.</p>
+      <p>Vào ngày cuối cùng chúng tôi chuyển đi, tôi nghĩ về nỗi đau khổ mà chúng tôi đã trải qua, và tôi quyết định rằng mình sẽ không bao giờ gắn bó với bất kỳ ngôi nhà nào khác nữa. <mark>Khi chúng tôi chịu đựng đủ, chúng tôi sẽ thay đổi.</mark></p>
+      <p>Kể từ đó, tôi đã yêu mọi ngôi nhà mà tôi từng sống, một số ngôi nhà tôi yêu thích và thích thú hơn bất kỳ ngôi nhà nào khác trước đây nhưng tôi không gắn bó với bất kỳ ngôi nhà nào trong số chúng.</p>
+      <p>Khi tôi sống trong đó, tôi đã tận hưởng và trân trọng chúng một cách trọn vẹn, không hề sợ một ngày nào đó sẽ không còn chúng nữa. Và khi đến lúc phải rời xa họ, tôi có thể làm như vậy chỉ với lòng biết ơn trong tim, và không hề buồn bã.</p>
+    </article>
+
+    <blockquote>
+      <span class="qtag">Trích dẫn</span>
+      <p>Hạnh phúc xảy ra khi chúng ta không gắn bó với bất kỳ vật thể nào, bao gồm cả cơ thể và những thứ vật chất.</p>
+      <cite><b>Francis Lucille</b></cite>
+    </blockquote>
+
+    <article class="body-card">
+      <p>Chúng ta ở đây trong thế giới vật chất, và mọi thứ vật chất đều phải kết thúc. Nếu chúng ta gắn bó với một thứ gì đó, nó sẽ đảm bảo đau khổ khi nó mất đi.</p>
+      <p>Nhưng nếu bạn thực sự yêu những gì đang có trong cuộc sống của mình, nếu bạn thực sự biết ơn những gì đang có và nếu bạn trân trọng nó hoàn toàn, bạn sẽ không bao giờ cảm thấy cùng mức độ đau đớn khi nó mất đi.</p>
+
+      <h3>Câu chuyện người mẹ</h3>
+      <p>Tôi có mối quan hệ rất thân thiết với mẹ mình trong suốt thời thơ ấu và những năm trưởng thành. Bà không chỉ là mẹ tôi; tôi còn coi bà là bạn thân nhất của mình.</p>
+      <p>Tôi từng rất sợ bà qua đời vì tôi không thể tưởng tượng được cuộc sống thiếu bà hoặc có bất kỳ cuộc sống nào đáng giá nếu bà không còn nữa.</p>
+      <p>Sau khi khám phá ra <em>Bí mật</em>, tôi trở nên tràn đầy lòng biết ơn và trân trọng mọi thứ trong cuộc sống của mình, đặc biệt là gia đình và mẹ tôi. Tôi trân trọng từng khoảnh khắc bên bà.</p>
+      <p>Tôi sẽ liên tục kể cho bà nghe về tất cả những điều nhỏ nhặt và lớn lao mà bà đã làm cho tôi trong suốt cuộc đời có ý nghĩa rất lớn đối với tôi. Tôi sẽ liên tục nói với bà rằng tôi yêu bà nhiều như thế nào.</p>
+      <p><mark>Vì vậy, khi mẹ tôi qua đời, tôi đã không đau khổ như trước đây trong cuộc đời mình. Thay vào đó, tôi cảm thấy tình yêu của mình dành cho mẹ mở rộng ra lớn hơn cả Vũ trụ.</mark> Và cho đến ngày nay, tình yêu đó vẫn không bao giờ thay đổi.</p>
+      <p>Bạn là tình yêu, và tình yêu là sự đối lập hoàn toàn với sự gắn bó vì tình yêu trao cho mọi thứ sự tự do để đến hoặc đi. Tình yêu là chấp nhận và cho phép mọi thứ, bất kể điều gì xảy ra.</p>
+    </article>
+
+    <blockquote>
+      <span class="qtag">Trích dẫn</span>
+      <p>Tình yêu là chính con người bạn. Tình yêu không tìm kiếm bất cứ điều gì. Nó đã hoàn thiện. Nó không muốn, không cần, không có điều gì phải làm.</p>
+      <cite><b>Byron Katie</b> — trích từ <em>Anh cần tình yêu của em, điều đó có đúng không?</em></cite>
+    </blockquote>
+
+    <article class="body-card">
+      <p>Tôi có thể hứa với bạn rằng khi sự gắn bó của bạn giảm đi, tình yêu mà bạn sẽ cảm thấy sẽ tràn đầy và lớn lao đến mức bạn sẽ cảm thấy như thể Vũ trụ không thể chứa đựng được nó.</p>
+      <p>Tất cả những thứ mà bạn từng gắn bó sẽ được thay thế bằng tình yêu toàn năng, toàn trí và toàn tại này. Một số người gọi tình yêu này là &ldquo;Chúa&rdquo;.</p>
+      <p>Khi mọi người thấy mình ở trong sự hiện diện của Chúa Giê-su, Đức Phật, Krishna hoặc bất kỳ đấng giác ngộ nào khác, mọi tiêu cực trong họ đều tan biến ngay lập tức.</p>
+      <p>Đó là sức mạnh của tình yêu thuần khiết, vô điều kiện. Nó sẽ tan biến mọi bất hòa và tiêu cực ngay lập tức. Nó sẽ tan biến mọi thứ không phải là tình yêu. <mark>Tình yêu toàn năng này chính là bản chất thực sự của bạn. Đó chính là bạn.</mark></p>
+    </article>
+
+    <div class="hint">
+      <span class="lbl">Gợi ý để dễ hiểu</span>
+      <p>Hai câu chuyện trong phần này cho thấy hai con đường dẫn tới cùng một chỗ. Với ngôi nhà, tác giả buông chấp trước <em>sau khi</em> đã chịu đựng đủ. Với mẹ bà, bà không chờ mất mới học: bà trân trọng và nói lời yêu thương suốt những năm còn kịp — và theo bà, chính điều đó làm nỗi đau khi chia tay khác hẳn.</p>
+    </div>
+
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+  <!-- 8 -->
+  <section id="c10-p8">
+    <div class="sec-head"><div class="badge">08</div>
+      <h2>Bắt đầu với Hạnh phúc</h2></div>
+    <p class="willlearn"><b>Bạn sẽ hiểu gì ở phần này?</b><br>Vì sao phải <em>bắt đầu từ</em> hạnh phúc chứ không đi tới nó, và lời khuyên khép lại chương. <em>Tiêu đề phần này là tiểu mục gốc trong sách.</em></p>
+
+    <blockquote>
+      <span class="qtag">Trích dẫn</span>
+      <p>Bạn không cần gì để được hạnh phúc. Bạn cần một cái gì đó để buồn.</p>
+      <cite><b>Sri Poonja</b></cite>
+    </blockquote>
+
+    <blockquote>
+      <span class="qtag">Trích dẫn</span>
+      <p>Khi chúng ta thấy rằng [sự nhận thức luôn hiện diện], một sự chuyển đổi diễn ra trong thân-tâm. Thân-tâm bị tấn công bởi niềm vui vô cớ và được giải thoát khỏi niềm tin rằng nó phải hoạt động hướng tới việc đạt được hạnh phúc. Hạnh phúc không phải là thứ có thể đạt được thông qua nỗ lực, thông qua đau khổ. Làm sao chúng ta có thể đạt được hạnh phúc thông qua đau khổ? Làm sao nhiều đau khổ hơn có thể khiến chúng ta hạnh phúc? Chúng ta phải bắt đầu từ hạnh phúc. Chúng ta thường chấp nhận nhiều đau khổ hơn để trở nên hạnh phúc.</p>
+      <cite><b>Francis Lucille</b> — trích từ <em>Hương thơm của sự im lặng</em></cite>
+    </blockquote>
+
+    <article class="body-card">
+      <p>Bạn có thể hạnh phúc ngay tại khoảnh khắc này, bất kể điều gì đang diễn ra xung quanh bạn. <mark>Hạnh phúc không phải là thứ bạn phải tìm kiếm hay chờ đợi, vì nó ở đây với bạn ngay bây giờ.</mark></p>
+    </article>
+
+    <blockquote>
+      <span class="qtag">Trích dẫn</span>
+      <p>Chúng ta có thể có được sự tự do và hạnh phúc ngay bây giờ. Chúng ta không phải chờ đợi nó đến vào một ngày xa xôi nào đó trong tương lai khi chúng ta đã làm việc đủ chăm chỉ để xứng đáng với nó hoặc khi chúng ta đã thành công trong việc chuẩn bị cho bản thân. Chúng ta có lý do để vui mừng và thích thú, ngay bây giờ.</p>
+      <cite><b>Hale Dwoskin</b> — trích từ <em>Phương pháp Sedona</em></cite>
+    </blockquote>
+
+    <blockquote>
+      <span class="qtag">Trích dẫn</span>
+      <p>Bạn là niềm vui tột cùng. Tìm kiếm niềm vui cũng giống như tôi tìm kiếm Lester. Tôi là Lester. Tôi không cần phải ra ngoài kia và tìm kiếm anh ấy. Nếu tôi là niềm vui, tôi không cần phải tìm kiếm nó ở ngoài kia. Không cần phải ra ngoài để tìm niềm vui khi nó ở bên trong bạn.</p>
+      <cite><b>Lester Levenson</b> — trích từ <em>Hạnh phúc là tự do</em>, tập 1–5</cite>
+    </blockquote>
+
+    <blockquote>
+      <span class="qtag">Trích dẫn</span>
+      <p>Khi bạn thấy mình muốn tình yêu, hãy biết rằng nó giống như một hồ nước tìm kiếm nước.</p>
+      <cite><b>Hale Dwoskin</b></cite>
+    </blockquote>
+
+    <blockquote>
+      <span class="qtag">Trích dẫn</span>
+      <p>Khám phá ra rằng hòa bình, hạnh phúc và tình yêu luôn hiện hữu trong chính bản thể của chúng ta và hoàn toàn có sẵn tại mọi khoảnh khắc trải nghiệm, trong mọi điều kiện, là khám phá quan trọng nhất mà bất kỳ ai cũng có thể thực hiện.</p>
+      <cite><b>Rupert Spira</b> — trích từ <em>Nghệ thuật của hòa bình và hạnh phúc</em></cite>
+    </blockquote>
+
+    <article class="body-card">
+      <p>Bởi vì hạnh phúc là bản chất thực sự của bạn, <mark>bạn không thể có được hạnh phúc; bạn chỉ có thể là nó.</mark></p>
+      <p>Nếu bạn hạnh phúc, bạn đang là chính mình, Nhận thức! Khi bạn là Nhận thức rằng bạn là chính bạn, bạn hòa hợp với mọi sự sống, và nói rằng cuộc sống của bạn sẽ trở nên kỳ diệu là một cách nói quá khiêm tốn.</p>
+    </article>
+
+    <blockquote>
+      <span class="qtag">Trích dẫn</span>
+      <p>Vì đó là lúc con người trở nên sống động trọn vẹn: không phải lúc thụ thai, không phải lúc sinh ra, hay trưởng thành, cũng không phải bất kỳ khoảnh khắc nghi lễ nào mà chúng ta muốn chỉ ra, lễ rửa tội, lễ cưới, và lễ tốt nghiệp. Nó đến khi cảm giác về bản thân sụp đổ, khi gió được phép cuốn đi thứ không có thực mà chúng ta tin rằng mình là. Đó là lúc chúng ta thực sự sống. Cảm giác giống như cái chết (rốt cuộc, con người mà bạn đã từng là không còn tồn tại nữa), nhưng&hellip; nhưng&hellip; bạn ngạc nhiên khi thấy rằng mình vẫn tiếp tục, rằng cuộc sống vẫn tiếp diễn. Có cuộc sống sau khi chết. Bạn đang khám phá ra ý nghĩa của thiên đường trên trái đất.</p>
+      <cite><b>Jan Frazier</b> — trích từ <em>Mở cửa</em></cite>
+    </blockquote>
+
+    <article class="body-card">
+      <p>Hãy cho phép bản thân được hạnh phúc. Hãy cho phép bản thân trở thành hạnh phúc mà bạn thực sự là. Hạnh phúc đang ở đây ngay bây giờ.</p>
+      <p>Sức mạnh của Nhận thức là câu trả lời cho bất kỳ điều gì đe dọa hạnh phúc của bạn. Nếu bạn mở rộng sự chú ý và nghỉ ngơi như Nhận thức mà bạn đang có, bạn sẽ hạnh phúc!</p>
+      <p>Nếu bạn không cảm thấy hạnh phúc, hãy nhớ chào đón bất kỳ cảm giác nào không phải là hạnh phúc và cho phép nó hiện diện mà không cố gắng thay đổi hoặc loại bỏ nó. Khi bạn chào đón bất kỳ cảm giác nào hiện diện, bạn sẽ cảm thấy nó hòa tan vào hạnh phúc mà bạn thực sự là.</p>
+      <p>Mỗi khi bạn mở rộng vòng tay và chào đón một cảm giác không vui, bạn sẽ tiến gần hơn đến hạnh phúc lâu dài và vĩnh cửu, và tiến gần hơn đến một cuộc sống hài hòa, kỳ diệu.</p>
+      <p>Bạn càng chào đón những cảm giác không vui, bạn sẽ càng cảm thấy hạnh phúc của bản thân thực sự của mình tăng lên mỗi ngày.</p>
+      <p><mark>Cuối cùng, bạn sẽ tự mình khám phá ra rằng bên dưới mỗi cảm giác không vui là hạnh phúc và tình yêu bất tận của Nhận thức.</mark></p>
+    </article>
+
+    <div class="flow">
+      <span class="lbl">Mạch lập luận &middot; Toàn chương</span>
+      <div class="flow-grid">
+        <div class="fstep"><span class="k">Nhận định ban đầu</span><span class="v">Bạn <em>là</em> hạnh phúc — nó không thể đạt được vì bạn đã có nó.</span></div>
+        <div class="farrow">→</div>
+        <div class="fstep"><span class="k">Vì sao ta không thấy</span><span class="v">Ta tìm nó ngoài thế giới, nơi nó không có, và trì hoãn nó bằng &ldquo;Tôi sẽ hạnh phúc khi…&rdquo;</span></div>
+        <div class="farrow">→</div>
+        <div class="fstep"><span class="k">Hai thứ che nó đi</span><span class="v">Sự chống lại hạnh phúc, và sự gắn bó — thứ duy nhất gây ra bất hạnh.</span></div>
+        <div class="farrow">→</div>
+        <div class="fstep"><span class="k">Kết luận</span><span class="v">Không cần làm gì để hạnh phúc; chỉ cần ngừng làm điều khiến mình không hạnh phúc.</span></div>
+      </div>
+    </div>
+
+    <div class="pause">
+      <span class="lbl">Dừng lại 30 giây</span>
+      <p>Bạn không thể cảm nhận được hạnh phúc vô hạn tiềm ẩn trong bản thể của mình sao?</p>
+    </div>
+
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+  <!-- TÓM TẮT GỐC -->
+  <section id="tom-tat-goc">
+    <div class="sec-head"><div class="badge">★</div><h2>Tóm tắt gốc của chương</h2></div>
+    <div class="box origsum">
+      <span class="tag">Tóm tắt gốc của chương &middot; Nguyên văn của tác giả</span>
+      <h3 style="font-family:var(--ui); font-size:16px; letter-spacing:.06em; margin:10px 0 12px">TÓM TẮT CHƯƠNG 10</h3>
+      <ul class="dia">
+        <li>Bạn là hạnh phúc. Đó là bản chất thực sự của bạn! Hạnh phúc, một nguồn hạnh phúc bất tận, đang ở ngay bên trong bạn!</li>
+        <li>Không có hạnh phúc nào khác ngoài hạnh phúc của bản ngã thực sự của bạn, Nhận thức. Hạnh phúc mà bạn cảm thấy bất cứ lúc nào trong cuộc đời mình chính là hạnh phúc của Nhận thức.</li>
+        <li>Không có gì tốt hơn cho hoàn cảnh sống của bạn hơn là bạn cảm thấy hạnh phúc. Bạn càng hạnh phúc, cuộc sống của bạn càng dễ dàng hơn.</li>
+        <li>Khi chúng ta tìm kiếm hạnh phúc trên thế giới, hạnh phúc của chúng ta chỉ là phù du.</li>
+        <li>Chúng ta có thể tận hưởng tất cả những điều tuyệt vời mà chúng ta muốn trở thành, muốn làm hoặc muốn có trên thế giới, nhưng chúng ta có thể tận hưởng những điều đó với sự hiểu biết đầy đủ rằng nơi duy nhất để tìm thấy hạnh phúc thực sự, lâu dài là bên trong chúng ta.</li>
+        <li>Suy nghĩ của bạn quyết định cảm giác của bạn, vì vậy nếu bạn không hạnh phúc thì đó là vì bạn đang nghĩ về điều gì đó mà bạn không muốn.</li>
+        <li>Đứng giữa bạn và hạnh phúc lâu dài và con người thực sự của bạn là một suy nghĩ &ldquo;Tôi không muốn điều này&rdquo;.</li>
+        <li>Khi bạn cảm thấy đau đớn hoặc tổn thương vì một tình huống nào đó, hãy để cảm giác tổn thương đó là lời cảnh tỉnh cho bạn biết rằng ngay lúc này bạn đang tin vào những suy nghĩ tiêu cực không đúng sự thật.</li>
+        <li>Nhiều người trong chúng ta vô tình chống lại hạnh phúc.</li>
+        <li>Chỉ cần nhận ra rằng chúng ta đã chống lại hạnh phúc, chúng ta sẽ loại bỏ hầu hết sức mạnh của niềm tin bị kìm nén khiến chúng ta chống lại hạnh phúc.</li>
+        <li>Chúng ta không cần phải làm bất cứ điều gì để được hạnh phúc. Thay vào đó, chúng ta cần ngừng làm những gì mình đang làm khiến chúng ta không hạnh phúc.</li>
+        <li>Chỉ có một điều gây ra sự bất hạnh là sự gắn bó.</li>
+        <li>Sự gắn bó xuất hiện khi chúng ta bám víu vào một thứ gì đó vì sợ mất nó vì chúng ta tin rằng mình không thể hạnh phúc nếu không có nó.</li>
+        <li>Thường thì sự gắn bó của chúng ta tạo nên bản sắc của con người mà chúng ta nghĩ mình là, và chúng ta cảm thấy rằng nếu chúng ta từ bỏ sự gắn bó của mình, chúng ta sẽ mất đi bản sắc của mình. Vì vậy, chúng ta bám víu vào sự gắn bó của mình, trong khi chúng luôn cướp đi hạnh phúc của chúng ta.</li>
+        <li>Thực ra, thứ gắn bó không phải là bạn, mà là tâm trí của bạn. Đó là tâm trí có sự gắn bó. Con người thật của bạn không bị ràng buộc vào bất kỳ điều gì.</li>
+        <li>Để giải thoát bản thân khỏi những ràng buộc, tất cả những gì bạn phải làm là chỉ cần duy trì trạng thái Nhận thức, ngày càng nhiều hơn, và tất cả những ràng buộc của bạn sẽ dần dần biến mất.</li>
+        <li>Bạn có thể hạnh phúc ngay tại khoảnh khắc này, bất kể điều gì đang diễn ra xung quanh bạn.</li>
+        <li>Hạnh phúc không phải là thứ bạn phải tìm kiếm hay chờ đợi.</li>
+        <li>Bạn không thể có được hạnh phúc; bạn chỉ có thể LÀ nó. Nếu bạn hạnh phúc, bạn đang là chính mình.</li>
+        <li>Nếu bạn không cảm thấy hạnh phúc, hãy nhớ chào đón bất kỳ cảm giác nào không phải là hạnh phúc và cho phép nó hiện diện mà không cố gắng thay đổi hoặc loại bỏ nó.</li>
+        <li>Bạn càng chào đón những cảm xúc không vui, bạn sẽ càng cảm thấy hạnh phúc của chính mình ngày càng tăng lên.</li>
+      </ul>
+    </div>
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+  <!-- BẢN ĐỒ GHI NHỚ -->
+  <section id="ban-do-ghi-nho">
+    <div class="sec-head"><div class="badge">★</div><h2>Bản đồ ghi nhớ cuối chương</h2></div>
+    <div class="box recall">
+      <span class="tag" style="background:var(--blue-l); color:var(--blue)">Bản đồ ghi nhớ do biên tập viên tạo</span>
+      <p style="font-family:var(--ui); font-size:14.5px; color:var(--ink2); margin-top:4px">Công cụ ôn tập dựa hoàn toàn trên chương này, không thay thế nội dung của tác giả và không thay thế phần Tóm tắt gốc ở trên.</p>
+
+      <h3>Ý cốt lõi</h3>
+      <ul class="dia">
+        <li>Bạn không phải người hạnh phúc — bạn <em>chính là</em> hạnh phúc; nó không thể đạt được vì bạn đã có nó.</li>
+        <li>Khi yêu, hạnh phúc đến không phải từ người kia mà vì bản ngã tạm lùi đi và Nhận thức hiện ra.</li>
+        <li>Bạn càng hạnh phúc, cuộc sống càng dễ; càng bất hạnh, mọi việc càng tốn sức.</li>
+        <li>Hạnh phúc tìm ở thế giới luôn vọt lên rồi rơi về mức cũ — kể cả khi giấc mơ lớn nhất thành hiện thực.</li>
+        <li>Ta đưa ra khoảng 35.000 quyết định mỗi ngày, tất cả đều vì muốn hạnh phúc.</li>
+        <li>&ldquo;Tôi sẽ hạnh phúc khi…&rdquo; là thói quen trì hoãn; cái mốc luôn dời đi.</li>
+        <li>Mọi suy nghĩ làm ta bất hạnh cuối cùng đều nói cùng một điều: &ldquo;Tôi không muốn điều này&rdquo;.</li>
+        <li>Nhiều người <em>chống lại</em> hạnh phúc từ một niềm tin thời thơ ấu — và chỉ cần nhận ra là niềm tin đó mất sức.</li>
+        <li>Gắn bó là thứ duy nhất gây ra bất hạnh; nó ngụy trang thành tình yêu nhưng gốc là nỗi sợ mất.</li>
+        <li>Không cần đấu tranh bỏ chấp trước — duy trì Nhận thức nhiều hơn thì chúng dần tự biến mất.</li>
+      </ul>
+
+      <h3>Khái niệm cần nhớ</h3>
+      <ul class="dia">
+        <li><strong>Hạnh phúc là bản chất</strong> — không có hạnh phúc nào khác ngoài hạnh phúc của Nhận thức.</li>
+        <li><strong>Hạnh phúc phù du</strong> — thứ tìm được ở thế giới, luôn đến rồi đi.</li>
+        <li><strong>Trì hoãn hạnh phúc</strong> — &ldquo;Tôi sẽ hạnh phúc khi…&rdquo;</li>
+        <li><strong>Chống lại hạnh phúc</strong> — không hạnh phúc mới là thứ tốn năng lượng.</li>
+        <li><strong>Gắn bó so với tình yêu</strong> — bám víu vì sợ, so với để mọi thứ tự do.</li>
+      </ul>
+
+      <h3>Bài thực hành xuất hiện trong chương</h3>
+      <ul class="dia">
+        <li>Chương 10 không đưa ra bài thực hành mới có các bước. Nó nhắc lại hai phương pháp đã có: <strong>chào đón</strong> bất kỳ cảm giác nào không phải hạnh phúc, và <strong>mở rộng sự chú ý, nghỉ ngơi như Nhận thức</strong>.</li>
+      </ul>
+
+      <h3>Chuỗi logic của chương</h3>
+      <div class="chain">
+        <span>Bạn <em>là</em> hạnh phúc</span><i>→</i>
+        <span>Ta tìm nó ở ngoài</span><i>→</i>
+        <span>Nên nó luôn phù du</span><i>→</i>
+        <span>Ta trì hoãn nó</span><i>→</i>
+        <span>Ta còn chống lại nó</span><i>→</i>
+        <span>Và gắn bó che nốt phần còn lại</span><i>→</i>
+        <span>Ngừng làm những điều đó</span>
+      </div>
+    </div>
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+</main>
+
+<nav class="pager" aria-label="Chuyển phần">
+  <a class="prev" href="09-giai-toa-niem-tin-han-che.html"><span class="k">← Phần trước</span>Chương 09 — Giải tỏa niềm tin hạn chế</a>
+  <a class="home" href="index.html"><span class="k">Mục lục</span>Toàn bộ cuốn sách</a>
+  <span class="off next"><span class="k">Phần sau →</span>Chưa có nội dung</span>
+</nav>
+<footer class="pagefoot"><p><strong>Bí mật vĩ đại nhất</strong> — Rhonda Byrne<br>Bản trình bày lại phục vụ việc đọc và ôn tập. Bản quyền nội dung thuộc về tác giả và nhà xuất bản.</p></footer>
+</div>
+<script>
+(function(){
+  var bar=document.getElementById('progress');
+  if(bar){function u(){var h=document.documentElement,m=h.scrollHeight-h.clientHeight;
+    bar.style.width=(m>0?(h.scrollTop||document.body.scrollTop)/m*100:0).toFixed(2)+'%';}
+    addEventListener('scroll',u,{passive:true});addEventListener('resize',u);u();}
+  var root=document.documentElement,b=document.getElementById('themeBtn');
+  function set(d){root.setAttribute('data-theme',d?'dark':'light');
+    b.textContent=d?'Chế độ sáng':'Chế độ đọc tối';b.setAttribute('aria-pressed',d?'true':'false');
+    try{localStorage.setItem('bmvdn-theme',d?'dark':'light')}catch(e){}}
+  var saved='light';try{saved=localStorage.getItem('bmvdn-theme')||'light'}catch(e){}
+  set(saved==='dark');
+  b.addEventListener('click',function(){set(root.getAttribute('data-theme')!=='dark')});
+  var p=document.getElementById('printBtn'); if(p)p.addEventListener('click',function(){print()});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1909 @@
+<!DOCTYPE html>
+<html lang="vi" class="chap" data-c="7">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Giải thoát khỏi tâm trí — Bí mật vĩ đại nhất | Rhonda Byrne</title>
+<style>/* ============================================================
+   BÍ MẬT VĨ ĐẠI NHẤT — ngôn ngữ thiết kế "màu mè"
+   8 màu luân phiên · bút dạ quang vàng cố định · emoji iPhone
+   ============================================================ */
+:root{
+  /* --- 8 màu chủ đề (hệ màu iOS) --- */
+  --c1:#FF3B30; --c1l:#FFE9E7; --c1b:#FFC7C2;   /* đỏ      */
+  --c2:#FF8A00; --c2l:#FFF1DF; --c2b:#FFD6A3;   /* cam     */
+  --c3:#E8A500; --c3l:#FFF8DC; --c3b:#FFE48A;   /* vàng    */
+  --c4:#28B446; --c4l:#E6F8EA; --c4b:#A8E6B6;   /* xanh lá */
+  --c5:#00B3A6; --c5l:#DFF7F5; --c5b:#95E3DD;   /* xanh ngọc */
+  --c6:#0A84FF; --c6l:#E4F0FF; --c6b:#AED3FF;   /* xanh dương */
+  --c7:#9B51E0; --c7l:#F3E9FD; --c7b:#D9BCF5;   /* tím     */
+  --c8:#FF2D78; --c8l:#FFE7EF; --c8b:#FFBDD3;   /* hồng    */
+
+  /* --- màu nhấn của trang (build gán qua data-c) --- */
+  --ac:var(--c6); --acl:var(--c6l); --acb:var(--c6b);
+
+  /* --- bút dạ quang: CỐ ĐỊNH, không đổi theo chương --- */
+  --hl1:#FFE600; --hl2:#FFD400; --hl-ink:#2B2200;
+
+  /* --- nền, chữ, khung --- */
+  --bg:#FBF9FF; --card:#FFFFFF; --soft:#F4F3FA;
+  --ink:#1C1B2E; --ink2:#67657F; --ink3:#9A98AE;
+  --rule:#E8E6F2;
+  --r:24px; --r2:16px; --r3:999px;
+  --sh:0 1px 2px rgba(28,27,46,.04), 0 10px 30px rgba(28,27,46,.07);
+  --sh2:0 2px 6px rgba(28,27,46,.06), 0 18px 48px rgba(28,27,46,.10);
+
+  /* --- font: emoji Apple đứng đầu mọi stack --- */
+  --emo:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji","Twemoji Mozilla",sans-serif;
+  --ui:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,"Noto Sans",Arial,
+       "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif;
+  --serif:"Times New Roman",Tinos,"Liberation Serif","Noto Serif",Times,serif;
+
+  --fs:18px;
+}
+html[data-theme="dark"]{
+  --c1:#FF6961; --c1l:#3A1E1C; --c1b:#5E2E29;
+  --c2:#FFA64D; --c2l:#3A2A14; --c2b:#5E4320;
+  --c3:#FFD24D; --c3l:#3A3316; --c3b:#5E5122;
+  --c4:#52DD6E; --c4l:#15311C; --c4b:#24512F;
+  --c5:#35D6C8; --c5l:#10322F; --c5b:#1D524D;
+  --c6:#4DA3FF; --c6l:#132B44; --c6b:#1E466F;
+  --c7:#C185F5; --c7l:#2A1A3C; --c7b:#452C61;
+  --c8:#FF6AA0; --c8l:#3B1727; --c8b:#5F2641;
+  --bg:#0F0E17; --card:#1A1927; --soft:#232232;
+  --ink:#F2F0FF; --ink2:#A9A6C4; --ink3:#7D7A99;
+  --rule:#2E2C42;
+  --sh:0 1px 2px rgba(0,0,0,.4), 0 10px 30px rgba(0,0,0,.35);
+  --sh2:0 2px 6px rgba(0,0,0,.45), 0 18px 48px rgba(0,0,0,.45);
+}
+
+/* --- bảng gán màu nhấn theo chương --- */
+html[data-c="1"]{--ac:var(--c1);--acl:var(--c1l);--acb:var(--c1b)}
+html[data-c="2"]{--ac:var(--c2);--acl:var(--c2l);--acb:var(--c2b)}
+html[data-c="3"]{--ac:var(--c3);--acl:var(--c3l);--acb:var(--c3b)}
+html[data-c="4"]{--ac:var(--c4);--acl:var(--c4l);--acb:var(--c4b)}
+html[data-c="5"]{--ac:var(--c5);--acl:var(--c5l);--acb:var(--c5b)}
+html[data-c="6"]{--ac:var(--c6);--acl:var(--c6l);--acb:var(--c6b)}
+html[data-c="7"]{--ac:var(--c7);--acl:var(--c7l);--acb:var(--c7b)}
+html[data-c="8"]{--ac:var(--c8);--acl:var(--c8l);--acb:var(--c8b)}
+
+/* --- bí danh cho SVG trong nội dung (giữ nguyên tên biến cũ) --- */
+:root,html[data-theme="dark"]{
+  --gold:var(--c3); --gold-l:var(--c3l);
+  --green:var(--c4); --green-l:var(--c4l);
+  --blue:var(--c6); --blue-l:var(--c6l);
+  --purple:var(--c7); --purple-l:var(--c7l);
+  --red:var(--c1); --red-l:var(--c1l);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:84px; -webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:var(--ui); font-size:var(--fs); line-height:1.75;
+  text-rendering:optimizeLegibility; overflow-x:hidden;
+}
+html[data-fs="l"]{--fs:20px}
+html[data-fs="xl"]{--fs:22px}
+p{margin:0 0 1.1em}
+a{color:var(--ac)}
+.wrap{max-width:860px; margin:0 auto; padding:0 20px}
+::selection{background:var(--hl1); color:var(--hl-ink)}
+
+/* ---------- nền nhiều màu + blob trôi ---------- */
+body::before{
+  content:""; position:fixed; inset:0; z-index:-2; pointer-events:none;
+  background:
+    radial-gradient(900px 600px at 8% -5%,  rgba(10,132,255,.10), transparent 60%),
+    radial-gradient(800px 600px at 95% 5%,  rgba(255,45,120,.09), transparent 60%),
+    radial-gradient(900px 700px at 50% 108%,rgba(155,81,224,.10), transparent 60%),
+    radial-gradient(700px 500px at -5% 70%, rgba(0,179,166,.09), transparent 60%);
+}
+#blobs{position:fixed; inset:0; z-index:-1; pointer-events:none; overflow:hidden; filter:blur(60px); opacity:.5}
+html[data-theme="dark"] #blobs{opacity:.34}
+#blobs i{position:absolute; display:block; border-radius:50%}
+#blobs i:nth-child(1){width:46vmin;height:46vmin;left:-8vmin;top:4vmin;  background:var(--c6); animation:drift1 34s ease-in-out infinite}
+#blobs i:nth-child(2){width:38vmin;height:38vmin;right:-6vmin;top:18vmin;background:var(--c8); animation:drift2 41s ease-in-out infinite}
+#blobs i:nth-child(3){width:42vmin;height:42vmin;left:24vmin;bottom:-12vmin;background:var(--c7); animation:drift3 47s ease-in-out infinite}
+#blobs i:nth-child(4){width:30vmin;height:30vmin;right:14vmin;bottom:4vmin; background:var(--c5); animation:drift1 39s ease-in-out infinite reverse}
+#blobs i:nth-child(5){width:26vmin;height:26vmin;left:52vmin;top:-8vmin;   background:var(--c3); animation:drift2 44s ease-in-out infinite}
+@keyframes drift1{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(8vmin,6vmin) scale(1.12)}66%{transform:translate(-5vmin,10vmin) scale(.94)}}
+@keyframes drift2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-9vmin,8vmin) scale(1.15)}}
+@keyframes drift3{0%,100%{transform:translate(0,0) scale(1)}40%{transform:translate(7vmin,-7vmin) scale(.9)}75%{transform:translate(-6vmin,4vmin) scale(1.08)}}
+
+/* ---------- thanh tiến độ + toolbar ---------- */
+#progress{position:fixed; top:0; left:0; height:4px; width:0%; z-index:70;
+  background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3),var(--c4),var(--c5),var(--c6),var(--c7),var(--c8));
+  border-radius:0 4px 4px 0}
+#toolbar{position:sticky; top:0; z-index:60; backdrop-filter:saturate(180%) blur(14px);
+  background:color-mix(in srgb,var(--bg) 78%, transparent); border-bottom:1px solid var(--rule)}
+#toolbar .wrap{display:flex; gap:8px; flex-wrap:wrap; align-items:center; padding:10px 20px}
+#toolbar .tb-title{font-size:12.5px; font-weight:800; letter-spacing:.04em; color:var(--ink2);
+  margin-right:auto; display:flex; align-items:center; gap:7px}
+#toolbar .tb-title::before{content:"📘"; font-family:var(--emo); font-size:15px}
+.btn{font:inherit; font-size:13px; font-weight:650; line-height:1.2; padding:9px 15px; cursor:pointer;
+  background:var(--card); color:var(--ink); border:1.5px solid var(--rule); border-radius:var(--r3);
+  text-decoration:none; display:inline-flex; align-items:center; gap:6px;
+  transition:transform .16s, border-color .16s, box-shadow .16s}
+.btn:hover{transform:translateY(-2px); border-color:var(--ac); box-shadow:0 6px 18px color-mix(in srgb,var(--ac) 26%, transparent)}
+#toolbar a.btn[href="index.html"]::before{content:"🗂️"; font-family:var(--emo)}
+#toolbar a.btn[href="#top"]::before{content:"⬆️"; font-family:var(--emo)}
+#themeBtn::before{content:"🌙"; font-family:var(--emo)}
+html[data-theme="dark"] #themeBtn::before{content:"☀️"}
+#printBtn::before{content:"🖨️"; font-family:var(--emo)}
+a:focus-visible,.btn:focus-visible,summary:focus-visible,[tabindex]:focus-visible{
+  outline:3px solid var(--ac); outline-offset:3px; border-radius:8px}
+
+/* ---------- HERO ---------- */
+header.book{
+  position:relative; overflow:hidden; text-align:center;
+  padding:66px 0 60px; margin-bottom:8px; color:#fff;
+  background:linear-gradient(115deg,#FF3B30,#FF8A00,#E8A500,#28B446,#00B3A6,#0A84FF,#9B51E0,#FF2D78);
+  background-size:300% 300%; animation:heroShift 26s ease infinite;
+}
+@keyframes heroShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+header.book::after{content:""; position:absolute; inset:0;
+  background:radial-gradient(120% 90% at 50% 120%, rgba(0,0,0,.34), transparent 70%)}
+header.book > .wrap{position:relative; z-index:2}
+header.book .kicker{display:inline-flex; align-items:center; gap:8px; margin:0 0 20px;
+  font-size:12px; font-weight:800; letter-spacing:.14em; text-transform:uppercase;
+  background:rgba(255,255,255,.22); border:1px solid rgba(255,255,255,.4);
+  padding:7px 16px; border-radius:var(--r3); backdrop-filter:blur(6px)}
+header.book .kicker::before{content:"🎨"; font-family:var(--emo); font-size:14px}
+header.book h1{margin:0; font-size:clamp(34px,7.6vw,68px); line-height:1.08; font-weight:850;
+  letter-spacing:-.02em; text-shadow:0 4px 26px rgba(0,0,0,.3)}
+header.book .chapno{display:inline-block; margin:0 0 14px; font-size:13px; font-weight:800;
+  letter-spacing:.2em; text-transform:uppercase; background:rgba(255,255,255,.95);
+  color:#1C1B2E; padding:6px 18px; border-radius:var(--r3)}
+header.book .sub{max-width:620px; margin:20px auto 0; font-size:17.5px; line-height:1.7;
+  color:rgba(255,255,255,.95); font-style:normal}
+header.book .author{display:inline-flex; align-items:center; gap:8px; margin-top:26px;
+  font-size:13px; font-weight:750; letter-spacing:.1em; text-transform:uppercase;
+  color:#fff; background:rgba(0,0,0,.22); padding:8px 18px; border-radius:var(--r3)}
+header.book .author::before{content:"✍️"; font-family:var(--emo); font-size:14px}
+.rule-orn{display:flex; align-items:center; justify-content:center; gap:10px; margin:24px auto 0; max-width:300px}
+.rule-orn span{height:3px; flex:1; border-radius:3px; background:linear-gradient(90deg,transparent,#fff)}
+.rule-orn span:last-child{background:linear-gradient(90deg,#fff,transparent)}
+.rule-orn b{font-size:0; width:auto}
+.rule-orn b::after{content:"✨"; font-family:var(--emo); font-size:20px; display:block;
+  animation:twinkle 3.6s ease-in-out infinite}
+@keyframes twinkle{0%,100%{transform:scale(1) rotate(0)}50%{transform:scale(1.28) rotate(16deg)}}
+/* emoji trang trí bay lơ lửng */
+header.book .wrap::before,header.book .wrap::after{
+  font-family:var(--emo); position:absolute; font-size:36px; opacity:.85; pointer-events:none}
+header.book .wrap::before{content:"🔑"; left:2%;  top:6%;  animation:float1 9s ease-in-out infinite}
+header.book .wrap::after {content:"💡"; right:3%; bottom:4%; animation:float2 11s ease-in-out infinite}
+@keyframes float1{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-16px) rotate(8deg)}}
+@keyframes float2{0%,100%{transform:translateY(0) rotate(6deg)}50%{transform:translateY(-20px) rotate(-10deg)}}
+@media (max-width:700px){header.book .wrap::before,header.book .wrap::after{font-size:26px; opacity:.6}}
+
+/* ---------- nhãn pill ---------- */
+.tag{display:inline-flex; align-items:center; gap:7px; font-size:11.5px; font-weight:800;
+  letter-spacing:.12em; text-transform:uppercase; padding:6px 14px; border-radius:var(--r3);
+  background:var(--acl); color:var(--ac); border:1.5px solid var(--acb); margin-bottom:12px}
+
+/* ---------- khối giới thiệu trang mục lục ---------- */
+.hub-intro{position:relative; overflow:hidden; background:var(--card); border:1.5px solid var(--rule);
+  border-radius:var(--r); padding:30px 30px 26px; margin:30px 0 40px; box-shadow:var(--sh)}
+.hub-intro::before{content:""; position:absolute; left:0; right:0; top:0; height:6px;
+  background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3),var(--c4),var(--c5),var(--c6),var(--c7),var(--c8))}
+.hub-intro .tag::before{content:"📊"; font-family:var(--emo); font-size:13px}
+.hub-intro p:last-child{margin-bottom:0}
+.hub-intro p{font-size:16.5px; color:var(--ink2); line-height:1.75}
+.hub-intro p strong{color:var(--ink)}
+.hub-intro code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:.9em;
+  background:var(--soft); border:1px solid var(--rule); border-radius:8px; padding:2px 7px; color:var(--c7)}
+.meter{height:14px; border-radius:var(--r3); background:var(--soft); overflow:hidden;
+  margin:16px 0 10px; border:1px solid var(--rule)}
+.meter i{display:block; height:100%; border-radius:var(--r3); position:relative;
+  background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3),var(--c4),var(--c5),var(--c6),var(--c7),var(--c8));
+  background-size:200% 100%; animation:meterShift 8s linear infinite}
+@keyframes meterShift{0%{background-position:0 0}100%{background-position:200% 0}}
+.meter-lbl{font-size:15px; font-weight:650; color:var(--ink2); margin:0 0 4px}
+.meter-lbl::before{content:"🚀 "; font-family:var(--emo); font-size:16px}
+.meter-lbl strong{color:var(--ink); font-size:16px}
+
+/* ---------- nhóm phần ---------- */
+.group{margin:52px 0}
+.group > h2{display:inline-flex; align-items:center; gap:9px; margin:0 0 8px;
+  font-size:15px; font-weight:850; letter-spacing:.1em; text-transform:uppercase;
+  color:#fff; padding:9px 20px; border-radius:var(--r3); box-shadow:var(--sh)}
+.group:nth-of-type(1) > h2{background:linear-gradient(100deg,var(--c6),var(--c5))}
+.group:nth-of-type(2) > h2{background:linear-gradient(100deg,var(--c7),var(--c8))}
+.group:nth-of-type(3) > h2{background:linear-gradient(100deg,var(--c2),var(--c3))}
+.group:nth-of-type(1) > h2::before{content:"🌅"; font-family:var(--emo); font-size:17px}
+.group:nth-of-type(2) > h2::before{content:"📚"; font-family:var(--emo); font-size:17px}
+.group:nth-of-type(3) > h2::before{content:"🎁"; font-family:var(--emo); font-size:17px}
+.group > .gsub{font-size:15.5px; color:var(--ink2); margin:0 0 22px; max-width:640px}
+
+/* ---------- thẻ chương ---------- */
+.cards{display:grid; grid-template-columns:repeat(auto-fill,minmax(272px,1fr)); gap:18px}
+.card{position:relative; overflow:hidden; display:block; background:var(--card);
+  border:1.5px solid var(--rule); border-radius:var(--r); padding:26px 24px 22px;
+  text-decoration:none; color:var(--ink); box-shadow:var(--sh);
+  transition:transform .2s cubic-bezier(.2,.8,.3,1), box-shadow .2s, border-color .2s}
+.card::before{content:""; position:absolute; left:0; right:0; top:0; height:6px;
+  background:linear-gradient(90deg,var(--cc),color-mix(in srgb,var(--cc) 45%, #fff))}
+.card::after{content:attr(data-emo); font-family:var(--emo); position:absolute; right:18px; top:20px;
+  font-size:30px; line-height:1; transition:transform .25s}
+.card:hover{transform:translateY(-6px); border-color:var(--cc);
+  box-shadow:0 10px 20px color-mix(in srgb,var(--cc) 14%, transparent), 0 26px 56px color-mix(in srgb,var(--cc) 20%, transparent)}
+.card:hover::after{transform:scale(1.22) rotate(-10deg)}
+.card .num{display:block; font-size:12px; font-weight:850; letter-spacing:.14em;
+  text-transform:uppercase; margin:0 0 10px; color:var(--cc)}
+.card h3{margin:0 0 10px; font-size:21px; line-height:1.3; font-weight:800; letter-spacing:-.01em;
+  padding-right:44px}
+.card .sub{margin:0; font-size:14.8px; line-height:1.65; color:var(--ink2)}
+.card .status{display:inline-flex; align-items:center; gap:6px; margin-top:16px; font-size:11.5px;
+  font-weight:800; letter-spacing:.08em; text-transform:uppercase; padding:6px 13px;
+  border-radius:var(--r3); background:var(--c4l); color:var(--c4); border:1.5px solid var(--c4b)}
+.card .status::before{content:"✅"; font-family:var(--emo); font-size:12px}
+.card.off{opacity:.62; box-shadow:none; cursor:default; background:var(--soft)}
+.card.off::before{background:var(--rule)}
+.card.off::after{filter:grayscale(1); opacity:.5}
+.card.off:hover{transform:none; border-color:var(--rule); box-shadow:none}
+.card.off .num{color:var(--ink3)}
+.card.off .status{background:transparent; color:var(--ink3); border:1.5px dashed var(--rule)}
+.card.off .status::before{content:"🕓"}
+/* 8 màu luân phiên — build gán data-c cho từng thẻ */
+.card[data-c="1"]{--cc:var(--c1)} .card[data-c="2"]{--cc:var(--c2)}
+.card[data-c="3"]{--cc:var(--c3)} .card[data-c="4"]{--cc:var(--c4)}
+.card[data-c="5"]{--cc:var(--c5)} .card[data-c="6"]{--cc:var(--c6)}
+.card[data-c="7"]{--cc:var(--c7)} .card[data-c="8"]{--cc:var(--c8)}
+
+/* ---------- footer ---------- */
+footer.pagefoot{margin-top:60px; padding:30px 0 90px; text-align:center;
+  font-size:14px; color:var(--ink2); line-height:1.8; border-top:1.5px solid var(--rule)}
+footer.pagefoot strong{color:var(--ink)}
+footer.pagefoot p::before{content:"📘"; font-family:var(--emo); display:block; font-size:24px; margin-bottom:10px}
+
+/* ---------- nút nổi ---------- */
+#fabs{position:fixed; right:16px; bottom:16px; z-index:65; display:flex; flex-direction:column; gap:10px}
+#fabs button{width:50px; height:50px; border-radius:50%; cursor:pointer; border:1.5px solid var(--rule);
+  background:var(--card); box-shadow:var(--sh2); font-family:var(--emo); font-size:21px; line-height:1;
+  display:grid; place-items:center; transition:transform .18s, box-shadow .18s}
+#fabs button:hover{transform:translateY(-3px) scale(1.07)}
+#fabs button[aria-pressed="true"]{background:var(--acl); border-color:var(--ac)}
+#fabs .fab-top{opacity:0; pointer-events:none; transition:opacity .25s}
+#fabs .fab-top.on{opacity:1; pointer-events:auto}
+@media (max-width:560px){
+  #fabs{right:10px; bottom:10px; gap:8px}
+  #fabs button{width:42px;height:42px;font-size:17px}
+  header.book{padding:48px 0 44px}
+  header.book .kicker{font-size:10.5px; letter-spacing:.08em; padding:6px 12px}
+  header.book .author{font-size:11.5px}
+  .hub-intro{padding:24px 20px 22px}
+  .card{padding:22px 20px 20px}
+  .group > h2{font-size:13px; padding:8px 16px}
+}
+
+/* ---------- giảm chuyển động ---------- */
+html.still *, html.still *::before, html.still *::after{animation:none !important; transition:none !important}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none !important; transition:none !important}
+}
+
+/* ---------- hiện dần khi cuộn ---------- */
+html.js .rv{opacity:0; transform:translateY(16px)}
+html.js .rv.in{opacity:1; transform:none; transition:opacity .55s ease, transform .55s cubic-bezier(.2,.8,.3,1)}
+
+/* ---------- in ---------- */
+@media print{
+  :root{--bg:#fff;--card:#fff;--soft:#fff}
+  html,body{background:#fff !important; color:#000}
+  *{-webkit-print-color-adjust:exact; print-color-adjust:exact}
+  #toolbar,#progress,#fabs,#blobs,body::before{display:none !important}
+  header.book{background:#fff !important; color:#000; animation:none; border-bottom:4px solid var(--c7); padding:0 0 18pt}
+  header.book h1,header.book .sub,header.book .author,header.book .kicker{color:#000}
+  header.book::after{display:none}
+  .card,.hub-intro{break-inside:avoid; box-shadow:none}
+  @page{size:A4; margin:16mm 14mm}
+}
+
+/* ============================================================
+   TRANG CHƯƠNG
+   ============================================================ */
+/* màu hero theo chương: màu nhấn + 3 màu lân cận */
+html[data-c="1"]{--h1:var(--c1);--h2:var(--c2);--h3:var(--c8);--h4:var(--c7)}
+html[data-c="2"]{--h1:var(--c2);--h2:var(--c3);--h3:var(--c1);--h4:var(--c8)}
+html[data-c="3"]{--h1:var(--c3);--h2:var(--c2);--h3:var(--c8);--h4:var(--c1)}
+html[data-c="4"]{--h1:var(--c4);--h2:var(--c5);--h3:var(--c3);--h4:var(--c6)}
+html[data-c="5"]{--h1:var(--c5);--h2:var(--c6);--h3:var(--c4);--h4:var(--c7)}
+html[data-c="6"]{--h1:var(--c6);--h2:var(--c7);--h3:var(--c5);--h4:var(--c8)}
+html[data-c="7"]{--h1:var(--c7);--h2:var(--c8);--h3:var(--c6);--h4:var(--c2)}
+html[data-c="8"]{--h1:var(--c8);--h2:var(--c7);--h3:var(--c2);--h4:var(--c1)}
+html.chap header.book{
+  background:linear-gradient(120deg,var(--h1),var(--h2),var(--h3),var(--h4),var(--h1));
+  background-size:300% 300%}
+html.chap header.book .wrap::before{content:attr(data-e1)}
+html.chap header.book .wrap::after {content:attr(data-e2)}
+html.chap header.book h1{font-size:clamp(38px,8vw,76px)}
+header.book .chapno::before{content:"📖 "; font-family:var(--emo)}
+
+/* ô số liệu */
+.stats{display:grid; grid-template-columns:repeat(5,1fr); gap:12px; max-width:720px; margin:30px auto 0}
+.stat{background:rgba(255,255,255,.2); border:1px solid rgba(255,255,255,.42); border-radius:20px;
+  padding:14px 8px 12px; backdrop-filter:blur(8px); color:#fff; text-align:center;
+  transition:transform .2s}
+.stat:hover{transform:translateY(-4px) scale(1.04)}
+.stat .se{display:block; font-family:var(--emo); font-size:24px; line-height:1; margin-bottom:6px}
+.stat b{display:block; font-size:28px; font-weight:850; line-height:1.1; font-variant-numeric:tabular-nums}
+.stat small{display:block; font-size:11.5px; font-weight:700; letter-spacing:.04em; opacity:.95; margin-top:3px; line-height:1.35}
+@media (max-width:640px){.stats{grid-template-columns:repeat(3,1fr)} .stat:nth-child(n+4){grid-column:span 1}}
+@media (max-width:380px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+/* chỉ báo phần đang đọc trên toolbar */
+#nowsec{display:none; font-size:12.5px; font-weight:750; color:var(--ac); background:var(--acl);
+  border:1.5px solid var(--acb); padding:6px 12px; border-radius:var(--r3); max-width:340px;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+#nowsec.on{display:inline-block}
+#nowsec::before{content:"📍 "; font-family:var(--emo)}
+@media (max-width:820px){#nowsec{order:9; max-width:100%; flex-basis:100%}}
+
+/* ---------- mục lục dính bên trái ---------- */
+#rail{display:none}
+@media (min-width:1330px){
+  #rail{display:block; position:fixed; top:92px; left:max(14px, calc(50% - 430px - 290px)); width:262px;
+    max-height:calc(100vh - 116px); overflow:auto; z-index:40; padding:16px 12px 14px;
+    background:color-mix(in srgb,var(--card) 82%, transparent); backdrop-filter:blur(14px);
+    border:1.5px solid var(--rule); border-radius:var(--r); box-shadow:var(--sh);
+    opacity:0; transform:translateX(-12px); transition:opacity .3s, transform .3s; pointer-events:none}
+  #rail.on{opacity:1; transform:none; pointer-events:auto}
+}
+#rail .rt{font-size:11.5px; font-weight:850; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--ink2); margin:0 6px 10px}
+#rail .rt::before{content:"🧭 "; font-family:var(--emo)}
+#rail a{display:flex; gap:9px; align-items:flex-start; padding:7px 9px; border-radius:12px;
+  text-decoration:none; color:var(--ink2); font-size:13.2px; line-height:1.4; font-weight:600;
+  transition:background .2s, color .2s}
+#rail a .n{flex:0 0 auto; min-width:24px; height:24px; border-radius:8px; display:grid; place-items:center;
+  font-size:11px; font-weight:850; background:var(--soft); color:var(--ink2); transition:all .2s}
+#rail a:hover{background:var(--soft); color:var(--ink)}
+#rail a.act{background:color-mix(in srgb,var(--rc) 14%, transparent); color:var(--ink)}
+#rail a.act .n{background:var(--rc); color:#fff; transform:scale(1.08)}
+
+/* ---------- bản đồ chương ---------- */
+.box{position:relative; border-radius:var(--r); padding:28px 28px 24px; margin:30px 0;
+  background:var(--card); border:1.5px solid var(--rule); box-shadow:var(--sh)}
+.box.map::before,nav.toc::before{content:""; position:absolute; left:0; right:0; top:0; height:6px;
+  border-radius:var(--r) var(--r) 0 0;
+  background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3),var(--c4),var(--c5),var(--c6),var(--c7),var(--c8))}
+.map .tag::before{content:"🗺️"; font-family:var(--emo); font-size:13px}
+.map h2,nav.toc h2{font-size:24px; font-weight:850; letter-spacing:-.01em; margin:0 0 4px; line-height:1.3}
+.map .meta{font-size:14px; font-weight:650; color:var(--ink2); margin:0 0 18px}
+.map .meta::before{content:"⏱️ "; font-family:var(--emo)}
+.map .goal{background:linear-gradient(120deg,var(--c3l),var(--c2l)); border:1.5px solid var(--c3b);
+  border-radius:var(--r2); padding:16px 18px 16px 52px; margin:0 0 20px; font-size:16.5px; position:relative}
+.map .goal::before{content:"🎯"; font-family:var(--emo); position:absolute; left:16px; top:15px; font-size:22px}
+.stages{list-style:none; margin:0; padding:0; counter-reset:st; display:grid; gap:8px}
+.stages li{counter-increment:st; position:relative; padding:9px 12px 9px 52px; font-size:16px; line-height:1.6;
+  border-radius:14px; background:var(--soft); transition:transform .18s, background .18s}
+.stages li:hover{transform:translateX(5px); background:color-mix(in srgb,var(--sc) 12%, var(--soft))}
+.stages li::before{content:counter(st); position:absolute; left:10px; top:9px; width:30px; height:30px;
+  border-radius:10px; background:var(--sc); color:#fff; font-size:13px; font-weight:850;
+  display:grid; place-items:center; box-shadow:0 4px 12px color-mix(in srgb,var(--sc) 40%, transparent)}
+.stages li:nth-child(8n+1){--sc:var(--c1)} .stages li:nth-child(8n+2){--sc:var(--c2)}
+.stages li:nth-child(8n+3){--sc:var(--c3)} .stages li:nth-child(8n+4){--sc:var(--c4)}
+.stages li:nth-child(8n+5){--sc:var(--c5)} .stages li:nth-child(8n+6){--sc:var(--c6)}
+.stages li:nth-child(8n+7){--sc:var(--c7)} .stages li:nth-child(8n+8){--sc:var(--c8)}
+.howto{margin-top:20px; padding:14px 16px 14px 48px; border-radius:var(--r2); background:var(--soft);
+  font-size:14.5px; color:var(--ink2); line-height:1.7; position:relative}
+.howto::before{content:"👀"; font-family:var(--emo); position:absolute; left:15px; top:13px; font-size:19px}
+
+/* ---------- mục lục chương ---------- */
+nav.toc ol{list-style:none; margin:16px 0 0; padding:0; display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:10px}
+nav.toc h2::before{content:"🧭 "; font-family:var(--emo)}
+nav.toc li{margin:0}
+nav.toc a{display:flex; gap:11px; align-items:center; height:100%; padding:11px 14px; border-radius:16px;
+  text-decoration:none; color:var(--ink); font-size:15px; font-weight:650; line-height:1.4;
+  background:color-mix(in srgb,var(--sc) 9%, var(--card)); border:1.5px solid color-mix(in srgb,var(--sc) 26%, transparent);
+  transition:transform .18s, box-shadow .18s}
+nav.toc a:hover{transform:translateY(-3px); box-shadow:0 10px 24px color-mix(in srgb,var(--sc) 24%, transparent)}
+nav.toc a .n{flex:0 0 auto; width:32px; height:32px; border-radius:10px; display:grid; place-items:center;
+  background:var(--sc); color:#fff; font-size:12.5px; font-weight:850}
+nav.toc li:nth-child(8n+1){--sc:var(--c1)} nav.toc li:nth-child(8n+2){--sc:var(--c2)}
+nav.toc li:nth-child(8n+3){--sc:var(--c3)} nav.toc li:nth-child(8n+4){--sc:var(--c4)}
+nav.toc li:nth-child(8n+5){--sc:var(--c5)} nav.toc li:nth-child(8n+6){--sc:var(--c6)}
+nav.toc li:nth-child(8n+7){--sc:var(--c7)} nav.toc li:nth-child(8n+8){--sc:var(--c8)}
+
+aside.srctoc{border-left:6px solid var(--c7)}
+aside.srctoc ul{list-style:none; margin:0; padding:0}
+aside.srctoc li{padding:5px 0 5px 26px; position:relative; font-size:16px}
+aside.srctoc li::before{content:"📑"; font-family:var(--emo); position:absolute; left:0; top:5px; font-size:14px}
+
+/* ---------- phần (section) — mỗi phần một màu ---------- */
+main > section{--sc:var(--c6); --scl:var(--c6l); --scb:var(--c6b); margin:72px 0; scroll-margin-top:84px}
+main > section:nth-of-type(8n+1){--sc:var(--c1);--scl:var(--c1l);--scb:var(--c1b)}
+main > section:nth-of-type(8n+2){--sc:var(--c2);--scl:var(--c2l);--scb:var(--c2b)}
+main > section:nth-of-type(8n+3){--sc:var(--c3);--scl:var(--c3l);--scb:var(--c3b)}
+main > section:nth-of-type(8n+4){--sc:var(--c4);--scl:var(--c4l);--scb:var(--c4b)}
+main > section:nth-of-type(8n+5){--sc:var(--c5);--scl:var(--c5l);--scb:var(--c5b)}
+main > section:nth-of-type(8n+6){--sc:var(--c6);--scl:var(--c6l);--scb:var(--c6b)}
+main > section:nth-of-type(8n+7){--sc:var(--c7);--scl:var(--c7l);--scb:var(--c7b)}
+main > section:nth-of-type(8n+8){--sc:var(--c8);--scl:var(--c8l);--scb:var(--c8b)}
+
+.sec-head{display:flex; gap:18px; align-items:center; margin-bottom:14px}
+.badge{flex:0 0 auto; position:relative; width:62px; height:62px; border-radius:20px;
+  display:grid; place-items:center; color:#fff; font-size:22px; font-weight:900;
+  background:linear-gradient(135deg,var(--sc),color-mix(in srgb,var(--sc) 55%, #fff));
+  box-shadow:0 10px 26px color-mix(in srgb,var(--sc) 40%, transparent); transform:rotate(-6deg)}
+.badge::after{content:""; position:absolute; inset:-6px; border-radius:24px; border:2.5px solid var(--sc);
+  opacity:0; animation:ring 2.8s ease-out infinite}
+@keyframes ring{0%{opacity:.6; transform:scale(.85)}80%,100%{opacity:0; transform:scale(1.22)}}
+.sec-head h2{margin:0; font-size:clamp(25px,4.2vw,36px); line-height:1.22; font-weight:850; letter-spacing:-.015em}
+.sec-head h2{background:linear-gradient(100deg,var(--ink) 30%, var(--sc)); -webkit-background-clip:text;
+  background-clip:text; color:transparent}
+@media print{.sec-head h2{color:var(--ink); background:none}}
+
+.willlearn{position:relative; margin:4px 0 24px; padding:15px 18px 15px 56px; border-radius:var(--r2);
+  background:var(--scl); border:1.5px solid var(--scb); font-size:15.5px; color:var(--ink); line-height:1.7}
+.willlearn::before{content:"🎯"; font-family:var(--emo); position:absolute; left:17px; top:14px; font-size:22px;
+  animation:bob 3.4s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.willlearn b{color:var(--sc); font-weight:850}
+.willlearn em{color:var(--ink2)}
+
+/* thân bài — "phần thân màu kem" */
+.body-card{position:relative; background:#FFFCF4; border:1.5px solid #F1E8D2; border-radius:var(--r);
+  padding:30px 32px 14px; box-shadow:var(--sh); margin:22px 0; font-size:var(--fs); line-height:1.82}
+html[data-theme="dark"] .body-card{background:#1F1C17; border-color:#3A3326}
+.body-card::before{content:""; position:absolute; left:0; top:22px; bottom:22px; width:5px;
+  border-radius:0 5px 5px 0; background:linear-gradient(180deg,var(--sc),color-mix(in srgb,var(--sc) 35%, transparent))}
+@media (max-width:600px){.body-card{padding:22px 20px 10px}}
+.body-card h3{font-size:18px; font-weight:850; color:var(--sc); margin:26px 0 10px}
+.body-card h3:first-child{margin-top:0}
+
+/* ---------- BÚT DẠ QUANG VÀNG — cố định ---------- */
+mark{color:var(--hl-ink); padding:.04em .18em; margin:0 -.06em; border-radius:.3em;
+  -webkit-box-decoration-break:clone; box-decoration-break:clone;
+  background:linear-gradient(100deg,var(--hl1),var(--hl2)) no-repeat 0 0 / 100% 100%}
+html.js mark{background-size:0% 100%; transition:background-size .8s cubic-bezier(.6,.1,.2,1)}
+html.js mark.lit,html.still mark{background-size:100% 100%}
+html.js mark:not(.lit){color:inherit}
+html.js mark.lit{color:var(--hl-ink); transition:background-size .8s cubic-bezier(.6,.1,.2,1), color .3s .2s}
+mark.flash{animation:flash 1.4s ease 2}
+@keyframes flash{50%{box-shadow:0 0 0 6px color-mix(in srgb,var(--hl1) 55%, transparent)}}
+
+ul.dia{list-style:none; margin:0 0 1.1em; padding:0}
+ul.dia li{position:relative; padding:5px 0 5px 30px}
+ul.dia li::before{content:""; position:absolute; left:4px; top:.82em; width:11px; height:11px; border-radius:4px;
+  background:var(--sc,var(--ac)); transform:rotate(45deg); box-shadow:0 2px 6px color-mix(in srgb,var(--sc,var(--ac)) 40%, transparent)}
+ol.steps{padding-left:24px}
+ol.steps li{margin:0 0 10px}
+ol.steps li::marker{color:var(--sc); font-weight:850}
+
+/* ---------- TRÍCH DẪN — bóng chat có avatar ---------- */
+blockquote{--qc:var(--c6); position:relative; margin:28px 0; padding:0 0 0 66px; font-style:normal}
+blockquote[data-q="1"]{--qc:var(--c1)} blockquote[data-q="2"]{--qc:var(--c2)}
+blockquote[data-q="4"]{--qc:var(--c4)} blockquote[data-q="5"]{--qc:var(--c5)}
+blockquote[data-q="6"]{--qc:var(--c6)} blockquote[data-q="7"]{--qc:var(--c7)}
+blockquote[data-q="8"]{--qc:var(--c8)}
+blockquote::before{content:attr(data-ini); position:absolute; left:0; top:4px; width:50px; height:50px;
+  border-radius:50%; display:grid; place-items:center; color:#fff; font-size:16px; font-weight:850; letter-spacing:.02em;
+  background:linear-gradient(135deg,var(--qc),color-mix(in srgb,var(--qc) 55%, #fff));
+  box-shadow:0 6px 16px color-mix(in srgb,var(--qc) 38%, transparent), 0 0 0 3px var(--bg)}
+blockquote > .qbody{position:relative; background:var(--c3l); border:1.5px solid var(--c3b);
+  border-radius:6px var(--r) var(--r) var(--r); padding:16px 22px 16px; box-shadow:var(--sh)}
+blockquote > .qbody::before{content:""; position:absolute; left:-9px; top:16px; width:16px; height:16px;
+  background:var(--c3l); border-left:1.5px solid var(--c3b); border-bottom:1.5px solid var(--c3b);
+  transform:rotate(45deg); border-radius:0 0 0 4px}
+blockquote .qtag{display:inline-flex; align-items:center; gap:6px; font-size:10.5px; font-weight:850;
+  letter-spacing:.14em; text-transform:uppercase; padding:4px 11px; border-radius:var(--r3);
+  background:var(--hl1); color:var(--hl-ink); margin-bottom:10px}
+blockquote .qtag::before{content:"💬"; font-family:var(--emo); font-size:11.5px}
+blockquote p{margin:0 0 .65em; font-size:calc(var(--fs) + .5px); line-height:1.78}
+blockquote p:last-of-type{margin-bottom:.4em}
+blockquote cite{display:block; font-style:normal; font-size:14px; color:var(--ink2); margin-top:8px;
+  padding-top:10px; border-top:1.5px dashed var(--c3b)}
+blockquote cite b{color:var(--qc); font-weight:850; font-size:15px}
+.cpy{position:absolute; right:10px; top:10px; width:36px; height:36px; border-radius:12px; cursor:pointer;
+  border:1.5px solid var(--c3b); background:var(--card); display:grid; place-items:center;
+  font-family:var(--emo); font-size:16px; line-height:1; opacity:.6; transition:opacity .2s, transform .2s}
+.cpy::before{content:"📋"}
+.cpy.ok::before{content:"✅"}
+.cpy:hover,.cpy:focus-visible{opacity:1; transform:scale(1.1)}
+@media (max-width:560px){blockquote{padding-left:0} blockquote::before{position:relative; display:grid;
+  width:40px; height:40px; font-size:13px; margin:0 0 8px 6px} blockquote > .qbody::before{left:20px; top:-9px; transform:rotate(135deg)}}
+
+/* ---------- khái niệm ---------- */
+.concept{position:relative; background:linear-gradient(135deg,var(--c6l),var(--c5l)); border:1.5px solid var(--c6b);
+  border-radius:var(--r); padding:26px 26px 22px; margin:30px 0; box-shadow:var(--sh)}
+.concept .lbl,.example .lbl,.practice .lbl,.hint .lbl,.pause .lbl,.flow .lbl,.keyidea .lbl,figure.fig .fig-lbl{
+  display:inline-flex; align-items:center; gap:7px; font-size:11.5px; font-weight:850; letter-spacing:.12em;
+  text-transform:uppercase; padding:6px 14px; border-radius:var(--r3); margin-bottom:12px; color:#fff}
+.concept .lbl{background:var(--c6)}
+.concept .lbl::before{content:"🧠"; font-family:var(--emo); font-size:13px}
+.concept h4{font-size:24px; font-weight:850; margin:0 0 14px; line-height:1.3; color:var(--ink)}
+.concept dl{margin:0; display:grid; gap:10px}
+.concept dt{font-size:12.5px; font-weight:850; letter-spacing:.04em; color:var(--c6); margin:0}
+.concept dd{margin:-6px 0 0; font-size:16.5px; line-height:1.7; background:var(--card); border-radius:14px;
+  padding:11px 15px; border:1px solid var(--c6b)}
+.concept dt:nth-of-type(1)::before{content:"📘 "; font-family:var(--emo)}
+.concept dt:nth-of-type(2)::before{content:"🧩 "; font-family:var(--emo)}
+.concept dt:nth-of-type(3)::before{content:"⚠️ "; font-family:var(--emo)}
+
+/* ---------- ví dụ ---------- */
+.example{position:relative; border-radius:var(--r); padding:26px 26px 20px; margin:30px 0; background:var(--card);
+  border:2px solid transparent; box-shadow:var(--sh);
+  background:linear-gradient(var(--card),var(--card)) padding-box,
+             linear-gradient(120deg,var(--c2),var(--c8),var(--c7)) border-box}
+.example .lbl{background:linear-gradient(100deg,var(--c2),var(--c8))}
+.example .lbl::before{content:"💡"; font-family:var(--emo); font-size:13px}
+
+/* ---------- thực hành ---------- */
+.practice{position:relative; background:var(--c4l); border:1.5px solid var(--c4b); border-radius:var(--r);
+  padding:26px 26px 22px; margin:30px 0; box-shadow:var(--sh)}
+.practice .lbl{background:var(--c4)}
+.practice .lbl::before{content:"🧘"; font-family:var(--emo); font-size:13px}
+.notepad{margin-top:16px; border:2px dashed var(--c4b); border-radius:16px; padding:14px 16px; background:var(--card)}
+.notepad .nl{font-size:12.5px; font-weight:800; color:var(--c4); letter-spacing:.06em; text-transform:uppercase}
+.notepad .nl::before{content:"✍️ "; font-family:var(--emo)}
+.notepad .lines{height:16px; border-bottom:1.5px solid var(--rule); margin-top:16px}
+
+/* ---------- gợi ý (lời biên tập viên) ---------- */
+.hint{position:relative; background:var(--c7l); border:1.5px solid var(--c7b); border-radius:var(--r);
+  padding:24px 24px 18px; margin:28px 0; font-size:16.5px; box-shadow:var(--sh)}
+.hint .lbl{background:var(--c7)}
+.hint .lbl::before{content:"🪄"; font-family:var(--emo); font-size:13px}
+.hint p:last-child{margin-bottom:0}
+
+/* ---------- câu cốt lõi ---------- */
+.keyidea{position:relative; border-radius:var(--r); padding:28px 26px 20px; margin:30px 0;
+  background:radial-gradient(120% 140% at 0% 0%, var(--c3l), var(--card) 60%); border:2px solid var(--c3b); box-shadow:var(--sh)}
+.keyidea .lbl{background:linear-gradient(100deg,var(--c3),var(--c2))}
+.keyidea .lbl::before{content:"⭐"; font-family:var(--emo); font-size:13px}
+.keyidea p{font-size:calc(var(--fs) + 1px); font-weight:600}
+.keyidea p:last-child{margin-bottom:0}
+
+/* ---------- dừng lại 30 giây ---------- */
+.pause{position:relative; text-align:center; border-radius:var(--r); padding:30px 26px 28px; margin:34px 0;
+  background:linear-gradient(135deg,var(--c5l),var(--c6l),var(--c7l)); border:1.5px solid var(--c5b); box-shadow:var(--sh); overflow:hidden}
+.pause .lbl{background:var(--c5)}
+.pause .lbl::before{content:"⏳"; font-family:var(--emo); font-size:13px}
+.pause p{margin:0 auto; max-width:620px; font-size:calc(var(--fs) + 2px); font-weight:650; line-height:1.65}
+.pause .tmr{position:relative; width:74px; height:74px; margin:4px auto 14px; display:grid; place-items:center}
+.pause .tmr svg{position:absolute; inset:0; transform:rotate(-90deg)}
+.pause .tmr circle{fill:none; stroke-width:6}
+.pause .tmr .bg{stroke:color-mix(in srgb,var(--c5) 22%, transparent)}
+.pause .tmr .fg{stroke:var(--c5); stroke-linecap:round; stroke-dasharray:201; stroke-dashoffset:201}
+.pause.go .tmr .fg{animation:tmr 30s linear forwards}
+@keyframes tmr{to{stroke-dashoffset:0}}
+.pause .tmr::after{content:attr(data-s); font-size:21px; font-weight:900; color:var(--c5); font-variant-numeric:tabular-nums}
+.pause .tmr.done::after{content:"🌿"; font-family:var(--emo); font-size:26px}
+.pause::after{content:""; position:absolute; width:240px; height:240px; border-radius:50%; left:50%; top:50%;
+  margin:-120px 0 0 -120px; background:radial-gradient(circle,color-mix(in srgb,var(--c5) 22%, transparent),transparent 70%);
+  z-index:0; animation:breathe 8s ease-in-out infinite; pointer-events:none}
+.pause > *{position:relative; z-index:1}
+@keyframes breathe{0%,100%{transform:scale(.7); opacity:.5}50%{transform:scale(1.5); opacity:1}}
+
+/* ---------- mạch lập luận ---------- */
+.flow{position:relative; background:var(--card); border:1.5px solid var(--rule); border-radius:var(--r);
+  padding:26px 24px 24px; margin:32px 0; box-shadow:var(--sh)}
+.flow .lbl{background:linear-gradient(100deg,var(--c6),var(--c7))}
+.flow .lbl::before{content:"🔗"; font-family:var(--emo); font-size:13px}
+.flow-grid{display:flex; flex-wrap:wrap; align-items:stretch; gap:10px}
+.fstep{--fc:var(--c6); flex:1 1 170px; position:relative; border-radius:18px; padding:16px 16px 14px;
+  background:color-mix(in srgb,var(--fc) 9%, var(--card)); border:1.5px solid color-mix(in srgb,var(--fc) 32%, transparent);
+  transition:transform .2s, box-shadow .2s}
+.fstep:hover{transform:translateY(-4px); box-shadow:0 12px 26px color-mix(in srgb,var(--fc) 22%, transparent)}
+.flow-grid .fstep:nth-of-type(4n+1){--fc:var(--c1)} .flow-grid .fstep:nth-of-type(4n+2){--fc:var(--c2)}
+.flow-grid .fstep:nth-of-type(4n+3){--fc:var(--c6)} .flow-grid .fstep:nth-of-type(4n+4){--fc:var(--c4)}
+.fstep .k{display:block; font-size:11px; font-weight:850; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--fc); margin-bottom:6px}
+.fstep .v{font-size:15.5px; line-height:1.6; display:block}
+.farrow{display:flex; align-items:center; justify-content:center; color:transparent; font-size:0; width:22px; position:relative}
+.farrow::before{content:""; width:22px; height:22px; border-radius:50%; background:var(--ink);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12h12m-5-6 6 6-6 6' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;
+          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12h12m-5-6 6 6-6 6' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;
+  background:linear-gradient(90deg,var(--c6),var(--c8)); animation:nudge 1.6s ease-in-out infinite}
+@keyframes nudge{0%,100%{transform:translateX(-3px)}50%{transform:translateX(4px)}}
+@media (max-width:700px){
+  .flow-grid{flex-direction:column}
+  .farrow{width:100%; height:22px}
+  .farrow::before{transform:rotate(90deg); animation:nudgeV 1.6s ease-in-out infinite}
+}
+@keyframes nudgeV{0%,100%{transform:rotate(90deg) translateX(-3px)}50%{transform:rotate(90deg) translateX(4px)}}
+
+/* ---------- cặp đối chiếu & ngọn núi ---------- */
+ul.pairs{list-style:none; margin:0 0 1.1em; padding:0}
+ul.pairs li{display:flex; gap:10px; margin:0 0 10px; flex-wrap:wrap}
+ul.pairs .a,ul.pairs .b{flex:1 1 240px; border-radius:16px; padding:12px 16px; font-size:16px; line-height:1.6}
+ul.pairs .a{background:var(--soft); border:1.5px solid var(--rule)}
+ul.pairs .b{background:var(--c4l); border:1.5px solid var(--c4b)}
+ul.pairs .lbl-row{font-size:10.5px; font-weight:850; letter-spacing:.1em; text-transform:uppercase; color:var(--ink2); display:block; margin-bottom:3px}
+ol.mtn{list-style:none; margin:0; padding:0}
+ol.mtn li{--mc:var(--c6); background:color-mix(in srgb,var(--mc) 8%, var(--card)); border:1.5px solid color-mix(in srgb,var(--mc) 30%, transparent);
+  border-left:6px solid var(--mc); border-radius:6px 16px 16px 6px; padding:14px 18px; margin:0 0 10px}
+ol.mtn li:nth-child(1){--mc:var(--c1)} ol.mtn li:nth-child(2){--mc:var(--c2); margin-left:22px}
+ol.mtn li:nth-child(3){--mc:var(--c5); margin-left:44px} ol.mtn li:nth-child(4){--mc:var(--c4); margin-left:66px}
+ol.mtn li .lvl{display:block; font-size:11px; font-weight:850; letter-spacing:.1em; text-transform:uppercase; color:var(--mc); margin-bottom:5px}
+ol.mtn li .txt{font-size:16px; line-height:1.65}
+@media (max-width:620px){ol.mtn li:nth-child(2){margin-left:10px} ol.mtn li:nth-child(3){margin-left:20px} ol.mtn li:nth-child(4){margin-left:30px}}
+
+/* ---------- hình minh họa ---------- */
+figure.fig{position:relative; background:var(--card); border:1.5px solid var(--rule); border-radius:var(--r);
+  padding:24px 22px 18px; margin:34px 0; box-shadow:var(--sh); overflow:hidden}
+figure.fig::before{content:""; position:absolute; inset:0; pointer-events:none; opacity:.55;
+  background:radial-gradient(70% 60% at 100% 0%, color-mix(in srgb,var(--sc,var(--ac)) 12%, transparent), transparent 70%),
+             radial-gradient(60% 60% at 0% 100%, color-mix(in srgb,var(--c7) 9%, transparent), transparent 70%)}
+figure.fig > *{position:relative}
+figure.fig .fig-lbl{background:linear-gradient(100deg,var(--c8),var(--c7))}
+figure.fig .fig-lbl::before{content:"🎨"; font-family:var(--emo); font-size:13px}
+figure.fig svg{display:block; width:100%; height:auto; max-width:560px; margin:6px auto 0; overflow:visible}
+figure.fig figcaption{font-size:14.5px; color:var(--ink2); line-height:1.7; margin-top:16px; padding-top:14px;
+  border-top:1.5px dashed var(--rule)}
+figure.fig figcaption strong{color:var(--ink)}
+.svg-t{font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif; fill:var(--ink)}
+.svg-t2{font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif; fill:var(--ink2)}
+.svg-cap{font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif; font-weight:800; letter-spacing:.06em}
+.svg-w{font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif; fill:#fff; font-weight:800}
+.svg-e{font-family:var(--emo)}
+/* chuyển động trong SVG */
+.a-pulse{animation:aPulse 2.4s ease-in-out infinite; transform-box:fill-box; transform-origin:center}
+@keyframes aPulse{0%,100%{transform:scale(1); opacity:1}50%{transform:scale(1.25); opacity:.75}}
+.a-glow{animation:aGlow 3s ease-in-out infinite; transform-box:fill-box; transform-origin:center}
+@keyframes aGlow{0%,100%{opacity:.55; transform:scale(.94)}50%{opacity:1; transform:scale(1.06)}}
+.a-crumble{animation:aCrumble 9s cubic-bezier(.5,0,.7,.4) infinite; transform-box:fill-box; transform-origin:center}
+@keyframes aCrumble{0%,24%{transform:none; opacity:1}50%,86%{transform:translateY(64px) rotate(var(--rot,6deg)); opacity:0}87%{transform:none; opacity:0}100%{transform:none; opacity:1}}
+.a-spin{animation:aSpin 40s linear infinite; transform-box:view-box}
+.a-spin-r{animation:aSpin 40s linear infinite reverse; transform-box:fill-box; transform-origin:center}
+@keyframes aSpin{to{transform:rotate(360deg)}}
+.a-float{animation:aFloat 5s ease-in-out infinite; transform-box:fill-box}
+.a-float2{animation:aFloat 6.5s ease-in-out infinite reverse; transform-box:fill-box}
+@keyframes aFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.a-drift{animation:aDrift 9s ease-in-out infinite; transform-box:fill-box}
+@keyframes aDrift{0%,100%{transform:translateX(0)}50%{transform:translateX(16px)}}
+.a-dash{stroke-dasharray:6 7; animation:aDash 1.2s linear infinite}
+@keyframes aDash{to{stroke-dashoffset:-26}}
+.a-blink{animation:aBlink 2.6s ease-in-out infinite}
+@keyframes aBlink{0%,100%{opacity:1}50%{opacity:.25}}
+.a-rise{animation:aRise 4.5s ease-in-out infinite; transform-box:fill-box}
+@keyframes aRise{0%,100%{transform:translateY(10px); opacity:.55}50%{transform:translateY(-4px); opacity:1}}
+.a-fall{animation:aFall 4.5s ease-in infinite; transform-box:fill-box; transform-origin:center}
+@keyframes aFall{0%,30%{transform:translateY(0) rotate(0); opacity:1}80%,100%{transform:translateY(46px) rotate(18deg); opacity:0}}
+.a-sway{animation:aSway 4s ease-in-out infinite; transform-box:fill-box; transform-origin:50% 100%}
+@keyframes aSway{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
+.a-scan{animation:aScan 7s ease-in-out infinite; transform-box:view-box}
+.a-orbit{offset-rotate:0deg; animation:aOrbit 9s linear infinite}
+@keyframes aOrbit{from{offset-distance:0%}to{offset-distance:100%}}
+
+/* ---------- về đầu trang ---------- */
+.totop{display:block; text-align:right; margin:18px 0 0}
+.totop a{display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:750; color:var(--ink2);
+  text-decoration:none; border:1.5px solid var(--rule); border-radius:var(--r3); padding:7px 15px; background:var(--card)}
+.totop a:hover{border-color:var(--sc,var(--ac)); color:var(--sc,var(--ac))}
+
+/* ---------- tóm tắt gốc & bản đồ ghi nhớ ---------- */
+main > section#tom-tat-goc,main > section#ban-do-ghi-nho{--sc:var(--c2);--scl:var(--c2l);--scb:var(--c2b)}
+main > section#ban-do-ghi-nho{--sc:var(--c6);--scl:var(--c6l);--scb:var(--c6b)}
+.origsum{background:linear-gradient(135deg,var(--c3l),var(--c2l)) !important; border:2px solid var(--c3b) !important}
+.origsum .tag{background:var(--c2); color:#fff; border-color:transparent}
+.origsum .tag::before{content:"📌"; font-family:var(--emo); font-size:13px}
+.origsum h3{color:var(--c2)}
+.origsum ul.dia li{--sc:var(--c2); background:color-mix(in srgb,var(--card) 70%, transparent); border-radius:12px; padding:9px 12px 9px 34px; margin-bottom:7px}
+.origsum ul.dia li::before{left:13px; top:1.05em}
+.recall{background:linear-gradient(135deg,var(--c6l),var(--c7l)) !important; border:2px solid var(--c6b) !important}
+.recall .tag{background:var(--c6) !important; color:#fff !important; border-color:transparent}
+.recall .tag::before{content:"🧩"; font-family:var(--emo); font-size:13px}
+.recall h3{display:flex; align-items:center; gap:8px; font-size:17px; font-weight:850; color:var(--c6); margin:26px 0 10px}
+.recall h3:nth-of-type(1)::before{content:"💎"; font-family:var(--emo)}
+.recall h3:nth-of-type(2)::before{content:"🔑"; font-family:var(--emo)}
+.recall h3:nth-of-type(3)::before{content:"🧘"; font-family:var(--emo)}
+.recall h3:nth-of-type(4)::before{content:"⛓️"; font-family:var(--emo)}
+.recall h3:nth-of-type(5)::before{content:"✨"; font-family:var(--emo)}
+.recall ul.dia li{--sc:var(--c6)}
+.chain{display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-top:12px}
+.chain span{--cc:var(--c6); background:color-mix(in srgb,var(--cc) 14%, var(--card)); border:1.5px solid color-mix(in srgb,var(--cc) 40%, transparent);
+  color:var(--ink); border-radius:var(--r3); padding:7px 14px; font-size:13.5px; font-weight:700}
+.chain span:nth-of-type(8n+1){--cc:var(--c1)} .chain span:nth-of-type(8n+2){--cc:var(--c2)}
+.chain span:nth-of-type(8n+3){--cc:var(--c3)} .chain span:nth-of-type(8n+4){--cc:var(--c4)}
+.chain span:nth-of-type(8n+5){--cc:var(--c5)} .chain span:nth-of-type(8n+6){--cc:var(--c6)}
+.chain span:nth-of-type(8n+7){--cc:var(--c7)} .chain span:nth-of-type(8n+8){--cc:var(--c8)}
+.chain i{font-style:normal; color:var(--ink3); font-weight:900}
+html.js .chain.rv span{opacity:0; transform:scale(.8)}
+html.js .chain.rv.in span{opacity:1; transform:none; transition:opacity .4s, transform .4s cubic-bezier(.3,1.6,.5,1)}
+
+/* ---------- điều hướng chương ---------- */
+.pager{display:grid; grid-template-columns:1fr auto 1fr; gap:12px; margin:56px 0 8px}
+.pager a,.pager span{position:relative; border:1.5px solid var(--rule); border-radius:var(--r); padding:18px 20px;
+  text-decoration:none; background:var(--card); color:var(--ink); font-size:15px; font-weight:700; line-height:1.45;
+  box-shadow:var(--sh); transition:transform .2s, box-shadow .2s, border-color .2s}
+.pager a:hover{transform:translateY(-4px); border-color:var(--ac); box-shadow:0 14px 34px color-mix(in srgb,var(--ac) 22%, transparent)}
+.pager .k{display:block; font-size:11px; font-weight:850; letter-spacing:.1em; text-transform:uppercase; color:var(--ac); margin-bottom:5px}
+.pager .prev .k::before{content:"⬅️ "; font-family:var(--emo)}
+.pager .next .k::after{content:" ➡️"; font-family:var(--emo)}
+.pager .home{text-align:center}
+.pager .home .k::before{content:"🗂️ "; font-family:var(--emo)}
+.pager .next{text-align:right}
+.pager span.off{opacity:.45; box-shadow:none}
+@media (max-width:720px){.pager{grid-template-columns:1fr}.pager .next,.pager .home{text-align:left}}
+
+/* ---------- tìm kiếm & bảng câu bôi vàng ---------- */
+#findbar{position:fixed; left:50%; top:76px; z-index:80; width:min(560px,calc(100% - 24px)); transform:translate(-50%,-20px);
+  opacity:0; pointer-events:none; transition:opacity .2s, transform .2s; display:flex; gap:8px; align-items:center;
+  background:var(--card); border:1.5px solid var(--ac); border-radius:var(--r3); padding:7px 8px 7px 16px; box-shadow:var(--sh2)}
+#findbar.on{opacity:1; transform:translate(-50%,0); pointer-events:auto}
+#findbar::before{content:"🔍"; font-family:var(--emo)}
+#findbar input{flex:1; min-width:0; border:0; outline:0; background:transparent; font:inherit; font-size:16px; color:var(--ink)}
+#findbar .fc{font-size:12.5px; font-weight:750; color:var(--ink2); white-space:nowrap; font-variant-numeric:tabular-nums}
+#findbar button{border:0; background:var(--soft); color:var(--ink); border-radius:50%; width:34px; height:34px; cursor:pointer; font-size:14px; font-weight:800}
+span.fnd{background:color-mix(in srgb,var(--c8) 30%, transparent); border-radius:4px; box-shadow:0 0 0 2px color-mix(in srgb,var(--c8) 30%, transparent)}
+span.fnd.cur{background:var(--c8); color:#fff}
+#hlpanel{position:fixed; inset:0; z-index:90; display:none; background:rgba(15,14,23,.45); backdrop-filter:blur(4px);
+  padding:70px 14px 20px; overflow:auto}
+#hlpanel.on{display:block}
+#hlpanel .in{max-width:680px; margin:0 auto; background:var(--card); border-radius:var(--r); padding:24px 22px 18px; box-shadow:var(--sh2);
+  animation:pop .3s cubic-bezier(.3,1.4,.5,1)}
+@keyframes pop{from{transform:scale(.92); opacity:0}}
+#hlpanel h2{margin:0 0 4px; font-size:22px; font-weight:850}
+#hlpanel h2::before{content:"🖍️ "; font-family:var(--emo)}
+#hlpanel .hs{font-size:13.5px; color:var(--ink2); margin:0 0 14px}
+#hlpanel ol{margin:0; padding:0; list-style:none; counter-reset:h; display:grid; gap:8px}
+#hlpanel li{counter-increment:h}
+#hlpanel li a{display:block; position:relative; padding:11px 14px 11px 44px; border-radius:14px; text-decoration:none; color:var(--hl-ink);
+  background:linear-gradient(100deg,var(--hl1),var(--hl2)); font-size:15.5px; line-height:1.55; font-weight:600}
+#hlpanel li a::before{content:counter(h); position:absolute; left:12px; top:11px; width:22px; height:22px; border-radius:7px;
+  background:rgba(43,34,0,.14); display:grid; place-items:center; font-size:11.5px; font-weight:850}
+#hlpanel li a:hover{filter:brightness(1.04); transform:translateX(3px)}
+#hlpanel .x{float:right; border:0; width:36px; height:36px; border-radius:50%; background:var(--soft); cursor:pointer; font-size:16px; color:var(--ink)}
+
+/* ---------- confetti ---------- */
+.cf{position:fixed; z-index:100; width:9px; height:9px; border-radius:2px; pointer-events:none; animation:cf 1.1s cubic-bezier(.2,.7,.4,1) forwards}
+@keyframes cf{to{transform:translate(var(--dx),var(--dy)) rotate(var(--rt)); opacity:0}}
+
+/* ---------- footer chương ---------- */
+html.chap footer.pagefoot{margin-top:40px}
+
+@media print{
+  #rail,#findbar,#hlpanel,.cpy,.stats,#nowsec{display:none !important}
+  .body-card,blockquote,.concept,.practice,.example,.hint,.keyidea,.pause,.flow,figure.fig,.origsum,.recall{break-inside:avoid; box-shadow:none}
+  html.js mark{background-size:100% 100% !important; color:var(--hl-ink) !important}
+  html.js .rv{opacity:1 !important; transform:none !important}
+  .sec-head h2{-webkit-text-fill-color:var(--ink)}
+}
+
+/* ===== tinh chỉnh sau khi xem bản chụp ===== */
+/* hero: các pill xếp từng dòng */
+header.book .kicker,header.book .chapno{display:flex; width:fit-content; margin-left:auto; margin-right:auto}
+header.book .chapno{gap:8px}
+html.chap header.book .wrap::after{bottom:auto; top:14%}
+/* chữ trên nền vàng phải tối */
+.stages li:nth-child(8n+3),nav.toc li:nth-child(8n+3),main > section:nth-of-type(8n+3){--on:#3A2A00}
+.stages li::before,nav.toc a .n,.badge{color:var(--on,#fff)}
+#rail a.act .n{color:var(--ron,#fff)}
+/* tiêu đề phần: chữ đặc + vạch màu */
+.sec-head h2{color:var(--ink); background:linear-gradient(90deg,var(--sc),color-mix(in srgb,var(--sc) 0%, transparent)) left bottom / 140px 5px no-repeat;
+  -webkit-background-clip:border-box; background-clip:border-box; padding-bottom:12px}
+/* toolbar trang chương: một dòng trên máy tính */
+html.chap #toolbar .wrap{flex-wrap:nowrap; max-width:1180px}
+html.chap #toolbar .tb-title{margin-right:auto; flex:0 0 auto}
+html.chap #nowsec{flex:1 1 auto; min-width:0; max-width:none; margin:0 6px 0 4px}
+html.chap #toolbar .btn{flex:0 0 auto}
+html.chap #toolbar .tb-spacer{flex:1 1 auto}
+@media (max-width:1180px){html.chap #toolbar a.btn[href="#top"],html.chap #printBtn{display:none}}
+@media (max-width:760px){
+  html.chap #toolbar .wrap{flex-wrap:wrap; padding:8px 12px; gap:6px}
+  html.chap #themeBtn{display:none}
+  html.chap #toolbar .tb-title{flex:1 1 auto; font-size:12px}
+  html.chap #toolbar .btn{padding:7px 12px; font-size:12.5px}
+  html.chap #nowsec{order:9; flex:1 1 100%; margin:0; font-size:12px; padding:5px 11px}
+  html.chap #nowsec:not(.on){display:none}
+}
+/* nút nổi trên điện thoại: một thanh ngang dưới đáy */
+@media (max-width:700px){
+  html.chap #fabs{left:50%; right:auto; bottom:10px; transform:translateX(-50%); flex-direction:row; gap:4px;
+    padding:5px; border-radius:var(--r3); background:color-mix(in srgb,var(--card) 86%, transparent);
+    backdrop-filter:blur(12px); border:1.5px solid var(--rule); box-shadow:var(--sh2)}
+  html.chap #fabs button{width:40px; height:40px; font-size:17px; box-shadow:none; border:0; background:transparent}
+  html.chap #fabs .fab-top{opacity:1; pointer-events:auto}
+  html.chap footer.pagefoot{padding-bottom:110px}
+}
+/* điện thoại: bớt đệm */
+@media (max-width:600px){
+  html.chap .wrap{padding:0 14px}
+  .box{padding:22px 18px 18px}
+  .map .goal{padding:14px 14px 14px 46px; font-size:15.5px}
+  .map .goal::before{left:13px; font-size:19px}
+  .stages li{padding:9px 10px 9px 48px; font-size:15px}
+  .concept,.example,.practice,.hint,.keyidea,.flow,figure.fig{padding-left:18px; padding-right:18px}
+  .sec-head{gap:14px} .badge{width:52px; height:52px; font-size:19px; border-radius:17px}
+  .willlearn{padding:13px 14px 13px 48px; font-size:15px} .willlearn::before{left:13px; font-size:19px}
+  .stats{gap:8px} .stat{padding:11px 4px 10px; border-radius:16px} .stat b{font-size:23px} .stat .se{font-size:20px}
+}
+
+/* ---------- chuyển động bổ sung cho hình (từ chương 02) ---------- */
+.a-pop{animation:aPop 6s ease-in-out infinite; transform-box:fill-box; transform-origin:center}
+@keyframes aPop{0%{opacity:0; transform:scale(.6)}12%,42%{opacity:1; transform:scale(1)}58%,100%{opacity:0; transform:scale(.92)}}
+.a-drain{animation:aDrain 5s ease-in-out infinite; transform-box:fill-box; transform-origin:0% 50%}
+@keyframes aDrain{0%,100%{transform:scaleX(1)}50%{transform:scaleX(.3)}}
+.a-swapA{animation:aSwapA 7s ease-in-out infinite}
+.a-swapB{animation:aSwapB 7s ease-in-out infinite}
+@keyframes aSwapA{0%,38%{opacity:1}50%,88%{opacity:.13}100%{opacity:1}}
+@keyframes aSwapB{0%,38%{opacity:.13}50%,88%{opacity:1}100%{opacity:.13}}
+.a-sink{animation:aSink 4.5s ease-in-out infinite; transform-box:fill-box; transform-origin:50% 100%}
+@keyframes aSink{0%,100%{transform:rotate(-3deg) translateY(0)}50%{transform:rotate(-9deg) translateY(7px)}}
+.a-flicker{animation:aFlick .9s ease-in-out infinite; transform-box:fill-box; transform-origin:50% 100%}
+@keyframes aFlick{0%,100%{transform:scale(1,1)}25%{transform:scale(.88,1.14) skewX(4deg)}50%{transform:scale(1.06,.92)}75%{transform:scale(.94,1.08) skewX(-4deg)}}
+.a-peel{animation:aPeel 11s ease-in-out infinite}
+@keyframes aPeel{0%,12%{opacity:1}24%,74%{opacity:0}88%,100%{opacity:1}}
+.a-wheel{animation:aSpin 1.6s linear infinite; transform-box:fill-box; transform-origin:center}
+.a-tick{stroke-dasharray:30; animation:aTick 8s ease-out infinite}
+@keyframes aTick{0%{stroke-dashoffset:30}6%,90%{stroke-dashoffset:0}100%{stroke-dashoffset:30}}
+html.still .a-tick{stroke-dashoffset:0}
+.a-fog{animation:aFog 9s ease-in-out infinite}
+@keyframes aFog{0%,15%{transform:translateX(0); opacity:.92}55%,80%{transform:translateX(140px); opacity:0}100%{transform:translateX(0); opacity:.92}}
+.a-fogL{animation:aFogL 9s ease-in-out infinite}
+@keyframes aFogL{0%,15%{transform:translateX(0); opacity:.92}55%,80%{transform:translateX(-140px); opacity:0}100%{transform:translateX(0); opacity:.92}}
+.a-spinc{animation:aSpin 1.4s linear infinite}
+.a-rain{animation:aRain 1.4s linear infinite}
+@keyframes aRain{0%{transform:translateY(-14px); opacity:0}20%{opacity:.9}100%{transform:translateY(40px); opacity:0}}
+.a-ticker{animation:aTicker 14s linear infinite}
+@keyframes aTicker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.a-tip{animation:aTip 3.2s ease-in-out infinite; transform-box:fill-box; transform-origin:50% 50%}
+@keyframes aTip{0%,100%{transform:rotate(-9deg)}50%{transform:rotate(9deg)}}
+.a-wave{animation:aWave 1.6s linear infinite}
+@keyframes aWave{to{transform:translateX(var(--wl,-40px))}}
+.a-flipA{animation:aFlipA 6s ease-in-out infinite; transform-box:fill-box; transform-origin:center}
+.a-flipB{animation:aFlipB 6s ease-in-out infinite; transform-box:fill-box; transform-origin:center}
+@keyframes aFlipA{0%,40%{transform:scaleX(1)}48%,92%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+@keyframes aFlipB{0%,48%{transform:scaleX(0)}56%,92%{transform:scaleX(1)}100%{transform:scaleX(0)}}
+html.still .a-flipB{transform:scaleX(0)}
+.a-bounce{animation:aBounce .7s ease-in-out infinite alternate; transform-box:fill-box}
+@keyframes aBounce{from{transform:translateY(0)}to{transform:translateY(-16px)}}
+.a-shrink{animation:aShrink 6s ease-in infinite; transform-box:fill-box; transform-origin:50% 100%}
+@keyframes aShrink{0%,10%{transform:scale(1); opacity:1}80%{transform:scale(.08); opacity:.2}100%{transform:scale(.08); opacity:0}}
+.a-mergeL{animation:aMergeL 6s ease-in-out infinite}
+.a-mergeR{animation:aMergeR 6s ease-in-out infinite}
+@keyframes aMergeL{0%,20%{transform:translateX(0)}55%,85%{transform:translateX(70px)}100%{transform:translateX(0)}}
+@keyframes aMergeR{0%,20%{transform:translateX(0)}55%,85%{transform:translateX(-70px)}100%{transform:translateX(0)}}
+.a-heal{animation:aHeal 12s ease-in-out infinite}
+@keyframes aHeal{0%,8%{opacity:1}14%,88%{opacity:.18}100%{opacity:1}}
+.a-strike{stroke-dasharray:200; stroke-dashoffset:200; animation:aStrike 12s ease-in-out infinite}
+@keyframes aStrike{0%,6%{stroke-dashoffset:200}12%,88%{stroke-dashoffset:0}100%{stroke-dashoffset:200}}
+html.still .a-strike{stroke-dashoffset:200}
+.a-fill{animation:aFill 12s linear infinite; transform-box:fill-box; transform-origin:0 50%}
+@keyframes aFill{0%{transform:scaleX(0)}88%{transform:scaleX(1)}100%{transform:scaleX(1)}}
+</style>
+</head>
+<body>
+<div id="blobs" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+<div id="progress" aria-hidden="true"></div>
+<div id="toolbar"><div class="wrap">
+  <span class="tb-title">Bí mật vĩ đại nhất</span>
+  <a class="btn" href="index.html">Mục lục sách</a>
+  <span id="nowsec" aria-live="polite"></span>
+  <button class="btn" id="themeBtn" type="button" aria-pressed="false">Chế độ đọc tối</button>
+  <button class="btn" id="printBtn" type="button">In / Lưu PDF</button>
+  <a class="btn" href="#top">Về đầu trang</a>
+</div></div>
+<header class="book" id="top"><div class="wrap" data-e1="🧠" data-e2="🕊️">
+  <p class="kicker">Sách &middot; Bí mật vĩ đại nhất</p>
+  <p class="chapno">Chương 05</p>
+  <h1>Giải thoát khỏi tâm trí</h1>
+  <div class="rule-orn"><span></span><b>◆</b><span></span></div>
+  <p class="sub">Rắc rối không nằm ở tâm trí mà ở việc tin vào nó; ba loại suy nghĩ, những câu chuyện nó kể, và vì sao Nhận thức là lối thoát.</p>
+  <p class="author">Rhonda Byrne</p>
+  <div class="stats"><div class="stat"><span class="se" aria-hidden="true">🧩</span><b data-n="5">5</b><small>phần</small></div><div class="stat"><span class="se" aria-hidden="true">💬</span><b data-n="36">36</b><small>trích dẫn</small></div><div class="stat"><span class="se" aria-hidden="true">👥</span><b data-n="15">15</b><small>người được trích</small></div><div class="stat"><span class="se" aria-hidden="true">🎨</span><b data-n="14">14</b><small>hình minh họa</small></div><div class="stat"><span class="se" aria-hidden="true">⏱️</span><b data-n="33">33</b><small>phút đọc</small></div></div>
+</div></header>
+<div class="wrap">
+  <!-- BẢN ĐỒ CHƯƠNG -->
+  <div class="box map" id="ban-do-chuong">
+    <span class="tag">Bản đồ chương</span>
+    <h2>Bạn sắp đi qua điều gì</h2>
+    <p class="meta">Thời gian đọc ước tính: khoảng 32–35 phút &middot; Chương 05</p>
+    <p class="goal"><strong>Mục tiêu của chương:</strong> Chỉ ra rằng vấn đề không nằm ở tâm trí mà ở thói quen <em>tin vào</em> những suy nghĩ tiêu cực của nó; mô tả chính xác cơ chế tâm trí hoạt động; và cho thấy Nhận thức là lối thoát, không phải cuộc chiến với tâm trí.</p>
+    <ol class="stages">
+      <li>Tâm trí là công cụ tuyệt vời — rắc rối bắt đầu khi ta trao cho nó thẩm quyền.</li>
+      <li>Tâm trí không phải là bộ não, và nó chỉ được tạo thành từ suy nghĩ.</li>
+      <li><em>Đừng tin kẻ gây rắc rối</em> — mọi cảm xúc tiêu cực đều bắt đầu từ một suy nghĩ được tin.</li>
+      <li>Chịu trách nhiệm, và vì sao đổ lỗi cũng chỉ là một chương trình của tâm trí.</li>
+      <li><em>Ba suy nghĩ của tâm trí</em> — đo lường, so sánh, mô tả.</li>
+      <li>Những câu chuyện tâm trí kể, và câu chuyện lớn nhất: thời gian.</li>
+      <li><em>Nhận thức là con đường giải thoát</em> — không cần loại bỏ hay chiến đấu với tâm trí.</li>
+    </ol>
+    <p class="howto"><strong>Cách đọc trang này:</strong> phần thân màu kem là nội dung đầy đủ của Rhonda Byrne. Các tiêu đề in nghiêng ở trên là <strong>tiểu mục do chính tác giả đặt trong sách</strong>. Khối vàng là trích dẫn của người khác, luôn ghi tên và nguồn; khối xanh lá là bài thực hành; khối xanh dương là khái niệm; khối tím là lời biên tập viên.</p>
+  </div>
+
+  <!-- MỤC LỤC TRANG -->
+  <nav class="box toc" id="muc-luc" aria-label="Mục lục chương">
+    <h2>Mục lục chương này</h2>
+    <ol>
+      <li><a href="#c5-p1"><span class="n">01</span>Tâm trí và thói quen tin vào suy nghĩ</a></li>
+      <li><a href="#c5-p2"><span class="n">02</span>Đừng tin kẻ gây rắc rối</a></li>
+      <li><a href="#c5-p3"><span class="n">03</span>Ba suy nghĩ của tâm trí</a></li>
+      <li><a href="#c5-p4"><span class="n">04</span>Câu chuyện lớn nhất: thời gian</a></li>
+      <li><a href="#c5-p5"><span class="n">05</span>Nhận thức là con đường giải thoát</a></li>
+      <li><a href="#tom-tat-goc"><span class="n">★</span>Tóm tắt gốc của chương</a></li>
+      <li><a href="#ban-do-ghi-nho"><span class="n">★</span>Bản đồ ghi nhớ</a></li>
+    </ol>
+  </nav>
+
+<main>
+
+  <!-- 1 -->
+  <section id="c5-p1">
+    <div class="sec-head"><div class="badge">01</div>
+      <h2>Tâm trí và thói quen tin vào suy nghĩ</h2></div>
+    <p class="willlearn"><b>Bạn sẽ hiểu gì ở phần này?</b><br>Tâm trí thực sự là gì, vì sao nó không phải là bộ não, và điều gì xảy ra khi ta tin vào suy nghĩ của chính mình. <em>Tiêu đề phần này do biên tập viên đặt — đoạn mở chương không có tiểu mục trong sách.</em></p>
+
+    <blockquote data-q="8" data-ini="JF"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Tâm trí không cần phải tĩnh lặng. Điều quan trọng là bạn không lắng nghe những gì nó nói, như thể nó là sự thật.</p>
+      <cite><b>Jan Frazier</b> — trích từ <em>Sự Ngọt Ngào Vĩ Đại: Cuộc Sống Sau Khi Nghĩ</em></cite>
+    </div></blockquote>
+
+    <article class="body-card">
+      <p>Tâm trí của bạn là một công cụ tuyệt vời để tạo ra cuộc sống của bạn chính xác như bạn muốn. Nó không phải là nhà phân tích tâm lý hay nhà trị liệu của bạn, nhưng chúng ta trao cho nó loại thẩm quyền đó đối với chúng ta khi chúng ta lắng nghe nó và tin vào mọi suy nghĩ của nó như thể chúng là sự thật.</p>
+      <p><mark>Thói quen tin vào chính suy nghĩ của mình này khiến chúng ta không thể sống trong sự tráng lệ và vinh quang của bản chất thực sự của mình, Nhận thức.</mark> Chúng ta không có được một cuộc sống hạnh phúc liên tục và một cuộc sống mà mọi thứ chúng ta cần đều rơi vào tay chúng ta vào đúng thời điểm.</p>
+      <p>Nhân loại đã phải chịu đựng quá nhiều trong thời gian quá dài, vì tâm trí của chúng ta. Đã đến lúc chúng ta phải giao phó tâm trí của mình vào đúng vị trí của nó để nó không còn là kẻ độc tài của cuộc sống chúng ta nữa.</p>
+      <p>Khi chúng ta không còn sống từ và thông qua tâm trí, chúng ta sẽ bắt đầu sống từ bản ngã thực sự của mình, Nhận thức, và cuộc sống của chúng ta sẽ thực sự trở thành thiên đường trên trái đất, không có đau khổ và tiêu cực.</p>
+    </article>
+
+    <blockquote data-q="8" data-ini="BK"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Mọi vấn đề được nhận thức là &ldquo;ở ngoài kia&rdquo; thực ra không gì hơn là một nhận thức sai lầm trong suy nghĩ của chính bạn.</p>
+      <cite><b>Byron Katie</b> — trích từ <em>Yêu những gì đang có</em></cite>
+    </div></blockquote>
+
+    <blockquote data-q="4" data-ini="HD"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Cách mạnh mẽ nhất để loại bỏ tiêu cực là nhận ra rằng bạn không phải là tâm trí. Một khi nhận ra, tiêu cực không có gì để bám víu, và nó tự tan biến.</p>
+      <cite><b>Hale Dwoskin</b></cite>
+    </div></blockquote>
+
+    <article class="body-card">
+      <p>Hầu hết mọi người tin rằng những tình huống tiêu cực đến từ bên ngoài họ; họ tin rằng chính con người, hoàn cảnh hoặc sự kiện trên thế giới đã gây ra những tình huống tiêu cực trong cuộc sống của họ.</p>
+      <p>Nhưng không có gì vốn dĩ là tốt hay xấu, như Shakespeare đã nói với chúng ta:</p>
+    </article>
+
+    <blockquote data-q="7" data-ini="S"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Không có gì tốt hay xấu mà chính suy nghĩ khiến nó trở nên như vậy.</p>
+      <cite><b>Shakespeare</b> — lời được Rhonda Byrne dẫn lại trong đoạn này</cite>
+    </div></blockquote>
+
+    <!-- FIG-C5 -->
+    <figure class="fig">
+      <span class="fig-lbl">Hình 1 &middot; Chính suy nghĩ khiến nó tốt hay xấu</span>
+      <svg viewBox="0 0 520 236" role="img" aria-label="Một ô xám trung tính: một người, hoàn cảnh, sự kiện. Đi qua vòng tròn tím suy nghĩ của bạn, nó tách thành hai nhãn: tốt màu xanh và xấu màu đỏ">
+<defs><marker id="m51" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="var(--ink2)"/></marker><marker id="m51g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="var(--c4)"/></marker><marker id="m51r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="var(--c1)"/></marker></defs>
+<rect x="16" y="66" width="140" height="84" rx="16" fill="var(--soft)" stroke="var(--ink3)" stroke-width="2"/><text x="86.0" y="96.0" class="svg-t" font-size="13" text-anchor="middle" font-weight="800">một người,</text><text x="86.0" y="113.0" class="svg-t" font-size="13" text-anchor="middle" font-weight="800">hoàn cảnh,</text><text x="86.0" y="130.0" class="svg-t" font-size="13" text-anchor="middle" font-weight="800">sự kiện</text><text x="86.0" y="172.0" class="svg-t2" font-size="11.5" text-anchor="middle" font-weight="700">tự nó: không tốt,</text><text x="86.0" y="187.0" class="svg-t2" font-size="11.5" text-anchor="middle" font-weight="700">cũng không xấu</text><line x1="160" y1="108" x2="200" y2="108" stroke="var(--ink2)" stroke-width="2.5" marker-end="url(#m51)"/><g class="a-pulse" style="animation-duration:3.2s"><circle cx="246" cy="108" r="40" fill="var(--c7)"/></g><text x="246.0" y="104.0" class="svg-w" font-size="13" text-anchor="middle">suy nghĩ</text><text x="246.0" y="121.0" class="svg-w" font-size="13" text-anchor="middle">của bạn</text><path d="M288,96 C320,70 340,58 372,58" fill="none" stroke="var(--c4)" stroke-width="3" marker-end="url(#m51g)" class="a-dash"/><path d="M288,120 C320,146 340,158 372,158" fill="none" stroke="var(--c1)" stroke-width="3" marker-end="url(#m51r)" class="a-dash"/><rect x="378" y="36" width="120" height="44" rx="20" fill="var(--c4)"/><text x="438.0" y="63.0" class="svg-w" font-size="16" text-anchor="middle">“tốt”</text><rect x="378" y="136" width="120" height="44" rx="20" fill="var(--c1)"/><text x="438.0" y="163.0" class="svg-w" font-size="16" text-anchor="middle">“xấu”</text><text x="260.0" y="224.0" class="svg-t" font-size="13" text-anchor="middle" font-weight="800">“Không có gì tốt hay xấu mà chính suy nghĩ khiến nó trở nên như vậy.”</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng</strong> theo câu Shakespeare mà tác giả dẫn và lời bà ngay sau đó: &ldquo;Chính suy nghĩ của bạn về một người, hoàn cảnh hoặc sự kiện là nguồn gốc của những tình huống tiêu cực trong cuộc sống của bạn, chứ không phải chính người, hoàn cảnh hoặc sự kiện đó.&rdquo;</figcaption>
+    </figure>
+
+    <article class="body-card">
+      <p><mark>Chính suy nghĩ của bạn về một người, hoàn cảnh hoặc sự kiện là nguồn gốc của những tình huống tiêu cực trong cuộc sống của bạn, chứ không phải chính người, hoàn cảnh hoặc sự kiện đó.</mark></p>
+      <p>Và do đó, hiểu một chút về cách thức hoạt động của cơ chế tâm trí sẽ giúp bạn thoát khỏi những phán đoán tiêu cực sai lầm của nó, và sau đó bạn có thể sử dụng nó cho mục đích mà nó hướng đến để tạo ra cuộc sống mà bạn mong muốn.</p>
+    </article>
+
+    <blockquote data-q="7" data-ini="🙏"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Suy nghĩ được tạo ra để sắp xếp những gì bạn muốn, không phải để đắm chìm trong đó. Tâm trí ở đó để tiếp nhận trật tự và làm cho nó xuất hiện với bạn. Suy nghĩ không cần thiết cho bất kỳ điều gì khác vì mọi thứ khác đều được Nhận thức lo liệu.</p>
+      <cite><b>Người thầy của tôi</b> — người thầy giấu tên của Rhonda Byrne</cite>
+    </div></blockquote>
+
+    <blockquote data-q="6" data-ini="LL"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Nếu từ khoảnh khắc này trở đi bạn chỉ muốn nhìn thấy những gì bạn muốn, thì đó là tất cả những gì bạn sẽ có được. Nhưng bạn giữ trong tâm trí những điều bạn không muốn. Bạn đấu tranh để loại bỏ những điều bạn không muốn, do đó duy trì chúng. Vì vậy, cần phải từ bỏ những điều tiêu cực và đưa vào những điều tích cực nếu bạn muốn có một cuộc sống tích cực, hạnh phúc.</p>
+      <cite><b>Lester Levenson</b> — trích từ <em>Hạnh phúc là tự do</em>, tập 1–5</cite>
+    </div></blockquote>
+
+    <article class="body-card">
+      <h3>Tâm trí của bạn chính xác là gì?</h3>
+      <p>Trước tiên, điều quan trọng là phải hiểu rằng <mark>tâm trí của bạn không phải là não của bạn.</mark> Não của bạn không suy nghĩ. Các nhà khoa học chưa thể tìm thấy một suy nghĩ nào trong não; họ chỉ có thể nhìn thấy hoạt động điện do suy nghĩ gây ra.</p>
+      <p>Suy nghĩ đến từ tâm trí. Tâm trí của bạn hoàn toàn được tạo thành từ suy nghĩ. Nếu không có suy nghĩ hiện tại, thì không có tâm trí. Đơn giản như vậy thôi.</p>
+      <p>Tâm trí của bạn thậm chí không thể chứa hai suy nghĩ cùng một lúc. Bạn biết rằng không thể thực sự lắng nghe một cuộc trò chuyện và đọc một cái gì đó trên điện thoại cùng một lúc. Tâm trí của bạn không thể làm nhiều việc cùng lúc, mặc dù bạn có thể tin rằng nó có thể.</p>
+      <p>Tuy nhiên, một suy nghĩ duy nhất, dù tích cực hay tiêu cực, sẽ trở thành một nguồn năng lượng khi bạn tin vào nó.</p>
+    </article>
+
+    <!-- FIG-C5 -->
+    <figure class="fig">
+      <span class="fig-lbl">Hình 2 &middot; Một suy nghĩ — và sức mạnh của việc tin</span>
+      <svg viewBox="0 0 520 220" role="img" aria-label="Bên trái: trong khung tâm trí, các suy nghĩ lần lượt hiện ra, mỗi lúc chỉ một. Bên phải: một suy nghĩ, khi được tin, biến thành tia sét năng lượng">
+<defs><linearGradient id="g52" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--c3)"/><stop offset="1" stop-color="var(--c2)"/></linearGradient><marker id="m52" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="var(--ink2)"/></marker></defs>
+<rect x="10" y="10" width="240" height="200" rx="22" fill="var(--c7l)" stroke="var(--c7b)" stroke-width="1.5"/><rect x="270" y="10" width="240" height="200" rx="22" fill="var(--c3l)" stroke="var(--c3b)" stroke-width="1.5"/><text x="130.0" y="36.0" class="svg-cap" font-size="12" text-anchor="middle" fill="var(--c7)">TÂM TRÍ</text><text x="390.0" y="36.0" class="svg-cap" font-size="12" text-anchor="middle" fill="var(--c2)">KHI BẠN TIN VÀO NÓ</text><rect x="24" y="74" width="212" height="60" rx="30" fill="none" stroke="var(--c7)" stroke-width="2" stroke-dasharray="5 5"/><g class="a-pop" style="animation-duration:6s; animation-delay:0s"><rect x="30.0" y="83.0" width="200.0" height="42" rx="21.0" fill="var(--c6l)" stroke="var(--c6)" stroke-width="1.6"/><text x="130.0" y="109.0" class="svg-t" font-size="13" text-anchor="middle" font-weight="800">“Mình phải gọi điện…”</text></g><g class="a-pop" style="animation-duration:6s; animation-delay:2s"><rect x="30.0" y="83.0" width="200.0" height="42" rx="21.0" fill="var(--c5l)" stroke="var(--c5)" stroke-width="1.6"/><text x="130.0" y="109.0" class="svg-t" font-size="13" text-anchor="middle" font-weight="800">“Trời sắp mưa.”</text></g><g class="a-pop" style="animation-duration:6s; animation-delay:4s"><rect x="30.0" y="83.0" width="200.0" height="42" rx="21.0" fill="var(--c1l)" stroke="var(--c1)" stroke-width="1.6"/><text x="130.0" y="109.0" class="svg-t" font-size="13" text-anchor="middle" font-weight="800">“Tôi sắp hết thời gian rồi.”</text></g><text x="130.0" y="164.0" class="svg-t" font-size="13" text-anchor="middle" font-weight="800">chỉ một suy nghĩ</text><text x="130.0" y="182.0" class="svg-t" font-size="13" text-anchor="middle" font-weight="800">tại một thời điểm</text><rect x="282.0" y="66.0" width="96.0" height="40" rx="20.0" fill="var(--c7l)" stroke="var(--c7)" stroke-width="1.6"/><text x="330.0" y="91.0" class="svg-t" font-size="13" text-anchor="middle" font-weight="800">suy nghĩ</text><line x1="380" y1="86" x2="408" y2="86" stroke="var(--ink2)" stroke-width="2.5" marker-end="url(#m52)"/><text x="394.0" y="74.0" class="svg-t2" font-size="11.5" text-anchor="middle" font-weight="800">tin</text><circle cx="448" cy="92" r="34" fill="var(--c3)" fill-opacity=".3" class="a-glow"/><path d="M452,60 L432,96 H448 L440,126 L466,84 H450 Z" fill="url(#g52)" class="a-pulse" style="animation-duration:1.8s"/><text x="390.0" y="164.0" class="svg-t" font-size="13" text-anchor="middle" font-weight="800">trở thành một nguồn</text><text x="390.0" y="182.0" class="svg-t" font-size="13" text-anchor="middle" font-weight="800">năng lượng</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng</strong> theo hai ý của tác giả: &ldquo;Tâm trí của bạn thậm chí không thể chứa hai suy nghĩ cùng một lúc&rdquo; — và &ldquo;một suy nghĩ duy nhất, dù tích cực hay tiêu cực, sẽ trở thành một nguồn năng lượng khi bạn tin vào nó.&rdquo; Ba câu trong khung trái chỉ là ví dụ minh họa.</figcaption>
+    </figure>
+
+    <blockquote data-q="8" data-ini="BK"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Nếu bạn thích đau khổ, hãy tiếp tục tin vào những suy nghĩ căng thẳng của mình. Nhưng nếu bạn muốn hạnh phúc, hãy đặt câu hỏi về chúng.</p>
+      <cite><b>Byron Katie</b> — trích từ <em>Một tâm trí ở nhà</em></cite>
+    </div></blockquote>
+
+    <article class="body-card">
+      <p>Hầu hết mọi người tin vào suy nghĩ của chính mình như thể chúng là sự thật, điều này giải thích tại sao cuộc sống lại căng thẳng và đầy thử thách đối với rất nhiều người.</p>
+      <p>Không ai chỉ ra cho chúng ta rằng suy nghĩ của chúng ta chỉ là tiếng ồn trong đầu và chúng không phải là hiện thực. Tuy nhiên, nếu chúng ta chọn tin vào suy nghĩ của mình, chúng sẽ trở thành hiện thực của chúng ta!</p>
+      <p>Tâm trí là người biểu hiện vĩ đại của cuộc sống vật chất của chúng ta, và nó sẽ biểu hiện bất kỳ và tất cả những suy nghĩ mà chúng ta tin tưởng, cho dù chúng là tích cực hay tiêu cực, cho dù chúng là những suy nghĩ về những gì chúng ta muốn hay không muốn.</p>
+      <p>Những suy nghĩ tích cực không gây hại cho cuộc sống của bạn vì chúng gần với bản chất thực sự của bạn; chính những suy nghĩ tiêu cực là nguyên nhân gây ra căng thẳng và đau khổ của chúng ta. Và vì vậy, chúng ta cần phải đặc biệt nhận thức được những suy nghĩ tiêu cực.</p>
+      <p>Bởi vì tâm trí của chúng ta là máy móc, suy nghĩ tiêu cực có thể dễ dàng trở thành một khuôn mẫu cố định. Nếu sau đó bạn lắng nghe và đồng nhất với những suy nghĩ tiêu cực, bạn sẽ bị lôi kéo và lạc vào trong những suy nghĩ của mình như thể đang trong trạng thái thôi miên. Những suy nghĩ của bạn sẽ liên tục đưa bạn vào đầu và rời xa những gì thực sự đang diễn ra trên thế giới.</p>
+    </article>
+
+    <blockquote data-q="6" data-ini="ET"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Bạn tin rằng bạn là tâm trí của mình. Đây là ảo tưởng. Công cụ đã chiếm lấy bạn.</p>
+      <cite><b>Eckhart Tolle</b> — trích từ <em>Sức mạnh của hiện tại</em></cite>
+    </div></blockquote>
+
+    <article class="body-card">
+      <p>Giống như chúng ta đang chơi một trò chơi thực tế ảo và chúng ta quên rằng mình đang đeo tai nghe. Do những hoàn cảnh đầy thách thức trong thế giới thực tế ảo, chúng ta bị căng thẳng và đau khổ, nhưng nếu chúng ta tháo tai nghe ra, chúng ta sẽ nhận ra rằng thế giới thực tế ảo không có thật.</p>
+      <p>Suy nghĩ của chúng ta cũng vậy. Khi chúng ta tin vào những suy nghĩ của mình, chúng ta ngay lập tức bị cuốn vào một bộ phim tưởng tượng do tâm trí tạo ra đang phát bên trong đầu chúng ta và chúng ta không còn trải nghiệm thế giới như thực tế nữa.</p>
+    </article>
+
+    <!-- FIG-C5 -->
+    <figure class="fig">
+      <span class="fig-lbl">Hình 3 &middot; Trò chơi thực tế ảo</span>
+      <svg viewBox="0 0 520 254" role="img" aria-label="Bên trái: một người đeo kính thực tế ảo, xung quanh là những mảng đỏ chớp nháy và dấu chấm than. Bên phải: cùng người ấy cầm tai nghe trong tay, bình thản">
+<defs><marker id="m53" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="var(--ink2)"/></marker></defs>
+<rect x="10" y="10" width="220" height="196" rx="22" fill="var(--c1l)" stroke="var(--c1b)" stroke-width="1.5"/><rect x="290" y="10" width="220" height="196" rx="22" fill="var(--c5l)" stroke="var(--c5b)" stroke-width="1.5"/><path d="M30,90 l8,-16 l6,14 l10,-18 l4,20 Z" fill="var(--c1)" opacity=".85" class="a-blink" style="animation-delay:0s; animation-duration:1.1s"/><path d="M176,70 l8,-16 l6,14 l10,-18 l4,20 Z" fill="var(--c2)" opacity=".85" class="a-blink" style="animation-delay:0.3s; animation-duration:1.1s"/><path d="M186,150 l8,-16 l6,14 l10,-18 l4,20 Z" fill="var(--c1)" opacity=".85" class="a-blink" style="animation-delay:0.6s; animation-duration:1.1s"/><path d="M36,170 l8,-16 l6,14 l10,-18 l4,20 Z" fill="var(--c8)" opacity=".85" class="a-blink" style="animation-delay:0.2s; animation-duration:1.1s"/><g class="a-drift" style="animation-duration:.5s"><g ><circle cx="120" cy="89.2" r="19.2" fill="var(--c2)"/><path d="M96.0,190 Q96.0,118.0 120,114.2 Q144.0,118.0 144.0,190 Z" fill="var(--c2)"/></g></g><rect x="98" y="80" width="46" height="18" rx="7" fill="var(--ink)"/><rect x="92" y="85" width="8" height="8" rx="2" fill="var(--ink)"/><text x="84.0" y="66.0" class="svg-t" font-size="22" text-anchor="middle" font-weight="900" style="fill:var(--c1)">!</text><text x="160.0" y="60.0" class="svg-t" font-size="18" text-anchor="middle" font-weight="900" style="fill:var(--c1)">!</text><g ><circle cx="400" cy="89.2" r="19.2" fill="var(--c2)"/><path d="M376.0,190 Q376.0,118.0 400,114.2 Q424.0,118.0 424.0,190 Z" fill="var(--c2)"/></g><rect x="438" y="140" width="36" height="14" rx="6" fill="var(--ink)" transform="rotate(-20 456 147)"/><circle cx="400" cy="80" r="36" fill="var(--c5)" fill-opacity=".15" class="a-glow"/><line x1="236" y1="108" x2="284" y2="108" stroke="var(--ink2)" stroke-width="2.5" marker-end="url(#m53)"/><text x="120.0" y="228.0" class="svg-t" font-size="12.5" text-anchor="middle" font-weight="800">quên rằng mình đang</text><text x="120.0" y="244.0" class="svg-t" font-size="12.5" text-anchor="middle" font-weight="800">đeo tai nghe</text><text x="400.0" y="228.0" class="svg-t" font-size="12.5" text-anchor="middle" font-weight="800">tháo tai nghe ra: thế giới</text><text x="400.0" y="244.0" class="svg-t" font-size="12.5" text-anchor="middle" font-weight="800">thực tế ảo không có thật</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng</strong> theo phép so sánh của tác giả: do những hoàn cảnh trong thế giới thực tế ảo, &ldquo;chúng ta bị căng thẳng và đau khổ, nhưng nếu chúng ta tháo tai nghe ra, chúng ta sẽ nhận ra rằng thế giới thực tế ảo không có thật.&rdquo; Suy nghĩ của chúng ta cũng vậy.</figcaption>
+    </figure>
+
+    <div class="example">
+      <span class="lbl">Ví dụ giúp dễ hình dung</span>
+      <p>Phép so sánh <strong>trò chơi thực tế ảo</strong>:</p>
+      <div class="flow-grid" style="margin-top:14px">
+        <div class="fstep"><span class="k">Quên rằng mình đang đeo tai nghe</span><span class="v">Hoàn cảnh trong thế giới ảo gây căng thẳng và đau khổ thật</span></div>
+        <div class="farrow">→</div>
+        <div class="fstep"><span class="k">Tháo tai nghe ra</span><span class="v">Nhận ra thế giới ảo không có thật · Suy nghĩ của chúng ta cũng vậy</span></div>
+      </div>
+    </div>
+
+    <blockquote data-q="7" data-ini="🙏"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Mọi suy nghĩ đều là dối trá. Sự thật duy nhất là những gì nhận thức được chúng.</p>
+      <cite><b>Người thầy của tôi</b> — người thầy giấu tên của Rhonda Byrne</cite>
+    </div></blockquote>
+
+    <blockquote data-q="4" data-ini="RS"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Nhận thức thực hiện việc quan sát; suy nghĩ thực hiện việc phán đoán.</p>
+      <cite><b>Rupert Spira</b> — trích từ <em>Tro tàn của tình yêu</em></cite>
+    </div></blockquote>
+
+    <article class="body-card">
+      <p>Suy nghĩ cũng chịu trách nhiệm gây ra cảm xúc của chúng ta, và sau đó, những cảm xúc đó sẽ gây ra nhiều suy nghĩ hơn.</p>
+      <p>Khi chúng ta có một suy nghĩ buồn, nó sẽ gây ra cảm giác buồn, và cảm giác buồn sẽ gây ra nhiều suy nghĩ buồn hơn. Cuối cùng, chúng ta nhìn cuộc sống qua một bức màn buồn, nơi mọi thứ dường như buồn với chúng ta và chúng ta không thể thấy những gì thực sự đang xảy ra trên thế giới.</p>
+    </article>
+
+    <!-- FIG-C5 -->
+    <figure class="fig">
+      <span class="fig-lbl">Hình 4 &middot; Bức màn buồn</span>
+      <svg viewBox="0 0 520 240" role="img" aria-label="Bên trái: vòng lặp suy nghĩ buồn gây ra cảm giác buồn, cảm giác buồn gây ra thêm suy nghĩ buồn. Bên phải: một khung cảnh có nắng bị phủ một lớp màn xanh và mưa rơi">
+<defs><marker id="m54" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="var(--c6)"/></marker><clipPath id="c54"><rect x="280" y="16" width="226" height="176" rx="18"/></clipPath></defs>
+<rect x="20" y="40" width="150" height="40" rx="20" fill="var(--c6l)" stroke="var(--c6)" stroke-width="1.6"/><text x="95.0" y="65.0" class="svg-t" font-size="13.5" text-anchor="middle" font-weight="800">suy nghĩ buồn</text><rect x="20" y="134" width="150" height="40" rx="20" fill="var(--c7l)" stroke="var(--c7)" stroke-width="1.6"/><text x="95.0" y="159.0" class="svg-t" font-size="13.5" text-anchor="middle" font-weight="800">cảm giác buồn</text><path d="M150,82 C178,96 178,118 150,132" fill="none" stroke="var(--c6)" stroke-width="2.5" marker-end="url(#m54)"/><path d="M40,132 C12,118 12,96 40,82" fill="none" stroke="var(--c6)" stroke-width="2.5" marker-end="url(#m54)"/><text x="212.0" y="104.0" class="svg-t2" font-size="11.5" text-anchor="middle" font-weight="700">gây ra</text><text x="212.0" y="120.0" class="svg-t2" font-size="11.5" text-anchor="middle" font-weight="700">nhiều hơn</text><g clip-path="url(#c54)"><rect x="280" y="16" width="226" height="176" fill="var(--c3l)"/><circle cx="460" cy="56" r="20" fill="var(--c3)"/><path d="M280,150 Q350,110 420,150 T506,140 V192 H280 Z" fill="var(--c4)" opacity=".8"/><g ><circle cx="340" cy="128.0" r="8.0" fill="var(--c2)"/><path d="M330.0,170 Q330.0,140.0 340,138.4 Q350.0,140.0 350.0,170 Z" fill="var(--c2)"/></g><rect x="280" y="16" width="226" height="176" fill="var(--c6)" opacity=".42"/><line x1="459" y1="62" x2="456" y2="74" stroke="var(--c6)" stroke-width="2" stroke-linecap="round" class="a-rain" style="animation-delay:1.08s"/><line x1="489" y1="75" x2="486" y2="87" stroke="var(--c6)" stroke-width="2" stroke-linecap="round" class="a-rain" style="animation-delay:1.34s"/><line x1="476" y1="150" x2="473" y2="162" stroke="var(--c6)" stroke-width="2" stroke-linecap="round" class="a-rain" style="animation-delay:0.23s"/><line x1="489" y1="113" x2="486" y2="125" stroke="var(--c6)" stroke-width="2" stroke-linecap="round" class="a-rain" style="animation-delay:0.23s"/><line x1="435" y1="33" x2="432" y2="45" stroke="var(--c6)" stroke-width="2" stroke-linecap="round" class="a-rain" style="animation-delay:0.44s"/><line x1="419" y1="129" x2="416" y2="141" stroke="var(--c6)" stroke-width="2" stroke-linecap="round" class="a-rain" style="animation-delay:0.28s"/><line x1="363" y1="113" x2="360" y2="125" stroke="var(--c6)" stroke-width="2" stroke-linecap="round" class="a-rain" style="animation-delay:1.23s"/><line x1="313" y1="145" x2="310" y2="157" stroke="var(--c6)" stroke-width="2" stroke-linecap="round" class="a-rain" style="animation-delay:0.88s"/><line x1="340" y1="44" x2="337" y2="56" stroke="var(--c6)" stroke-width="2" stroke-linecap="round" class="a-rain" style="animation-delay:0.25s"/><line x1="395" y1="90" x2="392" y2="102" stroke="var(--c6)" stroke-width="2" stroke-linecap="round" class="a-rain" style="animation-delay:1.36s"/><line x1="363" y1="78" x2="360" y2="90" stroke="var(--c6)" stroke-width="2" stroke-linecap="round" class="a-rain" style="animation-delay:0.28s"/><line x1="439" y1="43" x2="436" y2="55" stroke="var(--c6)" stroke-width="2" stroke-linecap="round" class="a-rain" style="animation-delay:1.35s"/><line x1="446" y1="61" x2="443" y2="73" stroke="var(--c6)" stroke-width="2" stroke-linecap="round" class="a-rain" style="animation-delay:0.54s"/><line x1="303" y1="123" x2="300" y2="135" stroke="var(--c6)" stroke-width="2" stroke-linecap="round" class="a-rain" style="animation-delay:0.03s"/><line x1="355" y1="82" x2="352" y2="94" stroke="var(--c6)" stroke-width="2" stroke-linecap="round" class="a-rain" style="animation-delay:0.58s"/><line x1="371" y1="53" x2="368" y2="65" stroke="var(--c6)" stroke-width="2" stroke-linecap="round" class="a-rain" style="animation-delay:1.31s"/><line x1="399" y1="50" x2="396" y2="62" stroke="var(--c6)" stroke-width="2" stroke-linecap="round" class="a-rain" style="animation-delay:0.37s"/><line x1="318" y1="47" x2="315" y2="59" stroke="var(--c6)" stroke-width="2" stroke-linecap="round" class="a-rain" style="animation-delay:0.46s"/><line x1="458" y1="109" x2="455" y2="121" stroke="var(--c6)" stroke-width="2" stroke-linecap="round" class="a-rain" style="animation-delay:1.14s"/><line x1="413" y1="46" x2="410" y2="58" stroke="var(--c6)" stroke-width="2" stroke-linecap="round" class="a-rain" style="animation-delay:0.82s"/><line x1="333" y1="30" x2="330" y2="42" stroke="var(--c6)" stroke-width="2" stroke-linecap="round" class="a-rain" style="animation-delay:0.83s"/><line x1="301" y1="56" x2="298" y2="68" stroke="var(--c6)" stroke-width="2" stroke-linecap="round" class="a-rain" style="animation-delay:0.99s"/></g><rect x="280" y="16" width="226" height="176" rx="18" fill="none" stroke="var(--c6)" stroke-width="2"/><text x="393.0" y="214.0" class="svg-t" font-size="12.5" text-anchor="middle" font-weight="800">nhìn cuộc sống qua một</text><text x="393.0" y="230.0" class="svg-t" font-size="12.5" text-anchor="middle" font-weight="800">bức màn buồn</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng</strong> theo lời tác giả: &ldquo;Khi chúng ta có một suy nghĩ buồn, nó sẽ gây ra cảm giác buồn, và cảm giác buồn sẽ gây ra nhiều suy nghĩ buồn hơn. Cuối cùng, chúng ta nhìn cuộc sống qua một bức màn buồn&rdquo; — mặt trời vẫn ở đó, nhưng không còn thấy rõ.</figcaption>
+    </figure>
+
+    <blockquote data-q="2" data-ini="RM"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Tâm trí là ý thức đã đặt ra những giới hạn. Bạn ban đầu là vô hạn và hoàn hảo. Sau đó, bạn sẽ tiếp nhận những giới hạn và trở thành tâm trí.</p>
+      <cite><b>Ramana Maharshi</b></cite>
+    </div></blockquote>
+
+    <article class="body-card">
+      <p>Nếu bạn không cố tình lập trình tâm trí của mình để suy nghĩ tích cực, tâm trí của bạn sẽ liên tục nảy sinh những suy nghĩ tiêu cực hạ thấp và hạn chế bạn:</p>
+      <ul class="dia">
+        <li>&ldquo;Tôi không nên làm điều đó.&rdquo;</li>
+        <li>&ldquo;Tôi đã nghĩ gì vậy?&rdquo;</li>
+        <li>&ldquo;Điều đó thực sự ngu ngốc.&rdquo;</li>
+        <li>&ldquo;Tôi sắp hết thời gian rồi.&rdquo;</li>
+        <li>&ldquo;Tôi không thể làm điều đó.&rdquo;</li>
+      </ul>
+    </article>
+
+    <blockquote data-q="7" data-ini="🙏"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Tâm trí chỉ toàn là &ldquo;Không!&rdquo; &ldquo;Quá muộn!&rdquo; &ldquo;Quá sớm!&rdquo; &ldquo;Quá nhanh!&rdquo; &ldquo;Quá chậm!&rdquo; Tâm trí không bao giờ dừng lại.</p>
+      <cite><b>Người thầy của tôi</b> — người thầy giấu tên của Rhonda Byrne</cite>
+    </div></blockquote>
+
+    <!-- FIG-C5 -->
+    <figure class="fig">
+      <span class="fig-lbl">Hình 5 &middot; Tâm trí chạy tự động</span>
+      <svg viewBox="0 0 520 232" role="img" aria-label="Một chiếc máy phát cũ đang chạy, xung quanh lần lượt bật ra các tiếng: Không! Quá muộn! Quá sớm! Quá nhanh! Quá chậm!">
+<rect x="196" y="70" width="128" height="88" rx="16" fill="var(--ink2)"/><circle cx="232" cy="114" r="24" fill="var(--ink)"/><circle cx="232" cy="114" r="8" fill="none" stroke="var(--ink3)" stroke-width="1.5"/><circle cx="232" cy="114" r="15" fill="none" stroke="var(--ink3)" stroke-width="1.5"/><circle cx="232" cy="114" r="21" fill="none" stroke="var(--ink3)" stroke-width="1.5"/><rect x="268" y="92" width="44" height="10" rx="3" fill="var(--c3)"/><circle cx="276" cy="130" r="6" fill="var(--c1)" class="a-blink" style="animation-duration:.8s"/><circle cx="298" cy="130" r="6" fill="var(--ink3)"/><line x1="300" y1="70" x2="330" y2="36" stroke="var(--ink2)" stroke-width="3"/><path d="M186,102 q-8,12 0,24" stroke="var(--c1)" stroke-width="2.4" fill="none" class="a-blink" style="animation-delay:0.0s"/><path d="M176,98 q-8,12 0,24" stroke="var(--c1)" stroke-width="2.4" fill="none" class="a-blink" style="animation-delay:0.2s"/><path d="M166,94 q-8,12 0,24" stroke="var(--c1)" stroke-width="2.4" fill="none" class="a-blink" style="animation-delay:0.4s"/><g class="a-pop" style="animation-duration:5s; animation-delay:0.0s"><polygon points="135.1,52.0 125.2,58.7 125.0,67.4 109.7,69.0 99.5,75.6 85.9,71.4 70.5,72.8 64.9,64.7 51.5,60.2 56.7,52.0 51.5,43.8 64.9,39.3 70.4,31.2 85.9,32.6 99.5,28.4 109.7,35.0 125.0,36.6 125.2,45.3" fill="var(--c1)"/><text x="92.0" y="57.0" class="svg-w" font-size="15" text-anchor="middle">Không!</text></g><g class="a-pop" style="animation-duration:5s; animation-delay:0.9s"><polygon points="476.1,50.0 463.3,56.7 463.0,65.4 443.0,67.0 429.8,73.6 412.0,69.4 391.9,70.8 384.7,62.7 367.2,58.2 374.0,50.0 367.2,41.8 384.7,37.3 391.9,29.2 412.0,30.6 429.8,26.4 443.0,33.0 463.0,34.6 463.3,43.3" fill="var(--c2)"/><text x="420.0" y="55.0" class="svg-w" font-size="15" text-anchor="middle">Quá muộn!</text></g><g class="a-pop" style="animation-duration:5s; animation-delay:1.8s"><polygon points="125.8,150.0 113.9,156.7 113.7,165.4 95.2,167.0 83.0,173.6 66.6,169.4 48.1,170.8 41.5,162.7 25.3,158.2 31.5,150.0 25.3,141.8 41.5,137.3 48.1,129.2 66.6,130.6 83.0,126.4 95.2,133.0 113.7,134.6 113.9,143.3" fill="var(--c8)"/><text x="74.0" y="155.0" class="svg-w" font-size="15" text-anchor="middle">Quá sớm!</text></g><g class="a-pop" style="animation-duration:5s; animation-delay:2.7s"><polygon points="500.5,150.0 486.6,156.7 486.3,165.4 464.8,167.0 450.5,173.6 431.4,169.4 409.8,170.8 402.0,162.7 383.1,158.2 390.4,150.0 383.1,141.8 402.0,137.3 409.8,129.2 431.4,130.6 450.5,126.4 464.8,133.0 486.3,134.6 486.6,143.3" fill="var(--c7)"/><text x="440.0" y="155.0" class="svg-w" font-size="15" text-anchor="middle">Quá nhanh!</text></g><g class="a-pop" style="animation-duration:5s; animation-delay:3.6s"><polygon points="316.1,26.0 303.3,32.7 303.0,41.4 283.0,43.0 269.8,49.6 252.0,45.4 231.9,46.8 224.7,38.7 207.2,34.2 214.0,26.0 207.2,17.8 224.7,13.3 231.9,5.2 252.0,6.6 269.8,2.4 283.0,9.0 303.0,10.6 303.3,19.3" fill="var(--c6)"/><text x="260.0" y="31.0" class="svg-w" font-size="15" text-anchor="middle">Quá chậm!</text></g><text x="260.0" y="196.0" class="svg-cap" font-size="11" text-anchor="middle" fill="var(--c1)">TỰ ĐỘNG</text><text x="260.0" y="222.0" class="svg-t" font-size="14" text-anchor="middle" font-weight="800">“Tâm trí không bao giờ dừng lại.”</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng</strong> từ đúng câu của người thầy tác giả: &ldquo;Tâm trí chỉ toàn là ‘Không!’ ‘Quá muộn!’ ‘Quá sớm!’ ‘Quá nhanh!’ ‘Quá chậm!’ Tâm trí không bao giờ dừng lại.&rdquo; Như Jan Frazier nói ngay sau đó, đó là một cỗ máy chạy tự động.</figcaption>
+    </figure>
+
+    <blockquote data-q="8" data-ini="JF"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Không phải tâm trí là xấu. Vấn đề là nó có xu hướng chạy tự động, một cỗ máy mà chúng ta không thể tìm ra cách tắt. Hầu hết thời gian, chúng ta thậm chí không nhận ra nó đang chạy. Nội dung lặp đi lặp lại của nó giống như nhạc thang máy, hầu như không được chú ý, giống như nhiễu nền bị tắt. Bởi vì tâm trí đi khắp mọi nơi chúng ta đến, nên sự cám dỗ sử dụng nó liên tục là rất lớn. Nó chạy đơn giản vì nó có thể. Giống như một cái búa được sử dụng sai cách, tâm trí hoạt động quá mức sẽ đập ngẫu nhiên vào mọi thứ trong tầm mắt, không bỏ lỡ bất kỳ cơ hội nào để phán đoán, phản đối, diễn giải, xác định, suy ngẫm, bắt đầu một câu chuyện về nó.</p>
+      <cite><b>Jan Frazier</b> — trích từ <em>Sự tự do hiện hữu</em></cite>
+    </div></blockquote>
+
+    <article class="body-card">
+      <p>Một tâm trí đang chạy tự động cũng sẽ liên tục nói với bạn rằng cuộc sống của bạn và thế giới này còn thiếu thốn, thiếu tiền bạc, thiếu sức khỏe, thiếu tình yêu, thiếu thời gian, thiếu nguồn lực và rằng không có đủ cho tất cả mọi người. Và nếu bạn tin vào điều đó, đó sẽ là những gì bạn trải nghiệm.</p>
+      <p>May mắn thay, tâm trí của bạn cũng là một công cụ tuyệt vời. Những suy nghĩ tích cực của bạn về những gì bạn muốn không chỉ có thể thay đổi cuộc sống của bạn mà còn mang lại cho bạn hạnh phúc và niềm vui lớn lao. Nếu bạn chỉ nghĩ về những gì bạn muốn, cuộc sống của bạn sẽ thật tuyệt vời.</p>
+      <p>Nhưng nhiều người bị mắc kẹt trong khuôn mẫu nghiện ngập của việc tin vào những suy nghĩ tiêu cực, và việc giải thoát bản thân khỏi vòng lặp suy nghĩ tiêu cực này là điều cần thiết và có thể thực hiện khá dễ dàng: <mark>Nhận thức của bạn sẽ giúp bạn được tự do.</mark></p>
+    </article>
+
+    <div class="concept">
+      <span class="lbl">Khái niệm cốt lõi</span>
+      <h4>Tin vào suy nghĩ</h4>
+      <dl>
+        <dt>Cách tác giả sử dụng khái niệm này trong chương</dt>
+        <dd>Không phải việc <em>có</em> suy nghĩ, mà là việc trao cho suy nghĩ thẩm quyền — lắng nghe và tin nó như thể nó là sự thật. Một suy nghĩ chỉ &ldquo;trở thành một nguồn năng lượng khi bạn tin vào nó&rdquo;.</dd>
+        <dt>Ý nghĩa trong mạch lập luận</dt>
+        <dd>Đây là khớp nối của cả chương: nếu vấn đề nằm ở việc tin chứ không ở việc nghĩ, thì lối thoát không phải là dẹp bỏ tâm trí mà là thôi tin vào nó.</dd>
+        <dt>Lưu ý để tránh hiểu sai</dt>
+        <dd>Tác giả nói rõ tâm trí là &ldquo;công cụ tuyệt vời&rdquo; và là &ldquo;người biểu hiện vĩ đại&rdquo; của cuộc sống vật chất; suy nghĩ tích cực &ldquo;không gây hại&rdquo;. Đối tượng cần cảnh giác là suy nghĩ tiêu cực.</dd>
+      </dl>
+    </div>
+
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+  <!-- 2 -->
+  <section id="c5-p2">
+    <div class="sec-head"><div class="badge">02</div>
+      <h2>Đừng tin kẻ gây rắc rối</h2></div>
+    <p class="willlearn"><b>Bạn sẽ hiểu gì ở phần này?</b><br>Mối liên hệ giữa cảm xúc tiêu cực và suy nghĩ được tin, vì sao chịu trách nhiệm không có nghĩa là tự trách, và ai thực sự là người đang tức giận. <em>Tiêu đề phần này là tiểu mục gốc trong sách.</em></p>
+
+    <article class="body-card">
+      <p>Tâm trí không có vấn đề gì cả; <mark>rắc rối chỉ bắt đầu khi chúng ta tin vào những suy nghĩ tiêu cực của nó.</mark></p>
+      <p>Khi bạn cảm thấy lo lắng, đó là vì bạn đang tin vào những suy nghĩ lo lắng. Khi bạn cảm thấy nghi ngờ, đó là vì bạn đang tin vào những suy nghĩ nghi ngờ.</p>
+      <p>Khi bạn cảm thấy lo lắng, buồn bã, chán nản, sợ hãi, thất vọng, cáu kỉnh, mất kiên nhẫn, trả thù, chán nản, thù hận hoặc bất kỳ cảm xúc tiêu cực nào, đó là vì bạn đang tin vào những suy nghĩ!</p>
+      <p>Và trong khi bạn giữ những cảm xúc đó bằng cách tiếp tục tin vào những suy nghĩ của mình, tâm trí bạn sẽ cho bạn nhiều hơn nữa những cảm xúc tương tự. Một cảm giác chán nản sẽ tạo ra nhiều suy nghĩ chán nản hơn, mang đến cho bạn góc nhìn chán nản về con người, hoàn cảnh và sự kiện, khiến bạn cảm thấy chán nản hơn nữa, và cứ thế tiếp diễn.</p>
+    </article>
+
+    <div class="example">
+      <span class="lbl">Ví dụ giúp dễ hình dung</span>
+      <p>Vòng lặp mà tác giả mô tả, lấy đúng ví dụ &ldquo;chán nản&rdquo; của bà:</p>
+      <div class="flow-grid" style="margin-top:14px">
+        <div class="fstep"><span class="k">1</span><span class="v">Tin vào một suy nghĩ chán nản</span></div>
+        <div class="farrow">→</div>
+        <div class="fstep"><span class="k">2</span><span class="v">Cảm giác chán nản</span></div>
+        <div class="farrow">→</div>
+        <div class="fstep"><span class="k">3</span><span class="v">Nhiều suy nghĩ chán nản hơn · Góc nhìn chán nản về người, hoàn cảnh, sự kiện</span></div>
+        <div class="farrow">→</div>
+        <div class="fstep"><span class="k">4</span><span class="v">Cảm thấy chán nản hơn nữa — và cứ thế tiếp diễn</span></div>
+      </div>
+    </div>
+
+    <!-- FIG-C5 -->
+    <figure class="fig">
+      <span class="fig-lbl">Hình 6 &middot; Vòng xoáy chán nản</span>
+      <svg viewBox="0 0 520 240" role="img" aria-label="Một đường xoắn ốc đi dần vào trong, đổi màu từ xanh sang đỏ, với bốn mốc: tin vào một suy nghĩ chán nản, cảm giác chán nản, nhiều suy nghĩ chán nản hơn, chán nản hơn nữa; một viên bi lăn mãi theo vòng xoáy">
+<defs><linearGradient id="g56" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--c6)"/><stop offset="1" stop-color="var(--c1)"/></linearGradient></defs>
+<path d="M130.0,24.0 L136.5,24.6 L142.9,25.5 L149.3,27.0 L155.5,28.8 L161.5,31.1 L167.3,33.7 L173.0,36.8 L178.3,40.2 L183.5,43.9 L188.3,48.0 L192.9,52.4 L197.1,57.0 L200.9,61.9 L204.4,67.1 L207.6,72.5 L210.3,78.0 L212.7,83.7 L214.7,89.5 L216.2,95.4 L217.4,101.4 L218.1,107.5 L218.4,113.5 L218.3,119.5 L217.8,125.5 L216.9,131.4 L215.6,137.3 L213.9,143.0 L211.8,148.5 L209.4,153.9 L206.6,159.0 L203.5,164.0 L200.1,168.7 L196.3,173.1 L192.3,177.3 L188.1,181.2 L183.5,184.7 L178.8,187.9 L173.9,190.8 L168.8,193.4 L163.6,195.5 L158.3,197.3 L152.9,198.7 L147.4,199.8 L141.9,200.5 L136.4,200.8 L130.8,200.7 L125.4,200.2 L120.0,199.4 L114.7,198.2 L109.5,196.6 L104.4,194.7 L99.5,192.5 L94.8,190.0 L90.3,187.1 L86.0,184.0 L82.0,180.6 L78.2,177.0 L74.7,173.1 L71.4,169.0 L68.5,164.7 L65.9,160.2 L63.6,155.6 L61.6,150.9 L60.0,146.0 L58.7,141.1 L57.8,136.1 L57.2,131.1 L56.9,126.1 L57.0,121.1 L57.4,116.2 L58.2,111.3 L59.3,106.5 L60.7,101.8 L62.4,97.2 L64.4,92.8 L66.7,88.6 L69.3,84.5 L72.1,80.7 L75.2,77.0 L78.5,73.6 L82.0,70.4 L85.7,67.6 L89.5,64.9 L93.6,62.6 L97.7,60.5 L102.0,58.8 L106.3,57.3 L110.7,56.2 L115.2,55.3 L119.7,54.8 L124.2,54.6 L128.6,54.7 L133.1,55.1 L137.4,55.8 L141.7,56.7 L145.9,58.0 L150.0,59.6 L153.9,61.4 L157.7,63.4 L161.3,65.7 L164.8,68.3 L168.0,71.0 L171.0,74.0 L173.8,77.1 L176.4,80.4 L178.7,83.8 L180.8,87.4 L182.6,91.1 L184.1,94.9 L185.4,98.7 L186.4,102.7 L187.1,106.6 L187.6,110.6 L187.7,114.5 L187.6,118.5 L187.3,122.4 L186.7,126.3 L185.8,130.0 L184.6,133.7 L183.3,137.3 L181.6,140.8 L179.8,144.1 L177.8,147.3 L175.5,150.3 L173.1,153.1 L170.5,155.7 L167.7,158.1 L164.8,160.4 L161.8,162.4 L158.7,164.2 L155.5,165.7 L152.1,167.1 L148.8,168.1 L145.4,169.0 L141.9,169.6 L138.4,170.0 L135.0,170.1 L131.6,170.0 L128.2,169.6 L124.8,169.1 L121.6,168.3 L118.4,167.3 L115.3,166.0 L112.3,164.6 L109.5,163.0 L106.8,161.2 L104.2,159.3 L101.8,157.2 L99.5,154.9 L97.5,152.5 L95.6,150.0 L93.9,147.4 L92.4,144.7 L91.1,141.9 L90.0,139.1 L89.1,136.2 L88.4,133.3 L87.9,130.3 L87.6,127.4 L87.6,124.5 L87.7,121.6 L88.0,118.7 L88.5,115.9 L89.2,113.1 L90.1,110.4 L91.2,107.8 L92.4,105.3 L93.8,103.0 L95.3,100.7 L97.0,98.6 L98.8,96.6 L100.7,94.7 L102.8,93.0 L104.9,91.5 L107.1,90.1 L109.3,88.9 L111.7,87.9 L114.0,87.0 L116.4,86.3 L118.9,85.8 L121.3,85.4 L123.7,85.2 L126.2,85.2 L128.5,85.4 L130.9,85.7 L133.2,86.2 L135.4,86.8 L137.6,87.5 L139.7,88.5 L141.7,89.5 L143.6,90.7 L145.4,92.0 L147.1,93.4 L148.7,94.8 L150.1,96.4 L151.5,98.1 L152.6,99.8 L153.7,101.6 L154.6,103.5 L155.4,105.3 L156.0,107.2 L156.5,109.2 L156.9,111.1 L157.1,113.0 L157.2,115.0 L157.2,116.9 L157.0,118.7 L156.7,120.6 L156.2,122.3 L155.7,124.1 L155.0,125.7 L154.3,127.3 L153.4,128.8 L152.4,130.3 L151.4,131.6 L150.3,132.9 L149.1,134.0 L147.8,135.1 L146.5,136.0 L145.2,136.8 L143.8,137.6 L142.4,138.2 L140.9,138.7 L139.5,139.1 L138.0,139.4 L136.6,139.6 L135.2,139.7 L133.7,139.6 L132.4,139.5 L131.0,139.3 L129.7,139.0 L128.4,138.6 L127.2,138.1 L126.1,137.6 L125.0,136.9 L124.0,136.2 L123.0,135.5 L122.1,134.7 L121.3,133.8 L120.6,132.9" fill="none" stroke="url(#g56)" stroke-width="5" stroke-linecap="round" opacity=".8"/><circle cx="130.0" cy="24.0" r="12" fill="var(--c6)"/><text x="130.0" y="28.5" class="svg-w" font-size="12.5" text-anchor="middle">1</text><circle cx="75.2" cy="77.0" r="12" fill="var(--c7)"/><text x="75.2" y="81.5" class="svg-w" font-size="12.5" text-anchor="middle">2</text><circle cx="101.8" cy="157.2" r="12" fill="var(--c8)"/><text x="101.8" y="161.7" class="svg-w" font-size="12.5" text-anchor="middle">3</text><circle cx="150.3" cy="132.9" r="12" fill="var(--c1)"/><text x="150.3" y="137.4" class="svg-w" font-size="12.5" text-anchor="middle">4</text><circle r="8" fill="var(--ink)"><animateMotion dur="6s" repeatCount="indefinite" path="M130.0,24.0 L136.5,24.6 L142.9,25.5 L149.3,27.0 L155.5,28.8 L161.5,31.1 L167.3,33.7 L173.0,36.8 L178.3,40.2 L183.5,43.9 L188.3,48.0 L192.9,52.4 L197.1,57.0 L200.9,61.9 L204.4,67.1 L207.6,72.5 L210.3,78.0 L212.7,83.7 L214.7,89.5 L216.2,95.4 L217.4,101.4 L218.1,107.5 L218.4,113.5 L218.3,119.5 L217.8,125.5 L216.9,131.4 L215.6,137.3 L213.9,143.0 L211.8,148.5 L209.4,153.9 L206.6,159.0 L203.5,164.0 L200.1,168.7 L196.3,173.1 L192.3,177.3 L188.1,181.2 L183.5,184.7 L178.8,187.9 L173.9,190.8 L168.8,193.4 L163.6,195.5 L158.3,197.3 L152.9,198.7 L147.4,199.8 L141.9,200.5 L136.4,200.8 L130.8,200.7 L125.4,200.2 L120.0,199.4 L114.7,198.2 L109.5,196.6 L104.4,194.7 L99.5,192.5 L94.8,190.0 L90.3,187.1 L86.0,184.0 L82.0,180.6 L78.2,177.0 L74.7,173.1 L71.4,169.0 L68.5,164.7 L65.9,160.2 L63.6,155.6 L61.6,150.9 L60.0,146.0 L58.7,141.1 L57.8,136.1 L57.2,131.1 L56.9,126.1 L57.0,121.1 L57.4,116.2 L58.2,111.3 L59.3,106.5 L60.7,101.8 L62.4,97.2 L64.4,92.8 L66.7,88.6 L69.3,84.5 L72.1,80.7 L75.2,77.0 L78.5,73.6 L82.0,70.4 L85.7,67.6 L89.5,64.9 L93.6,62.6 L97.7,60.5 L102.0,58.8 L106.3,57.3 L110.7,56.2 L115.2,55.3 L119.7,54.8 L124.2,54.6 L128.6,54.7 L133.1,55.1 L137.4,55.8 L141.7,56.7 L145.9,58.0 L150.0,59.6 L153.9,61.4 L157.7,63.4 L161.3,65.7 L164.8,68.3 L168.0,71.0 L171.0,74.0 L173.8,77.1 L176.4,80.4 L178.7,83.8 L180.8,87.4 L182.6,91.1 L184.1,94.9 L185.4,98.7 L186.4,102.7 L187.1,106.6 L187.6,110.6 L187.7,114.5 L187.6,118.5 L187.3,122.4 L186.7,126.3 L185.8,130.0 L184.6,133.7 L183.3,137.3 L181.6,140.8 L179.8,144.1 L177.8,147.3 L175.5,150.3 L173.1,153.1 L170.5,155.7 L167.7,158.1 L164.8,160.4 L161.8,162.4 L158.7,164.2 L155.5,165.7 L152.1,167.1 L148.8,168.1 L145.4,169.0 L141.9,169.6 L138.4,170.0 L135.0,170.1 L131.6,170.0 L128.2,169.6 L124.8,169.1 L121.6,168.3 L118.4,167.3 L115.3,166.0 L112.3,164.6 L109.5,163.0 L106.8,161.2 L104.2,159.3 L101.8,157.2 L99.5,154.9 L97.5,152.5 L95.6,150.0 L93.9,147.4 L92.4,144.7 L91.1,141.9 L90.0,139.1 L89.1,136.2 L88.4,133.3 L87.9,130.3 L87.6,127.4 L87.6,124.5 L87.7,121.6 L88.0,118.7 L88.5,115.9 L89.2,113.1 L90.1,110.4 L91.2,107.8 L92.4,105.3 L93.8,103.0 L95.3,100.7 L97.0,98.6 L98.8,96.6 L100.7,94.7 L102.8,93.0 L104.9,91.5 L107.1,90.1 L109.3,88.9 L111.7,87.9 L114.0,87.0 L116.4,86.3 L118.9,85.8 L121.3,85.4 L123.7,85.2 L126.2,85.2 L128.5,85.4 L130.9,85.7 L133.2,86.2 L135.4,86.8 L137.6,87.5 L139.7,88.5 L141.7,89.5 L143.6,90.7 L145.4,92.0 L147.1,93.4 L148.7,94.8 L150.1,96.4 L151.5,98.1 L152.6,99.8 L153.7,101.6 L154.6,103.5 L155.4,105.3 L156.0,107.2 L156.5,109.2 L156.9,111.1 L157.1,113.0 L157.2,115.0 L157.2,116.9 L157.0,118.7 L156.7,120.6 L156.2,122.3 L155.7,124.1 L155.0,125.7 L154.3,127.3 L153.4,128.8 L152.4,130.3 L151.4,131.6 L150.3,132.9 L149.1,134.0 L147.8,135.1 L146.5,136.0 L145.2,136.8 L143.8,137.6 L142.4,138.2 L140.9,138.7 L139.5,139.1 L138.0,139.4 L136.6,139.6 L135.2,139.7 L133.7,139.6 L132.4,139.5 L131.0,139.3 L129.7,139.0 L128.4,138.6 L127.2,138.1 L126.1,137.6 L125.0,136.9 L124.0,136.2 L123.0,135.5 L122.1,134.7 L121.3,133.8 L120.6,132.9"/></circle><rect x="262" y="27" width="248" height="34" rx="17" fill="var(--c6)" fill-opacity="0.12"/><circle cx="282" cy="44" r="11" fill="var(--c6)"/><text x="282.0" y="48.5" class="svg-w" font-size="12" text-anchor="middle">1</text><text x="300.0" y="48.5" class="svg-t" font-size="13" text-anchor="start" font-weight="800">tin vào một suy nghĩ chán nản</text><rect x="262" y="71" width="248" height="34" rx="17" fill="var(--c7)" fill-opacity="0.22"/><circle cx="282" cy="88" r="11" fill="var(--c7)"/><text x="282.0" y="92.5" class="svg-w" font-size="12" text-anchor="middle">2</text><text x="300.0" y="92.5" class="svg-t" font-size="13" text-anchor="start" font-weight="800">cảm giác chán nản</text><rect x="262" y="115" width="248" height="34" rx="17" fill="var(--c8)" fill-opacity="0.32"/><circle cx="282" cy="132" r="11" fill="var(--c8)"/><text x="282.0" y="136.5" class="svg-w" font-size="12" text-anchor="middle">3</text><text x="300.0" y="136.5" class="svg-t" font-size="13" text-anchor="start" font-weight="800">nhiều suy nghĩ chán nản hơn</text><rect x="262" y="159" width="248" height="34" rx="17" fill="var(--c1)" fill-opacity="0.42"/><circle cx="282" cy="176" r="11" fill="var(--c1)"/><text x="282.0" y="180.5" class="svg-w" font-size="12" text-anchor="middle">4</text><text x="300.0" y="180.5" class="svg-t" font-size="13" text-anchor="start" font-weight="800">chán nản hơn nữa — và cứ thế…</text><text x="386.0" y="222.0" class="svg-t2" font-size="12.5" text-anchor="middle" font-weight="700">mỗi vòng lại sâu hơn một chút</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng</strong> theo đúng vòng lặp tác giả mô tả với ví dụ &ldquo;chán nản&rdquo;: chừng nào bạn còn tin vào suy nghĩ, tâm trí sẽ cho bạn nhiều hơn nữa những cảm xúc tương tự.</figcaption>
+    </figure>
+
+    <blockquote data-q="7" data-ini="JK"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Suy nghĩ thật xảo quyệt, thật thông minh, đến mức nó bóp méo mọi thứ vì sự tiện lợi của chính nó.</p>
+      <cite><b>J. Krishnamurti</b> — trích từ <em>Tự do khỏi những điều đã biết</em></cite>
+    </div></blockquote>
+
+    <article class="body-card">
+      <p>Khi chúng ta tin vào những suy nghĩ tiêu cực của tâm trí, chúng ta bị kéo vào bộ phim do tâm trí tạo ra, và sau đó chúng ta chắc chắn sẽ trải qua nhiều căng thẳng và đau khổ hơn.</p>
+    </article>
+
+    <blockquote data-q="7" data-ini="🙏"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Sự đau khổ tự gây ra nảy sinh khi chúng ta tin vào những suy nghĩ tiêu cực!</p>
+      <cite><b>Người thầy của tôi</b> — người thầy giấu tên của Rhonda Byrne</cite>
+    </div></blockquote>
+
+    <blockquote data-q="6" data-ini="LL"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Bạn phải chịu trách nhiệm cho mọi thứ bạn cảm thấy. Đó là cảm xúc của bạn, đó là suy nghĩ của bạn. Bạn bật chúng lên, bạn nghĩ chúng, và không ai khác ngoài bạn làm điều đó và bạn hành động như thể bạn không kiểm soát được! Bạn vặn vòi nước chảy trên đầu mình và bạn nói, &ldquo;Ồ, có ai đó làm mình ướt hết rồi.&rdquo; Chính bạn là người vặn vòi nước và làm mình ướt. Vì vậy, hướng đi của bạn là phải chịu hoàn toàn trách nhiệm về những gì đang xảy ra với bạn. Sau đó, bạn sẽ thấy khi nhìn theo hướng &ldquo;Tôi đang làm điều này&rdquo; rằng bạn đang làm! Sau đó, khi bạn thấy mình đang hành hạ bản thân, bạn sẽ nói, &ldquo;Trời ơi, mình có thể ngu ngốc đến mức nào?&rdquo; Và bạn sẽ dừng lại. Thay vì hành hạ bản thân, bạn sẽ làm cho mình hạnh phúc.</p>
+      <cite><b>Lester Levenson</b> — trích từ <em>Hạnh phúc là tự do</em>, tập 1–5</cite>
+    </div></blockquote>
+
+    <article class="body-card">
+      <p>Chịu trách nhiệm về mọi thứ trong cuộc sống của chúng ta cũng có nghĩa là không đổ lỗi cho bất kỳ ai hoặc bất kỳ điều gì khác về điều gì đó đã xảy ra. <mark>Và điều đó có nghĩa là không đổ lỗi cho chính mình.</mark></p>
+      <p>Đổ lỗi chỉ là một chương trình lặp đi lặp lại khác trong tâm trí. Bạn thực sự không bao giờ đổ lỗi, chỉ có tâm trí mới làm vậy.</p>
+      <p>Điều sẽ giải thoát bạn khỏi cách đổ lỗi và chỉ trích của tâm trí là hiểu rằng chính tâm trí của bạn là nguyên nhân duy nhất gây ra những phán đoán tiêu cực và ngừng tin vào những suy nghĩ tiêu cực của nó.</p>
+    </article>
+
+    <div class="hint">
+      <span class="lbl">Gợi ý để dễ hiểu</span>
+      <p>Hai vế trong đoạn này đi liền nhau và dễ bị đọc tách rời: tác giả kêu gọi chịu <em>hoàn toàn</em> trách nhiệm, nhưng ngay sau đó nói rõ rằng điều đó cũng bao gồm việc <em>không tự trách mình</em> — vì theo bà, đổ lỗi, kể cả đổ lỗi cho bản thân, cũng chỉ là một chương trình của tâm trí.</p>
+    </div>
+
+    <blockquote data-q="8" data-ini="BK"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Miễn là bạn nghĩ rằng nguyên nhân của vấn đề của bạn là &ldquo;ở ngoài kia&rdquo;, miễn là bạn nghĩ rằng bất kỳ ai hoặc bất kỳ điều gì phải chịu trách nhiệm cho nỗi đau khổ của bạn thì tình hình vẫn vô vọng. Điều đó có nghĩa là bạn mãi mãi ở trong vai trò nạn nhân, rằng bạn đang đau khổ ở thiên đường.</p>
+      <cite><b>Byron Katie</b> — trích từ <em>Yêu những gì đang có</em></cite>
+    </div></blockquote>
+
+    <article class="body-card">
+      <p>Khi chúng ta chịu trách nhiệm cho cuộc sống của chính mình, chúng ta không còn cho phép bản ngã và tâm trí đóng vai trò là nạn nhân thay cho chúng ta nữa.</p>
+    </article>
+
+    <blockquote data-q="2" data-ini="PD"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Không có suy nghĩ nào có thể thống trị thứ nhận thức được suy nghĩ đó. Hãy để ý cảm giác khi nhận ra điều này. Hãy để ý rằng nó mang lại cảm giác tự do. Đây là điều ngăn chặn sự đồng nhất vô thức với những suy nghĩ. Điều này phá vỡ chuỗi.</p>
+      <cite><b>Peter Dziuban</b> — trích từ <em>Chỉ cần chú ý</em></cite>
+    </div></blockquote>
+
+    <article class="body-card">
+      <p>Chính Nhận thức nhận thức được suy nghĩ của bạn, và chính Nhận thức nhận thức được cảm xúc của bạn.</p>
+      <p><mark>Người tức giận không phải là Nhận thức, là bạn thực sự; người tức giận là tâm trí của bạn.</mark></p>
+      <p>Người tức giận, tổn thương, lo lắng, bồn chồn hoặc thất vọng không phải là bạn thực sự, mà là tâm trí của bạn. Nó chỉ cảm thấy giống bạn vì bạn tin rằng tâm trí của bạn là bạn và vì bạn tin vào những suy nghĩ của tâm trí bạn.</p>
+    </article>
+
+    <!-- FIG-C5 -->
+    <figure class="fig">
+      <span class="fig-lbl">Hình 7 &middot; Ai đang tức giận?</span>
+      <svg viewBox="0 0 520 244" role="img" aria-label="Một bầu trời rộng là Nhận thức, bạn thực sự. Giữa trời là một đám mây đỏ có sấm chớp mang chữ: người tức giận bằng tâm trí. Ở góc, một con mắt bình thản đang quan sát">
+<defs><linearGradient id="g57" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--c6l)"/><stop offset="1" stop-color="var(--c5l)"/></linearGradient></defs>
+<rect x="10" y="10" width="500" height="200" rx="24" fill="url(#g57)" stroke="var(--c6b)" stroke-width="2"/><text x="30.0" y="40.0" class="svg-cap" font-size="12" text-anchor="start" fill="var(--c6)">NHẬN THỨC — BẠN THỰC SỰ</text><text x="30.0" y="60.0" class="svg-t2" font-size="12.5" text-anchor="start" font-weight="700">nhận thức được cơn giận,</text><text x="30.0" y="77.0" class="svg-t2" font-size="12.5" text-anchor="start" font-weight="700">không bị nó chạm tới</text><g class="a-drift" style="animation-duration:8s"><circle cx="250" cy="120" r="34" fill="var(--c1)"/><circle cx="290" cy="100" r="42" fill="var(--c1)"/><circle cx="332" cy="124" r="30" fill="var(--c1)"/><rect x="220" y="118" width="140" height="38" rx="19" fill="var(--c1)"/><path d="M286,150 L276,178 L290,174 L282,200" stroke="var(--c3)" stroke-width="4" fill="none" class="a-blink" style="animation-duration:.7s"/><text x="290.0" y="120.0" class="svg-w" font-size="13.5" text-anchor="middle">người tức giận</text><text x="290.0" y="138.0" class="svg-w" font-size="13" text-anchor="middle">= tâm trí</text></g><g class="a-pulse" style="animation-duration:4s"><path d="M420,64 Q448,44 476,64 Q448,84 420,64 Z" fill="var(--card)" stroke="var(--c6)" stroke-width="2.5"/><circle cx="448" cy="64" r="8" fill="var(--c6)"/></g><text x="448.0" y="104.0" class="svg-t" font-size="12.5" text-anchor="middle" font-weight="800" style="fill:var(--c6)">Nhận thức</text><text x="448.0" y="120.0" class="svg-t2" font-size="12" text-anchor="middle" font-weight="700">quan sát</text><text x="260.0" y="234.0" class="svg-t" font-size="12.8" text-anchor="middle" font-weight="800">Người tức giận không phải là bạn thực sự — người tức giận là tâm trí của bạn</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng</strong> theo lời tác giả: &ldquo;Chính Nhận thức nhận thức được suy nghĩ của bạn, và chính Nhận thức nhận thức được cảm xúc của bạn. Người tức giận không phải là Nhận thức, là bạn thực sự; người tức giận là tâm trí của bạn.&rdquo;</figcaption>
+    </figure>
+
+    <blockquote data-q="7" data-ini="KL"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Giống như văn bản cuộn ở cuối màn hình tivi, hãy để suy nghĩ trôi qua. Nếu sự chú ý không tập trung vào văn bản, thì bạn có thể hiện diện hoàn toàn với toàn bộ bức tranh.</p>
+      <cite><b>Kalyani Lawry</b></cite>
+    </div></blockquote>
+
+    <!-- FIG-C5 -->
+    <figure class="fig">
+      <span class="fig-lbl">Hình 8 &middot; Dòng chữ chạy cuối màn hình</span>
+      <svg viewBox="0 0 520 246" role="img" aria-label="Một chiếc tivi chiếu phong cảnh có mặt trời, đồi và ngôi nhà; ở cuối màn hình là một dải đỏ với các câu suy nghĩ chạy ngang liên tục">
+<defs><radialGradient id="g58"><stop offset="0" stop-color="var(--c3)"/><stop offset="1" stop-color="var(--c2)"/></radialGradient><clipPath id="c58"><rect x="64" y="164" width="392" height="26"/></clipPath></defs>
+<rect x="50" y="14" width="420" height="190" rx="18" fill="var(--ink)"/><rect x="64" y="26" width="392" height="164" rx="8" fill="var(--c6l)"/><circle cx="390" cy="66" r="22" fill="url(#g58)" class="a-pulse" style="animation-duration:4s"/><path d="M64,150 Q150,90 240,140 T456,124 V190 H64 Z" fill="var(--c4)" opacity=".8"/><g transform="translate(160 156)"><path d="M-22,-26 L0,-44 L22,-26 Z" fill="var(--c1)"/><rect x="-18" y="-27" width="36" height="27" fill="var(--card)"/></g><rect x="64" y="164" width="392" height="26" fill="var(--c1)" opacity=".92"/><g clip-path="url(#c58)"><g class="a-ticker"><text x="70.0" y="182.0" class="svg-w" font-size="12.5" text-anchor="start">Tôi không nên làm điều đó  ·  Tôi đã nghĩ gì vậy?  ·  Điều đó thực sự ngu ngốc  ·  Tôi sắp hết thời gian rồi  ·  Tôi không thể làm điều đó  ·  </text><text x="1106.8" y="182.0" class="svg-w" font-size="12.5" text-anchor="start">Tôi không nên làm điều đó  ·  Tôi đã nghĩ gì vậy?  ·  Điều đó thực sự ngu ngốc  ·  Tôi sắp hết thời gian rồi  ·  Tôi không thể làm điều đó  ·  </text></g></g><rect x="230" y="204" width="60" height="8" rx="3" fill="var(--ink2)"/><text x="260.0" y="236.0" class="svg-t" font-size="13.5" text-anchor="middle" font-weight="800">để suy nghĩ trôi qua — và hiện diện với toàn bộ bức tranh</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng</strong> theo hình ảnh của Kalyani Lawry: &ldquo;Giống như văn bản cuộn ở cuối màn hình tivi, hãy để suy nghĩ trôi qua.&rdquo; Các câu trên dải chữ là những suy nghĩ tiêu cực tác giả liệt kê ở phần 01.</figcaption>
+    </figure>
+
+    <div class="pause">
+      <span class="lbl">Dừng lại 30 giây</span><div class="tmr" data-s="30" role="button" tabindex="0" aria-label="Bắt đầu lại 30 giây"><svg viewBox="0 0 74 74" aria-hidden="true"><circle class="bg" cx="37" cy="37" r="32"/><circle class="fg" cx="37" cy="37" r="32"/></svg></div>
+      <p>Cảm xúc tiêu cực gần nhất bạn còn nhớ — suy nghĩ nào bạn đã tin ngay trước đó?</p>
+    </div>
+
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+  <!-- 3 -->
+  <section id="c5-p3">
+    <div class="sec-head"><div class="badge">03</div>
+      <h2>Ba suy nghĩ của tâm trí</h2></div>
+    <p class="willlearn"><b>Bạn sẽ hiểu gì ở phần này?</b><br>Ba loại suy nghĩ duy nhất mà tâm trí tạo ra, và cách nó dựng nên những câu chuyện về bạn. <em>Tiêu đề phần này là tiểu mục gốc trong sách.</em></p>
+
+    <article class="body-card">
+      <p>Mặc dù tâm trí chúng ta phát sinh từ nhận thức, như mọi thứ khác, tâm trí chúng ta không phải là một thực thể hay một vật thể thực sự, mặc dù nó chắc chắn có vẻ như vậy.</p>
+      <p>Nó chỉ đơn giản là một hoạt động hoặc quá trình cơ học, giống như một chương trình máy tính. Và giống như một chương trình máy tính, nó lặp đi lặp lại. <mark>Trên thực tế, nó lặp đi lặp lại đến mức nó chỉ có ba loại suy nghĩ khác nhau.</mark></p>
+    </article>
+
+    <blockquote data-q="7" data-ini="🙏"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Tâm trí đo lường, so sánh và mô tả. Ba điều này là tất cả những gì tâm trí làm, lặp đi lặp lại. Hãy tự kiểm tra với bất cứ điều gì bạn nói hoặc với bất kỳ suy nghĩ nào xuất hiện. Suy nghĩ đó sẽ là tâm trí đo lường một cái gì đó, so sánh một cái gì đó hoặc mô tả một cái gì đó.</p>
+      <cite><b>Người thầy của tôi</b> — người thầy giấu tên của Rhonda Byrne</cite>
+    </div></blockquote>
+
+    <article class="body-card">
+      <h3>Đo lường</h3>
+      <p>Tâm trí của bạn đo lường bằng những suy nghĩ như thế này:</p>
+      <ul class="dia">
+        <li>&ldquo;Sẽ mất hai giờ để đến đó.&rdquo;</li>
+        <li>&ldquo;Tôi sẽ đi nghỉ trong một tuần nữa.&rdquo;</li>
+        <li>&ldquo;Phải mất bao lâu để lô hàng của tôi đến nơi?&rdquo;</li>
+        <li>&ldquo;Tôi đã giảm mười pound.&rdquo;</li>
+        <li>&ldquo;Tôi không có đủ tiền.&rdquo;</li>
+      </ul>
+
+      <h3>So sánh</h3>
+      <p>Tâm trí của bạn đang so sánh khi nó nghĩ những suy nghĩ như thế này:</p>
+      <ul class="dia">
+        <li>&ldquo;Tôi thích xe SUV hơn xe mui kín.&rdquo;</li>
+        <li>&ldquo;Tôi thích đi bộ đến nơi làm việc thay vì đi xe buýt.&rdquo;</li>
+        <li>&ldquo;Cô ấy thông minh hơn tôi, và tài năng hơn tôi nhiều.&rdquo;</li>
+        <li>&ldquo;Anh ấy sẽ được thăng chức thay tôi, tôi biết mà.&rdquo;</li>
+        <li>&ldquo;Nhìn cô ấy kìa. Tôi ước mình có cơ thể của cô ấy.&rdquo;</li>
+        <li>&ldquo;Anh ấy không còn là người như trước nữa.&rdquo;</li>
+      </ul>
+
+      <h3>Mô tả</h3>
+      <p>Và tâm trí bạn liên tục mô tả mọi thứ như thể bạn không thể nhìn thấy chúng. Nhưng bạn có thể thấy những gì đang diễn ra trong cuộc sống của mình rất rõ mà không cần tâm trí liên tục bình luận, và trên thực tế, tiếng huyên náo không ngừng đó ngăn cản bạn nhìn thế giới như nó thực sự là.</p>
+    </article>
+
+    <!-- FIG-C5 -->
+    <figure class="fig">
+      <span class="fig-lbl">Hình 9 &middot; Ba việc duy nhất của tâm trí</span>
+      <svg viewBox="0 0 520 246" role="img" aria-label="Ba ô: Đo lường với cây thước và đồng hồ, ví dụ Sẽ mất hai giờ để đến đó; So sánh với cái cân đang nghiêng qua lại, ví dụ Tôi thích xe SUV hơn xe mui kín; Mô tả với chiếc micro phát sóng, bình luận không ngừng">
+<rect x="12" y="14" width="160" height="200" rx="20" fill="var(--c6l)" stroke="var(--c6)" stroke-width="1.6"/><text x="92.0" y="42.0" class="svg-cap" font-size="13" text-anchor="middle" fill="var(--c6)">ĐO LƯỜNG</text><rect x="42" y="104" width="100" height="18" rx="4" fill="var(--c6)"/><line x1="48" y1="104" x2="48" y2="116" stroke="#fff" stroke-width="1.8"/><line x1="59" y1="104" x2="59" y2="112" stroke="#fff" stroke-width="1.8"/><line x1="70" y1="104" x2="70" y2="116" stroke="#fff" stroke-width="1.8"/><line x1="81" y1="104" x2="81" y2="112" stroke="#fff" stroke-width="1.8"/><line x1="92" y1="104" x2="92" y2="116" stroke="#fff" stroke-width="1.8"/><line x1="103" y1="104" x2="103" y2="112" stroke="#fff" stroke-width="1.8"/><line x1="114" y1="104" x2="114" y2="116" stroke="#fff" stroke-width="1.8"/><line x1="125" y1="104" x2="125" y2="112" stroke="#fff" stroke-width="1.8"/><line x1="136" y1="104" x2="136" y2="116" stroke="#fff" stroke-width="1.8"/><circle cx="92" cy="76" r="22" fill="var(--card)" stroke="var(--c6)" stroke-width="3"/><line x1="92" y1="76" x2="92" y2="60" stroke="var(--c6)" stroke-width="2.5" class="a-spinc" style="transform-origin:92px 76px; animation-duration:3s"/><line x1="92" y1="76" x2="102" y2="76" stroke="var(--c6)" stroke-width="2.5"/><text x="92.0" y="168.0" class="svg-t" font-size="11.5" text-anchor="middle" font-weight="700">“Sẽ mất hai giờ</text><text x="92.0" y="184.0" class="svg-t" font-size="11.5" text-anchor="middle" font-weight="700">để đến đó.”</text><rect x="180" y="14" width="160" height="200" rx="20" fill="var(--c2l)" stroke="var(--c2)" stroke-width="1.6"/><text x="260.0" y="42.0" class="svg-cap" font-size="13" text-anchor="middle" fill="var(--c2)">SO SÁNH</text><line x1="260" y1="62" x2="260" y2="122" stroke="var(--ink2)" stroke-width="4"/><rect x="236" y="120" width="48" height="8" rx="3" fill="var(--ink2)"/><g class="a-tip"><line x1="210" y1="66" x2="310" y2="66" stroke="var(--c2)" stroke-width="4"/><path d="M210,66 L196,96 H224 Z M310,66 L296,96 H324 Z" fill="none" stroke="var(--c2)" stroke-width="2"/><rect x="198" y="94" width="24" height="6" rx="3" fill="var(--c2)"/><rect x="298" y="94" width="24" height="6" rx="3" fill="var(--c2)"/></g><text x="260.0" y="168.0" class="svg-t" font-size="11.5" text-anchor="middle" font-weight="700">“Tôi thích xe SUV</text><text x="260.0" y="184.0" class="svg-t" font-size="11.5" text-anchor="middle" font-weight="700">hơn xe mui kín.”</text><rect x="348" y="14" width="160" height="200" rx="20" fill="var(--c7l)" stroke="var(--c7)" stroke-width="1.6"/><text x="428.0" y="42.0" class="svg-cap" font-size="13" text-anchor="middle" fill="var(--c7)">MÔ TẢ</text><rect x="414" y="56" width="28" height="46" rx="14" fill="var(--c7)"/><path d="M404,90 q0,24 24,24 q24,0 24,-24" stroke="var(--c7)" stroke-width="3" fill="none"/><line x1="428" y1="114" x2="428" y2="126" stroke="var(--c7)" stroke-width="3"/><path d="M458,66 q8,14 0,28" stroke="var(--c7)" stroke-width="2.4" fill="none" class="a-blink" style="animation-delay:0.0s"/><path d="M467,64 q8,14 0,28" stroke="var(--c7)" stroke-width="2.4" fill="none" class="a-blink" style="animation-delay:0.25s"/><path d="M476,62 q8,14 0,28" stroke="var(--c7)" stroke-width="2.4" fill="none" class="a-blink" style="animation-delay:0.5s"/><text x="428.0" y="168.0" class="svg-t" font-size="11.5" text-anchor="middle" font-weight="700">bình luận không ngừng</text><text x="428.0" y="184.0" class="svg-t" font-size="11.5" text-anchor="middle" font-weight="700">điều bạn vốn đã thấy</text><text x="260.0" y="236.0" class="svg-t" font-size="13.5" text-anchor="middle" font-weight="800">ba việc — lặp đi lặp lại</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng</strong> theo câu của người thầy tác giả: &ldquo;Tâm trí đo lường, so sánh và mô tả. Ba điều này là tất cả những gì tâm trí làm, lặp đi lặp lại.&rdquo; Hai ví dụ trong ô được lấy đúng từ danh sách của tác giả.</figcaption>
+    </figure>
+
+    <div class="example">
+      <span class="lbl">Ví dụ giúp dễ hình dung</span>
+      <p>Toàn bộ hoạt động của tâm trí, theo tác giả, chỉ gồm ba việc lặp đi lặp lại:</p>
+      <div class="flow-grid" style="margin-top:14px">
+        <div class="fstep"><span class="k">Đo lường</span><span class="v">Bao lâu · Bao nhiêu · Còn thiếu bao nhiêu</span></div>
+        <div class="fstep"><span class="k">So sánh</span><span class="v">Hơn · Kém · Thích cái này hơn cái kia</span></div>
+        <div class="fstep"><span class="k">Mô tả</span><span class="v">Bình luận không ngừng về điều bạn vốn đã nhìn thấy</span></div>
+      </div>
+    </div>
+
+    <div class="practice">
+      <span class="lbl">Thực hành từ sách</span>
+      <p><strong>Mục đích theo nội dung chương:</strong> tự kiểm chứng rằng tâm trí chỉ làm ba việc — đo lường, so sánh, mô tả.</p>
+      <p><strong>Lời nhắc nguyên văn, từ trích dẫn của người thầy tác giả:</strong></p>
+      <ol class="steps">
+        <li>&ldquo;Hãy tự kiểm tra với bất cứ điều gì bạn nói hoặc với bất kỳ suy nghĩ nào xuất hiện.&rdquo;</li>
+        <li>Xem suy nghĩ đó thuộc loại nào: đang <strong>đo lường</strong> một cái gì đó, <strong>so sánh</strong> một cái gì đó, hay <strong>mô tả</strong> một cái gì đó.</li>
+      </ol>
+      <div class="notepad">
+        <span class="nl">Ghi chú của bạn (in ra để viết tay)</span>
+        <div class="lines"></div><div class="lines"></div><div class="lines"></div>
+      </div>
+    </div>
+
+    <blockquote data-q="7" data-ini="KL"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Sự chú ý của chúng ta chủ yếu tập trung vào suy nghĩ. Chúng ta bị mắc kẹt trong những diễn giải mà chúng ta đưa ra và bỏ lỡ sự trọn vẹn của cuộc sống.</p>
+      <cite><b>Kalyani Lawry</b></cite>
+    </div></blockquote>
+
+    <blockquote data-q="8" data-ini="JF"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Tâm trí tạo ra thứ gì đó từ mọi thứ xuất hiện. Điều này đã trở thành chế độ mặc định. Đến nỗi chúng ta không nghĩ rằng nếu không thì tâm trí thực sự có thể từ bỏ việc tạo ra thứ gì đó từ mọi thứ xuất hiện. Chúng ta cũng không nghĩ rằng việc tạo ra thứ gì đó khiến tâm trí bị mê hoặc chính là nguyên nhân thực sự gây ra đau khổ. Chúng ta cứ nghĩ rằng chính những thứ xảy ra trong cuộc sống gây ra đau khổ.</p>
+      <cite><b>Jan Frazier</b> — trích từ <em>Mở cửa</em></cite>
+    </div></blockquote>
+
+    <article class="body-card">
+      <p>Khi tâm trí bạn mô tả một điều gì đó, nó đang kể một câu chuyện. Đó là cách diễn giải thế giới và thực tế mà nó tưởng tượng ra.</p>
+      <p>Nhiều câu chuyện bịa đặt của tâm trí là về bạn, và nếu tin vào, những câu chuyện đó không chỉ gây căng thẳng và đau khổ cho bạn mà còn hạn chế rất nhiều cuộc sống của bạn.</p>
+      <p><mark>Khi bạn tin vào một câu chuyện tiêu cực, cuộc sống của bạn sẽ biến thành câu chuyện đó!</mark> Tâm trí bạn dựng lên một câu chuyện tiêu cực về bạn, bạn thêm sức mạnh của niềm tin vào câu chuyện đó, rồi tâm trí bạn chiếu câu chuyện đó vào thế giới để bạn trải nghiệm.</p>
+      <p>Nó làm điều đó bằng những suy nghĩ như thế này:</p>
+      <ul class="dia">
+        <li>&ldquo;Tôi choáng ngợp. Tôi dường như không thể kiểm soát được mọi thứ.&rdquo;</li>
+        <li>&ldquo;Tôi không giỏi quản lý tiền bạc. Dường như tiền cứ tuột khỏi tay tôi.&rdquo;</li>
+        <li>&ldquo;Căn bệnh này di truyền trong gia đình tôi.&rdquo;</li>
+        <li>&ldquo;Tôi có một vấn đề lớn.&rdquo;</li>
+        <li>&ldquo;Tôi không thể vượt qua được chấn thương của nó. Nó sẽ ảnh hưởng đến tôi trong suốt quãng đời còn lại.&rdquo;</li>
+        <li>&ldquo;Chúng tôi đã ở bên nhau nhiều năm, anh ấy là tình yêu của đời tôi, vì vậy tôi sẽ không bao giờ quên anh ấy.&rdquo;</li>
+      </ul>
+      <p>Một trong những lời nói dối lớn nhất mà tâm trí đã thuyết phục chúng ta là câu chuyện rằng chúng ta là một cơ thể và một tâm trí. Và vì chúng ta đã tin vào điều đó, nên nó đã trở thành trải nghiệm của chúng ta.</p>
+      <p>Chúng ta cảm thấy dễ bị tổn thương, sợ hãi về những gì có thể xảy ra với chúng ta hoặc người khác, bất lực trước các sự kiện và hoàn cảnh của cuộc sống, và nếu điều đó vẫn chưa đủ, nhiều người trong chúng ta cũng bị gánh nặng bởi niềm tin rằng cuộc sống sẽ kết thúc khi cơ thể chết đi.</p>
+      <p>Thật trớ trêu khi con người thực sự của bạn, Nhận thức Vô hạn mà bạn thực sự là, lại hoàn toàn trái ngược với câu chuyện mà tâm trí đã kể cho bạn.</p>
+    </article>
+
+    <!-- FIG-C5 -->
+    <figure class="fig">
+      <span class="fig-lbl">Hình 10 &middot; Máy chiếu câu chuyện</span>
+      <svg viewBox="0 0 520 228" role="img" aria-label="Ba bước: một trang câu chuyện về bạn do tâm trí dựng; một máy chiếu được nạp bằng tia sét niềm tin; chùm sáng chiếu câu chuyện lên màn ảnh thế giới, nơi một người đứng dưới đám mây xám">
+<defs><linearGradient id="g510" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--c3)"/><stop offset="1" stop-color="var(--c2)"/></linearGradient><marker id="m510" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="var(--ink2)"/></marker></defs>
+<rect x="14" y="40" width="108" height="130" rx="8" fill="var(--card)" stroke="var(--rule)" stroke-width="2"/><line x1="26" y1="70" x2="110" y2="70" stroke="var(--ink3)" stroke-width="2"/><line x1="26" y1="84" x2="96" y2="84" stroke="var(--ink3)" stroke-width="2"/><line x1="26" y1="98" x2="82" y2="98" stroke="var(--ink3)" stroke-width="2"/><line x1="26" y1="112" x2="110" y2="112" stroke="var(--ink3)" stroke-width="2"/><line x1="26" y1="126" x2="96" y2="126" stroke="var(--ink3)" stroke-width="2"/><line x1="26" y1="140" x2="82" y2="140" stroke="var(--ink3)" stroke-width="2"/><text x="68.0" y="60.0" class="svg-t" font-size="12" text-anchor="middle" font-weight="800" style="fill:var(--c1)">câu chuyện</text><text x="68.0" y="194.0" class="svg-t" font-size="11.5" text-anchor="middle" font-weight="800">1 · tâm trí dựng</text><text x="68.0" y="210.0" class="svg-t2" font-size="11.5" text-anchor="middle" font-weight="700">câu chuyện về bạn</text><line x1="126" y1="104" x2="160" y2="104" stroke="var(--ink2)" stroke-width="2.5" marker-end="url(#m510)"/><rect x="164" y="80" width="88" height="54" rx="10" fill="var(--ink2)"/><circle cx="256" cy="107" r="16" fill="var(--ink)" stroke="var(--ink3)" stroke-width="3"/><circle cx="186" cy="74" r="14" fill="var(--ink2)"/><circle cx="228" cy="74" r="14" fill="var(--ink2)"/><path d="M210,164 L200,148 H212 L204,134 L222,152 H210 Z" fill="url(#g510)" class="a-pulse"/><text x="208.0" y="194.0" class="svg-t" font-size="11.5" text-anchor="middle" font-weight="800">2 · bạn thêm</text><text x="208.0" y="210.0" class="svg-t2" font-size="11.5" text-anchor="middle" font-weight="700">sức mạnh của niềm tin</text><path d="M270,100 L380,40 L380,176 L270,114 Z" fill="var(--c3)" fill-opacity=".2" class="a-glow"/><rect x="380" y="30" width="128" height="156" rx="6" fill="var(--card)" stroke="var(--rule)" stroke-width="2"/><g ><circle cx="444" cy="116.2" r="10.2" fill="var(--ink3)"/><path d="M431.2,170 Q431.2,131.6 444,129.6 Q456.8,131.6 456.8,170 Z" fill="var(--ink3)"/></g><g class="a-float"><circle cx="430" cy="66" r="14" fill="var(--ink2)"/><circle cx="450" cy="60" r="17" fill="var(--ink2)"/><circle cx="468" cy="68" r="12" fill="var(--ink2)"/></g><text x="444.0" y="204.0" class="svg-t" font-size="11.5" text-anchor="middle" font-weight="800">3 · chiếu vào thế giới</text><text x="444.0" y="220.0" class="svg-t2" font-size="11.5" text-anchor="middle" font-weight="700">để bạn trải nghiệm</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng</strong> theo đúng ba bước tác giả mô tả: &ldquo;Tâm trí bạn dựng lên một câu chuyện tiêu cực về bạn, bạn thêm sức mạnh của niềm tin vào câu chuyện đó, rồi tâm trí bạn chiếu câu chuyện đó vào thế giới để bạn trải nghiệm.&rdquo;</figcaption>
+    </figure>
+
+    <blockquote data-q="5" data-ini="DB"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Nếu bạn hiểu cách nó hoạt động, một con người thức dậy vào buổi sáng và trong khoảnh khắc đầu tiên chỉ có sự tĩnh lặng; sau đó, tâm trí sẽ tái hoạt động, tâm trí bắt đầu nói, &ldquo;Hôm nay tôi phải làm gì? Tôi bao nhiêu tuổi? Tôi có vấn đề gì? Làm thế nào để ngăn chặn tất cả những điều này trở nên tồi tệ?&rdquo; Có sự đồng nhất hoàn toàn với câu chuyện; bạn xỏ giày vào và lại đi tiếp.</p>
+      <cite><b>David Bingham</b> — trích từ <em>Conscious TV</em></cite>
+    </div></blockquote>
+
+    <div class="concept">
+      <span class="lbl">Khái niệm cốt lõi</span>
+      <h4>Câu chuyện của tâm trí</h4>
+      <dl>
+        <dt>Cách tác giả sử dụng khái niệm này trong chương</dt>
+        <dd>Khi tâm trí <em>mô tả</em>, nó đang kể một câu chuyện — cách diễn giải thế giới mà nó tưởng tượng ra. Câu chuyện chỉ có sức mạnh khi bạn thêm niềm tin vào nó.</dd>
+        <dt>Ý nghĩa trong mạch lập luận</dt>
+        <dd>Trình tự tác giả mô tả rất cụ thể: tâm trí dựng câu chuyện → bạn tin → tâm trí chiếu câu chuyện đó vào thế giới để bạn trải nghiệm. Đó là cách một câu chuyện tiêu cực trở thành cuộc sống thật.</dd>
+        <dt>Lưu ý để tránh hiểu sai</dt>
+        <dd>Theo tác giả, câu chuyện lớn nhất không phải là những câu về tiền bạc hay bệnh tật, mà là câu chuyện nền bên dưới tất cả: rằng chúng ta là một cơ thể và một tâm trí.</dd>
+      </dl>
+    </div>
+
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+  <!-- 4 -->
+  <section id="c5-p4">
+    <div class="sec-head"><div class="badge">04</div>
+      <h2>Câu chuyện lớn nhất: thời gian</h2></div>
+    <p class="willlearn"><b>Bạn sẽ hiểu gì ở phần này?</b><br>Vì sao tác giả gọi thời gian là một khái niệm do tâm trí tạo ra, và cách bà mời bạn tự kiểm chứng điều đó. <em>Tiêu đề phần này do biên tập viên đặt — trong sách đoạn này nối tiếp trong mục &ldquo;Ba suy nghĩ của tâm trí&rdquo;.</em></p>
+
+    <article class="body-card">
+      <p>Một câu chuyện khác mà tâm trí chúng ta đã thuyết phục chúng ta là câu chuyện về thời gian.</p>
+      <p>Thời gian là một công cụ rất tiện lợi cho phép chúng ta làm việc theo cùng một lịch và đồng hồ để chúng ta có thể phối hợp cuộc sống của mình với nhau và với mọi thứ đang diễn ra trên thế giới.</p>
+      <p>Nhưng như Einstein đã khám phá ra, thời gian là tương đối; cuối cùng, thực sự không có thứ gì gọi là thời gian. <mark>Thời gian là một ảo ảnh, một khái niệm tinh thần do tâm trí tạo ra.</mark></p>
+    </article>
+
+    <blockquote data-q="4" data-ini="JB"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Nếu bạn cố gắng nắm bắt thời gian, nó sẽ luôn tuột khỏi tay bạn. Mọi người chắc chắn rằng thời gian ở đó, nhưng họ không thể nắm bắt được nó. Cảm giác của tôi là họ không thể nắm bắt được nó vì nó không hề ở đó.</p>
+      <cite><b>Julian Barbour</b>, nhà vật lý — trích từ cuốn sách <em>Thời gian</em> của Adam Frank</cite>
+    </div></blockquote>
+
+    <article class="body-card">
+      <p>Tất cả những gì thực sự tồn tại là khoảnh khắc hiện tại này, và dù bạn có cố gắng đến đâu, bạn cũng sẽ không thể tìm thấy bất kỳ sự kiện hoặc hoàn cảnh nào xảy ra ở bất kỳ thời điểm nào khác ngoài khoảnh khắc hiện tại.</p>
+      <p>Nếu bạn cố tưởng tượng một thế giới không có thời gian, bạn sẽ không thể làm được vì tâm trí bạn không thể hiểu được. Tâm trí bạn luôn ở trong quá khứ hoặc tương lai; nó không nhận thức được khoảnh khắc hiện tại này.</p>
+      <p>Nếu bạn dừng lại và hiện diện ngay bây giờ, bạn sẽ nhận thấy rằng không có suy nghĩ nào. <mark>Đó là một trong những lý do tại sao tâm trí có thể ngăn cản rất nhiều người trong chúng ta nhận ra mình thực sự là ai, bởi vì Nhận thức chỉ có thể được nhận ra trong khoảnh khắc hiện tại này!</mark></p>
+      <p>Nếu bạn không nghĩ rằng tâm trí của bạn tạo ra thời gian, thì hãy xem liệu bạn có thể tìm thấy thời gian bên ngoài tâm trí của mình không.</p>
+    </article>
+
+    <!-- FIG-C5 -->
+    <figure class="fig">
+      <span class="fig-lbl">Hình 11 &middot; Chỉ có thời điểm hiện tại</span>
+      <svg viewBox="0 0 520 256" role="img" aria-label="Hai bong bóng suy nghĩ nét đứt: quá khứ, với ký ức một đứa trẻ đạp xe; tương lai, với dấu hỏi của trí tưởng tượng. Cả hai cùng nối về một vòng tròn vàng phát sáng duy nhất ở giữa: hiện tại">
+<defs><radialGradient id="g511"><stop offset="0" stop-color="var(--c3)"/><stop offset="1" stop-color="var(--c2)"/></radialGradient></defs>
+<rect x="20" y="22" width="180" height="104" rx="36" fill="var(--soft)" stroke="var(--ink3)" stroke-width="2" stroke-dasharray="5 5"/><circle cx="98" cy="96" r="12" fill="none" stroke="var(--ink2)" stroke-width="3"/><circle cx="138" cy="96" r="12" fill="none" stroke="var(--ink2)" stroke-width="3"/><path d="M98,96 L114,78 L132,78 L138,96 M114,78 L110,70 M132,78 L128,68" stroke="var(--ink2)" stroke-width="3" fill="none"/><g ><circle cx="118" cy="48.4" r="6.4" fill="var(--c2)"/><path d="M110.0,82 Q110.0,58.0 118,56.7 Q126.0,58.0 126.0,82 Z" fill="var(--c2)"/></g><text x="110.0" y="40.0" class="svg-cap" font-size="11" text-anchor="middle" fill="var(--ink2)">QUÁ KHỨ</text><text x="52.0" y="104.0" class="svg-t2" font-size="12" text-anchor="middle" font-weight="800">ký ức</text><rect x="320" y="22" width="180" height="104" rx="36" fill="var(--soft)" stroke="var(--ink3)" stroke-width="2" stroke-dasharray="5 5"/><text x="410.0" y="40.0" class="svg-cap" font-size="11" text-anchor="middle" fill="var(--ink2)">TƯƠNG LAI</text><text x="410.0" y="80.0" class="svg-t2" font-size="34" text-anchor="middle" font-weight="900">?</text><text x="410.0" y="110.0" class="svg-t2" font-size="12" text-anchor="middle" font-weight="800">trí tưởng tượng</text><circle cx="214" cy="146" r="6" fill="var(--soft)" stroke="var(--ink3)" stroke-width="1.5"/><circle cx="232" cy="160" r="4" fill="var(--soft)" stroke="var(--ink3)" stroke-width="1.5"/><circle cx="306" cy="146" r="6" fill="var(--soft)" stroke="var(--ink3)" stroke-width="1.5"/><circle cx="288" cy="160" r="4" fill="var(--soft)" stroke="var(--ink3)" stroke-width="1.5"/><circle cx="260" cy="182" r="62" fill="var(--c3)" fill-opacity=".28" class="a-glow"/><circle cx="260" cy="182" r="38" fill="url(#g511)"/><text x="260.0" y="178.0" class="svg-w" font-size="12.5" text-anchor="middle">HIỆN TẠI</text><text x="260.0" y="195.0" class="svg-w" font-size="11.5" text-anchor="middle">duy nhất</text><text x="260.0" y="246.0" class="svg-t" font-size="12.8" text-anchor="middle" font-weight="800">quá khứ và tương lai chỉ tồn tại dưới dạng suy nghĩ — ngay bây giờ</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng</strong> theo bài tự kiểm tra của tác giả và lời Rupert Spira: &ldquo;Quá khứ được tạo nên từ ký ức, tương lai của trí tưởng tượng.&rdquo; Ngay cả khi bạn lần đầu tiên đạp xe, bạn cũng đạp xe ở thời điểm hiện tại.</figcaption>
+    </figure>
+
+    <blockquote data-q="2" data-ini="PD"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Hãy cố gắng tìm bất kỳ bằng chứng nào về quá khứ mà không cần suy nghĩ. Cố gắng hết sức có thể để tìm bất kỳ quá khứ nào ngoài suy nghĩ hiện tại về nó. Điều đó là không thể.</p>
+      <cite><b>Peter Dziuban</b> — trích từ sách nói <em>Ý thức là tất cả</em></cite>
+    </div></blockquote>
+
+    <article class="body-card">
+      <p>Bây giờ hãy cố gắng tìm tương lai mà không cần suy nghĩ. Cố gắng thực sự.</p>
+      <p>Không thể tìm thấy bất kỳ bằng chứng nào về quá khứ hoặc tương lai mà không cần suy nghĩ. Không ai từng có thể bước vào quá khứ hoặc tương lai.</p>
+      <p>Khi bất cứ điều gì xảy ra trong quá khứ, nó xảy ra ở thời điểm hiện tại. Khi bất cứ điều gì xảy ra trong tương lai, nó luôn xảy ra ở thời điểm hiện tại.</p>
+      <p>Hãy tự mình kiểm tra. Quay trở lại ký ức của bạn khi bạn lần đầu tiên đạp xe khi còn nhỏ. Khi bạn thực sự đạp xe, bạn có đạp xe trong quá khứ không? Hay bạn đang đạp xe ở thời điểm hiện tại? Khi bạn thức dậy sáng nay, bạn đã thức dậy trong quá khứ hay bạn thức dậy ở thời điểm hiện tại?</p>
+    </article>
+
+    <div class="practice">
+      <span class="lbl">Thực hành từ sách</span>
+      <p><strong>Mục đích theo nội dung chương:</strong> tự kiểm chứng xem có thể tìm thấy thời gian ở bên ngoài tâm trí hay không.</p>
+      <p><strong>Các bước theo đúng thứ tự trong sách:</strong></p>
+      <ol class="steps">
+        <li>Hãy xem liệu bạn có thể tìm thấy thời gian bên ngoài tâm trí của mình không.</li>
+        <li>&ldquo;Hãy cố gắng tìm bất kỳ bằng chứng nào về quá khứ mà không cần suy nghĩ. Cố gắng hết sức có thể để tìm bất kỳ quá khứ nào ngoài suy nghĩ hiện tại về nó.&rdquo;</li>
+        <li>&ldquo;Bây giờ hãy cố gắng tìm tương lai mà không cần suy nghĩ. Cố gắng thực sự.&rdquo;</li>
+        <li>Quay trở lại ký ức của bạn khi bạn lần đầu tiên đạp xe khi còn nhỏ. Khi bạn thực sự đạp xe, bạn có đạp xe trong quá khứ không? Hay bạn đang đạp xe ở thời điểm hiện tại?</li>
+        <li>Khi bạn thức dậy sáng nay, bạn đã thức dậy trong quá khứ hay bạn thức dậy ở thời điểm hiện tại?</li>
+      </ol>
+      <p><strong>Điều tác giả nói bạn sẽ thấy:</strong> không thể tìm thấy bất kỳ bằng chứng nào về quá khứ hoặc tương lai mà không cần suy nghĩ; mọi điều từng xảy ra đều xảy ra ở thời điểm hiện tại.</p>
+      <div class="notepad">
+        <span class="nl">Ghi chú của bạn (in ra để viết tay)</span>
+        <div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div>
+      </div>
+    </div>
+
+    <blockquote data-q="8" data-ini="JF"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Quá khứ và tương lai không thể được trải nghiệm. Chúng chỉ có thể được xử lý trong đầu. Quá khứ và tương lai chỉ tồn tại dưới dạng suy nghĩ.</p>
+      <cite><b>Jan Frazier</b> — trích từ <em>Sự Ngọt Ngào Vĩ Đại: Cuộc Sống Sau Khi Nghĩ</em></cite>
+    </div></blockquote>
+
+    <blockquote data-q="4" data-ini="JB"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Bằng chứng duy nhất chúng ta có về quá khứ của Trái đất là đá và hóa thạch. Nhưng đây chỉ là những cấu trúc ổn định dưới dạng sắp xếp khoáng chất mà chúng ta kiểm tra ở hiện tại. Vấn đề là, tất cả những gì chúng ta có là những hồ sơ này và bạn chỉ có chúng trong Hiện tại này.</p>
+      <cite><b>Julian Barbour</b>, nhà vật lý — trích từ cuốn sách <em>Thời gian</em> của Adam Frank</cite>
+    </div></blockquote>
+
+    <article class="body-card">
+      <p>Lần đầu tiên tôi được cho biết rằng thời gian không tồn tại, tâm trí tôi phát điên với đủ loại suy nghĩ cố gắng chứng minh rằng thời gian thực sự tồn tại!</p>
+      <p>Kiểu như, còn những tòa nhà cũ thì sao? Chúng không phải là bằng chứng cho thấy có quá khứ sao?</p>
+      <p>Nhưng khi tôi thực sự xem xét nó, tôi nhận ra rằng khi những tòa nhà được xây dựng, chúng được xây dựng ở thời điểm hiện tại. Và nếu tôi đứng nhìn tòa nhà cũ, tôi cũng đang nhìn nó ở thời điểm hiện tại, và bất kỳ ai đã nhìn vào cùng một tòa nhà cũng nhìn nó ở thời điểm hiện tại.</p>
+      <p>Cuối cùng, khi tôi xem xét từng suy nghĩ xuất hiện để cố gắng chứng minh thời gian là có thật, tôi thấy rằng tất cả chúng đều sai vì chỉ có thời điểm hiện tại.</p>
+    </article>
+
+    <blockquote data-q="7" data-ini="🙏"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Dù bạn có thích hay không, bạn vẫn đang ở trong thời điểm hiện tại. Chỉ có một thời điểm, nó vô hạn, và bạn không thể ở bất kỳ nơi nào khác ngoài thời điểm đó.</p>
+      <cite><b>Người thầy của tôi</b> — người thầy giấu tên của Rhonda Byrne</cite>
+    </div></blockquote>
+
+    <blockquote data-q="4" data-ini="RS"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Bây giờ không phải là một khoảnh khắc trong thời gian, kẹp giữa hai không gian rộng lớn của quá khứ và tương lai. Hiện tại này là Hiện tại duy nhất, chỉ có Hiện tại vĩnh cửu. Nó không đến từ bất cứ đâu và cũng không đi đâu cả.</p>
+      <cite><b>Rupert Spira</b> — trích từ <em>Tro tàn của tình yêu</em></cite>
+    </div></blockquote>
+
+    <article class="body-card">
+      <p>Nếu bạn có thể mở lòng với khả năng rằng thời gian chỉ là ảo ảnh, nó sẽ giúp bạn được tự do.</p>
+    </article>
+
+    <blockquote data-q="8" data-ini="JF"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Tương lai không bao giờ đến. Hãy nghĩ về điều đó: tương lai không bao giờ đến. Chỉ có hiện tại. Trong hiện tại, có cảm giác không bỏ lỡ cuộc sống. Không có nơi nào để đến, không có bất cứ điều gì để hoàn thành. Hiện tại là nơi nó đang diễn ra. Và nó không diễn ra ở bất kỳ nơi nào khác. Chắc chắn là nó không diễn ra trong tâm trí, với tất cả những điều thắc mắc về những gì sắp tới, và việc lặp lại (và lặp lại) một điều gì đó đã đến và đã qua.</p>
+      <cite><b>Jan Frazier</b> — trích từ <em>Mở cửa</em></cite>
+    </div></blockquote>
+
+    <blockquote data-q="4" data-ini="RS"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Quá khứ được tạo nên từ ký ức, tương lai của trí tưởng tượng. Không có sự tồn tại nào nằm ngoài phạm vi của suy nghĩ.</p>
+      <cite><b>Rupert Spira</b> — trích từ <em>Tro tàn của tình yêu</em></cite>
+    </div></blockquote>
+
+    <article class="body-card">
+      <p>Tâm trí liên tục tập trung vào quá khứ và tương lai, cả hai đều không tồn tại, nhưng chúng vẫn khiến chúng ta căng thẳng và lo lắng.</p>
+      <p>Bạn tự nhủ, &ldquo;Mình đến muộn cuộc họp mất. Sếp và đồng nghiệp sẽ giận mình lắm đây. Tuần trước mình cũng đến muộn. Mình có thể bị đuổi việc vì chuyện này.&rdquo;</p>
+      <p>Thay vì tin những suy nghĩ đó là sự thật và chắc chắn, hãy biết rằng chúng chỉ là những suy nghĩ mong manh. Chúng là những câu chuyện bịa đặt. Nhưng nếu bạn tin vào tâm trí mình, nó sẽ trở thành sự thật.</p>
+      <p>Trí óc kể chuyện không gì khác hơn là một trong những chương trình máy móc của nó, nhưng nó đã thuyết phục được hầu hết chúng ta rằng những câu chuyện của nó là sự thật: câu chuyện về thời gian là có thật, câu chuyện về chúng ta là một cơ thể và một tâm trí, câu chuyện về chúng ta là một con người riêng biệt được sinh ra và chết đi.</p>
+      <p>Tất cả những điều này kết hợp lại với nhau đóng vai trò trong việc xây dựng nên thực tế mà chúng ta trải nghiệm, nhưng tất cả đều nằm trong tâm trí, và do đó không gì khác ngoài những ý tưởng trong đầu.</p>
+    </article>
+
+    <!-- FIG-C5 -->
+    <figure class="fig">
+      <span class="fig-lbl">Hình 12 &middot; Một câu chuyện tự lớn dần</span>
+      <svg viewBox="0 0 520 246" role="img" aria-label="Bốn bong bóng nét đứt, mỗi cái to hơn cái trước, nối tiếp nhau hiện ra: Mình đến muộn cuộc họp mất; Sếp và đồng nghiệp sẽ giận mình lắm đây; Tuần trước mình cũng đến muộn; Mình có thể bị đuổi việc vì chuyện này">
+<g class="a-pop" style="animation-duration:8s; animation-delay:0.0s"><rect x="20" y="27.0" width="240.2" height="34" rx="17.0" fill="var(--c1)" fill-opacity="0.06" stroke="var(--c1)" stroke-width="1.5" stroke-dasharray="3 4"/><text x="140.1" y="48.5" class="svg-t" font-size="12.5" text-anchor="middle" font-weight="800">“Mình đến muộn cuộc họp mất.”</text></g><g class="a-pop" style="animation-duration:8s; animation-delay:1.2s"><rect x="70" y="76.0" width="334.5" height="36" rx="18.0" fill="var(--c1)" fill-opacity="0.12" stroke="var(--c1)" stroke-width="1.5" stroke-dasharray="3 4"/><text x="237.2" y="98.5" class="svg-t" font-size="12.5" text-anchor="middle" font-weight="800">“Sếp và đồng nghiệp sẽ giận mình lắm đây.”</text></g><g class="a-pop" style="animation-duration:8s; animation-delay:2.4s"><rect x="120" y="125.0" width="262.0" height="38" rx="19.0" fill="var(--c1)" fill-opacity="0.18" stroke="var(--c1)" stroke-width="1.5" stroke-dasharray="3 4"/><text x="251.0" y="148.5" class="svg-t" font-size="12.5" text-anchor="middle" font-weight="800">“Tuần trước mình cũng đến muộn.”</text></g><g class="a-pop" style="animation-duration:8s; animation-delay:3.6s"><rect x="170" y="174.0" width="327.2" height="40" rx="20.0" fill="var(--c1)" fill-opacity="0.24" stroke="var(--c1)" stroke-width="1.5" stroke-dasharray="3 4"/><text x="333.6" y="198.5" class="svg-t" font-size="12.5" text-anchor="middle" font-weight="800">“Mình có thể bị đuổi việc vì chuyện này.”</text></g><path d="M50,62 q-6,12 6,20" stroke="var(--c1)" stroke-width="1.6" fill="none" stroke-dasharray="2 4"/><path d="M100,112 q-6,12 6,20" stroke="var(--c1)" stroke-width="1.6" fill="none" stroke-dasharray="2 4"/><path d="M150,162 q-6,12 6,20" stroke="var(--c1)" stroke-width="1.6" fill="none" stroke-dasharray="2 4"/><text x="260.0" y="236.0" class="svg-t" font-size="13.5" text-anchor="middle" font-weight="800">chỉ là những suy nghĩ mong manh — những câu chuyện bịa đặt</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng</strong> từ đúng bốn câu trong ví dụ của tác giả. Viền nét đứt là vì, như bà viết: &ldquo;Thay vì tin những suy nghĩ đó là sự thật và chắc chắn, hãy biết rằng chúng chỉ là những suy nghĩ mong manh. Chúng là những câu chuyện bịa đặt.&rdquo;</figcaption>
+    </figure>
+
+    <blockquote data-q="8" data-ini="BK"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Không phải bạn là người mà mọi người thích hay không thích; mà là câu chuyện của họ về bạn.</p>
+      <cite><b>Byron Katie</b> — trích từ <em>Một tâm trí ở nhà</em></cite>
+    </div></blockquote>
+
+    <article class="body-card">
+      <p>Đừng tin vào câu chuyện mà tâm trí bạn kể cho bạn nếu đó là điều bạn không muốn; nếu không, bạn sẽ tự dán nhãn mình với nó.</p>
+      <p><mark>Hãy quan sát cơ chế của tâm trí bạn, và đừng chấp nhận một câu chuyện hay suy nghĩ nào về bản thân mà không hoàn hảo và tốt lành, bởi vì sự hoàn hảo và lòng tốt thuần túy chính là sự thật về con người thật của bạn!</mark></p>
+    </article>
+
+    <div class="flow">
+      <span class="lbl">Mạch lập luận &middot; Phần 03–04</span>
+      <div class="flow-grid">
+        <div class="fstep"><span class="k">Nhận định ban đầu</span><span class="v">Tâm trí là một quá trình cơ học, chỉ làm ba việc: đo lường, so sánh, mô tả.</span></div>
+        <div class="farrow">→</div>
+        <div class="fstep"><span class="k">Giải thích</span><span class="v">Khi mô tả, nó kể chuyện. Bạn tin → nó chiếu câu chuyện ấy vào thế giới để bạn trải nghiệm.</span></div>
+        <div class="farrow">→</div>
+        <div class="fstep"><span class="k">Ví dụ lớn nhất</span><span class="v">Câu chuyện về thời gian — không tìm được quá khứ hay tương lai nào ngoài suy nghĩ hiện tại về nó.</span></div>
+        <div class="farrow">→</div>
+        <div class="fstep"><span class="k">Kết luận</span><span class="v">Đừng chấp nhận câu chuyện nào về bản thân mà không hoàn hảo và tốt lành.</span></div>
+      </div>
+    </div>
+
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+  <!-- 5 -->
+  <section id="c5-p5">
+    <div class="sec-head"><div class="badge">05</div>
+      <h2>Nhận thức là con đường giải thoát</h2></div>
+    <p class="willlearn"><b>Bạn sẽ hiểu gì ở phần này?</b><br>Vì sao không cần chiến đấu với tâm trí, và điều gì xảy ra khi bạn quan sát suy nghĩ thay vì lạc vào chúng. <em>Tiêu đề phần này là tiểu mục gốc trong sách.</em></p>
+
+    <blockquote data-q="1" data-ini="PL"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Suy nghĩ là gì? Một chuyển động của năng lượng. Cảm giác là gì? Một chuyển động của năng lượng.</p>
+      <cite><b>Peter Lawry</b> — trích từ bài nói chuyện <em>&ldquo;Ý thức vô hạn&rdquo;</em></cite>
+    </div></blockquote>
+
+    <article class="body-card">
+      <p>Bạn là gì, Nhận thức vô hạn, không bao giờ có thể bị ảnh hưởng bởi những suy nghĩ. Vì vậy, hãy nhận thức được những suy nghĩ của bạn và xem chúng như chúng vốn có, chỉ là một suy nghĩ, chỉ là năng lượng đi qua.</p>
+    </article>
+
+    <blockquote data-q="7" data-ini="🙏"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Một suy nghĩ giống như một con chim bay qua. Hãy để con chim bay qua mà không phân tích nó. &ldquo;Bạn đang đi đâu? Bạn là loài chim gì? Gia đình bạn đâu? Bạn bao nhiêu tuổi?&rdquo; Hãy để con chim bay qua.</p>
+      <cite><b>Người thầy của tôi</b> — người thầy giấu tên của Rhonda Byrne</cite>
+    </div></blockquote>
+
+    <!-- FIG-C5 -->
+    <figure class="fig">
+      <span class="fig-lbl">Hình 13 &middot; Để con chim bay qua</span>
+      <svg viewBox="0 0 520 230" role="img" aria-label="Một con chim vỗ cánh bay ngang bầu trời; bên dưới là những câu hỏi mờ bị gạch đi: Bạn đang đi đâu? Bạn là loài chim gì? Gia đình bạn đâu? Bạn bao nhiêu tuổi?">
+<defs><linearGradient id="g513" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--c6l)"/><stop offset="1" stop-color="var(--c3l)"/></linearGradient><clipPath id="c513"><rect x="10" y="10" width="500" height="210" rx="22"/></clipPath></defs>
+<rect x="10" y="10" width="500" height="210" rx="22" fill="url(#g513)"/><path d="M-30,110 C120,60 300,140 560,70" fill="none" stroke="var(--ink3)" stroke-width="1.5" stroke-dasharray="2 8" clip-path="url(#c513)"/><g opacity=".45"><text x="92.0" y="150.0" class="svg-t2" font-size="12.5" text-anchor="middle" font-weight="700">“Bạn đang đi đâu?”</text><line x1="26.8" y1="146" x2="157.2" y2="146" stroke="var(--ink2)" stroke-width="1.5"/></g><g opacity=".45"><text x="230.0" y="186.0" class="svg-t2" font-size="12.5" text-anchor="middle" font-weight="700">“Bạn là loài chim gì?”</text><line x1="150.2" y1="182" x2="309.8" y2="182" stroke="var(--ink2)" stroke-width="1.5"/></g><g opacity=".45"><text x="372.0" y="150.0" class="svg-t2" font-size="12.5" text-anchor="middle" font-weight="700">“Gia đình bạn đâu?”</text><line x1="303.1" y1="146" x2="440.9" y2="146" stroke="var(--ink2)" stroke-width="1.5"/></g><g opacity=".45"><text x="430.0" y="194.0" class="svg-t2" font-size="12.5" text-anchor="middle" font-weight="700">“Bạn bao nhiêu tuổi?”</text><line x1="353.9" y1="190" x2="506.1" y2="190" stroke="var(--ink2)" stroke-width="1.5"/></g><g clip-path="url(#c513)"><g><path d="M-18,0 Q-9,-12 0,0 Q9,-12 18,0" stroke="var(--ink)" stroke-width="3.5" fill="none" stroke-linecap="round"><animate attributeName="d" dur=".6s" repeatCount="indefinite" values="M-18,0 Q-9,-12 0,0 Q9,-12 18,0;M-18,-4 Q-9,6 0,0 Q9,6 18,-4;M-18,0 Q-9,-12 0,0 Q9,-12 18,0"/></path><animateMotion dur="7s" repeatCount="indefinite" path="M-30,110 C120,60 300,140 560,70"/></g></g><text x="260.0" y="44.0" class="svg-t" font-size="17" text-anchor="middle" font-weight="900" style="fill:var(--c6)">“Hãy để con chim bay qua.”</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng</strong> theo hình ảnh của người thầy tác giả: &ldquo;Một suy nghĩ giống như một con chim bay qua. Hãy để con chim bay qua mà không phân tích nó.&rdquo; Bốn câu hỏi bị gạch là đúng những câu trong trích dẫn — những câu ta không cần hỏi.</figcaption>
+    </figure>
+
+    <article class="body-card">
+      <p><mark>Bạn không cần phải loại bỏ tâm trí của mình hoặc chiến đấu với tâm trí của mình. Bạn sẽ tiếp thêm sức mạnh cho tâm trí của mình nếu bạn cố gắng làm điều đó.</mark></p>
+      <p>Nhận thức là cách thoát khỏi sự hỗn loạn của tâm trí. Chỉ cần nhận thức được những suy nghĩ của bạn để bạn không còn tin vào chúng nữa.</p>
+      <p>Bạn không thể nhận thức được những suy nghĩ của mình và tin vào chúng cùng một lúc, bởi vì Nhận thức về những suy nghĩ của bạn ngăn cản bạn đồng nhất với chúng như thể chúng là sự thật.</p>
+      <p>Khi bạn quan sát những suy nghĩ của mình thay vì lạc vào chúng, bạn sẽ thấy chúng như chúng vốn có: một thứ mà bạn có thể chọn tin hoặc không.</p>
+    </article>
+
+    <!-- FIG-C5 -->
+    <figure class="fig">
+      <span class="fig-lbl">Hình 14 &middot; Lạc vào hay quan sát</span>
+      <svg viewBox="0 0 520 246" role="img" aria-label="Bên trái: một người bị phủ kín trong đám mây suy nghĩ tím. Bên phải: một người phát sáng đứng ngoài, nhìn ba bong bóng suy nghĩ lo lắng, phán xét, kế hoạch trôi qua">
+<defs><radialGradient id="g514"><stop offset="0" stop-color="var(--c3)"/><stop offset="1" stop-color="var(--c2)"/></radialGradient></defs>
+<rect x="10" y="10" width="240" height="200" rx="22" fill="var(--c7l)" stroke="var(--c7b)" stroke-width="1.5"/><rect x="270" y="10" width="240" height="200" rx="22" fill="var(--c5l)" stroke="var(--c5b)" stroke-width="1.5"/><text x="130.0" y="36.0" class="svg-cap" font-size="12" text-anchor="middle" fill="var(--c7)">LẠC VÀO SUY NGHĨ</text><text x="390.0" y="36.0" class="svg-cap" font-size="12" text-anchor="middle" fill="var(--c5)">QUAN SÁT SUY NGHĨ</text><g ><circle cx="130" cy="110.4" r="14.4" fill="var(--c2)"/><path d="M112.0,186 Q112.0,132.0 130,129.1 Q148.0,132.0 148.0,186 Z" fill="var(--c2)"/></g><g opacity=".88"><circle cx="96" cy="112" r="40" fill="var(--c7)"/><circle cx="140" cy="94" r="46" fill="var(--c7)"/><circle cx="176" cy="122" r="36" fill="var(--c7)"/><rect x="66" y="112" width="140" height="44" rx="22" fill="var(--c7)"/></g><path d="M86,110 q7,-9 14,0 t14,0" stroke="#fff" stroke-width="2.4" fill="none" opacity=".85" class="a-blink" style="animation-delay:0.0s"/><path d="M116,124 q7,-9 14,0 t14,0" stroke="#fff" stroke-width="2.4" fill="none" opacity=".85" class="a-blink" style="animation-delay:0.3s"/><path d="M146,110 q7,-9 14,0 t14,0" stroke="#fff" stroke-width="2.4" fill="none" opacity=".85" class="a-blink" style="animation-delay:0.6s"/><path d="M176,124 q7,-9 14,0 t14,0" stroke="#fff" stroke-width="2.4" fill="none" opacity=".85" class="a-blink" style="animation-delay:0.8999999999999999s"/><text x="130.0" y="198.0" class="svg-t2" font-size="11" text-anchor="middle" font-weight="700">đồng nhất — tin như thể là sự thật</text><circle cx="300" cy="150" r="40" fill="var(--c3)" fill-opacity=".25" class="a-glow"/><g ><circle cx="300" cy="122.2" r="12.2" fill="url(#g514)"/><path d="M284.8,186 Q284.8,140.4 300,138.0 Q315.2,140.4 315.2,186 Z" fill="url(#g514)"/></g><g class="a-drift" style="animation-delay:0.0s; animation-duration:7s"><rect x="370.6" y="52.0" width="74.8" height="28" rx="14.0" fill="var(--c1l)" stroke="var(--c1)" stroke-width="1.6"/><text x="408.0" y="70.5" class="svg-t" font-size="12.5" text-anchor="middle" font-weight="700">lo lắng</text></g><g class="a-drift" style="animation-delay:0.8s; animation-duration:7s"><rect x="411.0" y="94.0" width="82.0" height="28" rx="14.0" fill="var(--c7l)" stroke="var(--c7)" stroke-width="1.6"/><text x="452.0" y="112.5" class="svg-t" font-size="12.5" text-anchor="middle" font-weight="700">phán xét</text></g><g class="a-drift" style="animation-delay:1.6s; animation-duration:7s"><rect x="363.0" y="136.0" width="82.0" height="28" rx="14.0" fill="var(--c6l)" stroke="var(--c6)" stroke-width="1.6"/><text x="404.0" y="154.5" class="svg-t" font-size="12.5" text-anchor="middle" font-weight="700">kế hoạch</text></g><text x="390.0" y="198.0" class="svg-t2" font-size="11" text-anchor="middle" font-weight="700">thấy chúng như chúng vốn có</text><text x="260.0" y="236.0" class="svg-t" font-size="13" text-anchor="middle" font-weight="800">Bạn không thể nhận thức được suy nghĩ và tin vào chúng cùng một lúc</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng</strong> theo lời tác giả: &ldquo;Bạn không thể nhận thức được những suy nghĩ của mình và tin vào chúng cùng một lúc&rdquo; — khi quan sát thay vì lạc vào, bạn thấy suy nghĩ &ldquo;như chúng vốn có: một thứ mà bạn có thể chọn tin hoặc không.&rdquo; Ba nhãn bong bóng chỉ là ví dụ minh họa.</figcaption>
+    </figure>
+
+    <div class="keyidea">
+      <span class="lbl">Ý chính</span>
+      <p>Lối thoát mà tác giả đưa ra không phải là làm tâm trí im lặng, cũng không phải là chống lại nó — mà là <strong>nhận thức được suy nghĩ</strong>. Bà nêu lý do rất cụ thể: bạn không thể vừa nhận thức được một suy nghĩ vừa tin vào nó cùng một lúc.</p>
+    </div>
+
+    <blockquote data-q="7" data-ini="🙏"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Bạn là ai không cần một suy nghĩ để nghe. Không cần một suy nghĩ để nhìn. Không cần một suy nghĩ để cảm nhận cơ thể và môi trường xung quanh bạn. Bạn là ai thì không cần suy nghĩ. Nhận thức là nghe, nhìn, cảm nhận mọi thứ trước tiên mà không cần suy nghĩ.</p>
+      <cite><b>Người thầy của tôi</b> — người thầy giấu tên của Rhonda Byrne</cite>
+    </div></blockquote>
+
+    <article class="body-card">
+      <p>Hãy nhớ rằng, những suy nghĩ của bạn không nhận thức được bạn; bạn là Nhận thức nhận thức được những suy nghĩ của mình.</p>
+    </article>
+
+    <blockquote data-q="8" data-ini="JF"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Khi bạn thực sự muốn nhìn vào cách bạn nghiêm túc với bản thân, tâm trí bạn có thể bắt đầu cảm thấy bình yên, với một làn gió ấm áp nhẹ nhàng trôi qua trong đó. Người mà bạn từng coi là chính mình, ý kiến, mong muốn, nỗi sợ hãi, những gì bạn đầu tư đã trở nên hơi mơ hồ ở các cạnh. Cuộc sống có vẻ dễ dàng lạ thường. Thậm chí còn vui vẻ. Những gì xảy ra chỉ là . . . xảy ra. Bạn ổn với điều đó, thực sự và thực sự ổn. Không có ý kiến nào về nó trôi nổi trên màn hình radar. Nó trở nên rất yên tĩnh bên trong đầu bạn. Bạn nhận ra mình đã làm việc chăm chỉ như thế nào, toàn bộ cuộc sống đầy ý nghĩa của bạn. Cuộc sống mới chỉ bắt đầu với bạn.</p>
+      <cite><b>Jan Frazier</b> — trích từ <em>Mở cửa</em></cite>
+    </div></blockquote>
+
+    <div class="concept">
+      <span class="lbl">Khái niệm cốt lõi</span>
+      <h4>Quan sát thay vì lạc vào</h4>
+      <dl>
+        <dt>Cách tác giả sử dụng khái niệm này trong chương</dt>
+        <dd>Là sự khác nhau giữa <em>nhận thức được</em> một suy nghĩ và <em>đồng nhất</em> với nó. Hình ảnh bà và người thầy dùng: để con chim bay qua mà không phân tích nó.</dd>
+        <dt>Ý nghĩa trong mạch lập luận</dt>
+        <dd>Đây là lời giải cho vấn đề đặt ra từ đầu chương. Vì rắc rối nằm ở việc tin, nên chỉ cần nhận thức là đủ — không cần dẹp bỏ tâm trí, và cố dẹp bỏ còn tiếp thêm sức mạnh cho nó.</dd>
+        <dt>Lưu ý để tránh hiểu sai</dt>
+        <dd>Đúng như câu mở đầu chương của Jan Frazier: &ldquo;Tâm trí không cần phải tĩnh lặng.&rdquo; Mục tiêu không phải là một cái đầu im lặng, mà là thôi nghe nó như thể nó là sự thật.</dd>
+      </dl>
+    </div>
+
+    <div class="pause">
+      <span class="lbl">Dừng lại 30 giây</span><div class="tmr" data-s="30" role="button" tabindex="0" aria-label="Bắt đầu lại 30 giây"><svg viewBox="0 0 74 74" aria-hidden="true"><circle class="bg" cx="37" cy="37" r="32"/><circle class="fg" cx="37" cy="37" r="32"/></svg></div>
+      <p>Hãy để con chim bay qua mà không phân tích nó.</p>
+    </div>
+
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+  <!-- TÓM TẮT GỐC -->
+  <section id="tom-tat-goc">
+    <div class="sec-head"><div class="badge">★</div><h2>Tóm tắt gốc của chương</h2></div>
+    <div class="box origsum">
+      <span class="tag">Tóm tắt gốc của chương &middot; Nguyên văn của tác giả</span>
+      <h3 style="font-family:var(--ui); font-size:16px; letter-spacing:.06em; margin:10px 0 12px">TÓM TẮT CHƯƠNG 05</h3>
+      <ul class="dia">
+        <li>Thói quen tin vào suy nghĩ của chính mình khiến chúng ta không thể sống trong sự tráng lệ và vinh quang của con người thực sự của mình.</li>
+        <li>Chính suy nghĩ của bạn về một người, hoàn cảnh hoặc sự kiện là nguồn gốc của những tình huống tiêu cực trong cuộc sống của bạn, chứ không phải người, hoàn cảnh hoặc sự kiện thực tế.</li>
+        <li>Suy nghĩ được tạo ra để sắp xếp những gì bạn muốn. Suy nghĩ không cần thiết cho bất kỳ điều gì khác vì mọi thứ khác đều được Nhận thức xử lý.</li>
+        <li>Tâm trí của bạn không phải là bộ não của bạn. Bộ não của bạn không suy nghĩ. Suy nghĩ đến từ tâm trí của bạn.</li>
+        <li>Tâm trí của bạn hoàn toàn được tạo thành từ suy nghĩ. Nếu không có suy nghĩ hiện tại, thì không có tâm trí.</li>
+        <li>Hầu hết mọi người tin vào suy nghĩ của chính mình như thể chúng là sự thật, điều này giải thích tại sao cuộc sống lại căng thẳng và đầy thử thách đối với rất nhiều người.</li>
+        <li>Chính những suy nghĩ tiêu cực là nguyên nhân gây ra căng thẳng và đau khổ của chúng ta, vì vậy chúng ta cần đặc biệt nhận thức được những suy nghĩ tiêu cực.</li>
+        <li>Khi chúng ta tin vào suy nghĩ của mình, chúng ta ngay lập tức bị cuốn vào một bộ phim tưởng tượng do tâm trí tạo ra đang phát trong đầu chúng ta và chúng ta không còn trải nghiệm thế giới như thực tế nữa.</li>
+        <li>Suy nghĩ cũng chịu trách nhiệm gây ra cảm xúc của chúng ta, và sau đó cảm xúc của chúng ta sẽ gây ra nhiều suy nghĩ hơn.</li>
+        <li>Tâm trí không có gì sai; rắc rối chỉ bắt đầu khi chúng ta tin vào những suy nghĩ tiêu cực của nó.</li>
+        <li>Người tức giận, tổn thương, lo lắng, bồn chồn hoặc thất vọng không phải là bạn thực sự. Đó là tâm trí của bạn.</li>
+        <li>Tâm trí chỉ có ba loại suy nghĩ khác nhau. Tâm trí đo lường, so sánh và mô tả.</li>
+        <li>Một trong những lời nói dối lớn nhất mà tâm trí chúng ta đã thuyết phục chúng ta là câu chuyện rằng chúng ta là một cơ thể và một tâm trí.</li>
+        <li>Một câu chuyện khác mà tâm trí chúng ta đã thuyết phục chúng ta là câu chuyện về thời gian. Thời gian là một ảo ảnh, một khái niệm tinh thần do tâm trí tạo ra.</li>
+        <li>Tất cả những gì thực sự tồn tại là khoảnh khắc hiện tại này. Quá khứ và tương lai chỉ tồn tại dưới dạng suy nghĩ.</li>
+        <li>Bạn không cần phải loại bỏ tâm trí của mình hoặc chiến đấu với tâm trí của mình. Nhận thức là cách thoát khỏi sự hỗn loạn của tâm trí.</li>
+        <li>Khi bạn quan sát những suy nghĩ của mình thay vì bị lạc trong chúng, bạn sẽ thấy chúng như chúng vốn có: một thứ gì đó tách biệt với bạn mà bạn có thể chọn tin hoặc không.</li>
+      </ul>
+    </div>
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+  <!-- BẢN ĐỒ GHI NHỚ -->
+  <section id="ban-do-ghi-nho">
+    <div class="sec-head"><div class="badge">★</div><h2>Bản đồ ghi nhớ cuối chương</h2></div>
+    <div class="box recall">
+      <span class="tag" style="background:var(--blue-l); color:var(--blue)">Bản đồ ghi nhớ do biên tập viên tạo</span>
+      <p style="font-family:var(--ui); font-size:14.5px; color:var(--ink2); margin-top:4px">Công cụ ôn tập dựa hoàn toàn trên chương này, không thay thế nội dung của tác giả và không thay thế phần Tóm tắt gốc ở trên.</p>
+
+      <h3>Ý cốt lõi</h3>
+      <ul class="dia">
+        <li>Tâm trí không có vấn đề gì — rắc rối bắt đầu khi ta tin vào những suy nghĩ tiêu cực của nó.</li>
+        <li>Tâm trí không phải là bộ não; nó hoàn toàn được tạo thành từ suy nghĩ và không thể chứa hai suy nghĩ cùng lúc.</li>
+        <li>Một suy nghĩ chỉ trở thành nguồn năng lượng khi bạn tin vào nó.</li>
+        <li>Mọi cảm xúc tiêu cực đều bắt đầu từ một suy nghĩ được tin, rồi tự nuôi thành vòng lặp.</li>
+        <li>Chịu trách nhiệm hoàn toàn — nhưng không đổ lỗi cho ai, kể cả chính mình.</li>
+        <li>Người tức giận không phải là bạn; đó là tâm trí của bạn.</li>
+        <li>Tâm trí chỉ làm ba việc: đo lường, so sánh, mô tả.</li>
+        <li>Khi mô tả, nó kể chuyện; bạn tin → nó chiếu câu chuyện đó vào thế giới để bạn trải nghiệm.</li>
+        <li>Không thể tìm thấy quá khứ hay tương lai nếu không có suy nghĩ; chỉ có khoảnh khắc hiện tại.</li>
+        <li>Nhận thức là lối thoát — không cần loại bỏ hay chiến đấu với tâm trí, vì cố làm vậy chỉ tiếp thêm sức mạnh cho nó.</li>
+      </ul>
+
+      <h3>Khái niệm cần nhớ</h3>
+      <ul class="dia">
+        <li><strong>Tin vào suy nghĩ</strong> — trao thẩm quyền cho tâm trí; đây mới là vấn đề, không phải việc có suy nghĩ.</li>
+        <li><strong>Ba loại suy nghĩ</strong> — đo lường, so sánh, mô tả.</li>
+        <li><strong>Câu chuyện của tâm trí</strong> — tâm trí dựng, bạn tin, nó thành cuộc sống của bạn.</li>
+        <li><strong>Thời gian là ảo ảnh</strong> — một khái niệm tinh thần; chỉ có khoảnh khắc hiện tại.</li>
+        <li><strong>Quan sát thay vì lạc vào</strong> — không thể vừa nhận thức một suy nghĩ vừa tin nó.</li>
+      </ul>
+
+      <h3>Bài thực hành xuất hiện trong chương</h3>
+      <ul class="dia">
+        <li><strong>Phần 03 —</strong> Tự kiểm tra bất kỳ suy nghĩ nào xuất hiện xem nó đang đo lường, so sánh hay mô tả.</li>
+        <li><strong>Phần 04 —</strong> Thử tìm bằng chứng về quá khứ và tương lai mà không cần suy nghĩ; rồi kiểm chứng bằng ký ức đạp xe và lúc thức dậy sáng nay.</li>
+      </ul>
+
+      <h3>Chuỗi logic của chương</h3>
+      <div class="chain">
+        <span>Ta trao thẩm quyền cho tâm trí</span><i>→</i>
+        <span>Tin suy nghĩ như sự thật</span><i>→</i>
+        <span>Cảm xúc tiêu cực và vòng lặp</span><i>→</i>
+        <span>Tâm trí chỉ đo lường, so sánh, mô tả</span><i>→</i>
+        <span>Mô tả thành câu chuyện</span><i>→</i>
+        <span>Kể cả câu chuyện về thời gian</span><i>→</i>
+        <span>Nhận thức phá vỡ chuỗi</span>
+      </div>
+    </div>
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+</main>
+
+<nav class="pager" aria-label="Chuyển phần">
+  <a class="prev" href="04-ban-co-dang-mo.html"><span class="k">Phần trước</span>Chương 04 — Bạn có đang mơ… Đã đến lúc thức dậy</a>
+  <a class="home" href="index.html"><span class="k">Mục lục</span>Toàn bộ cuốn sách</a>
+  <a class="next" href="06-suc-manh-cua-cam-xuc.html"><span class="k">Phần sau</span>Chương 06 — Hiểu được sức mạnh của cảm xúc</a>
+</nav>
+<footer class="pagefoot"><p><strong>Bí mật vĩ đại nhất</strong> — Rhonda Byrne<br>Bản trình bày lại phục vụ việc đọc và ôn tập. Bản quyền nội dung thuộc về tác giả và nhà xuất bản.</p></footer>
+</div>
+<div id="fabs">
+  <button id="fabFind" type="button" aria-label="Tìm trong trang" title="Tìm trong trang (Ctrl+F)">🔍</button>
+  <button id="fabHl" type="button" aria-label="Xem các câu bôi vàng" title="Các câu bôi vàng">🖍️</button>
+  <button id="fabFont" type="button" aria-label="Đổi cỡ chữ" title="Cỡ chữ">🔤</button>
+  <button id="fabStill" type="button" aria-label="Tạm dừng chuyển động" aria-pressed="false" title="Tạm dừng chuyển động">⏸️</button>
+  <button id="fabDark" type="button" aria-label="Chế độ tối" aria-pressed="false" title="Chế độ tối">🌙</button>
+  <button id="fabTop" class="fab-top" type="button" aria-label="Về đầu trang" title="Về đầu trang">⬆️</button>
+</div>
+<div id="findbar" role="search"><input type="search" aria-label="Tìm trong trang" placeholder="Tìm trong chương…"><span class="fc"></span><button type="button" class="fp" aria-label="Kết quả trước">↑</button><button type="button" class="fn" aria-label="Kết quả sau">↓</button><button type="button" class="fx" aria-label="Đóng tìm kiếm">✕</button></div>
+<div id="hlpanel" role="dialog" aria-modal="true" aria-label="Các câu được bôi vàng"><div class="in"><button type="button" class="x" aria-label="Đóng">✕</button><h2>Các câu được bôi vàng</h2><p class="hs">Bấm vào một câu để nhảy tới đúng chỗ đó trong chương.</p><ol></ol></div></div>
+<nav id="rail" aria-label="Mục lục dính"><p class="rt">Trong chương này</p></nav>
+<script>(function(){
+  var root=document.documentElement, D=document; root.classList.add('js');
+  function $(s,c){return (c||D).querySelector(s)} function $$(s,c){return [].slice.call((c||D).querySelectorAll(s))}
+  function ls(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}}
+  var COLORS=['#FF3B30','#FF8A00','#FFD400','#28B446','#00B3A6','#0A84FF','#9B51E0','#FF2D78'];
+
+  /* ---- tắt chuyển động ---- */
+  var sb=$('#fabStill'), still=ls('bmvdn-still')==='1' || (matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches);
+  function setStill(v){still=v; root.classList.toggle('still',v);
+    if(sb){sb.textContent=v?'▶️':'⏸️'; sb.setAttribute('aria-pressed',v?'true':'false'); sb.title=v?'Bật lại chuyển động':'Tạm dừng chuyển động';}
+    if(v){$$('.rv').forEach(function(e){e.classList.add('in')}); $$('mark').forEach(function(m){m.classList.add('lit')});}
+    $$('svg').forEach(function(g){try{v?g.pauseAnimations():g.unpauseAnimations()}catch(e){}});
+    ls('bmvdn-still',v?'1':'0')}
+  setStill(still); if(sb)sb.addEventListener('click',function(){setStill(!still)});
+
+  /* ---- thanh tiến độ + nút lên đầu ---- */
+  var bar=$('#progress'), ft=$('#fabTop');
+  function prog(){var m=root.scrollHeight-root.clientHeight, y=root.scrollTop||D.body.scrollTop;
+    if(bar)bar.style.width=(m>0?y/m*100:0).toFixed(2)+'%'; if(ft)ft.classList.toggle('on',y>500)}
+  if(ft)ft.addEventListener('click',function(){scrollTo({top:0,behavior:still?'auto':'smooth'})});
+
+  /* ---- chế độ tối ---- */
+  var tb=$('#themeBtn'), fd=$('#fabDark');
+  function setDark(d){root.setAttribute('data-theme',d?'dark':'light');
+    if(tb){tb.textContent=d?'Chế độ sáng':'Chế độ đọc tối';tb.setAttribute('aria-pressed',d?'true':'false')}
+    if(fd){fd.textContent=d?'☀️':'🌙';fd.setAttribute('aria-pressed',d?'true':'false')}
+    ls('bmvdn-theme',d?'dark':'light')}
+  setDark(ls('bmvdn-theme')==='dark');
+  function tog(){setDark(root.getAttribute('data-theme')!=='dark')}
+  if(tb)tb.addEventListener('click',tog); if(fd)fd.addEventListener('click',tog);
+  var pb=$('#printBtn'); if(pb)pb.addEventListener('click',function(){print()});
+
+  /* ---- cỡ chữ ---- */
+  var fz=$('#fabFont'), steps=['','l','xl'], fi=Math.max(0,steps.indexOf(ls('bmvdn-fs')||''));
+  function setFs(){if(steps[fi])root.setAttribute('data-fs',steps[fi]);else root.removeAttribute('data-fs');ls('bmvdn-fs',steps[fi])}
+  setFs(); if(fz)fz.addEventListener('click',function(){fi=(fi+1)%steps.length;setFs()});
+
+  /* ---- hiện dần + bút dạ quang quét ---- */
+  $$('.body-card,blockquote,.concept,.example,.practice,.hint,.keyidea,.pause,.flow,figure.fig,.box,.willlearn,.sec-head,.chain,.pager > *,.stages li,nav.toc li')
+    .forEach(function(e){e.classList.add('rv')});
+  var IO='IntersectionObserver' in window;
+  if(IO && !still){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){
+      var t=e.target; t.classList.add('in'); io.unobserve(t);
+      if(t.classList.contains('chain')) $$('span',t).forEach(function(s,i){s.style.transitionDelay=(i*70)+'ms'});
+    }})},{threshold:.06,rootMargin:'0px 0px -5% 0px'});
+    var groups={}; $$('.rv').forEach(function(e){var p=e.parentNode; var k=groups[p.__k||(p.__k=Math.random())]=(groups[p.__k]||0)+1;
+      e.style.transitionDelay=(Math.min(k-1,5)*60)+'ms'; io.observe(e)});
+    var mo=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){
+      setTimeout(function(){e.target.classList.add('lit')},180); mo.unobserve(e.target)}})},{threshold:.9,rootMargin:'0px 0px -12% 0px'});
+    $$('mark').forEach(function(m){mo.observe(m)});
+  } else { $$('.rv').forEach(function(e){e.classList.add('in')}); $$('mark').forEach(function(m){m.classList.add('lit')}); }
+
+  /* ---- số liệu đếm lên ---- */
+  $$('.stat b[data-n]').forEach(function(b){var n=+b.getAttribute('data-n'); if(still||!n)return;
+    var t0=null; b.textContent='0'; function step(t){if(!t0)t0=t; var p=Math.min(1,(t-t0)/1100);
+      b.textContent=Math.round(n*(1-Math.pow(1-p,3))); if(p<1)requestAnimationFrame(step)}
+    setTimeout(function(){requestAnimationFrame(step)},350)});
+
+  /* ---- mục lục dính + phần đang đọc ---- */
+  var rail=$('#rail'), now=$('#nowsec'), toc=$('nav.toc'), items=[];
+  if(rail && toc){
+    $$('a',toc).forEach(function(a){var id=a.getAttribute('href').slice(1), s=D.getElementById(id); if(!s)return;
+      var c=a.cloneNode(true); rail.appendChild(c);
+      var n=$('.n',a), num=n?n.textContent:'', title=a.textContent.replace(num,'').trim();
+      items.push({a:c,s:s,num:num,title:title})});
+  }
+  function spy(){ if(!items.length)return;
+    var y=innerHeight*.32, cur=null; items.forEach(function(it){if(it.s.getBoundingClientRect().top<y)cur=it});
+    var tocBottom=toc.getBoundingClientRect().bottom;
+    rail.classList.toggle('on',tocBottom<0);
+    items.forEach(function(it){var on=it===cur; it.a.classList.toggle('act',on);
+      if(on){var cs=getComputedStyle(it.s), c=cs.getPropertyValue('--sc'), o=cs.getPropertyValue('--on'); it.a.style.setProperty('--rc',c&&c.trim()?c:'var(--ac)'); it.a.style.setProperty('--ron',o&&o.trim()?o:'#fff')}});
+    if(now){ if(cur&&tocBottom<0){now.textContent=cur.num+' · '+cur.title; now.classList.add('on')} else now.classList.remove('on') }
+    if(cur&&rail.classList.contains('on')){var r=cur.a.offsetTop-rail.clientHeight/2; if(Math.abs(rail.scrollTop-r)>80)rail.scrollTop=r}
+  }
+  var tick=false; function onScroll(){if(tick)return; tick=true; requestAnimationFrame(function(){tick=false; prog(); spy()})}
+  addEventListener('scroll',onScroll,{passive:true}); addEventListener('resize',onScroll); prog(); spy();
+
+  /* ---- confetti ---- */
+  function confetti(x,y){ if(still)return;
+    for(var i=0;i<28;i++){var c=D.createElement('i'); c.className='cf'; var a=Math.random()*Math.PI*2, r=60+Math.random()*90;
+      c.style.left=x+'px'; c.style.top=y+'px'; c.style.background=COLORS[i%8];
+      c.style.setProperty('--dx',Math.cos(a)*r+'px'); c.style.setProperty('--dy',(Math.sin(a)*r-40)+'px');
+      c.style.setProperty('--rt',(Math.random()*720-360)+'deg'); if(i%3===0)c.style.borderRadius='50%';
+      D.body.appendChild(c); setTimeout(function(n){return function(){n.remove()}}(c),1200)} }
+
+  /* ---- sao chép trích dẫn ---- */
+  function copyText(t){ if(navigator.clipboard&&isSecureContext) return navigator.clipboard.writeText(t);
+    return new Promise(function(ok){var ta=D.createElement('textarea'); ta.value=t; ta.style.position='fixed'; ta.style.opacity='0';
+      D.body.appendChild(ta); ta.select(); try{D.execCommand('copy')}catch(e){} ta.remove(); ok()}) }
+  $$('.cpy').forEach(function(b){b.addEventListener('click',function(){
+    var q=b.closest('blockquote'), ps=$$('p',q).map(function(p){return p.textContent.trim()}).join('\n'),
+        c=$('cite',q), who=c?c.textContent.trim():'';
+    copyText('“'+ps+'”'+(who?'\n— '+who:'')).then(function(){b.classList.add('ok'); b.setAttribute('aria-label','Đã sao chép');
+      var r=b.getBoundingClientRect(); confetti(r.left+r.width/2,r.top+r.height/2);
+      setTimeout(function(){b.classList.remove('ok'); b.setAttribute('aria-label','Sao chép trích dẫn')},1800)})})});
+
+  /* ---- đồng hồ 30 giây ---- */
+  function runTimer(p){ var t=$('.tmr',p); if(!t||still)return; var fg=$('.fg',t);
+    clearInterval(t.__iv); t.classList.remove('done'); p.classList.remove('go'); void fg.getBoundingClientRect(); p.classList.add('go');
+    var s=30; t.setAttribute('data-s',s); t.__iv=setInterval(function(){s--; t.setAttribute('data-s',s);
+      if(s<=0){clearInterval(t.__iv); t.classList.add('done')}},1000) }
+  if(IO){var po=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){runTimer(e.target); po.unobserve(e.target)}})},{threshold:.75});
+    $$('.pause').forEach(function(p){if($('.tmr',p))po.observe(p)})}
+  $$('.pause .tmr').forEach(function(t){function go(){runTimer(t.closest('.pause'))}
+    t.addEventListener('click',go); t.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();go()}})});
+
+  /* ---- bảng các câu bôi vàng ---- */
+  var hp=$('#hlpanel'), hb=$('#fabHl');
+  if(hp&&hb){ var ol=$('ol',hp);
+    $$('main mark').forEach(function(m,i){ if(!m.id)m.id='hl-'+(i+1);
+      var li=D.createElement('li'), a=D.createElement('a'); a.href='#'+m.id; a.textContent=m.textContent; li.appendChild(a); ol.appendChild(li);
+      a.addEventListener('click',function(ev){ev.preventDefault(); closeHl(); m.classList.add('lit');
+        m.scrollIntoView({behavior:still?'auto':'smooth',block:'center'}); m.classList.remove('flash'); void m.offsetWidth; m.classList.add('flash')})});
+    function openHl(){hp.classList.add('on'); var f=$('a',hp)||$('.x',hp); if(f)f.focus()}
+    function closeHl(){hp.classList.remove('on'); hb.focus({preventScroll:true})}
+    hb.addEventListener('click',openHl); $('.x',hp).addEventListener('click',closeHl);
+    hp.addEventListener('click',function(e){if(e.target===hp)closeHl()});
+    D.addEventListener('keydown',function(e){if(e.key==='Escape'&&hp.classList.contains('on'))closeHl()});
+  }
+
+  /* ---- tìm trong trang ---- */
+  var fb=$('#findbar'), ff=$('#fabFind');
+  if(fb&&ff){ var inp=$('input',fb), fc=$('.fc',fb), hits=[], hi=-1, scope=$('body > .wrap')||D.body;
+    function clear(){ hits.forEach(function(s){var p=s.parentNode; if(!p)return; p.replaceChild(D.createTextNode(s.textContent),s); p.normalize()}); hits=[]; hi=-1 }
+    function norm(s){return s.normalize('NFC').toLowerCase()}
+    function search(q){ clear(); q=norm(q.trim()); if(q.length<2){fc.textContent='';return}
+      var w=D.createTreeWalker(scope,NodeFilter.SHOW_TEXT,{acceptNode:function(n){
+        if(!n.nodeValue.trim())return NodeFilter.FILTER_REJECT; var p=n.parentNode;
+        if(p.closest('script,style,svg,#hlpanel,#findbar,.cpy'))return NodeFilter.FILTER_REJECT; return NodeFilter.FILTER_ACCEPT}});
+      var nodes=[]; while(w.nextNode())nodes.push(w.currentNode);
+      nodes.forEach(function(n){ var t=n.nodeValue, lt=norm(t), i=lt.indexOf(q); if(i<0)return;
+        var frag=D.createDocumentFragment(), last=0;
+        while(i>=0){ frag.appendChild(D.createTextNode(t.slice(last,i))); var s=D.createElement('span'); s.className='fnd';
+          s.textContent=t.slice(i,i+q.length); frag.appendChild(s); hits.push(s); last=i+q.length; i=lt.indexOf(q,last)}
+        frag.appendChild(D.createTextNode(t.slice(last))); n.parentNode.replaceChild(frag,n)});
+      $$('.rv',scope).forEach(function(e){e.classList.add('in')});
+      fc.textContent=hits.length?('0/'+hits.length):'Không thấy'; if(hits.length)go(0) }
+    function go(k){ if(!hits.length)return; if(hi>=0&&hits[hi])hits[hi].classList.remove('cur');
+      hi=(k+hits.length)%hits.length; var s=hits[hi]; s.classList.add('cur'); fc.textContent=(hi+1)+'/'+hits.length;
+      s.scrollIntoView({behavior:'auto',block:'center'}) }
+    var tmo; inp.addEventListener('input',function(){clearTimeout(tmo); tmo=setTimeout(function(){search(inp.value)},180)});
+    inp.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();go(hi+(e.shiftKey?-1:1))} if(e.key==='Escape')closeF()});
+    $('.fn',fb).addEventListener('click',function(){go(hi+1)}); $('.fp',fb).addEventListener('click',function(){go(hi-1)});
+    function openF(){fb.classList.add('on'); inp.focus(); inp.select()}
+    function closeF(){fb.classList.remove('on'); clear(); fc.textContent=''; ff.focus({preventScroll:true})}
+    $('.fx',fb).addEventListener('click',closeF); ff.addEventListener('click',function(){fb.classList.contains('on')?closeF():openF()});
+    D.addEventListener('keydown',function(e){if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='f'){e.preventDefault();openF()}});
+  }
+})();
+</script>
+</body>
+</html>

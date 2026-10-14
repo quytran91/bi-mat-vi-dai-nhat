@@ -1,0 +1,1733 @@
+<!DOCTYPE html>
+<html lang="vi" class="chap" data-c="3">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Ẩn hiện — Bí mật vĩ đại nhất | Rhonda Byrne</title>
+<style>/* ============================================================
+   BÍ MẬT VĨ ĐẠI NHẤT — ngôn ngữ thiết kế "màu mè"
+   8 màu luân phiên · bút dạ quang vàng cố định · emoji iPhone
+   ============================================================ */
+:root{
+  /* --- 8 màu chủ đề (hệ màu iOS) --- */
+  --c1:#FF3B30; --c1l:#FFE9E7; --c1b:#FFC7C2;   /* đỏ      */
+  --c2:#FF8A00; --c2l:#FFF1DF; --c2b:#FFD6A3;   /* cam     */
+  --c3:#E8A500; --c3l:#FFF8DC; --c3b:#FFE48A;   /* vàng    */
+  --c4:#28B446; --c4l:#E6F8EA; --c4b:#A8E6B6;   /* xanh lá */
+  --c5:#00B3A6; --c5l:#DFF7F5; --c5b:#95E3DD;   /* xanh ngọc */
+  --c6:#0A84FF; --c6l:#E4F0FF; --c6b:#AED3FF;   /* xanh dương */
+  --c7:#9B51E0; --c7l:#F3E9FD; --c7b:#D9BCF5;   /* tím     */
+  --c8:#FF2D78; --c8l:#FFE7EF; --c8b:#FFBDD3;   /* hồng    */
+
+  /* --- màu nhấn của trang (build gán qua data-c) --- */
+  --ac:var(--c6); --acl:var(--c6l); --acb:var(--c6b);
+
+  /* --- bút dạ quang: CỐ ĐỊNH, không đổi theo chương --- */
+  --hl1:#FFE600; --hl2:#FFD400; --hl-ink:#2B2200;
+
+  /* --- nền, chữ, khung --- */
+  --bg:#FBF9FF; --card:#FFFFFF; --soft:#F4F3FA;
+  --ink:#1C1B2E; --ink2:#67657F; --ink3:#9A98AE;
+  --rule:#E8E6F2;
+  --r:24px; --r2:16px; --r3:999px;
+  --sh:0 1px 2px rgba(28,27,46,.04), 0 10px 30px rgba(28,27,46,.07);
+  --sh2:0 2px 6px rgba(28,27,46,.06), 0 18px 48px rgba(28,27,46,.10);
+
+  /* --- font: emoji Apple đứng đầu mọi stack --- */
+  --emo:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji","Twemoji Mozilla",sans-serif;
+  --ui:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,"Noto Sans",Arial,
+       "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif;
+  --serif:"Times New Roman",Tinos,"Liberation Serif","Noto Serif",Times,serif;
+
+  --fs:18px;
+}
+html[data-theme="dark"]{
+  --c1:#FF6961; --c1l:#3A1E1C; --c1b:#5E2E29;
+  --c2:#FFA64D; --c2l:#3A2A14; --c2b:#5E4320;
+  --c3:#FFD24D; --c3l:#3A3316; --c3b:#5E5122;
+  --c4:#52DD6E; --c4l:#15311C; --c4b:#24512F;
+  --c5:#35D6C8; --c5l:#10322F; --c5b:#1D524D;
+  --c6:#4DA3FF; --c6l:#132B44; --c6b:#1E466F;
+  --c7:#C185F5; --c7l:#2A1A3C; --c7b:#452C61;
+  --c8:#FF6AA0; --c8l:#3B1727; --c8b:#5F2641;
+  --bg:#0F0E17; --card:#1A1927; --soft:#232232;
+  --ink:#F2F0FF; --ink2:#A9A6C4; --ink3:#7D7A99;
+  --rule:#2E2C42;
+  --sh:0 1px 2px rgba(0,0,0,.4), 0 10px 30px rgba(0,0,0,.35);
+  --sh2:0 2px 6px rgba(0,0,0,.45), 0 18px 48px rgba(0,0,0,.45);
+}
+
+/* --- bảng gán màu nhấn theo chương --- */
+html[data-c="1"]{--ac:var(--c1);--acl:var(--c1l);--acb:var(--c1b)}
+html[data-c="2"]{--ac:var(--c2);--acl:var(--c2l);--acb:var(--c2b)}
+html[data-c="3"]{--ac:var(--c3);--acl:var(--c3l);--acb:var(--c3b)}
+html[data-c="4"]{--ac:var(--c4);--acl:var(--c4l);--acb:var(--c4b)}
+html[data-c="5"]{--ac:var(--c5);--acl:var(--c5l);--acb:var(--c5b)}
+html[data-c="6"]{--ac:var(--c6);--acl:var(--c6l);--acb:var(--c6b)}
+html[data-c="7"]{--ac:var(--c7);--acl:var(--c7l);--acb:var(--c7b)}
+html[data-c="8"]{--ac:var(--c8);--acl:var(--c8l);--acb:var(--c8b)}
+
+/* --- bí danh cho SVG trong nội dung (giữ nguyên tên biến cũ) --- */
+:root,html[data-theme="dark"]{
+  --gold:var(--c3); --gold-l:var(--c3l);
+  --green:var(--c4); --green-l:var(--c4l);
+  --blue:var(--c6); --blue-l:var(--c6l);
+  --purple:var(--c7); --purple-l:var(--c7l);
+  --red:var(--c1); --red-l:var(--c1l);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:84px; -webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:var(--ui); font-size:var(--fs); line-height:1.75;
+  text-rendering:optimizeLegibility; overflow-x:hidden;
+}
+html[data-fs="l"]{--fs:20px}
+html[data-fs="xl"]{--fs:22px}
+p{margin:0 0 1.1em}
+a{color:var(--ac)}
+.wrap{max-width:860px; margin:0 auto; padding:0 20px}
+::selection{background:var(--hl1); color:var(--hl-ink)}
+
+/* ---------- nền nhiều màu + blob trôi ---------- */
+body::before{
+  content:""; position:fixed; inset:0; z-index:-2; pointer-events:none;
+  background:
+    radial-gradient(900px 600px at 8% -5%,  rgba(10,132,255,.10), transparent 60%),
+    radial-gradient(800px 600px at 95% 5%,  rgba(255,45,120,.09), transparent 60%),
+    radial-gradient(900px 700px at 50% 108%,rgba(155,81,224,.10), transparent 60%),
+    radial-gradient(700px 500px at -5% 70%, rgba(0,179,166,.09), transparent 60%);
+}
+#blobs{position:fixed; inset:0; z-index:-1; pointer-events:none; overflow:hidden; filter:blur(60px); opacity:.5}
+html[data-theme="dark"] #blobs{opacity:.34}
+#blobs i{position:absolute; display:block; border-radius:50%}
+#blobs i:nth-child(1){width:46vmin;height:46vmin;left:-8vmin;top:4vmin;  background:var(--c6); animation:drift1 34s ease-in-out infinite}
+#blobs i:nth-child(2){width:38vmin;height:38vmin;right:-6vmin;top:18vmin;background:var(--c8); animation:drift2 41s ease-in-out infinite}
+#blobs i:nth-child(3){width:42vmin;height:42vmin;left:24vmin;bottom:-12vmin;background:var(--c7); animation:drift3 47s ease-in-out infinite}
+#blobs i:nth-child(4){width:30vmin;height:30vmin;right:14vmin;bottom:4vmin; background:var(--c5); animation:drift1 39s ease-in-out infinite reverse}
+#blobs i:nth-child(5){width:26vmin;height:26vmin;left:52vmin;top:-8vmin;   background:var(--c3); animation:drift2 44s ease-in-out infinite}
+@keyframes drift1{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(8vmin,6vmin) scale(1.12)}66%{transform:translate(-5vmin,10vmin) scale(.94)}}
+@keyframes drift2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-9vmin,8vmin) scale(1.15)}}
+@keyframes drift3{0%,100%{transform:translate(0,0) scale(1)}40%{transform:translate(7vmin,-7vmin) scale(.9)}75%{transform:translate(-6vmin,4vmin) scale(1.08)}}
+
+/* ---------- thanh tiến độ + toolbar ---------- */
+#progress{position:fixed; top:0; left:0; height:4px; width:0%; z-index:70;
+  background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3),var(--c4),var(--c5),var(--c6),var(--c7),var(--c8));
+  border-radius:0 4px 4px 0}
+#toolbar{position:sticky; top:0; z-index:60; backdrop-filter:saturate(180%) blur(14px);
+  background:color-mix(in srgb,var(--bg) 78%, transparent); border-bottom:1px solid var(--rule)}
+#toolbar .wrap{display:flex; gap:8px; flex-wrap:wrap; align-items:center; padding:10px 20px}
+#toolbar .tb-title{font-size:12.5px; font-weight:800; letter-spacing:.04em; color:var(--ink2);
+  margin-right:auto; display:flex; align-items:center; gap:7px}
+#toolbar .tb-title::before{content:"📘"; font-family:var(--emo); font-size:15px}
+.btn{font:inherit; font-size:13px; font-weight:650; line-height:1.2; padding:9px 15px; cursor:pointer;
+  background:var(--card); color:var(--ink); border:1.5px solid var(--rule); border-radius:var(--r3);
+  text-decoration:none; display:inline-flex; align-items:center; gap:6px;
+  transition:transform .16s, border-color .16s, box-shadow .16s}
+.btn:hover{transform:translateY(-2px); border-color:var(--ac); box-shadow:0 6px 18px color-mix(in srgb,var(--ac) 26%, transparent)}
+#toolbar a.btn[href="index.html"]::before{content:"🗂️"; font-family:var(--emo)}
+#toolbar a.btn[href="#top"]::before{content:"⬆️"; font-family:var(--emo)}
+#themeBtn::before{content:"🌙"; font-family:var(--emo)}
+html[data-theme="dark"] #themeBtn::before{content:"☀️"}
+#printBtn::before{content:"🖨️"; font-family:var(--emo)}
+a:focus-visible,.btn:focus-visible,summary:focus-visible,[tabindex]:focus-visible{
+  outline:3px solid var(--ac); outline-offset:3px; border-radius:8px}
+
+/* ---------- HERO ---------- */
+header.book{
+  position:relative; overflow:hidden; text-align:center;
+  padding:66px 0 60px; margin-bottom:8px; color:#fff;
+  background:linear-gradient(115deg,#FF3B30,#FF8A00,#E8A500,#28B446,#00B3A6,#0A84FF,#9B51E0,#FF2D78);
+  background-size:300% 300%; animation:heroShift 26s ease infinite;
+}
+@keyframes heroShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+header.book::after{content:""; position:absolute; inset:0;
+  background:radial-gradient(120% 90% at 50% 120%, rgba(0,0,0,.34), transparent 70%)}
+header.book > .wrap{position:relative; z-index:2}
+header.book .kicker{display:inline-flex; align-items:center; gap:8px; margin:0 0 20px;
+  font-size:12px; font-weight:800; letter-spacing:.14em; text-transform:uppercase;
+  background:rgba(255,255,255,.22); border:1px solid rgba(255,255,255,.4);
+  padding:7px 16px; border-radius:var(--r3); backdrop-filter:blur(6px)}
+header.book .kicker::before{content:"🎨"; font-family:var(--emo); font-size:14px}
+header.book h1{margin:0; font-size:clamp(34px,7.6vw,68px); line-height:1.08; font-weight:850;
+  letter-spacing:-.02em; text-shadow:0 4px 26px rgba(0,0,0,.3)}
+header.book .chapno{display:inline-block; margin:0 0 14px; font-size:13px; font-weight:800;
+  letter-spacing:.2em; text-transform:uppercase; background:rgba(255,255,255,.95);
+  color:#1C1B2E; padding:6px 18px; border-radius:var(--r3)}
+header.book .sub{max-width:620px; margin:20px auto 0; font-size:17.5px; line-height:1.7;
+  color:rgba(255,255,255,.95); font-style:normal}
+header.book .author{display:inline-flex; align-items:center; gap:8px; margin-top:26px;
+  font-size:13px; font-weight:750; letter-spacing:.1em; text-transform:uppercase;
+  color:#fff; background:rgba(0,0,0,.22); padding:8px 18px; border-radius:var(--r3)}
+header.book .author::before{content:"✍️"; font-family:var(--emo); font-size:14px}
+.rule-orn{display:flex; align-items:center; justify-content:center; gap:10px; margin:24px auto 0; max-width:300px}
+.rule-orn span{height:3px; flex:1; border-radius:3px; background:linear-gradient(90deg,transparent,#fff)}
+.rule-orn span:last-child{background:linear-gradient(90deg,#fff,transparent)}
+.rule-orn b{font-size:0; width:auto}
+.rule-orn b::after{content:"✨"; font-family:var(--emo); font-size:20px; display:block;
+  animation:twinkle 3.6s ease-in-out infinite}
+@keyframes twinkle{0%,100%{transform:scale(1) rotate(0)}50%{transform:scale(1.28) rotate(16deg)}}
+/* emoji trang trí bay lơ lửng */
+header.book .wrap::before,header.book .wrap::after{
+  font-family:var(--emo); position:absolute; font-size:36px; opacity:.85; pointer-events:none}
+header.book .wrap::before{content:"🔑"; left:2%;  top:6%;  animation:float1 9s ease-in-out infinite}
+header.book .wrap::after {content:"💡"; right:3%; bottom:4%; animation:float2 11s ease-in-out infinite}
+@keyframes float1{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-16px) rotate(8deg)}}
+@keyframes float2{0%,100%{transform:translateY(0) rotate(6deg)}50%{transform:translateY(-20px) rotate(-10deg)}}
+@media (max-width:700px){header.book .wrap::before,header.book .wrap::after{font-size:26px; opacity:.6}}
+
+/* ---------- nhãn pill ---------- */
+.tag{display:inline-flex; align-items:center; gap:7px; font-size:11.5px; font-weight:800;
+  letter-spacing:.12em; text-transform:uppercase; padding:6px 14px; border-radius:var(--r3);
+  background:var(--acl); color:var(--ac); border:1.5px solid var(--acb); margin-bottom:12px}
+
+/* ---------- khối giới thiệu trang mục lục ---------- */
+.hub-intro{position:relative; overflow:hidden; background:var(--card); border:1.5px solid var(--rule);
+  border-radius:var(--r); padding:30px 30px 26px; margin:30px 0 40px; box-shadow:var(--sh)}
+.hub-intro::before{content:""; position:absolute; left:0; right:0; top:0; height:6px;
+  background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3),var(--c4),var(--c5),var(--c6),var(--c7),var(--c8))}
+.hub-intro .tag::before{content:"📊"; font-family:var(--emo); font-size:13px}
+.hub-intro p:last-child{margin-bottom:0}
+.hub-intro p{font-size:16.5px; color:var(--ink2); line-height:1.75}
+.hub-intro p strong{color:var(--ink)}
+.hub-intro code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:.9em;
+  background:var(--soft); border:1px solid var(--rule); border-radius:8px; padding:2px 7px; color:var(--c7)}
+.meter{height:14px; border-radius:var(--r3); background:var(--soft); overflow:hidden;
+  margin:16px 0 10px; border:1px solid var(--rule)}
+.meter i{display:block; height:100%; border-radius:var(--r3); position:relative;
+  background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3),var(--c4),var(--c5),var(--c6),var(--c7),var(--c8));
+  background-size:200% 100%; animation:meterShift 8s linear infinite}
+@keyframes meterShift{0%{background-position:0 0}100%{background-position:200% 0}}
+.meter-lbl{font-size:15px; font-weight:650; color:var(--ink2); margin:0 0 4px}
+.meter-lbl::before{content:"🚀 "; font-family:var(--emo); font-size:16px}
+.meter-lbl strong{color:var(--ink); font-size:16px}
+
+/* ---------- nhóm phần ---------- */
+.group{margin:52px 0}
+.group > h2{display:inline-flex; align-items:center; gap:9px; margin:0 0 8px;
+  font-size:15px; font-weight:850; letter-spacing:.1em; text-transform:uppercase;
+  color:#fff; padding:9px 20px; border-radius:var(--r3); box-shadow:var(--sh)}
+.group:nth-of-type(1) > h2{background:linear-gradient(100deg,var(--c6),var(--c5))}
+.group:nth-of-type(2) > h2{background:linear-gradient(100deg,var(--c7),var(--c8))}
+.group:nth-of-type(3) > h2{background:linear-gradient(100deg,var(--c2),var(--c3))}
+.group:nth-of-type(1) > h2::before{content:"🌅"; font-family:var(--emo); font-size:17px}
+.group:nth-of-type(2) > h2::before{content:"📚"; font-family:var(--emo); font-size:17px}
+.group:nth-of-type(3) > h2::before{content:"🎁"; font-family:var(--emo); font-size:17px}
+.group > .gsub{font-size:15.5px; color:var(--ink2); margin:0 0 22px; max-width:640px}
+
+/* ---------- thẻ chương ---------- */
+.cards{display:grid; grid-template-columns:repeat(auto-fill,minmax(272px,1fr)); gap:18px}
+.card{position:relative; overflow:hidden; display:block; background:var(--card);
+  border:1.5px solid var(--rule); border-radius:var(--r); padding:26px 24px 22px;
+  text-decoration:none; color:var(--ink); box-shadow:var(--sh);
+  transition:transform .2s cubic-bezier(.2,.8,.3,1), box-shadow .2s, border-color .2s}
+.card::before{content:""; position:absolute; left:0; right:0; top:0; height:6px;
+  background:linear-gradient(90deg,var(--cc),color-mix(in srgb,var(--cc) 45%, #fff))}
+.card::after{content:attr(data-emo); font-family:var(--emo); position:absolute; right:18px; top:20px;
+  font-size:30px; line-height:1; transition:transform .25s}
+.card:hover{transform:translateY(-6px); border-color:var(--cc);
+  box-shadow:0 10px 20px color-mix(in srgb,var(--cc) 14%, transparent), 0 26px 56px color-mix(in srgb,var(--cc) 20%, transparent)}
+.card:hover::after{transform:scale(1.22) rotate(-10deg)}
+.card .num{display:block; font-size:12px; font-weight:850; letter-spacing:.14em;
+  text-transform:uppercase; margin:0 0 10px; color:var(--cc)}
+.card h3{margin:0 0 10px; font-size:21px; line-height:1.3; font-weight:800; letter-spacing:-.01em;
+  padding-right:44px}
+.card .sub{margin:0; font-size:14.8px; line-height:1.65; color:var(--ink2)}
+.card .status{display:inline-flex; align-items:center; gap:6px; margin-top:16px; font-size:11.5px;
+  font-weight:800; letter-spacing:.08em; text-transform:uppercase; padding:6px 13px;
+  border-radius:var(--r3); background:var(--c4l); color:var(--c4); border:1.5px solid var(--c4b)}
+.card .status::before{content:"✅"; font-family:var(--emo); font-size:12px}
+.card.off{opacity:.62; box-shadow:none; cursor:default; background:var(--soft)}
+.card.off::before{background:var(--rule)}
+.card.off::after{filter:grayscale(1); opacity:.5}
+.card.off:hover{transform:none; border-color:var(--rule); box-shadow:none}
+.card.off .num{color:var(--ink3)}
+.card.off .status{background:transparent; color:var(--ink3); border:1.5px dashed var(--rule)}
+.card.off .status::before{content:"🕓"}
+/* 8 màu luân phiên — build gán data-c cho từng thẻ */
+.card[data-c="1"]{--cc:var(--c1)} .card[data-c="2"]{--cc:var(--c2)}
+.card[data-c="3"]{--cc:var(--c3)} .card[data-c="4"]{--cc:var(--c4)}
+.card[data-c="5"]{--cc:var(--c5)} .card[data-c="6"]{--cc:var(--c6)}
+.card[data-c="7"]{--cc:var(--c7)} .card[data-c="8"]{--cc:var(--c8)}
+
+/* ---------- footer ---------- */
+footer.pagefoot{margin-top:60px; padding:30px 0 90px; text-align:center;
+  font-size:14px; color:var(--ink2); line-height:1.8; border-top:1.5px solid var(--rule)}
+footer.pagefoot strong{color:var(--ink)}
+footer.pagefoot p::before{content:"📘"; font-family:var(--emo); display:block; font-size:24px; margin-bottom:10px}
+
+/* ---------- nút nổi ---------- */
+#fabs{position:fixed; right:16px; bottom:16px; z-index:65; display:flex; flex-direction:column; gap:10px}
+#fabs button{width:50px; height:50px; border-radius:50%; cursor:pointer; border:1.5px solid var(--rule);
+  background:var(--card); box-shadow:var(--sh2); font-family:var(--emo); font-size:21px; line-height:1;
+  display:grid; place-items:center; transition:transform .18s, box-shadow .18s}
+#fabs button:hover{transform:translateY(-3px) scale(1.07)}
+#fabs button[aria-pressed="true"]{background:var(--acl); border-color:var(--ac)}
+#fabs .fab-top{opacity:0; pointer-events:none; transition:opacity .25s}
+#fabs .fab-top.on{opacity:1; pointer-events:auto}
+@media (max-width:560px){
+  #fabs{right:10px; bottom:10px; gap:8px}
+  #fabs button{width:42px;height:42px;font-size:17px}
+  header.book{padding:48px 0 44px}
+  header.book .kicker{font-size:10.5px; letter-spacing:.08em; padding:6px 12px}
+  header.book .author{font-size:11.5px}
+  .hub-intro{padding:24px 20px 22px}
+  .card{padding:22px 20px 20px}
+  .group > h2{font-size:13px; padding:8px 16px}
+}
+
+/* ---------- giảm chuyển động ---------- */
+html.still *, html.still *::before, html.still *::after{animation:none !important; transition:none !important}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none !important; transition:none !important}
+}
+
+/* ---------- hiện dần khi cuộn ---------- */
+html.js .rv{opacity:0; transform:translateY(16px)}
+html.js .rv.in{opacity:1; transform:none; transition:opacity .55s ease, transform .55s cubic-bezier(.2,.8,.3,1)}
+
+/* ---------- in ---------- */
+@media print{
+  :root{--bg:#fff;--card:#fff;--soft:#fff}
+  html,body{background:#fff !important; color:#000}
+  *{-webkit-print-color-adjust:exact; print-color-adjust:exact}
+  #toolbar,#progress,#fabs,#blobs,body::before{display:none !important}
+  header.book{background:#fff !important; color:#000; animation:none; border-bottom:4px solid var(--c7); padding:0 0 18pt}
+  header.book h1,header.book .sub,header.book .author,header.book .kicker{color:#000}
+  header.book::after{display:none}
+  .card,.hub-intro{break-inside:avoid; box-shadow:none}
+  @page{size:A4; margin:16mm 14mm}
+}
+
+/* ============================================================
+   TRANG CHƯƠNG
+   ============================================================ */
+/* màu hero theo chương: màu nhấn + 3 màu lân cận */
+html[data-c="1"]{--h1:var(--c1);--h2:var(--c2);--h3:var(--c8);--h4:var(--c7)}
+html[data-c="2"]{--h1:var(--c2);--h2:var(--c3);--h3:var(--c1);--h4:var(--c8)}
+html[data-c="3"]{--h1:var(--c3);--h2:var(--c2);--h3:var(--c8);--h4:var(--c1)}
+html[data-c="4"]{--h1:var(--c4);--h2:var(--c5);--h3:var(--c3);--h4:var(--c6)}
+html[data-c="5"]{--h1:var(--c5);--h2:var(--c6);--h3:var(--c4);--h4:var(--c7)}
+html[data-c="6"]{--h1:var(--c6);--h2:var(--c7);--h3:var(--c5);--h4:var(--c8)}
+html[data-c="7"]{--h1:var(--c7);--h2:var(--c8);--h3:var(--c6);--h4:var(--c2)}
+html[data-c="8"]{--h1:var(--c8);--h2:var(--c7);--h3:var(--c2);--h4:var(--c1)}
+html.chap header.book{
+  background:linear-gradient(120deg,var(--h1),var(--h2),var(--h3),var(--h4),var(--h1));
+  background-size:300% 300%}
+html.chap header.book .wrap::before{content:attr(data-e1)}
+html.chap header.book .wrap::after {content:attr(data-e2)}
+html.chap header.book h1{font-size:clamp(38px,8vw,76px)}
+header.book .chapno::before{content:"📖 "; font-family:var(--emo)}
+
+/* ô số liệu */
+.stats{display:grid; grid-template-columns:repeat(5,1fr); gap:12px; max-width:720px; margin:30px auto 0}
+.stat{background:rgba(255,255,255,.2); border:1px solid rgba(255,255,255,.42); border-radius:20px;
+  padding:14px 8px 12px; backdrop-filter:blur(8px); color:#fff; text-align:center;
+  transition:transform .2s}
+.stat:hover{transform:translateY(-4px) scale(1.04)}
+.stat .se{display:block; font-family:var(--emo); font-size:24px; line-height:1; margin-bottom:6px}
+.stat b{display:block; font-size:28px; font-weight:850; line-height:1.1; font-variant-numeric:tabular-nums}
+.stat small{display:block; font-size:11.5px; font-weight:700; letter-spacing:.04em; opacity:.95; margin-top:3px; line-height:1.35}
+@media (max-width:640px){.stats{grid-template-columns:repeat(3,1fr)} .stat:nth-child(n+4){grid-column:span 1}}
+@media (max-width:380px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+/* chỉ báo phần đang đọc trên toolbar */
+#nowsec{display:none; font-size:12.5px; font-weight:750; color:var(--ac); background:var(--acl);
+  border:1.5px solid var(--acb); padding:6px 12px; border-radius:var(--r3); max-width:340px;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+#nowsec.on{display:inline-block}
+#nowsec::before{content:"📍 "; font-family:var(--emo)}
+@media (max-width:820px){#nowsec{order:9; max-width:100%; flex-basis:100%}}
+
+/* ---------- mục lục dính bên trái ---------- */
+#rail{display:none}
+@media (min-width:1330px){
+  #rail{display:block; position:fixed; top:92px; left:max(14px, calc(50% - 430px - 290px)); width:262px;
+    max-height:calc(100vh - 116px); overflow:auto; z-index:40; padding:16px 12px 14px;
+    background:color-mix(in srgb,var(--card) 82%, transparent); backdrop-filter:blur(14px);
+    border:1.5px solid var(--rule); border-radius:var(--r); box-shadow:var(--sh);
+    opacity:0; transform:translateX(-12px); transition:opacity .3s, transform .3s; pointer-events:none}
+  #rail.on{opacity:1; transform:none; pointer-events:auto}
+}
+#rail .rt{font-size:11.5px; font-weight:850; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--ink2); margin:0 6px 10px}
+#rail .rt::before{content:"🧭 "; font-family:var(--emo)}
+#rail a{display:flex; gap:9px; align-items:flex-start; padding:7px 9px; border-radius:12px;
+  text-decoration:none; color:var(--ink2); font-size:13.2px; line-height:1.4; font-weight:600;
+  transition:background .2s, color .2s}
+#rail a .n{flex:0 0 auto; min-width:24px; height:24px; border-radius:8px; display:grid; place-items:center;
+  font-size:11px; font-weight:850; background:var(--soft); color:var(--ink2); transition:all .2s}
+#rail a:hover{background:var(--soft); color:var(--ink)}
+#rail a.act{background:color-mix(in srgb,var(--rc) 14%, transparent); color:var(--ink)}
+#rail a.act .n{background:var(--rc); color:#fff; transform:scale(1.08)}
+
+/* ---------- bản đồ chương ---------- */
+.box{position:relative; border-radius:var(--r); padding:28px 28px 24px; margin:30px 0;
+  background:var(--card); border:1.5px solid var(--rule); box-shadow:var(--sh)}
+.box.map::before,nav.toc::before{content:""; position:absolute; left:0; right:0; top:0; height:6px;
+  border-radius:var(--r) var(--r) 0 0;
+  background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3),var(--c4),var(--c5),var(--c6),var(--c7),var(--c8))}
+.map .tag::before{content:"🗺️"; font-family:var(--emo); font-size:13px}
+.map h2,nav.toc h2{font-size:24px; font-weight:850; letter-spacing:-.01em; margin:0 0 4px; line-height:1.3}
+.map .meta{font-size:14px; font-weight:650; color:var(--ink2); margin:0 0 18px}
+.map .meta::before{content:"⏱️ "; font-family:var(--emo)}
+.map .goal{background:linear-gradient(120deg,var(--c3l),var(--c2l)); border:1.5px solid var(--c3b);
+  border-radius:var(--r2); padding:16px 18px 16px 52px; margin:0 0 20px; font-size:16.5px; position:relative}
+.map .goal::before{content:"🎯"; font-family:var(--emo); position:absolute; left:16px; top:15px; font-size:22px}
+.stages{list-style:none; margin:0; padding:0; counter-reset:st; display:grid; gap:8px}
+.stages li{counter-increment:st; position:relative; padding:9px 12px 9px 52px; font-size:16px; line-height:1.6;
+  border-radius:14px; background:var(--soft); transition:transform .18s, background .18s}
+.stages li:hover{transform:translateX(5px); background:color-mix(in srgb,var(--sc) 12%, var(--soft))}
+.stages li::before{content:counter(st); position:absolute; left:10px; top:9px; width:30px; height:30px;
+  border-radius:10px; background:var(--sc); color:#fff; font-size:13px; font-weight:850;
+  display:grid; place-items:center; box-shadow:0 4px 12px color-mix(in srgb,var(--sc) 40%, transparent)}
+.stages li:nth-child(8n+1){--sc:var(--c1)} .stages li:nth-child(8n+2){--sc:var(--c2)}
+.stages li:nth-child(8n+3){--sc:var(--c3)} .stages li:nth-child(8n+4){--sc:var(--c4)}
+.stages li:nth-child(8n+5){--sc:var(--c5)} .stages li:nth-child(8n+6){--sc:var(--c6)}
+.stages li:nth-child(8n+7){--sc:var(--c7)} .stages li:nth-child(8n+8){--sc:var(--c8)}
+.howto{margin-top:20px; padding:14px 16px 14px 48px; border-radius:var(--r2); background:var(--soft);
+  font-size:14.5px; color:var(--ink2); line-height:1.7; position:relative}
+.howto::before{content:"👀"; font-family:var(--emo); position:absolute; left:15px; top:13px; font-size:19px}
+
+/* ---------- mục lục chương ---------- */
+nav.toc ol{list-style:none; margin:16px 0 0; padding:0; display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:10px}
+nav.toc h2::before{content:"🧭 "; font-family:var(--emo)}
+nav.toc li{margin:0}
+nav.toc a{display:flex; gap:11px; align-items:center; height:100%; padding:11px 14px; border-radius:16px;
+  text-decoration:none; color:var(--ink); font-size:15px; font-weight:650; line-height:1.4;
+  background:color-mix(in srgb,var(--sc) 9%, var(--card)); border:1.5px solid color-mix(in srgb,var(--sc) 26%, transparent);
+  transition:transform .18s, box-shadow .18s}
+nav.toc a:hover{transform:translateY(-3px); box-shadow:0 10px 24px color-mix(in srgb,var(--sc) 24%, transparent)}
+nav.toc a .n{flex:0 0 auto; width:32px; height:32px; border-radius:10px; display:grid; place-items:center;
+  background:var(--sc); color:#fff; font-size:12.5px; font-weight:850}
+nav.toc li:nth-child(8n+1){--sc:var(--c1)} nav.toc li:nth-child(8n+2){--sc:var(--c2)}
+nav.toc li:nth-child(8n+3){--sc:var(--c3)} nav.toc li:nth-child(8n+4){--sc:var(--c4)}
+nav.toc li:nth-child(8n+5){--sc:var(--c5)} nav.toc li:nth-child(8n+6){--sc:var(--c6)}
+nav.toc li:nth-child(8n+7){--sc:var(--c7)} nav.toc li:nth-child(8n+8){--sc:var(--c8)}
+
+aside.srctoc{border-left:6px solid var(--c7)}
+aside.srctoc ul{list-style:none; margin:0; padding:0}
+aside.srctoc li{padding:5px 0 5px 26px; position:relative; font-size:16px}
+aside.srctoc li::before{content:"📑"; font-family:var(--emo); position:absolute; left:0; top:5px; font-size:14px}
+
+/* ---------- phần (section) — mỗi phần một màu ---------- */
+main > section{--sc:var(--c6); --scl:var(--c6l); --scb:var(--c6b); margin:72px 0; scroll-margin-top:84px}
+main > section:nth-of-type(8n+1){--sc:var(--c1);--scl:var(--c1l);--scb:var(--c1b)}
+main > section:nth-of-type(8n+2){--sc:var(--c2);--scl:var(--c2l);--scb:var(--c2b)}
+main > section:nth-of-type(8n+3){--sc:var(--c3);--scl:var(--c3l);--scb:var(--c3b)}
+main > section:nth-of-type(8n+4){--sc:var(--c4);--scl:var(--c4l);--scb:var(--c4b)}
+main > section:nth-of-type(8n+5){--sc:var(--c5);--scl:var(--c5l);--scb:var(--c5b)}
+main > section:nth-of-type(8n+6){--sc:var(--c6);--scl:var(--c6l);--scb:var(--c6b)}
+main > section:nth-of-type(8n+7){--sc:var(--c7);--scl:var(--c7l);--scb:var(--c7b)}
+main > section:nth-of-type(8n+8){--sc:var(--c8);--scl:var(--c8l);--scb:var(--c8b)}
+
+.sec-head{display:flex; gap:18px; align-items:center; margin-bottom:14px}
+.badge{flex:0 0 auto; position:relative; width:62px; height:62px; border-radius:20px;
+  display:grid; place-items:center; color:#fff; font-size:22px; font-weight:900;
+  background:linear-gradient(135deg,var(--sc),color-mix(in srgb,var(--sc) 55%, #fff));
+  box-shadow:0 10px 26px color-mix(in srgb,var(--sc) 40%, transparent); transform:rotate(-6deg)}
+.badge::after{content:""; position:absolute; inset:-6px; border-radius:24px; border:2.5px solid var(--sc);
+  opacity:0; animation:ring 2.8s ease-out infinite}
+@keyframes ring{0%{opacity:.6; transform:scale(.85)}80%,100%{opacity:0; transform:scale(1.22)}}
+.sec-head h2{margin:0; font-size:clamp(25px,4.2vw,36px); line-height:1.22; font-weight:850; letter-spacing:-.015em}
+.sec-head h2{background:linear-gradient(100deg,var(--ink) 30%, var(--sc)); -webkit-background-clip:text;
+  background-clip:text; color:transparent}
+@media print{.sec-head h2{color:var(--ink); background:none}}
+
+.willlearn{position:relative; margin:4px 0 24px; padding:15px 18px 15px 56px; border-radius:var(--r2);
+  background:var(--scl); border:1.5px solid var(--scb); font-size:15.5px; color:var(--ink); line-height:1.7}
+.willlearn::before{content:"🎯"; font-family:var(--emo); position:absolute; left:17px; top:14px; font-size:22px;
+  animation:bob 3.4s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.willlearn b{color:var(--sc); font-weight:850}
+.willlearn em{color:var(--ink2)}
+
+/* thân bài — "phần thân màu kem" */
+.body-card{position:relative; background:#FFFCF4; border:1.5px solid #F1E8D2; border-radius:var(--r);
+  padding:30px 32px 14px; box-shadow:var(--sh); margin:22px 0; font-size:var(--fs); line-height:1.82}
+html[data-theme="dark"] .body-card{background:#1F1C17; border-color:#3A3326}
+.body-card::before{content:""; position:absolute; left:0; top:22px; bottom:22px; width:5px;
+  border-radius:0 5px 5px 0; background:linear-gradient(180deg,var(--sc),color-mix(in srgb,var(--sc) 35%, transparent))}
+@media (max-width:600px){.body-card{padding:22px 20px 10px}}
+.body-card h3{font-size:18px; font-weight:850; color:var(--sc); margin:26px 0 10px}
+.body-card h3:first-child{margin-top:0}
+
+/* ---------- BÚT DẠ QUANG VÀNG — cố định ---------- */
+mark{color:var(--hl-ink); padding:.04em .18em; margin:0 -.06em; border-radius:.3em;
+  -webkit-box-decoration-break:clone; box-decoration-break:clone;
+  background:linear-gradient(100deg,var(--hl1),var(--hl2)) no-repeat 0 0 / 100% 100%}
+html.js mark{background-size:0% 100%; transition:background-size .8s cubic-bezier(.6,.1,.2,1)}
+html.js mark.lit,html.still mark{background-size:100% 100%}
+html.js mark:not(.lit){color:inherit}
+html.js mark.lit{color:var(--hl-ink); transition:background-size .8s cubic-bezier(.6,.1,.2,1), color .3s .2s}
+mark.flash{animation:flash 1.4s ease 2}
+@keyframes flash{50%{box-shadow:0 0 0 6px color-mix(in srgb,var(--hl1) 55%, transparent)}}
+
+ul.dia{list-style:none; margin:0 0 1.1em; padding:0}
+ul.dia li{position:relative; padding:5px 0 5px 30px}
+ul.dia li::before{content:""; position:absolute; left:4px; top:.82em; width:11px; height:11px; border-radius:4px;
+  background:var(--sc,var(--ac)); transform:rotate(45deg); box-shadow:0 2px 6px color-mix(in srgb,var(--sc,var(--ac)) 40%, transparent)}
+ol.steps{padding-left:24px}
+ol.steps li{margin:0 0 10px}
+ol.steps li::marker{color:var(--sc); font-weight:850}
+
+/* ---------- TRÍCH DẪN — bóng chat có avatar ---------- */
+blockquote{--qc:var(--c6); position:relative; margin:28px 0; padding:0 0 0 66px; font-style:normal}
+blockquote[data-q="1"]{--qc:var(--c1)} blockquote[data-q="2"]{--qc:var(--c2)}
+blockquote[data-q="4"]{--qc:var(--c4)} blockquote[data-q="5"]{--qc:var(--c5)}
+blockquote[data-q="6"]{--qc:var(--c6)} blockquote[data-q="7"]{--qc:var(--c7)}
+blockquote[data-q="8"]{--qc:var(--c8)}
+blockquote::before{content:attr(data-ini); position:absolute; left:0; top:4px; width:50px; height:50px;
+  border-radius:50%; display:grid; place-items:center; color:#fff; font-size:16px; font-weight:850; letter-spacing:.02em;
+  background:linear-gradient(135deg,var(--qc),color-mix(in srgb,var(--qc) 55%, #fff));
+  box-shadow:0 6px 16px color-mix(in srgb,var(--qc) 38%, transparent), 0 0 0 3px var(--bg)}
+blockquote > .qbody{position:relative; background:var(--c3l); border:1.5px solid var(--c3b);
+  border-radius:6px var(--r) var(--r) var(--r); padding:16px 22px 16px; box-shadow:var(--sh)}
+blockquote > .qbody::before{content:""; position:absolute; left:-9px; top:16px; width:16px; height:16px;
+  background:var(--c3l); border-left:1.5px solid var(--c3b); border-bottom:1.5px solid var(--c3b);
+  transform:rotate(45deg); border-radius:0 0 0 4px}
+blockquote .qtag{display:inline-flex; align-items:center; gap:6px; font-size:10.5px; font-weight:850;
+  letter-spacing:.14em; text-transform:uppercase; padding:4px 11px; border-radius:var(--r3);
+  background:var(--hl1); color:var(--hl-ink); margin-bottom:10px}
+blockquote .qtag::before{content:"💬"; font-family:var(--emo); font-size:11.5px}
+blockquote p{margin:0 0 .65em; font-size:calc(var(--fs) + .5px); line-height:1.78}
+blockquote p:last-of-type{margin-bottom:.4em}
+blockquote cite{display:block; font-style:normal; font-size:14px; color:var(--ink2); margin-top:8px;
+  padding-top:10px; border-top:1.5px dashed var(--c3b)}
+blockquote cite b{color:var(--qc); font-weight:850; font-size:15px}
+.cpy{position:absolute; right:10px; top:10px; width:36px; height:36px; border-radius:12px; cursor:pointer;
+  border:1.5px solid var(--c3b); background:var(--card); display:grid; place-items:center;
+  font-family:var(--emo); font-size:16px; line-height:1; opacity:.6; transition:opacity .2s, transform .2s}
+.cpy::before{content:"📋"}
+.cpy.ok::before{content:"✅"}
+.cpy:hover,.cpy:focus-visible{opacity:1; transform:scale(1.1)}
+@media (max-width:560px){blockquote{padding-left:0} blockquote::before{position:relative; display:grid;
+  width:40px; height:40px; font-size:13px; margin:0 0 8px 6px} blockquote > .qbody::before{left:20px; top:-9px; transform:rotate(135deg)}}
+
+/* ---------- khái niệm ---------- */
+.concept{position:relative; background:linear-gradient(135deg,var(--c6l),var(--c5l)); border:1.5px solid var(--c6b);
+  border-radius:var(--r); padding:26px 26px 22px; margin:30px 0; box-shadow:var(--sh)}
+.concept .lbl,.example .lbl,.practice .lbl,.hint .lbl,.pause .lbl,.flow .lbl,.keyidea .lbl,figure.fig .fig-lbl{
+  display:inline-flex; align-items:center; gap:7px; font-size:11.5px; font-weight:850; letter-spacing:.12em;
+  text-transform:uppercase; padding:6px 14px; border-radius:var(--r3); margin-bottom:12px; color:#fff}
+.concept .lbl{background:var(--c6)}
+.concept .lbl::before{content:"🧠"; font-family:var(--emo); font-size:13px}
+.concept h4{font-size:24px; font-weight:850; margin:0 0 14px; line-height:1.3; color:var(--ink)}
+.concept dl{margin:0; display:grid; gap:10px}
+.concept dt{font-size:12.5px; font-weight:850; letter-spacing:.04em; color:var(--c6); margin:0}
+.concept dd{margin:-6px 0 0; font-size:16.5px; line-height:1.7; background:var(--card); border-radius:14px;
+  padding:11px 15px; border:1px solid var(--c6b)}
+.concept dt:nth-of-type(1)::before{content:"📘 "; font-family:var(--emo)}
+.concept dt:nth-of-type(2)::before{content:"🧩 "; font-family:var(--emo)}
+.concept dt:nth-of-type(3)::before{content:"⚠️ "; font-family:var(--emo)}
+
+/* ---------- ví dụ ---------- */
+.example{position:relative; border-radius:var(--r); padding:26px 26px 20px; margin:30px 0; background:var(--card);
+  border:2px solid transparent; box-shadow:var(--sh);
+  background:linear-gradient(var(--card),var(--card)) padding-box,
+             linear-gradient(120deg,var(--c2),var(--c8),var(--c7)) border-box}
+.example .lbl{background:linear-gradient(100deg,var(--c2),var(--c8))}
+.example .lbl::before{content:"💡"; font-family:var(--emo); font-size:13px}
+
+/* ---------- thực hành ---------- */
+.practice{position:relative; background:var(--c4l); border:1.5px solid var(--c4b); border-radius:var(--r);
+  padding:26px 26px 22px; margin:30px 0; box-shadow:var(--sh)}
+.practice .lbl{background:var(--c4)}
+.practice .lbl::before{content:"🧘"; font-family:var(--emo); font-size:13px}
+.notepad{margin-top:16px; border:2px dashed var(--c4b); border-radius:16px; padding:14px 16px; background:var(--card)}
+.notepad .nl{font-size:12.5px; font-weight:800; color:var(--c4); letter-spacing:.06em; text-transform:uppercase}
+.notepad .nl::before{content:"✍️ "; font-family:var(--emo)}
+.notepad .lines{height:16px; border-bottom:1.5px solid var(--rule); margin-top:16px}
+
+/* ---------- gợi ý (lời biên tập viên) ---------- */
+.hint{position:relative; background:var(--c7l); border:1.5px solid var(--c7b); border-radius:var(--r);
+  padding:24px 24px 18px; margin:28px 0; font-size:16.5px; box-shadow:var(--sh)}
+.hint .lbl{background:var(--c7)}
+.hint .lbl::before{content:"🪄"; font-family:var(--emo); font-size:13px}
+.hint p:last-child{margin-bottom:0}
+
+/* ---------- câu cốt lõi ---------- */
+.keyidea{position:relative; border-radius:var(--r); padding:28px 26px 20px; margin:30px 0;
+  background:radial-gradient(120% 140% at 0% 0%, var(--c3l), var(--card) 60%); border:2px solid var(--c3b); box-shadow:var(--sh)}
+.keyidea .lbl{background:linear-gradient(100deg,var(--c3),var(--c2))}
+.keyidea .lbl::before{content:"⭐"; font-family:var(--emo); font-size:13px}
+.keyidea p{font-size:calc(var(--fs) + 1px); font-weight:600}
+.keyidea p:last-child{margin-bottom:0}
+
+/* ---------- dừng lại 30 giây ---------- */
+.pause{position:relative; text-align:center; border-radius:var(--r); padding:30px 26px 28px; margin:34px 0;
+  background:linear-gradient(135deg,var(--c5l),var(--c6l),var(--c7l)); border:1.5px solid var(--c5b); box-shadow:var(--sh); overflow:hidden}
+.pause .lbl{background:var(--c5)}
+.pause .lbl::before{content:"⏳"; font-family:var(--emo); font-size:13px}
+.pause p{margin:0 auto; max-width:620px; font-size:calc(var(--fs) + 2px); font-weight:650; line-height:1.65}
+.pause .tmr{position:relative; width:74px; height:74px; margin:4px auto 14px; display:grid; place-items:center}
+.pause .tmr svg{position:absolute; inset:0; transform:rotate(-90deg)}
+.pause .tmr circle{fill:none; stroke-width:6}
+.pause .tmr .bg{stroke:color-mix(in srgb,var(--c5) 22%, transparent)}
+.pause .tmr .fg{stroke:var(--c5); stroke-linecap:round; stroke-dasharray:201; stroke-dashoffset:201}
+.pause.go .tmr .fg{animation:tmr 30s linear forwards}
+@keyframes tmr{to{stroke-dashoffset:0}}
+.pause .tmr::after{content:attr(data-s); font-size:21px; font-weight:900; color:var(--c5); font-variant-numeric:tabular-nums}
+.pause .tmr.done::after{content:"🌿"; font-family:var(--emo); font-size:26px}
+.pause::after{content:""; position:absolute; width:240px; height:240px; border-radius:50%; left:50%; top:50%;
+  margin:-120px 0 0 -120px; background:radial-gradient(circle,color-mix(in srgb,var(--c5) 22%, transparent),transparent 70%);
+  z-index:0; animation:breathe 8s ease-in-out infinite; pointer-events:none}
+.pause > *{position:relative; z-index:1}
+@keyframes breathe{0%,100%{transform:scale(.7); opacity:.5}50%{transform:scale(1.5); opacity:1}}
+
+/* ---------- mạch lập luận ---------- */
+.flow{position:relative; background:var(--card); border:1.5px solid var(--rule); border-radius:var(--r);
+  padding:26px 24px 24px; margin:32px 0; box-shadow:var(--sh)}
+.flow .lbl{background:linear-gradient(100deg,var(--c6),var(--c7))}
+.flow .lbl::before{content:"🔗"; font-family:var(--emo); font-size:13px}
+.flow-grid{display:flex; flex-wrap:wrap; align-items:stretch; gap:10px}
+.fstep{--fc:var(--c6); flex:1 1 170px; position:relative; border-radius:18px; padding:16px 16px 14px;
+  background:color-mix(in srgb,var(--fc) 9%, var(--card)); border:1.5px solid color-mix(in srgb,var(--fc) 32%, transparent);
+  transition:transform .2s, box-shadow .2s}
+.fstep:hover{transform:translateY(-4px); box-shadow:0 12px 26px color-mix(in srgb,var(--fc) 22%, transparent)}
+.flow-grid .fstep:nth-of-type(4n+1){--fc:var(--c1)} .flow-grid .fstep:nth-of-type(4n+2){--fc:var(--c2)}
+.flow-grid .fstep:nth-of-type(4n+3){--fc:var(--c6)} .flow-grid .fstep:nth-of-type(4n+4){--fc:var(--c4)}
+.fstep .k{display:block; font-size:11px; font-weight:850; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--fc); margin-bottom:6px}
+.fstep .v{font-size:15.5px; line-height:1.6; display:block}
+.farrow{display:flex; align-items:center; justify-content:center; color:transparent; font-size:0; width:22px; position:relative}
+.farrow::before{content:""; width:22px; height:22px; border-radius:50%; background:var(--ink);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12h12m-5-6 6 6-6 6' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;
+          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12h12m-5-6 6 6-6 6' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;
+  background:linear-gradient(90deg,var(--c6),var(--c8)); animation:nudge 1.6s ease-in-out infinite}
+@keyframes nudge{0%,100%{transform:translateX(-3px)}50%{transform:translateX(4px)}}
+@media (max-width:700px){
+  .flow-grid{flex-direction:column}
+  .farrow{width:100%; height:22px}
+  .farrow::before{transform:rotate(90deg); animation:nudgeV 1.6s ease-in-out infinite}
+}
+@keyframes nudgeV{0%,100%{transform:rotate(90deg) translateX(-3px)}50%{transform:rotate(90deg) translateX(4px)}}
+
+/* ---------- cặp đối chiếu & ngọn núi ---------- */
+ul.pairs{list-style:none; margin:0 0 1.1em; padding:0}
+ul.pairs li{display:flex; gap:10px; margin:0 0 10px; flex-wrap:wrap}
+ul.pairs .a,ul.pairs .b{flex:1 1 240px; border-radius:16px; padding:12px 16px; font-size:16px; line-height:1.6}
+ul.pairs .a{background:var(--soft); border:1.5px solid var(--rule)}
+ul.pairs .b{background:var(--c4l); border:1.5px solid var(--c4b)}
+ul.pairs .lbl-row{font-size:10.5px; font-weight:850; letter-spacing:.1em; text-transform:uppercase; color:var(--ink2); display:block; margin-bottom:3px}
+ol.mtn{list-style:none; margin:0; padding:0}
+ol.mtn li{--mc:var(--c6); background:color-mix(in srgb,var(--mc) 8%, var(--card)); border:1.5px solid color-mix(in srgb,var(--mc) 30%, transparent);
+  border-left:6px solid var(--mc); border-radius:6px 16px 16px 6px; padding:14px 18px; margin:0 0 10px}
+ol.mtn li:nth-child(1){--mc:var(--c1)} ol.mtn li:nth-child(2){--mc:var(--c2); margin-left:22px}
+ol.mtn li:nth-child(3){--mc:var(--c5); margin-left:44px} ol.mtn li:nth-child(4){--mc:var(--c4); margin-left:66px}
+ol.mtn li .lvl{display:block; font-size:11px; font-weight:850; letter-spacing:.1em; text-transform:uppercase; color:var(--mc); margin-bottom:5px}
+ol.mtn li .txt{font-size:16px; line-height:1.65}
+@media (max-width:620px){ol.mtn li:nth-child(2){margin-left:10px} ol.mtn li:nth-child(3){margin-left:20px} ol.mtn li:nth-child(4){margin-left:30px}}
+
+/* ---------- hình minh họa ---------- */
+figure.fig{position:relative; background:var(--card); border:1.5px solid var(--rule); border-radius:var(--r);
+  padding:24px 22px 18px; margin:34px 0; box-shadow:var(--sh); overflow:hidden}
+figure.fig::before{content:""; position:absolute; inset:0; pointer-events:none; opacity:.55;
+  background:radial-gradient(70% 60% at 100% 0%, color-mix(in srgb,var(--sc,var(--ac)) 12%, transparent), transparent 70%),
+             radial-gradient(60% 60% at 0% 100%, color-mix(in srgb,var(--c7) 9%, transparent), transparent 70%)}
+figure.fig > *{position:relative}
+figure.fig .fig-lbl{background:linear-gradient(100deg,var(--c8),var(--c7))}
+figure.fig .fig-lbl::before{content:"🎨"; font-family:var(--emo); font-size:13px}
+figure.fig svg{display:block; width:100%; height:auto; max-width:560px; margin:6px auto 0; overflow:visible}
+figure.fig figcaption{font-size:14.5px; color:var(--ink2); line-height:1.7; margin-top:16px; padding-top:14px;
+  border-top:1.5px dashed var(--rule)}
+figure.fig figcaption strong{color:var(--ink)}
+.svg-t{font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif; fill:var(--ink)}
+.svg-t2{font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif; fill:var(--ink2)}
+.svg-cap{font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif; font-weight:800; letter-spacing:.06em}
+.svg-w{font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif; fill:#fff; font-weight:800}
+.svg-e{font-family:var(--emo)}
+/* chuyển động trong SVG */
+.a-pulse{animation:aPulse 2.4s ease-in-out infinite; transform-box:fill-box; transform-origin:center}
+@keyframes aPulse{0%,100%{transform:scale(1); opacity:1}50%{transform:scale(1.25); opacity:.75}}
+.a-glow{animation:aGlow 3s ease-in-out infinite; transform-box:fill-box; transform-origin:center}
+@keyframes aGlow{0%,100%{opacity:.55; transform:scale(.94)}50%{opacity:1; transform:scale(1.06)}}
+.a-crumble{animation:aCrumble 9s cubic-bezier(.5,0,.7,.4) infinite; transform-box:fill-box; transform-origin:center}
+@keyframes aCrumble{0%,24%{transform:none; opacity:1}50%,86%{transform:translateY(64px) rotate(var(--rot,6deg)); opacity:0}87%{transform:none; opacity:0}100%{transform:none; opacity:1}}
+.a-spin{animation:aSpin 40s linear infinite; transform-box:view-box}
+.a-spin-r{animation:aSpin 40s linear infinite reverse; transform-box:fill-box; transform-origin:center}
+@keyframes aSpin{to{transform:rotate(360deg)}}
+.a-float{animation:aFloat 5s ease-in-out infinite; transform-box:fill-box}
+.a-float2{animation:aFloat 6.5s ease-in-out infinite reverse; transform-box:fill-box}
+@keyframes aFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.a-drift{animation:aDrift 9s ease-in-out infinite; transform-box:fill-box}
+@keyframes aDrift{0%,100%{transform:translateX(0)}50%{transform:translateX(16px)}}
+.a-dash{stroke-dasharray:6 7; animation:aDash 1.2s linear infinite}
+@keyframes aDash{to{stroke-dashoffset:-26}}
+.a-blink{animation:aBlink 2.6s ease-in-out infinite}
+@keyframes aBlink{0%,100%{opacity:1}50%{opacity:.25}}
+.a-rise{animation:aRise 4.5s ease-in-out infinite; transform-box:fill-box}
+@keyframes aRise{0%,100%{transform:translateY(10px); opacity:.55}50%{transform:translateY(-4px); opacity:1}}
+.a-fall{animation:aFall 4.5s ease-in infinite; transform-box:fill-box; transform-origin:center}
+@keyframes aFall{0%,30%{transform:translateY(0) rotate(0); opacity:1}80%,100%{transform:translateY(46px) rotate(18deg); opacity:0}}
+.a-sway{animation:aSway 4s ease-in-out infinite; transform-box:fill-box; transform-origin:50% 100%}
+@keyframes aSway{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
+.a-scan{animation:aScan 7s ease-in-out infinite; transform-box:view-box}
+.a-orbit{offset-rotate:0deg; animation:aOrbit 9s linear infinite}
+@keyframes aOrbit{from{offset-distance:0%}to{offset-distance:100%}}
+
+/* ---------- về đầu trang ---------- */
+.totop{display:block; text-align:right; margin:18px 0 0}
+.totop a{display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:750; color:var(--ink2);
+  text-decoration:none; border:1.5px solid var(--rule); border-radius:var(--r3); padding:7px 15px; background:var(--card)}
+.totop a:hover{border-color:var(--sc,var(--ac)); color:var(--sc,var(--ac))}
+
+/* ---------- tóm tắt gốc & bản đồ ghi nhớ ---------- */
+main > section#tom-tat-goc,main > section#ban-do-ghi-nho{--sc:var(--c2);--scl:var(--c2l);--scb:var(--c2b)}
+main > section#ban-do-ghi-nho{--sc:var(--c6);--scl:var(--c6l);--scb:var(--c6b)}
+.origsum{background:linear-gradient(135deg,var(--c3l),var(--c2l)) !important; border:2px solid var(--c3b) !important}
+.origsum .tag{background:var(--c2); color:#fff; border-color:transparent}
+.origsum .tag::before{content:"📌"; font-family:var(--emo); font-size:13px}
+.origsum h3{color:var(--c2)}
+.origsum ul.dia li{--sc:var(--c2); background:color-mix(in srgb,var(--card) 70%, transparent); border-radius:12px; padding:9px 12px 9px 34px; margin-bottom:7px}
+.origsum ul.dia li::before{left:13px; top:1.05em}
+.recall{background:linear-gradient(135deg,var(--c6l),var(--c7l)) !important; border:2px solid var(--c6b) !important}
+.recall .tag{background:var(--c6) !important; color:#fff !important; border-color:transparent}
+.recall .tag::before{content:"🧩"; font-family:var(--emo); font-size:13px}
+.recall h3{display:flex; align-items:center; gap:8px; font-size:17px; font-weight:850; color:var(--c6); margin:26px 0 10px}
+.recall h3:nth-of-type(1)::before{content:"💎"; font-family:var(--emo)}
+.recall h3:nth-of-type(2)::before{content:"🔑"; font-family:var(--emo)}
+.recall h3:nth-of-type(3)::before{content:"🧘"; font-family:var(--emo)}
+.recall h3:nth-of-type(4)::before{content:"⛓️"; font-family:var(--emo)}
+.recall h3:nth-of-type(5)::before{content:"✨"; font-family:var(--emo)}
+.recall ul.dia li{--sc:var(--c6)}
+.chain{display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-top:12px}
+.chain span{--cc:var(--c6); background:color-mix(in srgb,var(--cc) 14%, var(--card)); border:1.5px solid color-mix(in srgb,var(--cc) 40%, transparent);
+  color:var(--ink); border-radius:var(--r3); padding:7px 14px; font-size:13.5px; font-weight:700}
+.chain span:nth-of-type(8n+1){--cc:var(--c1)} .chain span:nth-of-type(8n+2){--cc:var(--c2)}
+.chain span:nth-of-type(8n+3){--cc:var(--c3)} .chain span:nth-of-type(8n+4){--cc:var(--c4)}
+.chain span:nth-of-type(8n+5){--cc:var(--c5)} .chain span:nth-of-type(8n+6){--cc:var(--c6)}
+.chain span:nth-of-type(8n+7){--cc:var(--c7)} .chain span:nth-of-type(8n+8){--cc:var(--c8)}
+.chain i{font-style:normal; color:var(--ink3); font-weight:900}
+html.js .chain.rv span{opacity:0; transform:scale(.8)}
+html.js .chain.rv.in span{opacity:1; transform:none; transition:opacity .4s, transform .4s cubic-bezier(.3,1.6,.5,1)}
+
+/* ---------- điều hướng chương ---------- */
+.pager{display:grid; grid-template-columns:1fr auto 1fr; gap:12px; margin:56px 0 8px}
+.pager a,.pager span{position:relative; border:1.5px solid var(--rule); border-radius:var(--r); padding:18px 20px;
+  text-decoration:none; background:var(--card); color:var(--ink); font-size:15px; font-weight:700; line-height:1.45;
+  box-shadow:var(--sh); transition:transform .2s, box-shadow .2s, border-color .2s}
+.pager a:hover{transform:translateY(-4px); border-color:var(--ac); box-shadow:0 14px 34px color-mix(in srgb,var(--ac) 22%, transparent)}
+.pager .k{display:block; font-size:11px; font-weight:850; letter-spacing:.1em; text-transform:uppercase; color:var(--ac); margin-bottom:5px}
+.pager .prev .k::before{content:"⬅️ "; font-family:var(--emo)}
+.pager .next .k::after{content:" ➡️"; font-family:var(--emo)}
+.pager .home{text-align:center}
+.pager .home .k::before{content:"🗂️ "; font-family:var(--emo)}
+.pager .next{text-align:right}
+.pager span.off{opacity:.45; box-shadow:none}
+@media (max-width:720px){.pager{grid-template-columns:1fr}.pager .next,.pager .home{text-align:left}}
+
+/* ---------- tìm kiếm & bảng câu bôi vàng ---------- */
+#findbar{position:fixed; left:50%; top:76px; z-index:80; width:min(560px,calc(100% - 24px)); transform:translate(-50%,-20px);
+  opacity:0; pointer-events:none; transition:opacity .2s, transform .2s; display:flex; gap:8px; align-items:center;
+  background:var(--card); border:1.5px solid var(--ac); border-radius:var(--r3); padding:7px 8px 7px 16px; box-shadow:var(--sh2)}
+#findbar.on{opacity:1; transform:translate(-50%,0); pointer-events:auto}
+#findbar::before{content:"🔍"; font-family:var(--emo)}
+#findbar input{flex:1; min-width:0; border:0; outline:0; background:transparent; font:inherit; font-size:16px; color:var(--ink)}
+#findbar .fc{font-size:12.5px; font-weight:750; color:var(--ink2); white-space:nowrap; font-variant-numeric:tabular-nums}
+#findbar button{border:0; background:var(--soft); color:var(--ink); border-radius:50%; width:34px; height:34px; cursor:pointer; font-size:14px; font-weight:800}
+span.fnd{background:color-mix(in srgb,var(--c8) 30%, transparent); border-radius:4px; box-shadow:0 0 0 2px color-mix(in srgb,var(--c8) 30%, transparent)}
+span.fnd.cur{background:var(--c8); color:#fff}
+#hlpanel{position:fixed; inset:0; z-index:90; display:none; background:rgba(15,14,23,.45); backdrop-filter:blur(4px);
+  padding:70px 14px 20px; overflow:auto}
+#hlpanel.on{display:block}
+#hlpanel .in{max-width:680px; margin:0 auto; background:var(--card); border-radius:var(--r); padding:24px 22px 18px; box-shadow:var(--sh2);
+  animation:pop .3s cubic-bezier(.3,1.4,.5,1)}
+@keyframes pop{from{transform:scale(.92); opacity:0}}
+#hlpanel h2{margin:0 0 4px; font-size:22px; font-weight:850}
+#hlpanel h2::before{content:"🖍️ "; font-family:var(--emo)}
+#hlpanel .hs{font-size:13.5px; color:var(--ink2); margin:0 0 14px}
+#hlpanel ol{margin:0; padding:0; list-style:none; counter-reset:h; display:grid; gap:8px}
+#hlpanel li{counter-increment:h}
+#hlpanel li a{display:block; position:relative; padding:11px 14px 11px 44px; border-radius:14px; text-decoration:none; color:var(--hl-ink);
+  background:linear-gradient(100deg,var(--hl1),var(--hl2)); font-size:15.5px; line-height:1.55; font-weight:600}
+#hlpanel li a::before{content:counter(h); position:absolute; left:12px; top:11px; width:22px; height:22px; border-radius:7px;
+  background:rgba(43,34,0,.14); display:grid; place-items:center; font-size:11.5px; font-weight:850}
+#hlpanel li a:hover{filter:brightness(1.04); transform:translateX(3px)}
+#hlpanel .x{float:right; border:0; width:36px; height:36px; border-radius:50%; background:var(--soft); cursor:pointer; font-size:16px; color:var(--ink)}
+
+/* ---------- confetti ---------- */
+.cf{position:fixed; z-index:100; width:9px; height:9px; border-radius:2px; pointer-events:none; animation:cf 1.1s cubic-bezier(.2,.7,.4,1) forwards}
+@keyframes cf{to{transform:translate(var(--dx),var(--dy)) rotate(var(--rt)); opacity:0}}
+
+/* ---------- footer chương ---------- */
+html.chap footer.pagefoot{margin-top:40px}
+
+@media print{
+  #rail,#findbar,#hlpanel,.cpy,.stats,#nowsec{display:none !important}
+  .body-card,blockquote,.concept,.practice,.example,.hint,.keyidea,.pause,.flow,figure.fig,.origsum,.recall{break-inside:avoid; box-shadow:none}
+  html.js mark{background-size:100% 100% !important; color:var(--hl-ink) !important}
+  html.js .rv{opacity:1 !important; transform:none !important}
+  .sec-head h2{-webkit-text-fill-color:var(--ink)}
+}
+
+/* ===== tinh chỉnh sau khi xem bản chụp ===== */
+/* hero: các pill xếp từng dòng */
+header.book .kicker,header.book .chapno{display:flex; width:fit-content; margin-left:auto; margin-right:auto}
+header.book .chapno{gap:8px}
+html.chap header.book .wrap::after{bottom:auto; top:14%}
+/* chữ trên nền vàng phải tối */
+.stages li:nth-child(8n+3),nav.toc li:nth-child(8n+3),main > section:nth-of-type(8n+3){--on:#3A2A00}
+.stages li::before,nav.toc a .n,.badge{color:var(--on,#fff)}
+#rail a.act .n{color:var(--ron,#fff)}
+/* tiêu đề phần: chữ đặc + vạch màu */
+.sec-head h2{color:var(--ink); background:linear-gradient(90deg,var(--sc),color-mix(in srgb,var(--sc) 0%, transparent)) left bottom / 140px 5px no-repeat;
+  -webkit-background-clip:border-box; background-clip:border-box; padding-bottom:12px}
+/* toolbar trang chương: một dòng trên máy tính */
+html.chap #toolbar .wrap{flex-wrap:nowrap; max-width:1180px}
+html.chap #toolbar .tb-title{margin-right:auto; flex:0 0 auto}
+html.chap #nowsec{flex:1 1 auto; min-width:0; max-width:none; margin:0 6px 0 4px}
+html.chap #toolbar .btn{flex:0 0 auto}
+html.chap #toolbar .tb-spacer{flex:1 1 auto}
+@media (max-width:1180px){html.chap #toolbar a.btn[href="#top"],html.chap #printBtn{display:none}}
+@media (max-width:760px){
+  html.chap #toolbar .wrap{flex-wrap:wrap; padding:8px 12px; gap:6px}
+  html.chap #themeBtn{display:none}
+  html.chap #toolbar .tb-title{flex:1 1 auto; font-size:12px}
+  html.chap #toolbar .btn{padding:7px 12px; font-size:12.5px}
+  html.chap #nowsec{order:9; flex:1 1 100%; margin:0; font-size:12px; padding:5px 11px}
+  html.chap #nowsec:not(.on){display:none}
+}
+/* nút nổi trên điện thoại: một thanh ngang dưới đáy */
+@media (max-width:700px){
+  html.chap #fabs{left:50%; right:auto; bottom:10px; transform:translateX(-50%); flex-direction:row; gap:4px;
+    padding:5px; border-radius:var(--r3); background:color-mix(in srgb,var(--card) 86%, transparent);
+    backdrop-filter:blur(12px); border:1.5px solid var(--rule); box-shadow:var(--sh2)}
+  html.chap #fabs button{width:40px; height:40px; font-size:17px; box-shadow:none; border:0; background:transparent}
+  html.chap #fabs .fab-top{opacity:1; pointer-events:auto}
+  html.chap footer.pagefoot{padding-bottom:110px}
+}
+/* điện thoại: bớt đệm */
+@media (max-width:600px){
+  html.chap .wrap{padding:0 14px}
+  .box{padding:22px 18px 18px}
+  .map .goal{padding:14px 14px 14px 46px; font-size:15.5px}
+  .map .goal::before{left:13px; font-size:19px}
+  .stages li{padding:9px 10px 9px 48px; font-size:15px}
+  .concept,.example,.practice,.hint,.keyidea,.flow,figure.fig{padding-left:18px; padding-right:18px}
+  .sec-head{gap:14px} .badge{width:52px; height:52px; font-size:19px; border-radius:17px}
+  .willlearn{padding:13px 14px 13px 48px; font-size:15px} .willlearn::before{left:13px; font-size:19px}
+  .stats{gap:8px} .stat{padding:11px 4px 10px; border-radius:16px} .stat b{font-size:23px} .stat .se{font-size:20px}
+}
+
+/* ---------- chuyển động bổ sung cho hình (từ chương 02) ---------- */
+.a-pop{animation:aPop 6s ease-in-out infinite; transform-box:fill-box; transform-origin:center}
+@keyframes aPop{0%{opacity:0; transform:scale(.6)}12%,42%{opacity:1; transform:scale(1)}58%,100%{opacity:0; transform:scale(.92)}}
+.a-drain{animation:aDrain 5s ease-in-out infinite; transform-box:fill-box; transform-origin:0% 50%}
+@keyframes aDrain{0%,100%{transform:scaleX(1)}50%{transform:scaleX(.3)}}
+.a-swapA{animation:aSwapA 7s ease-in-out infinite}
+.a-swapB{animation:aSwapB 7s ease-in-out infinite}
+@keyframes aSwapA{0%,38%{opacity:1}50%,88%{opacity:.13}100%{opacity:1}}
+@keyframes aSwapB{0%,38%{opacity:.13}50%,88%{opacity:1}100%{opacity:.13}}
+.a-sink{animation:aSink 4.5s ease-in-out infinite; transform-box:fill-box; transform-origin:50% 100%}
+@keyframes aSink{0%,100%{transform:rotate(-3deg) translateY(0)}50%{transform:rotate(-9deg) translateY(7px)}}
+.a-flicker{animation:aFlick .9s ease-in-out infinite; transform-box:fill-box; transform-origin:50% 100%}
+@keyframes aFlick{0%,100%{transform:scale(1,1)}25%{transform:scale(.88,1.14) skewX(4deg)}50%{transform:scale(1.06,.92)}75%{transform:scale(.94,1.08) skewX(-4deg)}}
+.a-peel{animation:aPeel 11s ease-in-out infinite}
+@keyframes aPeel{0%,12%{opacity:1}24%,74%{opacity:0}88%,100%{opacity:1}}
+.a-wheel{animation:aSpin 1.6s linear infinite; transform-box:fill-box; transform-origin:center}
+</style>
+</head>
+<body>
+<div id="blobs" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+<div id="progress" aria-hidden="true"></div>
+<div id="toolbar"><div class="wrap">
+  <span class="tb-title">Bí mật vĩ đại nhất</span>
+  <a class="btn" href="index.html">Mục lục sách</a>
+  <span id="nowsec" aria-live="polite"></span>
+  <button class="btn" id="themeBtn" type="button" aria-pressed="false">Chế độ đọc tối</button>
+  <button class="btn" id="printBtn" type="button">In / Lưu PDF</button>
+  <a class="btn" href="#top">Về đầu trang</a>
+</div></div>
+<header class="book" id="top"><div class="wrap" data-e1="🗝️" data-e2="👁️">
+  <p class="kicker">Sách &middot; Bí mật vĩ đại nhất</p>
+  <p class="chapno">Chương 01</p>
+  <h1>Ẩn hiện</h1>
+  <div class="rule-orn"><span></span><b>◆</b><span></span></div>
+  <p class="sub">Bí mật vĩ đại nhất được giấu ở nơi hiển nhiên nhất, nó tiết lộ con người thật của bạn, và mọi đau khổ đều bắt nguồn từ một trường hợp nhầm lẫn danh tính.</p>
+  <p class="author">Rhonda Byrne</p>
+  <div class="stats"><div class="stat"><span class="se" aria-hidden="true">🧩</span><b data-n="11">11</b><small>phần</small></div><div class="stat"><span class="se" aria-hidden="true">💬</span><b data-n="18">18</b><small>trích dẫn</small></div><div class="stat"><span class="se" aria-hidden="true">👥</span><b data-n="9">9</b><small>người được trích</small></div><div class="stat"><span class="se" aria-hidden="true">🎨</span><b data-n="11">11</b><small>hình minh họa</small></div><div class="stat"><span class="se" aria-hidden="true">⏱️</span><b data-n="23">23</b><small>phút đọc</small></div></div>
+</div></header>
+<div class="wrap">
+  <!-- BẢN ĐỒ CHƯƠNG -->
+  <div class="box map" id="ban-do-chuong">
+    <span class="tag">Bản đồ chương</span>
+    <h2>Bạn sắp đi qua điều gì</h2>
+    <p class="meta">Thời gian đọc ước tính: khoảng 22–25 phút &middot; Chương 01</p>
+    <p class="goal"><strong>Mục tiêu của chương:</strong> Chỉ ra rằng bí mật vĩ đại nhất đang hiện ra ngay trước mắt mọi người nhưng bị bỏ lỡ, rằng nó tiết lộ con người thật của bạn, rằng mọi đau khổ bắt nguồn từ việc nhầm lẫn danh tính, và mô tả cuộc sống sẽ như thế nào khi bạn hoàn toàn nhận ra mình là ai.</p>
+    <ol class="stages">
+      <li>Chỉ một số ít khám phá ra sự thật; tất cả những người còn lại vẫn đang tìm kiếm nó mỗi ngày.</li>
+      <li>Bí mật được giấu ở nơi dễ thấy nhất — gần hơn cả hơi thở.</li>
+      <li>Vì sao nhân loại bỏ lỡ nó suốt hàng nghìn năm.</li>
+      <li>Bí mật đó tiết lộ con người thật của bạn — và bạn không phải là điều bạn nghĩ.</li>
+      <li>Những ý tưởng và niềm tin sai lầm đã khiến chúng ta thành nô lệ.</li>
+      <li>Định nghĩa của Anthony de Mello về &ldquo;một mớ hỗn độn&rdquo;.</li>
+      <li>Nhầm lẫn danh tính là gốc rễ của mọi đau khổ.</li>
+      <li>Hạnh phúc là thước đo, và hạnh phúc chính là bản chất thật của bạn.</li>
+      <li>Vì sao vật chất không bao giờ giữ được hạnh phúc lâu dài.</li>
+      <li>Cuộc sống của bạn sẽ như thế nào khi bạn nhận ra mình là ai.</li>
+    </ol>
+    <p class="howto"><strong>Cách đọc trang này:</strong> phần thân màu kem là nội dung đầy đủ của Rhonda Byrne — đọc phần này là đủ. Khối vàng có nhãn <strong>TRÍCH DẪN</strong> là lời của người khác, luôn ghi rõ tên và nguồn. Khối xanh dương là khái niệm cốt lõi, khối tím là lời giải thích của biên tập viên.</p>
+  </div>
+
+  <!-- MỤC LỤC TRANG -->
+  <nav class="box toc" id="muc-luc" aria-label="Mục lục chương">
+    <h2>Mục lục chương này</h2>
+    <ol>
+      <li><a href="#c1-p1"><span class="n">01</span>Số ít đã khám phá, và tất cả chúng ta đang tìm kiếm</a></li>
+      <li><a href="#c1-p2"><span class="n">02</span>Giấu ở nơi dễ thấy nhất</a></li>
+      <li><a href="#c1-p3"><span class="n">03</span>Vì sao chúng ta bỏ lỡ nó suốt hàng nghìn năm</a></li>
+      <li><a href="#c1-p4"><span class="n">04</span>Bí mật đó tiết lộ con người thật của bạn</a></li>
+      <li><a href="#c1-p5"><span class="n">05</span>Những ý tưởng sai lầm đã biến chúng ta thành nô lệ</a></li>
+      <li><a href="#c1-p6"><span class="n">06</span>&ldquo;Cuộc sống của bạn là một mớ hỗn độn&rdquo;</a></li>
+      <li><a href="#c1-p7"><span class="n">07</span>Nhầm lẫn danh tính: gốc rễ của mọi đau khổ</a></li>
+      <li><a href="#c1-p8"><span class="n">08</span>Hạnh phúc là thước đo — và là bản chất thật của bạn</a></li>
+      <li><a href="#c1-p9"><span class="n">09</span>Vì sao vật chất không giữ được hạnh phúc</a></li>
+      <li><a href="#c1-p10"><span class="n">10</span>Nhiều tên gọi cho cùng một khám phá</a></li>
+      <li><a href="#c1-p11"><span class="n">11</span>Cuộc sống của bạn sẽ như thế nào</a></li>
+      <li><a href="#tom-tat-goc"><span class="n">★</span>Tóm tắt gốc của chương</a></li>
+      <li><a href="#ban-do-ghi-nho"><span class="n">★</span>Bản đồ ghi nhớ</a></li>
+    </ol>
+  </nav>
+
+<main>
+
+  <!-- 1 -->
+  <section id="c1-p1">
+    <div class="sec-head"><div class="badge">01</div>
+      <h2>Số ít đã khám phá, và tất cả chúng ta đang tìm kiếm</h2></div>
+    <p class="willlearn"><b>Bạn sẽ hiểu gì ở phần này?</b><br>Bao nhiêu người đã khám phá ra sự thật, điều gì xảy ra với họ, và những ai trong lịch sử đã chia sẻ khám phá này.</p>
+
+    <article class="body-card">
+      <p>Trong số hàng tỷ người trên hành tinh của chúng ta, chỉ có một số ít người khám phá ra sự thật. <mark>Số ít đó hoàn toàn thoát khỏi sự hỗn loạn và tiêu cực của cuộc sống và sống trong hòa bình và hạnh phúc vĩnh cửu.</mark></p>
+      <p>Đối với những người còn lại, dù có nhận ra hay không, chúng ta vẫn không ngừng tìm kiếm sự thật này mỗi ngày trong cuộc sống của mình.</p>
+      <p>Mặc dù bí mật vĩ đại này đã được nhiều nhà hiền triết, nhà tiên tri và nhà lãnh đạo tôn giáo vĩ đại viết ra và ám chỉ trong suốt lịch sử, nhưng phần lớn chúng ta vẫn không biết về khám phá vĩ đại nhất mà chúng ta có thể thực hiện.</p>
+      <p>Trong số những người đã chia sẻ khám phá này với chúng ta có Đức Phật, Krishna, Lão Tử, Chúa Giê-su, Yogananda, Krishnamurti và Đức Đạt Lai Lạt Ma.</p>
+      <p>Mặc dù mỗi người đều có những lời dạy khác nhau phù hợp với thời đại của họ, nhưng tất cả đều đề cập đến cùng một sự thật, sự thật về chúng ta và sự thật đằng sau thế giới của chúng ta.</p>
+    </article>
+
+
+    <!-- FIG-C1 -->
+    <figure class="fig">
+      <span class="fig-lbl">Hình 1 &middot; Số ít — và tất cả chúng ta</span>
+      <svg viewBox="0 0 520 256" role="img" aria-label="Một biển chấm xám tượng trưng cho hàng tỷ người, chỉ vài chấm vàng phát sáng là số ít đã khám phá ra sự thật">
+<defs><radialGradient id="f1g"><stop offset="0" stop-color="var(--c3)"/><stop offset="1" stop-color="var(--c2)"/></radialGradient></defs>
+<circle cx="50.0" cy="26" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="68.5" cy="26" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="87.0" cy="26" r="4.6" fill="var(--ink3)" opacity=".5" class="a-blink" style="animation-delay:0.7s"/><circle cx="105.5" cy="26" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="124.0" cy="26" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="142.5" cy="26" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="161.0" cy="26" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="179.5" cy="26" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="198.0" cy="26" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="216.5" cy="26" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="235.0" cy="26" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="253.5" cy="26" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="272.0" cy="26" r="14" fill="var(--c3)" fill-opacity=".28" class="a-glow" style="animation-delay:0.9s"/><circle cx="272.0" cy="26" r="7.5" fill="url(#f1g)" class="a-pulse" style="animation-delay:0.9s"/><circle cx="290.5" cy="26" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="309.0" cy="26" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="327.5" cy="26" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="346.0" cy="26" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="364.5" cy="26" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="383.0" cy="26" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="401.5" cy="26" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="420.0" cy="26" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="438.5" cy="26" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="457.0" cy="26" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="475.5" cy="26" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="50.0" cy="45" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="68.5" cy="45" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="87.0" cy="45" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="105.5" cy="45" r="14" fill="var(--c3)" fill-opacity=".28" class="a-glow" style="animation-delay:0.45s"/><circle cx="105.5" cy="45" r="7.5" fill="url(#f1g)" class="a-pulse" style="animation-delay:0.45s"/><circle cx="124.0" cy="45" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="142.5" cy="45" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="161.0" cy="45" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="179.5" cy="45" r="4.6" fill="var(--ink3)" opacity=".5" class="a-blink" style="animation-delay:1.8s"/><circle cx="198.0" cy="45" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="216.5" cy="45" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="235.0" cy="45" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="253.5" cy="45" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="272.0" cy="45" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="290.5" cy="45" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="309.0" cy="45" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="327.5" cy="45" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="346.0" cy="45" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="364.5" cy="45" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="383.0" cy="45" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="401.5" cy="45" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="420.0" cy="45" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="438.5" cy="45" r="4.6" fill="var(--ink3)" opacity=".5" class="a-blink" style="animation-delay:0.3s"/><circle cx="457.0" cy="45" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="475.5" cy="45" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="50.0" cy="64" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="68.5" cy="64" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="87.0" cy="64" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="105.5" cy="64" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="124.0" cy="64" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="142.5" cy="64" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="161.0" cy="64" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="179.5" cy="64" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="198.0" cy="64" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="216.5" cy="64" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="235.0" cy="64" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="253.5" cy="64" r="4.6" fill="var(--ink3)" opacity=".5" class="a-blink" style="animation-delay:2.4s"/><circle cx="272.0" cy="64" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="290.5" cy="64" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="309.0" cy="64" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="327.5" cy="64" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="346.0" cy="64" r="14" fill="var(--c3)" fill-opacity=".28" class="a-glow" style="animation-delay:0.9s"/><circle cx="346.0" cy="64" r="7.5" fill="url(#f1g)" class="a-pulse" style="animation-delay:0.9s"/><circle cx="364.5" cy="64" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="383.0" cy="64" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="401.5" cy="64" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="420.0" cy="64" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="438.5" cy="64" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="457.0" cy="64" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="475.5" cy="64" r="4.6" fill="var(--ink3)" opacity=".5" class="a-blink" style="animation-delay:0.3s"/><circle cx="50.0" cy="83" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="68.5" cy="83" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="87.0" cy="83" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="105.5" cy="83" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="124.0" cy="83" r="4.6" fill="var(--ink3)" opacity=".5" class="a-blink" style="animation-delay:2.4s"/><circle cx="142.5" cy="83" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="161.0" cy="83" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="179.5" cy="83" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="198.0" cy="83" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="216.5" cy="83" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="235.0" cy="83" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="253.5" cy="83" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="272.0" cy="83" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="290.5" cy="83" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="309.0" cy="83" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="327.5" cy="83" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="346.0" cy="83" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="364.5" cy="83" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="383.0" cy="83" r="4.6" fill="var(--ink3)" opacity=".5" class="a-blink" style="animation-delay:1.0s"/><circle cx="401.5" cy="83" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="420.0" cy="83" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="438.5" cy="83" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="457.0" cy="83" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="475.5" cy="83" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="50.0" cy="102" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="68.5" cy="102" r="4.6" fill="var(--ink3)" opacity=".5" class="a-blink" style="animation-delay:0.7s"/><circle cx="87.0" cy="102" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="105.5" cy="102" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="124.0" cy="102" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="142.5" cy="102" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="161.0" cy="102" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="179.5" cy="102" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="198.0" cy="102" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="216.5" cy="102" r="14" fill="var(--c3)" fill-opacity=".28" class="a-glow" style="animation-delay:0.45s"/><circle cx="216.5" cy="102" r="7.5" fill="url(#f1g)" class="a-pulse" style="animation-delay:0.45s"/><circle cx="235.0" cy="102" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="253.5" cy="102" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="272.0" cy="102" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="290.5" cy="102" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="309.0" cy="102" r="4.6" fill="var(--ink3)" opacity=".5" class="a-blink" style="animation-delay:2.1s"/><circle cx="327.5" cy="102" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="346.0" cy="102" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="364.5" cy="102" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="383.0" cy="102" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="401.5" cy="102" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="420.0" cy="102" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="438.5" cy="102" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="457.0" cy="102" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="475.5" cy="102" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="50.0" cy="121" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="68.5" cy="121" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="87.0" cy="121" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="105.5" cy="121" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="124.0" cy="121" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="142.5" cy="121" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="161.0" cy="121" r="4.6" fill="var(--ink3)" opacity=".5" class="a-blink" style="animation-delay:1.8s"/><circle cx="179.5" cy="121" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="198.0" cy="121" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="216.5" cy="121" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="235.0" cy="121" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="253.5" cy="121" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="272.0" cy="121" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="290.5" cy="121" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="309.0" cy="121" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="327.5" cy="121" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="346.0" cy="121" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="364.5" cy="121" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="383.0" cy="121" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="401.5" cy="121" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="420.0" cy="121" r="14" fill="var(--c3)" fill-opacity=".28" class="a-glow" style="animation-delay:0.0s"/><circle cx="420.0" cy="121" r="7.5" fill="url(#f1g)" class="a-pulse" style="animation-delay:0.0s"/><circle cx="438.5" cy="121" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="457.0" cy="121" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="475.5" cy="121" r="4.6" fill="var(--ink3)" opacity=".5"/><circle cx="62" cy="172" r="14" fill="var(--c3)" fill-opacity=".28" class="a-glow"/><circle cx="62" cy="172" r="8" fill="url(#f1g)"/><text x="84.0" y="168.0" class="svg-t" font-size="15.5" text-anchor="start" font-weight="800">Số ít đã khám phá ra sự thật</text><text x="84.0" y="189.0" class="svg-t2" font-size="13" text-anchor="start">thoát khỏi hỗn loạn, sống trong hòa bình và hạnh phúc vĩnh cửu</text><circle cx="62" cy="226" r="5" fill="var(--ink3)" opacity=".6"/><text x="84.0" y="222.0" class="svg-t" font-size="15.5" text-anchor="start" font-weight="800">Những người còn lại</text><text x="84.0" y="243.0" class="svg-t2" font-size="13" text-anchor="start">dù nhận ra hay không, vẫn tìm kiếm sự thật này mỗi ngày</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng.</strong> Trong số hàng tỷ người, tác giả viết, chỉ một số ít khám phá ra sự thật và sống trong hòa bình, hạnh phúc vĩnh cửu. Những chấm xám nhấp nháy là &ldquo;tất cả những người còn lại&rdquo; — vẫn đang tìm kiếm, dù có nhận ra hay không.</figcaption>
+    </figure>
+<!-- /FIG-C1 -->
+
+    <blockquote data-q="7" data-ini="MJ"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Trong một số tôn giáo, sự thật này được diễn đạt ít cởi mở và rõ ràng hơn so với những tôn giáo khác, nhưng dù sao thì đó vẫn là sự thật nằm ở cốt lõi của mọi tôn giáo.</p>
+      <cite><b>Michael James</b> — trích từ <em>Hạnh phúc và Nghệ thuật Sống</em></cite>
+    </div></blockquote>
+
+
+    <!-- FIG-C1 -->
+    <figure class="fig">
+      <span class="fig-lbl">Hình 2 &middot; Nhiều người thầy, cùng một sự thật</span>
+      <svg viewBox="0 0 520 350" role="img" aria-label="Bảy người thầy mà tác giả nêu tên xếp thành vòng, các đường nét đứt cùng chảy về một vòng tròn sáng ở giữa: cùng một sự thật">
+<defs><linearGradient id="f2g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--c3)"/><stop offset="1" stop-color="var(--c2)"/></linearGradient></defs>
+<circle cx="260" cy="160" r="82" fill="var(--c3)" fill-opacity=".22" class="a-glow"/><line x1="260.0" y1="62.0" x2="260.0" y2="94.0" stroke="var(--c1)" stroke-width="2.2" class="a-dash" stroke-linecap="round"/><line x1="389.1" y1="95.4" x2="319.0" y2="130.5" stroke="var(--c2)" stroke-width="2.2" class="a-dash" stroke-linecap="round"/><line x1="423.5" y1="183.4" x2="325.3" y2="169.4" stroke="var(--c4)" stroke-width="2.2" class="a-dash" stroke-linecap="round"/><line x1="329.4" y1="250.4" x2="300.2" y2="212.4" stroke="var(--c5)" stroke-width="2.2" class="a-dash" stroke-linecap="round"/><line x1="190.6" y1="250.4" x2="219.8" y2="212.4" stroke="var(--c6)" stroke-width="2.2" class="a-dash" stroke-linecap="round"/><line x1="96.5" y1="183.4" x2="194.7" y2="169.4" stroke="var(--c7)" stroke-width="2.2" class="a-dash" stroke-linecap="round"/><line x1="130.9" y1="95.4" x2="201.0" y2="130.5" stroke="var(--c8)" stroke-width="2.2" class="a-dash" stroke-linecap="round"/><circle cx="260" cy="160" r="62" fill="url(#f2g)" class="a-pulse" style="animation-duration:4s"/><text x="260.0" y="154.0" class="svg-w" font-size="17" text-anchor="middle">Cùng một</text><text x="260.0" y="177.0" class="svg-w" font-size="17" text-anchor="middle">sự thật</text><g class="a-float2" style="animation-delay:0.0s"><rect x="215.7" y="26.0" width="88.6" height="32" rx="16.0" fill="var(--c1)" stroke="var(--c1)" stroke-width="1.6"/><text x="260.0" y="46.9" class="svg-w" font-size="13.5" text-anchor="middle" font-weight="700">Đức Phật</text></g><g class="a-float" style="animation-delay:0.4s"><rect x="366.6" y="70.4" width="80.8" height="32" rx="16.0" fill="var(--c2)" stroke="var(--c2)" stroke-width="1.6"/><text x="407.0" y="91.3" class="svg-w" font-size="13.5" text-anchor="middle" font-weight="700">Krishna</text></g><g class="a-float2" style="animation-delay:0.8s"><rect x="406.8" y="170.3" width="73.0" height="32" rx="16.0" fill="var(--c4)" stroke="var(--c4)" stroke-width="1.6"/><text x="443.3" y="191.1" class="svg-w" font-size="13.5" text-anchor="middle" font-weight="700">Lão Tử</text></g><g class="a-float" style="animation-delay:1.2s"><rect x="285.5" y="250.3" width="112.1" height="32" rx="16.0" fill="var(--c5)" stroke="var(--c5)" stroke-width="1.6"/><text x="341.6" y="271.2" class="svg-w" font-size="13.5" text-anchor="middle" font-weight="700">Chúa Giê-su</text></g><g class="a-float2" style="animation-delay:1.6s"><rect x="130.2" y="250.3" width="96.5" height="32" rx="16.0" fill="var(--c6)" stroke="var(--c6)" stroke-width="1.6"/><text x="178.4" y="271.2" class="svg-w" font-size="13.5" text-anchor="middle" font-weight="700">Yogananda</text></g><g class="a-float" style="animation-delay:2.0s"><rect x="16.7" y="170.3" width="120.0" height="32" rx="16.0" fill="var(--c7)" stroke="var(--c7)" stroke-width="1.6"/><text x="76.7" y="191.1" class="svg-w" font-size="13.5" text-anchor="middle" font-weight="700">Krishnamurti</text></g><g class="a-float2" style="animation-delay:2.4s"><rect x="29.5" y="70.4" width="166.9" height="32" rx="16.0" fill="var(--c8)" stroke="var(--c8)" stroke-width="1.6"/><text x="113.0" y="91.3" class="svg-w" font-size="13.5" text-anchor="middle" font-weight="700">Đức Đạt Lai Lạt Ma</text></g><text x="260.0" y="318.0" class="svg-t2" font-size="13" text-anchor="middle">Lời dạy khác nhau, phù hợp với thời đại của mỗi người —</text><text x="260.0" y="338.0" class="svg-t" font-size="13.5" text-anchor="middle" font-weight="800">nhưng tất cả đều đề cập đến cùng một sự thật</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng</strong> từ danh sách tác giả nêu: Đức Phật, Krishna, Lão Tử, Chúa Giê-su, Yogananda, Krishnamurti và Đức Đạt Lai Lạt Ma. Mỗi người có lời dạy phù hợp với thời đại của họ, nhưng theo tác giả, tất cả đều nói về <em>cùng một sự thật</em> — về chúng ta và về thế giới.</figcaption>
+    </figure>
+<!-- /FIG-C1 -->
+
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+  <!-- 2 -->
+  <section id="c1-p2">
+    <div class="sec-head"><div class="badge">02</div>
+      <h2>Giấu ở nơi dễ thấy nhất</h2></div>
+    <p class="willlearn"><b>Bạn sẽ hiểu gì ở phần này?</b><br>Nguyên tắc cất giấu mà các truyền thống cổ xưa biết, và vì sao nó giải thích chỗ đứng của Bí mật vĩ đại nhất.</p>
+
+    <article class="body-card">
+      <p>Bí mật lớn này hiện hữu rõ ràng để mỗi người chúng ta đều có thể nhìn thấy. <mark>Nó gần chúng ta hơn cả hơi thở, nhưng chúng ta vẫn bỏ lỡ nó!</mark></p>
+      <p>Các truyền thống cổ xưa biết rằng để che giấu một bí mật, nó phải được đặt ở nơi dễ thấy, nơi không ai nghĩ đến việc tìm kiếm nó. Và đó chính xác là nơi Bí mật lớn nhất nằm ở đó.</p>
+    </article>
+
+    <blockquote data-q="4" data-ini="RS"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Vì vậy, trong truyền thống Kashmir Shaivite, nó được gọi là &ldquo;bí mật lớn nhất, ẩn giấu hơn cả những điều được che giấu nhất và cũng hiển nhiên hơn những điều hiển nhiên nhất.&rdquo;</p>
+      <cite><b>Rupert Spira</b> — trích từ <em>Nhận thức về Nhận thức</em></cite>
+    </div></blockquote>
+
+
+    <!-- FIG-C1 -->
+    <figure class="fig">
+      <span class="fig-lbl">Hình 3 &middot; Giấu ở nơi dễ thấy nhất</span>
+      <svg viewBox="0 0 520 314" role="img" aria-label="Một kính lúp đi vòng quanh các góc khuất tìm trong những chiếc hộp đóng kín, trong khi ngôi sao sáng nằm ngay chính giữa mà không ai nhìn tới">
+<defs><radialGradient id="f3g"><stop offset="0" stop-color="var(--c3)"/><stop offset="1" stop-color="var(--c2)"/></radialGradient></defs>
+<text x="260.0" y="22.0" class="svg-t2" font-size="14" text-anchor="middle" font-weight="700">Người ta lục tìm ở những chỗ sâu kín…</text><rect x="20" y="36" width="480" height="220" rx="26" fill="var(--soft)" stroke="var(--rule)" stroke-width="1.5"/><g opacity=".75"><rect x="53" y="55" width="34" height="24" rx="5" fill="var(--ink3)" opacity=".55"/><rect x="51" y="50" width="38" height="8" rx="3" fill="var(--ink2)" opacity=".7"/><circle cx="70" cy="67" r="2.6" fill="var(--card)"/></g><g opacity=".75"><rect x="433" y="55" width="34" height="24" rx="5" fill="var(--ink3)" opacity=".55"/><rect x="431" y="50" width="38" height="8" rx="3" fill="var(--ink2)" opacity=".7"/><circle cx="450" cy="67" r="2.6" fill="var(--card)"/></g><g opacity=".75"><rect x="53" y="215" width="34" height="24" rx="5" fill="var(--ink3)" opacity=".55"/><rect x="51" y="210" width="38" height="8" rx="3" fill="var(--ink2)" opacity=".7"/><circle cx="70" cy="227" r="2.6" fill="var(--card)"/></g><g opacity=".75"><rect x="433" y="215" width="34" height="24" rx="5" fill="var(--ink3)" opacity=".55"/><rect x="431" y="210" width="38" height="8" rx="3" fill="var(--ink2)" opacity=".7"/><circle cx="450" cy="227" r="2.6" fill="var(--card)"/></g><g opacity=".75"><rect x="243" y="215" width="34" height="24" rx="5" fill="var(--ink3)" opacity=".55"/><rect x="241" y="210" width="38" height="8" rx="3" fill="var(--ink2)" opacity=".7"/><circle cx="260" cy="227" r="2.6" fill="var(--card)"/></g><g opacity=".75"><rect x="243" y="55" width="34" height="24" rx="5" fill="var(--ink3)" opacity=".55"/><rect x="241" y="50" width="38" height="8" rx="3" fill="var(--ink2)" opacity=".7"/><circle cx="260" cy="67" r="2.6" fill="var(--card)"/></g><circle cx="260" cy="146" r="56" fill="var(--c3)" fill-opacity=".3" class="a-glow"/><circle cx="260" cy="146" r="34" fill="url(#f3g)" class="a-pulse" style="animation-duration:3.2s"/><path d="M260,124 L265.5,140.5 L282,146 L265.5,151.5 L260,168 L254.5,151.5 L238,146 L254.5,140.5 Z" fill="#fff"/><g><circle r="15" fill="var(--card)" fill-opacity=".55" stroke="var(--c6)" stroke-width="4.5"/><line x1="10.5" y1="10.5" x2="24" y2="24" stroke="var(--c6)" stroke-width="6" stroke-linecap="round"/><animateMotion dur="9s" repeatCount="indefinite" path="M50,66 H470 V226 H50 Z"/></g><text x="260.0" y="284.0" class="svg-t" font-size="15" text-anchor="middle" font-weight="800">…còn Bí mật lớn nhất nằm ngay giữa, ở nơi dễ thấy nhất</text><text x="260.0" y="306.0" class="svg-t2" font-size="13.5" text-anchor="middle">gần chúng ta hơn cả hơi thở</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng</strong> theo nguyên tắc tác giả dẫn từ các truyền thống cổ xưa: để che giấu một bí mật, hãy đặt nó ở nơi dễ thấy, nơi không ai nghĩ đến việc tìm kiếm. Kính lúp cứ đi vòng quanh những chỗ kín — và đi ngang qua chính giữa mà không dừng lại.</figcaption>
+    </figure>
+<!-- /FIG-C1 -->
+
+    <div class="example">
+      <span class="lbl">Ví dụ giúp dễ hình dung</span>
+      <p>Hình ảnh tác giả dùng ở đây là <strong>nghịch lý của chỗ giấu</strong>: nơi an toàn nhất để giấu một thứ không phải là nơi sâu kín, mà là nơi dễ thấy đến mức không ai nghĩ đến việc tìm ở đó.</p>
+      <div class="flow-grid" style="margin-top:14px">
+        <div class="fstep"><span class="k">Cách giấu thông thường</span><span class="v">Cất vào nơi sâu kín · Người ta biết phải đi tìm ở đâu</span></div>
+        <div class="farrow">→</div>
+        <div class="fstep"><span class="k">Cách các truyền thống cổ xưa biết</span><span class="v">Đặt ở nơi dễ thấy · Không ai nghĩ đến việc tìm ở đó · Đó chính xác là nơi Bí mật lớn nhất nằm</span></div>
+      </div>
+    </div>
+
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+  <!-- 3 -->
+  <section id="c1-p3">
+    <div class="sec-head"><div class="badge">03</div>
+      <h2>Vì sao chúng ta bỏ lỡ nó suốt hàng nghìn năm</h2></div>
+    <p class="willlearn"><b>Bạn sẽ hiểu gì ở phần này?</b><br>Điều gì làm chúng ta phân tâm, và câu hỏi mà tác giả đặt ra để dẫn vào lời tiết lộ.</p>
+
+    <article class="body-card">
+      <p>Chúng ta đã bỏ lỡ sự thật trong hàng nghìn năm vì chúng ta không nhìn vào những gì ngay trước mắt mình.</p>
+      <p><mark>Chúng ta dễ bị phân tâm bởi các vấn đề của mình, những bi kịch trong cuộc sống, những sự kiện đến và đi trên thế giới</mark>, và chúng ta đã bỏ lỡ khám phá lớn nhất mà chúng ta có thể thực hiện, khám phá này đang ở ngay trước mắt chúng ta, một khám phá có thể đưa chúng ta thoát khỏi đau khổ và đến với hạnh phúc lâu dài.</p>
+      <p>Bí mật nào có thể thay đổi cuộc sống đến vậy? Khám phá duy nhất nào có thể chấm dứt đau khổ, hoặc mang lại hòa bình và hạnh phúc vĩnh cửu?</p>
+    </article>
+
+
+    <!-- FIG-C1 -->
+    <figure class="fig">
+      <span class="fig-lbl">Hình 4 &middot; Vì sao chúng ta bỏ lỡ</span>
+      <svg viewBox="0 0 520 232" role="img" aria-label="Con mắt của sự chú ý nhìn sang phải nhưng bị các đám mây Vấn đề, Bi kịch và Sự kiện chắn lại, không chạm tới khám phá lớn nhất đang sáng ngay phía sau">
+<defs><radialGradient id="f4g"><stop offset="0" stop-color="var(--c3)"/><stop offset="1" stop-color="var(--c2)"/></radialGradient></defs>
+<circle cx="458" cy="128" r="56" fill="var(--c3)" fill-opacity=".3" class="a-glow"/><circle cx="458" cy="128" r="42" fill="url(#f4g)"/><text x="458.0" y="124.0" class="svg-w" font-size="13" text-anchor="middle">Khám phá</text><text x="458.0" y="141.0" class="svg-w" font-size="13" text-anchor="middle">lớn nhất</text><text x="458.0" y="206.0" class="svg-t" font-size="14" text-anchor="middle" font-weight="800">ngay trước mắt</text><path d="M28,128 Q70,90 112,128 Q70,166 28,128 Z" fill="var(--card)" stroke="var(--ink)" stroke-width="2.5"/><circle cx="70" cy="128" r="15" fill="var(--c6)"/><circle cx="70" cy="128" r="6.5" fill="var(--ink)"/><circle cx="74" cy="124" r="2.4" fill="#fff"/><text x="70.0" y="178.0" class="svg-t2" font-size="13.5" text-anchor="middle" font-weight="700">sự chú ý</text><text x="70.0" y="196.0" class="svg-t2" font-size="13.5" text-anchor="middle" font-weight="700">của chúng ta</text><line x1="116" y1="128" x2="164" y2="128" stroke="var(--c6)" stroke-width="2.5" class="a-dash" stroke-linecap="round"/><g class="a-float" style="animation-delay:0s"><circle cx="234.6" cy="45.2" r="19.2" fill="var(--c1l)"/><circle cx="276.2" cy="42.0" r="23.2" fill="var(--c1l)"/><rect x="193.0" y="42.0" width="130" height="40" rx="20.0" fill="var(--c1l)"/><rect x="193.0" y="42.0" width="130" height="40" rx="20.0" fill="none" stroke="var(--c1)" stroke-width="1.4" stroke-dasharray="3 4"/><text x="258.0" y="67.0" class="svg-t" font-size="14" text-anchor="middle" font-weight="800">Các vấn đề</text></g><g class="a-drift" style="animation-delay:0s"><circle cx="239.5" cy="118.4" r="20.2" fill="var(--c8l)"/><circle cx="315.0" cy="115.0" r="24.4" fill="var(--c8l)"/><rect x="164.0" y="115.0" width="236" height="42" rx="21.0" fill="var(--c8l)"/><rect x="164.0" y="115.0" width="236" height="42" rx="21.0" fill="none" stroke="var(--c8)" stroke-width="1.4" stroke-dasharray="3 4"/><text x="282.0" y="141.0" class="svg-t" font-size="14" text-anchor="middle" font-weight="800">Những bi kịch trong cuộc sống</text></g><g class="a-float2" style="animation-delay:0.8s"><circle cx="226.7" cy="195.2" r="19.2" fill="var(--c7l)"/><circle cx="289.4" cy="192.0" r="23.2" fill="var(--c7l)"/><rect x="164.0" y="192.0" width="196" height="40" rx="20.0" fill="var(--c7l)"/><rect x="164.0" y="192.0" width="196" height="40" rx="20.0" fill="none" stroke="var(--c7)" stroke-width="1.4" stroke-dasharray="3 4"/><text x="262.0" y="217.0" class="svg-t" font-size="14" text-anchor="middle" font-weight="800">Sự kiện đến và đi</text></g>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng.</strong> Ba đám mây là đúng ba thứ tác giả kể ra: các vấn đề của mình, những bi kịch trong cuộc sống, những sự kiện đến và đi trên thế giới. Sự chú ý dừng lại ở chúng — trong khi khám phá lớn nhất &ldquo;đang ở ngay trước mắt chúng ta&rdquo;.</figcaption>
+    </figure>
+<!-- /FIG-C1 -->
+
+    <div class="flow">
+      <span class="lbl">Mạch lập luận &middot; Phần 01–03</span>
+      <div class="flow-grid">
+        <div class="fstep"><span class="k">Nhận định ban đầu</span><span class="v">Chỉ một số ít khám phá ra sự thật và sống trong hòa bình, hạnh phúc vĩnh cửu.</span></div>
+        <div class="farrow">→</div>
+        <div class="fstep"><span class="k">Giải thích</span><span class="v">Sự thật ấy hiện rõ cho mọi người, gần hơn cả hơi thở, vì nó được đặt ở nơi dễ thấy nhất.</span></div>
+        <div class="farrow">→</div>
+        <div class="fstep"><span class="k">Trích dẫn</span><span class="v">Rupert Spira: &ldquo;ẩn giấu hơn cả những điều được che giấu nhất và cũng hiển nhiên hơn những điều hiển nhiên nhất.&rdquo;</span></div>
+        <div class="farrow">→</div>
+        <div class="fstep"><span class="k">Kết luận</span><span class="v">Chúng ta bỏ lỡ nó vì bị phân tâm bởi vấn đề, bi kịch và các sự kiện thế giới.</span></div>
+      </div>
+    </div>
+
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+  <!-- 4 -->
+  <section id="c1-p4">
+    <div class="sec-head"><div class="badge">04</div>
+      <h2>Bí mật đó tiết lộ con người thật của bạn</h2></div>
+    <p class="willlearn"><b>Bạn sẽ hiểu gì ở phần này?</b><br>Câu trả lời của tác giả cho câu hỏi vừa đặt ra, và vì sao cách bạn đang tự định nghĩa mình có thể là sai.</p>
+
+    <article class="body-card">
+      <p>Đơn giản là <mark>một bí mật tiết lộ con người thật của bạn.</mark></p>
+      <p>Bạn có thể nghĩ rằng bạn biết mình là ai, nhưng nếu bạn nghĩ rằng bạn là một cá nhân có tên, ở một độ tuổi nhất định, thuộc một chủng tộc cụ thể, có nghề nghiệp, lịch sử gia đình và nhiều trải nghiệm sống khác nhau, bạn sẽ choáng váng khi biết được con người thật của mình.</p>
+    </article>
+
+
+    <!-- FIG-C1 -->
+    <figure class="fig">
+      <span class="fig-lbl">Hình 5 &middot; Những nhãn chúng ta dán lên mình</span>
+      <svg viewBox="0 0 520 304" role="img" aria-label="Một hình người ở giữa với dấu hỏi, nối với sáu nhãn: Tên, Độ tuổi, Chủng tộc, Nghề nghiệp, Lịch sử gia đình, Trải nghiệm sống">
+<defs><linearGradient id="f5g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--c7)"/><stop offset="1" stop-color="var(--c8)"/></linearGradient></defs>
+<path d="M173,66 C197.5,66 197.5,100 222,100" fill="none" stroke="var(--c1)" stroke-width="2" class="a-dash"/><path d="M173,136 C197.5,136 197.5,176 222,176" fill="none" stroke="var(--c2)" stroke-width="2" class="a-dash"/><path d="M173,206 C197.5,206 197.5,214 222,214" fill="none" stroke="var(--c8)" stroke-width="2" class="a-dash"/><path d="M347,66 C322.5,66 322.5,100 298,100" fill="none" stroke="var(--c6)" stroke-width="2" class="a-dash"/><path d="M347,136 C322.5,136 322.5,176 298,176" fill="none" stroke="var(--c5)" stroke-width="2" class="a-dash"/><path d="M347,206 C322.5,206 322.5,214 298,214" fill="none" stroke="var(--c4)" stroke-width="2" class="a-dash"/><circle cx="260" cy="128" r="96" fill="var(--c7)" fill-opacity=".12" class="a-glow"/><circle cx="260" cy="92" r="36" fill="url(#f5g)"/><path d="M192,236 Q192,146 260,140 Q328,146 328,236 Z" fill="url(#f5g)"/><g class="a-pulse" style="animation-duration:2.8s"><text x="260.0" y="106.0" class="svg-w" font-size="40" text-anchor="middle">?</text></g><g class="a-float2" style="animation-delay:0.0s"><rect x="23.0" y="49.0" width="150.0" height="34" rx="17.0" fill="var(--c1l)" stroke="var(--c1)" stroke-width="1.6"/><text x="98.0" y="71.0" class="svg-t" font-size="14" text-anchor="middle" font-weight="700">Tên</text></g><g class="a-float" style="animation-delay:0.5s"><rect x="23.0" y="119.0" width="150.0" height="34" rx="17.0" fill="var(--c2l)" stroke="var(--c2)" stroke-width="1.6"/><text x="98.0" y="141.0" class="svg-t" font-size="14" text-anchor="middle" font-weight="700">Độ tuổi</text></g><g class="a-float2" style="animation-delay:1.0s"><rect x="23.0" y="189.0" width="150.0" height="34" rx="17.0" fill="var(--c8l)" stroke="var(--c8)" stroke-width="1.6"/><text x="98.0" y="211.0" class="svg-t" font-size="14" text-anchor="middle" font-weight="700">Chủng tộc</text></g><g class="a-float" style="animation-delay:1.5s"><rect x="347.0" y="49.0" width="150.0" height="34" rx="17.0" fill="var(--c6l)" stroke="var(--c6)" stroke-width="1.6"/><text x="422.0" y="71.0" class="svg-t" font-size="14" text-anchor="middle" font-weight="700">Nghề nghiệp</text></g><g class="a-float2" style="animation-delay:2.0s"><rect x="347.0" y="119.0" width="150.0" height="34" rx="17.0" fill="var(--c5l)" stroke="var(--c5)" stroke-width="1.6"/><text x="422.0" y="141.0" class="svg-t" font-size="14" text-anchor="middle" font-weight="700">Lịch sử gia đình</text></g><g class="a-float" style="animation-delay:2.5s"><rect x="347.0" y="189.0" width="150.0" height="34" rx="17.0" fill="var(--c4l)" stroke="var(--c4)" stroke-width="1.6"/><text x="422.0" y="211.0" class="svg-t" font-size="14" text-anchor="middle" font-weight="700">Trải nghiệm sống</text></g><text x="260.0" y="272.0" class="svg-t" font-size="15.5" text-anchor="middle" font-weight="800">Bạn nghĩ rằng bạn biết mình là ai…</text><text x="260.0" y="294.0" class="svg-t2" font-size="13" text-anchor="middle">nhưng theo tác giả, bạn sẽ choáng váng khi biết con người thật của mình</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng.</strong> Sáu nhãn là đúng những thứ tác giả liệt kê: một cá nhân có tên, ở một độ tuổi nhất định, thuộc một chủng tộc cụ thể, có nghề nghiệp, lịch sử gia đình và nhiều trải nghiệm sống. Dấu hỏi ở giữa là câu hỏi của cả chương: con người thật của bạn là ai?</figcaption>
+    </figure>
+<!-- /FIG-C1 -->
+
+    <blockquote data-q="1" data-ini="AM"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Cách duy nhất để ai đó có thể giúp bạn là thách thức ý tưởng của bạn.</p>
+      <cite><b>Anthony de Mello, S.J.</b> — trích từ <em>Nhận thức: Đối thoại với các bậc thầy</em></cite>
+    </div></blockquote>
+
+    <div class="pause">
+      <span class="lbl">Dừng lại 30 giây</span><div class="tmr" data-s="30" role="button" tabindex="0" aria-label="Bắt đầu lại 30 giây"><svg viewBox="0 0 74 74" aria-hidden="true"><circle class="bg" cx="37" cy="37" r="32"/><circle class="fg" cx="37" cy="37" r="32"/></svg></div>
+      <p>Bí mật nào có thể thay đổi cuộc sống đến vậy? Khám phá duy nhất nào có thể chấm dứt đau khổ, hoặc mang lại hòa bình và hạnh phúc vĩnh cửu?</p>
+    </div>
+
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+  <!-- 5 -->
+  <section id="c1-p5">
+    <div class="sec-head"><div class="badge">05</div>
+      <h2>Những ý tưởng sai lầm đã biến chúng ta thành nô lệ</h2></div>
+    <p class="willlearn"><b>Bạn sẽ hiểu gì ở phần này?</b><br>Những niềm tin cụ thể mà tác giả liệt kê, và điều bà nói sẽ xảy ra với chúng khi bạn nhìn thấy sự thật.</p>
+
+    <article class="body-card">
+      <p>Tất cả chúng ta đều đã chấp nhận nhiều ý tưởng và niềm tin sai lầm trong suốt cuộc đời mình, và <mark>những ý tưởng và niềm tin sai lầm đó đã khiến chúng ta trở thành nô lệ.</mark></p>
+      <p>Chúng ta đã được cho biết rằng có những hạn chế và thiếu thốn trên thế giới này, rằng không có đủ tiền bạc, thời gian, nguồn lực, tình yêu hoặc sức khỏe:</p>
+      <ul class="dia">
+        <li>&ldquo;Cuộc sống ngắn ngủi&rdquo;</li>
+        <li>&ldquo;Bạn chỉ là con người&rdquo;</li>
+        <li>&ldquo;Bạn phải làm việc chăm chỉ và đấu tranh để đạt được điều gì đó trong cuộc sống&rdquo;</li>
+        <li>&ldquo;Chúng ta đang cạn kiệt nguồn lực&rdquo;</li>
+        <li>&ldquo;Thế giới đang hỗn loạn&rdquo;</li>
+        <li>&ldquo;Thế giới cần được cứu&rdquo;</li>
+      </ul>
+      <p>Nhưng ngay khi bạn nhìn thấy sự thật, những điều sai trái đó sẽ sụp đổ, và hạnh phúc của bạn sẽ trỗi dậy từ đống đổ nát.</p>
+    </article>
+
+
+    <!-- FIG-C1 -->
+    <figure class="fig">
+      <span class="fig-lbl">Hình 6 &middot; Bức tường niềm tin sụp đổ</span>
+      <svg viewBox="0 0 520 302" role="img" aria-label="Sáu viên gạch, mỗi viên là một niềm tin sai lầm, lần lượt rơi xuống, để lộ ra mặt trời hạnh phúc phía sau">
+<defs><radialGradient id="f6g"><stop offset="0" stop-color="var(--c3)"/><stop offset="1" stop-color="var(--c2)"/></radialGradient></defs>
+<line x1="20" y1="240" x2="500" y2="240" stroke="var(--ink3)" stroke-width="2" stroke-linecap="round"/><circle cx="260" cy="132" r="112" fill="var(--c3)" fill-opacity=".2" class="a-glow"/><g class="a-spin-r" style="animation-duration:30s"><line x1="330.0" y1="132.0" x2="354.0" y2="132.0" stroke="var(--c3)" stroke-width="5" stroke-linecap="round"/><line x1="320.6" y1="167.0" x2="341.4" y2="179.0" stroke="var(--c3)" stroke-width="5" stroke-linecap="round"/><line x1="295.0" y1="192.6" x2="307.0" y2="213.4" stroke="var(--c3)" stroke-width="5" stroke-linecap="round"/><line x1="260.0" y1="202.0" x2="260.0" y2="226.0" stroke="var(--c3)" stroke-width="5" stroke-linecap="round"/><line x1="225.0" y1="192.6" x2="213.0" y2="213.4" stroke="var(--c3)" stroke-width="5" stroke-linecap="round"/><line x1="199.4" y1="167.0" x2="178.6" y2="179.0" stroke="var(--c3)" stroke-width="5" stroke-linecap="round"/><line x1="190.0" y1="132.0" x2="166.0" y2="132.0" stroke="var(--c3)" stroke-width="5" stroke-linecap="round"/><line x1="199.4" y1="97.0" x2="178.6" y2="85.0" stroke="var(--c3)" stroke-width="5" stroke-linecap="round"/><line x1="225.0" y1="71.4" x2="213.0" y2="50.6" stroke="var(--c3)" stroke-width="5" stroke-linecap="round"/><line x1="260.0" y1="62.0" x2="260.0" y2="38.0" stroke="var(--c3)" stroke-width="5" stroke-linecap="round"/><line x1="295.0" y1="71.4" x2="307.0" y2="50.6" stroke="var(--c3)" stroke-width="5" stroke-linecap="round"/><line x1="320.6" y1="97.0" x2="341.4" y2="85.0" stroke="var(--c3)" stroke-width="5" stroke-linecap="round"/></g><circle cx="260" cy="132" r="58" fill="url(#f6g)"/><text x="260.0" y="128.0" class="svg-w" font-size="15" text-anchor="middle">hạnh phúc</text><text x="260.0" y="147.0" class="svg-w" font-size="15" text-anchor="middle">của bạn</text><g class="a-crumble" style="animation-delay:0.0s; --rot:-7deg"><rect x="52" y="40" width="210" height="50" rx="9" fill="var(--c1)"/><rect x="52" y="40" width="210" height="50" rx="9" fill="#000" opacity=".08" style="mix-blend-mode:multiply"/><text x="157.0" y="70.0" class="svg-w" font-size="13.5" text-anchor="middle">“Cuộc sống ngắn ngủi”</text></g><g class="a-crumble" style="animation-delay:0.3s; --rot:6deg"><rect x="282" y="40" width="210" height="50" rx="9" fill="var(--c2)"/><rect x="282" y="40" width="210" height="50" rx="9" fill="#000" opacity=".08" style="mix-blend-mode:multiply"/><text x="387.0" y="70.0" class="svg-w" font-size="13.5" text-anchor="middle">“Bạn chỉ là con người”</text></g><g class="a-crumble" style="animation-delay:0.15s; --rot:-4deg"><rect x="30" y="98" width="210" height="50" rx="9" fill="var(--c8)"/><rect x="30" y="98" width="210" height="50" rx="9" fill="#000" opacity=".08" style="mix-blend-mode:multiply"/><text x="135.0" y="120.0" class="svg-w" font-size="13.5" text-anchor="middle">“Bạn phải làm việc chăm chỉ</text><text x="135.0" y="138.0" class="svg-w" font-size="13.5" text-anchor="middle">và đấu tranh…”</text></g><g class="a-crumble" style="animation-delay:0.45s; --rot:8deg"><rect x="260" y="98" width="210" height="50" rx="9" fill="var(--c7)"/><rect x="260" y="98" width="210" height="50" rx="9" fill="#000" opacity=".08" style="mix-blend-mode:multiply"/><text x="365.0" y="120.0" class="svg-w" font-size="13.5" text-anchor="middle">“Chúng ta đang cạn kiệt</text><text x="365.0" y="138.0" class="svg-w" font-size="13.5" text-anchor="middle">nguồn lực”</text></g><g class="a-crumble" style="animation-delay:0.6s; --rot:-6deg"><rect x="52" y="156" width="210" height="50" rx="9" fill="var(--c6)"/><rect x="52" y="156" width="210" height="50" rx="9" fill="#000" opacity=".08" style="mix-blend-mode:multiply"/><text x="157.0" y="186.0" class="svg-w" font-size="13.5" text-anchor="middle">“Thế giới đang hỗn loạn”</text></g><g class="a-crumble" style="animation-delay:0.75s; --rot:5deg"><rect x="282" y="156" width="210" height="50" rx="9" fill="var(--c5)"/><rect x="282" y="156" width="210" height="50" rx="9" fill="#000" opacity=".08" style="mix-blend-mode:multiply"/><text x="387.0" y="186.0" class="svg-w" font-size="13.5" text-anchor="middle">“Thế giới cần được cứu”</text></g><rect x="90" y="226" width="26" height="12" rx="3" fill="var(--c1)" opacity=".55" transform="rotate(12 103.0 232.0)"/><rect x="130" y="232" width="18" height="10" rx="3" fill="var(--c8)" opacity=".55" transform="rotate(-20 139.0 237.0)"/><rect x="190" y="228" width="30" height="11" rx="3" fill="var(--c7)" opacity=".55" transform="rotate(6 205.0 233.5)"/><rect x="300" y="230" width="22" height="10" rx="3" fill="var(--c2)" opacity=".55" transform="rotate(-14 311.0 235.0)"/><rect x="350" y="226" width="28" height="12" rx="3" fill="var(--c6)" opacity=".55" transform="rotate(18 364.0 232.0)"/><rect x="400" y="232" width="16" height="9" rx="3" fill="var(--c5)" opacity=".55" transform="rotate(-8 408.0 236.5)"/><text x="260.0" y="20.0" class="svg-cap" font-size="12.5" text-anchor="middle" fill="var(--c1)">NHỮNG Ý TƯỞNG VÀ NIỀM TIN SAI LẦM</text><text x="260.0" y="270.0" class="svg-t" font-size="15.5" text-anchor="middle" font-weight="800">Khi bạn nhìn thấy sự thật, chúng sụp đổ…</text><text x="260.0" y="292.0" class="svg-t2" font-size="13.5" text-anchor="middle">và hạnh phúc của bạn trỗi dậy từ đống đổ nát</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng</strong> theo hình ảnh ở cuối đoạn: những điều sai trái &ldquo;sẽ sụp đổ&rdquo; khi bạn nhìn thấy sự thật, và hạnh phúc &ldquo;sẽ trỗi dậy từ đống đổ nát&rdquo;. Mỗi viên gạch là một câu tác giả trích ra; câu thứ ba được rút gọn trong hình, nguyên văn đầy đủ ở ngay phía trên.</figcaption>
+    </figure>
+<!-- /FIG-C1 -->
+
+    <div class="example">
+      <span class="lbl">Ví dụ giúp dễ hình dung</span>
+      <p>Hình ảnh tác giả dùng ở cuối đoạn là hình ảnh của <strong>một công trình sụp đổ</strong>: những niềm tin sai lầm không cần phải được tháo dỡ từng mảnh — chúng &ldquo;sụp đổ&rdquo; khi bạn nhìn thấy sự thật, và hạnh phúc &ldquo;trỗi dậy từ đống đổ nát&rdquo; ấy.</p>
+    </div>
+
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+  <!-- 6 -->
+  <section id="c1-p6">
+    <div class="sec-head"><div class="badge">06</div>
+      <h2>&ldquo;Cuộc sống của bạn là một mớ hỗn độn&rdquo;</h2></div>
+    <p class="willlearn"><b>Bạn sẽ hiểu gì ở phần này?</b><br>Câu trả lời cho người đang thấy cuộc sống mình ổn, và bộ câu hỏi mà tác giả dùng để kiểm tra điều đó.</p>
+
+    <article class="body-card">
+      <p>Có lẽ bạn đang nghĩ, &ldquo;Cuộc sống của tôi đang diễn ra tốt đẹp, vậy tại sao tôi lại muốn biết Bí mật vĩ đại nhất?&rdquo;</p>
+      <p>Để trích lời Anthony de Mello, S.J:</p>
+    </article>
+
+    <blockquote data-q="1" data-ini="AM"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Bởi vì cuộc sống của bạn là một mớ hỗn độn!</p>
+      <cite><b>Anthony de Mello, S.J.</b> — lời được Rhonda Byrne trích dẫn trong đoạn này</cite>
+    </div></blockquote>
+
+    <article class="body-card">
+      <p>Bạn có thể không đồng ý. Tôi chắc chắn cũng không nghĩ cuộc sống của mình là một mớ hỗn độn cho đến khi Anthony de Mello định nghĩa chính xác ý của ông ấy.</p>
+      <ul class="dia">
+        <li>Bạn có bao giờ buồn bã không?</li>
+        <li>Có bao giờ căng thẳng không?</li>
+        <li>Có bao giờ lo lắng không?</li>
+        <li>Có bao giờ cảm thấy lo lắng, bị xúc phạm hoặc tổn thương không?</li>
+        <li>Có bao giờ cảm thấy buồn, chán nản hoặc tuyệt vọng không?</li>
+        <li>Bạn có bao giờ không vui hoặc có tâm trạng tồi tệ không?</li>
+      </ul>
+      <p><mark>Nếu bạn trải qua bất kỳ cảm xúc nào trong số này bất cứ lúc nào, thì theo Anthony de Mello, cuộc sống của bạn là một mớ hỗn độn!</mark></p>
+      <p>Bạn có thể nghĩ rằng việc bị những cảm xúc tiêu cực hành hạ trong suốt cả ngày là điều bình thường, nhưng cuộc sống không phải như vậy. Bạn có thể sống cuộc sống của mình hoàn toàn không bị tổn thương, buồn bã, lo lắng và sợ hãi, và tồn tại trong hạnh phúc liên tục.</p>
+      <p>Cuộc sống cho chúng ta thấy rằng có một cách thoát khỏi đau khổ thông qua mọi hoàn cảnh thử thách mà chúng ta trải qua, đặc biệt là những hoàn cảnh rất khó khăn. Nhưng chúng ta không nhìn thấy điều đó. Chúng ta lạc lối trong các vấn đề của mình và chúng ta bỏ lỡ chính điều ngay trước mắt mình, đó là cách thoát khỏi mọi vấn đề mãi mãi!</p>
+    </article>
+
+    <blockquote data-q="2" data-ini="M"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Chúng ta tìm kiếm hạnh phúc trong trải nghiệm này đến trải nghiệm khác, mối quan hệ này đến mối quan hệ khác, liệu pháp này đến liệu pháp khác, hội thảo này đến hội thảo khác, thậm chí là những &ldquo;buổi học tâm linh&rdquo;, nghe có vẻ rất hứa hẹn nhưng không bao giờ giải quyết được nguyên nhân gốc rễ của đau khổ: sự thiếu hiểu biết về bản chất thực sự của chúng ta.</p>
+      <cite><b>Mooji</b> — trích từ <em>Ngọn lửa trắng</em>, ấn bản thứ hai</cite>
+    </div></blockquote>
+
+    <div class="hint">
+      <span class="lbl">Gợi ý để dễ hiểu</span>
+      <p>Ở đây &ldquo;một mớ hỗn độn&rdquo; không phải lời chê cuộc sống bên ngoài của bạn. Theo định nghĩa mà tác giả dẫn lại từ Anthony de Mello, thước đo nằm ở chỗ khác: chỉ cần bạn còn trải qua những cảm xúc tiêu cực kể trên vào bất cứ lúc nào, cụm từ đó đã áp dụng.</p>
+    </div>
+
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+  <!-- 7 -->
+  <section id="c1-p7">
+    <div class="sec-head"><div class="badge">07</div>
+      <h2>Nhầm lẫn danh tính: gốc rễ của mọi đau khổ</h2></div>
+    <p class="willlearn"><b>Bạn sẽ hiểu gì ở phần này?</b><br>Nguyên nhân mà tác giả chỉ ra cho mọi đau khổ, và danh sách những điều bà nói bạn <em>không phải</em>.</p>
+
+    <article class="body-card">
+      <p>Bất cứ khi nào chúng ta đau khổ, đó là vì chúng ta đã tin vào điều gì đó về bản thân mình không đúng sự thật; chúng ta đã nhầm lẫn danh tính của chính mình. <mark>Mọi đau khổ của nhân loại đều bắt nguồn từ một trường hợp nhầm lẫn danh tính.</mark></p>
+      <p>Sự thật là:</p>
+      <ul class="dia">
+        <li>Bạn không phải là người không thể kiểm soát những gì xảy ra với bạn và cuộc sống của bạn.</li>
+        <li>Bạn không phải là người phải làm việc quần quật ở một công việc mà bạn không thích, chỉ để chết khi kết thúc tất cả.</li>
+        <li>Bạn không phải là người phải vật lộn để kiếm từng đồng lương.</li>
+        <li>Bạn không phải là người cần chứng minh bản thân hoặc cần sự chấp thuận của bất kỳ ai khác.</li>
+      </ul>
+      <p>Sự thật là, bạn không thực sự là một con người. Chắc chắn bạn đang có trải nghiệm trở thành một con người, nhưng nhìn rộng ra, đó không phải là con người bạn.</p>
+    </article>
+
+    <blockquote data-q="8" data-ini="JF"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Nó không phải là cách nó xuất hiện. Bạn không phải là những gì bạn nghĩ mình là.</p>
+      <cite><b>Jan Frazier</b> — trích từ <em>Sự tự do hiện hữu</em></cite>
+    </div></blockquote>
+
+    <blockquote data-q="2" data-ini="M"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Đôi khi chúng ta nhắm vào các triệu chứng trong cuộc sống nhưng nguyên nhân thực sự trong cuộc sống là chúng ta đang bỏ lỡ sự hiểu biết và nhận ra bản chất thực sự của mình. Đây là liều thuốc duy nhất cho mọi thứ.</p>
+      <cite><b>Mooji</b></cite>
+    </div></blockquote>
+
+    <blockquote data-q="7" data-ini="MJ"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Mọi sự bất hạnh, bất mãn và đau khổ mà chúng ta trải qua trong cuộc sống chỉ là do sự thiếu hiểu biết hoặc hiểu lầm về bản thân hoặc con người thực sự của chúng ta. Do đó, nếu chúng ta muốn thoát khỏi mọi hình thức đau khổ và bất hạnh, chúng ta phải giải thoát bản thân khỏi sự thiếu hiểu biết hoặc hiểu lầm về bản thân thực sự của chúng ta.</p>
+      <cite><b>Michael James</b> — trích từ <em>Hạnh phúc và Nghệ thuật Sống</em></cite>
+    </div></blockquote>
+
+
+    <!-- FIG-C1 -->
+    <figure class="fig">
+      <span class="fig-lbl">Hình 7 &middot; Một gốc rễ, nhiều triệu chứng</span>
+      <svg viewBox="0 0 520 304" role="img" aria-label="Một cái cây: trên cành là các cảm xúc buồn bã, căng thẳng, lo lắng, tổn thương, tuyệt vọng; dưới đất là gốc rễ duy nhất: nhầm lẫn danh tính">
+<defs><linearGradient id="f7g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--c1)"/><stop offset="1" stop-color="var(--c8)"/></linearGradient></defs>
+<rect x="12" y="214" width="496" height="88" rx="18" fill="var(--soft)"/><path d="M250,214 L252,150 Q260,140 268,150 L270,214 Z" fill="#9A6B43"/><path d="M260,160 Q190,94 120,64" fill="none" stroke="#9A6B43" stroke-width="6" stroke-linecap="round"/><path d="M260,160 Q260,76 260,46" fill="none" stroke="#9A6B43" stroke-width="7" stroke-linecap="round"/><path d="M260,160 Q330,94 400,64" fill="none" stroke="#9A6B43" stroke-width="6" stroke-linecap="round"/><path d="M260,160 Q182,162 104,132" fill="none" stroke="#9A6B43" stroke-width="6" stroke-linecap="round"/><path d="M260,160 Q338,162 416,132" fill="none" stroke="#9A6B43" stroke-width="6" stroke-linecap="round"/><line x1="12" y1="214" x2="508" y2="214" stroke="var(--ink3)" stroke-width="2"/><path d="M260,214 Q240,236 176,250 M260,214 Q262,236 260,254 M260,214 Q282,236 344,250" fill="none" stroke="#9A6B43" stroke-width="4" stroke-linecap="round"/><rect x="128" y="246" width="264" height="44" rx="22" fill="var(--c1)" fill-opacity=".28" class="a-glow"/><rect x="140" y="250" width="240" height="36" rx="18" fill="url(#f7g)"/><text x="260.0" y="274.0" class="svg-w" font-size="16" text-anchor="middle">Nhầm lẫn danh tính</text><text x="20.0" y="22.0" class="svg-cap" font-size="12" text-anchor="start" fill="var(--c1)">TRIỆU CHỨNG</text><text x="24.0" y="236.0" class="svg-cap" font-size="12" text-anchor="start" fill="var(--c8)">GỐC RỄ</text><g class="a-sway" style="animation-delay:0.0s"><rect x="59.0" y="47.0" width="122.0" height="34" rx="17.0" fill="var(--c1)" stroke="var(--c1)" stroke-width="1.6"/><text x="120.0" y="69.0" class="svg-w" font-size="14" text-anchor="middle" font-weight="700">buồn bã</text></g><g class="a-sway" style="animation-delay:0.6s"><rect x="199.0" y="29.0" width="122.0" height="34" rx="17.0" fill="var(--c2)" stroke="var(--c2)" stroke-width="1.6"/><text x="260.0" y="51.0" class="svg-w" font-size="14" text-anchor="middle" font-weight="700">căng thẳng</text></g><g class="a-sway" style="animation-delay:1.2s"><rect x="339.0" y="47.0" width="122.0" height="34" rx="17.0" fill="var(--c8)" stroke="var(--c8)" stroke-width="1.6"/><text x="400.0" y="69.0" class="svg-w" font-size="14" text-anchor="middle" font-weight="700">lo lắng</text></g><g class="a-sway" style="animation-delay:1.8s"><rect x="43.0" y="115.0" width="122.0" height="34" rx="17.0" fill="var(--c7)" stroke="var(--c7)" stroke-width="1.6"/><text x="104.0" y="137.0" class="svg-w" font-size="14" text-anchor="middle" font-weight="700">tổn thương</text></g><g class="a-sway" style="animation-delay:2.4s"><rect x="355.0" y="115.0" width="122.0" height="34" rx="17.0" fill="var(--c6)" stroke="var(--c6)" stroke-width="1.6"/><text x="416.0" y="137.0" class="svg-w" font-size="14" text-anchor="middle" font-weight="700">tuyệt vọng</text></g>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng.</strong> Những quả trên cành lấy từ bộ câu hỏi của Anthony de Mello ở phần 06; gốc rễ là câu của tác giả: &ldquo;Mọi đau khổ của nhân loại đều bắt nguồn từ một trường hợp nhầm lẫn danh tính.&rdquo; Mooji nói cùng ý theo cách khác: ta hay nhắm vào <em>triệu chứng</em>, còn nguyên nhân thực sự là chưa nhận ra bản chất thật của mình.</figcaption>
+    </figure>
+<!-- /FIG-C1 -->
+
+    <div class="concept">
+      <span class="lbl">Khái niệm cốt lõi</span>
+      <h4>Nhầm lẫn danh tính</h4>
+      <dl>
+        <dt>Cách tác giả sử dụng khái niệm này trong chương</dt>
+        <dd>Là việc tin vào điều gì đó về bản thân mình không đúng sự thật. Tác giả nói mọi đau khổ của nhân loại đều bắt nguồn từ một trường hợp nhầm lẫn danh tính.</dd>
+        <dt>Ý nghĩa trong mạch lập luận</dt>
+        <dd>Đây là khớp nối trung tâm của chương: nếu đau khổ đến từ việc hiểu sai mình là ai, thì lối thoát không nằm ở việc sửa hoàn cảnh mà ở việc nhận ra mình thực sự là ai.</dd>
+        <dt>Lưu ý để tránh hiểu sai</dt>
+        <dd>Theo chính lời tác giả, bà không phủ nhận trải nghiệm làm người: &ldquo;Chắc chắn bạn đang có trải nghiệm trở thành một con người, nhưng nhìn rộng ra, đó không phải là con người bạn.&rdquo;</dd>
+      </dl>
+    </div>
+
+    <div class="flow">
+      <span class="lbl">Mạch lập luận &middot; Phần 04–07</span>
+      <div class="flow-grid">
+        <div class="fstep"><span class="k">Nhận định ban đầu</span><span class="v">Bí mật vĩ đại nhất là bí mật tiết lộ con người thật của bạn.</span></div>
+        <div class="farrow">→</div>
+        <div class="fstep"><span class="k">Giải thích</span><span class="v">Chúng ta đã nhận nhiều ý tưởng và niềm tin sai lầm, và chúng biến ta thành nô lệ.</span></div>
+        <div class="farrow">→</div>
+        <div class="fstep"><span class="k">Ví dụ / Trích dẫn</span><span class="v">Bộ câu hỏi của Anthony de Mello về cảm xúc tiêu cực; Mooji về nguyên nhân gốc rễ của đau khổ.</span></div>
+        <div class="farrow">→</div>
+        <div class="fstep"><span class="k">Kết luận</span><span class="v">Mọi đau khổ bắt nguồn từ một trường hợp nhầm lẫn danh tính.</span></div>
+      </div>
+    </div>
+
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+  <!-- 8 -->
+  <section id="c1-p8">
+    <div class="sec-head"><div class="badge">08</div>
+      <h2>Hạnh phúc là thước đo — và là bản chất thật của bạn</h2></div>
+    <p class="willlearn"><b>Bạn sẽ hiểu gì ở phần này?</b><br>Thước đo mà tác giả đề nghị dùng để đánh giá cuộc sống, và khẳng định của bà về hạnh phúc.</p>
+
+    <article class="body-card">
+      <p>Đánh giá cuộc sống của bạn đang diễn ra như thế nào là mức độ hạnh phúc của bạn. Bạn hạnh phúc đến mức nào? Bạn có thực sự hạnh phúc mọi lúc không? Bạn có sống trong một bối cảnh hạnh phúc liên tục không?</p>
+      <p><mark>Bạn được cho là phải hạnh phúc mọi lúc. Hạnh phúc là bạn. Đó là bản chất thực sự của bạn. Đó là con người thực sự của bạn.</mark></p>
+    </article>
+
+    <blockquote data-q="6" data-ini="LL"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Điều mà mỗi người chúng ta tìm kiếm trên thế giới này chính xác là như nhau. Mọi sinh vật, ngay cả động vật đều đang tìm kiếm nó. Và điều mà tất cả chúng ta đều tìm kiếm là hạnh phúc mà không có nỗi buồn. Một hạnh phúc liên tục mà không có chút đau buồn nào.</p>
+      <cite><b>Lester Levenson</b> — trích từ <em>Bản ghi Sức mạnh ý chí</em></cite>
+    </div></blockquote>
+
+    <article class="body-card">
+      <p>Mỗi hành động chúng ta thực hiện, mỗi quyết định chúng ta đưa ra, đều là vì chúng ta nghĩ rằng chúng ta sẽ hạnh phúc hơn từ đó.</p>
+      <p>Không phải ngẫu nhiên mà tất cả chúng ta đều tìm kiếm hạnh phúc; trong hành trình tìm kiếm hạnh phúc, thực ra chúng ta đang tìm kiếm chính mình mà không nhận ra điều đó!</p>
+    </article>
+
+
+    <!-- FIG-C1 -->
+    <figure class="fig">
+      <span class="fig-lbl">Hình 8 &middot; Đi tìm hạnh phúc là đi tìm chính mình</span>
+      <svg viewBox="0 0 520 240" role="img" aria-label="Một vòng mũi tên đi ra từ một người, qua mỗi hành động và mỗi quyết định, rồi quay ngược trở về chính người đó">
+<defs><linearGradient id="f8g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--c3)"/><stop offset="1" stop-color="var(--c2)"/></linearGradient><marker id="f8m" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 Z" fill="var(--c2)"/></marker></defs>
+<path d="M112,96 C190,26 420,26 458,104 C484,160 430,198 360,198 L176,198 C140,198 118,182 110,152" fill="none" stroke="var(--c2)" stroke-width="3" stroke-dasharray="2 9" stroke-linecap="round" marker-end="url(#f8m)" class="a-dash"/><circle cx="80" cy="124" r="58" fill="var(--c3)" fill-opacity=".25" class="a-glow"/><circle cx="80" cy="96" r="20" fill="url(#f8g)"/><path d="M48,170 Q48,122 80,118 Q112,122 112,170 Z" fill="url(#f8g)"/><text x="80.0" y="206.0" class="svg-t" font-size="14.5" text-anchor="middle" font-weight="800">chính bạn</text><g><rect x="136.1" y="38.0" width="127.8" height="32" rx="16.0" fill="var(--c6)" stroke="var(--c6)" stroke-width="1.6"/><text x="200.0" y="58.9" class="svg-w" font-size="13.5" text-anchor="middle" font-weight="700">Mỗi hành động</text></g><g><rect x="302.2" y="38.0" width="135.6" height="32" rx="16.0" fill="var(--c7)" stroke="var(--c7)" stroke-width="1.6"/><text x="370.0" y="58.9" class="svg-w" font-size="13.5" text-anchor="middle" font-weight="700">Mỗi quyết định</text></g><text x="300.0" y="124.0" class="svg-t2" font-size="14" text-anchor="middle" font-weight="700">…đều vì ta nghĩ rằng</text><text x="300.0" y="146.0" class="svg-t" font-size="15" text-anchor="middle" font-weight="800">mình sẽ hạnh phúc hơn</text><text x="286.0" y="228.0" class="svg-t2" font-size="13.5" text-anchor="middle" font-weight="700">tìm hạnh phúc = đang tìm chính mình, mà không nhận ra</text><circle r="7" fill="var(--c8)"><animateMotion dur="6s" repeatCount="indefinite" path="M112,96 C190,26 420,26 458,104 C484,160 430,198 360,198 L176,198 C140,198 118,182 110,152"/></circle>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng.</strong> Tác giả viết: mỗi hành động, mỗi quyết định đều là vì ta nghĩ sẽ hạnh phúc hơn — và &ldquo;trong hành trình tìm kiếm hạnh phúc, thực ra chúng ta đang tìm kiếm chính mình mà không nhận ra điều đó!&rdquo; Mũi tên đi một vòng thật xa rồi quay về đúng chỗ xuất phát.</figcaption>
+    </figure>
+<!-- /FIG-C1 -->
+
+    <div class="pause">
+      <span class="lbl">Dừng lại 30 giây</span><div class="tmr" data-s="30" role="button" tabindex="0" aria-label="Bắt đầu lại 30 giây"><svg viewBox="0 0 74 74" aria-hidden="true"><circle class="bg" cx="37" cy="37" r="32"/><circle class="fg" cx="37" cy="37" r="32"/></svg></div>
+      <p>Bạn hạnh phúc đến mức nào? Bạn có thực sự hạnh phúc mọi lúc không?</p>
+    </div>
+
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+  <!-- 9 -->
+  <section id="c1-p9">
+    <div class="sec-head"><div class="badge">09</div>
+      <h2>Vì sao vật chất không giữ được hạnh phúc</h2></div>
+    <p class="willlearn"><b>Bạn sẽ hiểu gì ở phần này?</b><br>Lập luận của tác giả về hạnh phúc từ vật chất, và điều bà nói rõ là <em>không</em> có ý phủ nhận.</p>
+
+    <article class="body-card">
+      <p>Không thể tìm thấy hạnh phúc lâu dài thông qua những thứ vật chất. Mọi thứ vật chất đều xuất hiện và cuối cùng biến mất, vì vậy nếu bạn trao gửi hạnh phúc của mình vào một thứ vật chất, hạnh phúc của bạn sẽ biến mất khi thứ vật chất đó biến mất.</p>
+      <p>Không có gì sai với những thứ vật chất (chúng tuyệt vời và bạn xứng đáng có được bất cứ thứ gì bạn muốn trong cuộc sống), nhưng thật là một bước đột phá lớn khi bạn nhận ra rằng bạn sẽ không bao giờ tìm thấy hạnh phúc lâu dài trong chúng.</p>
+      <p>Nếu những thứ vật chất mang lại cho chúng ta hạnh phúc, thì khi chúng ta nhận được thứ mà chúng ta thực sự muốn, hạnh phúc sẽ không bao giờ rời xa chúng ta. Nhưng không phải vậy. Thay vào đó, chúng ta trải nghiệm một hạnh phúc thoáng qua, và trong một khoảng thời gian rất ngắn, chúng ta lại quay trở lại trạng thái ban đầu từ trạng thái muốn nhiều thứ hơn để cố gắng cảm thấy hạnh phúc trở lại.</p>
+      <p><mark>Chỉ có một cách duy nhất để tìm thấy hạnh phúc lâu dài, vĩnh cửu, đó là tìm ra bạn thực sự là ai, bởi vì bản chất thực sự của bạn là hạnh phúc.</mark></p>
+    </article>
+
+    <div class="example">
+      <span class="lbl">Ví dụ giúp dễ hình dung</span>
+      <p>Lập luận trong đoạn này có dạng một vòng lặp mà tác giả mô tả từng bước:</p>
+      <div class="flow-grid" style="margin-top:14px">
+        <div class="fstep"><span class="k">Bước 1</span><span class="v">Muốn một thứ vật chất</span></div>
+        <div class="farrow">→</div>
+        <div class="fstep"><span class="k">Bước 2</span><span class="v">Nhận được nó · Hạnh phúc thoáng qua</span></div>
+        <div class="farrow">→</div>
+        <div class="fstep"><span class="k">Bước 3</span><span class="v">Trong thời gian rất ngắn, quay lại trạng thái ban đầu</span></div>
+        <div class="farrow">→</div>
+        <div class="fstep"><span class="k">Bước 4</span><span class="v">Muốn nhiều thứ hơn để cố cảm thấy hạnh phúc trở lại</span></div>
+      </div>
+    </div>
+
+
+    <!-- FIG-C1 -->
+    <figure class="fig">
+      <span class="fig-lbl">Hình 9 &middot; Vòng lặp của vật chất — và lối ra</span>
+      <svg viewBox="0 0 520 308" role="img" aria-label="Một vòng tròn bốn bước: muốn một thứ vật chất, nhận được và hạnh phúc thoáng qua, quay lại ban đầu, muốn nhiều hơn; một mũi tên thoát ra khỏi vòng tới ô Tìm ra bạn thực sự là ai">
+<defs><linearGradient id="f9g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--c4)"/><stop offset="1" stop-color="var(--c5)"/></linearGradient><marker id="f9m" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="var(--c4)"/></marker></defs>
+<text x="180.0" y="22.0" class="svg-cap" font-size="12" text-anchor="middle" fill="var(--c1)">VÒNG LẶP CỦA VẬT CHẤT</text><circle cx="180" cy="170" r="104" fill="none" stroke="var(--ink3)" stroke-width="2.5" stroke-dasharray="5 6" class="a-dash" style="animation-duration:2s"/><path d="M-7,-7 L7,0 L-7,7 Z" fill="var(--ink2)" transform="translate(253.5 96.5) rotate(45)"/><path d="M-7,-7 L7,0 L-7,7 Z" fill="var(--ink2)" transform="translate(253.5 243.5) rotate(135)"/><path d="M-7,-7 L7,0 L-7,7 Z" fill="var(--ink2)" transform="translate(106.5 243.5) rotate(225)"/><path d="M-7,-7 L7,0 L-7,7 Z" fill="var(--ink2)" transform="translate(106.5 96.5) rotate(315)"/><circle r="8" fill="var(--c1)"><animateMotion dur="7s" repeatCount="indefinite" path="M180,66 A104,104 0 1,1 179.9,66"/></circle><rect x="106" y="41" width="148" height="50" rx="16" fill="var(--c1l)" stroke="var(--c1)" stroke-width="1.8"/><text x="180.0" y="62.0" class="svg-t" font-size="13" text-anchor="middle" font-weight="800">Muốn một</text><text x="180.0" y="80.0" class="svg-t2" font-size="12.5" text-anchor="middle" font-weight="700">thứ vật chất</text><rect x="210" y="145" width="148" height="50" rx="16" fill="var(--c2l)" stroke="var(--c2)" stroke-width="1.8"/><text x="284.0" y="166.0" class="svg-t" font-size="13" text-anchor="middle" font-weight="800">Nhận được nó:</text><text x="284.0" y="184.0" class="svg-t2" font-size="12.5" text-anchor="middle" font-weight="700">hạnh phúc thoáng qua</text><rect x="106" y="249" width="148" height="50" rx="16" fill="var(--c7l)" stroke="var(--c7)" stroke-width="1.8"/><text x="180.0" y="270.0" class="svg-t" font-size="13" text-anchor="middle" font-weight="800">Rất ngắn sau đó,</text><text x="180.0" y="288.0" class="svg-t2" font-size="12.5" text-anchor="middle" font-weight="700">quay lại ban đầu</text><rect x="2" y="145" width="148" height="50" rx="16" fill="var(--c8l)" stroke="var(--c8)" stroke-width="1.8"/><text x="76.0" y="166.0" class="svg-t" font-size="13" text-anchor="middle" font-weight="800">Muốn nhiều</text><text x="76.0" y="184.0" class="svg-t2" font-size="12.5" text-anchor="middle" font-weight="700">thứ hơn nữa</text><path d="M360,170 L382,170" stroke="var(--c4)" stroke-width="3.5" marker-end="url(#f9m)"/><rect x="380" y="98" width="134" height="144" rx="22" fill="var(--c4)" fill-opacity=".25" class="a-glow"/><rect x="388" y="106" width="124" height="128" rx="18" fill="url(#f9g)"/><text x="450.0" y="94.0" class="svg-cap" font-size="11.5" text-anchor="middle" fill="var(--c4)">LỐI RA DUY NHẤT</text><text x="450.0" y="138.0" class="svg-w" font-size="14" text-anchor="middle">Tìm ra</text><text x="450.0" y="158.0" class="svg-w" font-size="14" text-anchor="middle">bạn thực sự</text><text x="450.0" y="178.0" class="svg-w" font-size="14" text-anchor="middle">là ai</text><text x="450.0" y="204.0" class="svg-w" font-size="13" text-anchor="middle">→ hạnh phúc</text><text x="450.0" y="222.0" class="svg-w" font-size="13" text-anchor="middle">vĩnh cửu</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng</strong> từ đúng bốn bước tác giả mô tả. Chấm đỏ chạy mãi quanh vòng vì, như tác giả viết, hạnh phúc từ vật chất chỉ là thoáng qua. Lối ra nằm ngoài vòng: &ldquo;Chỉ có một cách duy nhất để tìm thấy hạnh phúc lâu dài, vĩnh cửu, đó là tìm ra bạn thực sự là ai.&rdquo; Tác giả cũng nói rõ: không có gì sai với những thứ vật chất.</figcaption>
+    </figure>
+<!-- /FIG-C1 -->
+
+    <blockquote data-q="2" data-ini="RM"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Thế giới thật bất hạnh vì nó không biết đến Bản ngã thực sự. Bản chất thực sự của con người là hạnh phúc. Hạnh phúc bẩm sinh nằm trong Bản ngã thực sự. Con người tìm kiếm hạnh phúc là một cuộc tìm kiếm vô thức về Bản ngã thực sự của mình&hellip; Khi một người tìm thấy nó, anh ta tìm thấy một hạnh phúc không bao giờ kết thúc.</p>
+      <cite><b>Ramana Maharshi</b></cite>
+    </div></blockquote>
+
+    <blockquote data-q="6" data-ini="LL"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Mục đích thực sự duy nhất của việc ở đây trên trái đất này là để học hoặc để nhớ lại trạng thái tự nhiên ban đầu không có giới hạn của chúng ta.</p>
+      <cite><b>Lester Levenson</b> — trích từ <em>Bản ghi Sức mạnh ý chí</em></cite>
+    </div></blockquote>
+
+    <blockquote data-q="2" data-ini="M"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Việc khám phá ra Bản ngã thực sự của chúng ta có sức mạnh biến bóng tối của sự thiếu hiểu biết thành ánh sáng của sự hiểu biết thuần túy. Đó là khám phá sâu sắc, quan trọng và cấp tiến nhất. Đó là một cái cây đơm hoa kết trái ngay lập tức. Khi chúng ta nhận ra mình là ai, người đang trải nghiệm và cảm nhận thế giới, rất nhiều thứ sẽ được sắp xếp đúng đắn. Không có nhiều điều để biết nếu sự thật là điều bạn đang tìm kiếm. Không phải khối lượng kiến thức cần thiết mà là để nhận ra Bản ngã đích thực duy nhất mà bạn là.</p>
+      <cite><b>Mooji</b></cite>
+    </div></blockquote>
+
+    <div class="concept">
+      <span class="lbl">Khái niệm cốt lõi</span>
+      <h4>Hạnh phúc / Bản chất thực sự (Bản ngã thực sự)</h4>
+      <dl>
+        <dt>Cách tác giả sử dụng khái niệm này trong chương</dt>
+        <dd>Hạnh phúc không được tác giả trình bày như một cảm xúc đến rồi đi, mà như chính bản chất thật của bạn: &ldquo;Hạnh phúc là bạn.&rdquo; Cụm &ldquo;Bản ngã thực sự&rdquo; xuất hiện trong các trích dẫn của Ramana Maharshi và Mooji.</dd>
+        <dt>Ý nghĩa trong mạch lập luận</dt>
+        <dd>Nếu hạnh phúc chính là bản chất của bạn, thì việc đi tìm hạnh phúc ở bên ngoài là đi tìm chính mình mà không nhận ra — và chỉ có một cách duy nhất để có hạnh phúc vĩnh cửu là tìm ra bạn thực sự là ai.</dd>
+        <dt>Lưu ý để tránh hiểu sai</dt>
+        <dd>Tác giả nói rõ trong chương: &ldquo;Không có gì sai với những thứ vật chất (chúng tuyệt vời và bạn xứng đáng có được bất cứ thứ gì bạn muốn trong cuộc sống).&rdquo; Lập luận nhắm vào <em>độ bền</em> của hạnh phúc, không phải vào bản thân vật chất.</dd>
+      </dl>
+    </div>
+
+    <div class="flow">
+      <span class="lbl">Mạch lập luận &middot; Phần 08–09</span>
+      <div class="flow-grid">
+        <div class="fstep"><span class="k">Nhận định ban đầu</span><span class="v">Thước đo cuộc sống là mức độ hạnh phúc; bạn được cho là phải hạnh phúc mọi lúc.</span></div>
+        <div class="farrow">→</div>
+        <div class="fstep"><span class="k">Giải thích</span><span class="v">Mọi hành động, mọi quyết định đều vì ta nghĩ sẽ hạnh phúc hơn; tìm hạnh phúc thực ra là tìm chính mình.</span></div>
+        <div class="farrow">→</div>
+        <div class="fstep"><span class="k">Ví dụ</span><span class="v">Vật chất chỉ cho hạnh phúc thoáng qua, rồi ta lại muốn thêm để cảm thấy hạnh phúc trở lại.</span></div>
+        <div class="farrow">→</div>
+        <div class="fstep"><span class="k">Kết luận</span><span class="v">Chỉ một cách duy nhất cho hạnh phúc vĩnh cửu: tìm ra bạn thực sự là ai, vì bản chất thật của bạn là hạnh phúc.</span></div>
+      </div>
+    </div>
+
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+  <!-- 10 -->
+  <section id="c1-p10">
+    <div class="sec-head"><div class="badge">10</div>
+      <h2>Nhiều tên gọi cho cùng một khám phá</h2></div>
+    <p class="willlearn"><b>Bạn sẽ hiểu gì ở phần này?</b><br>Những tên mà khám phá này đã mang qua các thế kỷ, và câu trả lời của tác giả cho ý nghĩ &ldquo;điều đó không dành cho tôi&rdquo;.</p>
+
+    <article class="body-card">
+      <p>Việc nhớ lại bạn thực sự là ai đã được đặt nhiều tên trong nhiều thế kỷ. Giác ngộ, tự nhận thức, tự khám phá, thức tỉnh, ghi nhớ.</p>
+      <p>Có lẽ bạn nghĩ rằng &ldquo;giác ngộ&rdquo; không dành cho bạn (&ldquo;Tôi chỉ là một người bình thường&rdquo;), nhưng bạn không thể xa rời sự thật hơn được nữa. <mark>Khám phá này, hạnh phúc này, sự tự do này chính là con người bạn, vậy làm sao nó không dành cho bạn?</mark></p>
+    </article>
+
+    <blockquote data-q="7" data-ini="🙏"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Hãy mở lòng mình với khả năng bạn có thể trải nghiệm sự thật về con người bạn, ngay tại thời điểm này. Bạn có thể hỏi bằng cách nào? Bằng cách nhận ra rằng chướng ngại vật duy nhất trên con đường này chính là trí tưởng tượng của bạn, sự phản đối tưởng tượng của bạn.</p>
+      <cite><b>Người thầy của tôi</b> — người thầy giấu tên của Rhonda Byrne</cite>
+    </div></blockquote>
+
+    <blockquote data-q="8" data-ini="JF"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Chúng ta được tự do, và chúng ta không biết điều đó. Cảm giác như thể điều đó là không thể. Chúng ta thề rằng chúng ta phụ thuộc vào điều gì sai, điều gì đúng. Nhưng (đây là sự thật), tự do ở ngay đây.</p>
+      <cite><b>Jan Frazier</b> — trích từ <em>Sự tự do hiện hữu</em></cite>
+    </div></blockquote>
+
+    <blockquote data-q="5" data-ini="DB"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Sự tự chứng ngộ có thể xảy ra với những người không được học hành và cũng có thể xảy ra với một vị vua. Không có điều kiện tiên quyết nào cho sự tự chứng ngộ. Sự tự chứng ngộ không chỉ dành cho những người đã trải qua nhiều năm thực hành tâm linh mà còn có thể xảy ra với những người đã uống rượu và hút thuốc mọi lúc.</p>
+      <cite><b>David Bingham</b> — trích từ <em>Conscious TV</em></cite>
+    </div></blockquote>
+
+
+    <!-- FIG-C1 -->
+    <figure class="fig">
+      <span class="fig-lbl">Hình 10 &middot; Năm tên gọi, một khám phá</span>
+      <svg viewBox="0 0 520 310" role="img" aria-label="Năm tên gọi Giác ngộ, Tự nhận thức, Tự khám phá, Thức tỉnh, Ghi nhớ xếp quanh một vòng tròn ở giữa: Nhớ lại bạn thực sự là ai">
+<defs><linearGradient id="f10g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--c7)"/><stop offset="1" stop-color="var(--c6)"/></linearGradient></defs>
+<line x1="260.0" y1="68.0" x2="260.0" y2="64.0" stroke="var(--c1)" stroke-width="2.2" class="a-dash" style="animation-direction:reverse"/><line x1="342.5" y1="136.1" x2="415.3" y2="122.2" stroke="var(--c2)" stroke-width="2.2" class="a-dash" style="animation-direction:reverse"/><line x1="325.1" y1="205.0" x2="352.3" y2="227.1" stroke="var(--c4)" stroke-width="2.2" class="a-dash" style="animation-direction:reverse"/><line x1="194.9" y1="205.0" x2="167.7" y2="227.1" stroke="var(--c6)" stroke-width="2.2" class="a-dash" style="animation-direction:reverse"/><line x1="177.5" y1="136.1" x2="104.7" y2="122.2" stroke="var(--c8)" stroke-width="2.2" class="a-dash" style="animation-direction:reverse"/><circle cx="260" cy="152" r="80" fill="none" stroke="var(--c7)" stroke-width="2" stroke-dasharray="4 8" class="a-spin-r"/><circle cx="260" cy="152" r="66" fill="url(#f10g)" class="a-pulse" style="animation-duration:4.5s"/><text x="260.0" y="139.0" class="svg-w" font-size="14" text-anchor="middle">Nhớ lại</text><text x="260.0" y="158.0" class="svg-w" font-size="14" text-anchor="middle">bạn thực sự</text><text x="260.0" y="177.0" class="svg-w" font-size="14" text-anchor="middle">là ai</text><g class="a-float2" style="animation-delay:0.0s"><rect x="213.4" y="24.0" width="93.3" height="36" rx="18.0" fill="var(--c1)" stroke="var(--c1)" stroke-width="1.6"/><text x="260.0" y="47.2" class="svg-w" font-size="14.5" text-anchor="middle" font-weight="700">Giác ngộ</text></g><g class="a-float" style="animation-delay:0.5s"><rect x="373.4" y="100.0" width="126.9" height="36" rx="18.0" fill="var(--c2)" stroke="var(--c2)" stroke-width="1.6"/><text x="436.9" y="123.2" class="svg-w" font-size="14.5" text-anchor="middle" font-weight="700">Tự nhận thức</text></g><g class="a-float2" style="animation-delay:1.0s"><rect x="310.1" y="223.0" width="118.5" height="36" rx="18.0" fill="var(--c4)" stroke="var(--c4)" stroke-width="1.6"/><text x="369.3" y="246.2" class="svg-w" font-size="14.5" text-anchor="middle" font-weight="700">Tự khám phá</text></g><g class="a-float" style="animation-delay:1.5s"><rect x="99.8" y="223.0" width="101.7" height="36" rx="18.0" fill="var(--c6)" stroke="var(--c6)" stroke-width="1.6"/><text x="150.7" y="246.2" class="svg-w" font-size="14.5" text-anchor="middle" font-weight="700">Thức tỉnh</text></g><g class="a-float2" style="animation-delay:2.0s"><rect x="40.7" y="100.0" width="84.9" height="36" rx="18.0" fill="var(--c8)" stroke="var(--c8)" stroke-width="1.6"/><text x="83.1" y="123.2" class="svg-w" font-size="14.5" text-anchor="middle" font-weight="700">Ghi nhớ</text></g><text x="260.0" y="300.0" class="svg-t2" font-size="13.5" text-anchor="middle" font-weight="700">nhiều tên gọi qua nhiều thế kỷ — cho cùng một khám phá</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng</strong> từ đúng năm tên gọi tác giả liệt kê. Dù mang tên nào, tác giả nhấn mạnh, khám phá này chính là con người bạn — &ldquo;vậy làm sao nó không dành cho bạn?&rdquo;</figcaption>
+    </figure>
+<!-- /FIG-C1 -->
+
+    <div class="concept">
+      <span class="lbl">Khái niệm cốt lõi</span>
+      <h4>Các tên gọi của cùng một khám phá</h4>
+      <dl>
+        <dt>Cách tác giả sử dụng khái niệm này trong chương</dt>
+        <dd>Tác giả liệt kê những tên đã được đặt qua nhiều thế kỷ cho việc nhớ lại bạn thực sự là ai: giác ngộ, tự nhận thức, tự khám phá, thức tỉnh, ghi nhớ.</dd>
+        <dt>Ý nghĩa trong mạch lập luận</dt>
+        <dd>Việc gom các tên gọi về một chỗ phục vụ lập luận kế tiếp: dù mang tên nào, nó cũng chính là con người bạn, nên không thể có chuyện &ldquo;không dành cho bạn&rdquo;.</dd>
+        <dt>Lưu ý để tránh hiểu sai</dt>
+        <dd>Theo trích dẫn của David Bingham được tác giả dẫn trong chương, không có điều kiện tiên quyết nào cho sự tự chứng ngộ.</dd>
+      </dl>
+    </div>
+
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+  <!-- 11 -->
+  <section id="c1-p11">
+    <div class="sec-head"><div class="badge">11</div>
+      <h2>Cuộc sống của bạn sẽ như thế nào</h2></div>
+    <p class="willlearn"><b>Bạn sẽ hiểu gì ở phần này?</b><br>Mô tả của tác giả và của những người được trích dẫn về cuộc sống sau khi hoàn toàn nhận ra mình là ai.</p>
+
+    <article class="body-card">
+      <p>Cuộc sống của bạn sẽ như thế nào?</p>
+    </article>
+
+    <blockquote data-q="6" data-ini="LL"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Tôi đang nói về một điều mà hầu như không ai từng trải nghiệm. Làm sao tôi có thể mô tả được? Không có giới hạn nào cho bất kỳ điều gì theo bất kỳ hướng nào. Khả năng làm bất cứ điều gì chỉ bằng một ý nghĩ. Nhưng nó còn hơn thế nữa. Hãy tưởng tượng niềm vui lớn nhất mà bạn có thể có và nhân lên gấp trăm lần.</p>
+      <cite><b>Lester Levenson</b> — trích từ <em>Không ràng buộc, Không ác cảm</em></cite>
+    </div></blockquote>
+
+    <article class="body-card">
+      <p>Khi bạn hoàn toàn nhận ra mình là ai, bạn sẽ có một cuộc sống không có vấn đề, không buồn phiền, tổn thương, lo lắng hay sợ hãi. Bạn sẽ thoát khỏi nỗi sợ cái chết và sẽ không bao giờ bị tâm trí kiểm soát hay hành hạ nữa. Những ý tưởng và niềm tin sai lầm sẽ tan biến. Thay vào đó là sự sáng suốt, hạnh phúc, niềm vui, sự bình yên, niềm vui vô hạn và sự ngạc nhiên trong từng khoảnh khắc. <mark>Bạn sẽ biết rằng mình an toàn và chắc chắn bất kể điều gì xảy ra.</mark></p>
+    </article>
+
+    <blockquote data-q="6" data-ini="LL"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Và khi chúng ta nhận ra điều này&hellip; hạnh phúc tối thượng sẽ được thiết lập vĩnh viễn và mãi mãi. Và cùng với sự thiết lập của nó là sự bất tử, sự vô hạn, sự bình yên không thể lay chuyển, sự tự do hoàn toàn và mọi thứ khác mà mọi người đang tìm kiếm.</p>
+      <cite><b>Lester Levenson</b> — trích từ <em>Hạnh phúc là tự do</em>, tập 1–5</cite>
+    </div></blockquote>
+
+    <article class="body-card">
+      <p>Khi bạn hoàn toàn nhận ra mình là ai, cuộc sống trở nên dễ dàng, mọi thứ bạn cần dường như xuất hiện mà không cần bất kỳ nỗ lực nào từ bạn. Có một sự dễ dàng và trôi chảy chiếm lấy cuộc sống của bạn. Một cuộc sống thiếu thốn và hạn chế sẽ mãi mãi kết thúc. Bạn sẽ biết được sức mạnh tối thượng mà bạn có đối với mọi thứ trên thế giới.</p>
+      <p>Khi bạn hoàn toàn nhận ra mình là ai, đau khổ và đấu tranh sẽ biến mất, và nỗi sợ hãi và cảm xúc tiêu cực sẽ tan biến. Tâm trí sẽ tĩnh lặng. Bạn sẽ tràn ngập niềm vui, sự tích cực, sự viên mãn, cảm giác sung túc và sự bình yên không thể lay chuyển. Đây sẽ là cuộc sống của bạn.</p>
+      <p>Trích lời của Jan Frazier, một người mẹ và giáo viên văn học:</p>
+    </article>
+
+    <blockquote data-q="8" data-ini="JF"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
+      <span class="qtag">Trích dẫn</span>
+      <p>Hãy tưởng tượng điều này: Bất cứ điều gì từng đè nặng lên bạn đột nhiên không còn nặng nề nữa. Nó vẫn có thể ở đó, một sự thật trong cuộc sống của bạn, nhưng nó không có khối lượng, không có lực hấp dẫn. Tất cả những gì từng làm phiền bạn giờ chỉ là một đặc điểm của cảnh quan, giống như một cái cây, một đám mây trôi qua.</p>
+      <p>Mọi sự xáo trộn về mặt cảm xúc và tinh thần đã chấm dứt: toàn bộ gánh nặng, một số hình thức đã ở bên bạn lâu nhất mà bạn có thể nhớ. Một thứ quen thuộc như người bạn thân nhất của bạn, một phần của bạn như ngôn ngữ bạn nói, màu da của bạn đã hoàn toàn biến mất, không thể giải thích được.</p>
+      <p>Trong sự trống rỗng đáng kinh ngạc, một niềm vui lặng lẽ chảy vào, nâng đỡ bạn vào buổi sáng, buổi trưa và buổi tối, niềm vui đó đi khắp mọi nơi bạn đến, vào mọi hoàn cảnh, thậm chí vào cả giấc ngủ. Mọi thứ bạn thực hiện đều diễn ra một cách dễ dàng. Bạn hạnh phúc, nhưng không có lý do gì. Không có gì làm bạn bận tâm. Bạn không cảm thấy căng thẳng.</p>
+      <p>Khi một vấn đề phát sinh, bạn biết phải làm gì, bạn làm điều đó, và sau đó bạn buông bỏ nó. Những người từng khiến bạn phát điên giờ đây không còn làm vậy nữa. Trong khi bạn cảm thấy thương cảm cho nỗi đau của người khác, thì bản thân bạn không phải chịu đựng. Những hoạt động từng tẻ nhạt giờ đây lại trở nên thú vị. Bạn không cần liệu pháp; bạn không cảm thấy buồn chán, lo lắng hay thay đổi tâm trạng. Ngoại trừ khi cần làm một nhiệm vụ nào đó, tâm trí bạn sẽ được nghỉ ngơi.</p>
+      <p>Cuộc sống của bạn hoàn toàn viên mãn mà không cần bạn phải làm bất cứ điều gì để hoàn thành nó, . . . bạn biết rằng bất kể bạn phải đối mặt với thử thách nào trong suốt quãng đời còn lại thì sự bình yên sẽ luôn duy trì. Bạn sẽ không bao giờ phải sợ hãi, tuyệt vọng, cô đơn nữa. Dù có chuyện gì xảy ra, niềm vui vô cớ này sẽ luôn tồn tại. Hãy tưởng tượng xem.</p>
+      <cite><b>Jan Frazier</b> — trích từ <em>Khi nỗi sợ hãi tan biến</em>. Tác giả giới thiệu bà là &ldquo;một người mẹ và giáo viên văn học&rdquo;.</cite>
+    </div></blockquote>
+
+
+    <!-- FIG-C1 -->
+    <figure class="fig">
+      <span class="fig-lbl">Hình 11 &middot; Không còn trọng lượng</span>
+      <svg viewBox="0 0 520 274" role="img" aria-label="Bên trái: một người cúi xuống dưới khối đá gánh nặng. Bên phải: người ấy đứng thẳng, cùng điều ấy giờ chỉ là một đám mây trôi qua bên cạnh một cái cây">
+<defs><linearGradient id="f11g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--c5)"/><stop offset="1" stop-color="var(--c6)"/></linearGradient></defs>
+<rect x="10" y="10" width="244" height="208" rx="22" fill="var(--c1l)" stroke="var(--c1b)" stroke-width="1.5"/><rect x="266" y="10" width="244" height="208" rx="22" fill="var(--c5l)" stroke="var(--c5b)" stroke-width="1.5"/><text x="132.0" y="36.0" class="svg-cap" font-size="12" text-anchor="middle" fill="var(--c1)">ĐIỀU TỪNG ĐÈ NẶNG</text><text x="388.0" y="36.0" class="svg-cap" font-size="12" text-anchor="middle" fill="var(--c5)">GIỜ ĐÂY</text><line x1="30" y1="212" x2="234" y2="212" stroke="var(--ink3)" stroke-width="2"/><line x1="286" y1="212" x2="490" y2="212" stroke="var(--ink3)" stroke-width="2"/><circle cx="140" cy="132" r="15" fill="var(--ink2)"/><path d="M108,212 Q106,156 136,150 Q162,156 156,212 Z" fill="var(--ink2)"/><ellipse cx="136" cy="96" rx="62" ry="34" fill="var(--ink)" opacity=".82"/><text x="136.0" y="101.0" class="svg-w" font-size="14" text-anchor="middle">gánh nặng</text><path d="M52,120 l0,16 m-6,-6 l6,6 l6,-6" fill="none" stroke="var(--c1)" stroke-width="2.5" stroke-linecap="round" class="a-blink" style="animation-delay:0s"/><path d="M220,120 l0,16 m-6,-6 l6,6 l6,-6" fill="none" stroke="var(--c1)" stroke-width="2.5" stroke-linecap="round" class="a-blink" style="animation-delay:0.7s"/><path d="M52,150 l0,16 m-6,-6 l6,6 l6,-6" fill="none" stroke="var(--c1)" stroke-width="2.5" stroke-linecap="round" class="a-blink" style="animation-delay:1.3s"/><path d="M220,150 l0,16 m-6,-6 l6,6 l6,-6" fill="none" stroke="var(--c1)" stroke-width="2.5" stroke-linecap="round" class="a-blink" style="animation-delay:0.4s"/><circle cx="340" cy="132" r="15" fill="var(--ink2)"/><path d="M316,212 Q316,154 340,150 Q364,154 364,212 Z" fill="var(--ink2)"/><g class="a-sway" style="animation-duration:5s"><rect x="452" y="150" width="9" height="62" rx="3" fill="#9A6B43"/><circle cx="456" cy="140" r="28" fill="var(--c4)"/><circle cx="438" cy="156" r="18" fill="var(--c4)"/><circle cx="474" cy="156" r="18" fill="var(--c4)"/></g><g class="a-drift" style="animation-duration:11s"><circle cx="366" cy="66" r="17" fill="var(--card)"/><circle cx="392" cy="58" r="22" fill="var(--card)"/><circle cx="416" cy="68" r="14" fill="var(--card)"/><rect x="336" y="62" width="104" height="30" rx="15" fill="var(--card)"/><text x="388.0" y="82.0" class="svg-t2" font-size="12" text-anchor="middle" font-weight="700">cùng điều ấy</text></g><text x="260.0" y="244.0" class="svg-t" font-size="13.5" text-anchor="middle" font-weight="700">“không có khối lượng, không có lực hấp dẫn…</text><text x="260.0" y="264.0" class="svg-t" font-size="13.5" text-anchor="middle" font-weight="700">giống như một cái cây, một đám mây trôi qua”</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng</strong> theo hình ảnh trong trích dẫn của Jan Frazier: điều từng đè nặng lên bạn &ldquo;vẫn có thể ở đó, một sự thật trong cuộc sống của bạn, nhưng nó không có khối lượng, không có lực hấp dẫn&rdquo; — chỉ còn là một đặc điểm của cảnh quan, như một cái cây, một đám mây trôi qua.</figcaption>
+    </figure>
+<!-- /FIG-C1 -->
+
+    <article class="body-card">
+      <p>Đây là cuộc sống của bạn với Bí mật Vĩ đại nhất. Đây là số phận của bạn.</p>
+    </article>
+
+    <div class="flow">
+      <span class="lbl">Mạch lập luận &middot; Phần 10–11</span>
+      <div class="flow-grid">
+        <div class="fstep"><span class="k">Nhận định ban đầu</span><span class="v">Khám phá này mang nhiều tên gọi, và nó chính là con người bạn.</span></div>
+        <div class="farrow">→</div>
+        <div class="fstep"><span class="k">Giải thích</span><span class="v">Không có điều kiện tiên quyết; chướng ngại duy nhất là sự phản đối tưởng tượng của chính bạn.</span></div>
+        <div class="farrow">→</div>
+        <div class="fstep"><span class="k">Trích dẫn</span><span class="v">Lester Levenson và Jan Frazier mô tả cuộc sống sau khi nhận ra.</span></div>
+        <div class="farrow">→</div>
+        <div class="fstep"><span class="k">Kết luận</span><span class="v">&ldquo;Đây là cuộc sống của bạn với Bí mật Vĩ đại nhất. Đây là số phận của bạn.&rdquo;</span></div>
+      </div>
+    </div>
+
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+  <!-- TÓM TẮT GỐC -->
+  <section id="tom-tat-goc">
+    <div class="sec-head"><div class="badge">★</div><h2>Tóm tắt gốc của chương</h2></div>
+    <div class="box origsum">
+      <span class="tag">Tóm tắt gốc của chương &middot; Nguyên văn của tác giả</span>
+      <h3 style="font-family:var(--ui); font-size:16px; letter-spacing:.06em; margin:10px 0 12px">TÓM TẮT CHƯƠNG 01</h3>
+      <ul class="dia">
+        <li>Cho dù chúng ta có nhận ra hay không, chúng ta vẫn luôn tìm kiếm Bí mật Vĩ đại nhất không ngừng nghỉ mỗi ngày trong cuộc sống của mình.</li>
+        <li>Bí mật vĩ đại này hiện rõ trước mắt mọi người chúng ta, nhưng chúng ta đã bỏ lỡ nó.</li>
+        <li>Chúng ta đã bỏ lỡ sự thật trong hàng ngàn năm vì chúng ta bị phân tâm bởi các vấn đề của mình, những bi kịch trong cuộc sống, những sự kiện đến và đi trên thế giới.</li>
+        <li>Chúng ta đã chấp nhận nhiều ý tưởng và niềm tin sai lầm trong suốt cuộc đời mình, và chúng đã khiến chúng ta trở thành nô lệ.</li>
+        <li>Bất cứ khi nào chúng ta đau khổ, đó là vì chúng ta đã nhầm lẫn về danh tính của chính mình. Nhân loại đang đau khổ vì hiểu lầm về bản chất thực sự của mình.</li>
+        <li>Bạn đang có trải nghiệm là một con người, nhưng trong bức tranh lớn hơn, đó không phải là con người bạn.</li>
+        <li>Bạn được cho là phải luôn hạnh phúc. Hạnh phúc là bản chất thực sự của bạn.</li>
+        <li>Việc khám phá ra con người thực sự của bạn đã được đặt cho nhiều tên gọi: giác ngộ, tự nhận thức, tự khám phá, thức tỉnh, ghi nhớ.</li>
+        <li>Hãy mở lòng mình với khả năng bạn có thể trải nghiệm sự thật về con người bạn, ngay tại thời điểm này.</li>
+        <li>Khi bạn hoàn toàn nhận ra mình là ai, bạn sẽ trải nghiệm một cuộc sống không có vấn đề, buồn phiền, tổn thương, lo lắng hay sợ hãi, và bạn sẽ tràn ngập niềm vui, sự tích cực, viên mãn, sung túc và bình yên.</li>
+      </ul>
+    </div>
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+  <!-- BẢN ĐỒ GHI NHỚ -->
+  <section id="ban-do-ghi-nho">
+    <div class="sec-head"><div class="badge">★</div><h2>Bản đồ ghi nhớ cuối chương</h2></div>
+    <div class="box recall">
+      <span class="tag" style="background:var(--blue-l); color:var(--blue)">Bản đồ ghi nhớ do biên tập viên tạo</span>
+      <p style="font-family:var(--ui); font-size:14.5px; color:var(--ink2); margin-top:4px">Công cụ ôn tập dựa hoàn toàn trên chương này, không thay thế nội dung của tác giả và không thay thế phần Tóm tắt gốc ở trên.</p>
+
+      <h3>Ý cốt lõi</h3>
+      <ul class="dia">
+        <li>Chỉ một số ít người khám phá ra sự thật; số ít đó thoát khỏi hỗn loạn và tiêu cực, sống trong hòa bình và hạnh phúc vĩnh cửu.</li>
+        <li>Bí mật được đặt ở nơi dễ thấy nhất, gần hơn cả hơi thở — đó chính là lý do nó bị bỏ lỡ.</li>
+        <li>Bí mật ấy tiết lộ con người thật của bạn; cách bạn đang tự định nghĩa mình bằng tên, tuổi, nghề nghiệp, lịch sử gia đình không phải là bạn.</li>
+        <li>Những niềm tin về hạn chế và thiếu thốn đã biến chúng ta thành nô lệ, và chúng sụp đổ khi bạn nhìn thấy sự thật.</li>
+        <li>Theo định nghĩa của Anthony de Mello, chỉ cần còn cảm xúc tiêu cực vào bất cứ lúc nào thì cuộc sống là một mớ hỗn độn.</li>
+        <li>Mọi đau khổ của nhân loại đều bắt nguồn từ một trường hợp nhầm lẫn danh tính.</li>
+        <li>Hạnh phúc là thước đo cuộc sống, và hạnh phúc chính là bản chất thật của bạn.</li>
+        <li>Vật chất chỉ cho hạnh phúc thoáng qua; cách duy nhất để có hạnh phúc vĩnh cửu là tìm ra bạn thực sự là ai.</li>
+        <li>Khám phá này mang nhiều tên gọi và không có điều kiện tiên quyết — nó chính là con người bạn.</li>
+      </ul>
+
+      <h3>Khái niệm cần nhớ</h3>
+      <ul class="dia">
+        <li><strong>Ẩn hiện</strong> — bí mật được giấu bằng cách đặt ở nơi hiển nhiên nhất.</li>
+        <li><strong>Nhầm lẫn danh tính</strong> — tin điều không đúng sự thật về bản thân; gốc rễ của mọi đau khổ.</li>
+        <li><strong>Bản chất thực sự / Bản ngã thực sự</strong> — nơi hạnh phúc bẩm sinh nằm ở đó.</li>
+        <li><strong>Hạnh phúc là thước đo</strong> — đánh giá cuộc sống bằng mức độ hạnh phúc, không bằng hoàn cảnh.</li>
+        <li><strong>Các tên gọi của khám phá</strong> — giác ngộ, tự nhận thức, tự khám phá, thức tỉnh, ghi nhớ.</li>
+      </ul>
+
+      <h3>Bài thực hành xuất hiện trong chương</h3>
+      <ul class="dia">
+        <li>Chương 01 không chứa bài thực hành nào được tác giả trình bày như một bài tập. Phần gần nhất với hành động là bộ câu hỏi tự kiểm về cảm xúc tiêu cực ở phần 06 và lời mời &ldquo;Hãy mở lòng mình với khả năng bạn có thể trải nghiệm sự thật về con người bạn, ngay tại thời điểm này&rdquo; — lời này là trích dẫn từ người thầy của tác giả, và cũng được đưa vào phần Tóm tắt chương của tác giả.</li>
+      </ul>
+
+      <h3>Chuỗi logic của chương</h3>
+      <div class="chain">
+        <span>Số ít khám phá ra</span><i>→</i>
+        <span>Giấu ở nơi dễ thấy</span><i>→</i>
+        <span>Ta bị phân tâm nên bỏ lỡ</span><i>→</i>
+        <span>Bí mật tiết lộ bạn là ai</span><i>→</i>
+        <span>Niềm tin sai lầm trói buộc</span><i>→</i>
+        <span>Nhầm lẫn danh tính gây đau khổ</span><i>→</i>
+        <span>Hạnh phúc là bản chất thật</span><i>→</i>
+        <span>Vật chất không giữ được</span><i>→</i>
+        <span>Nhận ra mình là ai</span><i>→</i>
+        <span>Cuộc sống không còn đau khổ</span>
+      </div>
+    </div>
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+</main>
+
+<nav class="pager" aria-label="Chuyển phần">
+  <a class="prev" href="00-su-khoi-dau.html"><span class="k">Phần trước</span>Mở đầu — Sự khởi đầu</a>
+  <a class="home" href="index.html"><span class="k">Mục lục</span>Toàn bộ cuốn sách</a>
+  <a class="next" href="02-duoc-tiet-lo.html"><span class="k">Phần sau</span>Chương 02 — Bí mật vĩ đại nhất: Được tiết lộ</a>
+</nav>
+<footer class="pagefoot"><p><strong>Bí mật vĩ đại nhất</strong> — Rhonda Byrne<br>Bản trình bày lại phục vụ việc đọc và ôn tập. Bản quyền nội dung thuộc về tác giả và nhà xuất bản.</p></footer>
+</div>
+<div id="fabs">
+  <button id="fabFind" type="button" aria-label="Tìm trong trang" title="Tìm trong trang (Ctrl+F)">🔍</button>
+  <button id="fabHl" type="button" aria-label="Xem các câu bôi vàng" title="Các câu bôi vàng">🖍️</button>
+  <button id="fabFont" type="button" aria-label="Đổi cỡ chữ" title="Cỡ chữ">🔤</button>
+  <button id="fabStill" type="button" aria-label="Tạm dừng chuyển động" aria-pressed="false" title="Tạm dừng chuyển động">⏸️</button>
+  <button id="fabDark" type="button" aria-label="Chế độ tối" aria-pressed="false" title="Chế độ tối">🌙</button>
+  <button id="fabTop" class="fab-top" type="button" aria-label="Về đầu trang" title="Về đầu trang">⬆️</button>
+</div>
+<div id="findbar" role="search"><input type="search" aria-label="Tìm trong trang" placeholder="Tìm trong chương…"><span class="fc"></span><button type="button" class="fp" aria-label="Kết quả trước">↑</button><button type="button" class="fn" aria-label="Kết quả sau">↓</button><button type="button" class="fx" aria-label="Đóng tìm kiếm">✕</button></div>
+<div id="hlpanel" role="dialog" aria-modal="true" aria-label="Các câu được bôi vàng"><div class="in"><button type="button" class="x" aria-label="Đóng">✕</button><h2>Các câu được bôi vàng</h2><p class="hs">Bấm vào một câu để nhảy tới đúng chỗ đó trong chương.</p><ol></ol></div></div>
+<nav id="rail" aria-label="Mục lục dính"><p class="rt">Trong chương này</p></nav>
+<script>(function(){
+  var root=document.documentElement, D=document; root.classList.add('js');
+  function $(s,c){return (c||D).querySelector(s)} function $$(s,c){return [].slice.call((c||D).querySelectorAll(s))}
+  function ls(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}}
+  var COLORS=['#FF3B30','#FF8A00','#FFD400','#28B446','#00B3A6','#0A84FF','#9B51E0','#FF2D78'];
+
+  /* ---- tắt chuyển động ---- */
+  var sb=$('#fabStill'), still=ls('bmvdn-still')==='1' || (matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches);
+  function setStill(v){still=v; root.classList.toggle('still',v);
+    if(sb){sb.textContent=v?'▶️':'⏸️'; sb.setAttribute('aria-pressed',v?'true':'false'); sb.title=v?'Bật lại chuyển động':'Tạm dừng chuyển động';}
+    if(v){$$('.rv').forEach(function(e){e.classList.add('in')}); $$('mark').forEach(function(m){m.classList.add('lit')});}
+    $$('svg').forEach(function(g){try{v?g.pauseAnimations():g.unpauseAnimations()}catch(e){}});
+    ls('bmvdn-still',v?'1':'0')}
+  setStill(still); if(sb)sb.addEventListener('click',function(){setStill(!still)});
+
+  /* ---- thanh tiến độ + nút lên đầu ---- */
+  var bar=$('#progress'), ft=$('#fabTop');
+  function prog(){var m=root.scrollHeight-root.clientHeight, y=root.scrollTop||D.body.scrollTop;
+    if(bar)bar.style.width=(m>0?y/m*100:0).toFixed(2)+'%'; if(ft)ft.classList.toggle('on',y>500)}
+  if(ft)ft.addEventListener('click',function(){scrollTo({top:0,behavior:still?'auto':'smooth'})});
+
+  /* ---- chế độ tối ---- */
+  var tb=$('#themeBtn'), fd=$('#fabDark');
+  function setDark(d){root.setAttribute('data-theme',d?'dark':'light');
+    if(tb){tb.textContent=d?'Chế độ sáng':'Chế độ đọc tối';tb.setAttribute('aria-pressed',d?'true':'false')}
+    if(fd){fd.textContent=d?'☀️':'🌙';fd.setAttribute('aria-pressed',d?'true':'false')}
+    ls('bmvdn-theme',d?'dark':'light')}
+  setDark(ls('bmvdn-theme')==='dark');
+  function tog(){setDark(root.getAttribute('data-theme')!=='dark')}
+  if(tb)tb.addEventListener('click',tog); if(fd)fd.addEventListener('click',tog);
+  var pb=$('#printBtn'); if(pb)pb.addEventListener('click',function(){print()});
+
+  /* ---- cỡ chữ ---- */
+  var fz=$('#fabFont'), steps=['','l','xl'], fi=Math.max(0,steps.indexOf(ls('bmvdn-fs')||''));
+  function setFs(){if(steps[fi])root.setAttribute('data-fs',steps[fi]);else root.removeAttribute('data-fs');ls('bmvdn-fs',steps[fi])}
+  setFs(); if(fz)fz.addEventListener('click',function(){fi=(fi+1)%steps.length;setFs()});
+
+  /* ---- hiện dần + bút dạ quang quét ---- */
+  $$('.body-card,blockquote,.concept,.example,.practice,.hint,.keyidea,.pause,.flow,figure.fig,.box,.willlearn,.sec-head,.chain,.pager > *,.stages li,nav.toc li')
+    .forEach(function(e){e.classList.add('rv')});
+  var IO='IntersectionObserver' in window;
+  if(IO && !still){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){
+      var t=e.target; t.classList.add('in'); io.unobserve(t);
+      if(t.classList.contains('chain')) $$('span',t).forEach(function(s,i){s.style.transitionDelay=(i*70)+'ms'});
+    }})},{threshold:.06,rootMargin:'0px 0px -5% 0px'});
+    var groups={}; $$('.rv').forEach(function(e){var p=e.parentNode; var k=groups[p.__k||(p.__k=Math.random())]=(groups[p.__k]||0)+1;
+      e.style.transitionDelay=(Math.min(k-1,5)*60)+'ms'; io.observe(e)});
+    var mo=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){
+      setTimeout(function(){e.target.classList.add('lit')},180); mo.unobserve(e.target)}})},{threshold:.9,rootMargin:'0px 0px -12% 0px'});
+    $$('mark').forEach(function(m){mo.observe(m)});
+  } else { $$('.rv').forEach(function(e){e.classList.add('in')}); $$('mark').forEach(function(m){m.classList.add('lit')}); }
+
+  /* ---- số liệu đếm lên ---- */
+  $$('.stat b[data-n]').forEach(function(b){var n=+b.getAttribute('data-n'); if(still||!n)return;
+    var t0=null; b.textContent='0'; function step(t){if(!t0)t0=t; var p=Math.min(1,(t-t0)/1100);
+      b.textContent=Math.round(n*(1-Math.pow(1-p,3))); if(p<1)requestAnimationFrame(step)}
+    setTimeout(function(){requestAnimationFrame(step)},350)});
+
+  /* ---- mục lục dính + phần đang đọc ---- */
+  var rail=$('#rail'), now=$('#nowsec'), toc=$('nav.toc'), items=[];
+  if(rail && toc){
+    $$('a',toc).forEach(function(a){var id=a.getAttribute('href').slice(1), s=D.getElementById(id); if(!s)return;
+      var c=a.cloneNode(true); rail.appendChild(c);
+      var n=$('.n',a), num=n?n.textContent:'', title=a.textContent.replace(num,'').trim();
+      items.push({a:c,s:s,num:num,title:title})});
+  }
+  function spy(){ if(!items.length)return;
+    var y=innerHeight*.32, cur=null; items.forEach(function(it){if(it.s.getBoundingClientRect().top<y)cur=it});
+    var tocBottom=toc.getBoundingClientRect().bottom;
+    rail.classList.toggle('on',tocBottom<0);
+    items.forEach(function(it){var on=it===cur; it.a.classList.toggle('act',on);
+      if(on){var cs=getComputedStyle(it.s), c=cs.getPropertyValue('--sc'), o=cs.getPropertyValue('--on'); it.a.style.setProperty('--rc',c&&c.trim()?c:'var(--ac)'); it.a.style.setProperty('--ron',o&&o.trim()?o:'#fff')}});
+    if(now){ if(cur&&tocBottom<0){now.textContent=cur.num+' · '+cur.title; now.classList.add('on')} else now.classList.remove('on') }
+    if(cur&&rail.classList.contains('on')){var r=cur.a.offsetTop-rail.clientHeight/2; if(Math.abs(rail.scrollTop-r)>80)rail.scrollTop=r}
+  }
+  var tick=false; function onScroll(){if(tick)return; tick=true; requestAnimationFrame(function(){tick=false; prog(); spy()})}
+  addEventListener('scroll',onScroll,{passive:true}); addEventListener('resize',onScroll); prog(); spy();
+
+  /* ---- confetti ---- */
+  function confetti(x,y){ if(still)return;
+    for(var i=0;i<28;i++){var c=D.createElement('i'); c.className='cf'; var a=Math.random()*Math.PI*2, r=60+Math.random()*90;
+      c.style.left=x+'px'; c.style.top=y+'px'; c.style.background=COLORS[i%8];
+      c.style.setProperty('--dx',Math.cos(a)*r+'px'); c.style.setProperty('--dy',(Math.sin(a)*r-40)+'px');
+      c.style.setProperty('--rt',(Math.random()*720-360)+'deg'); if(i%3===0)c.style.borderRadius='50%';
+      D.body.appendChild(c); setTimeout(function(n){return function(){n.remove()}}(c),1200)} }
+
+  /* ---- sao chép trích dẫn ---- */
+  function copyText(t){ if(navigator.clipboard&&isSecureContext) return navigator.clipboard.writeText(t);
+    return new Promise(function(ok){var ta=D.createElement('textarea'); ta.value=t; ta.style.position='fixed'; ta.style.opacity='0';
+      D.body.appendChild(ta); ta.select(); try{D.execCommand('copy')}catch(e){} ta.remove(); ok()}) }
+  $$('.cpy').forEach(function(b){b.addEventListener('click',function(){
+    var q=b.closest('blockquote'), ps=$$('p',q).map(function(p){return p.textContent.trim()}).join('\n'),
+        c=$('cite',q), who=c?c.textContent.trim():'';
+    copyText('“'+ps+'”'+(who?'\n— '+who:'')).then(function(){b.classList.add('ok'); b.setAttribute('aria-label','Đã sao chép');
+      var r=b.getBoundingClientRect(); confetti(r.left+r.width/2,r.top+r.height/2);
+      setTimeout(function(){b.classList.remove('ok'); b.setAttribute('aria-label','Sao chép trích dẫn')},1800)})})});
+
+  /* ---- đồng hồ 30 giây ---- */
+  function runTimer(p){ var t=$('.tmr',p); if(!t||still)return; var fg=$('.fg',t);
+    clearInterval(t.__iv); t.classList.remove('done'); p.classList.remove('go'); void fg.getBoundingClientRect(); p.classList.add('go');
+    var s=30; t.setAttribute('data-s',s); t.__iv=setInterval(function(){s--; t.setAttribute('data-s',s);
+      if(s<=0){clearInterval(t.__iv); t.classList.add('done')}},1000) }
+  if(IO){var po=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){runTimer(e.target); po.unobserve(e.target)}})},{threshold:.75});
+    $$('.pause').forEach(function(p){if($('.tmr',p))po.observe(p)})}
+  $$('.pause .tmr').forEach(function(t){function go(){runTimer(t.closest('.pause'))}
+    t.addEventListener('click',go); t.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();go()}})});
+
+  /* ---- bảng các câu bôi vàng ---- */
+  var hp=$('#hlpanel'), hb=$('#fabHl');
+  if(hp&&hb){ var ol=$('ol',hp);
+    $$('main mark').forEach(function(m,i){ if(!m.id)m.id='hl-'+(i+1);
+      var li=D.createElement('li'), a=D.createElement('a'); a.href='#'+m.id; a.textContent=m.textContent; li.appendChild(a); ol.appendChild(li);
+      a.addEventListener('click',function(ev){ev.preventDefault(); closeHl(); m.classList.add('lit');
+        m.scrollIntoView({behavior:still?'auto':'smooth',block:'center'}); m.classList.remove('flash'); void m.offsetWidth; m.classList.add('flash')})});
+    function openHl(){hp.classList.add('on'); var f=$('a',hp)||$('.x',hp); if(f)f.focus()}
+    function closeHl(){hp.classList.remove('on'); hb.focus({preventScroll:true})}
+    hb.addEventListener('click',openHl); $('.x',hp).addEventListener('click',closeHl);
+    hp.addEventListener('click',function(e){if(e.target===hp)closeHl()});
+    D.addEventListener('keydown',function(e){if(e.key==='Escape'&&hp.classList.contains('on'))closeHl()});
+  }
+
+  /* ---- tìm trong trang ---- */
+  var fb=$('#findbar'), ff=$('#fabFind');
+  if(fb&&ff){ var inp=$('input',fb), fc=$('.fc',fb), hits=[], hi=-1, scope=$('body > .wrap')||D.body;
+    function clear(){ hits.forEach(function(s){var p=s.parentNode; if(!p)return; p.replaceChild(D.createTextNode(s.textContent),s); p.normalize()}); hits=[]; hi=-1 }
+    function norm(s){return s.normalize('NFC').toLowerCase()}
+    function search(q){ clear(); q=norm(q.trim()); if(q.length<2){fc.textContent='';return}
+      var w=D.createTreeWalker(scope,NodeFilter.SHOW_TEXT,{acceptNode:function(n){
+        if(!n.nodeValue.trim())return NodeFilter.FILTER_REJECT; var p=n.parentNode;
+        if(p.closest('script,style,svg,#hlpanel,#findbar,.cpy'))return NodeFilter.FILTER_REJECT; return NodeFilter.FILTER_ACCEPT}});
+      var nodes=[]; while(w.nextNode())nodes.push(w.currentNode);
+      nodes.forEach(function(n){ var t=n.nodeValue, lt=norm(t), i=lt.indexOf(q); if(i<0)return;
+        var frag=D.createDocumentFragment(), last=0;
+        while(i>=0){ frag.appendChild(D.createTextNode(t.slice(last,i))); var s=D.createElement('span'); s.className='fnd';
+          s.textContent=t.slice(i,i+q.length); frag.appendChild(s); hits.push(s); last=i+q.length; i=lt.indexOf(q,last)}
+        frag.appendChild(D.createTextNode(t.slice(last))); n.parentNode.replaceChild(frag,n)});
+      $$('.rv',scope).forEach(function(e){e.classList.add('in')});
+      fc.textContent=hits.length?('0/'+hits.length):'Không thấy'; if(hits.length)go(0) }
+    function go(k){ if(!hits.length)return; if(hi>=0&&hits[hi])hits[hi].classList.remove('cur');
+      hi=(k+hits.length)%hits.length; var s=hits[hi]; s.classList.add('cur'); fc.textContent=(hi+1)+'/'+hits.length;
+      s.scrollIntoView({behavior:'auto',block:'center'}) }
+    var tmo; inp.addEventListener('input',function(){clearTimeout(tmo); tmo=setTimeout(function(){search(inp.value)},180)});
+    inp.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();go(hi+(e.shiftKey?-1:1))} if(e.key==='Escape')closeF()});
+    $('.fn',fb).addEventListener('click',function(){go(hi+1)}); $('.fp',fb).addEventListener('click',function(){go(hi-1)});
+    function openF(){fb.classList.add('on'); inp.focus(); inp.select()}
+    function closeF(){fb.classList.remove('on'); clear(); fc.textContent=''; ff.focus({preventScroll:true})}
+    $('.fx',fb).addEventListener('click',closeF); ff.addEventListener('click',function(){fb.classList.contains('on')?closeF():openF()});
+    D.addEventListener('keydown',function(e){if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='f'){e.preventDefault();openF()}});
+  }
+})();
+</script>
+</body>
+</html>
