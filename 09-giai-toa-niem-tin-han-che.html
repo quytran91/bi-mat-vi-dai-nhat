@@ -1,375 +1,892 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" class="chap" data-c="3">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
 <title>Giải tỏa niềm tin hạn chế — Bí mật vĩ đại nhất | Rhonda Byrne</title>
-<style>
+<style>/* ============================================================
+   BÍ MẬT VĨ ĐẠI NHẤT — ngôn ngữ thiết kế "màu mè"
+   8 màu luân phiên · bút dạ quang vàng cố định · emoji iPhone
+   ============================================================ */
 :root{
-  --bg:#F8F2E7; --card:#FFFCF7; --ink:#302820; --ink2:#6F6257;
-  --gold:#B88A3B; --gold-l:#F5E7BE;
-  --green:#47705A; --green-l:#E8F1EB;
-  --blue:#4F7396; --blue-l:#EAF2F8;
-  --purple:#755E8B; --purple-l:#F0EAF5;
-  --red:#9B4A42; --red-l:#FBEDEB;
-  --rule:rgba(184,138,59,.28);
-  --shadow:0 1px 2px rgba(48,40,32,.05), 0 8px 24px rgba(48,40,32,.05);
-  --ui:system-ui,"Segoe UI",Roboto,Arial,"Noto Sans","Liberation Sans",sans-serif;
-  --serif:"Times New Roman",Tinos,"Liberation Serif","Noto Serif","DejaVu Serif",Times,serif;
+  /* --- 8 màu chủ đề (hệ màu iOS) --- */
+  --c1:#FF3B30; --c1l:#FFE9E7; --c1b:#FFC7C2;   /* đỏ      */
+  --c2:#FF8A00; --c2l:#FFF1DF; --c2b:#FFD6A3;   /* cam     */
+  --c3:#E8A500; --c3l:#FFF8DC; --c3b:#FFE48A;   /* vàng    */
+  --c4:#28B446; --c4l:#E6F8EA; --c4b:#A8E6B6;   /* xanh lá */
+  --c5:#00B3A6; --c5l:#DFF7F5; --c5b:#95E3DD;   /* xanh ngọc */
+  --c6:#0A84FF; --c6l:#E4F0FF; --c6b:#AED3FF;   /* xanh dương */
+  --c7:#9B51E0; --c7l:#F3E9FD; --c7b:#D9BCF5;   /* tím     */
+  --c8:#FF2D78; --c8l:#FFE7EF; --c8b:#FFBDD3;   /* hồng    */
+
+  /* --- màu nhấn của trang (build gán qua data-c) --- */
+  --ac:var(--c6); --acl:var(--c6l); --acb:var(--c6b);
+
+  /* --- bút dạ quang: CỐ ĐỊNH, không đổi theo chương --- */
+  --hl1:#FFE600; --hl2:#FFD400; --hl-ink:#2B2200;
+
+  /* --- nền, chữ, khung --- */
+  --bg:#FBF9FF; --card:#FFFFFF; --soft:#F4F3FA;
+  --ink:#1C1B2E; --ink2:#67657F; --ink3:#9A98AE;
+  --rule:#E8E6F2;
+  --r:24px; --r2:16px; --r3:999px;
+  --sh:0 1px 2px rgba(28,27,46,.04), 0 10px 30px rgba(28,27,46,.07);
+  --sh2:0 2px 6px rgba(28,27,46,.06), 0 18px 48px rgba(28,27,46,.10);
+
+  /* --- font: emoji Apple đứng đầu mọi stack --- */
+  --emo:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji","Twemoji Mozilla",sans-serif;
+  --ui:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,"Noto Sans",Arial,
+       "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif;
+  --serif:"Times New Roman",Tinos,"Liberation Serif","Noto Serif",Times,serif;
+
+  --fs:18px;
 }
 html[data-theme="dark"]{
-  --bg:#1A1714; --card:#231F1B; --ink:#EFE6D8; --ink2:#B6A895;
-  --gold:#D9AC5E; --gold-l:#3A2F1C;
-  --green:#8FBFA4; --green-l:#1E2B24;
-  --blue:#9CC0DE; --blue-l:#1C262F;
-  --purple:#BFA8D4; --purple-l:#262030;
-  --red:#E09A92; --red-l:#2E1F1D;
-  --rule:rgba(217,172,94,.28);
-  --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
+  --c1:#FF6961; --c1l:#3A1E1C; --c1b:#5E2E29;
+  --c2:#FFA64D; --c2l:#3A2A14; --c2b:#5E4320;
+  --c3:#FFD24D; --c3l:#3A3316; --c3b:#5E5122;
+  --c4:#52DD6E; --c4l:#15311C; --c4b:#24512F;
+  --c5:#35D6C8; --c5l:#10322F; --c5b:#1D524D;
+  --c6:#4DA3FF; --c6l:#132B44; --c6b:#1E466F;
+  --c7:#C185F5; --c7l:#2A1A3C; --c7b:#452C61;
+  --c8:#FF6AA0; --c8l:#3B1727; --c8b:#5F2641;
+  --bg:#0F0E17; --card:#1A1927; --soft:#232232;
+  --ink:#F2F0FF; --ink2:#A9A6C4; --ink3:#7D7A99;
+  --rule:#2E2C42;
+  --sh:0 1px 2px rgba(0,0,0,.4), 0 10px 30px rgba(0,0,0,.35);
+  --sh2:0 2px 6px rgba(0,0,0,.45), 0 18px 48px rgba(0,0,0,.45);
 }
+
+/* --- bảng gán màu nhấn theo chương --- */
+html[data-c="1"]{--ac:var(--c1);--acl:var(--c1l);--acb:var(--c1b)}
+html[data-c="2"]{--ac:var(--c2);--acl:var(--c2l);--acb:var(--c2b)}
+html[data-c="3"]{--ac:var(--c3);--acl:var(--c3l);--acb:var(--c3b)}
+html[data-c="4"]{--ac:var(--c4);--acl:var(--c4l);--acb:var(--c4b)}
+html[data-c="5"]{--ac:var(--c5);--acl:var(--c5l);--acb:var(--c5b)}
+html[data-c="6"]{--ac:var(--c6);--acl:var(--c6l);--acb:var(--c6b)}
+html[data-c="7"]{--ac:var(--c7);--acl:var(--c7l);--acb:var(--c7b)}
+html[data-c="8"]{--ac:var(--c8);--acl:var(--c8l);--acb:var(--c8b)}
+
+/* --- bí danh cho SVG trong nội dung (giữ nguyên tên biến cũ) --- */
+:root,html[data-theme="dark"]{
+  --gold:var(--c3); --gold-l:var(--c3l);
+  --green:var(--c4); --green-l:var(--c4l);
+  --blue:var(--c6); --blue-l:var(--c6l);
+  --purple:var(--c7); --purple-l:var(--c7l);
+  --red:var(--c1); --red-l:var(--c1l);
+}
+
 *{box-sizing:border-box}
-html{scroll-behavior:smooth; scroll-padding-top:70px}
-@media (prefers-reduced-motion: reduce){
-  html{scroll-behavior:auto}
-  *{animation:none !important; transition:none !important}
-}
+html{scroll-behavior:smooth; scroll-padding-top:84px; -webkit-text-size-adjust:100%}
 body{
   margin:0; background:var(--bg); color:var(--ink);
-  font-family:var(--serif); font-size:19px; line-height:1.85;
-  font-synthesis:none; text-rendering:optimizeLegibility;
-  -webkit-text-size-adjust:100%;
+  font-family:var(--ui); font-size:var(--fs); line-height:1.75;
+  text-rendering:optimizeLegibility; overflow-x:hidden;
 }
-p{margin:0 0 1.15em}
-.wrap{max-width:900px; margin:0 auto; padding:0 22px}
+html[data-fs="l"]{--fs:20px}
+html[data-fs="xl"]{--fs:22px}
+p{margin:0 0 1.1em}
+a{color:var(--ac)}
+.wrap{max-width:860px; margin:0 auto; padding:0 20px}
+::selection{background:var(--hl1); color:var(--hl-ink)}
 
-/* ---------- progress + toolbar ---------- */
-#progress{position:fixed; top:0; left:0; height:4px; width:0%;
-  background:linear-gradient(90deg,var(--gold),#E0BD72); z-index:60}
-#toolbar{position:sticky; top:0; z-index:50; background:color-mix(in srgb,var(--bg) 92%, transparent);
-  backdrop-filter:blur(6px); border-bottom:1px solid var(--rule)}
-#toolbar .wrap{display:flex; gap:10px; flex-wrap:wrap; align-items:center; padding-top:9px; padding-bottom:9px}
-#toolbar .tb-title{font-family:var(--ui); font-size:12px; letter-spacing:.14em;
-  text-transform:uppercase; color:var(--ink2); margin-right:auto}
-.btn{font-family:var(--ui); font-size:13px; line-height:1.2; padding:8px 13px; cursor:pointer;
-  background:var(--card); color:var(--ink); border:1px solid var(--rule); border-radius:999px}
-.btn:hover{border-color:var(--gold)}
-a:focus-visible,.btn:focus-visible,summary:focus-visible{
-  outline:3px solid var(--gold); outline-offset:2px; border-radius:4px}
+/* ---------- nền nhiều màu + blob trôi ---------- */
+body::before{
+  content:""; position:fixed; inset:0; z-index:-2; pointer-events:none;
+  background:
+    radial-gradient(900px 600px at 8% -5%,  rgba(10,132,255,.10), transparent 60%),
+    radial-gradient(800px 600px at 95% 5%,  rgba(255,45,120,.09), transparent 60%),
+    radial-gradient(900px 700px at 50% 108%,rgba(155,81,224,.10), transparent 60%),
+    radial-gradient(700px 500px at -5% 70%, rgba(0,179,166,.09), transparent 60%);
+}
+#blobs{position:fixed; inset:0; z-index:-1; pointer-events:none; overflow:hidden; filter:blur(60px); opacity:.5}
+html[data-theme="dark"] #blobs{opacity:.34}
+#blobs i{position:absolute; display:block; border-radius:50%}
+#blobs i:nth-child(1){width:46vmin;height:46vmin;left:-8vmin;top:4vmin;  background:var(--c6); animation:drift1 34s ease-in-out infinite}
+#blobs i:nth-child(2){width:38vmin;height:38vmin;right:-6vmin;top:18vmin;background:var(--c8); animation:drift2 41s ease-in-out infinite}
+#blobs i:nth-child(3){width:42vmin;height:42vmin;left:24vmin;bottom:-12vmin;background:var(--c7); animation:drift3 47s ease-in-out infinite}
+#blobs i:nth-child(4){width:30vmin;height:30vmin;right:14vmin;bottom:4vmin; background:var(--c5); animation:drift1 39s ease-in-out infinite reverse}
+#blobs i:nth-child(5){width:26vmin;height:26vmin;left:52vmin;top:-8vmin;   background:var(--c3); animation:drift2 44s ease-in-out infinite}
+@keyframes drift1{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(8vmin,6vmin) scale(1.12)}66%{transform:translate(-5vmin,10vmin) scale(.94)}}
+@keyframes drift2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-9vmin,8vmin) scale(1.15)}}
+@keyframes drift3{0%,100%{transform:translate(0,0) scale(1)}40%{transform:translate(7vmin,-7vmin) scale(.9)}75%{transform:translate(-6vmin,4vmin) scale(1.08)}}
 
-/* ---------- header ---------- */
+/* ---------- thanh tiến độ + toolbar ---------- */
+#progress{position:fixed; top:0; left:0; height:4px; width:0%; z-index:70;
+  background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3),var(--c4),var(--c5),var(--c6),var(--c7),var(--c8));
+  border-radius:0 4px 4px 0}
+#toolbar{position:sticky; top:0; z-index:60; backdrop-filter:saturate(180%) blur(14px);
+  background:color-mix(in srgb,var(--bg) 78%, transparent); border-bottom:1px solid var(--rule)}
+#toolbar .wrap{display:flex; gap:8px; flex-wrap:wrap; align-items:center; padding:10px 20px}
+#toolbar .tb-title{font-size:12.5px; font-weight:800; letter-spacing:.04em; color:var(--ink2);
+  margin-right:auto; display:flex; align-items:center; gap:7px}
+#toolbar .tb-title::before{content:"📘"; font-family:var(--emo); font-size:15px}
+.btn{font:inherit; font-size:13px; font-weight:650; line-height:1.2; padding:9px 15px; cursor:pointer;
+  background:var(--card); color:var(--ink); border:1.5px solid var(--rule); border-radius:var(--r3);
+  text-decoration:none; display:inline-flex; align-items:center; gap:6px;
+  transition:transform .16s, border-color .16s, box-shadow .16s}
+.btn:hover{transform:translateY(-2px); border-color:var(--ac); box-shadow:0 6px 18px color-mix(in srgb,var(--ac) 26%, transparent)}
+#toolbar a.btn[href="index.html"]::before{content:"🗂️"; font-family:var(--emo)}
+#toolbar a.btn[href="#top"]::before{content:"⬆️"; font-family:var(--emo)}
+#themeBtn::before{content:"🌙"; font-family:var(--emo)}
+html[data-theme="dark"] #themeBtn::before{content:"☀️"}
+#printBtn::before{content:"🖨️"; font-family:var(--emo)}
+a:focus-visible,.btn:focus-visible,summary:focus-visible,[tabindex]:focus-visible{
+  outline:3px solid var(--ac); outline-offset:3px; border-radius:8px}
+
+/* ---------- HERO ---------- */
 header.book{
-  background:linear-gradient(135deg,#241D16 0%,#3A2D1C 55%,#6B5220 100%);
-  color:#F5E7BE; padding:56px 0 46px; text-align:center}
-header.book .kicker{font-family:var(--ui); font-size:12px; letter-spacing:.3em;
-  text-transform:uppercase; color:#D9BE85; margin:0 0 18px}
-header.book h1{font-size:clamp(30px,6vw,50px); line-height:1.2; margin:0 0 6px; color:#F7E9C4}
-header.book .chapno{font-family:var(--ui); font-size:13px; letter-spacing:.24em;
-  text-transform:uppercase; color:#D9AC5E; margin:0 0 14px}
-header.book .sub{font-size:19px; font-style:italic; color:#E9DCBE; max-width:640px;
-  margin:16px auto 0; line-height:1.7}
-header.book .author{font-family:var(--ui); font-size:13px; letter-spacing:.18em;
-  text-transform:uppercase; color:#CBB48B; margin-top:24px}
-.rule-orn{display:flex; align-items:center; justify-content:center; gap:12px; margin:22px auto 0; max-width:280px}
-.rule-orn span{height:1px; flex:1; background:linear-gradient(90deg,transparent,#B88A3B,transparent)}
-.rule-orn b{color:#B88A3B; font-size:13px}
+  position:relative; overflow:hidden; text-align:center;
+  padding:66px 0 60px; margin-bottom:8px; color:#fff;
+  background:linear-gradient(115deg,#FF3B30,#FF8A00,#E8A500,#28B446,#00B3A6,#0A84FF,#9B51E0,#FF2D78);
+  background-size:300% 300%; animation:heroShift 26s ease infinite;
+}
+@keyframes heroShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+header.book::after{content:""; position:absolute; inset:0;
+  background:radial-gradient(120% 90% at 50% 120%, rgba(0,0,0,.34), transparent 70%)}
+header.book > .wrap{position:relative; z-index:2}
+header.book .kicker{display:inline-flex; align-items:center; gap:8px; margin:0 0 20px;
+  font-size:12px; font-weight:800; letter-spacing:.14em; text-transform:uppercase;
+  background:rgba(255,255,255,.22); border:1px solid rgba(255,255,255,.4);
+  padding:7px 16px; border-radius:var(--r3); backdrop-filter:blur(6px)}
+header.book .kicker::before{content:"🎨"; font-family:var(--emo); font-size:14px}
+header.book h1{margin:0; font-size:clamp(34px,7.6vw,68px); line-height:1.08; font-weight:850;
+  letter-spacing:-.02em; text-shadow:0 4px 26px rgba(0,0,0,.3)}
+header.book .chapno{display:inline-block; margin:0 0 14px; font-size:13px; font-weight:800;
+  letter-spacing:.2em; text-transform:uppercase; background:rgba(255,255,255,.95);
+  color:#1C1B2E; padding:6px 18px; border-radius:var(--r3)}
+header.book .sub{max-width:620px; margin:20px auto 0; font-size:17.5px; line-height:1.7;
+  color:rgba(255,255,255,.95); font-style:normal}
+header.book .author{display:inline-flex; align-items:center; gap:8px; margin-top:26px;
+  font-size:13px; font-weight:750; letter-spacing:.1em; text-transform:uppercase;
+  color:#fff; background:rgba(0,0,0,.22); padding:8px 18px; border-radius:var(--r3)}
+header.book .author::before{content:"✍️"; font-family:var(--emo); font-size:14px}
+.rule-orn{display:flex; align-items:center; justify-content:center; gap:10px; margin:24px auto 0; max-width:300px}
+.rule-orn span{height:3px; flex:1; border-radius:3px; background:linear-gradient(90deg,transparent,#fff)}
+.rule-orn span:last-child{background:linear-gradient(90deg,#fff,transparent)}
+.rule-orn b{font-size:0; width:auto}
+.rule-orn b::after{content:"✨"; font-family:var(--emo); font-size:20px; display:block;
+  animation:twinkle 3.6s ease-in-out infinite}
+@keyframes twinkle{0%,100%{transform:scale(1) rotate(0)}50%{transform:scale(1.28) rotate(16deg)}}
+/* emoji trang trí bay lơ lửng */
+header.book .wrap::before,header.book .wrap::after{
+  font-family:var(--emo); position:absolute; font-size:36px; opacity:.85; pointer-events:none}
+header.book .wrap::before{content:"🔑"; left:2%;  top:6%;  animation:float1 9s ease-in-out infinite}
+header.book .wrap::after {content:"💡"; right:3%; bottom:4%; animation:float2 11s ease-in-out infinite}
+@keyframes float1{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-16px) rotate(8deg)}}
+@keyframes float2{0%,100%{transform:translateY(0) rotate(6deg)}50%{transform:translateY(-20px) rotate(-10deg)}}
+@media (max-width:700px){header.book .wrap::before,header.book .wrap::after{font-size:26px; opacity:.6}}
 
-/* ---------- generic blocks ---------- */
-.tag{display:inline-block; font-family:var(--ui); font-size:11px; font-weight:700;
-  letter-spacing:.16em; text-transform:uppercase; padding:3px 10px; border-radius:999px;
-  background:var(--gold-l); color:#7A5A1E; margin-bottom:10px}
-html[data-theme="dark"] .tag{color:var(--gold)}
-.box{border-radius:14px; padding:22px 24px; margin:26px 0; box-shadow:var(--shadow)}
+/* ---------- nhãn pill ---------- */
+.tag{display:inline-flex; align-items:center; gap:7px; font-size:11.5px; font-weight:800;
+  letter-spacing:.12em; text-transform:uppercase; padding:6px 14px; border-radius:var(--r3);
+  background:var(--acl); color:var(--ac); border:1.5px solid var(--acb); margin-bottom:12px}
 
-.map{background:var(--card); border:1px solid var(--rule); border-top:4px solid var(--gold)}
-.map h2{font-family:var(--ui); font-size:17px; letter-spacing:.04em; margin:0 0 4px}
-.map .meta{font-family:var(--ui); font-size:13px; color:var(--ink2); margin:0 0 16px}
-.map .goal{background:var(--gold-l); border-radius:10px; padding:12px 16px; margin:0 0 18px;
-  font-size:17px}
-html[data-theme="dark"] .map .goal{background:#332918}
-.stages{list-style:none; margin:0; padding:0; counter-reset:st}
-.stages li{counter-increment:st; position:relative; padding:6px 0 6px 42px; font-size:17px}
-.stages li::before{content:counter(st); position:absolute; left:0; top:8px; width:26px; height:26px;
-  border-radius:50%; background:var(--gold); color:#fff; font-family:var(--ui); font-size:12px;
-  font-weight:700; display:flex; align-items:center; justify-content:center}
-.howto{margin-top:18px; padding-top:14px; border-top:1px dashed var(--rule);
-  font-family:var(--ui); font-size:14px; color:var(--ink2); line-height:1.7}
+/* ---------- khối giới thiệu trang mục lục ---------- */
+.hub-intro{position:relative; overflow:hidden; background:var(--card); border:1.5px solid var(--rule);
+  border-radius:var(--r); padding:30px 30px 26px; margin:30px 0 40px; box-shadow:var(--sh)}
+.hub-intro::before{content:""; position:absolute; left:0; right:0; top:0; height:6px;
+  background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3),var(--c4),var(--c5),var(--c6),var(--c7),var(--c8))}
+.hub-intro .tag::before{content:"📊"; font-family:var(--emo); font-size:13px}
+.hub-intro p:last-child{margin-bottom:0}
+.hub-intro p{font-size:16.5px; color:var(--ink2); line-height:1.75}
+.hub-intro p strong{color:var(--ink)}
+.hub-intro code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:.9em;
+  background:var(--soft); border:1px solid var(--rule); border-radius:8px; padding:2px 7px; color:var(--c7)}
+.meter{height:14px; border-radius:var(--r3); background:var(--soft); overflow:hidden;
+  margin:16px 0 10px; border:1px solid var(--rule)}
+.meter i{display:block; height:100%; border-radius:var(--r3); position:relative;
+  background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3),var(--c4),var(--c5),var(--c6),var(--c7),var(--c8));
+  background-size:200% 100%; animation:meterShift 8s linear infinite}
+@keyframes meterShift{0%{background-position:0 0}100%{background-position:200% 0}}
+.meter-lbl{font-size:15px; font-weight:650; color:var(--ink2); margin:0 0 4px}
+.meter-lbl::before{content:"🚀 "; font-family:var(--emo); font-size:16px}
+.meter-lbl strong{color:var(--ink); font-size:16px}
 
-nav.toc{background:var(--card); border:1px solid var(--rule)}
-nav.toc h2{font-family:var(--ui); font-size:17px; margin:0 0 14px}
-nav.toc ol{list-style:none; margin:0; padding:0; columns:2; column-gap:34px}
-nav.toc li{break-inside:avoid; margin:0 0 9px}
-nav.toc a{display:block; color:var(--ink); text-decoration:none; font-size:16.5px;
-  padding:7px 10px; border-radius:8px; border-left:3px solid var(--gold)}
-nav.toc a:hover{background:var(--gold-l)}
-nav.toc a .n{font-family:var(--ui); font-size:12px; color:var(--gold); font-weight:700; margin-right:8px}
-@media (max-width:720px){nav.toc ol{columns:1}}
+/* ---------- nhóm phần ---------- */
+.group{margin:52px 0}
+.group > h2{display:inline-flex; align-items:center; gap:9px; margin:0 0 8px;
+  font-size:15px; font-weight:850; letter-spacing:.1em; text-transform:uppercase;
+  color:#fff; padding:9px 20px; border-radius:var(--r3); box-shadow:var(--sh)}
+.group:nth-of-type(1) > h2{background:linear-gradient(100deg,var(--c6),var(--c5))}
+.group:nth-of-type(2) > h2{background:linear-gradient(100deg,var(--c7),var(--c8))}
+.group:nth-of-type(3) > h2{background:linear-gradient(100deg,var(--c2),var(--c3))}
+.group:nth-of-type(1) > h2::before{content:"🌅"; font-family:var(--emo); font-size:17px}
+.group:nth-of-type(2) > h2::before{content:"📚"; font-family:var(--emo); font-size:17px}
+.group:nth-of-type(3) > h2::before{content:"🎁"; font-family:var(--emo); font-size:17px}
+.group > .gsub{font-size:15.5px; color:var(--ink2); margin:0 0 22px; max-width:640px}
 
-aside.srctoc{background:var(--card); border:1px solid var(--rule); border-left:5px solid var(--ink2)}
+/* ---------- thẻ chương ---------- */
+.cards{display:grid; grid-template-columns:repeat(auto-fill,minmax(272px,1fr)); gap:18px}
+.card{position:relative; overflow:hidden; display:block; background:var(--card);
+  border:1.5px solid var(--rule); border-radius:var(--r); padding:26px 24px 22px;
+  text-decoration:none; color:var(--ink); box-shadow:var(--sh);
+  transition:transform .2s cubic-bezier(.2,.8,.3,1), box-shadow .2s, border-color .2s}
+.card::before{content:""; position:absolute; left:0; right:0; top:0; height:6px;
+  background:linear-gradient(90deg,var(--cc),color-mix(in srgb,var(--cc) 45%, #fff))}
+.card::after{content:attr(data-emo); font-family:var(--emo); position:absolute; right:18px; top:20px;
+  font-size:30px; line-height:1; transition:transform .25s}
+.card:hover{transform:translateY(-6px); border-color:var(--cc);
+  box-shadow:0 10px 20px color-mix(in srgb,var(--cc) 14%, transparent), 0 26px 56px color-mix(in srgb,var(--cc) 20%, transparent)}
+.card:hover::after{transform:scale(1.22) rotate(-10deg)}
+.card .num{display:block; font-size:12px; font-weight:850; letter-spacing:.14em;
+  text-transform:uppercase; margin:0 0 10px; color:var(--cc)}
+.card h3{margin:0 0 10px; font-size:21px; line-height:1.3; font-weight:800; letter-spacing:-.01em;
+  padding-right:44px}
+.card .sub{margin:0; font-size:14.8px; line-height:1.65; color:var(--ink2)}
+.card .status{display:inline-flex; align-items:center; gap:6px; margin-top:16px; font-size:11.5px;
+  font-weight:800; letter-spacing:.08em; text-transform:uppercase; padding:6px 13px;
+  border-radius:var(--r3); background:var(--c4l); color:var(--c4); border:1.5px solid var(--c4b)}
+.card .status::before{content:"✅"; font-family:var(--emo); font-size:12px}
+.card.off{opacity:.62; box-shadow:none; cursor:default; background:var(--soft)}
+.card.off::before{background:var(--rule)}
+.card.off::after{filter:grayscale(1); opacity:.5}
+.card.off:hover{transform:none; border-color:var(--rule); box-shadow:none}
+.card.off .num{color:var(--ink3)}
+.card.off .status{background:transparent; color:var(--ink3); border:1.5px dashed var(--rule)}
+.card.off .status::before{content:"🕓"}
+/* 8 màu luân phiên — build gán data-c cho từng thẻ */
+.card[data-c="1"]{--cc:var(--c1)} .card[data-c="2"]{--cc:var(--c2)}
+.card[data-c="3"]{--cc:var(--c3)} .card[data-c="4"]{--cc:var(--c4)}
+.card[data-c="5"]{--cc:var(--c5)} .card[data-c="6"]{--cc:var(--c6)}
+.card[data-c="7"]{--cc:var(--c7)} .card[data-c="8"]{--cc:var(--c8)}
+
+/* ---------- footer ---------- */
+footer.pagefoot{margin-top:60px; padding:30px 0 90px; text-align:center;
+  font-size:14px; color:var(--ink2); line-height:1.8; border-top:1.5px solid var(--rule)}
+footer.pagefoot strong{color:var(--ink)}
+footer.pagefoot p::before{content:"📘"; font-family:var(--emo); display:block; font-size:24px; margin-bottom:10px}
+
+/* ---------- nút nổi ---------- */
+#fabs{position:fixed; right:16px; bottom:16px; z-index:65; display:flex; flex-direction:column; gap:10px}
+#fabs button{width:50px; height:50px; border-radius:50%; cursor:pointer; border:1.5px solid var(--rule);
+  background:var(--card); box-shadow:var(--sh2); font-family:var(--emo); font-size:21px; line-height:1;
+  display:grid; place-items:center; transition:transform .18s, box-shadow .18s}
+#fabs button:hover{transform:translateY(-3px) scale(1.07)}
+#fabs button[aria-pressed="true"]{background:var(--acl); border-color:var(--ac)}
+#fabs .fab-top{opacity:0; pointer-events:none; transition:opacity .25s}
+#fabs .fab-top.on{opacity:1; pointer-events:auto}
+@media (max-width:560px){
+  #fabs{right:10px; bottom:10px; gap:8px}
+  #fabs button{width:42px;height:42px;font-size:17px}
+  header.book{padding:48px 0 44px}
+  header.book .kicker{font-size:10.5px; letter-spacing:.08em; padding:6px 12px}
+  header.book .author{font-size:11.5px}
+  .hub-intro{padding:24px 20px 22px}
+  .card{padding:22px 20px 20px}
+  .group > h2{font-size:13px; padding:8px 16px}
+}
+
+/* ---------- giảm chuyển động ---------- */
+html.still *, html.still *::before, html.still *::after{animation:none !important; transition:none !important}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none !important; transition:none !important}
+}
+
+/* ---------- hiện dần khi cuộn ---------- */
+html.js .rv{opacity:0; transform:translateY(16px)}
+html.js .rv.in{opacity:1; transform:none; transition:opacity .55s ease, transform .55s cubic-bezier(.2,.8,.3,1)}
+
+/* ---------- in ---------- */
+@media print{
+  :root{--bg:#fff;--card:#fff;--soft:#fff}
+  html,body{background:#fff !important; color:#000}
+  *{-webkit-print-color-adjust:exact; print-color-adjust:exact}
+  #toolbar,#progress,#fabs,#blobs,body::before{display:none !important}
+  header.book{background:#fff !important; color:#000; animation:none; border-bottom:4px solid var(--c7); padding:0 0 18pt}
+  header.book h1,header.book .sub,header.book .author,header.book .kicker{color:#000}
+  header.book::after{display:none}
+  .card,.hub-intro{break-inside:avoid; box-shadow:none}
+  @page{size:A4; margin:16mm 14mm}
+}
+
+/* ============================================================
+   TRANG CHƯƠNG
+   ============================================================ */
+/* màu hero theo chương: màu nhấn + 3 màu lân cận */
+html[data-c="1"]{--h1:var(--c1);--h2:var(--c2);--h3:var(--c8);--h4:var(--c7)}
+html[data-c="2"]{--h1:var(--c2);--h2:var(--c3);--h3:var(--c1);--h4:var(--c8)}
+html[data-c="3"]{--h1:var(--c3);--h2:var(--c2);--h3:var(--c8);--h4:var(--c1)}
+html[data-c="4"]{--h1:var(--c4);--h2:var(--c5);--h3:var(--c3);--h4:var(--c6)}
+html[data-c="5"]{--h1:var(--c5);--h2:var(--c6);--h3:var(--c4);--h4:var(--c7)}
+html[data-c="6"]{--h1:var(--c6);--h2:var(--c7);--h3:var(--c5);--h4:var(--c8)}
+html[data-c="7"]{--h1:var(--c7);--h2:var(--c8);--h3:var(--c6);--h4:var(--c2)}
+html[data-c="8"]{--h1:var(--c8);--h2:var(--c7);--h3:var(--c2);--h4:var(--c1)}
+html.chap header.book{
+  background:linear-gradient(120deg,var(--h1),var(--h2),var(--h3),var(--h4),var(--h1));
+  background-size:300% 300%}
+html.chap header.book .wrap::before{content:attr(data-e1)}
+html.chap header.book .wrap::after {content:attr(data-e2)}
+html.chap header.book h1{font-size:clamp(38px,8vw,76px)}
+header.book .chapno::before{content:"📖 "; font-family:var(--emo)}
+
+/* ô số liệu */
+.stats{display:grid; grid-template-columns:repeat(5,1fr); gap:12px; max-width:720px; margin:30px auto 0}
+.stat{background:rgba(255,255,255,.2); border:1px solid rgba(255,255,255,.42); border-radius:20px;
+  padding:14px 8px 12px; backdrop-filter:blur(8px); color:#fff; text-align:center;
+  transition:transform .2s}
+.stat:hover{transform:translateY(-4px) scale(1.04)}
+.stat .se{display:block; font-family:var(--emo); font-size:24px; line-height:1; margin-bottom:6px}
+.stat b{display:block; font-size:28px; font-weight:850; line-height:1.1; font-variant-numeric:tabular-nums}
+.stat small{display:block; font-size:11.5px; font-weight:700; letter-spacing:.04em; opacity:.95; margin-top:3px; line-height:1.35}
+@media (max-width:640px){.stats{grid-template-columns:repeat(3,1fr)} .stat:nth-child(n+4){grid-column:span 1}}
+@media (max-width:380px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+/* chỉ báo phần đang đọc trên toolbar */
+#nowsec{display:none; font-size:12.5px; font-weight:750; color:var(--ac); background:var(--acl);
+  border:1.5px solid var(--acb); padding:6px 12px; border-radius:var(--r3); max-width:340px;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+#nowsec.on{display:inline-block}
+#nowsec::before{content:"📍 "; font-family:var(--emo)}
+@media (max-width:820px){#nowsec{order:9; max-width:100%; flex-basis:100%}}
+
+/* ---------- mục lục dính bên trái ---------- */
+#rail{display:none}
+@media (min-width:1330px){
+  #rail{display:block; position:fixed; top:92px; left:max(14px, calc(50% - 430px - 290px)); width:262px;
+    max-height:calc(100vh - 116px); overflow:auto; z-index:40; padding:16px 12px 14px;
+    background:color-mix(in srgb,var(--card) 82%, transparent); backdrop-filter:blur(14px);
+    border:1.5px solid var(--rule); border-radius:var(--r); box-shadow:var(--sh);
+    opacity:0; transform:translateX(-12px); transition:opacity .3s, transform .3s; pointer-events:none}
+  #rail.on{opacity:1; transform:none; pointer-events:auto}
+}
+#rail .rt{font-size:11.5px; font-weight:850; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--ink2); margin:0 6px 10px}
+#rail .rt::before{content:"🧭 "; font-family:var(--emo)}
+#rail a{display:flex; gap:9px; align-items:flex-start; padding:7px 9px; border-radius:12px;
+  text-decoration:none; color:var(--ink2); font-size:13.2px; line-height:1.4; font-weight:600;
+  transition:background .2s, color .2s}
+#rail a .n{flex:0 0 auto; min-width:24px; height:24px; border-radius:8px; display:grid; place-items:center;
+  font-size:11px; font-weight:850; background:var(--soft); color:var(--ink2); transition:all .2s}
+#rail a:hover{background:var(--soft); color:var(--ink)}
+#rail a.act{background:color-mix(in srgb,var(--rc) 14%, transparent); color:var(--ink)}
+#rail a.act .n{background:var(--rc); color:#fff; transform:scale(1.08)}
+
+/* ---------- bản đồ chương ---------- */
+.box{position:relative; border-radius:var(--r); padding:28px 28px 24px; margin:30px 0;
+  background:var(--card); border:1.5px solid var(--rule); box-shadow:var(--sh)}
+.box.map::before,nav.toc::before{content:""; position:absolute; left:0; right:0; top:0; height:6px;
+  border-radius:var(--r) var(--r) 0 0;
+  background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3),var(--c4),var(--c5),var(--c6),var(--c7),var(--c8))}
+.map .tag::before{content:"🗺️"; font-family:var(--emo); font-size:13px}
+.map h2,nav.toc h2{font-size:24px; font-weight:850; letter-spacing:-.01em; margin:0 0 4px; line-height:1.3}
+.map .meta{font-size:14px; font-weight:650; color:var(--ink2); margin:0 0 18px}
+.map .meta::before{content:"⏱️ "; font-family:var(--emo)}
+.map .goal{background:linear-gradient(120deg,var(--c3l),var(--c2l)); border:1.5px solid var(--c3b);
+  border-radius:var(--r2); padding:16px 18px 16px 52px; margin:0 0 20px; font-size:16.5px; position:relative}
+.map .goal::before{content:"🎯"; font-family:var(--emo); position:absolute; left:16px; top:15px; font-size:22px}
+.stages{list-style:none; margin:0; padding:0; counter-reset:st; display:grid; gap:8px}
+.stages li{counter-increment:st; position:relative; padding:9px 12px 9px 52px; font-size:16px; line-height:1.6;
+  border-radius:14px; background:var(--soft); transition:transform .18s, background .18s}
+.stages li:hover{transform:translateX(5px); background:color-mix(in srgb,var(--sc) 12%, var(--soft))}
+.stages li::before{content:counter(st); position:absolute; left:10px; top:9px; width:30px; height:30px;
+  border-radius:10px; background:var(--sc); color:#fff; font-size:13px; font-weight:850;
+  display:grid; place-items:center; box-shadow:0 4px 12px color-mix(in srgb,var(--sc) 40%, transparent)}
+.stages li:nth-child(8n+1){--sc:var(--c1)} .stages li:nth-child(8n+2){--sc:var(--c2)}
+.stages li:nth-child(8n+3){--sc:var(--c3)} .stages li:nth-child(8n+4){--sc:var(--c4)}
+.stages li:nth-child(8n+5){--sc:var(--c5)} .stages li:nth-child(8n+6){--sc:var(--c6)}
+.stages li:nth-child(8n+7){--sc:var(--c7)} .stages li:nth-child(8n+8){--sc:var(--c8)}
+.howto{margin-top:20px; padding:14px 16px 14px 48px; border-radius:var(--r2); background:var(--soft);
+  font-size:14.5px; color:var(--ink2); line-height:1.7; position:relative}
+.howto::before{content:"👀"; font-family:var(--emo); position:absolute; left:15px; top:13px; font-size:19px}
+
+/* ---------- mục lục chương ---------- */
+nav.toc ol{list-style:none; margin:16px 0 0; padding:0; display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:10px}
+nav.toc h2::before{content:"🧭 "; font-family:var(--emo)}
+nav.toc li{margin:0}
+nav.toc a{display:flex; gap:11px; align-items:center; height:100%; padding:11px 14px; border-radius:16px;
+  text-decoration:none; color:var(--ink); font-size:15px; font-weight:650; line-height:1.4;
+  background:color-mix(in srgb,var(--sc) 9%, var(--card)); border:1.5px solid color-mix(in srgb,var(--sc) 26%, transparent);
+  transition:transform .18s, box-shadow .18s}
+nav.toc a:hover{transform:translateY(-3px); box-shadow:0 10px 24px color-mix(in srgb,var(--sc) 24%, transparent)}
+nav.toc a .n{flex:0 0 auto; width:32px; height:32px; border-radius:10px; display:grid; place-items:center;
+  background:var(--sc); color:#fff; font-size:12.5px; font-weight:850}
+nav.toc li:nth-child(8n+1){--sc:var(--c1)} nav.toc li:nth-child(8n+2){--sc:var(--c2)}
+nav.toc li:nth-child(8n+3){--sc:var(--c3)} nav.toc li:nth-child(8n+4){--sc:var(--c4)}
+nav.toc li:nth-child(8n+5){--sc:var(--c5)} nav.toc li:nth-child(8n+6){--sc:var(--c6)}
+nav.toc li:nth-child(8n+7){--sc:var(--c7)} nav.toc li:nth-child(8n+8){--sc:var(--c8)}
+
+aside.srctoc{border-left:6px solid var(--c7)}
 aside.srctoc ul{list-style:none; margin:0; padding:0}
-aside.srctoc li{padding:4px 0 4px 20px; position:relative; font-size:16.5px}
-aside.srctoc li::before{content:"◆"; position:absolute; left:0; color:var(--gold); font-size:11px; top:7px}
+aside.srctoc li{padding:5px 0 5px 26px; position:relative; font-size:16px}
+aside.srctoc li::before{content:"📑"; font-family:var(--emo); position:absolute; left:0; top:5px; font-size:14px}
 
-/* ---------- sections ---------- */
-main section{margin:54px 0}
-.sec-head{display:flex; gap:16px; align-items:flex-start; margin-bottom:6px}
-.badge{flex:0 0 auto; width:44px; height:44px; border-radius:50%; background:var(--gold);
-  color:#fff; font-family:var(--ui); font-weight:700; font-size:17px;
-  display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow)}
-.sec-head h2{font-size:clamp(22px,3.6vw,29px); line-height:1.32; margin:4px 0 0}
-.willlearn{font-family:var(--ui); font-size:14.5px; color:var(--ink2); line-height:1.7;
-  border-left:3px solid var(--gold); padding:6px 0 6px 14px; margin:12px 0 22px}
-.willlearn b{color:var(--gold); letter-spacing:.04em}
+/* ---------- phần (section) — mỗi phần một màu ---------- */
+main > section{--sc:var(--c6); --scl:var(--c6l); --scb:var(--c6b); margin:72px 0; scroll-margin-top:84px}
+main > section:nth-of-type(8n+1){--sc:var(--c1);--scl:var(--c1l);--scb:var(--c1b)}
+main > section:nth-of-type(8n+2){--sc:var(--c2);--scl:var(--c2l);--scb:var(--c2b)}
+main > section:nth-of-type(8n+3){--sc:var(--c3);--scl:var(--c3l);--scb:var(--c3b)}
+main > section:nth-of-type(8n+4){--sc:var(--c4);--scl:var(--c4l);--scb:var(--c4b)}
+main > section:nth-of-type(8n+5){--sc:var(--c5);--scl:var(--c5l);--scb:var(--c5b)}
+main > section:nth-of-type(8n+6){--sc:var(--c6);--scl:var(--c6l);--scb:var(--c6b)}
+main > section:nth-of-type(8n+7){--sc:var(--c7);--scl:var(--c7l);--scb:var(--c7b)}
+main > section:nth-of-type(8n+8){--sc:var(--c8);--scl:var(--c8l);--scb:var(--c8b)}
 
-.body-card{background:var(--card); border:1px solid var(--rule); border-radius:14px;
-  padding:26px 28px; box-shadow:var(--shadow)}
-@media (max-width:600px){.body-card{padding:20px 18px}}
-.body-card h3{font-family:var(--ui); font-size:16px; letter-spacing:.03em; color:var(--gold);
-  margin:26px 0 10px}
+.sec-head{display:flex; gap:18px; align-items:center; margin-bottom:14px}
+.badge{flex:0 0 auto; position:relative; width:62px; height:62px; border-radius:20px;
+  display:grid; place-items:center; color:#fff; font-size:22px; font-weight:900;
+  background:linear-gradient(135deg,var(--sc),color-mix(in srgb,var(--sc) 55%, #fff));
+  box-shadow:0 10px 26px color-mix(in srgb,var(--sc) 40%, transparent); transform:rotate(-6deg)}
+.badge::after{content:""; position:absolute; inset:-6px; border-radius:24px; border:2.5px solid var(--sc);
+  opacity:0; animation:ring 2.8s ease-out infinite}
+@keyframes ring{0%{opacity:.6; transform:scale(.85)}80%,100%{opacity:0; transform:scale(1.22)}}
+.sec-head h2{margin:0; font-size:clamp(25px,4.2vw,36px); line-height:1.22; font-weight:850; letter-spacing:-.015em}
+.sec-head h2{background:linear-gradient(100deg,var(--ink) 30%, var(--sc)); -webkit-background-clip:text;
+  background-clip:text; color:transparent}
+@media print{.sec-head h2{color:var(--ink); background:none}}
+
+.willlearn{position:relative; margin:4px 0 24px; padding:15px 18px 15px 56px; border-radius:var(--r2);
+  background:var(--scl); border:1.5px solid var(--scb); font-size:15.5px; color:var(--ink); line-height:1.7}
+.willlearn::before{content:"🎯"; font-family:var(--emo); position:absolute; left:17px; top:14px; font-size:22px;
+  animation:bob 3.4s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.willlearn b{color:var(--sc); font-weight:850}
+.willlearn em{color:var(--ink2)}
+
+/* thân bài — "phần thân màu kem" */
+.body-card{position:relative; background:#FFFCF4; border:1.5px solid #F1E8D2; border-radius:var(--r);
+  padding:30px 32px 14px; box-shadow:var(--sh); margin:22px 0; font-size:var(--fs); line-height:1.82}
+html[data-theme="dark"] .body-card{background:#1F1C17; border-color:#3A3326}
+.body-card::before{content:""; position:absolute; left:0; top:22px; bottom:22px; width:5px;
+  border-radius:0 5px 5px 0; background:linear-gradient(180deg,var(--sc),color-mix(in srgb,var(--sc) 35%, transparent))}
+@media (max-width:600px){.body-card{padding:22px 20px 10px}}
+.body-card h3{font-size:18px; font-weight:850; color:var(--sc); margin:26px 0 10px}
 .body-card h3:first-child{margin-top:0}
 
-mark{padding-block:.06em; background:linear-gradient(180deg,rgba(245,231,190,0) 46%, #F5E7BE 46%);
-  color:inherit; padding:0 2px}
-html[data-theme="dark"] mark{padding-block:.06em; background:linear-gradient(180deg,rgba(58,47,28,0) 46%, #4A3A1E 46%); color:#F7E9C4}
+/* ---------- BÚT DẠ QUANG VÀNG — cố định ---------- */
+mark{color:var(--hl-ink); padding:.04em .18em; margin:0 -.06em; border-radius:.3em;
+  -webkit-box-decoration-break:clone; box-decoration-break:clone;
+  background:linear-gradient(100deg,var(--hl1),var(--hl2)) no-repeat 0 0 / 100% 100%}
+html.js mark{background-size:0% 100%; transition:background-size .8s cubic-bezier(.6,.1,.2,1)}
+html.js mark.lit,html.still mark{background-size:100% 100%}
+html.js mark:not(.lit){color:inherit}
+html.js mark.lit{color:var(--hl-ink); transition:background-size .8s cubic-bezier(.6,.1,.2,1), color .3s .2s}
+mark.flash{animation:flash 1.4s ease 2}
+@keyframes flash{50%{box-shadow:0 0 0 6px color-mix(in srgb,var(--hl1) 55%, transparent)}}
 
-ul.dia{list-style:none; margin:0 0 1.15em; padding:0}
-ul.dia li{position:relative; padding:5px 0 5px 24px}
-ul.dia li::before{content:"◆"; position:absolute; left:0; top:8px; color:var(--gold); font-size:11px}
-ol.steps{padding-left:22px}
+ul.dia{list-style:none; margin:0 0 1.1em; padding:0}
+ul.dia li{position:relative; padding:5px 0 5px 30px}
+ul.dia li::before{content:""; position:absolute; left:4px; top:.82em; width:11px; height:11px; border-radius:4px;
+  background:var(--sc,var(--ac)); transform:rotate(45deg); box-shadow:0 2px 6px color-mix(in srgb,var(--sc,var(--ac)) 40%, transparent)}
+ol.steps{padding-left:24px}
 ol.steps li{margin:0 0 10px}
+ol.steps li::marker{color:var(--sc); font-weight:850}
 
-/* labelled boxes */
-.keyidea{position:relative; border:2px dashed var(--gold); background:transparent;
-  border-radius:14px; padding:26px 24px 20px; margin:28px 0}
-.keyidea .lbl{position:absolute; top:-12px; left:20px; background:var(--bg); padding:0 10px;
-  font-family:var(--ui); font-size:11px; font-weight:700; letter-spacing:.18em;
-  text-transform:uppercase; color:var(--gold)}
-.keyidea p:last-child{margin-bottom:0}
+/* ---------- TRÍCH DẪN — bóng chat có avatar ---------- */
+blockquote{--qc:var(--c6); position:relative; margin:28px 0; padding:0 0 0 66px; font-style:normal}
+blockquote[data-q="1"]{--qc:var(--c1)} blockquote[data-q="2"]{--qc:var(--c2)}
+blockquote[data-q="4"]{--qc:var(--c4)} blockquote[data-q="5"]{--qc:var(--c5)}
+blockquote[data-q="6"]{--qc:var(--c6)} blockquote[data-q="7"]{--qc:var(--c7)}
+blockquote[data-q="8"]{--qc:var(--c8)}
+blockquote::before{content:attr(data-ini); position:absolute; left:0; top:4px; width:50px; height:50px;
+  border-radius:50%; display:grid; place-items:center; color:#fff; font-size:16px; font-weight:850; letter-spacing:.02em;
+  background:linear-gradient(135deg,var(--qc),color-mix(in srgb,var(--qc) 55%, #fff));
+  box-shadow:0 6px 16px color-mix(in srgb,var(--qc) 38%, transparent), 0 0 0 3px var(--bg)}
+blockquote > .qbody{position:relative; background:var(--c3l); border:1.5px solid var(--c3b);
+  border-radius:6px var(--r) var(--r) var(--r); padding:16px 22px 16px; box-shadow:var(--sh)}
+blockquote > .qbody::before{content:""; position:absolute; left:-9px; top:16px; width:16px; height:16px;
+  background:var(--c3l); border-left:1.5px solid var(--c3b); border-bottom:1.5px solid var(--c3b);
+  transform:rotate(45deg); border-radius:0 0 0 4px}
+blockquote .qtag{display:inline-flex; align-items:center; gap:6px; font-size:10.5px; font-weight:850;
+  letter-spacing:.14em; text-transform:uppercase; padding:4px 11px; border-radius:var(--r3);
+  background:var(--hl1); color:var(--hl-ink); margin-bottom:10px}
+blockquote .qtag::before{content:"💬"; font-family:var(--emo); font-size:11.5px}
+blockquote p{margin:0 0 .65em; font-size:calc(var(--fs) + .5px); line-height:1.78}
+blockquote p:last-of-type{margin-bottom:.4em}
+blockquote cite{display:block; font-style:normal; font-size:14px; color:var(--ink2); margin-top:8px;
+  padding-top:10px; border-top:1.5px dashed var(--c3b)}
+blockquote cite b{color:var(--qc); font-weight:850; font-size:15px}
+.cpy{position:absolute; right:10px; top:10px; width:36px; height:36px; border-radius:12px; cursor:pointer;
+  border:1.5px solid var(--c3b); background:var(--card); display:grid; place-items:center;
+  font-family:var(--emo); font-size:16px; line-height:1; opacity:.6; transition:opacity .2s, transform .2s}
+.cpy::before{content:"📋"}
+.cpy.ok::before{content:"✅"}
+.cpy:hover,.cpy:focus-visible{opacity:1; transform:scale(1.1)}
+@media (max-width:560px){blockquote{padding-left:0} blockquote::before{position:relative; display:grid;
+  width:40px; height:40px; font-size:13px; margin:0 0 8px 6px} blockquote > .qbody::before{left:20px; top:-9px; transform:rotate(135deg)}}
 
-blockquote{position:relative; margin:28px 0; padding:26px 26px 20px 52px;
-  background:var(--gold-l); border-left:5px solid var(--gold); border-radius:0 14px 14px 0;
-  font-size:19.5px; font-style:italic; line-height:1.75}
-html[data-theme="dark"] blockquote{background:#332918}
-blockquote::before{content:"\201C"; position:absolute; left:14px; top:14px; font-size:52px;
-  line-height:1; color:var(--gold); opacity:.55; font-family:var(--serif)}
-blockquote .qtag{display:block; font-family:var(--ui); font-style:normal; font-size:10.5px;
-  font-weight:700; letter-spacing:.2em; color:#7A5A1E; margin-bottom:10px}
-html[data-theme="dark"] blockquote .qtag{color:var(--gold)}
-blockquote p{margin:0 0 .6em}
-blockquote cite{display:block; font-style:normal; font-family:var(--ui); font-size:14px;
-  color:var(--ink2); margin-top:10px}
-blockquote cite b{color:var(--ink)}
+/* ---------- khái niệm ---------- */
+.concept{position:relative; background:linear-gradient(135deg,var(--c6l),var(--c5l)); border:1.5px solid var(--c6b);
+  border-radius:var(--r); padding:26px 26px 22px; margin:30px 0; box-shadow:var(--sh)}
+.concept .lbl,.example .lbl,.practice .lbl,.hint .lbl,.pause .lbl,.flow .lbl,.keyidea .lbl,figure.fig .fig-lbl{
+  display:inline-flex; align-items:center; gap:7px; font-size:11.5px; font-weight:850; letter-spacing:.12em;
+  text-transform:uppercase; padding:6px 14px; border-radius:var(--r3); margin-bottom:12px; color:#fff}
+.concept .lbl{background:var(--c6)}
+.concept .lbl::before{content:"🧠"; font-family:var(--emo); font-size:13px}
+.concept h4{font-size:24px; font-weight:850; margin:0 0 14px; line-height:1.3; color:var(--ink)}
+.concept dl{margin:0; display:grid; gap:10px}
+.concept dt{font-size:12.5px; font-weight:850; letter-spacing:.04em; color:var(--c6); margin:0}
+.concept dd{margin:-6px 0 0; font-size:16.5px; line-height:1.7; background:var(--card); border-radius:14px;
+  padding:11px 15px; border:1px solid var(--c6b)}
+.concept dt:nth-of-type(1)::before{content:"📘 "; font-family:var(--emo)}
+.concept dt:nth-of-type(2)::before{content:"🧩 "; font-family:var(--emo)}
+.concept dt:nth-of-type(3)::before{content:"⚠️ "; font-family:var(--emo)}
 
-.concept{background:var(--blue-l); border:1px solid rgba(79,115,150,.3); border-radius:14px;
-  padding:22px 24px; margin:26px 0}
-.concept .lbl{font-family:var(--ui); font-size:11px; font-weight:700; letter-spacing:.18em;
-  text-transform:uppercase; color:var(--blue); display:block; margin-bottom:6px}
-.concept h4{font-size:21px; margin:0 0 12px}
-.concept dl{margin:0}
-.concept dt{font-family:var(--ui); font-size:12.5px; letter-spacing:.06em; color:var(--blue);
-  font-weight:700; margin-top:12px}
-.concept dd{margin:3px 0 0; font-size:17px}
+/* ---------- ví dụ ---------- */
+.example{position:relative; border-radius:var(--r); padding:26px 26px 20px; margin:30px 0; background:var(--card);
+  border:2px solid transparent; box-shadow:var(--sh);
+  background:linear-gradient(var(--card),var(--card)) padding-box,
+             linear-gradient(120deg,var(--c2),var(--c8),var(--c7)) border-box}
+.example .lbl{background:linear-gradient(100deg,var(--c2),var(--c8))}
+.example .lbl::before{content:"💡"; font-family:var(--emo); font-size:13px}
 
-.example{background:var(--card); border:1px solid var(--rule); border-top:4px solid var(--gold);
-  border-radius:14px; padding:22px 24px; margin:26px 0}
-.example .lbl{font-family:var(--ui); font-size:11px; font-weight:700; letter-spacing:.18em;
-  text-transform:uppercase; color:var(--gold); display:block; margin-bottom:8px}
+/* ---------- thực hành ---------- */
+.practice{position:relative; background:var(--c4l); border:1.5px solid var(--c4b); border-radius:var(--r);
+  padding:26px 26px 22px; margin:30px 0; box-shadow:var(--sh)}
+.practice .lbl{background:var(--c4)}
+.practice .lbl::before{content:"🧘"; font-family:var(--emo); font-size:13px}
+.notepad{margin-top:16px; border:2px dashed var(--c4b); border-radius:16px; padding:14px 16px; background:var(--card)}
+.notepad .nl{font-size:12.5px; font-weight:800; color:var(--c4); letter-spacing:.06em; text-transform:uppercase}
+.notepad .nl::before{content:"✍️ "; font-family:var(--emo)}
+.notepad .lines{height:16px; border-bottom:1.5px solid var(--rule); margin-top:16px}
 
-.practice{background:var(--green-l); border:1px solid rgba(71,112,90,.35); border-left:5px solid var(--green);
-  border-radius:0 14px 14px 0; padding:22px 24px; margin:26px 0}
-.practice .lbl{font-family:var(--ui); font-size:11px; font-weight:700; letter-spacing:.18em;
-  text-transform:uppercase; color:var(--green); display:block; margin-bottom:8px}
-.notepad{margin-top:14px; border:1px dashed var(--green); border-radius:10px; padding:12px 14px;
-  background:var(--card)}
-.notepad .nl{font-family:var(--ui); font-size:12px; color:var(--ink2); letter-spacing:.08em;
-  text-transform:uppercase}
-.notepad .lines{height:14px; border-bottom:1px solid var(--rule); margin-top:14px}
-
-.hint{background:var(--purple-l); border:1px solid rgba(117,94,139,.3); border-left:5px solid var(--purple);
-  border-radius:0 14px 14px 0; padding:18px 22px; margin:24px 0; font-size:17px}
-.hint .lbl{font-family:var(--ui); font-size:11px; font-weight:700; letter-spacing:.18em;
-  text-transform:uppercase; color:var(--purple); display:block; margin-bottom:6px}
+/* ---------- gợi ý (lời biên tập viên) ---------- */
+.hint{position:relative; background:var(--c7l); border:1.5px solid var(--c7b); border-radius:var(--r);
+  padding:24px 24px 18px; margin:28px 0; font-size:16.5px; box-shadow:var(--sh)}
+.hint .lbl{background:var(--c7)}
+.hint .lbl::before{content:"🪄"; font-family:var(--emo); font-size:13px}
 .hint p:last-child{margin-bottom:0}
 
-.check{background:var(--red-l); border:1px solid rgba(155,74,66,.35); border-left:5px solid var(--red);
-  border-radius:0 12px 12px 0; padding:14px 18px; margin:22px 0; font-size:15.5px;
-  font-family:var(--ui); line-height:1.7}
-.check .lbl{font-size:11px; font-weight:700; letter-spacing:.18em; text-transform:uppercase;
-  color:var(--red); display:block; margin-bottom:4px}
+/* ---------- câu cốt lõi ---------- */
+.keyidea{position:relative; border-radius:var(--r); padding:28px 26px 20px; margin:30px 0;
+  background:radial-gradient(120% 140% at 0% 0%, var(--c3l), var(--card) 60%); border:2px solid var(--c3b); box-shadow:var(--sh)}
+.keyidea .lbl{background:linear-gradient(100deg,var(--c3),var(--c2))}
+.keyidea .lbl::before{content:"⭐"; font-family:var(--emo); font-size:13px}
+.keyidea p{font-size:calc(var(--fs) + 1px); font-weight:600}
+.keyidea p:last-child{margin-bottom:0}
 
-.pause{background:var(--card); border:1px solid var(--rule); border-radius:14px; padding:20px 24px;
-  margin:28px 0; text-align:center}
-.pause .lbl{font-family:var(--ui); font-size:11px; font-weight:700; letter-spacing:.2em;
-  text-transform:uppercase; color:var(--gold); display:block; margin-bottom:8px}
-.pause p{margin:0; font-style:italic; font-size:18.5px}
+/* ---------- dừng lại 30 giây ---------- */
+.pause{position:relative; text-align:center; border-radius:var(--r); padding:30px 26px 28px; margin:34px 0;
+  background:linear-gradient(135deg,var(--c5l),var(--c6l),var(--c7l)); border:1.5px solid var(--c5b); box-shadow:var(--sh); overflow:hidden}
+.pause .lbl{background:var(--c5)}
+.pause .lbl::before{content:"⏳"; font-family:var(--emo); font-size:13px}
+.pause p{margin:0 auto; max-width:620px; font-size:calc(var(--fs) + 2px); font-weight:650; line-height:1.65}
+.pause .tmr{position:relative; width:74px; height:74px; margin:4px auto 14px; display:grid; place-items:center}
+.pause .tmr svg{position:absolute; inset:0; transform:rotate(-90deg)}
+.pause .tmr circle{fill:none; stroke-width:6}
+.pause .tmr .bg{stroke:color-mix(in srgb,var(--c5) 22%, transparent)}
+.pause .tmr .fg{stroke:var(--c5); stroke-linecap:round; stroke-dasharray:201; stroke-dashoffset:201}
+.pause.go .tmr .fg{animation:tmr 30s linear forwards}
+@keyframes tmr{to{stroke-dashoffset:0}}
+.pause .tmr::after{content:attr(data-s); font-size:21px; font-weight:900; color:var(--c5); font-variant-numeric:tabular-nums}
+.pause .tmr.done::after{content:"🌿"; font-family:var(--emo); font-size:26px}
+.pause::after{content:""; position:absolute; width:240px; height:240px; border-radius:50%; left:50%; top:50%;
+  margin:-120px 0 0 -120px; background:radial-gradient(circle,color-mix(in srgb,var(--c5) 22%, transparent),transparent 70%);
+  z-index:0; animation:breathe 8s ease-in-out infinite; pointer-events:none}
+.pause > *{position:relative; z-index:1}
+@keyframes breathe{0%,100%{transform:scale(.7); opacity:.5}50%{transform:scale(1.5); opacity:1}}
 
-/* flow / mạch lập luận */
-.flow{background:var(--card); border:1px solid var(--rule); border-radius:14px; padding:22px 24px; margin:28px 0}
-.flow .lbl{font-family:var(--ui); font-size:11px; font-weight:700; letter-spacing:.18em;
-  text-transform:uppercase; color:var(--gold); display:block; margin-bottom:14px}
+/* ---------- mạch lập luận ---------- */
+.flow{position:relative; background:var(--card); border:1.5px solid var(--rule); border-radius:var(--r);
+  padding:26px 24px 24px; margin:32px 0; box-shadow:var(--sh)}
+.flow .lbl{background:linear-gradient(100deg,var(--c6),var(--c7))}
+.flow .lbl::before{content:"🔗"; font-family:var(--emo); font-size:13px}
 .flow-grid{display:flex; flex-wrap:wrap; align-items:stretch; gap:10px}
-.fstep{flex:1 1 180px; background:var(--bg); border:1px solid var(--rule); border-radius:10px; padding:13px 15px}
-.fstep .k{display:block; font-family:var(--ui); font-size:10.5px; font-weight:700; letter-spacing:.14em;
-  text-transform:uppercase; color:var(--ink2); margin-bottom:5px}
-.fstep .v{font-size:16px; line-height:1.6}
-.farrow{display:flex; align-items:center; color:var(--gold); font-size:20px; padding:0 2px}
+.fstep{--fc:var(--c6); flex:1 1 170px; position:relative; border-radius:18px; padding:16px 16px 14px;
+  background:color-mix(in srgb,var(--fc) 9%, var(--card)); border:1.5px solid color-mix(in srgb,var(--fc) 32%, transparent);
+  transition:transform .2s, box-shadow .2s}
+.fstep:hover{transform:translateY(-4px); box-shadow:0 12px 26px color-mix(in srgb,var(--fc) 22%, transparent)}
+.flow-grid .fstep:nth-of-type(4n+1){--fc:var(--c1)} .flow-grid .fstep:nth-of-type(4n+2){--fc:var(--c2)}
+.flow-grid .fstep:nth-of-type(4n+3){--fc:var(--c6)} .flow-grid .fstep:nth-of-type(4n+4){--fc:var(--c4)}
+.fstep .k{display:block; font-size:11px; font-weight:850; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--fc); margin-bottom:6px}
+.fstep .v{font-size:15.5px; line-height:1.6; display:block}
+.farrow{display:flex; align-items:center; justify-content:center; color:transparent; font-size:0; width:22px; position:relative}
+.farrow::before{content:""; width:22px; height:22px; border-radius:50%; background:var(--ink);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12h12m-5-6 6 6-6 6' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;
+          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12h12m-5-6 6 6-6 6' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;
+  background:linear-gradient(90deg,var(--c6),var(--c8)); animation:nudge 1.6s ease-in-out infinite}
+@keyframes nudge{0%,100%{transform:translateX(-3px)}50%{transform:translateX(4px)}}
 @media (max-width:700px){
   .flow-grid{flex-direction:column}
-  .farrow{justify-content:center; transform:rotate(90deg); padding:2px 0}
+  .farrow{width:100%; height:22px}
+  .farrow::before{transform:rotate(90deg); animation:nudgeV 1.6s ease-in-out infinite}
 }
+@keyframes nudgeV{0%,100%{transform:rotate(90deg) translateX(-3px)}50%{transform:rotate(90deg) translateX(4px)}}
 
-.totop{display:block; text-align:right; margin:16px 0 0}
-.totop a{font-family:var(--ui); font-size:13px; color:var(--ink2); text-decoration:none;
-  border:1px solid var(--rule); border-radius:999px; padding:6px 14px}
-.totop a:hover{border-color:var(--gold); color:var(--gold)}
-
-.origsum{background:var(--gold-l); border:1px solid var(--gold); border-radius:14px; padding:24px}
-html[data-theme="dark"] .origsum{background:#332918}
-.recall{background:var(--blue-l); border:1px solid rgba(79,115,150,.3); border-radius:14px; padding:24px}
-.recall h3{font-family:var(--ui); font-size:15px; letter-spacing:.05em; color:var(--blue); margin:22px 0 8px}
-.recall h3:first-of-type{margin-top:8px}
-.chain{display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-top:10px}
-.chain span{background:var(--card); border:1px solid var(--rule); border-radius:999px;
-  padding:6px 13px; font-family:var(--ui); font-size:13.5px}
-.chain i{color:var(--gold); font-style:normal}
-
-details.audit{background:var(--card); border:1px solid var(--rule); border-radius:14px;
-  padding:16px 20px; margin:34px 0}
-details.audit summary{cursor:pointer; font-family:var(--ui); font-size:14px; font-weight:700;
-  letter-spacing:.1em; text-transform:uppercase; color:var(--gold)}
-details.audit .in{padding-top:14px; font-family:var(--ui); font-size:15px; line-height:1.8}
-details.audit ul{list-style:none; padding:0}
-details.audit li{padding:4px 0 4px 22px; position:relative}
-details.audit li::before{content:"◆"; position:absolute; left:0; top:6px; color:var(--gold); font-size:10px}
-
-footer.pagefoot{border-top:1px solid var(--rule); margin-top:50px; padding:26px 0 60px;
-  font-family:var(--ui); font-size:13.5px; color:var(--ink2); text-align:center; line-height:1.8}
-
-/* ---------- print ---------- */
-@media print{
-  :root{--bg:#fff; --card:#fff}
-  body{font-size:12pt; line-height:1.6; background:#fff; color:#000}
-  #toolbar,#progress,.totop,.btn{display:none !important}
-  header.book{background:#fff !important; color:#000; border-bottom:3px solid #B88A3B; padding:0 0 18pt}
-  header.book h1,header.book .sub,header.book .author,header.book .kicker,header.book .chapno{color:#000}
-  .wrap{max-width:100%; padding:0}
-  @page{size:A4; margin:18mm 16mm}
-  .box,.body-card,blockquote,.concept,.practice,.example,.hint,.keyidea,.pause,.flow,
-  .origsum,.recall,details.audit{break-inside:avoid; page-break-inside:avoid; box-shadow:none}
-  h2,h3,h4,.sec-head{break-after:avoid; page-break-after:avoid}
-  main section{break-inside:auto; margin:22pt 0}
-  blockquote{border-left:3pt solid #B88A3B; background:#fff}
-  .concept{border:1.2pt solid #4F7396}
-  .practice{border:1.2pt solid #47705A}
-  .hint{border:1.2pt solid #755E8B}
-  .check{border:1.2pt solid #9B4A42}
-  nav.toc a{border-left:2pt solid #B88A3B}
-  details.audit{display:block}
-  details.audit[open] .in,details.audit .in{display:block}
-  a{color:#000; text-decoration:none}
-}
-
-/* ===== bổ sung cho bộ nhiều file ===== */
-.pager{display:flex; gap:12px; margin:44px 0 8px; flex-wrap:wrap}
-.pager a,.pager span{flex:1 1 230px; border:1px solid var(--rule); border-radius:12px;
-  padding:14px 18px; text-decoration:none; background:var(--card); color:var(--ink);
-  font-family:var(--ui); font-size:15px; line-height:1.5; box-shadow:var(--shadow)}
-.pager .k{display:block; font-size:10.5px; font-weight:700; letter-spacing:.16em;
-  text-transform:uppercase; color:var(--ink2); margin-bottom:5px}
-.pager a:hover{border-color:var(--gold)}
-.pager .next{text-align:right}
-.pager span.off{opacity:.42; box-shadow:none}
-
-/* trang mục lục tổng */
-.hub-intro{background:var(--card); border:1px solid var(--rule); border-top:4px solid var(--gold);
-  border-radius:14px; padding:24px 26px; margin:30px 0; box-shadow:var(--shadow)}
-.hub-intro p:last-child{margin-bottom:0}
-.meter{height:10px; border-radius:999px; background:var(--gold-l); overflow:hidden; margin:14px 0 8px}
-.meter i{display:block; height:100%; background:linear-gradient(90deg,var(--gold),#E0BD72)}
-.meter-lbl{font-family:var(--ui); font-size:13.5px; color:var(--ink2)}
-.group{margin:44px 0}
-.group > h2{font-family:var(--ui); font-size:13px; font-weight:700; letter-spacing:.2em;
-  text-transform:uppercase; color:var(--gold); margin:0 0 4px}
-.group > .gsub{font-family:var(--ui); font-size:14px; color:var(--ink2); margin:0 0 18px}
-.cards{display:grid; grid-template-columns:repeat(auto-fill,minmax(268px,1fr)); gap:16px}
-.card{display:block; background:var(--card); border:1px solid var(--rule); border-radius:14px;
-  padding:20px 22px; text-decoration:none; color:var(--ink); box-shadow:var(--shadow);
-  position:relative; transition:border-color .15s, transform .15s}
-.card:hover{border-color:var(--gold); transform:translateY(-2px)}
-.card.off{opacity:.55; box-shadow:none; cursor:default}
-.card.off:hover{border-color:var(--rule); transform:none}
-.card .num{font-family:var(--ui); font-size:11px; font-weight:700; letter-spacing:.18em;
-  text-transform:uppercase; color:var(--gold); display:block; margin-bottom:8px}
-.card h3{font-size:20px; line-height:1.35; margin:0 0 8px}
-.card .sub{font-family:var(--ui); font-size:14px; color:var(--ink2); line-height:1.6; margin:0}
-.card .status{display:inline-block; margin-top:14px; font-family:var(--ui); font-size:10.5px;
-  font-weight:700; letter-spacing:.14em; text-transform:uppercase; padding:3px 10px;
-  border-radius:999px; background:var(--green-l); color:var(--green)}
-.card.off .status{background:transparent; color:var(--ink2); border:1px dashed var(--rule)}
-@media print{.card{break-inside:avoid} .pager{display:none}}
-
-/* cặp đối chiếu hai vế (giữ nguyên câu chữ nguồn, không phải bảng bố cục) */
-ul.pairs{list-style:none; margin:0 0 1.15em; padding:0}
+/* ---------- cặp đối chiếu & ngọn núi ---------- */
+ul.pairs{list-style:none; margin:0 0 1.1em; padding:0}
 ul.pairs li{display:flex; gap:10px; margin:0 0 10px; flex-wrap:wrap}
-ul.pairs .a,ul.pairs .b{flex:1 1 240px; border-radius:10px; padding:11px 15px; font-size:16.5px; line-height:1.6}
-ul.pairs .a{background:var(--bg); border:1px solid var(--rule)}
-ul.pairs .b{background:var(--gold-l); border:1px solid var(--gold)}
-html[data-theme="dark"] ul.pairs .b{background:#332918}
-ul.pairs .lbl-row{font-family:var(--ui); font-size:10.5px; font-weight:700; letter-spacing:.14em;
-  text-transform:uppercase; color:var(--ink2); display:block; margin-bottom:3px}
-@media print{ul.pairs li{break-inside:avoid}}
-
-/* sơ đồ tầng (ẩn dụ ngọn núi của ý thức) */
+ul.pairs .a,ul.pairs .b{flex:1 1 240px; border-radius:16px; padding:12px 16px; font-size:16px; line-height:1.6}
+ul.pairs .a{background:var(--soft); border:1.5px solid var(--rule)}
+ul.pairs .b{background:var(--c4l); border:1.5px solid var(--c4b)}
+ul.pairs .lbl-row{font-size:10.5px; font-weight:850; letter-spacing:.1em; text-transform:uppercase; color:var(--ink2); display:block; margin-bottom:3px}
 ol.mtn{list-style:none; margin:0; padding:0}
-ol.mtn li{background:var(--card); border:1px solid var(--rule); border-left:5px solid var(--gold);
-  border-radius:0 12px 12px 0; padding:14px 18px; margin:0 0 9px; box-shadow:var(--shadow)}
-ol.mtn li .lvl{display:block; font-family:var(--ui); font-size:11px; font-weight:700;
-  letter-spacing:.14em; text-transform:uppercase; color:var(--gold); margin-bottom:5px}
-ol.mtn li .txt{font-size:16.5px; line-height:1.65}
-ol.mtn li:nth-child(1){margin-left:0}
-ol.mtn li:nth-child(2){margin-left:22px}
-ol.mtn li:nth-child(3){margin-left:44px}
-ol.mtn li:nth-child(4){margin-left:66px; border-left-width:7px; background:var(--gold-l)}
-html[data-theme="dark"] ol.mtn li:nth-child(4){background:#332918}
-@media (max-width:620px){
-  ol.mtn li:nth-child(2){margin-left:10px}
-  ol.mtn li:nth-child(3){margin-left:20px}
-  ol.mtn li:nth-child(4){margin-left:30px}
-}
-@media print{ol.mtn li{break-inside:avoid}}
+ol.mtn li{--mc:var(--c6); background:color-mix(in srgb,var(--mc) 8%, var(--card)); border:1.5px solid color-mix(in srgb,var(--mc) 30%, transparent);
+  border-left:6px solid var(--mc); border-radius:6px 16px 16px 6px; padding:14px 18px; margin:0 0 10px}
+ol.mtn li:nth-child(1){--mc:var(--c1)} ol.mtn li:nth-child(2){--mc:var(--c2); margin-left:22px}
+ol.mtn li:nth-child(3){--mc:var(--c5); margin-left:44px} ol.mtn li:nth-child(4){--mc:var(--c4); margin-left:66px}
+ol.mtn li .lvl{display:block; font-size:11px; font-weight:850; letter-spacing:.1em; text-transform:uppercase; color:var(--mc); margin-bottom:5px}
+ol.mtn li .txt{font-size:16px; line-height:1.65}
+@media (max-width:620px){ol.mtn li:nth-child(2){margin-left:10px} ol.mtn li:nth-child(3){margin-left:20px} ol.mtn li:nth-child(4){margin-left:30px}}
 
-/* ===== hình vẽ SVG ===== */
-figure.fig{background:var(--card); border:1px solid var(--rule); border-radius:14px;
-  padding:22px 20px 18px; margin:30px 0; box-shadow:var(--shadow)}
-figure.fig .fig-lbl{display:inline-block; font-family:var(--ui); font-size:11px; font-weight:700;
-  letter-spacing:.16em; text-transform:uppercase; padding:3px 10px; border-radius:999px;
-  background:var(--gold-l); color:#7A5A1E; margin-bottom:16px}
-html[data-theme="dark"] figure.fig .fig-lbl{color:var(--gold)}
-figure.fig svg{display:block; width:100%; height:auto; max-width:520px; margin:0 auto; overflow:visible}
-figure.fig figcaption{font-family:var(--ui); font-size:14px; color:var(--ink2);
-  line-height:1.65; margin-top:16px; padding-top:13px; border-top:1px dashed var(--rule)}
+/* ---------- hình minh họa ---------- */
+figure.fig{position:relative; background:var(--card); border:1.5px solid var(--rule); border-radius:var(--r);
+  padding:24px 22px 18px; margin:34px 0; box-shadow:var(--sh); overflow:hidden}
+figure.fig::before{content:""; position:absolute; inset:0; pointer-events:none; opacity:.55;
+  background:radial-gradient(70% 60% at 100% 0%, color-mix(in srgb,var(--sc,var(--ac)) 12%, transparent), transparent 70%),
+             radial-gradient(60% 60% at 0% 100%, color-mix(in srgb,var(--c7) 9%, transparent), transparent 70%)}
+figure.fig > *{position:relative}
+figure.fig .fig-lbl{background:linear-gradient(100deg,var(--c8),var(--c7))}
+figure.fig .fig-lbl::before{content:"🎨"; font-family:var(--emo); font-size:13px}
+figure.fig svg{display:block; width:100%; height:auto; max-width:560px; margin:6px auto 0; overflow:visible}
+figure.fig figcaption{font-size:14.5px; color:var(--ink2); line-height:1.7; margin-top:16px; padding-top:14px;
+  border-top:1.5px dashed var(--rule)}
 figure.fig figcaption strong{color:var(--ink)}
-.svg-t{font-family:Arial,Helvetica,sans-serif; fill:var(--ink)}
-.svg-t2{font-family:Arial,Helvetica,sans-serif; fill:var(--ink2)}
-.svg-cap{font-family:Arial,Helvetica,sans-serif; font-weight:700; letter-spacing:.08em}
-@media print{figure.fig{break-inside:avoid; box-shadow:none}}
+.svg-t{font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif; fill:var(--ink)}
+.svg-t2{font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif; fill:var(--ink2)}
+.svg-cap{font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif; font-weight:800; letter-spacing:.06em}
+.svg-w{font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif; fill:#fff; font-weight:800}
+.svg-e{font-family:var(--emo)}
+/* chuyển động trong SVG */
+.a-pulse{animation:aPulse 2.4s ease-in-out infinite; transform-box:fill-box; transform-origin:center}
+@keyframes aPulse{0%,100%{transform:scale(1); opacity:1}50%{transform:scale(1.25); opacity:.75}}
+.a-glow{animation:aGlow 3s ease-in-out infinite; transform-box:fill-box; transform-origin:center}
+@keyframes aGlow{0%,100%{opacity:.55; transform:scale(.94)}50%{opacity:1; transform:scale(1.06)}}
+.a-crumble{animation:aCrumble 9s cubic-bezier(.5,0,.7,.4) infinite; transform-box:fill-box; transform-origin:center}
+@keyframes aCrumble{0%,24%{transform:none; opacity:1}50%,86%{transform:translateY(64px) rotate(var(--rot,6deg)); opacity:0}87%{transform:none; opacity:0}100%{transform:none; opacity:1}}
+.a-spin{animation:aSpin 40s linear infinite; transform-box:view-box}
+.a-spin-r{animation:aSpin 40s linear infinite reverse; transform-box:fill-box; transform-origin:center}
+@keyframes aSpin{to{transform:rotate(360deg)}}
+.a-float{animation:aFloat 5s ease-in-out infinite; transform-box:fill-box}
+.a-float2{animation:aFloat 6.5s ease-in-out infinite reverse; transform-box:fill-box}
+@keyframes aFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.a-drift{animation:aDrift 9s ease-in-out infinite; transform-box:fill-box}
+@keyframes aDrift{0%,100%{transform:translateX(0)}50%{transform:translateX(16px)}}
+.a-dash{stroke-dasharray:6 7; animation:aDash 1.2s linear infinite}
+@keyframes aDash{to{stroke-dashoffset:-26}}
+.a-blink{animation:aBlink 2.6s ease-in-out infinite}
+@keyframes aBlink{0%,100%{opacity:1}50%{opacity:.25}}
+.a-rise{animation:aRise 4.5s ease-in-out infinite; transform-box:fill-box}
+@keyframes aRise{0%,100%{transform:translateY(10px); opacity:.55}50%{transform:translateY(-4px); opacity:1}}
+.a-fall{animation:aFall 4.5s ease-in infinite; transform-box:fill-box; transform-origin:center}
+@keyframes aFall{0%,30%{transform:translateY(0) rotate(0); opacity:1}80%,100%{transform:translateY(46px) rotate(18deg); opacity:0}}
+.a-sway{animation:aSway 4s ease-in-out infinite; transform-box:fill-box; transform-origin:50% 100%}
+@keyframes aSway{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
+.a-scan{animation:aScan 7s ease-in-out infinite; transform-box:view-box}
+.a-orbit{offset-rotate:0deg; animation:aOrbit 9s linear infinite}
+@keyframes aOrbit{from{offset-distance:0%}to{offset-distance:100%}}
+
+/* ---------- về đầu trang ---------- */
+.totop{display:block; text-align:right; margin:18px 0 0}
+.totop a{display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:750; color:var(--ink2);
+  text-decoration:none; border:1.5px solid var(--rule); border-radius:var(--r3); padding:7px 15px; background:var(--card)}
+.totop a:hover{border-color:var(--sc,var(--ac)); color:var(--sc,var(--ac))}
+
+/* ---------- tóm tắt gốc & bản đồ ghi nhớ ---------- */
+main > section#tom-tat-goc,main > section#ban-do-ghi-nho{--sc:var(--c2);--scl:var(--c2l);--scb:var(--c2b)}
+main > section#ban-do-ghi-nho{--sc:var(--c6);--scl:var(--c6l);--scb:var(--c6b)}
+.origsum{background:linear-gradient(135deg,var(--c3l),var(--c2l)) !important; border:2px solid var(--c3b) !important}
+.origsum .tag{background:var(--c2); color:#fff; border-color:transparent}
+.origsum .tag::before{content:"📌"; font-family:var(--emo); font-size:13px}
+.origsum h3{color:var(--c2)}
+.origsum ul.dia li{--sc:var(--c2); background:color-mix(in srgb,var(--card) 70%, transparent); border-radius:12px; padding:9px 12px 9px 34px; margin-bottom:7px}
+.origsum ul.dia li::before{left:13px; top:1.05em}
+.recall{background:linear-gradient(135deg,var(--c6l),var(--c7l)) !important; border:2px solid var(--c6b) !important}
+.recall .tag{background:var(--c6) !important; color:#fff !important; border-color:transparent}
+.recall .tag::before{content:"🧩"; font-family:var(--emo); font-size:13px}
+.recall h3{display:flex; align-items:center; gap:8px; font-size:17px; font-weight:850; color:var(--c6); margin:26px 0 10px}
+.recall h3:nth-of-type(1)::before{content:"💎"; font-family:var(--emo)}
+.recall h3:nth-of-type(2)::before{content:"🔑"; font-family:var(--emo)}
+.recall h3:nth-of-type(3)::before{content:"🧘"; font-family:var(--emo)}
+.recall h3:nth-of-type(4)::before{content:"⛓️"; font-family:var(--emo)}
+.recall h3:nth-of-type(5)::before{content:"✨"; font-family:var(--emo)}
+.recall ul.dia li{--sc:var(--c6)}
+.chain{display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-top:12px}
+.chain span{--cc:var(--c6); background:color-mix(in srgb,var(--cc) 14%, var(--card)); border:1.5px solid color-mix(in srgb,var(--cc) 40%, transparent);
+  color:var(--ink); border-radius:var(--r3); padding:7px 14px; font-size:13.5px; font-weight:700}
+.chain span:nth-of-type(8n+1){--cc:var(--c1)} .chain span:nth-of-type(8n+2){--cc:var(--c2)}
+.chain span:nth-of-type(8n+3){--cc:var(--c3)} .chain span:nth-of-type(8n+4){--cc:var(--c4)}
+.chain span:nth-of-type(8n+5){--cc:var(--c5)} .chain span:nth-of-type(8n+6){--cc:var(--c6)}
+.chain span:nth-of-type(8n+7){--cc:var(--c7)} .chain span:nth-of-type(8n+8){--cc:var(--c8)}
+.chain i{font-style:normal; color:var(--ink3); font-weight:900}
+html.js .chain.rv span{opacity:0; transform:scale(.8)}
+html.js .chain.rv.in span{opacity:1; transform:none; transition:opacity .4s, transform .4s cubic-bezier(.3,1.6,.5,1)}
+
+/* ---------- điều hướng chương ---------- */
+.pager{display:grid; grid-template-columns:1fr auto 1fr; gap:12px; margin:56px 0 8px}
+.pager a,.pager span{position:relative; border:1.5px solid var(--rule); border-radius:var(--r); padding:18px 20px;
+  text-decoration:none; background:var(--card); color:var(--ink); font-size:15px; font-weight:700; line-height:1.45;
+  box-shadow:var(--sh); transition:transform .2s, box-shadow .2s, border-color .2s}
+.pager a:hover{transform:translateY(-4px); border-color:var(--ac); box-shadow:0 14px 34px color-mix(in srgb,var(--ac) 22%, transparent)}
+.pager .k{display:block; font-size:11px; font-weight:850; letter-spacing:.1em; text-transform:uppercase; color:var(--ac); margin-bottom:5px}
+.pager .prev .k::before{content:"⬅️ "; font-family:var(--emo)}
+.pager .next .k::after{content:" ➡️"; font-family:var(--emo)}
+.pager .home{text-align:center}
+.pager .home .k::before{content:"🗂️ "; font-family:var(--emo)}
+.pager .next{text-align:right}
+.pager span.off{opacity:.45; box-shadow:none}
+@media (max-width:720px){.pager{grid-template-columns:1fr}.pager .next,.pager .home{text-align:left}}
+
+/* ---------- tìm kiếm & bảng câu bôi vàng ---------- */
+#findbar{position:fixed; left:50%; top:76px; z-index:80; width:min(560px,calc(100% - 24px)); transform:translate(-50%,-20px);
+  opacity:0; pointer-events:none; transition:opacity .2s, transform .2s; display:flex; gap:8px; align-items:center;
+  background:var(--card); border:1.5px solid var(--ac); border-radius:var(--r3); padding:7px 8px 7px 16px; box-shadow:var(--sh2)}
+#findbar.on{opacity:1; transform:translate(-50%,0); pointer-events:auto}
+#findbar::before{content:"🔍"; font-family:var(--emo)}
+#findbar input{flex:1; min-width:0; border:0; outline:0; background:transparent; font:inherit; font-size:16px; color:var(--ink)}
+#findbar .fc{font-size:12.5px; font-weight:750; color:var(--ink2); white-space:nowrap; font-variant-numeric:tabular-nums}
+#findbar button{border:0; background:var(--soft); color:var(--ink); border-radius:50%; width:34px; height:34px; cursor:pointer; font-size:14px; font-weight:800}
+span.fnd{background:color-mix(in srgb,var(--c8) 30%, transparent); border-radius:4px; box-shadow:0 0 0 2px color-mix(in srgb,var(--c8) 30%, transparent)}
+span.fnd.cur{background:var(--c8); color:#fff}
+#hlpanel{position:fixed; inset:0; z-index:90; display:none; background:rgba(15,14,23,.45); backdrop-filter:blur(4px);
+  padding:70px 14px 20px; overflow:auto}
+#hlpanel.on{display:block}
+#hlpanel .in{max-width:680px; margin:0 auto; background:var(--card); border-radius:var(--r); padding:24px 22px 18px; box-shadow:var(--sh2);
+  animation:pop .3s cubic-bezier(.3,1.4,.5,1)}
+@keyframes pop{from{transform:scale(.92); opacity:0}}
+#hlpanel h2{margin:0 0 4px; font-size:22px; font-weight:850}
+#hlpanel h2::before{content:"🖍️ "; font-family:var(--emo)}
+#hlpanel .hs{font-size:13.5px; color:var(--ink2); margin:0 0 14px}
+#hlpanel ol{margin:0; padding:0; list-style:none; counter-reset:h; display:grid; gap:8px}
+#hlpanel li{counter-increment:h}
+#hlpanel li a{display:block; position:relative; padding:11px 14px 11px 44px; border-radius:14px; text-decoration:none; color:var(--hl-ink);
+  background:linear-gradient(100deg,var(--hl1),var(--hl2)); font-size:15.5px; line-height:1.55; font-weight:600}
+#hlpanel li a::before{content:counter(h); position:absolute; left:12px; top:11px; width:22px; height:22px; border-radius:7px;
+  background:rgba(43,34,0,.14); display:grid; place-items:center; font-size:11.5px; font-weight:850}
+#hlpanel li a:hover{filter:brightness(1.04); transform:translateX(3px)}
+#hlpanel .x{float:right; border:0; width:36px; height:36px; border-radius:50%; background:var(--soft); cursor:pointer; font-size:16px; color:var(--ink)}
+
+/* ---------- confetti ---------- */
+.cf{position:fixed; z-index:100; width:9px; height:9px; border-radius:2px; pointer-events:none; animation:cf 1.1s cubic-bezier(.2,.7,.4,1) forwards}
+@keyframes cf{to{transform:translate(var(--dx),var(--dy)) rotate(var(--rt)); opacity:0}}
+
+/* ---------- footer chương ---------- */
+html.chap footer.pagefoot{margin-top:40px}
+
+@media print{
+  #rail,#findbar,#hlpanel,.cpy,.stats,#nowsec{display:none !important}
+  .body-card,blockquote,.concept,.practice,.example,.hint,.keyidea,.pause,.flow,figure.fig,.origsum,.recall{break-inside:avoid; box-shadow:none}
+  html.js mark{background-size:100% 100% !important; color:var(--hl-ink) !important}
+  html.js .rv{opacity:1 !important; transform:none !important}
+  .sec-head h2{-webkit-text-fill-color:var(--ink)}
+}
+
+/* ===== tinh chỉnh sau khi xem bản chụp ===== */
+/* hero: các pill xếp từng dòng */
+header.book .kicker,header.book .chapno{display:flex; width:fit-content; margin-left:auto; margin-right:auto}
+header.book .chapno{gap:8px}
+html.chap header.book .wrap::after{bottom:auto; top:14%}
+/* chữ trên nền vàng phải tối */
+.stages li:nth-child(8n+3),nav.toc li:nth-child(8n+3),main > section:nth-of-type(8n+3){--on:#3A2A00}
+.stages li::before,nav.toc a .n,.badge{color:var(--on,#fff)}
+#rail a.act .n{color:var(--ron,#fff)}
+/* tiêu đề phần: chữ đặc + vạch màu */
+.sec-head h2{color:var(--ink); background:linear-gradient(90deg,var(--sc),color-mix(in srgb,var(--sc) 0%, transparent)) left bottom / 140px 5px no-repeat;
+  -webkit-background-clip:border-box; background-clip:border-box; padding-bottom:12px}
+/* toolbar trang chương: một dòng trên máy tính */
+html.chap #toolbar .wrap{flex-wrap:nowrap; max-width:1180px}
+html.chap #toolbar .tb-title{margin-right:auto; flex:0 0 auto}
+html.chap #nowsec{flex:1 1 auto; min-width:0; max-width:none; margin:0 6px 0 4px}
+html.chap #toolbar .btn{flex:0 0 auto}
+html.chap #toolbar .tb-spacer{flex:1 1 auto}
+@media (max-width:1180px){html.chap #toolbar a.btn[href="#top"],html.chap #printBtn{display:none}}
+@media (max-width:760px){
+  html.chap #toolbar .wrap{flex-wrap:wrap; padding:8px 12px; gap:6px}
+  html.chap #themeBtn{display:none}
+  html.chap #toolbar .tb-title{flex:1 1 auto; font-size:12px}
+  html.chap #toolbar .btn{padding:7px 12px; font-size:12.5px}
+  html.chap #nowsec{order:9; flex:1 1 100%; margin:0; font-size:12px; padding:5px 11px}
+  html.chap #nowsec:not(.on){display:none}
+}
+/* nút nổi trên điện thoại: một thanh ngang dưới đáy */
+@media (max-width:700px){
+  html.chap #fabs{left:50%; right:auto; bottom:10px; transform:translateX(-50%); flex-direction:row; gap:4px;
+    padding:5px; border-radius:var(--r3); background:color-mix(in srgb,var(--card) 86%, transparent);
+    backdrop-filter:blur(12px); border:1.5px solid var(--rule); box-shadow:var(--sh2)}
+  html.chap #fabs button{width:40px; height:40px; font-size:17px; box-shadow:none; border:0; background:transparent}
+  html.chap #fabs .fab-top{opacity:1; pointer-events:auto}
+  html.chap footer.pagefoot{padding-bottom:110px}
+}
+/* điện thoại: bớt đệm */
+@media (max-width:600px){
+  html.chap .wrap{padding:0 14px}
+  .box{padding:22px 18px 18px}
+  .map .goal{padding:14px 14px 14px 46px; font-size:15.5px}
+  .map .goal::before{left:13px; font-size:19px}
+  .stages li{padding:9px 10px 9px 48px; font-size:15px}
+  .concept,.example,.practice,.hint,.keyidea,.flow,figure.fig{padding-left:18px; padding-right:18px}
+  .sec-head{gap:14px} .badge{width:52px; height:52px; font-size:19px; border-radius:17px}
+  .willlearn{padding:13px 14px 13px 48px; font-size:15px} .willlearn::before{left:13px; font-size:19px}
+  .stats{gap:8px} .stat{padding:11px 4px 10px; border-radius:16px} .stat b{font-size:23px} .stat .se{font-size:20px}
+}
+
+/* ---------- chuyển động bổ sung cho hình (từ chương 02) ---------- */
+.a-pop{animation:aPop 6s ease-in-out infinite; transform-box:fill-box; transform-origin:center}
+@keyframes aPop{0%{opacity:0; transform:scale(.6)}12%,42%{opacity:1; transform:scale(1)}58%,100%{opacity:0; transform:scale(.92)}}
+.a-drain{animation:aDrain 5s ease-in-out infinite; transform-box:fill-box; transform-origin:0% 50%}
+@keyframes aDrain{0%,100%{transform:scaleX(1)}50%{transform:scaleX(.3)}}
+.a-swapA{animation:aSwapA 7s ease-in-out infinite}
+.a-swapB{animation:aSwapB 7s ease-in-out infinite}
+@keyframes aSwapA{0%,38%{opacity:1}50%,88%{opacity:.13}100%{opacity:1}}
+@keyframes aSwapB{0%,38%{opacity:.13}50%,88%{opacity:1}100%{opacity:.13}}
+.a-sink{animation:aSink 4.5s ease-in-out infinite; transform-box:fill-box; transform-origin:50% 100%}
+@keyframes aSink{0%,100%{transform:rotate(-3deg) translateY(0)}50%{transform:rotate(-9deg) translateY(7px)}}
+.a-flicker{animation:aFlick .9s ease-in-out infinite; transform-box:fill-box; transform-origin:50% 100%}
+@keyframes aFlick{0%,100%{transform:scale(1,1)}25%{transform:scale(.88,1.14) skewX(4deg)}50%{transform:scale(1.06,.92)}75%{transform:scale(.94,1.08) skewX(-4deg)}}
+.a-peel{animation:aPeel 11s ease-in-out infinite}
+@keyframes aPeel{0%,12%{opacity:1}24%,74%{opacity:0}88%,100%{opacity:1}}
+.a-wheel{animation:aSpin 1.6s linear infinite; transform-box:fill-box; transform-origin:center}
+.a-tick{stroke-dasharray:30; animation:aTick 8s ease-out infinite}
+@keyframes aTick{0%{stroke-dashoffset:30}6%,90%{stroke-dashoffset:0}100%{stroke-dashoffset:30}}
+html.still .a-tick{stroke-dashoffset:0}
+.a-fog{animation:aFog 9s ease-in-out infinite}
+@keyframes aFog{0%,15%{transform:translateX(0); opacity:.92}55%,80%{transform:translateX(140px); opacity:0}100%{transform:translateX(0); opacity:.92}}
+.a-fogL{animation:aFogL 9s ease-in-out infinite}
+@keyframes aFogL{0%,15%{transform:translateX(0); opacity:.92}55%,80%{transform:translateX(-140px); opacity:0}100%{transform:translateX(0); opacity:.92}}
+.a-spinc{animation:aSpin 1.4s linear infinite}
+.a-rain{animation:aRain 1.4s linear infinite}
+@keyframes aRain{0%{transform:translateY(-14px); opacity:0}20%{opacity:.9}100%{transform:translateY(40px); opacity:0}}
+.a-ticker{animation:aTicker 14s linear infinite}
+@keyframes aTicker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.a-tip{animation:aTip 3.2s ease-in-out infinite; transform-box:fill-box; transform-origin:50% 50%}
+@keyframes aTip{0%,100%{transform:rotate(-9deg)}50%{transform:rotate(9deg)}}
+.a-wave{animation:aWave 1.6s linear infinite}
+@keyframes aWave{to{transform:translateX(var(--wl,-40px))}}
+.a-flipA{animation:aFlipA 6s ease-in-out infinite; transform-box:fill-box; transform-origin:center}
+.a-flipB{animation:aFlipB 6s ease-in-out infinite; transform-box:fill-box; transform-origin:center}
+@keyframes aFlipA{0%,40%{transform:scaleX(1)}48%,92%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+@keyframes aFlipB{0%,48%{transform:scaleX(0)}56%,92%{transform:scaleX(1)}100%{transform:scaleX(0)}}
+html.still .a-flipB{transform:scaleX(0)}
+.a-bounce{animation:aBounce .7s ease-in-out infinite alternate; transform-box:fill-box}
+@keyframes aBounce{from{transform:translateY(0)}to{transform:translateY(-16px)}}
+.a-shrink{animation:aShrink 6s ease-in infinite; transform-box:fill-box; transform-origin:50% 100%}
+@keyframes aShrink{0%,10%{transform:scale(1); opacity:1}80%{transform:scale(.08); opacity:.2}100%{transform:scale(.08); opacity:0}}
+.a-mergeL{animation:aMergeL 6s ease-in-out infinite}
+.a-mergeR{animation:aMergeR 6s ease-in-out infinite}
+@keyframes aMergeL{0%,20%{transform:translateX(0)}55%,85%{transform:translateX(70px)}100%{transform:translateX(0)}}
+@keyframes aMergeR{0%,20%{transform:translateX(0)}55%,85%{transform:translateX(-70px)}100%{transform:translateX(0)}}
+.a-heal{animation:aHeal 12s ease-in-out infinite}
+@keyframes aHeal{0%,8%{opacity:1}14%,88%{opacity:.18}100%{opacity:1}}
+.a-strike{stroke-dasharray:200; stroke-dashoffset:200; animation:aStrike 12s ease-in-out infinite}
+@keyframes aStrike{0%,6%{stroke-dashoffset:200}12%,88%{stroke-dashoffset:0}100%{stroke-dashoffset:200}}
+html.still .a-strike{stroke-dashoffset:200}
+.a-fill{animation:aFill 12s linear infinite; transform-box:fill-box; transform-origin:0 50%}
+@keyframes aFill{0%{transform:scaleX(0)}88%{transform:scaleX(1)}100%{transform:scaleX(1)}}
 </style>
 </head>
 <body>
+<div id="blobs" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
 <div id="progress" aria-hidden="true"></div>
 <div id="toolbar"><div class="wrap">
   <span class="tb-title">Bí mật vĩ đại nhất</span>
-  <a class="btn" href="index.html">← Mục lục sách</a>
+  <a class="btn" href="index.html">Mục lục sách</a>
+  <span id="nowsec" aria-live="polite"></span>
   <button class="btn" id="themeBtn" type="button" aria-pressed="false">Chế độ đọc tối</button>
   <button class="btn" id="printBtn" type="button">In / Lưu PDF</button>
   <a class="btn" href="#top">Về đầu trang</a>
 </div></div>
-<header class="book" id="top"><div class="wrap">
+<header class="book" id="top"><div class="wrap" data-e1="🧱" data-e2="🔨">
   <p class="kicker">Sách &middot; Bí mật vĩ đại nhất</p>
   <p class="chapno">Chương 09</p>
   <h1>Giải tỏa niềm tin hạn chế</h1>
   <div class="rule-orn"><span></span><b>◆</b><span></span></div>
   <p class="sub">Niềm tin là suy nghĩ được lặp đến mức được tin; nó tự chứng minh mình đúng — và tan ngay khi bạn nhận thức được nó.</p>
   <p class="author">Rhonda Byrne</p>
+  <div class="stats"><div class="stat"><span class="se" aria-hidden="true">🧩</span><b data-n="4">4</b><small>phần</small></div><div class="stat"><span class="se" aria-hidden="true">💬</span><b data-n="17">17</b><small>trích dẫn</small></div><div class="stat"><span class="se" aria-hidden="true">👥</span><b data-n="11">11</b><small>người được trích</small></div><div class="stat"><span class="se" aria-hidden="true">🎨</span><b data-n="15">15</b><small>hình minh họa</small></div><div class="stat"><span class="se" aria-hidden="true">⏱️</span><b data-n="28">28</b><small>phút đọc</small></div></div>
 </div></header>
 <div class="wrap">
   <!-- BẢN ĐỒ CHƯƠNG -->
@@ -412,11 +929,11 @@ figure.fig figcaption strong{color:var(--ink)}
       <h2>Niềm tin là gì</h2></div>
     <p class="willlearn"><b>Bạn sẽ hiểu gì ở phần này?</b><br>Một niềm tin hình thành qua những bước nào, và vì sao tâm trí phát ra những suy nghĩ giống hệt nhau ở mọi người. <em>Tiêu đề phần này do biên tập viên đặt — đoạn mở chương không có tiểu mục trong sách.</em></p>
 
-    <blockquote>
+    <blockquote data-q="7" data-ini="🙏"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
       <span class="qtag">Trích dẫn</span>
       <p>Tất cả niềm tin đều là những giới hạn tưởng tượng.</p>
       <cite><b>Người thầy của tôi</b> — người thầy giấu tên của Rhonda Byrne</cite>
-    </blockquote>
+    </div></blockquote>
 
     <article class="body-card">
       <p>Niềm tin là gì? <mark>Niềm tin chỉ là một suy nghĩ mà chúng ta nghĩ đi nghĩ lại cho đến khi chúng ta tin vào nó.</mark> Tất cả niềm tin đều có giới hạn vì chúng xuất phát từ tâm trí.</p>
@@ -486,17 +1003,27 @@ figure.fig figcaption strong{color:var(--ink)}
       <figcaption><strong>Hình do biên tập viên dựng</strong> theo đúng năm bước tác giả mô tả với ví dụ &ldquo;quá tốt để có thể là sự thật&rdquo;. Điểm quan trọng là vòng <em>khép kín</em>: chính vì niềm tin phải tự thể hiện ra thế giới, ta mới thấy bằng chứng — và bằng chứng lại làm ta tin chắc hơn.</figcaption>
     </figure>
 
-    <blockquote>
+    <!-- FIG-C9 -->
+    <figure class="fig">
+      <span class="fig-lbl">Hình 2 &middot; Một suy nghĩ vô hại cho đến khi ta tin</span>
+      <svg viewBox="0 0 520 244" role="img" aria-label="Một suy nghĩ trôi nhẹ như bong bóng; khi bị đóng dấu Tôi tin, nó đi vào tiềm thức và thành một bánh răng quay tự động">
+<defs><marker id="m9a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="var(--c7)"/></marker></defs>
+<g class="a-float"><rect x="24" y="70" width="128" height="58" rx="29" fill="var(--c6l)" stroke="var(--c6)" stroke-width="1.6"/><circle cx="46" cy="140" r="7" fill="var(--c6l)" stroke="var(--c6)" stroke-width="1.4"/><circle cx="36" cy="156" r="4" fill="var(--c6l)" stroke="var(--c6)" stroke-width="1.2"/><text x="88.0" y="104.0" class="svg-t" font-size="13" text-anchor="middle" font-weight="800">một suy nghĩ</text></g><text x="88.0" y="40.0" class="svg-cap" font-size="12" text-anchor="middle" fill="var(--c6)">VÔ HẠI</text><text x="88.0" y="186.0" class="svg-t2" font-size="12" text-anchor="middle" font-weight="700">chỉ trôi qua</text><path d="M168,100 L232,100" stroke="var(--c7)" stroke-width="2.4" marker-end="url(#m9a)" class="a-dash"/><g class="a-pop"><rect x="234" y="76" width="92" height="46" rx="10" fill="none" stroke="var(--c1)" stroke-width="3" transform="rotate(-8 280 99)"/><text x="280.0" y="106.0" class="svg-t" font-size="16" text-anchor="middle" font-weight="900" style="fill:var(--c1)" transform="rotate(-8 280 99)">TÔI TIN!</text></g><path d="M330,100 L384,100" stroke="var(--c7)" stroke-width="2.4" marker-end="url(#m9a)" class="a-dash"/><text x="280.0" y="40.0" class="svg-cap" font-size="12" text-anchor="middle" fill="var(--c1)">KHOẢNH KHẮC TA TIN</text><rect x="392" y="56" width="114" height="112" rx="20" fill="var(--c7l)" stroke="var(--c7)" stroke-width="1.6"/><g class="a-wheel" style="animation-duration:3s"><rect x="445" y="79" width="8" height="10" rx="2" fill="var(--c7)" transform="rotate(0 449 108)"/><rect x="445" y="79" width="8" height="10" rx="2" fill="var(--c7)" transform="rotate(45 449 108)"/><rect x="445" y="79" width="8" height="10" rx="2" fill="var(--c7)" transform="rotate(90 449 108)"/><rect x="445" y="79" width="8" height="10" rx="2" fill="var(--c7)" transform="rotate(135 449 108)"/><rect x="445" y="79" width="8" height="10" rx="2" fill="var(--c7)" transform="rotate(180 449 108)"/><rect x="445" y="79" width="8" height="10" rx="2" fill="var(--c7)" transform="rotate(225 449 108)"/><rect x="445" y="79" width="8" height="10" rx="2" fill="var(--c7)" transform="rotate(270 449 108)"/><rect x="445" y="79" width="8" height="10" rx="2" fill="var(--c7)" transform="rotate(315 449 108)"/><circle cx="449" cy="108" r="22" fill="var(--c7)"/><circle cx="449" cy="108" r="8.8" fill="var(--card)"/></g><text x="449.0" y="40.0" class="svg-cap" font-size="12" text-anchor="middle" fill="var(--c7)">TIỀM THỨC</text><text x="449.0" y="186.0" class="svg-t2" font-size="12" text-anchor="middle" font-weight="700">chương trình tự động</text><text x="260.0" y="228.0" class="svg-t" font-size="13.5" text-anchor="middle" font-weight="800">“Một suy nghĩ vô hại cho đến khi chúng ta tin vào nó.”</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng</strong> theo lời tác giả và câu của Byron Katie: một suy nghĩ chỉ là suy nghĩ, &ldquo;vô hại cho đến khi chúng ta tin vào nó&rdquo;. Ngay khoảnh khắc ta tin rằng nó là sự thật, nó được lưu trong tiềm thức và &ldquo;hoạt động như một chương trình tự động&rdquo;.</figcaption>
+    </figure>
+
+    <blockquote data-q="8" data-ini="BK"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
       <span class="qtag">Trích dẫn</span>
       <p>Một suy nghĩ vô hại cho đến khi chúng ta tin vào nó.</p>
       <cite><b>Byron Katie</b></cite>
-    </blockquote>
+    </div></blockquote>
 
-    <blockquote>
+    <blockquote data-q="2" data-ini="M"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
       <span class="qtag">Trích dẫn</span>
       <p>Không phải những gì bản ngã nói, mà là mức độ tin tưởng vào nó.</p>
       <cite><b>Mooji</b></cite>
-    </blockquote>
+    </div></blockquote>
 
     <article class="body-card">
       <p>Niềm tin cũng đưa ra những suy nghĩ khác dựa trên niềm tin đó, và những suy nghĩ đó phát ra như những bản ghi âm.</p>
@@ -514,7 +1041,7 @@ figure.fig figcaption strong{color:var(--ink)}
     </article>
 
     <figure class="fig">
-      <span class="fig-lbl">Hình 2 &middot; Bản ghi âm của tâm trí</span>
+      <span class="fig-lbl">Hình 3 &middot; Bản ghi âm của tâm trí</span>
       <svg viewBox="0 0 460 250" role="img" aria-label="Hình minh họa một chiếc điện thoại phát tin nhắn ghi âm lừa đảo mà không ai tin, đặt cạnh tâm trí phát bản ghi âm mà ta lại tin">
         <defs>
           <marker id="g2x" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
@@ -569,11 +1096,11 @@ figure.fig figcaption strong{color:var(--ink)}
       <h2>Niềm tin gây ra trải nghiệm của bạn</h2></div>
     <p class="willlearn"><b>Bạn sẽ hiểu gì ở phần này?</b><br>Vì sao bạn <em>phải</em> trải nghiệm điều mình tin, và cách niềm tin chặn những con đường khác. <em>Tiêu đề phần này là tiểu mục gốc trong sách.</em></p>
 
-    <blockquote>
+    <blockquote data-q="5" data-ini="DB"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
       <span class="qtag">Trích dẫn</span>
       <p>Chúng ta chiếu những suy nghĩ và niềm tin của mình và chúng trở lại với chúng ta như những trải nghiệm của chúng ta.</p>
       <cite><b>David Bingham</b></cite>
-    </blockquote>
+    </div></blockquote>
 
     <article class="body-card">
       <p>Bạn phải trải nghiệm bất cứ điều gì bạn tin tưởng, vì vậy niềm tin của bạn là gì rất quan trọng.</p>
@@ -582,7 +1109,7 @@ figure.fig figcaption strong{color:var(--ink)}
     </article>
 
     <figure class="fig">
-      <span class="fig-lbl">Hình 3 &middot; Gieo vào tiềm thức thì nó sẽ đơm hoa kết trái</span>
+      <span class="fig-lbl">Hình 4 &middot; Gieo vào tiềm thức thì nó sẽ đơm hoa kết trái</span>
       <svg viewBox="0 0 460 250" role="img" aria-label="Hình minh họa hạt giống niềm tin gieo dưới đất tiềm thức mọc thành cây cho ra quả là trải nghiệm trong đời bạn">
         <defs>
           <linearGradient id="g3s" x1="0" y1="0" x2="0" y2="1">
@@ -642,7 +1169,7 @@ figure.fig figcaption strong{color:var(--ink)}
     </article>
 
     <figure class="fig">
-      <span class="fig-lbl">Hình 4 &middot; Niềm tin chặn những con đường khác</span>
+      <span class="fig-lbl">Hình 5 &middot; Niềm tin chặn những con đường khác</span>
       <svg viewBox="0 0 460 260" role="img" aria-label="Sơ đồ: nhiều con đường tiền có thể đến với bạn nhưng niềm tin chỉ để mở một con đường là làm việc chăm chỉ, các đường còn lại bị chặn">
         <defs>
           <marker id="g4o" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
@@ -681,17 +1208,17 @@ figure.fig figcaption strong{color:var(--ink)}
       <figcaption><strong>Hình do biên tập viên dựng</strong> theo đúng ví dụ về tiền bạc của tác giả. Niềm tin không làm điều bạn muốn biến mất — nó chỉ bịt hết những lối mà điều đó có thể đến, trừ đúng một lối mà niềm tin cho phép.</figcaption>
     </figure>
 
-    <blockquote>
+    <blockquote data-q="1" data-ini="AM"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
       <span class="qtag">Trích dẫn</span>
       <p>Chỉ có một nguyên nhân gây ra sự bất hạnh: những niềm tin sai lầm mà bạn có trong đầu, những niềm tin quá phổ biến, quá phổ biến đến nỗi bạn không bao giờ nghĩ đến việc đặt câu hỏi về chúng.</p>
       <cite><b>Anthony de Mello, S.J.</b> — trích từ <em>Con đường đến tình yêu</em></cite>
-    </blockquote>
+    </div></blockquote>
 
-    <blockquote>
+    <blockquote data-q="2" data-ini="PD"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
       <span class="qtag">Trích dẫn</span>
       <p>Sự bất hạnh chỉ gây ra bởi những niềm tin sai lầm về bản chất thực sự của Cuộc sống.</p>
       <cite><b>Peter Dziuban</b> — trích từ <em>Chỉ cần chú ý</em></cite>
-    </blockquote>
+    </div></blockquote>
 
     <article class="body-card">
       <p>Chúng ta cũng có thể trở nên rất gắn bó với niềm tin của mình, ngay cả khi chúng gây ra cho chúng ta căng thẳng và đau khổ thực sự và giam cầm chúng ta trong đau khổ.</p>
@@ -699,23 +1226,23 @@ figure.fig figcaption strong{color:var(--ink)}
       <p>Bất kỳ hoàn cảnh nào đang xuất hiện trong cuộc sống của bạn hiện tại đều được tạo ra bởi hệ thống niềm tin trong tiềm thức của bạn.</p>
     </article>
 
-    <blockquote>
+    <blockquote data-q="5" data-ini="DB"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
       <span class="qtag">Trích dẫn</span>
       <p>Bằng cách thay đổi niềm tin mà chúng ta đang nắm giữ, chúng ta có thể sửa đổi những trải nghiệm mà chúng ta đang có.</p>
       <cite><b>David Bingham</b></cite>
-    </blockquote>
+    </div></blockquote>
 
-    <blockquote>
+    <blockquote data-q="4" data-ini="RS"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
       <span class="qtag">Trích dẫn</span>
       <p>Nhiều ý tưởng và niềm tin của chúng ta về bản thân và thế giới đã ăn sâu đến mức chúng ta không nhận ra rằng chúng là niềm tin và coi chúng, mà không đặt câu hỏi, là sự thật tuyệt đối.</p>
       <cite><b>Rupert Spira</b> — trích từ <em>Sự minh bạch của mọi thứ</em></cite>
-    </blockquote>
+    </div></blockquote>
 
     <article class="body-card">
       <p>Từ cố Tiến sĩ David R. Hawkins:</p>
     </article>
 
-    <blockquote>
+    <blockquote data-q="1" data-ini="DH"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
       <span class="qtag">Trích dẫn</span>
       <p>Thường sẽ có lợi nếu xem xét một số niềm tin phổ biến và từ bỏ chúng ngay từ đầu như:</p>
       <p>1. Chúng ta chỉ xứng đáng có được mọi thứ thông qua sự chăm chỉ, đấu tranh, hy sinh và nỗ lực.</p>
@@ -723,17 +1250,36 @@ figure.fig figcaption strong{color:var(--ink)}
       <p>3. Chúng ta không nhận được bất cứ thứ gì một cách vô ích.</p>
       <p>4. Những thứ rất đơn giản thì không có giá trị gì nhiều.</p>
       <cite><b>Tiến sĩ David R. Hawkins</b> — trích từ <em>Buông bỏ</em></cite>
-    </blockquote>
+    </div></blockquote>
+
+    <!-- FIG-C9 -->
+    <figure class="fig">
+      <span class="fig-lbl">Hình 6 &middot; Bốn niềm tin phổ biến nên buông</span>
+      <svg viewBox="0 0 520 244" role="img" aria-label="Bốn thẻ niềm tin phổ biến theo Tiến sĩ David R. Hawkins lần lượt trôi đi; bên cạnh là dấu hỏi xanh: đặt câu hỏi và buông">
+<g class="a-fogL" style="animation-delay:0.0s; animation-duration:12s"><rect x="20" y="34" width="404" height="34" rx="12" fill="var(--c2l)" stroke="var(--c2)" stroke-width="1.5"/><circle cx="42" cy="51" r="11" fill="var(--c2)"/><text x="42.0" y="55.5" class="svg-w" font-size="12" text-anchor="middle" font-weight="900">1</text><text x="62.0" y="55.5" class="svg-t" font-size="12" text-anchor="start" font-weight="700">chỉ xứng đáng nhờ chăm chỉ, đấu tranh, hy sinh, nỗ lực</text></g><g class="a-fogL" style="animation-delay:1.6s; animation-duration:12s"><rect x="20" y="78" width="404" height="34" rx="12" fill="var(--c1l)" stroke="var(--c1)" stroke-width="1.5"/><circle cx="42" cy="95" r="11" fill="var(--c1)"/><text x="42.0" y="99.5" class="svg-w" font-size="12" text-anchor="middle" font-weight="900">2</text><text x="62.0" y="99.5" class="svg-t" font-size="12" text-anchor="start" font-weight="700">khổ đau có lợi và tốt cho chúng ta</text></g><g class="a-fogL" style="animation-delay:3.2s; animation-duration:12s"><rect x="20" y="122" width="404" height="34" rx="12" fill="var(--c7l)" stroke="var(--c7)" stroke-width="1.5"/><circle cx="42" cy="139" r="11" fill="var(--c7)"/><text x="42.0" y="143.5" class="svg-w" font-size="12" text-anchor="middle" font-weight="900">3</text><text x="62.0" y="143.5" class="svg-t" font-size="12" text-anchor="start" font-weight="700">không nhận được bất cứ thứ gì một cách vô ích</text></g><g class="a-fogL" style="animation-delay:4.8s; animation-duration:12s"><rect x="20" y="166" width="404" height="34" rx="12" fill="var(--c6l)" stroke="var(--c6)" stroke-width="1.5"/><circle cx="42" cy="183" r="11" fill="var(--c6)"/><text x="42.0" y="187.5" class="svg-w" font-size="12" text-anchor="middle" font-weight="900">4</text><text x="62.0" y="187.5" class="svg-t" font-size="12" text-anchor="start" font-weight="700">những thứ rất đơn giản thì không có giá trị gì nhiều</text></g><g class="a-float2"><path d="M456,92 c0,-22 36,-22 36,0 c0,14 -18,18 -18,30" stroke="var(--c4)" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="474" cy="138" r="4.5" fill="var(--c4)"/></g><text x="474.0" y="172.0" class="svg-t" font-size="12" text-anchor="middle" font-weight="800" style="fill:var(--c4)">đặt câu hỏi</text><text x="474.0" y="188.0" class="svg-t" font-size="12" text-anchor="middle" font-weight="800" style="fill:var(--c4)">và buông</text><text x="260.0" y="228.0" class="svg-t" font-size="13.5" text-anchor="middle" font-weight="800">“xem xét một số niềm tin phổ biến và từ bỏ chúng ngay từ đầu”</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng</strong> theo đúng danh sách của Tiến sĩ David R. Hawkins mà tác giả dẫn (chữ trên thẻ được rút gọn): chăm chỉ–đấu tranh–hy sinh, khổ đau có lợi, không có gì vô ích, thứ đơn giản không có giá trị. Ngay sau đó tác giả viết: &ldquo;Các nhà hiền triết vĩ đại thúc giục chúng ta đặt câu hỏi về mọi thứ.&rdquo;</figcaption>
+    </figure>
 
     <article class="body-card">
       <p>Các nhà hiền triết vĩ đại thúc giục chúng ta đặt câu hỏi về mọi thứ. Thông qua việc đặt câu hỏi, chúng ta có thể khám phá ra những niềm tin hạn chế đang che giấu sự thật về chúng ta và sự thật đằng sau thế giới.</p>
     </article>
 
-    <blockquote>
+    <blockquote data-q="8" data-ini="BK"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
       <span class="qtag">Trích dẫn</span>
       <p>Không có điều gì bạn tin là đúng. Biết được điều này là tự do.</p>
       <cite><b>Byron Katie</b></cite>
-    </blockquote>
+    </div></blockquote>
+
+    <!-- FIG-C9 -->
+    <figure class="fig">
+      <span class="fig-lbl">Hình 7 &middot; Niềm tin đến từ người khác</span>
+      <svg viewBox="0 0 520 244" role="img" aria-label="Sáu nguồn — cha mẹ, gia đình, bạn bè, giáo viên, xã hội, tivi và sách báo — đều có mũi tên đổ vào vòng tròn tiềm thức ở giữa, kèm chữ bingo">
+<defs><marker id="m9c" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="var(--ink3)"/></marker></defs>
+<path d="M122,50 Q142.0,81.0 214,112" fill="none" stroke="var(--c8)" stroke-width="2" marker-end="url(#m9c)" class="a-dash" opacity=".8"/><g><rect x="18.0" y="35.0" width="104.0" height="30" rx="15.0" fill="var(--c8l)" stroke="var(--c8)" stroke-width="1.6"/><text x="70.0" y="54.5" class="svg-t" font-size="12.5" text-anchor="middle" font-weight="700">cha mẹ</text></g><path d="M122,112 Q142.0,112.0 214,112" fill="none" stroke="var(--c2)" stroke-width="2" marker-end="url(#m9c)" class="a-dash" opacity=".8"/><g><rect x="18.0" y="97.0" width="104.0" height="30" rx="15.0" fill="var(--c2l)" stroke="var(--c2)" stroke-width="1.6"/><text x="70.0" y="116.5" class="svg-t" font-size="12.5" text-anchor="middle" font-weight="700">gia đình</text></g><path d="M122,174 Q142.0,143.0 214,112" fill="none" stroke="var(--c4)" stroke-width="2" marker-end="url(#m9c)" class="a-dash" opacity=".8"/><g><rect x="18.0" y="159.0" width="104.0" height="30" rx="15.0" fill="var(--c4l)" stroke="var(--c4)" stroke-width="1.6"/><text x="70.0" y="178.5" class="svg-t" font-size="12.5" text-anchor="middle" font-weight="700">bạn bè</text></g><path d="M398,50 Q378.0,81.0 306,112" fill="none" stroke="var(--c6)" stroke-width="2" marker-end="url(#m9c)" class="a-dash" opacity=".8"/><g><rect x="398.0" y="35.0" width="104.0" height="30" rx="15.0" fill="var(--c6l)" stroke="var(--c6)" stroke-width="1.6"/><text x="450.0" y="54.5" class="svg-t" font-size="12.5" text-anchor="middle" font-weight="700">giáo viên</text></g><path d="M398,112 Q378.0,112.0 306,112" fill="none" stroke="var(--c7)" stroke-width="2" marker-end="url(#m9c)" class="a-dash" opacity=".8"/><g><rect x="398.0" y="97.0" width="104.0" height="30" rx="15.0" fill="var(--c7l)" stroke="var(--c7)" stroke-width="1.6"/><text x="450.0" y="116.5" class="svg-t" font-size="12.5" text-anchor="middle" font-weight="700">xã hội</text></g><path d="M398,174 Q378.0,143.0 306,112" fill="none" stroke="var(--c5)" stroke-width="2" marker-end="url(#m9c)" class="a-dash" opacity=".8"/><g><rect x="398.0" y="159.0" width="104.0" height="30" rx="15.0" fill="var(--c5l)" stroke="var(--c5)" stroke-width="1.6"/><text x="450.0" y="178.5" class="svg-t" font-size="12.5" text-anchor="middle" font-weight="700">tivi, sách báo</text></g><circle cx="260" cy="112" r="52" fill="var(--c3)" fill-opacity=".22" class="a-glow"/><circle cx="260" cy="112" r="40" fill="var(--c3l)" stroke="var(--c3)" stroke-width="2"/><text x="260.0" y="108.0" class="svg-t" font-size="12.5" text-anchor="middle" font-weight="800">tiềm thức</text><text x="260.0" y="125.0" class="svg-t2" font-size="12" text-anchor="middle" font-weight="700">của bạn</text><g class="a-pop" style="animation-duration:4s"><text x="260.0" y="50.0" class="svg-t" font-size="15" text-anchor="middle" font-weight="900" style="fill:var(--c1)">bingo!</text></g><text x="260.0" y="228.0" class="svg-t" font-size="13.5" text-anchor="middle" font-weight="800">“tất cả niềm tin của chúng ta đều đến từ người khác”</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng</strong> theo lời tác giả: niềm tin được hình thành khi ta chấp nhận một suy nghĩ là đúng — từ điều đã đọc, nghe trên tivi, hay điều người khác nói — và &ldquo;theo cách này hay cách khác, tất cả niềm tin của chúng ta đều đến từ người khác, cho dù đó là cha mẹ, gia đình, bạn bè, giáo viên hay xã hội.&rdquo;</figcaption>
+    </figure>
 
     <article class="body-card">
       <p>Chúng ta đã tích trữ niềm tin trong tiềm thức của mình kể từ khi còn nhỏ và có thể hiểu được một phần những gì người lớn truyền đạt cho chúng ta.</p>
@@ -750,11 +1296,20 @@ figure.fig figcaption strong{color:var(--ink)}
       </ul>
     </article>
 
-    <blockquote>
+    <!-- FIG-C9 -->
+    <figure class="fig">
+      <span class="fig-lbl">Hình 8 &middot; Niềm tin ăn sâu dần</span>
+      <svg viewBox="0 0 520 248" role="img" aria-label="Một niềm tin về cân nặng nằm trên mặt đất; bên dưới, trong tiềm thức, rễ của nó dày dần khi bốn suy nghĩ hỗ trợ lần lượt được thêm vào">
+<rect x="10" y="74" width="500" height="140" rx="18" fill="var(--c2l)" fill-opacity=".7"/><text x="498.0" y="96.0" class="svg-cap" font-size="11" text-anchor="end" fill="var(--c2)">TIỀM THỨC</text><path d="M10,74 H510" stroke="var(--c2)" stroke-width="2" stroke-dasharray="4 6"/><g><rect x="-24.4" y="29.0" width="308.8" height="34" rx="17.0" fill="var(--c1)" stroke="var(--c1)" stroke-width="1.6"/><text x="130.0" y="50.5" class="svg-w" font-size="12.5" text-anchor="middle" font-weight="700">“Tôi gặp khó khăn trong việc giảm cân…”</text></g><path d="M130,90 V110" stroke="var(--c1)" stroke-width="3.0" stroke-linecap="round" class="a-rise" style="animation-delay:0.0s"/><g class="a-rise" style="animation-delay:0.0s"><text x="160.0" y="109.0" class="svg-t" font-size="12" text-anchor="start" font-weight="700">“Có lẽ do quá trình trao đổi chất…”</text></g><path d="M130,118 V138" stroke="var(--c1)" stroke-width="4.5" stroke-linecap="round" class="a-rise" style="animation-delay:0.5s"/><g class="a-rise" style="animation-delay:0.5s"><text x="160.0" y="137.0" class="svg-t" font-size="12" text-anchor="start" font-weight="700">“Tôi đã thử rất nhiều chế độ ăn kiêng…”</text></g><path d="M130,146 V166" stroke="var(--c1)" stroke-width="6.0" stroke-linecap="round" class="a-rise" style="animation-delay:1.0s"/><g class="a-rise" style="animation-delay:1.0s"><text x="160.0" y="165.0" class="svg-t" font-size="12" text-anchor="start" font-weight="700">“Chẳng mấy chốc tôi lại tăng cân…”</text></g><path d="M130,174 V194" stroke="var(--c1)" stroke-width="7.5" stroke-linecap="round" class="a-rise" style="animation-delay:1.5s"/><g class="a-rise" style="animation-delay:1.5s"><text x="160.0" y="193.0" class="svg-t" font-size="12" text-anchor="start" font-weight="700">“Béo phì là di truyền trong gia đình tôi.”</text></g><path d="M130,64 V206" stroke="var(--c1)" stroke-width="2.4" stroke-dasharray="3 5" opacity=".5"/><text x="260.0" y="236.0" class="svg-t" font-size="13.5" text-anchor="middle" font-weight="800">mỗi suy nghĩ thêm vào làm niềm tin ăn sâu hơn</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng</strong> theo ví dụ của tác giả: niềm tin &ldquo;Tôi gặp khó khăn trong việc giảm cân và duy trì cân nặng&rdquo; ngày càng ăn sâu vào tiềm thức khi ta thêm vào những suy nghĩ như trên (chữ được rút gọn từ danh sách trong sách). Lester Levenson nói thêm ngay dưới: tiềm thức khiến ta &ldquo;trở thành nạn nhân của thói quen&rdquo;.</figcaption>
+    </figure>
+
+    <blockquote data-q="6" data-ini="LL"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
       <span class="qtag">Trích dẫn</span>
       <p>Tiềm thức đang điều khiển chúng ta khiến chúng ta trở thành nạn nhân của thói quen.</p>
       <cite><b>Lester Levenson</b> — trích từ <em>Hạnh phúc là tự do</em>, tập 1–5</cite>
-    </blockquote>
+    </div></blockquote>
 
     <article class="body-card">
       <p>Tin tuyệt vời là vì niềm tin chỉ đơn giản được tạo nên từ những suy nghĩ mong manh, nên chúng có thể dễ dàng bị xóa bỏ khi bạn nhận thức được chúng.</p>
@@ -764,6 +1319,15 @@ figure.fig figcaption strong{color:var(--ink)}
       <p>Việc phơi bày những niềm tin hạn chế của bạn sẽ nhanh chóng đưa bạn đến với hạnh phúc lâu dài và sự tự do hoàn toàn. Trong quá trình này, cuộc sống thế gian của bạn sẽ cải thiện đáng kể ở mọi khía cạnh, vì nó không còn bị giới hạn bởi niềm tin nữa.</p>
       <p><mark>Nếu có điều gì đó mà bạn nghĩ rằng mình không thể trở thành, không thể làm hoặc không có, thì đó chính là niềm tin hạn chế.</mark> Hãy tưởng tượng cuộc sống của bạn không có bất kỳ giới hạn nào!</p>
     </article>
+
+    <!-- FIG-C9 -->
+    <figure class="fig">
+      <span class="fig-lbl">Hình 9 &middot; Cuộc sống không giới hạn</span>
+      <svg viewBox="0 0 520 246" role="img" aria-label="Một người đứng trong chiếc hộp nét đứt; các nhãn không thể trở thành, không thể làm, không thể có cùng bức tường hộp mờ dần và ánh sáng tỏa ra quanh người">
+<rect x="150" y="54" width="220" height="132" rx="14" fill="none" stroke="var(--ink3)" stroke-width="5" stroke-dasharray="14 8" class="a-heal" style="animation-duration:8s"/><circle cx="260" cy="128" r="30" fill="var(--c3)" fill-opacity=".25" class="a-pulse" style="animation-duration:3s"/><g ><circle cx="260" cy="101.2" r="11.2" fill="var(--c4)"/><path d="M246.0,160 Q246.0,118.0 260,115.8 Q274.0,118.0 274.0,160 Z" fill="var(--c4)"/></g><g class="a-heal" style="animation-duration:8s; animation-delay:0.0s"><rect x="-21.9" y="55.0" width="163.8" height="30" rx="15.0" fill="var(--c1l)" stroke="var(--c1)" stroke-width="1.6"/><text x="60.0" y="74.5" class="svg-t" font-size="12.5" text-anchor="middle" font-weight="700">không thể trở thành</text></g><g class="a-heal" style="animation-duration:8s; animation-delay:0.3s"><rect x="339.9" y="55.0" width="120.2" height="30" rx="15.0" fill="var(--c2l)" stroke="var(--c2)" stroke-width="1.6"/><text x="400.0" y="74.5" class="svg-t" font-size="12.5" text-anchor="middle" font-weight="700">không thể làm</text></g><g class="a-heal" style="animation-duration:8s; animation-delay:0.6s"><rect x="173.5" y="175.0" width="113.0" height="30" rx="15.0" fill="var(--c7l)" stroke="var(--c7)" stroke-width="1.6"/><text x="230.0" y="194.5" class="svg-t" font-size="12.5" text-anchor="middle" font-weight="700">không thể có</text></g><g class="a-pulse" style="animation-duration:3s"><path d="M213.0,102.9 L192.3,95.4" stroke="var(--c3)" stroke-width="3" stroke-linecap="round"/><path d="M235.0,76.7 L224.0,57.6" stroke="var(--c3)" stroke-width="3" stroke-linecap="round"/><path d="M285.0,76.7 L296.0,57.6" stroke="var(--c3)" stroke-width="3" stroke-linecap="round"/><path d="M307.0,102.9 L327.7,95.4" stroke="var(--c3)" stroke-width="3" stroke-linecap="round"/><path d="M213.0,102.9 L192.3,95.4" stroke="var(--c3)" stroke-width="3" stroke-linecap="round"/><path d="M307.0,102.9 L327.7,95.4" stroke="var(--c3)" stroke-width="3" stroke-linecap="round"/></g><text x="260.0" y="234.0" class="svg-t" font-size="13.5" text-anchor="middle" font-weight="800">“Hãy tưởng tượng cuộc sống của bạn không có bất kỳ giới hạn nào!”</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng</strong> theo lời tác giả: &ldquo;Nếu có điều gì đó mà bạn nghĩ rằng mình không thể trở thành, không thể làm hoặc không có, thì đó chính là niềm tin hạn chế. Hãy tưởng tượng cuộc sống của bạn không có bất kỳ giới hạn nào!&rdquo;</figcaption>
+    </figure>
 
     <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
   </section>
@@ -783,28 +1347,56 @@ figure.fig figcaption strong{color:var(--ink)}
       <p>Niềm tin và ký ức đều bao gồm suy nghĩ và chúng được lưu trữ trong tiềm thức của chúng ta, vì vậy nếu một niềm tin bị xóa bỏ, tất cả những suy nghĩ gắn liền với niềm tin đó cũng sẽ biến mất, bao gồm cả những suy nghĩ tạo nên ký ức về nó.</p>
     </article>
 
-    <blockquote>
+    <!-- FIG-C9 -->
+    <figure class="fig">
+      <span class="fig-lbl">Hình 10 &middot; Nhận thức làm niềm tin sụp đổ</span>
+      <svg viewBox="0 0 520 246" role="img" aria-label="Bên trái: một bức tường gạch đỏ là niềm tin, đứng vững trong bóng tối. Bên phải: ánh sáng vàng chiếu xuống và các viên gạch lần lượt rơi, tan biến">
+<rect x="10" y="10" width="240" height="196" rx="20" fill="var(--soft)"/><rect x="270" y="10" width="240" height="196" rx="20" fill="var(--c3l)" fill-opacity=".6"/><text x="130.0" y="34.0" class="svg-cap" font-size="11" text-anchor="middle" fill="var(--ink2)">NIỀM TIN TRONG BÓNG TỐI</text><text x="390.0" y="34.0" class="svg-cap" font-size="11" text-anchor="middle" fill="var(--c2)">KHI NHẬN THỨC CHIẾU VÀO</text><rect x="66" y="150" width="42" height="22" rx="4" fill="var(--c1l)" stroke="var(--c1)" stroke-width="1.4"/><rect x="112" y="150" width="42" height="22" rx="4" fill="var(--c1l)" stroke="var(--c1)" stroke-width="1.4"/><rect x="158" y="150" width="42" height="22" rx="4" fill="var(--c1l)" stroke="var(--c1)" stroke-width="1.4"/><rect x="89" y="124" width="42" height="22" rx="4" fill="var(--c1l)" stroke="var(--c1)" stroke-width="1.4"/><rect x="135" y="124" width="42" height="22" rx="4" fill="var(--c1l)" stroke="var(--c1)" stroke-width="1.4"/><rect x="66" y="98" width="42" height="22" rx="4" fill="var(--c1l)" stroke="var(--c1)" stroke-width="1.4"/><rect x="112" y="98" width="42" height="22" rx="4" fill="var(--c1l)" stroke="var(--c1)" stroke-width="1.4"/><rect x="158" y="98" width="42" height="22" rx="4" fill="var(--c1l)" stroke="var(--c1)" stroke-width="1.4"/><rect x="89" y="72" width="42" height="22" rx="4" fill="var(--c1l)" stroke="var(--c1)" stroke-width="1.4"/><rect x="135" y="72" width="42" height="22" rx="4" fill="var(--c1l)" stroke="var(--c1)" stroke-width="1.4"/><text x="130.0" y="194.0" class="svg-t2" font-size="12" text-anchor="middle" font-weight="800">tưởng là sự thật</text><path d="M330,50 L470,50 L480,172 L320,172 Z" fill="var(--c3)" fill-opacity=".22" class="a-glow"/><circle cx="400" cy="52" r="14" fill="var(--c3)"/><rect x="346" y="150" width="42" height="22" rx="4" fill="var(--c1l)" stroke="var(--c1)" stroke-width="1.4" class="a-crumble" style="--rot:8deg; animation-delay:0.50s"/><rect x="392" y="150" width="42" height="22" rx="4" fill="var(--c1l)" stroke="var(--c1)" stroke-width="1.4" class="a-crumble" style="--rot:-8deg; animation-delay:0.62s"/><rect x="438" y="150" width="42" height="22" rx="4" fill="var(--c1l)" stroke="var(--c1)" stroke-width="1.4" class="a-crumble" style="--rot:8deg; animation-delay:0.74s"/><rect x="369" y="124" width="42" height="22" rx="4" fill="var(--c1l)" stroke="var(--c1)" stroke-width="1.4" class="a-crumble" style="--rot:14deg; animation-delay:0.25s"/><rect x="415" y="124" width="42" height="22" rx="4" fill="var(--c1l)" stroke="var(--c1)" stroke-width="1.4" class="a-crumble" style="--rot:-14deg; animation-delay:0.37s"/><rect x="346" y="98" width="42" height="22" rx="4" fill="var(--c1l)" stroke="var(--c1)" stroke-width="1.4" class="a-crumble" style="--rot:20deg; animation-delay:0.00s"/><rect x="392" y="98" width="42" height="22" rx="4" fill="var(--c1l)" stroke="var(--c1)" stroke-width="1.4" class="a-crumble" style="--rot:-20deg; animation-delay:0.12s"/><rect x="438" y="98" width="42" height="22" rx="4" fill="var(--c1l)" stroke="var(--c1)" stroke-width="1.4" class="a-crumble" style="--rot:20deg; animation-delay:0.24s"/><text x="390.0" y="194.0" class="svg-t" font-size="12" text-anchor="middle" font-weight="800" style="fill:var(--c1)">sụp đổ và tan biến</text><text x="260.0" y="234.0" class="svg-t" font-size="13.5" text-anchor="middle" font-weight="800">“Đây chính là sức mạnh vô hạn của Nhận thức.”</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng</strong> theo lời tác giả: &ldquo;Ngay khi bạn nhận ra một niềm tin là không đúng, hầu hết niềm tin đó sẽ sụp đổ và tan biến.&rdquo; Nếu tiếp tục nhắc mình rằng đó chỉ là một niềm tin và không đúng, &ldquo;dưới sự giám sát đó, phần còn lại của niềm tin sẽ hoàn toàn tan biến&rdquo;.</figcaption>
+    </figure>
+
+    <blockquote data-q="5" data-ini="FL"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
       <span class="qtag">Trích dẫn</span>
       <p>Hãy từ bỏ mọi thứ bạn tin tưởng. Sớm hay muộn, bạn cũng phải làm vậy. Bạn không thể mang theo hệ thống niềm tin của mình khi bạn qua đời, vậy tại sao không từ bỏ chúng ngay bây giờ? Hãy từ bỏ niềm tin của bạn từng khoảnh khắc. Khám phá niềm vui sống mà không ràng buộc vào bất kỳ hệ thống niềm tin nào. Sự ràng buộc vào những niềm tin như, &ldquo;Hạnh phúc đòi hỏi nỗ lực&rdquo; hoặc &ldquo;Cần phải chịu đau khổ để được hạnh phúc&rdquo; là rất sâu sắc.</p>
       <cite><b>Francis Lucille</b> — trích từ <em>Hương thơm của sự im lặng</em></cite>
-    </blockquote>
+    </div></blockquote>
 
     <article class="body-card">
       <p>Mỗi niềm tin mà bạn nhận thức được và sau đó tan biến sẽ đưa cuộc sống của bạn lên tầm cao của sự tự do, sung túc, nhẹ nhõm và niềm vui mà bạn không bao giờ có thể tưởng tượng được.</p>
       <p>Hãy loại bỏ những niềm tin đó, từng niềm tin một, và giải thoát bản thân! Nhận thức không có bất kỳ niềm tin nào vì Nhận thức biết mọi thứ.</p>
     </article>
 
-    <blockquote>
+    <blockquote data-q="5" data-ini="FL"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
       <span class="qtag">Trích dẫn</span>
       <p>Trên thực tế, hệ thống niềm tin chẳng là gì cả. Chúng khá dễ để từ bỏ. Chúng chỉ là những con hổ giấy! Tốt hơn là hãy từ bỏ chúng ngay bây giờ và sống hạnh phúc mãi mãi về sau.</p>
       <cite><b>Francis Lucille</b> — trích từ <em>Hương thơm của sự im lặng</em></cite>
-    </blockquote>
+    </div></blockquote>
+
+    <!-- FIG-C9 -->
+    <figure class="fig">
+      <span class="fig-lbl">Hình 11 &middot; Những con hổ giấy</span>
+      <svg viewBox="0 0 520 244" role="img" aria-label="Một con hổ gấp bằng giấy cam trông đáng sợ, rồi xẹp xuống và hiện chữ chỉ là giấy; bên cạnh ghi: chúng khá dễ để từ bỏ">
+<g class="a-shrink" style="animation-duration:7s"><path d="M168,104 C140,96 132,70 150,62" stroke="var(--c2)" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M170,148 L178,100 L288,96 L300,148 Z" fill="var(--c2)" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/><path d="M280,98 L318,70 L348,96 L334,124 L296,126 Z" fill="var(--c2)" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/><path d="M306,80 L310,56 L324,74 Z M330,82 L344,62 L346,90 Z" fill="var(--c2)" stroke="#fff" stroke-width="1.2" stroke-linejoin="round"/><circle cx="324" cy="92" r="3.6" fill="var(--ink)"/><path d="M332,110 l12,-2" stroke="var(--ink)" stroke-width="2.4" stroke-linecap="round"/><path d="M196,102 l-6,22" stroke="var(--ink)" stroke-width="5" stroke-linecap="round" opacity=".55"/><path d="M220,102 l-6,22" stroke="var(--ink)" stroke-width="5" stroke-linecap="round" opacity=".55"/><path d="M244,102 l-6,22" stroke="var(--ink)" stroke-width="5" stroke-linecap="round" opacity=".55"/><path d="M268,102 l-6,22" stroke="var(--ink)" stroke-width="5" stroke-linecap="round" opacity=".55"/><rect x="182" y="146" width="14" height="10" rx="3" fill="var(--c2)"/><rect x="274" y="146" width="14" height="10" rx="3" fill="var(--c2)"/><path d="M178,100 L232,126 L288,96" stroke="#fff" stroke-width="1.2" fill="none" opacity=".7"/></g><rect x="130" y="150" width="210" height="8" rx="4" fill="var(--ink3)" opacity=".5"/><text x="236.0" y="46.0" class="svg-t2" font-size="13" text-anchor="middle" font-weight="800">trông thì đáng sợ…</text><g class="a-pop" style="animation-duration:7s; animation-delay:3.5s"><g><rect x="181.5" y="170.0" width="108.9" height="32" rx="16.0" fill="var(--c4)" stroke="var(--c4)" stroke-width="1.6"/><text x="236.0" y="190.7" class="svg-w" font-size="13" text-anchor="middle" font-weight="700">chỉ là giấy</text></g></g><rect x="364" y="66" width="140" height="92" rx="18" fill="var(--c4l)" stroke="var(--c4)" stroke-width="1.6"/><text x="434.0" y="96.0" class="svg-t" font-size="12.5" text-anchor="middle" font-weight="800">“Chúng khá dễ</text><text x="434.0" y="116.0" class="svg-t" font-size="12.5" text-anchor="middle" font-weight="800">để từ bỏ.”</text><text x="434.0" y="140.0" class="svg-t2" font-size="11.5" text-anchor="middle" font-weight="700">— Francis Lucille</text><text x="260.0" y="230.0" class="svg-t" font-size="14" text-anchor="middle" font-weight="800">“Chúng chỉ là những con hổ giấy!”</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng</strong> theo câu của Francis Lucille mà tác giả dẫn: &ldquo;Trên thực tế, hệ thống niềm tin chẳng là gì cả. Chúng khá dễ để từ bỏ. Chúng chỉ là những con hổ giấy!&rdquo; Con hổ gấp giấy là hình ảnh do biên tập viên chọn.</figcaption>
+    </figure>
 
     <article class="body-card">
       <p>Bạn có thể hướng dẫn tiềm thức làm nổi bật niềm tin của bạn cho bạn, để bạn có thể nhận thức rõ hơn về chúng. Hướng dẫn tiềm thức của bạn bằng những từ như thế này: &ldquo;Hãy cho tôi thấy rõ từng niềm tin của mình, để tôi nhận thức được từng niềm tin một&rdquo;. Sau đó, hãy luôn tỉnh táo để nhận ra chúng khi chúng xuất hiện.</p>
       <p>Hãy rất tỉnh táo khi bạn nghe thấy mình nói &ldquo;Tôi tin&rdquo; hoặc &ldquo;Tôi không tin&rdquo;, vì ngay sau những từ đó là một niềm tin.</p>
       <p>Hãy rất tỉnh táo khi bạn nghe thấy mình nói &ldquo;Tôi nghĩ&rdquo; hoặc &ldquo;Tôi không nghĩ&rdquo;, vì rất có thể những gì tiếp theo cũng sẽ tiết lộ một niềm tin.</p>
     </article>
+
+    <!-- FIG-C9 -->
+    <figure class="fig">
+      <span class="fig-lbl">Hình 12 &middot; Những từ cần cảnh giác</span>
+      <svg viewBox="0 0 520 244" role="img" aria-label="Hai bong bóng lời nói có chữ Tôi tin và Tôi nghĩ được tô vàng nhấp nháy; mũi tên chỉ sang: ngay sau đó là một niềm tin">
+<defs><marker id="m9h" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="var(--c4)"/></marker></defs>
+<rect x="20" y="30" width="250" height="60" rx="22" fill="var(--card)" stroke="var(--c6)" stroke-width="1.6"/><path d="M50,90 l-6,14 l20,-14 Z" fill="var(--card)" stroke="var(--c6)" stroke-width="1.6"/><rect x="38" y="44" width="75" height="30" rx="6" fill="#FFE600" class="a-blink" style="animation-delay:0.0s"/><text x="43.0" y="65.0" class="svg-t" font-size="14" text-anchor="start" font-weight="900" style="fill:#2B2200">Tôi tin…</text><text x="150.0" y="65.0" class="svg-t2" font-size="13" text-anchor="start" font-weight="700">/ Tôi không tin…</text><path d="M282,60 H330" stroke="var(--c4)" stroke-width="2.4" marker-end="url(#m9h)" class="a-dash"/><rect x="338" y="36" width="170" height="48" rx="14" fill="var(--c4l)" stroke="var(--c4)" stroke-width="1.5"/><text x="423.0" y="56.0" class="svg-t" font-size="12" text-anchor="middle" font-weight="800">ngay sau đó là</text><text x="423.0" y="73.0" class="svg-t" font-size="12" text-anchor="middle" font-weight="800">một niềm tin</text><rect x="20" y="122" width="250" height="60" rx="22" fill="var(--card)" stroke="var(--c7)" stroke-width="1.6"/><path d="M50,182 l-6,14 l20,-14 Z" fill="var(--card)" stroke="var(--c7)" stroke-width="1.6"/><rect x="38" y="136" width="83" height="30" rx="6" fill="#FFE600" class="a-blink" style="animation-delay:1.3s"/><text x="43.0" y="157.0" class="svg-t" font-size="14" text-anchor="start" font-weight="900" style="fill:#2B2200">Tôi nghĩ…</text><text x="150.0" y="157.0" class="svg-t2" font-size="13" text-anchor="start" font-weight="700">/ Tôi không nghĩ…</text><path d="M282,152 H330" stroke="var(--c4)" stroke-width="2.4" marker-end="url(#m9h)" class="a-dash"/><rect x="338" y="128" width="170" height="48" rx="14" fill="var(--c4l)" stroke="var(--c4)" stroke-width="1.5"/><text x="423.0" y="148.0" class="svg-t" font-size="12" text-anchor="middle" font-weight="800">rất có thể tiết lộ</text><text x="423.0" y="165.0" class="svg-t" font-size="12" text-anchor="middle" font-weight="800">một niềm tin</text><text x="260.0" y="232.0" class="svg-t" font-size="13.5" text-anchor="middle" font-weight="800">“Hãy rất tỉnh táo khi bạn nghe thấy mình nói…”</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng</strong> theo lời tác giả: &ldquo;Hãy rất tỉnh táo khi bạn nghe thấy mình nói &lsquo;Tôi tin&rsquo; hoặc &lsquo;Tôi không tin&rsquo;, vì ngay sau những từ đó là một niềm tin&rdquo; — và với &ldquo;Tôi nghĩ&rdquo; hoặc &ldquo;Tôi không nghĩ&rdquo;, &ldquo;rất có thể những gì tiếp theo cũng sẽ tiết lộ một niềm tin&rdquo;.</figcaption>
+    </figure>
 
     <div class="practice">
       <span class="lbl">Thực hành từ sách &middot; Phơi bày niềm tin</span>
@@ -834,7 +1426,7 @@ figure.fig figcaption strong{color:var(--ink)}
     </article>
 
     <figure class="fig">
-      <span class="fig-lbl">Hình 5 &middot; Một niềm tin tan đi kéo theo hàng ngàn suy nghĩ</span>
+      <span class="fig-lbl">Hình 13 &middot; Một niềm tin tan đi kéo theo hàng ngàn suy nghĩ</span>
       <svg viewBox="0 0 460 260" role="img" aria-label="Sơ đồ hai vế: một niềm tin với hàng ngàn suy nghĩ bám quanh, và sau khi ánh sáng của Nhận thức chiếu vào thì cả cụm tan ra">
         <defs>
           <radialGradient id="g5c" cx="50%" cy="50%" r="50%">
@@ -894,11 +1486,11 @@ figure.fig figcaption strong{color:var(--ink)}
       <figcaption><strong>Hình do biên tập viên dựng.</strong> Theo tác giả, một niềm tin không đứng một mình — nó liên tục thu hút thêm suy nghĩ mới suốt nhiều năm, và đó là lý do ta thấy nặng nề. Khi niềm tin tan, cả cụm suy nghĩ gắn với nó tan theo, kể cả ký ức về nó.</figcaption>
     </figure>
 
-    <blockquote>
+    <blockquote data-q="1" data-ini="R"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
       <span class="qtag">Trích dẫn</span>
       <p>Hãy giống như một cái cây và để những chiếc lá chết rơi xuống.</p>
       <cite><b>Rumi</b></cite>
-    </blockquote>
+    </div></blockquote>
 
     <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
   </section>
@@ -909,11 +1501,11 @@ figure.fig figcaption strong{color:var(--ink)}
       <h2>Phản ứng: Niềm tin giả tạo</h2></div>
     <p class="willlearn"><b>Bạn sẽ hiểu gì ở phần này?</b><br>Cách dùng chính phản ứng của mình để tìm ra niềm tin đang ẩn bên dưới, và phần còn lại trong câu chuyện của Lester Levenson. <em>Tiêu đề phần này là tiểu mục gốc trong sách.</em></p>
 
-    <blockquote>
+    <blockquote data-q="2" data-ini="PD"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
       <span class="qtag">Trích dẫn</span>
       <p>Phản ứng là niềm tin vô thức.</p>
       <cite><b>Peter Dziuban</b> — trích từ sách nói <em>Chỉ cần chú ý</em></cite>
-    </blockquote>
+    </div></blockquote>
 
     <article class="body-card">
       <p>Một cách khác để phơi bày niềm tin là thông qua việc nhận thức được phản ứng của bạn.</p>
@@ -922,7 +1514,7 @@ figure.fig figcaption strong{color:var(--ink)}
     </article>
 
     <figure class="fig">
-      <span class="fig-lbl">Hình 6 &middot; Phản ứng là niềm tin đeo mặt nạ</span>
+      <span class="fig-lbl">Hình 14 &middot; Phản ứng là niềm tin đeo mặt nạ</span>
       <svg viewBox="0 0 460 278" role="img" aria-label="Hình minh họa chiếc mặt nạ mang chữ phản ứng được nhấc lên để lộ khuôn mặt bên dưới là niềm tin">
         <defs>
           <marker id="g6a" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
@@ -963,11 +1555,11 @@ figure.fig figcaption strong{color:var(--ink)}
       <p>Khi bạn nhận thức được phản ứng, bạn sẽ loại bỏ sức mạnh của nó vì Nhận thức của bạn là sức mạnh có thể xóa tan mọi sự tiêu cực và bất hòa.</p>
     </article>
 
-    <blockquote>
+    <blockquote data-q="7" data-ini="🙏"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
       <span class="qtag">Trích dẫn</span>
       <p>Khi bạn phản ứng, bạn đang đồng nhất; khi bạn phản ứng, bạn đang biến điều gì đó thành chuyện cá nhân. Thay vào đó, hãy chỉ nhận thức được phản ứng đó.</p>
       <cite><b>Người thầy của tôi</b> — người thầy giấu tên của Rhonda Byrne</cite>
-    </blockquote>
+    </div></blockquote>
 
     <div class="practice">
       <span class="lbl">Thực hành từ sách &middot; Nhận thức phản ứng</span>
@@ -988,11 +1580,11 @@ figure.fig figcaption strong{color:var(--ink)}
       <p>Khi bạn nhận thức được phản ứng của mình chỉ bằng cách chú ý đến chúng trong khoảnh khắc, bạn không chỉ giải phóng sức mạnh phản ứng khỏi tâm trí mà còn phơi bày niềm tin ẩn giấu bên dưới phản ứng, và một khi phơi bày, nó sẽ tan biến.</p>
     </article>
 
-    <blockquote>
+    <blockquote data-q="2" data-ini="M"><div class="qbody"><button class="cpy" type="button" aria-label="Sao chép trích dẫn" title="Sao chép"></button>
       <span class="qtag">Trích dẫn</span>
       <p>Nếu có một hành vi, khuynh hướng hoặc thói quen mà bạn muốn thoát khỏi, hãy lưu ý rằng đã có một nhận thức tự nhiên về nó. Nếu bạn thực sự nhìn thấy điều này, nếu bạn quan sát nó một cách tách biệt, bạn sẽ ngay lập tức cảm thấy thoát khỏi sự kìm kẹp của nó và không còn đồng nhất với nó nữa. Điều này rất quan trọng.</p>
       <cite><b>Mooji</b></cite>
-    </blockquote>
+    </div></blockquote>
 
     <article class="body-card">
       <p>Nhận thức sẽ tan biến mọi thứ không đúng. Khi từng niềm tin tan biến, từng cái một, bạn sẽ cảm thấy sự khác biệt trong cơ thể mình; bạn sẽ cảm thấy nhẹ nhõm hơn.</p>
@@ -1008,6 +1600,16 @@ figure.fig figcaption strong{color:var(--ink)}
       <p>Và giờ bạn đã biết anh ấy đã làm điều đó như thế nào.</p>
     </article>
 
+    <!-- FIG-C9 -->
+    <figure class="fig">
+      <span class="fig-lbl">Hình 15 &middot; Câu chuyện của Lester Levenson</span>
+      <svg viewBox="0 0 520 244" role="img" aria-label="Dòng thời gian ba mốc: 40 tuổi bệnh tim nặng; ba tháng xóa bỏ mọi niềm tin và cảm xúc bị kìm nén; sống thêm 40 năm khỏe mạnh và vui">
+<defs><marker id="m9i" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="var(--ink3)"/></marker></defs>
+<path d="M40,120 H480" stroke="var(--ink3)" stroke-opacity=".3" stroke-width="6" stroke-linecap="round"/><path d="M40,120 H480" stroke="var(--c4)" stroke-width="6" stroke-linecap="round" class="a-fill"/><circle cx="90" cy="120" r="24" fill="var(--c1)" class="a-pulse" style="animation-delay:0.0s"/><text x="90.0" y="125.0" class="svg-t" font-size="16" text-anchor="middle">💔</text><text x="90.0" y="72.0" class="svg-t" font-size="15" text-anchor="middle" font-weight="900" style="fill:var(--c1)">40 tuổi</text><text x="90.0" y="168.0" class="svg-t" font-size="12.5" text-anchor="middle" font-weight="800">bệnh tim nặng</text><text x="90.0" y="186.0" class="svg-t2" font-size="12" text-anchor="middle" font-weight="700">bác sĩ tuyên án tử hình</text><circle cx="260" cy="120" r="24" fill="var(--c3)" class="a-pulse" style="animation-delay:0.6s"/><text x="260.0" y="125.0" class="svg-t" font-size="16" text-anchor="middle">🔍</text><text x="260.0" y="72.0" class="svg-t" font-size="15" text-anchor="middle" font-weight="900" style="fill:var(--c3)">3 tháng</text><text x="260.0" y="168.0" class="svg-t" font-size="12.5" text-anchor="middle" font-weight="800">xóa bỏ mọi niềm tin</text><text x="260.0" y="186.0" class="svg-t2" font-size="12" text-anchor="middle" font-weight="700">và cảm xúc bị kìm nén</text><circle cx="430" cy="120" r="24" fill="var(--c4)" class="a-pulse" style="animation-delay:1.2s"/><text x="430.0" y="125.0" class="svg-t" font-size="16" text-anchor="middle">💚</text><text x="430.0" y="72.0" class="svg-t" font-size="15" text-anchor="middle" font-weight="900" style="fill:var(--c4)">40 năm nữa</text><text x="430.0" y="168.0" class="svg-t" font-size="12.5" text-anchor="middle" font-weight="800">sức khỏe hoàn hảo</text><text x="430.0" y="186.0" class="svg-t2" font-size="12" text-anchor="middle" font-weight="700">và niềm vui liên tục</text><text x="260.0" y="230.0" class="svg-t" font-size="13.5" text-anchor="middle" font-weight="800">“Và giờ bạn đã biết anh ấy đã làm điều đó như thế nào.”</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng</strong> theo đúng ba mốc trong câu chuyện tác giả kể: Lester mắc bệnh tim nghiêm trọng khi mới bốn mươi tuổi; trong ba tháng ông xóa bỏ mọi niềm tin và cảm xúc tiêu cực bị kìm nén; tình trạng tim tự nhiên biến mất và ông &ldquo;sống thêm bốn mươi năm nữa với sức khỏe hoàn hảo và niềm vui liên tục&rdquo;.</figcaption>
+    </figure>
+
     <div class="flow">
       <span class="lbl">Mạch lập luận &middot; Toàn chương</span>
       <div class="flow-grid">
@@ -1022,7 +1624,7 @@ figure.fig figcaption strong{color:var(--ink)}
     </div>
 
     <div class="pause">
-      <span class="lbl">Dừng lại 30 giây</span>
+      <span class="lbl">Dừng lại 30 giây</span><div class="tmr" data-s="30" role="button" tabindex="0" aria-label="Bắt đầu lại 30 giây"><svg viewBox="0 0 74 74" aria-hidden="true"><circle class="bg" cx="37" cy="37" r="32"/><circle class="fg" cx="37" cy="37" r="32"/></svg></div>
       <p>Có điều gì bạn nghĩ rằng mình không thể trở thành, không thể làm hoặc không thể có không?</p>
     </div>
 
@@ -1108,26 +1710,173 @@ figure.fig figcaption strong{color:var(--ink)}
 </main>
 
 <nav class="pager" aria-label="Chuyển phần">
-  <a class="prev" href="08-khong-con-dau-kho.html"><span class="k">← Phần trước</span>Chương 08 — Không còn đau khổ</a>
+  <a class="prev" href="08-khong-con-dau-kho.html"><span class="k">Phần trước</span>Chương 08 — Không còn đau khổ</a>
   <a class="home" href="index.html"><span class="k">Mục lục</span>Toàn bộ cuốn sách</a>
-  <a class="next" href="10-hanh-phuc-vinh-cuu.html"><span class="k">Phần sau →</span>Chương 10 — Hạnh phúc vĩnh cửu</a>
+  <a class="next" href="10-hanh-phuc-vinh-cuu.html"><span class="k">Phần sau</span>Chương 10 — Hạnh phúc vĩnh cửu</a>
 </nav>
 <footer class="pagefoot"><p><strong>Bí mật vĩ đại nhất</strong> — Rhonda Byrne<br>Bản trình bày lại phục vụ việc đọc và ôn tập. Bản quyền nội dung thuộc về tác giả và nhà xuất bản.</p></footer>
 </div>
-<script>
-(function(){
-  var bar=document.getElementById('progress');
-  if(bar){function u(){var h=document.documentElement,m=h.scrollHeight-h.clientHeight;
-    bar.style.width=(m>0?(h.scrollTop||document.body.scrollTop)/m*100:0).toFixed(2)+'%';}
-    addEventListener('scroll',u,{passive:true});addEventListener('resize',u);u();}
-  var root=document.documentElement,b=document.getElementById('themeBtn');
-  function set(d){root.setAttribute('data-theme',d?'dark':'light');
-    b.textContent=d?'Chế độ sáng':'Chế độ đọc tối';b.setAttribute('aria-pressed',d?'true':'false');
-    try{localStorage.setItem('bmvdn-theme',d?'dark':'light')}catch(e){}}
-  var saved='light';try{saved=localStorage.getItem('bmvdn-theme')||'light'}catch(e){}
-  set(saved==='dark');
-  b.addEventListener('click',function(){set(root.getAttribute('data-theme')!=='dark')});
-  var p=document.getElementById('printBtn'); if(p)p.addEventListener('click',function(){print()});
+<div id="fabs">
+  <button id="fabFind" type="button" aria-label="Tìm trong trang" title="Tìm trong trang (Ctrl+F)">🔍</button>
+  <button id="fabHl" type="button" aria-label="Xem các câu bôi vàng" title="Các câu bôi vàng">🖍️</button>
+  <button id="fabFont" type="button" aria-label="Đổi cỡ chữ" title="Cỡ chữ">🔤</button>
+  <button id="fabStill" type="button" aria-label="Tạm dừng chuyển động" aria-pressed="false" title="Tạm dừng chuyển động">⏸️</button>
+  <button id="fabDark" type="button" aria-label="Chế độ tối" aria-pressed="false" title="Chế độ tối">🌙</button>
+  <button id="fabTop" class="fab-top" type="button" aria-label="Về đầu trang" title="Về đầu trang">⬆️</button>
+</div>
+<div id="findbar" role="search"><input type="search" aria-label="Tìm trong trang" placeholder="Tìm trong chương…"><span class="fc"></span><button type="button" class="fp" aria-label="Kết quả trước">↑</button><button type="button" class="fn" aria-label="Kết quả sau">↓</button><button type="button" class="fx" aria-label="Đóng tìm kiếm">✕</button></div>
+<div id="hlpanel" role="dialog" aria-modal="true" aria-label="Các câu được bôi vàng"><div class="in"><button type="button" class="x" aria-label="Đóng">✕</button><h2>Các câu được bôi vàng</h2><p class="hs">Bấm vào một câu để nhảy tới đúng chỗ đó trong chương.</p><ol></ol></div></div>
+<nav id="rail" aria-label="Mục lục dính"><p class="rt">Trong chương này</p></nav>
+<script>(function(){
+  var root=document.documentElement, D=document; root.classList.add('js');
+  function $(s,c){return (c||D).querySelector(s)} function $$(s,c){return [].slice.call((c||D).querySelectorAll(s))}
+  function ls(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}}
+  var COLORS=['#FF3B30','#FF8A00','#FFD400','#28B446','#00B3A6','#0A84FF','#9B51E0','#FF2D78'];
+
+  /* ---- tắt chuyển động ---- */
+  var sb=$('#fabStill'), still=ls('bmvdn-still')==='1' || (matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches);
+  function setStill(v){still=v; root.classList.toggle('still',v);
+    if(sb){sb.textContent=v?'▶️':'⏸️'; sb.setAttribute('aria-pressed',v?'true':'false'); sb.title=v?'Bật lại chuyển động':'Tạm dừng chuyển động';}
+    if(v){$$('.rv').forEach(function(e){e.classList.add('in')}); $$('mark').forEach(function(m){m.classList.add('lit')});}
+    $$('svg').forEach(function(g){try{v?g.pauseAnimations():g.unpauseAnimations()}catch(e){}});
+    ls('bmvdn-still',v?'1':'0')}
+  setStill(still); if(sb)sb.addEventListener('click',function(){setStill(!still)});
+
+  /* ---- thanh tiến độ + nút lên đầu ---- */
+  var bar=$('#progress'), ft=$('#fabTop');
+  function prog(){var m=root.scrollHeight-root.clientHeight, y=root.scrollTop||D.body.scrollTop;
+    if(bar)bar.style.width=(m>0?y/m*100:0).toFixed(2)+'%'; if(ft)ft.classList.toggle('on',y>500)}
+  if(ft)ft.addEventListener('click',function(){scrollTo({top:0,behavior:still?'auto':'smooth'})});
+
+  /* ---- chế độ tối ---- */
+  var tb=$('#themeBtn'), fd=$('#fabDark');
+  function setDark(d){root.setAttribute('data-theme',d?'dark':'light');
+    if(tb){tb.textContent=d?'Chế độ sáng':'Chế độ đọc tối';tb.setAttribute('aria-pressed',d?'true':'false')}
+    if(fd){fd.textContent=d?'☀️':'🌙';fd.setAttribute('aria-pressed',d?'true':'false')}
+    ls('bmvdn-theme',d?'dark':'light')}
+  setDark(ls('bmvdn-theme')==='dark');
+  function tog(){setDark(root.getAttribute('data-theme')!=='dark')}
+  if(tb)tb.addEventListener('click',tog); if(fd)fd.addEventListener('click',tog);
+  var pb=$('#printBtn'); if(pb)pb.addEventListener('click',function(){print()});
+
+  /* ---- cỡ chữ ---- */
+  var fz=$('#fabFont'), steps=['','l','xl'], fi=Math.max(0,steps.indexOf(ls('bmvdn-fs')||''));
+  function setFs(){if(steps[fi])root.setAttribute('data-fs',steps[fi]);else root.removeAttribute('data-fs');ls('bmvdn-fs',steps[fi])}
+  setFs(); if(fz)fz.addEventListener('click',function(){fi=(fi+1)%steps.length;setFs()});
+
+  /* ---- hiện dần + bút dạ quang quét ---- */
+  $$('.body-card,blockquote,.concept,.example,.practice,.hint,.keyidea,.pause,.flow,figure.fig,.box,.willlearn,.sec-head,.chain,.pager > *,.stages li,nav.toc li')
+    .forEach(function(e){e.classList.add('rv')});
+  var IO='IntersectionObserver' in window;
+  if(IO && !still){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){
+      var t=e.target; t.classList.add('in'); io.unobserve(t);
+      if(t.classList.contains('chain')) $$('span',t).forEach(function(s,i){s.style.transitionDelay=(i*70)+'ms'});
+    }})},{threshold:.06,rootMargin:'0px 0px -5% 0px'});
+    var groups={}; $$('.rv').forEach(function(e){var p=e.parentNode; var k=groups[p.__k||(p.__k=Math.random())]=(groups[p.__k]||0)+1;
+      e.style.transitionDelay=(Math.min(k-1,5)*60)+'ms'; io.observe(e)});
+    var mo=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){
+      setTimeout(function(){e.target.classList.add('lit')},180); mo.unobserve(e.target)}})},{threshold:.9,rootMargin:'0px 0px -12% 0px'});
+    $$('mark').forEach(function(m){mo.observe(m)});
+  } else { $$('.rv').forEach(function(e){e.classList.add('in')}); $$('mark').forEach(function(m){m.classList.add('lit')}); }
+
+  /* ---- số liệu đếm lên ---- */
+  $$('.stat b[data-n]').forEach(function(b){var n=+b.getAttribute('data-n'); if(still||!n)return;
+    var t0=null; b.textContent='0'; function step(t){if(!t0)t0=t; var p=Math.min(1,(t-t0)/1100);
+      b.textContent=Math.round(n*(1-Math.pow(1-p,3))); if(p<1)requestAnimationFrame(step)}
+    setTimeout(function(){requestAnimationFrame(step)},350)});
+
+  /* ---- mục lục dính + phần đang đọc ---- */
+  var rail=$('#rail'), now=$('#nowsec'), toc=$('nav.toc'), items=[];
+  if(rail && toc){
+    $$('a',toc).forEach(function(a){var id=a.getAttribute('href').slice(1), s=D.getElementById(id); if(!s)return;
+      var c=a.cloneNode(true); rail.appendChild(c);
+      var n=$('.n',a), num=n?n.textContent:'', title=a.textContent.replace(num,'').trim();
+      items.push({a:c,s:s,num:num,title:title})});
+  }
+  function spy(){ if(!items.length)return;
+    var y=innerHeight*.32, cur=null; items.forEach(function(it){if(it.s.getBoundingClientRect().top<y)cur=it});
+    var tocBottom=toc.getBoundingClientRect().bottom;
+    rail.classList.toggle('on',tocBottom<0);
+    items.forEach(function(it){var on=it===cur; it.a.classList.toggle('act',on);
+      if(on){var cs=getComputedStyle(it.s), c=cs.getPropertyValue('--sc'), o=cs.getPropertyValue('--on'); it.a.style.setProperty('--rc',c&&c.trim()?c:'var(--ac)'); it.a.style.setProperty('--ron',o&&o.trim()?o:'#fff')}});
+    if(now){ if(cur&&tocBottom<0){now.textContent=cur.num+' · '+cur.title; now.classList.add('on')} else now.classList.remove('on') }
+    if(cur&&rail.classList.contains('on')){var r=cur.a.offsetTop-rail.clientHeight/2; if(Math.abs(rail.scrollTop-r)>80)rail.scrollTop=r}
+  }
+  var tick=false; function onScroll(){if(tick)return; tick=true; requestAnimationFrame(function(){tick=false; prog(); spy()})}
+  addEventListener('scroll',onScroll,{passive:true}); addEventListener('resize',onScroll); prog(); spy();
+
+  /* ---- confetti ---- */
+  function confetti(x,y){ if(still)return;
+    for(var i=0;i<28;i++){var c=D.createElement('i'); c.className='cf'; var a=Math.random()*Math.PI*2, r=60+Math.random()*90;
+      c.style.left=x+'px'; c.style.top=y+'px'; c.style.background=COLORS[i%8];
+      c.style.setProperty('--dx',Math.cos(a)*r+'px'); c.style.setProperty('--dy',(Math.sin(a)*r-40)+'px');
+      c.style.setProperty('--rt',(Math.random()*720-360)+'deg'); if(i%3===0)c.style.borderRadius='50%';
+      D.body.appendChild(c); setTimeout(function(n){return function(){n.remove()}}(c),1200)} }
+
+  /* ---- sao chép trích dẫn ---- */
+  function copyText(t){ if(navigator.clipboard&&isSecureContext) return navigator.clipboard.writeText(t);
+    return new Promise(function(ok){var ta=D.createElement('textarea'); ta.value=t; ta.style.position='fixed'; ta.style.opacity='0';
+      D.body.appendChild(ta); ta.select(); try{D.execCommand('copy')}catch(e){} ta.remove(); ok()}) }
+  $$('.cpy').forEach(function(b){b.addEventListener('click',function(){
+    var q=b.closest('blockquote'), ps=$$('p',q).map(function(p){return p.textContent.trim()}).join('\n'),
+        c=$('cite',q), who=c?c.textContent.trim():'';
+    copyText('“'+ps+'”'+(who?'\n— '+who:'')).then(function(){b.classList.add('ok'); b.setAttribute('aria-label','Đã sao chép');
+      var r=b.getBoundingClientRect(); confetti(r.left+r.width/2,r.top+r.height/2);
+      setTimeout(function(){b.classList.remove('ok'); b.setAttribute('aria-label','Sao chép trích dẫn')},1800)})})});
+
+  /* ---- đồng hồ 30 giây ---- */
+  function runTimer(p){ var t=$('.tmr',p); if(!t||still)return; var fg=$('.fg',t);
+    clearInterval(t.__iv); t.classList.remove('done'); p.classList.remove('go'); void fg.getBoundingClientRect(); p.classList.add('go');
+    var s=30; t.setAttribute('data-s',s); t.__iv=setInterval(function(){s--; t.setAttribute('data-s',s);
+      if(s<=0){clearInterval(t.__iv); t.classList.add('done')}},1000) }
+  if(IO){var po=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){runTimer(e.target); po.unobserve(e.target)}})},{threshold:.75});
+    $$('.pause').forEach(function(p){if($('.tmr',p))po.observe(p)})}
+  $$('.pause .tmr').forEach(function(t){function go(){runTimer(t.closest('.pause'))}
+    t.addEventListener('click',go); t.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();go()}})});
+
+  /* ---- bảng các câu bôi vàng ---- */
+  var hp=$('#hlpanel'), hb=$('#fabHl');
+  if(hp&&hb){ var ol=$('ol',hp);
+    $$('main mark').forEach(function(m,i){ if(!m.id)m.id='hl-'+(i+1);
+      var li=D.createElement('li'), a=D.createElement('a'); a.href='#'+m.id; a.textContent=m.textContent; li.appendChild(a); ol.appendChild(li);
+      a.addEventListener('click',function(ev){ev.preventDefault(); closeHl(); m.classList.add('lit');
+        m.scrollIntoView({behavior:still?'auto':'smooth',block:'center'}); m.classList.remove('flash'); void m.offsetWidth; m.classList.add('flash')})});
+    function openHl(){hp.classList.add('on'); var f=$('a',hp)||$('.x',hp); if(f)f.focus()}
+    function closeHl(){hp.classList.remove('on'); hb.focus({preventScroll:true})}
+    hb.addEventListener('click',openHl); $('.x',hp).addEventListener('click',closeHl);
+    hp.addEventListener('click',function(e){if(e.target===hp)closeHl()});
+    D.addEventListener('keydown',function(e){if(e.key==='Escape'&&hp.classList.contains('on'))closeHl()});
+  }
+
+  /* ---- tìm trong trang ---- */
+  var fb=$('#findbar'), ff=$('#fabFind');
+  if(fb&&ff){ var inp=$('input',fb), fc=$('.fc',fb), hits=[], hi=-1, scope=$('body > .wrap')||D.body;
+    function clear(){ hits.forEach(function(s){var p=s.parentNode; if(!p)return; p.replaceChild(D.createTextNode(s.textContent),s); p.normalize()}); hits=[]; hi=-1 }
+    function norm(s){return s.normalize('NFC').toLowerCase()}
+    function search(q){ clear(); q=norm(q.trim()); if(q.length<2){fc.textContent='';return}
+      var w=D.createTreeWalker(scope,NodeFilter.SHOW_TEXT,{acceptNode:function(n){
+        if(!n.nodeValue.trim())return NodeFilter.FILTER_REJECT; var p=n.parentNode;
+        if(p.closest('script,style,svg,#hlpanel,#findbar,.cpy'))return NodeFilter.FILTER_REJECT; return NodeFilter.FILTER_ACCEPT}});
+      var nodes=[]; while(w.nextNode())nodes.push(w.currentNode);
+      nodes.forEach(function(n){ var t=n.nodeValue, lt=norm(t), i=lt.indexOf(q); if(i<0)return;
+        var frag=D.createDocumentFragment(), last=0;
+        while(i>=0){ frag.appendChild(D.createTextNode(t.slice(last,i))); var s=D.createElement('span'); s.className='fnd';
+          s.textContent=t.slice(i,i+q.length); frag.appendChild(s); hits.push(s); last=i+q.length; i=lt.indexOf(q,last)}
+        frag.appendChild(D.createTextNode(t.slice(last))); n.parentNode.replaceChild(frag,n)});
+      $$('.rv',scope).forEach(function(e){e.classList.add('in')});
+      fc.textContent=hits.length?('0/'+hits.length):'Không thấy'; if(hits.length)go(0) }
+    function go(k){ if(!hits.length)return; if(hi>=0&&hits[hi])hits[hi].classList.remove('cur');
+      hi=(k+hits.length)%hits.length; var s=hits[hi]; s.classList.add('cur'); fc.textContent=(hi+1)+'/'+hits.length;
+      s.scrollIntoView({behavior:'auto',block:'center'}) }
+    var tmo; inp.addEventListener('input',function(){clearTimeout(tmo); tmo=setTimeout(function(){search(inp.value)},180)});
+    inp.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();go(hi+(e.shiftKey?-1:1))} if(e.key==='Escape')closeF()});
+    $('.fn',fb).addEventListener('click',function(){go(hi+1)}); $('.fp',fb).addEventListener('click',function(){go(hi-1)});
+    function openF(){fb.classList.add('on'); inp.focus(); inp.select()}
+    function closeF(){fb.classList.remove('on'); clear(); fc.textContent=''; ff.focus({preventScroll:true})}
+    $('.fx',fb).addEventListener('click',closeF); ff.addEventListener('click',function(){fb.classList.contains('on')?closeF():openF()});
+    D.addEventListener('keydown',function(e){if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='f'){e.preventDefault();openF()}});
+  }
 })();
 </script>
 </body>
