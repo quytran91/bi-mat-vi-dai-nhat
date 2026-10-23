@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+<html lang="vi" class="chap" data-c="8">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Bí mật vĩ đại nhất">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="color-scheme" content="light dark">
+<title>Nổi bật trong Bí mật vĩ đại nhất — Bí mật vĩ đại nhất | Rhonda Byrne</title>
+<style>/* ============================================================
+   BÍ MẬT VĨ ĐẠI NHẤT — ngôn ngữ thiết kế "màu mè"
+   8 màu luân phiên · bút dạ quang vàng cố định · emoji iPhone
+   ============================================================ */
+:root{
+  /* --- 8 màu chủ đề (hệ màu iOS) --- */
+  --c1:#FF3B30; --c1l:#FFE9E7; --c1b:#FFC7C2;   /* đỏ      */
+  --c2:#FF8A00; --c2l:#FFF1DF; --c2b:#FFD6A3;   /* cam     */
+  --c3:#E8A500; --c3l:#FFF8DC; --c3b:#FFE48A;   /* vàng    */
+  --c4:#28B446; --c4l:#E6F8EA; --c4b:#A8E6B6;   /* xanh lá */
+  --c5:#00B3A6; --c5l:#DFF7F5; --c5b:#95E3DD;   /* xanh ngọc */
+  --c6:#0A84FF; --c6l:#E4F0FF; --c6b:#AED3FF;   /* xanh dương */
+  --c7:#9B51E0; --c7l:#F3E9FD; --c7b:#D9BCF5;   /* tím     */
+  --c8:#FF2D78; --c8l:#FFE7EF; --c8b:#FFBDD3;   /* hồng    */
+
+  /* --- màu nhấn của trang (build gán qua data-c) --- */
+  --ac:var(--c6); --acl:var(--c6l); --acb:var(--c6b);
+
+  /* --- bút dạ quang: CỐ ĐỊNH, không đổi theo chương --- */
+  --hl1:#FFE600; --hl2:#FFD400; --hl-ink:#2B2200;
+
+  /* --- nền, chữ, khung --- */
+  --bg:#FBF9FF; --card:#FFFFFF; --soft:#F4F3FA;
+  --ink:#1C1B2E; --ink2:#67657F; --ink3:#9A98AE;
+  --rule:#E8E6F2;
+  --r:24px; --r2:16px; --r3:999px;
+  --sh:0 1px 2px rgba(28,27,46,.04), 0 10px 30px rgba(28,27,46,.07);
+  --sh2:0 2px 6px rgba(28,27,46,.06), 0 18px 48px rgba(28,27,46,.10);
+
+  /* --- font: emoji Apple đứng đầu mọi stack --- */
+  --emo:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji","Twemoji Mozilla",sans-serif;
+  --ui:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,"Noto Sans",Arial,
+       "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif;
+  --serif:"Times New Roman",Tinos,"Liberation Serif","Noto Serif",Times,serif;
+
+  --fs:18px;
+}
+html[data-theme="dark"]{
+  --c1:#FF6961; --c1l:#3A1E1C; --c1b:#5E2E29;
+  --c2:#FFA64D; --c2l:#3A2A14; --c2b:#5E4320;
+  --c3:#FFD24D; --c3l:#3A3316; --c3b:#5E5122;
+  --c4:#52DD6E; --c4l:#15311C; --c4b:#24512F;
+  --c5:#35D6C8; --c5l:#10322F; --c5b:#1D524D;
+  --c6:#4DA3FF; --c6l:#132B44; --c6b:#1E466F;
+  --c7:#C185F5; --c7l:#2A1A3C; --c7b:#452C61;
+  --c8:#FF6AA0; --c8l:#3B1727; --c8b:#5F2641;
+  --bg:#0F0E17; --card:#1A1927; --soft:#232232;
+  --ink:#F2F0FF; --ink2:#A9A6C4; --ink3:#7D7A99;
+  --rule:#2E2C42;
+  --sh:0 1px 2px rgba(0,0,0,.4), 0 10px 30px rgba(0,0,0,.35);
+  --sh2:0 2px 6px rgba(0,0,0,.45), 0 18px 48px rgba(0,0,0,.45);
+}
+
+/* --- bảng gán màu nhấn theo chương --- */
+html[data-c="1"]{--ac:var(--c1);--acl:var(--c1l);--acb:var(--c1b)}
+html[data-c="2"]{--ac:var(--c2);--acl:var(--c2l);--acb:var(--c2b)}
+html[data-c="3"]{--ac:var(--c3);--acl:var(--c3l);--acb:var(--c3b)}
+html[data-c="4"]{--ac:var(--c4);--acl:var(--c4l);--acb:var(--c4b)}
+html[data-c="5"]{--ac:var(--c5);--acl:var(--c5l);--acb:var(--c5b)}
+html[data-c="6"]{--ac:var(--c6);--acl:var(--c6l);--acb:var(--c6b)}
+html[data-c="7"]{--ac:var(--c7);--acl:var(--c7l);--acb:var(--c7b)}
+html[data-c="8"]{--ac:var(--c8);--acl:var(--c8l);--acb:var(--c8b)}
+
+/* --- bí danh cho SVG trong nội dung (giữ nguyên tên biến cũ) --- */
+:root,html[data-theme="dark"]{
+  --gold:var(--c3); --gold-l:var(--c3l);
+  --green:var(--c4); --green-l:var(--c4l);
+  --blue:var(--c6); --blue-l:var(--c6l);
+  --purple:var(--c7); --purple-l:var(--c7l);
+  --red:var(--c1); --red-l:var(--c1l);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:84px; -webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:var(--ui); font-size:var(--fs); line-height:1.75;
+  text-rendering:optimizeLegibility; overflow-x:hidden;
+}
+html[data-fs="l"]{--fs:20px}
+html[data-fs="xl"]{--fs:22px}
+p{margin:0 0 1.1em}
+a{color:var(--ac)}
+.wrap{max-width:860px; margin:0 auto; padding:0 20px}
+::selection{background:var(--hl1); color:var(--hl-ink)}
+
+/* ---------- nền nhiều màu + blob trôi ---------- */
+body::before{
+  content:""; position:fixed; inset:0; z-index:-2; pointer-events:none;
+  background:
+    radial-gradient(900px 600px at 8% -5%,  rgba(10,132,255,.10), transparent 60%),
+    radial-gradient(800px 600px at 95% 5%,  rgba(255,45,120,.09), transparent 60%),
+    radial-gradient(900px 700px at 50% 108%,rgba(155,81,224,.10), transparent 60%),
+    radial-gradient(700px 500px at -5% 70%, rgba(0,179,166,.09), transparent 60%);
+}
+#blobs{position:fixed; inset:0; z-index:-1; pointer-events:none; overflow:hidden; filter:blur(60px); opacity:.5}
+html[data-theme="dark"] #blobs{opacity:.34}
+#blobs i{position:absolute; display:block; border-radius:50%}
+#blobs i:nth-child(1){width:46vmin;height:46vmin;left:-8vmin;top:4vmin;  background:var(--c6); animation:drift1 34s ease-in-out infinite}
+#blobs i:nth-child(2){width:38vmin;height:38vmin;right:-6vmin;top:18vmin;background:var(--c8); animation:drift2 41s ease-in-out infinite}
+#blobs i:nth-child(3){width:42vmin;height:42vmin;left:24vmin;bottom:-12vmin;background:var(--c7); animation:drift3 47s ease-in-out infinite}
+#blobs i:nth-child(4){width:30vmin;height:30vmin;right:14vmin;bottom:4vmin; background:var(--c5); animation:drift1 39s ease-in-out infinite reverse}
+#blobs i:nth-child(5){width:26vmin;height:26vmin;left:52vmin;top:-8vmin;   background:var(--c3); animation:drift2 44s ease-in-out infinite}
+@keyframes drift1{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(8vmin,6vmin) scale(1.12)}66%{transform:translate(-5vmin,10vmin) scale(.94)}}
+@keyframes drift2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-9vmin,8vmin) scale(1.15)}}
+@keyframes drift3{0%,100%{transform:translate(0,0) scale(1)}40%{transform:translate(7vmin,-7vmin) scale(.9)}75%{transform:translate(-6vmin,4vmin) scale(1.08)}}
+
+/* ---------- thanh tiến độ + toolbar ---------- */
+#progress{position:fixed; top:0; left:0; height:4px; width:0%; z-index:70;
+  background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3),var(--c4),var(--c5),var(--c6),var(--c7),var(--c8));
+  border-radius:0 4px 4px 0}
+#toolbar{position:sticky; top:0; z-index:60; backdrop-filter:saturate(180%) blur(14px);
+  background:color-mix(in srgb,var(--bg) 78%, transparent); border-bottom:1px solid var(--rule)}
+#toolbar .wrap{display:flex; gap:8px; flex-wrap:wrap; align-items:center; padding:10px 20px}
+#toolbar .tb-title{font-size:12.5px; font-weight:800; letter-spacing:.04em; color:var(--ink2);
+  margin-right:auto; display:flex; align-items:center; gap:7px}
+#toolbar .tb-title::before{content:"📘"; font-family:var(--emo); font-size:15px}
+.btn{font:inherit; font-size:13px; font-weight:650; line-height:1.2; padding:9px 15px; cursor:pointer;
+  background:var(--card); color:var(--ink); border:1.5px solid var(--rule); border-radius:var(--r3);
+  text-decoration:none; display:inline-flex; align-items:center; gap:6px;
+  transition:transform .16s, border-color .16s, box-shadow .16s}
+.btn:hover{transform:translateY(-2px); border-color:var(--ac); box-shadow:0 6px 18px color-mix(in srgb,var(--ac) 26%, transparent)}
+#toolbar a.btn[href="index.html"]::before{content:"🗂️"; font-family:var(--emo)}
+#toolbar a.btn[href="#top"]::before{content:"⬆️"; font-family:var(--emo)}
+#themeBtn::before{content:"🌙"; font-family:var(--emo)}
+html[data-theme="dark"] #themeBtn::before{content:"☀️"}
+#printBtn::before{content:"🖨️"; font-family:var(--emo)}
+a:focus-visible,.btn:focus-visible,summary:focus-visible,[tabindex]:focus-visible{
+  outline:3px solid var(--ac); outline-offset:3px; border-radius:8px}
+
+/* ---------- HERO ---------- */
+header.book{
+  position:relative; overflow:hidden; text-align:center;
+  padding:66px 0 60px; margin-bottom:8px; color:#fff;
+  background:linear-gradient(115deg,#FF3B30,#FF8A00,#E8A500,#28B446,#00B3A6,#0A84FF,#9B51E0,#FF2D78);
+  background-size:300% 300%; animation:heroShift 26s ease infinite;
+}
+@keyframes heroShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+header.book::after{content:""; position:absolute; inset:0;
+  background:radial-gradient(120% 90% at 50% 120%, rgba(0,0,0,.34), transparent 70%)}
+header.book > .wrap{position:relative; z-index:2}
+header.book .kicker{display:inline-flex; align-items:center; gap:8px; margin:0 0 20px;
+  font-size:12px; font-weight:800; letter-spacing:.14em; text-transform:uppercase;
+  background:rgba(255,255,255,.22); border:1px solid rgba(255,255,255,.4);
+  padding:7px 16px; border-radius:var(--r3); backdrop-filter:blur(6px)}
+header.book .kicker::before{content:"🎨"; font-family:var(--emo); font-size:14px}
+header.book h1{margin:0; font-size:clamp(34px,7.6vw,68px); line-height:1.08; font-weight:850;
+  letter-spacing:-.02em; text-shadow:0 4px 26px rgba(0,0,0,.3)}
+header.book .chapno{display:inline-block; margin:0 0 14px; font-size:13px; font-weight:800;
+  letter-spacing:.2em; text-transform:uppercase; background:rgba(255,255,255,.95);
+  color:#1C1B2E; padding:6px 18px; border-radius:var(--r3)}
+header.book .sub{max-width:620px; margin:20px auto 0; font-size:17.5px; line-height:1.7;
+  color:rgba(255,255,255,.95); font-style:normal}
+header.book .author{display:inline-flex; align-items:center; gap:8px; margin-top:26px;
+  font-size:13px; font-weight:750; letter-spacing:.1em; text-transform:uppercase;
+  color:#fff; background:rgba(0,0,0,.22); padding:8px 18px; border-radius:var(--r3)}
+header.book .author::before{content:"✍️"; font-family:var(--emo); font-size:14px}
+.rule-orn{display:flex; align-items:center; justify-content:center; gap:10px; margin:24px auto 0; max-width:300px}
+.rule-orn span{height:3px; flex:1; border-radius:3px; background:linear-gradient(90deg,transparent,#fff)}
+.rule-orn span:last-child{background:linear-gradient(90deg,#fff,transparent)}
+.rule-orn b{font-size:0; width:auto}
+.rule-orn b::after{content:"✨"; font-family:var(--emo); font-size:20px; display:block;
+  animation:twinkle 3.6s ease-in-out infinite}
+@keyframes twinkle{0%,100%{transform:scale(1) rotate(0)}50%{transform:scale(1.28) rotate(16deg)}}
+/* emoji trang trí bay lơ lửng */
+header.book .wrap::before,header.book .wrap::after{
+  font-family:var(--emo); position:absolute; font-size:36px; opacity:.85; pointer-events:none}
+header.book .wrap::before{content:"🔑"; left:2%;  top:6%;  animation:float1 9s ease-in-out infinite}
+header.book .wrap::after {content:"💡"; right:3%; bottom:4%; animation:float2 11s ease-in-out infinite}
+@keyframes float1{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-16px) rotate(8deg)}}
+@keyframes float2{0%,100%{transform:translateY(0) rotate(6deg)}50%{transform:translateY(-20px) rotate(-10deg)}}
+@media (max-width:700px){header.book .wrap::before,header.book .wrap::after{font-size:26px; opacity:.6}}
+
+/* ---------- nhãn pill ---------- */
+.tag{display:inline-flex; align-items:center; gap:7px; font-size:11.5px; font-weight:800;
+  letter-spacing:.12em; text-transform:uppercase; padding:6px 14px; border-radius:var(--r3);
+  background:var(--acl); color:var(--ac); border:1.5px solid var(--acb); margin-bottom:12px}
+
+/* ---------- khối giới thiệu trang mục lục ---------- */
+.hub-intro{position:relative; overflow:hidden; background:var(--card); border:1.5px solid var(--rule);
+  border-radius:var(--r); padding:30px 30px 26px; margin:30px 0 40px; box-shadow:var(--sh)}
+.hub-intro::before{content:""; position:absolute; left:0; right:0; top:0; height:6px;
+  background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3),var(--c4),var(--c5),var(--c6),var(--c7),var(--c8))}
+.hub-intro .tag::before{content:"📊"; font-family:var(--emo); font-size:13px}
+.hub-intro p:last-child{margin-bottom:0}
+.hub-intro p{font-size:16.5px; color:var(--ink2); line-height:1.75}
+.hub-intro p strong{color:var(--ink)}
+.hub-intro code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:.9em;
+  background:var(--soft); border:1px solid var(--rule); border-radius:8px; padding:2px 7px; color:var(--c7)}
+.meter{height:14px; border-radius:var(--r3); background:var(--soft); overflow:hidden;
+  margin:16px 0 10px; border:1px solid var(--rule)}
+.meter i{display:block; height:100%; border-radius:var(--r3); position:relative;
+  background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3),var(--c4),var(--c5),var(--c6),var(--c7),var(--c8));
+  background-size:200% 100%; animation:meterShift 8s linear infinite}
+@keyframes meterShift{0%{background-position:0 0}100%{background-position:200% 0}}
+.meter-lbl{font-size:15px; font-weight:650; color:var(--ink2); margin:0 0 4px}
+.meter-lbl::before{content:"🚀 "; font-family:var(--emo); font-size:16px}
+.meter-lbl strong{color:var(--ink); font-size:16px}
+
+/* ---------- nhóm phần ---------- */
+.group{margin:52px 0}
+.group > h2{display:inline-flex; align-items:center; gap:9px; margin:0 0 8px;
+  font-size:15px; font-weight:850; letter-spacing:.1em; text-transform:uppercase;
+  color:#fff; padding:9px 20px; border-radius:var(--r3); box-shadow:var(--sh)}
+.group:nth-of-type(1) > h2{background:linear-gradient(100deg,var(--c6),var(--c5))}
+.group:nth-of-type(2) > h2{background:linear-gradient(100deg,var(--c7),var(--c8))}
+.group:nth-of-type(3) > h2{background:linear-gradient(100deg,var(--c2),var(--c3))}
+.group:nth-of-type(1) > h2::before{content:"🌅"; font-family:var(--emo); font-size:17px}
+.group:nth-of-type(2) > h2::before{content:"📚"; font-family:var(--emo); font-size:17px}
+.group:nth-of-type(3) > h2::before{content:"🎁"; font-family:var(--emo); font-size:17px}
+.group > .gsub{font-size:15.5px; color:var(--ink2); margin:0 0 22px; max-width:640px}
+
+/* ---------- thẻ chương ---------- */
+.cards{display:grid; grid-template-columns:repeat(auto-fill,minmax(272px,1fr)); gap:18px}
+.card{position:relative; overflow:hidden; display:block; background:var(--card);
+  border:1.5px solid var(--rule); border-radius:var(--r); padding:26px 24px 22px;
+  text-decoration:none; color:var(--ink); box-shadow:var(--sh);
+  transition:transform .2s cubic-bezier(.2,.8,.3,1), box-shadow .2s, border-color .2s}
+.card::before{content:""; position:absolute; left:0; right:0; top:0; height:6px;
+  background:linear-gradient(90deg,var(--cc),color-mix(in srgb,var(--cc) 45%, #fff))}
+.card::after{content:attr(data-emo); font-family:var(--emo); position:absolute; right:18px; top:20px;
+  font-size:30px; line-height:1; transition:transform .25s}
+.card:hover{transform:translateY(-6px); border-color:var(--cc);
+  box-shadow:0 10px 20px color-mix(in srgb,var(--cc) 14%, transparent), 0 26px 56px color-mix(in srgb,var(--cc) 20%, transparent)}
+.card:hover::after{transform:scale(1.22) rotate(-10deg)}
+.card .num{display:block; font-size:12px; font-weight:850; letter-spacing:.14em;
+  text-transform:uppercase; margin:0 0 10px; color:var(--cc)}
+.card h3{margin:0 0 10px; font-size:21px; line-height:1.3; font-weight:800; letter-spacing:-.01em;
+  padding-right:44px}
+.card .sub{margin:0; font-size:14.8px; line-height:1.65; color:var(--ink2)}
+.card .status{display:inline-flex; align-items:center; gap:6px; margin-top:16px; font-size:11.5px;
+  font-weight:800; letter-spacing:.08em; text-transform:uppercase; padding:6px 13px;
+  border-radius:var(--r3); background:var(--c4l); color:var(--c4); border:1.5px solid var(--c4b)}
+.card .status::before{content:"✅"; font-family:var(--emo); font-size:12px}
+.card.off{opacity:.62; box-shadow:none; cursor:default; background:var(--soft)}
+.card.off::before{background:var(--rule)}
+.card.off::after{filter:grayscale(1); opacity:.5}
+.card.off:hover{transform:none; border-color:var(--rule); box-shadow:none}
+.card.off .num{color:var(--ink3)}
+.card.off .status{background:transparent; color:var(--ink3); border:1.5px dashed var(--rule)}
+.card.off .status::before{content:"🕓"}
+/* 8 màu luân phiên — build gán data-c cho từng thẻ */
+.card[data-c="1"]{--cc:var(--c1)} .card[data-c="2"]{--cc:var(--c2)}
+.card[data-c="3"]{--cc:var(--c3)} .card[data-c="4"]{--cc:var(--c4)}
+.card[data-c="5"]{--cc:var(--c5)} .card[data-c="6"]{--cc:var(--c6)}
+.card[data-c="7"]{--cc:var(--c7)} .card[data-c="8"]{--cc:var(--c8)}
+
+/* ---------- footer ---------- */
+footer.pagefoot{margin-top:60px; padding:30px 0 90px; text-align:center;
+  font-size:14px; color:var(--ink2); line-height:1.8; border-top:1.5px solid var(--rule)}
+footer.pagefoot strong{color:var(--ink)}
+footer.pagefoot p::before{content:"📘"; font-family:var(--emo); display:block; font-size:24px; margin-bottom:10px}
+
+/* ---------- nút nổi ---------- */
+#fabs{position:fixed; right:16px; bottom:16px; z-index:65; display:flex; flex-direction:column; gap:10px}
+#fabs button{width:50px; height:50px; border-radius:50%; cursor:pointer; border:1.5px solid var(--rule);
+  background:var(--card); box-shadow:var(--sh2); font-family:var(--emo); font-size:21px; line-height:1;
+  display:grid; place-items:center; transition:transform .18s, box-shadow .18s}
+#fabs button:hover{transform:translateY(-3px) scale(1.07)}
+#fabs button[aria-pressed="true"]{background:var(--acl); border-color:var(--ac)}
+#fabs .fab-top{opacity:0; pointer-events:none; transition:opacity .25s}
+#fabs .fab-top.on{opacity:1; pointer-events:auto}
+@media (max-width:560px){
+  #fabs{right:10px; bottom:10px; gap:8px}
+  #fabs button{width:42px;height:42px;font-size:17px}
+  header.book{padding:48px 0 44px}
+  header.book .kicker{font-size:10.5px; letter-spacing:.08em; padding:6px 12px}
+  header.book .author{font-size:11.5px}
+  .hub-intro{padding:24px 20px 22px}
+  .card{padding:22px 20px 20px}
+  .group > h2{font-size:13px; padding:8px 16px}
+}
+
+/* ---------- giảm chuyển động ---------- */
+html.still *, html.still *::before, html.still *::after{animation:none !important; transition:none !important}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none !important; transition:none !important}
+}
+
+/* ---------- hiện dần khi cuộn ---------- */
+html.js .rv{opacity:0; transform:translateY(16px)}
+html.js .rv.in{opacity:1; transform:none; transition:opacity .55s ease, transform .55s cubic-bezier(.2,.8,.3,1)}
+
+/* ---------- in ---------- */
+@media print{
+  :root{--bg:#fff;--card:#fff;--soft:#fff}
+  html,body{background:#fff !important; color:#000}
+  *{-webkit-print-color-adjust:exact; print-color-adjust:exact}
+  #toolbar,#progress,#fabs,#blobs,body::before{display:none !important}
+  header.book{background:#fff !important; color:#000; animation:none; border-bottom:4px solid var(--c7); padding:0 0 18pt}
+  header.book h1,header.book .sub,header.book .author,header.book .kicker{color:#000}
+  header.book::after{display:none}
+  .card,.hub-intro{break-inside:avoid; box-shadow:none}
+  @page{size:A4; margin:16mm 14mm}
+}
+
+/* ============================================================
+   TRANG CHƯƠNG
+   ============================================================ */
+/* màu hero theo chương: màu nhấn + 3 màu lân cận */
+html[data-c="1"]{--h1:var(--c1);--h2:var(--c2);--h3:var(--c8);--h4:var(--c7)}
+html[data-c="2"]{--h1:var(--c2);--h2:var(--c3);--h3:var(--c1);--h4:var(--c8)}
+html[data-c="3"]{--h1:var(--c3);--h2:var(--c2);--h3:var(--c8);--h4:var(--c1)}
+html[data-c="4"]{--h1:var(--c4);--h2:var(--c5);--h3:var(--c3);--h4:var(--c6)}
+html[data-c="5"]{--h1:var(--c5);--h2:var(--c6);--h3:var(--c4);--h4:var(--c7)}
+html[data-c="6"]{--h1:var(--c6);--h2:var(--c7);--h3:var(--c5);--h4:var(--c8)}
+html[data-c="7"]{--h1:var(--c7);--h2:var(--c8);--h3:var(--c6);--h4:var(--c2)}
+html[data-c="8"]{--h1:var(--c8);--h2:var(--c7);--h3:var(--c2);--h4:var(--c1)}
+html.chap header.book{
+  background:linear-gradient(120deg,var(--h1),var(--h2),var(--h3),var(--h4),var(--h1));
+  background-size:300% 300%}
+html.chap header.book .wrap::before{content:attr(data-e1)}
+html.chap header.book .wrap::after {content:attr(data-e2)}
+html.chap header.book h1{font-size:clamp(38px,8vw,76px)}
+header.book .chapno::before{content:"📖 "; font-family:var(--emo)}
+
+/* ô số liệu */
+.stats{display:grid; grid-template-columns:repeat(5,1fr); gap:12px; max-width:720px; margin:30px auto 0}
+.stat{background:rgba(255,255,255,.2); border:1px solid rgba(255,255,255,.42); border-radius:20px;
+  padding:14px 8px 12px; backdrop-filter:blur(8px); color:#fff; text-align:center;
+  transition:transform .2s}
+.stat:hover{transform:translateY(-4px) scale(1.04)}
+.stat .se{display:block; font-family:var(--emo); font-size:24px; line-height:1; margin-bottom:6px}
+.stat b{display:block; font-size:28px; font-weight:850; line-height:1.1; font-variant-numeric:tabular-nums}
+.stat small{display:block; font-size:11.5px; font-weight:700; letter-spacing:.04em; opacity:.95; margin-top:3px; line-height:1.35}
+@media (max-width:640px){.stats{grid-template-columns:repeat(3,1fr)} .stat:nth-child(n+4){grid-column:span 1}}
+@media (max-width:380px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+/* chỉ báo phần đang đọc trên toolbar */
+#nowsec{display:none; font-size:12.5px; font-weight:750; color:var(--ac); background:var(--acl);
+  border:1.5px solid var(--acb); padding:6px 12px; border-radius:var(--r3); max-width:340px;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+#nowsec.on{display:inline-block}
+#nowsec::before{content:"📍 "; font-family:var(--emo)}
+@media (max-width:820px){#nowsec{order:9; max-width:100%; flex-basis:100%}}
+
+/* ---------- mục lục dính bên trái ---------- */
+#rail{display:none}
+@media (min-width:1330px){
+  #rail{display:block; position:fixed; top:92px; left:max(14px, calc(50% - 430px - 290px)); width:262px;
+    max-height:calc(100vh - 116px); overflow:auto; z-index:40; padding:16px 12px 14px;
+    background:color-mix(in srgb,var(--card) 82%, transparent); backdrop-filter:blur(14px);
+    border:1.5px solid var(--rule); border-radius:var(--r); box-shadow:var(--sh);
+    opacity:0; transform:translateX(-12px); transition:opacity .3s, transform .3s; pointer-events:none}
+  #rail.on{opacity:1; transform:none; pointer-events:auto}
+}
+#rail .rt{font-size:11.5px; font-weight:850; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--ink2); margin:0 6px 10px}
+#rail .rt::before{content:"🧭 "; font-family:var(--emo)}
+#rail a{display:flex; gap:9px; align-items:flex-start; padding:7px 9px; border-radius:12px;
+  text-decoration:none; color:var(--ink2); font-size:13.2px; line-height:1.4; font-weight:600;
+  transition:background .2s, color .2s}
+#rail a .n{flex:0 0 auto; min-width:24px; height:24px; border-radius:8px; display:grid; place-items:center;
+  font-size:11px; font-weight:850; background:var(--soft); color:var(--ink2); transition:all .2s}
+#rail a:hover{background:var(--soft); color:var(--ink)}
+#rail a.act{background:color-mix(in srgb,var(--rc) 14%, transparent); color:var(--ink)}
+#rail a.act .n{background:var(--rc); color:#fff; transform:scale(1.08)}
+
+/* ---------- bản đồ chương ---------- */
+.box{position:relative; border-radius:var(--r); padding:28px 28px 24px; margin:30px 0;
+  background:var(--card); border:1.5px solid var(--rule); box-shadow:var(--sh)}
+.box.map::before,nav.toc::before{content:""; position:absolute; left:0; right:0; top:0; height:6px;
+  border-radius:var(--r) var(--r) 0 0;
+  background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3),var(--c4),var(--c5),var(--c6),var(--c7),var(--c8))}
+.map .tag::before{content:"🗺️"; font-family:var(--emo); font-size:13px}
+.map h2,nav.toc h2{font-size:24px; font-weight:850; letter-spacing:-.01em; margin:0 0 4px; line-height:1.3}
+.map .meta{font-size:14px; font-weight:650; color:var(--ink2); margin:0 0 18px}
+.map .meta::before{content:"⏱️ "; font-family:var(--emo)}
+.map .goal{background:linear-gradient(120deg,var(--c3l),var(--c2l)); border:1.5px solid var(--c3b);
+  border-radius:var(--r2); padding:16px 18px 16px 52px; margin:0 0 20px; font-size:16.5px; position:relative}
+.map .goal::before{content:"🎯"; font-family:var(--emo); position:absolute; left:16px; top:15px; font-size:22px}
+.stages{list-style:none; margin:0; padding:0; counter-reset:st; display:grid; gap:8px}
+.stages li{counter-increment:st; position:relative; padding:9px 12px 9px 52px; font-size:16px; line-height:1.6;
+  border-radius:14px; background:var(--soft); transition:transform .18s, background .18s}
+.stages li:hover{transform:translateX(5px); background:color-mix(in srgb,var(--sc) 12%, var(--soft))}
+.stages li::before{content:counter(st); position:absolute; left:10px; top:9px; width:30px; height:30px;
+  border-radius:10px; background:var(--sc); color:#fff; font-size:13px; font-weight:850;
+  display:grid; place-items:center; box-shadow:0 4px 12px color-mix(in srgb,var(--sc) 40%, transparent)}
+.stages li:nth-child(8n+1){--sc:var(--c1)} .stages li:nth-child(8n+2){--sc:var(--c2)}
+.stages li:nth-child(8n+3){--sc:var(--c3)} .stages li:nth-child(8n+4){--sc:var(--c4)}
+.stages li:nth-child(8n+5){--sc:var(--c5)} .stages li:nth-child(8n+6){--sc:var(--c6)}
+.stages li:nth-child(8n+7){--sc:var(--c7)} .stages li:nth-child(8n+8){--sc:var(--c8)}
+.howto{margin-top:20px; padding:14px 16px 14px 48px; border-radius:var(--r2); background:var(--soft);
+  font-size:14.5px; color:var(--ink2); line-height:1.7; position:relative}
+.howto::before{content:"👀"; font-family:var(--emo); position:absolute; left:15px; top:13px; font-size:19px}
+
+/* ---------- mục lục chương ---------- */
+nav.toc ol{list-style:none; margin:16px 0 0; padding:0; display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:10px}
+nav.toc h2::before{content:"🧭 "; font-family:var(--emo)}
+nav.toc li{margin:0}
+nav.toc a{display:flex; gap:11px; align-items:center; height:100%; padding:11px 14px; border-radius:16px;
+  text-decoration:none; color:var(--ink); font-size:15px; font-weight:650; line-height:1.4;
+  background:color-mix(in srgb,var(--sc) 9%, var(--card)); border:1.5px solid color-mix(in srgb,var(--sc) 26%, transparent);
+  transition:transform .18s, box-shadow .18s}
+nav.toc a:hover{transform:translateY(-3px); box-shadow:0 10px 24px color-mix(in srgb,var(--sc) 24%, transparent)}
+nav.toc a .n{flex:0 0 auto; width:32px; height:32px; border-radius:10px; display:grid; place-items:center;
+  background:var(--sc); color:#fff; font-size:12.5px; font-weight:850}
+nav.toc li:nth-child(8n+1){--sc:var(--c1)} nav.toc li:nth-child(8n+2){--sc:var(--c2)}
+nav.toc li:nth-child(8n+3){--sc:var(--c3)} nav.toc li:nth-child(8n+4){--sc:var(--c4)}
+nav.toc li:nth-child(8n+5){--sc:var(--c5)} nav.toc li:nth-child(8n+6){--sc:var(--c6)}
+nav.toc li:nth-child(8n+7){--sc:var(--c7)} nav.toc li:nth-child(8n+8){--sc:var(--c8)}
+
+aside.srctoc{border-left:6px solid var(--c7)}
+aside.srctoc ul{list-style:none; margin:0; padding:0}
+aside.srctoc li{padding:5px 0 5px 26px; position:relative; font-size:16px}
+aside.srctoc li::before{content:"📑"; font-family:var(--emo); position:absolute; left:0; top:5px; font-size:14px}
+
+/* ---------- phần (section) — mỗi phần một màu ---------- */
+main > section{--sc:var(--c6); --scl:var(--c6l); --scb:var(--c6b); margin:72px 0; scroll-margin-top:84px}
+main > section:nth-of-type(8n+1){--sc:var(--c1);--scl:var(--c1l);--scb:var(--c1b)}
+main > section:nth-of-type(8n+2){--sc:var(--c2);--scl:var(--c2l);--scb:var(--c2b)}
+main > section:nth-of-type(8n+3){--sc:var(--c3);--scl:var(--c3l);--scb:var(--c3b)}
+main > section:nth-of-type(8n+4){--sc:var(--c4);--scl:var(--c4l);--scb:var(--c4b)}
+main > section:nth-of-type(8n+5){--sc:var(--c5);--scl:var(--c5l);--scb:var(--c5b)}
+main > section:nth-of-type(8n+6){--sc:var(--c6);--scl:var(--c6l);--scb:var(--c6b)}
+main > section:nth-of-type(8n+7){--sc:var(--c7);--scl:var(--c7l);--scb:var(--c7b)}
+main > section:nth-of-type(8n+8){--sc:var(--c8);--scl:var(--c8l);--scb:var(--c8b)}
+
+.sec-head{display:flex; gap:18px; align-items:center; margin-bottom:14px}
+.badge{flex:0 0 auto; position:relative; width:62px; height:62px; border-radius:20px;
+  display:grid; place-items:center; color:#fff; font-size:22px; font-weight:900;
+  background:linear-gradient(135deg,var(--sc),color-mix(in srgb,var(--sc) 55%, #fff));
+  box-shadow:0 10px 26px color-mix(in srgb,var(--sc) 40%, transparent); transform:rotate(-6deg)}
+.badge::after{content:""; position:absolute; inset:-6px; border-radius:24px; border:2.5px solid var(--sc);
+  opacity:0; animation:ring 2.8s ease-out infinite}
+@keyframes ring{0%{opacity:.6; transform:scale(.85)}80%,100%{opacity:0; transform:scale(1.22)}}
+.sec-head h2{margin:0; font-size:clamp(25px,4.2vw,36px); line-height:1.22; font-weight:850; letter-spacing:-.015em}
+.sec-head h2{background:linear-gradient(100deg,var(--ink) 30%, var(--sc)); -webkit-background-clip:text;
+  background-clip:text; color:transparent}
+@media print{.sec-head h2{color:var(--ink); background:none}}
+
+.willlearn{position:relative; margin:4px 0 24px; padding:15px 18px 15px 56px; border-radius:var(--r2);
+  background:var(--scl); border:1.5px solid var(--scb); font-size:15.5px; color:var(--ink); line-height:1.7}
+.willlearn::before{content:"🎯"; font-family:var(--emo); position:absolute; left:17px; top:14px; font-size:22px;
+  animation:bob 3.4s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.willlearn b{color:var(--sc); font-weight:850}
+.willlearn em{color:var(--ink2)}
+
+/* thân bài — "phần thân màu kem" */
+.body-card{position:relative; background:#FFFCF4; border:1.5px solid #F1E8D2; border-radius:var(--r);
+  padding:30px 32px 14px; box-shadow:var(--sh); margin:22px 0; font-size:var(--fs); line-height:1.82}
+html[data-theme="dark"] .body-card{background:#1F1C17; border-color:#3A3326}
+.body-card::before{content:""; position:absolute; left:0; top:22px; bottom:22px; width:5px;
+  border-radius:0 5px 5px 0; background:linear-gradient(180deg,var(--sc),color-mix(in srgb,var(--sc) 35%, transparent))}
+@media (max-width:600px){.body-card{padding:22px 20px 10px}}
+.body-card h3{font-size:18px; font-weight:850; color:var(--sc); margin:26px 0 10px}
+.body-card h3:first-child{margin-top:0}
+
+/* ---------- BÚT DẠ QUANG VÀNG — cố định ---------- */
+mark{color:var(--hl-ink); padding:.04em .18em; margin:0 -.06em; border-radius:.3em;
+  -webkit-box-decoration-break:clone; box-decoration-break:clone;
+  background:linear-gradient(100deg,var(--hl1),var(--hl2)) no-repeat 0 0 / 100% 100%}
+html.js mark{background-size:0% 100%; transition:background-size .8s cubic-bezier(.6,.1,.2,1)}
+html.js mark.lit,html.still mark{background-size:100% 100%}
+html.js mark:not(.lit){color:inherit}
+html.js mark.lit{color:var(--hl-ink); transition:background-size .8s cubic-bezier(.6,.1,.2,1), color .3s .2s}
+mark.flash{animation:flash 1.4s ease 2}
+@keyframes flash{50%{box-shadow:0 0 0 6px color-mix(in srgb,var(--hl1) 55%, transparent)}}
+
+ul.dia{list-style:none; margin:0 0 1.1em; padding:0}
+ul.dia li{position:relative; padding:5px 0 5px 30px}
+ul.dia li::before{content:""; position:absolute; left:4px; top:.82em; width:11px; height:11px; border-radius:4px;
+  background:var(--sc,var(--ac)); transform:rotate(45deg); box-shadow:0 2px 6px color-mix(in srgb,var(--sc,var(--ac)) 40%, transparent)}
+ol.steps{padding-left:24px}
+ol.steps li{margin:0 0 10px}
+ol.steps li::marker{color:var(--sc); font-weight:850}
+
+/* ---------- TRÍCH DẪN — bóng chat có avatar ---------- */
+blockquote{--qc:var(--c6); position:relative; margin:28px 0; padding:0 0 0 66px; font-style:normal}
+blockquote[data-q="1"]{--qc:var(--c1)} blockquote[data-q="2"]{--qc:var(--c2)}
+blockquote[data-q="4"]{--qc:var(--c4)} blockquote[data-q="5"]{--qc:var(--c5)}
+blockquote[data-q="6"]{--qc:var(--c6)} blockquote[data-q="7"]{--qc:var(--c7)}
+blockquote[data-q="8"]{--qc:var(--c8)}
+blockquote::before{content:attr(data-ini); position:absolute; left:0; top:4px; width:50px; height:50px;
+  border-radius:50%; display:grid; place-items:center; color:#fff; font-size:16px; font-weight:850; letter-spacing:.02em;
+  background:linear-gradient(135deg,var(--qc),color-mix(in srgb,var(--qc) 55%, #fff));
+  box-shadow:0 6px 16px color-mix(in srgb,var(--qc) 38%, transparent), 0 0 0 3px var(--bg)}
+blockquote > .qbody{position:relative; background:var(--c3l); border:1.5px solid var(--c3b);
+  border-radius:6px var(--r) var(--r) var(--r); padding:16px 22px 16px; box-shadow:var(--sh)}
+blockquote > .qbody::before{content:""; position:absolute; left:-9px; top:16px; width:16px; height:16px;
+  background:var(--c3l); border-left:1.5px solid var(--c3b); border-bottom:1.5px solid var(--c3b);
+  transform:rotate(45deg); border-radius:0 0 0 4px}
+blockquote .qtag{display:inline-flex; align-items:center; gap:6px; font-size:10.5px; font-weight:850;
+  letter-spacing:.14em; text-transform:uppercase; padding:4px 11px; border-radius:var(--r3);
+  background:var(--hl1); color:var(--hl-ink); margin-bottom:10px}
+blockquote .qtag::before{content:"💬"; font-family:var(--emo); font-size:11.5px}
+blockquote p{margin:0 0 .65em; font-size:calc(var(--fs) + .5px); line-height:1.78}
+blockquote p:last-of-type{margin-bottom:.4em}
+blockquote cite{display:block; font-style:normal; font-size:14px; color:var(--ink2); margin-top:8px;
+  padding-top:10px; border-top:1.5px dashed var(--c3b)}
+blockquote cite b{color:var(--qc); font-weight:850; font-size:15px}
+.cpy{position:absolute; right:10px; top:10px; width:36px; height:36px; border-radius:12px; cursor:pointer;
+  border:1.5px solid var(--c3b); background:var(--card); display:grid; place-items:center;
+  font-family:var(--emo); font-size:16px; line-height:1; opacity:.6; transition:opacity .2s, transform .2s}
+.cpy::before{content:"📋"}
+.cpy.ok::before{content:"✅"}
+.cpy:hover,.cpy:focus-visible{opacity:1; transform:scale(1.1)}
+@media (max-width:560px){blockquote{padding-left:0} blockquote::before{position:relative; display:grid;
+  width:40px; height:40px; font-size:13px; margin:0 0 8px 6px} blockquote > .qbody::before{left:20px; top:-9px; transform:rotate(135deg)}}
+
+/* ---------- khái niệm ---------- */
+.concept{position:relative; background:linear-gradient(135deg,var(--c6l),var(--c5l)); border:1.5px solid var(--c6b);
+  border-radius:var(--r); padding:26px 26px 22px; margin:30px 0; box-shadow:var(--sh)}
+.concept .lbl,.example .lbl,.practice .lbl,.hint .lbl,.pause .lbl,.flow .lbl,.keyidea .lbl,figure.fig .fig-lbl{
+  display:inline-flex; align-items:center; gap:7px; font-size:11.5px; font-weight:850; letter-spacing:.12em;
+  text-transform:uppercase; padding:6px 14px; border-radius:var(--r3); margin-bottom:12px; color:#fff}
+.concept .lbl{background:var(--c6)}
+.concept .lbl::before{content:"🧠"; font-family:var(--emo); font-size:13px}
+.concept h4{font-size:24px; font-weight:850; margin:0 0 14px; line-height:1.3; color:var(--ink)}
+.concept dl{margin:0; display:grid; gap:10px}
+.concept dt{font-size:12.5px; font-weight:850; letter-spacing:.04em; color:var(--c6); margin:0}
+.concept dd{margin:-6px 0 0; font-size:16.5px; line-height:1.7; background:var(--card); border-radius:14px;
+  padding:11px 15px; border:1px solid var(--c6b)}
+.concept dt:nth-of-type(1)::before{content:"📘 "; font-family:var(--emo)}
+.concept dt:nth-of-type(2)::before{content:"🧩 "; font-family:var(--emo)}
+.concept dt:nth-of-type(3)::before{content:"⚠️ "; font-family:var(--emo)}
+
+/* ---------- ví dụ ---------- */
+.example{position:relative; border-radius:var(--r); padding:26px 26px 20px; margin:30px 0; background:var(--card);
+  border:2px solid transparent; box-shadow:var(--sh);
+  background:linear-gradient(var(--card),var(--card)) padding-box,
+             linear-gradient(120deg,var(--c2),var(--c8),var(--c7)) border-box}
+.example .lbl{background:linear-gradient(100deg,var(--c2),var(--c8))}
+.example .lbl::before{content:"💡"; font-family:var(--emo); font-size:13px}
+
+/* ---------- thực hành ---------- */
+.practice{position:relative; background:var(--c4l); border:1.5px solid var(--c4b); border-radius:var(--r);
+  padding:26px 26px 22px; margin:30px 0; box-shadow:var(--sh)}
+.practice .lbl{background:var(--c4)}
+.practice .lbl::before{content:"🧘"; font-family:var(--emo); font-size:13px}
+.notepad{margin-top:16px; border:2px dashed var(--c4b); border-radius:16px; padding:14px 16px; background:var(--card)}
+.notepad .nl{font-size:12.5px; font-weight:800; color:var(--c4); letter-spacing:.06em; text-transform:uppercase}
+.notepad .nl::before{content:"✍️ "; font-family:var(--emo)}
+.notepad .lines{height:16px; border-bottom:1.5px solid var(--rule); margin-top:16px}
+
+/* ---------- gợi ý (lời biên tập viên) ---------- */
+.hint{position:relative; background:var(--c7l); border:1.5px solid var(--c7b); border-radius:var(--r);
+  padding:24px 24px 18px; margin:28px 0; font-size:16.5px; box-shadow:var(--sh)}
+.hint .lbl{background:var(--c7)}
+.hint .lbl::before{content:"🪄"; font-family:var(--emo); font-size:13px}
+.hint p:last-child{margin-bottom:0}
+
+/* ---------- câu cốt lõi ---------- */
+.keyidea{position:relative; border-radius:var(--r); padding:28px 26px 20px; margin:30px 0;
+  background:radial-gradient(120% 140% at 0% 0%, var(--c3l), var(--card) 60%); border:2px solid var(--c3b); box-shadow:var(--sh)}
+.keyidea .lbl{background:linear-gradient(100deg,var(--c3),var(--c2))}
+.keyidea .lbl::before{content:"⭐"; font-family:var(--emo); font-size:13px}
+.keyidea p{font-size:calc(var(--fs) + 1px); font-weight:600}
+.keyidea p:last-child{margin-bottom:0}
+
+/* ---------- dừng lại 30 giây ---------- */
+.pause{position:relative; text-align:center; border-radius:var(--r); padding:30px 26px 28px; margin:34px 0;
+  background:linear-gradient(135deg,var(--c5l),var(--c6l),var(--c7l)); border:1.5px solid var(--c5b); box-shadow:var(--sh); overflow:hidden}
+.pause .lbl{background:var(--c5)}
+.pause .lbl::before{content:"⏳"; font-family:var(--emo); font-size:13px}
+.pause p{margin:0 auto; max-width:620px; font-size:calc(var(--fs) + 2px); font-weight:650; line-height:1.65}
+.pause .tmr{position:relative; width:74px; height:74px; margin:4px auto 14px; display:grid; place-items:center}
+.pause .tmr svg{position:absolute; inset:0; transform:rotate(-90deg)}
+.pause .tmr circle{fill:none; stroke-width:6}
+.pause .tmr .bg{stroke:color-mix(in srgb,var(--c5) 22%, transparent)}
+.pause .tmr .fg{stroke:var(--c5); stroke-linecap:round; stroke-dasharray:201; stroke-dashoffset:201}
+.pause.go .tmr .fg{animation:tmr 30s linear forwards}
+@keyframes tmr{to{stroke-dashoffset:0}}
+.pause .tmr::after{content:attr(data-s); font-size:21px; font-weight:900; color:var(--c5); font-variant-numeric:tabular-nums}
+.pause .tmr.done::after{content:"🌿"; font-family:var(--emo); font-size:26px}
+.pause::after{content:""; position:absolute; width:240px; height:240px; border-radius:50%; left:50%; top:50%;
+  margin:-120px 0 0 -120px; background:radial-gradient(circle,color-mix(in srgb,var(--c5) 22%, transparent),transparent 70%);
+  z-index:0; animation:breathe 8s ease-in-out infinite; pointer-events:none}
+.pause > *{position:relative; z-index:1}
+@keyframes breathe{0%,100%{transform:scale(.7); opacity:.5}50%{transform:scale(1.5); opacity:1}}
+
+/* ---------- mạch lập luận ---------- */
+.flow{position:relative; background:var(--card); border:1.5px solid var(--rule); border-radius:var(--r);
+  padding:26px 24px 24px; margin:32px 0; box-shadow:var(--sh)}
+.flow .lbl{background:linear-gradient(100deg,var(--c6),var(--c7))}
+.flow .lbl::before{content:"🔗"; font-family:var(--emo); font-size:13px}
+.flow-grid{display:flex; flex-wrap:wrap; align-items:stretch; gap:10px}
+.fstep{--fc:var(--c6); flex:1 1 170px; position:relative; border-radius:18px; padding:16px 16px 14px;
+  background:color-mix(in srgb,var(--fc) 9%, var(--card)); border:1.5px solid color-mix(in srgb,var(--fc) 32%, transparent);
+  transition:transform .2s, box-shadow .2s}
+.fstep:hover{transform:translateY(-4px); box-shadow:0 12px 26px color-mix(in srgb,var(--fc) 22%, transparent)}
+.flow-grid .fstep:nth-of-type(4n+1){--fc:var(--c1)} .flow-grid .fstep:nth-of-type(4n+2){--fc:var(--c2)}
+.flow-grid .fstep:nth-of-type(4n+3){--fc:var(--c6)} .flow-grid .fstep:nth-of-type(4n+4){--fc:var(--c4)}
+.fstep .k{display:block; font-size:11px; font-weight:850; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--fc); margin-bottom:6px}
+.fstep .v{font-size:15.5px; line-height:1.6; display:block}
+.farrow{display:flex; align-items:center; justify-content:center; color:transparent; font-size:0; width:22px; position:relative}
+.farrow::before{content:""; width:22px; height:22px; border-radius:50%; background:var(--ink);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12h12m-5-6 6 6-6 6' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;
+          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12h12m-5-6 6 6-6 6' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;
+  background:linear-gradient(90deg,var(--c6),var(--c8)); animation:nudge 1.6s ease-in-out infinite}
+@keyframes nudge{0%,100%{transform:translateX(-3px)}50%{transform:translateX(4px)}}
+@media (max-width:700px){
+  .flow-grid{flex-direction:column}
+  .farrow{width:100%; height:22px}
+  .farrow::before{transform:rotate(90deg); animation:nudgeV 1.6s ease-in-out infinite}
+}
+@keyframes nudgeV{0%,100%{transform:rotate(90deg) translateX(-3px)}50%{transform:rotate(90deg) translateX(4px)}}
+
+/* ---------- cặp đối chiếu & ngọn núi ---------- */
+ul.pairs{list-style:none; margin:0 0 1.1em; padding:0}
+ul.pairs li{display:flex; gap:10px; margin:0 0 10px; flex-wrap:wrap}
+ul.pairs .a,ul.pairs .b{flex:1 1 240px; border-radius:16px; padding:12px 16px; font-size:16px; line-height:1.6}
+ul.pairs .a{background:var(--soft); border:1.5px solid var(--rule)}
+ul.pairs .b{background:var(--c4l); border:1.5px solid var(--c4b)}
+ul.pairs .lbl-row{font-size:10.5px; font-weight:850; letter-spacing:.1em; text-transform:uppercase; color:var(--ink2); display:block; margin-bottom:3px}
+ol.mtn{list-style:none; margin:0; padding:0}
+ol.mtn li{--mc:var(--c6); background:color-mix(in srgb,var(--mc) 8%, var(--card)); border:1.5px solid color-mix(in srgb,var(--mc) 30%, transparent);
+  border-left:6px solid var(--mc); border-radius:6px 16px 16px 6px; padding:14px 18px; margin:0 0 10px}
+ol.mtn li:nth-child(1){--mc:var(--c1)} ol.mtn li:nth-child(2){--mc:var(--c2); margin-left:22px}
+ol.mtn li:nth-child(3){--mc:var(--c5); margin-left:44px} ol.mtn li:nth-child(4){--mc:var(--c4); margin-left:66px}
+ol.mtn li .lvl{display:block; font-size:11px; font-weight:850; letter-spacing:.1em; text-transform:uppercase; color:var(--mc); margin-bottom:5px}
+ol.mtn li .txt{font-size:16px; line-height:1.65}
+@media (max-width:620px){ol.mtn li:nth-child(2){margin-left:10px} ol.mtn li:nth-child(3){margin-left:20px} ol.mtn li:nth-child(4){margin-left:30px}}
+
+/* ---------- hình minh họa ---------- */
+figure.fig{position:relative; background:var(--card); border:1.5px solid var(--rule); border-radius:var(--r);
+  padding:24px 22px 18px; margin:34px 0; box-shadow:var(--sh); overflow:hidden}
+figure.fig::before{content:""; position:absolute; inset:0; pointer-events:none; opacity:.55;
+  background:radial-gradient(70% 60% at 100% 0%, color-mix(in srgb,var(--sc,var(--ac)) 12%, transparent), transparent 70%),
+             radial-gradient(60% 60% at 0% 100%, color-mix(in srgb,var(--c7) 9%, transparent), transparent 70%)}
+figure.fig > *{position:relative}
+figure.fig .fig-lbl{background:linear-gradient(100deg,var(--c8),var(--c7))}
+figure.fig .fig-lbl::before{content:"🎨"; font-family:var(--emo); font-size:13px}
+figure.fig svg{display:block; width:100%; height:auto; max-width:560px; margin:6px auto 0; overflow:visible}
+figure.fig figcaption{font-size:14.5px; color:var(--ink2); line-height:1.7; margin-top:16px; padding-top:14px;
+  border-top:1.5px dashed var(--rule)}
+figure.fig figcaption strong{color:var(--ink)}
+.svg-t{font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif; fill:var(--ink)}
+.svg-t2{font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif; fill:var(--ink2)}
+.svg-cap{font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif; font-weight:800; letter-spacing:.06em}
+.svg-w{font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif; fill:#fff; font-weight:800}
+.svg-e{font-family:var(--emo)}
+/* chuyển động trong SVG */
+.a-pulse{animation:aPulse 2.4s ease-in-out infinite; transform-box:fill-box; transform-origin:center}
+@keyframes aPulse{0%,100%{transform:scale(1); opacity:1}50%{transform:scale(1.25); opacity:.75}}
+.a-glow{animation:aGlow 3s ease-in-out infinite; transform-box:fill-box; transform-origin:center}
+@keyframes aGlow{0%,100%{opacity:.55; transform:scale(.94)}50%{opacity:1; transform:scale(1.06)}}
+.a-crumble{animation:aCrumble 9s cubic-bezier(.5,0,.7,.4) infinite; transform-box:fill-box; transform-origin:center}
+@keyframes aCrumble{0%,24%{transform:none; opacity:1}50%,86%{transform:translateY(64px) rotate(var(--rot,6deg)); opacity:0}87%{transform:none; opacity:0}100%{transform:none; opacity:1}}
+.a-spin{animation:aSpin 40s linear infinite; transform-box:view-box}
+.a-spin-r{animation:aSpin 40s linear infinite reverse; transform-box:fill-box; transform-origin:center}
+@keyframes aSpin{to{transform:rotate(360deg)}}
+.a-float{animation:aFloat 5s ease-in-out infinite; transform-box:fill-box}
+.a-float2{animation:aFloat 6.5s ease-in-out infinite reverse; transform-box:fill-box}
+@keyframes aFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.a-drift{animation:aDrift 9s ease-in-out infinite; transform-box:fill-box}
+@keyframes aDrift{0%,100%{transform:translateX(0)}50%{transform:translateX(16px)}}
+.a-dash{stroke-dasharray:6 7; animation:aDash 1.2s linear infinite}
+@keyframes aDash{to{stroke-dashoffset:-26}}
+.a-blink{animation:aBlink 2.6s ease-in-out infinite}
+@keyframes aBlink{0%,100%{opacity:1}50%{opacity:.25}}
+.a-rise{animation:aRise 4.5s ease-in-out infinite; transform-box:fill-box}
+@keyframes aRise{0%,100%{transform:translateY(10px); opacity:.55}50%{transform:translateY(-4px); opacity:1}}
+.a-fall{animation:aFall 4.5s ease-in infinite; transform-box:fill-box; transform-origin:center}
+@keyframes aFall{0%,30%{transform:translateY(0) rotate(0); opacity:1}80%,100%{transform:translateY(46px) rotate(18deg); opacity:0}}
+.a-sway{animation:aSway 4s ease-in-out infinite; transform-box:fill-box; transform-origin:50% 100%}
+@keyframes aSway{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
+.a-scan{animation:aScan 7s ease-in-out infinite; transform-box:view-box}
+.a-orbit{offset-rotate:0deg; animation:aOrbit 9s linear infinite}
+@keyframes aOrbit{from{offset-distance:0%}to{offset-distance:100%}}
+
+/* ---------- về đầu trang ---------- */
+.totop{display:block; text-align:right; margin:18px 0 0}
+.totop a{display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:750; color:var(--ink2);
+  text-decoration:none; border:1.5px solid var(--rule); border-radius:var(--r3); padding:7px 15px; background:var(--card)}
+.totop a:hover{border-color:var(--sc,var(--ac)); color:var(--sc,var(--ac))}
+
+/* ---------- tóm tắt gốc & bản đồ ghi nhớ ---------- */
+main > section#tom-tat-goc,main > section#ban-do-ghi-nho{--sc:var(--c2);--scl:var(--c2l);--scb:var(--c2b)}
+main > section#ban-do-ghi-nho{--sc:var(--c6);--scl:var(--c6l);--scb:var(--c6b)}
+.origsum{background:linear-gradient(135deg,var(--c3l),var(--c2l)) !important; border:2px solid var(--c3b) !important}
+.origsum .tag{background:var(--c2); color:#fff; border-color:transparent}
+.origsum .tag::before{content:"📌"; font-family:var(--emo); font-size:13px}
+.origsum h3{color:var(--c2)}
+.origsum ul.dia li{--sc:var(--c2); background:color-mix(in srgb,var(--card) 70%, transparent); border-radius:12px; padding:9px 12px 9px 34px; margin-bottom:7px}
+.origsum ul.dia li::before{left:13px; top:1.05em}
+.recall{background:linear-gradient(135deg,var(--c6l),var(--c7l)) !important; border:2px solid var(--c6b) !important}
+.recall .tag{background:var(--c6) !important; color:#fff !important; border-color:transparent}
+.recall .tag::before{content:"🧩"; font-family:var(--emo); font-size:13px}
+.recall h3{display:flex; align-items:center; gap:8px; font-size:17px; font-weight:850; color:var(--c6); margin:26px 0 10px}
+.recall h3:nth-of-type(1)::before{content:"💎"; font-family:var(--emo)}
+.recall h3:nth-of-type(2)::before{content:"🔑"; font-family:var(--emo)}
+.recall h3:nth-of-type(3)::before{content:"🧘"; font-family:var(--emo)}
+.recall h3:nth-of-type(4)::before{content:"⛓️"; font-family:var(--emo)}
+.recall h3:nth-of-type(5)::before{content:"✨"; font-family:var(--emo)}
+.recall ul.dia li{--sc:var(--c6)}
+.chain{display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-top:12px}
+.chain span{--cc:var(--c6); background:color-mix(in srgb,var(--cc) 14%, var(--card)); border:1.5px solid color-mix(in srgb,var(--cc) 40%, transparent);
+  color:var(--ink); border-radius:var(--r3); padding:7px 14px; font-size:13.5px; font-weight:700}
+.chain span:nth-of-type(8n+1){--cc:var(--c1)} .chain span:nth-of-type(8n+2){--cc:var(--c2)}
+.chain span:nth-of-type(8n+3){--cc:var(--c3)} .chain span:nth-of-type(8n+4){--cc:var(--c4)}
+.chain span:nth-of-type(8n+5){--cc:var(--c5)} .chain span:nth-of-type(8n+6){--cc:var(--c6)}
+.chain span:nth-of-type(8n+7){--cc:var(--c7)} .chain span:nth-of-type(8n+8){--cc:var(--c8)}
+.chain i{font-style:normal; color:var(--ink3); font-weight:900}
+html.js .chain.rv span{opacity:0; transform:scale(.8)}
+html.js .chain.rv.in span{opacity:1; transform:none; transition:opacity .4s, transform .4s cubic-bezier(.3,1.6,.5,1)}
+
+/* ---------- điều hướng chương ---------- */
+.pager{display:grid; grid-template-columns:1fr auto 1fr; gap:12px; margin:56px 0 8px}
+.pager a,.pager span{position:relative; border:1.5px solid var(--rule); border-radius:var(--r); padding:18px 20px;
+  text-decoration:none; background:var(--card); color:var(--ink); font-size:15px; font-weight:700; line-height:1.45;
+  box-shadow:var(--sh); transition:transform .2s, box-shadow .2s, border-color .2s}
+.pager a:hover{transform:translateY(-4px); border-color:var(--ac); box-shadow:0 14px 34px color-mix(in srgb,var(--ac) 22%, transparent)}
+.pager .k{display:block; font-size:11px; font-weight:850; letter-spacing:.1em; text-transform:uppercase; color:var(--ac); margin-bottom:5px}
+.pager .prev .k::before{content:"⬅️ "; font-family:var(--emo)}
+.pager .next .k::after{content:" ➡️"; font-family:var(--emo)}
+.pager .home{text-align:center}
+.pager .home .k::before{content:"🗂️ "; font-family:var(--emo)}
+.pager .next{text-align:right}
+.pager span.off{opacity:.45; box-shadow:none}
+@media (max-width:720px){.pager{grid-template-columns:1fr}.pager .next,.pager .home{text-align:left}}
+
+/* ---------- tìm kiếm & bảng câu bôi vàng ---------- */
+#findbar{position:fixed; left:50%; top:76px; z-index:80; width:min(560px,calc(100% - 24px)); transform:translate(-50%,-20px);
+  opacity:0; pointer-events:none; transition:opacity .2s, transform .2s; display:flex; gap:8px; align-items:center;
+  background:var(--card); border:1.5px solid var(--ac); border-radius:var(--r3); padding:7px 8px 7px 16px; box-shadow:var(--sh2)}
+#findbar.on{opacity:1; transform:translate(-50%,0); pointer-events:auto}
+#findbar::before{content:"🔍"; font-family:var(--emo)}
+#findbar input{flex:1; min-width:0; border:0; outline:0; background:transparent; font:inherit; font-size:16px; color:var(--ink)}
+#findbar .fc{font-size:12.5px; font-weight:750; color:var(--ink2); white-space:nowrap; font-variant-numeric:tabular-nums}
+#findbar button{border:0; background:var(--soft); color:var(--ink); border-radius:50%; width:34px; height:34px; cursor:pointer; font-size:14px; font-weight:800}
+span.fnd{background:color-mix(in srgb,var(--c8) 30%, transparent); border-radius:4px; box-shadow:0 0 0 2px color-mix(in srgb,var(--c8) 30%, transparent)}
+span.fnd.cur{background:var(--c8); color:#fff}
+#hlpanel{position:fixed; inset:0; z-index:90; display:none; background:rgba(15,14,23,.45); backdrop-filter:blur(4px);
+  padding:70px 14px 20px; overflow:auto}
+#hlpanel.on{display:block}
+#hlpanel .in{max-width:680px; margin:0 auto; background:var(--card); border-radius:var(--r); padding:24px 22px 18px; box-shadow:var(--sh2);
+  animation:pop .3s cubic-bezier(.3,1.4,.5,1)}
+@keyframes pop{from{transform:scale(.92); opacity:0}}
+#hlpanel h2{margin:0 0 4px; font-size:22px; font-weight:850}
+#hlpanel h2::before{content:"🖍️ "; font-family:var(--emo)}
+#hlpanel .hs{font-size:13.5px; color:var(--ink2); margin:0 0 14px}
+#hlpanel ol{margin:0; padding:0; list-style:none; counter-reset:h; display:grid; gap:8px}
+#hlpanel li{counter-increment:h}
+#hlpanel li a{display:block; position:relative; padding:11px 14px 11px 44px; border-radius:14px; text-decoration:none; color:var(--hl-ink);
+  background:linear-gradient(100deg,var(--hl1),var(--hl2)); font-size:15.5px; line-height:1.55; font-weight:600}
+#hlpanel li a::before{content:counter(h); position:absolute; left:12px; top:11px; width:22px; height:22px; border-radius:7px;
+  background:rgba(43,34,0,.14); display:grid; place-items:center; font-size:11.5px; font-weight:850}
+#hlpanel li a:hover{filter:brightness(1.04); transform:translateX(3px)}
+#hlpanel .x{float:right; border:0; width:36px; height:36px; border-radius:50%; background:var(--soft); cursor:pointer; font-size:16px; color:var(--ink)}
+
+/* ---------- confetti ---------- */
+.cf{position:fixed; z-index:100; width:9px; height:9px; border-radius:2px; pointer-events:none; animation:cf 1.1s cubic-bezier(.2,.7,.4,1) forwards}
+@keyframes cf{to{transform:translate(var(--dx),var(--dy)) rotate(var(--rt)); opacity:0}}
+
+/* ---------- footer chương ---------- */
+html.chap footer.pagefoot{margin-top:40px}
+
+@media print{
+  #rail,#findbar,#hlpanel,.cpy,.stats,#nowsec{display:none !important}
+  .body-card,blockquote,.concept,.practice,.example,.hint,.keyidea,.pause,.flow,figure.fig,.origsum,.recall{break-inside:avoid; box-shadow:none}
+  html.js mark{background-size:100% 100% !important; color:var(--hl-ink) !important}
+  html.js .rv{opacity:1 !important; transform:none !important}
+  .sec-head h2{-webkit-text-fill-color:var(--ink)}
+}
+
+/* ===== tinh chỉnh sau khi xem bản chụp ===== */
+/* hero: các pill xếp từng dòng */
+header.book .kicker,header.book .chapno{display:flex; width:fit-content; margin-left:auto; margin-right:auto}
+header.book .chapno{gap:8px}
+html.chap header.book .wrap::after{bottom:auto; top:14%}
+/* chữ trên nền vàng phải tối */
+.stages li:nth-child(8n+3),nav.toc li:nth-child(8n+3),main > section:nth-of-type(8n+3){--on:#3A2A00}
+.stages li::before,nav.toc a .n,.badge{color:var(--on,#fff)}
+#rail a.act .n{color:var(--ron,#fff)}
+/* tiêu đề phần: chữ đặc + vạch màu */
+.sec-head h2{color:var(--ink); background:linear-gradient(90deg,var(--sc),color-mix(in srgb,var(--sc) 0%, transparent)) left bottom / 140px 5px no-repeat;
+  -webkit-background-clip:border-box; background-clip:border-box; padding-bottom:12px}
+/* toolbar trang chương: một dòng trên máy tính */
+html.chap #toolbar .wrap{flex-wrap:nowrap; max-width:1180px}
+html.chap #toolbar .tb-title{margin-right:auto; flex:0 0 auto}
+html.chap #nowsec{flex:1 1 auto; min-width:0; max-width:none; margin:0 6px 0 4px}
+html.chap #toolbar .btn{flex:0 0 auto}
+html.chap #toolbar .tb-spacer{flex:1 1 auto}
+@media (max-width:1180px){html.chap #toolbar a.btn[href="#top"],html.chap #printBtn{display:none}}
+@media (max-width:760px){
+  html.chap #toolbar .wrap{flex-wrap:wrap; padding:8px 12px; gap:6px}
+  html.chap #themeBtn{display:none}
+  html.chap #toolbar .tb-title{flex:1 1 auto; font-size:12px}
+  html.chap #toolbar .btn{padding:7px 12px; font-size:12.5px}
+  html.chap #nowsec{order:9; flex:1 1 100%; margin:0; font-size:12px; padding:5px 11px}
+  html.chap #nowsec:not(.on){display:none}
+}
+/* nút nổi trên điện thoại: một thanh ngang dưới đáy */
+@media (max-width:700px){
+  html.chap #fabs{left:50%; right:auto; bottom:10px; transform:translateX(-50%); flex-direction:row; gap:4px;
+    padding:5px; border-radius:var(--r3); background:color-mix(in srgb,var(--card) 86%, transparent);
+    backdrop-filter:blur(12px); border:1.5px solid var(--rule); box-shadow:var(--sh2)}
+  html.chap #fabs button{width:40px; height:40px; font-size:17px; box-shadow:none; border:0; background:transparent}
+  html.chap #fabs .fab-top{opacity:1; pointer-events:auto}
+  html.chap footer.pagefoot{padding-bottom:110px}
+}
+/* điện thoại: bớt đệm */
+@media (max-width:600px){
+  html.chap .wrap{padding:0 14px}
+  .box{padding:22px 18px 18px}
+  .map .goal{padding:14px 14px 14px 46px; font-size:15.5px}
+  .map .goal::before{left:13px; font-size:19px}
+  .stages li{padding:9px 10px 9px 48px; font-size:15px}
+  .concept,.example,.practice,.hint,.keyidea,.flow,figure.fig{padding-left:18px; padding-right:18px}
+  .sec-head{gap:14px} .badge{width:52px; height:52px; font-size:19px; border-radius:17px}
+  .willlearn{padding:13px 14px 13px 48px; font-size:15px} .willlearn::before{left:13px; font-size:19px}
+  .stats{gap:8px} .stat{padding:11px 4px 10px; border-radius:16px} .stat b{font-size:23px} .stat .se{font-size:20px}
+}
+
+/* ---------- chuyển động bổ sung cho hình (từ chương 02) ---------- */
+.a-pop{animation:aPop 6s ease-in-out infinite; transform-box:fill-box; transform-origin:center}
+@keyframes aPop{0%{opacity:0; transform:scale(.6)}12%,42%{opacity:1; transform:scale(1)}58%,100%{opacity:0; transform:scale(.92)}}
+.a-drain{animation:aDrain 5s ease-in-out infinite; transform-box:fill-box; transform-origin:0% 50%}
+@keyframes aDrain{0%,100%{transform:scaleX(1)}50%{transform:scaleX(.3)}}
+.a-swapA{animation:aSwapA 7s ease-in-out infinite}
+.a-swapB{animation:aSwapB 7s ease-in-out infinite}
+@keyframes aSwapA{0%,38%{opacity:1}50%,88%{opacity:.13}100%{opacity:1}}
+@keyframes aSwapB{0%,38%{opacity:.13}50%,88%{opacity:1}100%{opacity:.13}}
+.a-sink{animation:aSink 4.5s ease-in-out infinite; transform-box:fill-box; transform-origin:50% 100%}
+@keyframes aSink{0%,100%{transform:rotate(-3deg) translateY(0)}50%{transform:rotate(-9deg) translateY(7px)}}
+.a-flicker{animation:aFlick .9s ease-in-out infinite; transform-box:fill-box; transform-origin:50% 100%}
+@keyframes aFlick{0%,100%{transform:scale(1,1)}25%{transform:scale(.88,1.14) skewX(4deg)}50%{transform:scale(1.06,.92)}75%{transform:scale(.94,1.08) skewX(-4deg)}}
+.a-peel{animation:aPeel 11s ease-in-out infinite}
+@keyframes aPeel{0%,12%{opacity:1}24%,74%{opacity:0}88%,100%{opacity:1}}
+.a-wheel{animation:aSpin 1.6s linear infinite; transform-box:fill-box; transform-origin:center}
+.a-tick{stroke-dasharray:30; animation:aTick 8s ease-out infinite}
+@keyframes aTick{0%{stroke-dashoffset:30}6%,90%{stroke-dashoffset:0}100%{stroke-dashoffset:30}}
+html.still .a-tick{stroke-dashoffset:0}
+.a-fog{animation:aFog 9s ease-in-out infinite}
+@keyframes aFog{0%,15%{transform:translateX(0); opacity:.92}55%,80%{transform:translateX(140px); opacity:0}100%{transform:translateX(0); opacity:.92}}
+.a-fogL{animation:aFogL 9s ease-in-out infinite}
+@keyframes aFogL{0%,15%{transform:translateX(0); opacity:.92}55%,80%{transform:translateX(-140px); opacity:0}100%{transform:translateX(0); opacity:.92}}
+.a-spinc{animation:aSpin 1.4s linear infinite}
+.a-rain{animation:aRain 1.4s linear infinite}
+@keyframes aRain{0%{transform:translateY(-14px); opacity:0}20%{opacity:.9}100%{transform:translateY(40px); opacity:0}}
+.a-ticker{animation:aTicker 14s linear infinite}
+@keyframes aTicker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.a-tip{animation:aTip 3.2s ease-in-out infinite; transform-box:fill-box; transform-origin:50% 50%}
+@keyframes aTip{0%,100%{transform:rotate(-9deg)}50%{transform:rotate(9deg)}}
+.a-wave{animation:aWave 1.6s linear infinite}
+@keyframes aWave{to{transform:translateX(var(--wl,-40px))}}
+.a-flipA{animation:aFlipA 6s ease-in-out infinite; transform-box:fill-box; transform-origin:center}
+.a-flipB{animation:aFlipB 6s ease-in-out infinite; transform-box:fill-box; transform-origin:center}
+@keyframes aFlipA{0%,40%{transform:scaleX(1)}48%,92%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+@keyframes aFlipB{0%,48%{transform:scaleX(0)}56%,92%{transform:scaleX(1)}100%{transform:scaleX(0)}}
+html.still .a-flipB{transform:scaleX(0)}
+.a-bounce{animation:aBounce .7s ease-in-out infinite alternate; transform-box:fill-box}
+@keyframes aBounce{from{transform:translateY(0)}to{transform:translateY(-16px)}}
+.a-shrink{animation:aShrink 6s ease-in infinite; transform-box:fill-box; transform-origin:50% 100%}
+@keyframes aShrink{0%,10%{transform:scale(1); opacity:1}80%{transform:scale(.08); opacity:.2}100%{transform:scale(.08); opacity:0}}
+.a-mergeL{animation:aMergeL 6s ease-in-out infinite}
+.a-mergeR{animation:aMergeR 6s ease-in-out infinite}
+@keyframes aMergeL{0%,20%{transform:translateX(0)}55%,85%{transform:translateX(70px)}100%{transform:translateX(0)}}
+@keyframes aMergeR{0%,20%{transform:translateX(0)}55%,85%{transform:translateX(-70px)}100%{transform:translateX(0)}}
+.a-heal{animation:aHeal 12s ease-in-out infinite}
+@keyframes aHeal{0%,8%{opacity:1}14%,88%{opacity:.18}100%{opacity:1}}
+.a-strike{stroke-dasharray:200; stroke-dashoffset:200; animation:aStrike 12s ease-in-out infinite}
+@keyframes aStrike{0%,6%{stroke-dashoffset:200}12%,88%{stroke-dashoffset:0}100%{stroke-dashoffset:200}}
+html.still .a-strike{stroke-dashoffset:200}
+.a-fill{animation:aFill 12s linear infinite; transform-box:fill-box; transform-origin:0 50%}
+@keyframes aFill{0%{transform:scaleX(0)}88%{transform:scaleX(1)}100%{transform:scaleX(1)}}
+
+/* ---- trang Nổi bật: thẻ người thầy ---- */
+.tfind{display:flex; gap:10px; align-items:center; margin:6px 0 12px}
+.tfind input{flex:1; font:inherit; font-size:16px; padding:12px 16px; border-radius:16px; border:2px solid color-mix(in srgb,var(--ac) 35%, transparent); background:var(--card); color:var(--ink); outline:none}
+.tfind input:focus{border-color:var(--ac)}
+#tqn{font-size:13px; font-weight:800; color:var(--ink2); white-space:nowrap}
+.taz{display:flex; flex-wrap:wrap; gap:6px; margin:0 0 18px}
+.taz a{font-size:12px; font-weight:700; padding:5px 10px; border-radius:999px; background:var(--soft); color:var(--ink2); text-decoration:none}
+.taz a:hover{background:var(--ac); color:#fff}
+.tgrid{display:grid; gap:16px}
+.tcard{background:var(--card); border-radius:22px; padding:20px 22px; box-shadow:0 6px 24px rgba(40,30,90,.08); border-top:5px solid var(--cc, var(--ac)); scroll-margin-top:80px}
+.tcard[data-c="1"]{--cc:var(--c1)} .tcard[data-c="2"]{--cc:var(--c2)} .tcard[data-c="3"]{--cc:var(--c3)} .tcard[data-c="4"]{--cc:var(--c4)}
+.tcard[data-c="5"]{--cc:var(--c5)} .tcard[data-c="6"]{--cc:var(--c6)} .tcard[data-c="7"]{--cc:var(--c7)} .tcard[data-c="8"]{--cc:var(--c8)}
+.thead{display:flex; gap:14px; align-items:center; margin-bottom:10px}
+.tav{flex:0 0 auto; width:54px; height:54px; border-radius:50%; display:grid; place-items:center; background:var(--tc); color:#fff; font-weight:900; font-size:18px; letter-spacing:.02em; box-shadow:0 0 0 4px color-mix(in srgb,var(--tc) 22%, transparent)}
+.thead h3{margin:0; font-size:18px; letter-spacing:.04em}
+.tmeta{display:flex; flex-wrap:wrap; gap:6px; align-items:center; margin:6px 0 0!important}
+.tq{font-size:12.5px; font-weight:800; color:var(--cc); margin-right:4px}
+.tq0{color:var(--ink3)}
+.tch{font-size:11.5px; font-weight:800; padding:3px 9px; border-radius:999px; background:color-mix(in srgb,var(--cc) 14%, transparent); color:var(--cc); text-decoration:none}
+.tch:hover{background:var(--cc); color:#fff}
+.tbody p{margin:0 0 10px; line-height:1.7}
+.tbody a{color:var(--cc); font-weight:700}
+.tsite{display:inline-block; margin-top:4px; font-size:13.5px; font-weight:800; padding:8px 14px; border-radius:12px; background:color-mix(in srgb,var(--cc) 12%, transparent); color:var(--cc); text-decoration:none}
+.tsite:hover{background:var(--cc); color:#fff}
+.tcard.hide{display:none}
+.tnone{text-align:center; color:var(--ink3); font-weight:700}
+@media (max-width:700px){.tcard{padding:16px} .tav{width:46px;height:46px;font-size:15px}}
+@media print{.tfind,.taz{display:none} .tcard{break-inside:avoid; box-shadow:none}}
+</style>
+</head>
+<body>
+<div id="blobs" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+<div id="progress" aria-hidden="true"></div>
+<div id="toolbar"><div class="wrap">
+  <span class="tb-title">Bí mật vĩ đại nhất</span>
+  <a class="btn" href="index.html">Mục lục sách</a>
+  <span id="nowsec" aria-live="polite"></span>
+  <button class="btn" id="themeBtn" type="button" aria-pressed="false">Chế độ đọc tối</button>
+  <button class="btn" id="printBtn" type="button">In / Lưu PDF</button>
+  <a class="btn" href="#top">Về đầu trang</a>
+</div></div>
+<header class="book" id="top"><div class="wrap" data-e1="✨" data-e2="🧑‍🏫">
+  <p class="kicker">Sách &middot; Bí mật vĩ đại nhất</p>
+  <p class="chapno">Phần cuối</p>
+  <h1>Nổi bật trong Bí mật vĩ đại nhất</h1>
+  <div class="rule-orn"><span></span><b>◆</b><span></span></div>
+  <p class="sub">Những người thầy, nhà khoa học và nguồn trí tuệ được trích dẫn trong sách — họ là ai, tác giả gặp họ thế nào, và bạn có thể tìm hiểu thêm ở đâu.</p>
+  <p class="author">Rhonda Byrne</p>
+  <div class="stats"><div class="stat"><span class="se" aria-hidden="true">🧑‍🏫</span><b data-n="34">34</b><small>người & nguồn</small></div><div class="stat"><span class="se" aria-hidden="true">💬</span><b data-n="370">370</b><small>trích dẫn trong sách</small></div><div class="stat"><span class="se" aria-hidden="true">🌐</span><b data-n="30">30</b><small>trang web</small></div><div class="stat"><span class="se" aria-hidden="true">🎨</span><b data-n="1">1</b><small>biểu đồ</small></div><div class="stat"><span class="se" aria-hidden="true">⏱️</span><b data-n="29">29</b><small>phút đọc</small></div></div>
+</div></header>
+<div class="wrap">
+  <!-- BẢN ĐỒ -->
+  <div class="box map" id="ban-do-chuong">
+    <span class="tag">Bản đồ phần này</span>
+    <h2>Bạn sắp đi qua điều gì</h2>
+    <p class="meta">Thời gian đọc ước tính: khoảng 28–31 phút &middot; Phần cuối sách &middot; 34 người thầy và nguồn được giới thiệu</p>
+    <p class="goal"><strong>Mục tiêu của phần này:</strong> Giới thiệu những người thầy, nhà khoa học và nguồn trí tuệ mà Rhonda Byrne trích dẫn trong sách — họ là ai, bà gặp họ thế nào, và bạn có thể tìm hiểu thêm ở đâu.</p>
+    <ol class="stages">
+      <li>Lời giới thiệu của tác giả.</li>
+      <li>Ai được trích dẫn nhiều nhất — biểu đồ do biên tập viên đếm.</li>
+      <li>34 người thầy và nguồn, theo đúng thứ tự trong sách.</li>
+    </ol>
+    <p class="howto"><strong>Cách đọc trang này:</strong> phần chữ trong mỗi thẻ là nguyên văn của Rhonda Byrne. <strong>Do biên tập viên thêm:</strong> chữ viết tắt trên ảnh đại diện, dòng &ldquo;Được trích N lần&rdquo; cùng các nút chương (bấm để mở chương đó), nút trang web, ô tìm kiếm và biểu đồ.</p>
+  </div>
+
+  <nav class="box toc" id="muc-luc" aria-label="Mục lục phần này">
+    <h2>Mục lục phần này</h2>
+    <ol>
+      <li><a href="#nb-p1"><span class="n">01</span>Lời giới thiệu</a></li>
+      <li><a href="#nb-p2"><span class="n">02</span>Ai được trích dẫn nhiều nhất</a></li>
+      <li><a href="#nb-p3"><span class="n">03</span>Những người thầy</a></li>
+    </ol>
+  </nav>
+
+<main>
+
+  <section id="nb-p1">
+    <div class="sec-head"><div class="badge">01</div>
+      <h2>Lời giới thiệu</h2></div>
+    <p class="willlearn"><b>Phần này là gì?</b><br>Lời của tác giả về những người thầy còn sống được giới thiệu trong sách. <em>Tiêu đề phần này do biên tập viên đặt.</em></p>
+    <article class="body-card">
+      <p>Tôi cảm thấy vô cùng may mắn và biết ơn khi được sống trên hành tinh này cùng thời điểm với những người thầy tuyệt vời còn sống được giới thiệu trong cuốn sách này. Mỗi người trong số họ đều cống hiến cuộc đời mình cho sự tự do và hạnh phúc của chúng ta. Và đối với nhiều người trong số họ, họ đã làm điều này trong nhiều thập kỷ. Nếu bạn ở bên bất kỳ ai trong số họ, bạn sẽ cảm nhận được tình yêu thương và niềm vui tràn ngập tỏa ra từ họ, phản ánh lại bản chất thực sự của bạn. Nếu bạn có cơ hội được gặp trực tiếp một trong những người thầy, hãy nắm bắt cơ hội! Và nếu bạn không thể gặp trực tiếp họ, chắc chắn bạn có thể kết nối trực tuyến với một số người trong số họ. Đó là điều tuyệt vời nhất tiếp theo.</p>
+      <p><mark>Việc thức tỉnh với bản chất thực sự của chúng ta hiện dễ dàng hơn bao giờ hết; mỗi người chúng ta đều có thể trở về nhà. Có thể tương lai sẽ không dễ dàng như vậy, vì vậy nếu bạn có thể, hãy tận dụng tối đa thời gian này, cuộc sống hiện tại của bạn và những người thầy đầy cảm hứng này.</mark></p>
+    </article>
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+  <section id="nb-p2">
+    <div class="sec-head"><div class="badge">02</div>
+      <h2>Ai được trích dẫn nhiều nhất</h2></div>
+    <p class="willlearn"><b>Phần này là gì?</b><br>Một cái nhìn nhanh về những giọng nói xuất hiện nhiều nhất trong sách. <em>Phần này hoàn toàn do biên tập viên thêm.</em></p>
+    <!-- FIG-NB -->
+    <figure class="fig">
+      <span class="fig-lbl">Hình 1 &middot; Ai được trích dẫn nhiều nhất trong sách?</span>
+      <svg viewBox="0 0 520 338" role="img" aria-label="Biểu đồ thanh ngang: số lần mỗi người được trích dẫn trong các chương của trang này, nhiều nhất là Lester Levenson với 52 lần">
+<text x="168" y="31" class="svg-t" font-size="12.5" text-anchor="end" font-weight="800">Lester Levenson</text><rect x="178" y="18" width="300.0" height="18" rx="9" fill="var(--c6)" class="a-fill" style="animation-duration:2.00s; animation-iteration-count:1"/><text x="484.0" y="31.5" class="svg-t2" font-size="12" font-weight="900">52</text><text x="168" y="57" class="svg-t" font-size="12.5" text-anchor="end" font-weight="800">Người thầy của tôi</text><rect x="178" y="44" width="201.9" height="18" rx="9" fill="var(--c7)" class="a-fill" style="animation-duration:2.15s; animation-iteration-count:1"/><text x="385.9" y="57.5" class="svg-t2" font-size="12" font-weight="900">35</text><text x="168" y="83" class="svg-t" font-size="12.5" text-anchor="end" font-weight="800">Jan Frazier</text><rect x="178" y="70" width="196.2" height="18" rx="9" fill="var(--c8)" class="a-fill" style="animation-duration:2.30s; animation-iteration-count:1"/><text x="380.2" y="83.5" class="svg-t2" font-size="12" font-weight="900">34</text><text x="168" y="109" class="svg-t" font-size="12.5" text-anchor="end" font-weight="800">Francis Lucille</text><rect x="178" y="96" width="173.1" height="18" rx="9" fill="var(--c5)" class="a-fill" style="animation-duration:2.45s; animation-iteration-count:1"/><text x="357.1" y="109.5" class="svg-t2" font-size="12" font-weight="900">30</text><text x="168" y="135" class="svg-t" font-size="12.5" text-anchor="end" font-weight="800">Mooji</text><rect x="178" y="122" width="161.5" height="18" rx="9" fill="var(--c2)" class="a-fill" style="animation-duration:2.60s; animation-iteration-count:1"/><text x="345.5" y="135.5" class="svg-t2" font-size="12" font-weight="900">28</text><text x="168" y="161" class="svg-t" font-size="12.5" text-anchor="end" font-weight="800">Rupert Spira</text><rect x="178" y="148" width="132.7" height="18" rx="9" fill="var(--c4)" class="a-fill" style="animation-duration:2.75s; animation-iteration-count:1"/><text x="316.7" y="161.5" class="svg-t2" font-size="12" font-weight="900">23</text><text x="168" y="187" class="svg-t" font-size="12.5" text-anchor="end" font-weight="800">Anthony de Mello</text><rect x="178" y="174" width="132.7" height="18" rx="9" fill="var(--c1)" class="a-fill" style="animation-duration:2.90s; animation-iteration-count:1"/><text x="316.7" y="187.5" class="svg-t2" font-size="12" font-weight="900">23</text><text x="168" y="213" class="svg-t" font-size="12.5" text-anchor="end" font-weight="800">David Bingham</text><rect x="178" y="200" width="121.2" height="18" rx="9" fill="var(--c5)" class="a-fill" style="animation-duration:3.05s; animation-iteration-count:1"/><text x="305.2" y="213.5" class="svg-t2" font-size="12" font-weight="900">21</text><text x="168" y="239" class="svg-t" font-size="12.5" text-anchor="end" font-weight="800">Byron Katie</text><rect x="178" y="226" width="92.3" height="18" rx="9" fill="var(--c8)" class="a-fill" style="animation-duration:3.20s; animation-iteration-count:1"/><text x="276.3" y="239.5" class="svg-t2" font-size="12" font-weight="900">16</text><text x="168" y="265" class="svg-t" font-size="12.5" text-anchor="end" font-weight="800">Hale Dwoskin</text><rect x="178" y="252" width="80.8" height="18" rx="9" fill="var(--c4)" class="a-fill" style="animation-duration:3.35s; animation-iteration-count:1"/><text x="264.8" y="265.5" class="svg-t2" font-size="12" font-weight="900">14</text><text x="168" y="291" class="svg-t" font-size="12.5" text-anchor="end" font-weight="800">Peter &amp; Kalyani Lawry</text><rect x="178" y="278" width="69.2" height="18" rx="9" fill="var(--c5)" class="a-fill" style="animation-duration:3.50s; animation-iteration-count:1"/><text x="253.2" y="291.5" class="svg-t2" font-size="12" font-weight="900">12</text><text x="168" y="317" class="svg-t" font-size="12.5" text-anchor="end" font-weight="800">Deepak Chopra</text><rect x="178" y="304" width="63.5" height="18" rx="9" fill="var(--c6)" class="a-fill" style="animation-duration:3.65s; animation-iteration-count:1"/><text x="247.5" y="317.5" class="svg-t2" font-size="12" font-weight="900">11</text>
+      </svg>
+      <figcaption><strong>Hình do biên tập viên dựng</strong> bằng cách đếm các khối trích dẫn trong các trang Mở đầu và Chương 1–12 của bộ trang này (370 trích dẫn của những người có trong phần Nổi bật). Đây là số đếm của bản trình bày này, có thể lệch đôi chút so với sách in; mười hai người được trích nhiều nhất được hiển thị.</figcaption>
+    </figure>
+
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+  <section id="nb-p3">
+    <div class="sec-head"><div class="badge">03</div>
+      <h2>Những người thầy</h2></div>
+    <p class="willlearn"><b>Phần này là gì?</b><br>34 người thầy và nguồn, theo đúng thứ tự trong sách. Gõ tên vào ô tìm kiếm để lọc nhanh. <em>Tên người là tiêu đề gốc trong sách.</em></p>
+    <div class="tfind"><input type="search" id="tq" placeholder="🔎 Tìm người thầy, ví dụ: Mooji, Melbourne, Ấn Độ…" aria-label="Tìm người thầy"><span id="tqn"></span></div>
+    <div class="taz" aria-label="Nhảy nhanh tới"><a href="#t-sailor-bob-adamson">Sailor Bob Adamson</a><a href="#t-julian-barbour">Julian Barbour</a><a href="#t-david-bingham">David Bingham</a><a href="#t-deepak-chopra">Deepak Chopra</a><a href="#t-anthony-de-mello">Anthony de Mello</a><a href="#t-hale-dwoskin">Hale Dwoskin</a><a href="#t-peter-dziuban">Peter Dziuban</a><a href="#t-jan-frazier">Jan Frazier</a><a href="#t-joel-goldsmith">Joel Goldsmith</a><a href="#t-david-r-hawkins">David R. Hawkins</a><a href="#t-michael-james">Michael James</a><a href="#t-byron-katie">Byron Katie</a><a href="#t-loch-kelly">Loch Kelly</a><a href="#t-j-krishnamurti">J. Krishnamurti</a><a href="#t-robert-lanza">Robert Lanza</a><a href="#t-peter-kalyani-lawry">Peter &amp; Kalyani Lawry</a><a href="#t-lester-levenson">Lester Levenson</a><a href="#t-francis-lucille">Francis Lucille</a><a href="#t-shakti-caterina-maggi">Shakti Caterina Maggi</a><a href="#t-ramana-maharshi">Ramana Maharshi</a><a href="#t-mooji">Mooji</a><a href="#t-nguoi-thay-cua-toi">Người thầy của tôi</a><a href="#t-jac-o-keeffe">Jac O’Keeffe</a><a href="#t-max-planck">Max Planck</a><a href="#t-sri-poonja">Sri Poonja</a><a href="#t-thap-tu-hoa-hong">Thập tự Hoa hồng</a><a href="#t-rumi">Rumi</a><a href="#t-peter-russell">Peter Russell</a><a href="#t-rupert-spira">Rupert Spira</a><a href="#t-eckhart-tolle">Eckhart Tolle</a><a href="#t-upanishads">Upanishads</a><a href="#t-alan-watts">Alan Watts</a><a href="#t-pamela-wilson">Pamela Wilson</a><a href="#t-paramahansa-yogananda">Paramahansa Yogananda</a></div>
+    <div class="tgrid">
+    <article class="tcard rv" id="t-sailor-bob-adamson" data-c="1" data-name="sailor bob adamson sailor bob adamson">
+      <div class="thead"><span class="tav" style="--tc:var(--c1)">SA</span><div><h3>SAILOR BOB ADAMSON</h3><p class="tmeta"><span class="tq">💬 Được trích 3 lần</span><a class="tch" href="10-hanh-phuc-vinh-cuu.html">Ch. 10</a><a class="tch" href="11-the-gioi-moi-thu-tot-dep.html">Ch. 11</a></p></div></div>
+      <div class="tbody">
+        <p>Sailor Bob là người Úc và sống tại quê hương Melbourne của tôi. Tôi chỉ biết đến Sailor Bob vào đầu năm 2016, sau khi tôi nhận ra sự thật về con người thực sự của chúng ta. Lúc đó tôi đang sống ở Hoa Kỳ, nhưng nhiều năm trước khi tôi vẫn còn sống ở Melbourne, tôi đã đi ngang qua nhà của Sailor Bob ngày này qua ngày khác, năm này qua năm khác, khi đi làm. Tôi không biết rằng mình đang lái xe ngang qua một người thầy một cách tự giác, một người mà một ngày nào đó sẽ đóng vai trò không thể thiếu trong cuộc sống của tôi. Khi biết về Sailor Bob vào năm 2016, tôi quyết định lên máy bay ngay lập tức và đến gặp ông. Khi đó ông đã ngoài tám mươi tuổi, và tôi đã tham dự một số cuộc họp của ông và có những cuộc gặp riêng một - một với ông. Mỗi lần nhìn thấy Sailor Bob, tôi cảm thấy nhẹ nhõm hơn, hạnh phúc hơn và tự do hơn. Đó là những ngày đầu của tôi trong quá trình thức tỉnh tâm linh, và tôi đã phải vật lộn để nắm bắt mọi thứ ông nói với tôi, nhưng ngày nay tất cả đều rất rõ ràng. Sailor Bob đã nhận ra bản chất thực sự của mình nhiều thập kỷ trước khi ở Ấn Độ, với tư cách là đệ tử của Nisargadatta Maharaj. Kể từ đó, Bob đã chia sẻ những bài học của mình từ nhà cho bất kỳ ai muốn nghe sự thật. Hiện ông đã ngoài chín mươi tuổi và vẫn tiếp tục tổ chức các cuộc họp tại nhà. Câu nói của ông, "Có gì sai nếu bạn không nghĩ về nó?" là một trong những câu nói đơn giản và sâu sắc nhất từng được đưa ra. Các cuốn sách của Sailor Bob là Có gì sai với hiện tại? và Sự hiện diện-Nhận thức: Chỉ thế này và không gì khác. Bạn có thể thưởng thức thêm nhiều tác phẩm quý giá của Sailor Bob Adamson trên trang web của ông: <a href="https://sailorbobadamson.com" target="_blank" rel="noopener">sailorbobadamson.com</a>.</p>
+      </div>
+      <a class="tsite" href="https://sailorbobadamson.com" target="_blank" rel="noopener">🌐 sailorbobadamson.com ↗</a>
+    </article>
+    <article class="tcard rv" id="t-julian-barbour" data-c="2" data-name="julian barbour julian barbour">
+      <div class="thead"><span class="tav" style="--tc:var(--c2)">JB</span><div><h3>JULIAN BARBOUR</h3><p class="tmeta"><span class="tq">💬 Được trích 2 lần</span><a class="tch" href="05-giai-thoat-khoi-tam-tri.html">Ch. 5</a></p></div></div>
+      <div class="tbody">
+        <p>Julian Barbour là một nhà vật lý người Anh. Ông là tác giả của ba cuốn sách: Sự kết thúc của thời gian: Cuộc cách mạng tiếp theo trong sự hiểu biết của chúng ta về vũ trụ, khám phá ý tưởng rằng thời gian là một ảo ảnh; Khám phá về động lực học, nghiên cứu bối cảnh cho những khám phá của Newton; và cuốn sách mới nhất của ông, Điểm Janus, được ông hoàn thành ở tuổi tám mươi ba. Trang web của Julian là: <a href="https://platonia.com" target="_blank" rel="noopener">platonia.com</a>.</p>
+      </div>
+      <a class="tsite" href="https://platonia.com" target="_blank" rel="noopener">🌐 platonia.com ↗</a>
+    </article>
+    <article class="tcard rv" id="t-david-bingham" data-c="5" data-name="david bingham david bingham">
+      <div class="thead"><span class="tav" style="--tc:var(--c5)">DB</span><div><h3>DAVID BINGHAM</h3><p class="tmeta"><span class="tq">💬 Được trích 21 lần</span><a class="tch" href="00-su-khoi-dau.html">Mở đầu</a><a class="tch" href="01-an-hien.html">Ch. 1</a><a class="tch" href="02-duoc-tiet-lo.html">Ch. 2</a><a class="tch" href="03-tiet-lo-tiep-theo.html">Ch. 3</a><a class="tch" href="04-ban-co-dang-mo.html">Ch. 4</a><a class="tch" href="05-giai-thoat-khoi-tam-tri.html">Ch. 5</a><a class="tch" href="07-ket-thuc-cam-xuc-tieu-cuc.html">Ch. 7</a><a class="tch" href="09-giai-toa-niem-tin-han-che.html">Ch. 9</a><a class="tch" href="11-the-gioi-moi-thu-tot-dep.html">Ch. 11</a><a class="tch" href="12-ket-thuc-khong-co-hoi-ket.html">Ch. 12</a></p></div></div>
+      <div class="tbody">
+        <p>David Bingham là người Anh. Ông đã dành nhiều thập kỷ để tìm kiếm tâm linh, và chính việc lắng nghe podcast của giáo viên John Wheeler đã đánh thức ông về con người thực sự của mình. David đã được phỏng vấn trên Conscious TV để chia sẻ kinh nghiệm tự giác ngộ của mình, và chính cuộc phỏng vấn đó đã bắt đầu sự thức tỉnh của tôi. Tôi đã xem cuộc phỏng vấn, tôi đã theo bước chân của David và nghe cùng một podcast, và sau đó tôi đã có một cuộc tư vấn qua điện thoại với David, trong đó ông đã giúp tôi trải nghiệm Nhận thức và thấy được sự thật về con người thực sự của tôi. David hiện là một giáo viên và ông đã có thể giúp nhiều người nhận ra bản chất thực sự của họ. Các cuộc phỏng vấn của David trên Conscious TV cũng có sẵn trong cuốn sách Các cuộc trò chuyện về Phi đối lập. Bạn có thể tìm hiểu thêm về những lời dạy tuyệt vời của David Bingham trên trang web của ông: <a href="https://nonconceptualawareness.com" target="_blank" rel="noopener">nonconceptualawareness.com</a>.</p>
+      </div>
+      <a class="tsite" href="https://nonconceptualawareness.com" target="_blank" rel="noopener">🌐 nonconceptualawareness.com ↗</a>
+    </article>
+    <article class="tcard rv" id="t-deepak-chopra" data-c="5" data-name="deepak chopra deepak chopra">
+      <div class="thead"><span class="tav" style="--tc:var(--c5)">DC</span><div><h3>DEEPAK CHOPRA</h3><p class="tmeta"><span class="tq">💬 Được trích 11 lần</span><a class="tch" href="02-duoc-tiet-lo.html">Ch. 2</a><a class="tch" href="04-ban-co-dang-mo.html">Ch. 4</a><a class="tch" href="11-the-gioi-moi-thu-tot-dep.html">Ch. 11</a><a class="tch" href="12-ket-thuc-khong-co-hoi-ket.html">Ch. 12</a></p></div></div>
+      <div class="tbody">
+        <p>Deepak Chopra, một bác sĩ nội tiết được cấp chứng chỉ, đã thực hiện một hành trình khám phá từ Ấn Độ đến Hoa Kỳ và sau khi trở nên chán nản với y học phương Tây, ông đã chuyển sang y học toàn diện tích hợp. Năm 1995, Deepak đã mở Trung tâm Chopra về Sức khỏe, sau đó chuyển đổi thành Chopra Global, một công ty toàn diện về sức khỏe đang trao quyền cho sự chuyển đổi cá nhân vì sức khỏe của hàng triệu người trên toàn cầu. Ông đã viết hơn chín mươi cuốn sách, nhiều cuốn trong số đó là sách bán chạy nhất. Lần đầu tiên tôi thấy Deepak phát biểu tại Hội nghị Khoa học và Phi du (SAND) cách đây vài năm, nơi tôi đã đứng dậy vỗ tay hoan nghênh sau khi ông kết thúc bài phát biểu. Bạn có thể tìm thấy những bài giảng sâu rộng và phong phú của Deepak trên trang web của ông: <a href="https://deepakchopra.com" target="_blank" rel="noopener">deepakchopra.com</a>.</p>
+      </div>
+      <a class="tsite" href="https://deepakchopra.com" target="_blank" rel="noopener">🌐 deepakchopra.com ↗</a>
+    </article>
+    <article class="tcard rv" id="t-anthony-de-mello" data-c="1" data-name="anthony de mello, s.j. anthony de mello">
+      <div class="thead"><span class="tav" style="--tc:var(--c1)">AM</span><div><h3>ANTHONY DE MELLO, S.J.</h3><p class="tmeta"><span class="tq">💬 Được trích 23 lần</span><a class="tch" href="01-an-hien.html">Ch. 1</a><a class="tch" href="04-ban-co-dang-mo.html">Ch. 4</a><a class="tch" href="06-suc-manh-cua-cam-xuc.html">Ch. 6</a><a class="tch" href="07-ket-thuc-cam-xuc-tieu-cuc.html">Ch. 7</a><a class="tch" href="08-khong-con-dau-kho.html">Ch. 8</a><a class="tch" href="09-giai-toa-niem-tin-han-che.html">Ch. 9</a><a class="tch" href="10-hanh-phuc-vinh-cuu.html">Ch. 10</a><a class="tch" href="11-the-gioi-moi-thu-tot-dep.html">Ch. 11</a></p></div></div>
+      <div class="tbody">
+        <p>Anthony (Tony) de Mello quá cố là một linh mục dòng Tên sinh ra tại Bombay, Ấn Độ. Mặc dù ông chỉ sống trên hành tinh này trong bốn mươi lăm năm, nhưng những lời dạy của ông vẫn còn sống động cho đến ngày nay. Khả năng độc đáo của Tony trong việc kết hợp tâm linh phương Tây và phương Đông đã khiến những lời dạy của ông trở nên đầy cảm hứng và có sức biến đổi. Phần lớn khán giả của ông là người Công giáo hoặc Cơ đốc giáo, và ông đã rút ra rất nhiều điều từ những lời dạy trong Kinh thánh, làm sáng tỏ ý nghĩa của chúng đối với khán giả của mình. Chính điều này kết hợp với khả năng kể chuyện tuyệt vời của ông đã đánh thức mọi người về sự thật. Những cuốn sách của Tony vẫn là những cuốn sách bán chạy nhất kể từ khi ông qua đời vào năm 1987 và đã bán được hàng triệu bản: Con đường đến tình yêu, Thiền, Một con đường đến với Chúa, Một phút trí tuệ, Trái tim của người giác ngộ, Nguồn nước, Bài hát của loài chim và Cất cánh. Những cuốn sách yêu thích của tôi để bắt đầu là Nhận thức: Đối thoại với các bậc thầy và Khám phá lại cuộc sống. Ngoài ra còn có các bản ghi video, và thật vui khi được chứng kiến những bài giảng của Tony, luôn đi kèm với nụ cười trong giọng nói và tình yêu trong trái tim. Trang web của người thầy tuyệt vời này là <a href="https://demellospirituality.com" target="_blank" rel="noopener">demellospirituality.com</a>.</p>
+      </div>
+      <a class="tsite" href="https://demellospirituality.com" target="_blank" rel="noopener">🌐 demellospirituality.com ↗</a>
+    </article>
+    <article class="tcard rv" id="t-hale-dwoskin" data-c="4" data-name="hale dwoskin hale dwoskin">
+      <div class="thead"><span class="tav" style="--tc:var(--c4)">HD</span><div><h3>HALE DWOSKIN</h3><p class="tmeta"><span class="tq">💬 Được trích 14 lần</span><a class="tch" href="02-duoc-tiet-lo.html">Ch. 2</a><a class="tch" href="03-tiet-lo-tiep-theo.html">Ch. 3</a><a class="tch" href="04-ban-co-dang-mo.html">Ch. 4</a><a class="tch" href="05-giai-thoat-khoi-tam-tri.html">Ch. 5</a><a class="tch" href="06-suc-manh-cua-cam-xuc.html">Ch. 6</a><a class="tch" href="07-ket-thuc-cam-xuc-tieu-cuc.html">Ch. 7</a><a class="tch" href="08-khong-con-dau-kho.html">Ch. 8</a><a class="tch" href="10-hanh-phuc-vinh-cuu.html">Ch. 10</a><a class="tch" href="12-ket-thuc-khong-co-hoi-ket.html">Ch. 12</a></p></div></div>
+      <div class="tbody">
+        <p>Hale Dwoskin là một học trò của huyền thoại Lester Levenson, và ông cũng là một trong những giáo viên nổi bật trong Bí mật. Hale đã cống hiến cả cuộc đời mình để tiếp tục công trình của Lester thông qua Phương pháp Sedona, giúp mọi người nhận ra bản chất thực sự của họ. Sự thành công của phương pháp này được chứng minh qua sự thay đổi cuộc sống của nhiều người. Hale thường xuyên tổ chức các buổi tĩnh tâm, nơi ông hướng dẫn mọi người cách giải phóng tiêu cực để họ có thể nhận ra bản chất thực sự của mình. Một phần lớn trong hành trình của riêng tôi là giải phóng. Bạn có thể tìm thấy tất cả các bài giảng của Hale và Lester trong các cuốn sách Phương pháp Sedona và Hạnh phúc là tự do, tập 1–5. Hale thực hiện một số buổi tĩnh tâm mỗi năm tại Hoa Kỳ, nơi ông sinh sống, và trên toàn thế giới. Các buổi nói chuyện, hội nghị truyền hình và tĩnh tâm của ông được cung cấp cho mọi người trên khắp thế giới tham gia trực tuyến và tôi đã tham dự nhiều buổi như vậy theo cách đó. Tất cả các tài liệu tuyệt vời này cũng được lưu trữ và có sẵn trên trang web của Hale: <a href="https://sedona.com" target="_blank" rel="noopener">sedona.com</a>.</p>
+      </div>
+      <a class="tsite" href="https://sedona.com" target="_blank" rel="noopener">🌐 sedona.com ↗</a>
+    </article>
+    <article class="tcard rv" id="t-peter-dziuban" data-c="8" data-name="peter dziuban peter dziuban">
+      <div class="thead"><span class="tav" style="--tc:var(--c8)">PD</span><div><h3>PETER DZIUBAN</h3><p class="tmeta"><span class="tq">💬 Được trích 5 lần</span><a class="tch" href="04-ban-co-dang-mo.html">Ch. 4</a><a class="tch" href="05-giai-thoat-khoi-tam-tri.html">Ch. 5</a><a class="tch" href="09-giai-toa-niem-tin-han-che.html">Ch. 9</a></p></div></div>
+      <div class="tbody">
+        <p>Peter Dziuban là tác giả và diễn giả về Nhận thức, Ý thức và tâm linh. Peter sinh ra ở Mỹ và hiện sống tại Arizona. Lần đầu tiên tôi biết đến Peter là khi giáo viên của tôi giới thiệu cuốn sách Ý thức là tất cả của ông. Tôi đã đọc cuốn sách và sau đó nghe bản ghi âm của cuốn sách mà Peter tự phát dành nhiều giờ giảng dạy hơn. Ý thức là tất cả rất sâu sắc và ngoạn mục, nó thực sự sẽ khiến bạn phải nín thở nhiều lần trong suốt quá trình. Tôi thực sự biết ơn vì đã trải nghiệm cuốn sách này vì nó đã làm tan vỡ thế giới của tôi (một điều tốt!). Nếu bạn đã sẵn sàng để tiến xa hơn, thì đây là cuốn sách nhất định phải đọc. Trong thời gian chờ đợi, nếu bạn là người mới bắt đầu và muốn thử nghiệm những lời dạy của Peter ở dạng đơn giản hơn, tôi khuyên bạn nên bắt đầu với cuốn sách Chỉ cần chú ý của ông. Trang web của ông là <a href="https://peterdziuban.com" target="_blank" rel="noopener">peterdziuban.com</a>.</p>
+      </div>
+      <a class="tsite" href="https://peterdziuban.com" target="_blank" rel="noopener">🌐 peterdziuban.com ↗</a>
+    </article>
+    <article class="tcard rv" id="t-jan-frazier" data-c="8" data-name="jan frazier jan frazier">
+      <div class="thead"><span class="tav" style="--tc:var(--c8)">JF</span><div><h3>JAN FRAZIER</h3><p class="tmeta"><span class="tq">💬 Được trích 34 lần</span><a class="tch" href="01-an-hien.html">Ch. 1</a><a class="tch" href="02-duoc-tiet-lo.html">Ch. 2</a><a class="tch" href="03-tiet-lo-tiep-theo.html">Ch. 3</a><a class="tch" href="04-ban-co-dang-mo.html">Ch. 4</a><a class="tch" href="05-giai-thoat-khoi-tam-tri.html">Ch. 5</a><a class="tch" href="06-suc-manh-cua-cam-xuc.html">Ch. 6</a><a class="tch" href="07-ket-thuc-cam-xuc-tieu-cuc.html">Ch. 7</a><a class="tch" href="08-khong-con-dau-kho.html">Ch. 8</a><a class="tch" href="10-hanh-phuc-vinh-cuu.html">Ch. 10</a><a class="tch" href="11-the-gioi-moi-thu-tot-dep.html">Ch. 11</a><a class="tch" href="12-ket-thuc-khong-co-hoi-ket.html">Ch. 12</a></p></div></div>
+      <div class="tbody">
+        <p>Jan Frazier, một nhà văn, giáo viên và người mẹ, đã trải qua một sự thay đổi nhận thức triệt để vào năm 2003. Bà đã trải qua nhiều năm trong nỗi sợ hãi tột độ về khả năng được chẩn đoán mắc bệnh ung thư, nhưng đột nhiên nỗi sợ hãi biến mất khỏi bà và bà đắm chìm trong trạng thái vui sướng vô cớ chưa bao giờ rời xa bà. Khi tiếp tục cuộc sống, bà phát hiện ra rằng có thể sống một cuộc sống con người phong phú không có đau khổ. Mong muốn của bà bây giờ là truyền đạt sự thật bên trong mỗi người. Tôi đã rất may mắn khi được kết nối với Jan trong một buổi riêng tư và tôi đã đọc tất cả những cuốn sách tuyệt vời của bà. Khi nỗi sợ tan biến: Câu chuyện về sự thức tỉnh đột ngột là câu chuyện từng ngày của bà về sự thức tỉnh của mình. Những cuốn sách khác của bà là Sự tự do hiện hữu: Thoải mái với những gì là, Sự Ngọt Ngào Vĩ Đại: Cuộc Sống Sau Khi Nghĩ và Mở cửa: Những lời dạy của Jan Frazier về sự thức tỉnh. Jan là một nhà văn rất dễ hiểu, giàu chất thơ và vô cùng đẹp đẽ, như đã được chứng thực qua những câu trích dẫn trong cuốn sách này, mà cô ấy đã rất tử tế cho phép tôi đưa vào. Bạn có thể tìm hiểu thêm về những lời dạy của Jan trên trang web của cô ấy: <a href="https://janfrazierteachings.com" target="_blank" rel="noopener">janfrazierteachings.com</a>.</p>
+      </div>
+      <a class="tsite" href="https://janfrazierteachings.com" target="_blank" rel="noopener">🌐 janfrazierteachings.com ↗</a>
+    </article>
+    <article class="tcard rv" id="t-joel-goldsmith" data-c="2" data-name="joel goldsmith joel goldsmith">
+      <div class="thead"><span class="tav" style="--tc:var(--c2)">JG</span><div><h3>JOEL GOLDSMITH</h3><p class="tmeta"><span class="tq">💬 Được trích 1 lần</span><a class="tch" href="12-ket-thuc-khong-co-hoi-ket.html">Ch. 12</a></p></div></div>
+      <div class="tbody">
+        <p>Joel Goldsmith là một tác giả tâm linh và nhà huyền môn người Mỹ được yêu mến. Ông được biết đến nhiều nhất qua cuốn sách Con Đường Vô Tận, một tác phẩm kinh điển và đã tác động đến cuộc sống của nhiều người trên khắp thế giới, bao gồm cả tôi. Joel có nhiều cuốn sách và các bản ghi âm gốc các bài nói chuyện của ông có sẵn trên trang web của ông, được ba người con của ông lưu giữ một cách trân trọng: <a href="https://joelgoldsmith.com" target="_blank" rel="noopener">joelgoldsmith.com</a>.</p>
+      </div>
+      <a class="tsite" href="https://joelgoldsmith.com" target="_blank" rel="noopener">🌐 joelgoldsmith.com ↗</a>
+    </article>
+    <article class="tcard rv" id="t-david-r-hawkins" data-c="1" data-name="tiến sĩ david r. hawkins, m.d., ph.d. david r. hawkins">
+      <div class="thead"><span class="tav" style="--tc:var(--c1)">DH</span><div><h3>TIẾN SĨ DAVID R. HAWKINS, M.D., PH.D.</h3><p class="tmeta"><span class="tq">💬 Được trích 6 lần</span><a class="tch" href="06-suc-manh-cua-cam-xuc.html">Ch. 6</a><a class="tch" href="07-ket-thuc-cam-xuc-tieu-cuc.html">Ch. 7</a><a class="tch" href="09-giai-toa-niem-tin-han-che.html">Ch. 9</a></p></div></div>
+      <div class="tbody">
+        <p>Tiến sĩ Hawkins là một bác sĩ tâm thần, bác sĩ, nhà nghiên cứu, giáo viên tâm linh và diễn giả người Mỹ nổi tiếng toàn quốc. Nhờ nền tảng khoa học và y khoa của Tiến sĩ Hawkins, những lời dạy tâm linh của ông có sức thuyết phục về mặt khoa học. Lần đầu tiên tôi nghe về Tiến sĩ Hawkins cách đây hơn mười lăm năm khi tôi đọc cuốn sách Power vs Force của ông, cuốn sách đã tác động rất lớn đến tôi. Nhiều năm sau, tôi lại một lần nữa theo dõi những lời dạy của ông khi tôi nghe nhiều bài giảng của ông và đọc cuốn sách Buông bỏ của ông. Những cuốn sách khác của Tiến sĩ David Hawkins là Sách Slides; Chữa lành và Phục hồi; Thực tế, Tâm linh và Con người Hiện đại; Vượt qua các Cấp độ Ý thức; Khám phá Sự hiện diện của Chúa; và Sự thật so với Sự giả dối. Tiến sĩ Hawkins là một nhà văn, diễn giả và giáo viên sung mãn, ảnh hưởng đến rất nhiều người trên khắp thế giới. Ông qua đời vào năm 2012, và kể từ đó, vợ ông, Susan, đã giữ gìn những lời dạy vô giá của ông. Bạn có thể tìm hiểu sâu hơn về giáo lý tâm linh và công trình của Tiến sĩ David Hawkins trên trang web của ông: <a href="https://veritaspub.com" target="_blank" rel="noopener">veritaspub.com</a>.</p>
+      </div>
+      <a class="tsite" href="https://veritaspub.com" target="_blank" rel="noopener">🌐 veritaspub.com ↗</a>
+    </article>
+    <article class="tcard rv" id="t-michael-james" data-c="7" data-name="michael james michael james">
+      <div class="thead"><span class="tav" style="--tc:var(--c7)">MJ</span><div><h3>MICHAEL JAMES</h3><p class="tmeta"><span class="tq">💬 Được trích 5 lần</span><a class="tch" href="01-an-hien.html">Ch. 1</a><a class="tch" href="02-duoc-tiet-lo.html">Ch. 2</a><a class="tch" href="11-the-gioi-moi-thu-tot-dep.html">Ch. 11</a></p></div></div>
+      <div class="tbody">
+        <p>Ngay từ khi còn nhỏ, Michael James đã tràn ngập những câu hỏi, và năm mười chín tuổi, ông bắt đầu hành trình tìm kiếm ý nghĩa cuộc sống trên toàn thế giới. Ông đã đi qua nhiều quốc gia, và cuối cùng dừng chân tại dãy Himalaya và Ấn Độ, viếng thăm nhiều thánh địa và nhiều đạo tràng khác nhau để tìm kiếm mục đích và ý nghĩa của cuộc sống. Cuối cùng, ông đã đến Tiruvannamalai ở Ấn Độ, đến đạo tràng của Ramana Maharshi, người đã mất cách đây nhiều thập kỷ. Ông dự định ở lại vài ngày nhưng cuối cùng đã ở lại đó hai mươi năm. Khi đến nơi, Michael đã đọc cuốn sách Tôi là ai? của Ramana và ông biết rằng cuối cùng ông đã tìm thấy điều mình đang tìm kiếm. Ông tiếp tục học tiếng Tamil của Ấn Độ để có thể dịch những lời dạy của Ramana Maharshi, và ông đã làm điều đó trong hai mươi năm tiếp theo. Lần đầu tiên tôi biết đến Michael là khi tôi thấy ông được phỏng vấn trên kênh truyền hình Conscious TV. Tôi đã đọc ngay cuốn sách khai sáng của ông, Hạnh phúc và Nghệ thuật Sống, cuốn sách tóm tắt những lời dạy của Ramana và là công trình cả đời của Michael. Truy cập trang web của Michael tại <a href="https://happinessofbeing.com" target="_blank" rel="noopener">happinessofbeing.com</a>.</p>
+      </div>
+      <a class="tsite" href="https://happinessofbeing.com" target="_blank" rel="noopener">🌐 happinessofbeing.com ↗</a>
+    </article>
+    <article class="tcard rv" id="t-byron-katie" data-c="8" data-name="byron katie byron katie">
+      <div class="thead"><span class="tav" style="--tc:var(--c8)">BK</span><div><h3>BYRON KATIE</h3><p class="tmeta"><span class="tq">💬 Được trích 16 lần</span><a class="tch" href="05-giai-thoat-khoi-tam-tri.html">Ch. 5</a><a class="tch" href="07-ket-thuc-cam-xuc-tieu-cuc.html">Ch. 7</a><a class="tch" href="08-khong-con-dau-kho.html">Ch. 8</a><a class="tch" href="09-giai-toa-niem-tin-han-che.html">Ch. 9</a><a class="tch" href="10-hanh-phuc-vinh-cuu.html">Ch. 10</a></p></div></div>
+      <div class="tbody">
+        <p>Giữa cuộc sống bình thường của người Mỹ, hai cuộc hôn nhân, ba đứa con và một sự nghiệp thành công, Byron Katie đã bước vào vòng xoáy đi xuống kéo dài mười năm với chứng trầm cảm, chứng sợ không gian rộng, lòng căm ghét bản thân và sự tuyệt vọng muốn tự tử. Trong cơn tuyệt vọng, Katie đã tự đưa mình vào một ngôi nhà tạm trú, nơi cô sẽ thức dậy sau khoảng một tuần hoặc lâu hơn với tất cả chứng trầm cảm và nỗi sợ hãi đã biến mất. Thay vào đó, Katie thấy mình say sưa với niềm vui, điều này đã ở lại với cô kể từ đó. Điều cô nhận ra là khi cô tin vào những suy nghĩ của mình, cô đã đau khổ, nhưng khi cô đặt câu hỏi về chúng, cô không đau khổ, và điều này đúng với mọi con người. Từ trải nghiệm tự nhận thức của mình, Katie đã đưa ra bốn câu hỏi được gọi là "Công việc". Những lời dạy đó đã giải thoát hàng trăm nghìn người trên toàn thế giới khỏi đau khổ và vẫn tiếp tục làm như vậy. Tôi đã sử dụng những lời dạy của Katie để đặt câu hỏi cho những suy nghĩ của chính mình, và tôi đã rất may mắn khi có mặt tại một số buổi nói chuyện của Katie, nơi cô ấy sử dụng bốn câu hỏi của mình để giải thoát mọi người khỏi niềm tin của họ. Các cuốn sách của Katie bao gồm Yêu những gì đang có, Một tâm trí ở nhà, Một ngàn cái tên cho niềm vui, Anh cần tình yêu của em, điều đó có đúng không?, Một vũ trụ thân thiện dành cho trẻ em, Hổ-Hổ, có đúng thế không? và Bốn câu hỏi. Bạn có thể tìm hiểu thêm về những lời dạy tuyệt vời của Byron Katie tại đây: <a href="https://thework.com" target="_blank" rel="noopener">thework.com</a>.</p>
+      </div>
+      <a class="tsite" href="https://thework.com" target="_blank" rel="noopener">🌐 thework.com ↗</a>
+    </article>
+    <article class="tcard rv" id="t-loch-kelly" data-c="7" data-name="loch kelly loch kelly">
+      <div class="thead"><span class="tav" style="--tc:var(--c7)">LK</span><div><h3>LOCH KELLY</h3><p class="tmeta"><span class="tq">💬 Được trích 3 lần</span><a class="tch" href="02-duoc-tiet-lo.html">Ch. 2</a></p></div></div>
+      <div class="tbody">
+        <p>Loch Kelly kết hợp những lời dạy về trí tuệ, tâm lý học và các nghiên cứu về khoa học thần kinh để giúp chúng ta sống một cuộc sống giác ngộ. Sau một hành trình tâm linh bao gồm nhiều truyền thống và giáo viên, Loch đã nhận ra bản chất thực sự của mình. Trong những lời dạy của mình, Loch chia sẻ từ chính trải nghiệm của mình, điều này đã mang lại cho anh niềm vui, sự tự do và tình yêu lớn lao, đồng thời giúp mọi người giác ngộ như giai đoạn phát triển tự nhiên tiếp theo của con người. Các cuốn sách của ông là Chuyển sang Tự do và Con đường chánh niệm không cần nỗ lực. Bạn cũng sẽ tìm thấy rất nhiều bài giảng, khóa tĩnh tâm, video trực tuyến và khóa học trên trang web của Loch: <a href="https://lochkelly.org" target="_blank" rel="noopener">lochkelly.org</a>.</p>
+      </div>
+      <a class="tsite" href="https://lochkelly.org" target="_blank" rel="noopener">🌐 lochkelly.org ↗</a>
+    </article>
+    <article class="tcard rv" id="t-j-krishnamurti" data-c="8" data-name="j. krishnamurti j. krishnamurti">
+      <div class="thead"><span class="tav" style="--tc:var(--c8)">KR</span><div><h3>J. KRISHNAMURTI</h3><p class="tmeta"><span class="tq">💬 Được trích 3 lần</span><a class="tch" href="05-giai-thoat-khoi-tam-tri.html">Ch. 5</a><a class="tch" href="10-hanh-phuc-vinh-cuu.html">Ch. 10</a><a class="tch" href="11-the-gioi-moi-thu-tot-dep.html">Ch. 11</a></p></div></div>
+      <div class="tbody">
+        <p>J. Krishnamurti quá cố sinh ra tại Ấn Độ vào năm 1895 và biết bản chất thực sự của mình ngay từ khi còn nhỏ. Ông được coi rộng rãi là một trong những nhà tư tưởng và giáo viên tôn giáo vĩ đại nhất mọi thời đại. Chồng cũ của tôi đã nghe Krishnamurti trong suốt cuộc hôn nhân của chúng tôi, vì vậy tôi đã tiếp xúc với những lời dạy của ông trong nhiều năm ở độ tuổi đôi mươi và ba mươi. Nhưng mãi đến hành trình tâm linh của tôi sau Bí mật, tôi mới quay lại với những lời dạy của ông và cuối cùng đã có thể hiểu được chúng. Nhiều giáo viên được giới thiệu trong cuốn sách này đã chịu ảnh hưởng từ những lời dạy của Krishnamurti. Krishnamurti đã dành toàn bộ cuộc đời trưởng thành của mình để nói chuyện trên khắp thế giới với đông đảo khán giả và với các cá nhân, bao gồm các nhà văn, nhà khoa học, triết gia, nhân vật tôn giáo và nhà giáo dục, về nhu cầu thay đổi triệt để nhân loại. Ông quan tâm đến toàn thể nhân loại, và ông không có quốc tịch hay tín ngưỡng nào, và không thuộc về bất kỳ nhóm hay nền văn hóa cụ thể nào. Krishnamurti đã để lại một khối lượng lớn tác phẩm văn học dưới dạng các bài nói chuyện trước công chúng, bài viết, thảo luận với giáo viên và học sinh, phỏng vấn trên truyền hình và đài phát thanh, và thư từ. Nhiều trong số này đã được xuất bản dưới dạng sách, bằng hơn năm mươi ngôn ngữ, cùng với hàng trăm bản ghi âm và video. Để biết kho tàng giáo lý của Krishnamurti, hãy truy cập <a href="https://jkrishnamurti.org" target="_blank" rel="noopener">jkrishnamurti.org</a>.</p>
+      </div>
+      <a class="tsite" href="https://jkrishnamurti.org" target="_blank" rel="noopener">🌐 jkrishnamurti.org ↗</a>
+    </article>
+    <article class="tcard rv" id="t-robert-lanza" data-c="1" data-name="tiến sĩ robert lanza, m.d. robert lanza">
+      <div class="thead"><span class="tav" style="--tc:var(--c1)">RL</span><div><h3>TIẾN SĨ ROBERT LANZA, M.D.</h3><p class="tmeta"><span class="tq">💬 Được trích 4 lần</span><a class="tch" href="11-the-gioi-moi-thu-tot-dep.html">Ch. 11</a><a class="tch" href="12-ket-thuc-khong-co-hoi-ket.html">Ch. 12</a></p></div></div>
+      <div class="tbody">
+        <p>Tiến sĩ Robert Lanza được coi là một trong những người cha của lĩnh vực sinh học tế bào gốc ứng dụng. Ông có hàng trăm ấn phẩm và phát minh cùng hơn ba mươi cuốn sách khoa học, bao gồm Biocentrism, trong đó Tiến sĩ Lanza đưa ra lập luận thuyết phục cho ý thức là nền tảng của Vũ trụ, thay vì ý thức chỉ là sản phẩm phụ của nó. Nếu bạn đang tìm kiếm một góc nhìn khoa học tuyệt vời về nội dung của cuốn sách này, thì Chủ nghĩa sinh học: Sự sống và ý thức là chìa khóa để hiểu bản chất thực sự của vũ trụ sẽ khiến bạn bị cuốn hút và hơn cả những gì bạn có thể thắc mắc. Tiến sĩ Lanza đã nhận được nhiều giải thưởng, bao gồm danh sách 100 người có ảnh hưởng nhất thế giới của tạp chí Time và 50 "Nhà tư tưởng thế giới" hàng đầu của tạp chí Prospect. Tiến sĩ Lanza được mô tả là một thiên tài và một nhà tư tưởng nổi loạn, và được ví như Einstein. Để biết thêm thông tin về Tiến sĩ Robert Lanza, Tiến sĩ Y khoa, hãy truy cập <a href="https://robertlanza.com" target="_blank" rel="noopener">robertlanza.com</a>.</p>
+      </div>
+      <a class="tsite" href="https://robertlanza.com" target="_blank" rel="noopener">🌐 robertlanza.com ↗</a>
+    </article>
+    <article class="tcard rv" id="t-peter-kalyani-lawry" data-c="2" data-name="peter lawry và kalyani lawry peter &amp; kalyani lawry">
+      <div class="thead"><span class="tav" style="--tc:var(--c2)">PL</span><div><h3>PETER LAWRY VÀ KALYANI LAWRY</h3><p class="tmeta"><span class="tq">💬 Được trích 12 lần</span><a class="tch" href="02-duoc-tiet-lo.html">Ch. 2</a><a class="tch" href="03-tiet-lo-tiep-theo.html">Ch. 3</a><a class="tch" href="05-giai-thoat-khoi-tam-tri.html">Ch. 5</a><a class="tch" href="06-suc-manh-cua-cam-xuc.html">Ch. 6</a><a class="tch" href="08-khong-con-dau-kho.html">Ch. 8</a><a class="tch" href="10-hanh-phuc-vinh-cuu.html">Ch. 10</a></p></div></div>
+      <div class="tbody">
+        <p>Peter và Kalyani Lawry là người Úc sống tại Melbourne (quê hương của tôi). Sau một hành trình tâm linh mãnh liệt kéo dài nhiều năm và sau khi đi qua Ấn Độ, Peter và Kalyani đều nhận ra bản chất thực sự của mình. Thật hiếm khi có một người chồng và người vợ cùng tự nhận thức, và điều đó khiến những cuộc gặp gỡ của cả hai ở Melbourne trở nên rất đặc biệt. Tôi đã có một buổi chiều thay đổi cuộc đời với Peter và Kalyani khi tôi đến thăm Melbourne cách đây vài năm, và tôi cũng may mắn được có một số buổi trò chuyện riêng qua điện thoại với Kalyani. Sách của họ là Một phần trang sức và Only That, do Kalyani biên soạn. Bạn có thể khám phá thêm tại <a href="https://nonduality.com" target="_blank" rel="noopener">nonduality.com</a>.au.</p>
+      </div>
+      <a class="tsite" href="https://nonduality.com" target="_blank" rel="noopener">🌐 nonduality.com ↗</a>
+    </article>
+    <article class="tcard rv" id="t-lester-levenson" data-c="6" data-name="lester levenson lester levenson">
+      <div class="thead"><span class="tav" style="--tc:var(--c6)">LL</span><div><h3>LESTER LEVENSON</h3><p class="tmeta"><span class="tq">💬 Được trích 52 lần</span><a class="tch" href="01-an-hien.html">Ch. 1</a><a class="tch" href="02-duoc-tiet-lo.html">Ch. 2</a><a class="tch" href="03-tiet-lo-tiep-theo.html">Ch. 3</a><a class="tch" href="04-ban-co-dang-mo.html">Ch. 4</a><a class="tch" href="05-giai-thoat-khoi-tam-tri.html">Ch. 5</a><a class="tch" href="06-suc-manh-cua-cam-xuc.html">Ch. 6</a><a class="tch" href="07-ket-thuc-cam-xuc-tieu-cuc.html">Ch. 7</a><a class="tch" href="08-khong-con-dau-kho.html">Ch. 8</a><a class="tch" href="09-giai-toa-niem-tin-han-che.html">Ch. 9</a><a class="tch" href="10-hanh-phuc-vinh-cuu.html">Ch. 10</a><a class="tch" href="11-the-gioi-moi-thu-tot-dep.html">Ch. 11</a><a class="tch" href="12-ket-thuc-khong-co-hoi-ket.html">Ch. 12</a></p></div></div>
+      <div class="tbody">
+        <p>Lester Levenson, huyền thoại. Ông là bằng chứng sống về những gì diễn ra trong một cơ thể bệnh tật khi ánh sáng chân lý xuyên thấu vào. Lester từng nói rằng "bệnh tật trong cơ thể là bệnh tật trong tâm trí". Ông đã truyền cảm hứng cho hàng nghìn người, và những lời dạy của ông vẫn tiếp tục truyền cảm hứng và giải thoát nhiều người khỏi đau khổ sau khi ông qua đời vào những năm 90. Phong cách giảng dạy của Lester rất đơn giản và do đó rất rõ ràng, và vì lý do này, những lời dạy của ông sẽ tiếp tục đánh thức mọi người trong nhiều thế kỷ tới. Di sản của Lester bao gồm nhóm học trò cốt cán chính của ông, những người đã tự giác ngộ và hiện là những giáo viên theo đúng nghĩa của họ. Một trong số đó là Hale Dwoskin, người bảo vệ công trình của Lester, và với lòng biết ơn sâu sắc, tôi chia sẻ rất nhiều lời dạy đơn giản và mạnh mẽ của Lester trong cuốn sách này. Những lời dạy của Lester đã đóng một vai trò quan trọng trong cuộc sống của tôi và vẫn tiếp tục như vậy. Phần lớn những câu trích dẫn của Lester trong suốt cuốn sách này được trích từ Hạnh phúc là tự do, tập 1–5, của Lester Levenson và Hale Dwoskin. Để tìm hiểu thêm về người giáo viên tuyệt vời này, hãy truy cập <a href="https://sedona.com" target="_blank" rel="noopener">sedona.com</a>.</p>
+      </div>
+      <a class="tsite" href="https://sedona.com" target="_blank" rel="noopener">🌐 sedona.com ↗</a>
+    </article>
+    <article class="tcard rv" id="t-francis-lucille" data-c="5" data-name="francis lucille francis lucille">
+      <div class="thead"><span class="tav" style="--tc:var(--c5)">FL</span><div><h3>FRANCIS LUCILLE</h3><p class="tmeta"><span class="tq">💬 Được trích 30 lần</span><a class="tch" href="02-duoc-tiet-lo.html">Ch. 2</a><a class="tch" href="03-tiet-lo-tiep-theo.html">Ch. 3</a><a class="tch" href="04-ban-co-dang-mo.html">Ch. 4</a><a class="tch" href="06-suc-manh-cua-cam-xuc.html">Ch. 6</a><a class="tch" href="07-ket-thuc-cam-xuc-tieu-cuc.html">Ch. 7</a><a class="tch" href="09-giai-toa-niem-tin-han-che.html">Ch. 9</a><a class="tch" href="10-hanh-phuc-vinh-cuu.html">Ch. 10</a><a class="tch" href="11-the-gioi-moi-thu-tot-dep.html">Ch. 11</a><a class="tch" href="12-ket-thuc-khong-co-hoi-ket.html">Ch. 12</a></p></div></div>
+      <div class="tbody">
+        <p>Francis Lucille, sinh ra tại Pháp, hiện đang sống tại Hoa Kỳ. Francis nhận ra bản chất thực sự của mình ở tuổi ba mươi khi anh gặp người thầy của mình, Jean Klein.</p>
+        <p>Chính Jean Klein đã gợi ý Francis chuyển đến Hoa Kỳ để giảng dạy và chia sẻ sự thật với mọi người. Francis được đào tạo về vật lý tại École Polytechnique nổi tiếng ở Pháp, vì vậy anh có thể mang đến góc nhìn khoa học rõ ràng cho những bài giảng của mình. Anh đã giúp vô số người nhận ra bản chất thực sự của họ thông qua những bài giảng tuyệt đẹp, rõ ràng và chính xác của mình, bao gồm cả sinh viên Rupert Spira, người cũng được giới thiệu trong cuốn sách này. Tôi đã tham gia một số khóa tĩnh tâm với Francis ở California và cũng có niềm vui lớn khi được dành nhiều giờ đồng hồ bên anh tại nơi ở của anh. Francis tổ chức các khóa tĩnh tâm hàng năm tại Châu Âu cũng như Hoa Kỳ, cùng với các buổi họp trực tiếp (hầu hết các ngày cuối tuần) được chia sẻ qua webcast trực tiếp. Bạn có thể tham gia các buổi họp này bất kể bạn ở đâu và trải nghiệm sự hiện diện nồng nhiệt của người thầy tuyệt vời này. Những cuốn sách của Francis là Sự thật vẻ đẹp tình yêu, Hương thơm của sự im lặng và Vĩnh cửu ngay bây giờ, và tôi đã đọc từng cuốn nhiều lần. Bạn có thể tìm thấy vô số lời dạy tuyệt vời từ các buổi họp và tĩnh tâm của Francis trên trang web của anh ấy: <a href="https://advaitachannel.francislucille.com" target="_blank" rel="noopener">advaitachannel.francislucille.com</a>.</p>
+      </div>
+      <a class="tsite" href="https://advaitachannel.francislucille.com" target="_blank" rel="noopener">🌐 advaitachannel.francislucille.com ↗</a>
+    </article>
+    <article class="tcard rv" id="t-shakti-caterina-maggi" data-c="6" data-name="shakti caterina maggi shakti caterina maggi">
+      <div class="thead"><span class="tav" style="--tc:var(--c6)">SM</span><div><h3>SHAKTI CATERINA MAGGI</h3><p class="tmeta"><span class="tq">💬 Được trích 3 lần</span><a class="tch" href="02-duoc-tiet-lo.html">Ch. 2</a><a class="tch" href="07-ket-thuc-cam-xuc-tieu-cuc.html">Ch. 7</a></p></div></div>
+      <div class="tbody">
+        <p>Shakti Caterina Maggi đã giảng dạy trong chín năm qua, sau khi thức tỉnh vào năm 2003. Kể từ khi bắt đầu giảng dạy, Shakti đã chia sẻ thông điệp về sự thức tỉnh với bản chất thực sự của chúng ta là Một Ý thức. Cô là người Ý, sống tại Ý và tổ chức các buổi tĩnh tâm và họp mặt ở Châu Âu và trên khắp thế giới, cùng với các hội thảo trực tuyến. Các buổi họp được tổ chức bằng tiếng Ý và một số bằng tiếng Anh. Lần đầu tiên tôi nhìn thấy Shakti tại một hội nghị tâm linh mà tôi đã tham dự, nơi bài nói chuyện và sự hiện diện của cô đã tác động rất nhiều đến tôi. Cô được giới thiệu trong cuốn sách On the Mystery of Being. Cô cũng viết một blog bằng tiếng Anh và bạn có thể tìm thấy nhiều bài viết sâu sắc trên trang web của cô: <a href="https://shakticaterinamaggi.com" target="_blank" rel="noopener">shakticaterinamaggi.com</a>.</p>
+      </div>
+      <a class="tsite" href="https://shakticaterinamaggi.com" target="_blank" rel="noopener">🌐 shakticaterinamaggi.com ↗</a>
+    </article>
+    <article class="tcard rv" id="t-ramana-maharshi" data-c="2" data-name="ramana maharshi ramana maharshi">
+      <div class="thead"><span class="tav" style="--tc:var(--c2)">RM</span><div><h3>RAMANA MAHARSHI</h3><p class="tmeta"><span class="tq">💬 Được trích 8 lần</span><a class="tch" href="01-an-hien.html">Ch. 1</a><a class="tch" href="05-giai-thoat-khoi-tam-tri.html">Ch. 5</a><a class="tch" href="10-hanh-phuc-vinh-cuu.html">Ch. 10</a><a class="tch" href="11-the-gioi-moi-thu-tot-dep.html">Ch. 11</a><a class="tch" href="12-ket-thuc-khong-co-hoi-ket.html">Ch. 12</a></p></div></div>
+      <div class="tbody">
+        <p>Ramana Maharshi quá cố là một huyền thoại. Năm 1896, khi mới mười sáu tuổi, nỗi sợ hãi cái chết đã ập đến với ông. Ramana nằm xuống và chào đón cái chết một cách trọn vẹn. Vào khoảnh khắc đó, ông đã biến đổi từ một con người thành một Linh hồn bất tử thực sự. Đối với Ramana, kể từ ngày đó, con người bên ngoài mà ông dường như chỉ tồn tại trong quan điểm của người khác, trong quan điểm của ông, chỉ có không gian vô hạn của nhận thức. Những lời dạy của Ramana tiết lộ con đường trực tiếp để giác ngộ thông qua quá trình tự vấn, đây là cách mà nhiều giáo viên được giới thiệu trong cuốn sách này sử dụng. Những lời dạy của ông hướng bạn đến bản ngã sâu thẳm nhất của mình, thực tại duy nhất ẩn chứa bên dưới mọi thứ tồn tại. Tôi chỉ là một trong số nhiều người có cuộc sống được thay đổi thông qua những lời dạy của Ramana Maharshi. Để tìm hiểu thêm về con người huyền thoại này, hãy truy cập trang web của ông, nơi có rất nhiều sách có thể tải xuống miễn phí: <a href="https://sriramanamaharshi.org" target="_blank" rel="noopener">sriramanamaharshi.org</a>.</p>
+      </div>
+      <a class="tsite" href="https://sriramanamaharshi.org" target="_blank" rel="noopener">🌐 sriramanamaharshi.org ↗</a>
+    </article>
+    <article class="tcard rv" id="t-mooji" data-c="2" data-name="mooji mooji">
+      <div class="thead"><span class="tav" style="--tc:var(--c2)">MO</span><div><h3>MOOJI</h3><p class="tmeta"><span class="tq">💬 Được trích 28 lần</span><a class="tch" href="01-an-hien.html">Ch. 1</a><a class="tch" href="02-duoc-tiet-lo.html">Ch. 2</a><a class="tch" href="03-tiet-lo-tiep-theo.html">Ch. 3</a><a class="tch" href="04-ban-co-dang-mo.html">Ch. 4</a><a class="tch" href="06-suc-manh-cua-cam-xuc.html">Ch. 6</a><a class="tch" href="09-giai-toa-niem-tin-han-che.html">Ch. 9</a><a class="tch" href="12-ket-thuc-khong-co-hoi-ket.html">Ch. 12</a></p></div></div>
+      <div class="tbody">
+        <p>Mooji sinh ra ở Jamaica và chuyển đến London khi còn là một thiếu niên. Hiện ông đang sống tại Bồ Đào Nha, nơi ông thành lập Monte Sahaja, Trung tâm Tự giác ngộ. Sự thức tỉnh tâm linh của Mooji bắt đầu vào năm 1987 thông qua một cuộc gặp gỡ với một nhà huyền môn Cơ đốc giáo và đạt đến đỉnh cao vào năm 1993 dưới chân bậc thầy của ông, nhà hiền triết Ấn Độ nổi tiếng Papaji. Kể từ đó, vô số người đã đến Mooji để tìm kiếm sự hướng dẫn tâm linh, nhiều người đã nhận ra bản chất thực sự của mình. Những lời dạy sâu sắc của ông đã tạo nên một lượng lớn người theo dõi trên toàn cầu, đặc biệt là trên YouTube, nơi ông cung cấp miễn phí nhiều bài nói chuyện (satsang) của mình dưới dạng video. Phong cách giảng dạy của Mooji được nhiều người đồng cảm, đặc biệt là khiếu hài hước, phép so sánh, kể chuyện và ẩn dụ, mà ông khéo léo sử dụng để làm sáng tỏ sự thật. Giống như nhiều người khác, tôi đã xem hàng trăm bài nói chuyện của Mooji trực tuyến. Tôi đã đến Bồ Đào Nha để tham dự một trong những buổi tĩnh tâm của Mooji cùng con gái mình và con gái tôi đã trải nghiệm bản chất thực sự của mình tại buổi tĩnh tâm đó. Không có sự chứng thực nào có thể tuyệt vời hơn thế này. Các cuốn sách của Mooji bao gồm Rộng lớn hơn bầu trời, lớn hơn không gian; Ngọn lửa trắng, ấn bản thứ hai; Tràng hạt của Chúa; và Lời mời đến Tự do (một cuốn sách nhỏ nhưng tuyệt vời để nhận ra bản chất thực sự của bạn). Bạn có thể tìm thấy những cuốn sách của ông và vô số lời dạy từ con người tuyệt vời này tại <a href="https://mooji.org" target="_blank" rel="noopener">mooji.org</a>.</p>
+      </div>
+      <a class="tsite" href="https://mooji.org" target="_blank" rel="noopener">🌐 mooji.org ↗</a>
+    </article>
+    <article class="tcard rv" id="t-nguoi-thay-cua-toi" data-c="7" data-name="người thầy của tôi người thầy của tôi">
+      <div class="thead"><span class="tav" style="--tc:var(--c7)">🙏</span><div><h3>NGƯỜI THẦY CỦA TÔI</h3><p class="tmeta"><span class="tq">💬 Được trích 35 lần</span><a class="tch" href="01-an-hien.html">Ch. 1</a><a class="tch" href="03-tiet-lo-tiep-theo.html">Ch. 3</a><a class="tch" href="04-ban-co-dang-mo.html">Ch. 4</a><a class="tch" href="05-giai-thoat-khoi-tam-tri.html">Ch. 5</a><a class="tch" href="06-suc-manh-cua-cam-xuc.html">Ch. 6</a><a class="tch" href="07-ket-thuc-cam-xuc-tieu-cuc.html">Ch. 7</a><a class="tch" href="08-khong-con-dau-kho.html">Ch. 8</a><a class="tch" href="09-giai-toa-niem-tin-han-che.html">Ch. 9</a><a class="tch" href="10-hanh-phuc-vinh-cuu.html">Ch. 10</a><a class="tch" href="11-the-gioi-moi-thu-tot-dep.html">Ch. 11</a><a class="tch" href="12-ket-thuc-khong-co-hoi-ket.html">Ch. 12</a></p></div></div>
+      <div class="tbody">
+        <p>Người thầy của tôi, người muốn giấu tên, là học trò của Lester Levenson và Robert Adams, hai trong số những giáo viên mà tôi yêu thích nhất trong quá khứ. Bốn năm trước, khi lần đầu tiên gặp giáo viên của mình và đứng trước mặt cô, tôi đã tràn ngập niềm vui sướng tột cùng. Khi bạn cảm thấy mức độ hạnh phúc này, bạn sẽ không bao giờ muốn nó biến mất. Mức độ hạnh phúc này chính là bản chất thực sự của chúng ta! Thật không may, niềm vui sướng tột cùng đó không tồn tại mãi mãi, bởi vì dần dần tâm trí tôi quay trở lại, mang theo sự bất hạnh và căng thẳng. Nhưng với sự hướng dẫn của giáo viên, tuân theo các bài tập của cô một cách nghiêm ngặt (tất cả đều có trong cuốn sách này) và thường xuyên ở bên cô, tâm trí tôi ngày càng yếu đi. Bây giờ, sự bình yên và hạnh phúc luôn ở bên tôi hầu hết thời gian, và tôi biết rằng điều này có thể xảy ra với tất cả mọi người.</p>
+      </div>
+      
+    </article>
+    <article class="tcard rv" id="t-jac-o-keeffe" data-c="2" data-name="jac o’keeffe jac o’keeffe">
+      <div class="thead"><span class="tav" style="--tc:var(--c2)">JO</span><div><h3>JAC O’KEEFFE</h3><p class="tmeta"><span class="tq">💬 Được trích 2 lần</span><a class="tch" href="02-duoc-tiet-lo.html">Ch. 2</a><a class="tch" href="06-suc-manh-cua-cam-xuc.html">Ch. 6</a></p></div></div>
+      <div class="tbody">
+        <p>Jac O’KEEFFE là người Ireland và hiện đang sống tại Florida. Jac đã khám phá ra sự thật và tự nhận thức được bản thân mình hơn mười năm trước. Bạn không thể mong đợi điều gì tuyệt vời hơn những lời dạy của cô, nơi cô đẩy lùi ranh giới của tâm trí có điều kiện. Cô được biết đến với sự rõ ràng và cách cư xử thẳng thắn, và cô tổ chức các buổi tĩnh tâm, hội thảo và buổi học riêng cho học viên. Tôi đã khám phá ra Jac trực tuyến cách đây vài năm và thấy những bài giảng của cô như một luồng gió mới. Tôi cũng may mắn được tham dự một số buổi nói chuyện của cô trực tiếp. Bạn có thể được truyền cảm hứng hơn nữa từ công việc của Jac thông qua các cuốn sách Sinh ra để được tự do và Làm thế nào để trở thành một người bùng nổ về mặt tinh thần. Giống như mọi giáo viên trong cuốn sách này, cô ấy cống hiến cuộc đời mình để giải thoát nhân loại khỏi những đau khổ không cần thiết do tâm trí gây ra để chúng ta có thể sống trong niềm vui, hạnh phúc và an lạc của bản ngã thực sự của mình. Trang web của cô là <a href="https://jac-okeeffe.com" target="_blank" rel="noopener">jac-okeeffe.com</a>.</p>
+      </div>
+      <a class="tsite" href="https://jac-okeeffe.com" target="_blank" rel="noopener">🌐 jac-okeeffe.com ↗</a>
+    </article>
+    <article class="tcard rv" id="t-max-planck" data-c="4" data-name="max planck max planck">
+      <div class="thead"><span class="tav" style="--tc:var(--c4)">MP</span><div><h3>MAX PLANCK</h3><p class="tmeta"><span class="tq">💬 Được trích 2 lần</span><a class="tch" href="11-the-gioi-moi-thu-tot-dep.html">Ch. 11</a><a class="tch" href="12-ket-thuc-khong-co-hoi-ket.html">Ch. 12</a></p></div></div>
+      <div class="tbody">
+        <p>Nhà vật lý người Đức Max Planck đã có nhiều đóng góp cho vật lý lý thuyết, nhưng danh tiếng của ông chủ yếu đến từ khám phá ra lượng tử năng lượng, nhờ đó ông đã giành giải Nobel năm 1918 và đã cách mạng hóa sự hiểu biết của con người về các quá trình nguyên tử và hạ nguyên tử.</p>
+      </div>
+      
+    </article>
+    <article class="tcard rv" id="t-sri-poonja" data-c="5" data-name="sri poonja sri poonja">
+      <div class="thead"><span class="tav" style="--tc:var(--c5)">SP</span><div><h3>SRI POONJA</h3><p class="tmeta"><span class="tq">💬 Được trích 2 lần</span><a class="tch" href="10-hanh-phuc-vinh-cuu.html">Ch. 10</a><a class="tch" href="12-ket-thuc-khong-co-hoi-ket.html">Ch. 12</a></p></div></div>
+      <div class="tbody">
+        <p>Sri Poonja, được học trò trìu mến gọi là "Papaji", một trong số đó là Mooji, sinh ra ở Ấn Độ. Papaji bị thu hút bởi tâm linh khi ông còn nhỏ, có trải nghiệm tâm linh đầu tiên vào năm chín tuổi. Phải mất khoảng ba mươi năm sau, cuộc tìm kiếm tâm linh của Papaji mới kết thúc khi ông gặp Ramana Maharshi và nhận ra bản chất thực sự của mình. Trong những năm 80 và 90, hàng nghìn người đã đổ xô đến Lucknow ở Ấn Độ để được ở bên năng lượng của Papaji. Ông đã rời bỏ thể xác của mình vào năm 1997. Để khám phá thêm về những lời dạy của Papaji, hãy truy cập <a href="https://avadhuta.com" target="_blank" rel="noopener">avadhuta.com</a>.</p>
+      </div>
+      <a class="tsite" href="https://avadhuta.com" target="_blank" rel="noopener">🌐 avadhuta.com ↗</a>
+    </article>
+    <article class="tcard rv" id="t-thap-tu-hoa-hong" data-c="6" data-name="tổ chức thập tự hoa hồng thập tự hoa hồng">
+      <div class="thead"><span class="tav" style="--tc:var(--c6)">🌹</span><div><h3>TỔ CHỨC THẬP TỰ HOA HỒNG</h3><p class="tmeta"><span class="tq tq0">📖 Được nhắc đến trong sách</span></p></div></div>
+      <div class="tbody">
+        <p>Trong phần giới thiệu và trong suốt cuốn sách, tôi có đề cập đến Tổ chức Thập tự Hoa hồng, có trụ sở chính đặt tại Quần đảo Canary ở Tây Ban Nha. Tôi đã trở thành thành viên danh dự của tổ chức phi lợi nhuận này, nơi dành riêng để nâng cao nhận thức của nhân loại. Huy hiệu Thập tự Hoa hồng được thành lập ở Châu Âu từ thế kỷ XIV, nhưng đây cũng là người kế thừa tinh thần của các Trường phái Kiến thức Cổ đại phát triển mạnh mẽ ở Babylon, Ai Cập, Hy Lạp và La Mã, thậm chí có thể là sớm hơn. Hội có nhiều thành viên lỗi lạc, những người đã âm thầm và siêng năng làm việc trong nhiều thế kỷ, bất chấp nguy hiểm lớn đối với bản thân, để giải thoát nhân loại khỏi đau khổ bằng chân lý. Francis Bacon là Imperator của Hội Thập tự hoa hồng trong suốt cuộc đời mình, Isaac Newton là một thành viên, và họ chỉ là hai trong số nhiều cái tên nổi tiếng gắn liền với Hội. Imperator hiện tại của Hội, Angel Martin Velayos, đã hướng dẫn tôi trong nhiều năm. Tôi đã nghiên cứu các giáo lý của Hội Thập tự Hoa hồng trong khoảng thời gian mười năm, hoàn thành hơn hai mươi hai cấp độ giáo lý tiếng Anh, và chúng đã có tác động rất lớn trong việc giúp tôi nhìn thấy và hiểu được chân lý. Để biết thêm thông tin về Hội, hãy truy cập <a href="https://www.rosicrucian-order.com" target="_blank" rel="noopener">www.rosicrucian-order.com</a>.</p>
+      </div>
+      <a class="tsite" href="https://www.rosicrucian-order.com" target="_blank" rel="noopener">🌐 www.rosicrucian-order.com ↗</a>
+    </article>
+    <article class="tcard rv" id="t-rumi" data-c="7" data-name="rumi rumi">
+      <div class="thead"><span class="tav" style="--tc:var(--c7)">RU</span><div><h3>RUMI</h3><p class="tmeta"><span class="tq">💬 Được trích 6 lần</span><a class="tch" href="06-suc-manh-cua-cam-xuc.html">Ch. 6</a><a class="tch" href="07-ket-thuc-cam-xuc-tieu-cuc.html">Ch. 7</a><a class="tch" href="09-giai-toa-niem-tin-han-che.html">Ch. 9</a><a class="tch" href="11-the-gioi-moi-thu-tot-dep.html">Ch. 11</a><a class="tch" href="12-ket-thuc-khong-co-hoi-ket.html">Ch. 12</a></p></div></div>
+      <div class="tbody">
+        <p>Rumi là một nhà thơ và nhà huyền môn Sufi thế kỷ thứ mười ba. Ảnh hưởng của Rumi và những lời chân lý sâu sắc đã vượt qua mọi ranh giới của tôn giáo, địa lý và truyền thống tâm linh, và những bài thơ của ông vẫn tiếp tục được trân trọng trên toàn thế giới.</p>
+      </div>
+      
+    </article>
+    <article class="tcard rv" id="t-peter-russell" data-c="8" data-name="peter russell peter russell">
+      <div class="thead"><span class="tav" style="--tc:var(--c8)">PR</span><div><h3>PETER RUSSELL</h3><p class="tmeta"><span class="tq">💬 Được trích 1 lần</span><a class="tch" href="12-ket-thuc-khong-co-hoi-ket.html">Ch. 12</a></p></div></div>
+      <div class="tbody">
+        <p>Peter Russell, người ban đầu được đào tạo về vật lý và toán học tại Đại học Cambridge, đã nghiên cứu khoa học và các truyền thống tâm linh trong suốt cuộc đời mình. Một số trong nhiều cuốn sách của ông là Bộ não toàn cầu, Kỹ năng TM, Thức tỉnh trong thời gian, Từ Khoa học đến Chúa và Cuộc cách mạng Ý thức. Tôi đã có vinh dự được xem Peter phát biểu tại Hội nghị Khoa học và Phi nhị nguyên ở San Jose. Bạn có thể tìm thấy nhiều bài nói chuyện của ông miễn phí trên trang web của ông, cùng với những bài giảng sâu rộng của ông: <a href="https://peterrussell.com" target="_blank" rel="noopener">peterrussell.com</a>.</p>
+      </div>
+      <a class="tsite" href="https://peterrussell.com" target="_blank" rel="noopener">🌐 peterrussell.com ↗</a>
+    </article>
+    <article class="tcard rv" id="t-rupert-spira" data-c="4" data-name="rupert spira rupert spira">
+      <div class="thead"><span class="tav" style="--tc:var(--c4)">RS</span><div><h3>RUPERT SPIRA</h3><p class="tmeta"><span class="tq">💬 Được trích 23 lần</span><a class="tch" href="01-an-hien.html">Ch. 1</a><a class="tch" href="02-duoc-tiet-lo.html">Ch. 2</a><a class="tch" href="03-tiet-lo-tiep-theo.html">Ch. 3</a><a class="tch" href="05-giai-thoat-khoi-tam-tri.html">Ch. 5</a><a class="tch" href="06-suc-manh-cua-cam-xuc.html">Ch. 6</a><a class="tch" href="07-ket-thuc-cam-xuc-tieu-cuc.html">Ch. 7</a><a class="tch" href="08-khong-con-dau-kho.html">Ch. 8</a><a class="tch" href="09-giai-toa-niem-tin-han-che.html">Ch. 9</a><a class="tch" href="10-hanh-phuc-vinh-cuu.html">Ch. 10</a><a class="tch" href="12-ket-thuc-khong-co-hoi-ket.html">Ch. 12</a></p></div></div>
+      <div class="tbody">
+        <p>Rupert Spira là người Anh và hiện đang sống tại Anh, nơi ông thường xuyên tổ chức các buổi họp và tĩnh tâm. Rupert cũng đi khắp nơi để tổ chức các buổi tĩnh tâm ở Châu Âu và Hoa Kỳ nhiều lần mỗi năm. Ban đầu là một nghệ sĩ và thợ gốm, sau hai mươi năm thực hành tâm linh và thiền định, Rupert đã nhận ra bản chất thực sự của mình thông qua người thầy của mình, Francis Lucille. Phong cách giảng dạy rõ ràng và rất gần gũi của Rupert đã thay đổi cuộc sống của rất nhiều học viên. Những lời dạy của ông đóng vai trò quan trọng trong hành trình giác ngộ của tôi, đặc biệt là trong việc tách khỏi cơ thể. Câu trả lời của Rupert cho câu hỏi của học viên là cẩn thận đảm bảo rằng học viên thực sự trải nghiệm câu trả lời cho câu hỏi của họ, thay vì đưa ra một khái niệm tinh thần làm câu trả lời. Nhiều bài giảng bằng video và âm thanh từ các buổi tĩnh tâm và bài nói chuyện của Rupert có sẵn trên trang web của ông. Những cuốn sách của Rupert, tất cả đều là những cuốn mà tôi đã đọc, là Bản chất của ý thức; Cơ thể trong suốt, thế giới rực rỡ; Ánh sáng của sự hiểu biết thuần túy; Sự minh bạch của sự vật; Nghệ thuật của hòa bình và hạnh phúc; Sự gần gũi của mọi trải nghiệm; Nhận thức về việc nhận thức; và Tro tàn của tình yêu. Truy cập <a href="https://rupertspira.com" target="_blank" rel="noopener">rupertspira.com</a>.</p>
+      </div>
+      <a class="tsite" href="https://rupertspira.com" target="_blank" rel="noopener">🌐 rupertspira.com ↗</a>
+    </article>
+    <article class="tcard rv" id="t-eckhart-tolle" data-c="2" data-name="eckhart tolle eckhart tolle">
+      <div class="thead"><span class="tav" style="--tc:var(--c2)">ET</span><div><h3>ECKHART TOLLE</h3><p class="tmeta"><span class="tq">💬 Được trích 5 lần</span><a class="tch" href="05-giai-thoat-khoi-tam-tri.html">Ch. 5</a><a class="tch" href="08-khong-con-dau-kho.html">Ch. 8</a><a class="tch" href="12-ket-thuc-khong-co-hoi-ket.html">Ch. 12</a></p></div></div>
+      <div class="tbody">
+        <p>Eckhart Tolle là một giáo viên tâm linh và tác giả, sinh ra tại Đức. Eckhart đã bị trầm cảm trong hầu hết cuộc đời mình, cho đến khi ở tuổi hai mươi chín, ông đã có một sự chuyển đổi nội tâm sâu sắc đã thay đổi hoàn toàn cuộc đời ông. Với những cuốn sách bán chạy nhất quốc tế của mình, Sức mạnh của hiện tại và Một trái đất mới được dịch sang hơn năm mươi hai ngôn ngữ, ông đã giới thiệu cho hàng triệu người niềm vui và sự tự do khi sống cuộc sống trong khoảnh khắc hiện tại. Những lời dạy sâu sắc nhưng giản dị của Eckhart đã giúp vô số người trên khắp thế giới tìm thấy sự bình yên nội tâm và sự viên mãn hơn trong cuộc sống của họ. Cốt lõi trong những lời dạy của ông là sự thức tỉnh tâm linh mà ông coi là bước tiếp theo trong quá trình tiến hóa của con người. Một khía cạnh thiết yếu của sự thức tỉnh này là vượt qua trạng thái ý thức dựa trên bản ngã của chúng ta. Giống như hàng triệu người khác, tôi lần đầu tiên khám phá ra những lời dạy của Eckhart trong cuốn sách Sức mạnh của hiện tại. Tôi đã có nhiều thay đổi và trải nghiệm tâm linh khi đọc cuốn sách đó, và tôi đã mang theo cuốn Thực hành Sức mạnh của Hiện tại và thực hành trong một vài năm. Những cuốn sách khác của ông là Sự tĩnh lặng lên tiếng và những cuốn sách thiếu nhi Người bảo vệ sự tồn tại và Bí mật của Milton. Eckhart tổ chức các buổi tĩnh tâm và thuyết trình trên khắp thế giới, điều này đã mang lại đóng góp to lớn cho nhân loại khi ông giải thoát nhiều người khỏi những ràng buộc của đau khổ do bản ngã gây ra. Trang web của Eckhart là <a href="https://eckharttolle.com" target="_blank" rel="noopener">eckharttolle.com</a>.</p>
+      </div>
+      <a class="tsite" href="https://eckharttolle.com" target="_blank" rel="noopener">🌐 eckharttolle.com ↗</a>
+    </article>
+    <article class="tcard rv" id="t-upanishads" data-c="4" data-name="upanishads upanishads">
+      <div class="thead"><span class="tav" style="--tc:var(--c4)">ॐ</span><div><h3>UPANISHADS</h3><p class="tmeta"><span class="tq">💬 Được trích 1 lần</span><a class="tch" href="12-ket-thuc-khong-co-hoi-ket.html">Ch. 12</a></p></div></div>
+      <div class="tbody">
+        <p>Upanishads là những văn bản tiếng Phạn cổ về giáo lý tâm linh, được viết vào khoảng năm 800–200 trước Công nguyên. Chúng là một phần của kinh sách tâm linh lâu đời nhất của Ấn Độ giáo, kinh Vệ Đà.</p>
+      </div>
+      
+    </article>
+    <article class="tcard rv" id="t-alan-watts" data-c="5" data-name="alan watts alan watts">
+      <div class="thead"><span class="tav" style="--tc:var(--c5)">AW</span><div><h3>ALAN WATTS</h3><p class="tmeta"><span class="tq">💬 Được trích 2 lần</span><a class="tch" href="11-the-gioi-moi-thu-tot-dep.html">Ch. 11</a><a class="tch" href="12-ket-thuc-khong-co-hoi-ket.html">Ch. 12</a></p></div></div>
+      <div class="tbody">
+        <p>Alan Watts quá cố là một nhà văn và giáo viên người Anh đã phổ biến các triết lý phương Đông cho khán giả phương Tây. Được diễn đạt một cách tuyệt vời, các bài giảng của Alan Watts vẫn tiếp tục phổ biến trên toàn thế giới, nhiều năm sau khi ông qua đời vào năm 1973. Alan đã viết hai mươi lăm cuốn sách (nhiều cuốn trong số đó tôi đã đọc). Trong số những cuốn phổ biến nhất là các cuốn sách: Về điều cấm kỵ khi không biết mình là ai, Sự khôn ngoan của sự bất an và Con Đường Thiền Tông. Con cái của ông đã đăng một số bài giảng của ông trực tuyến dưới dạng video và họ cũng đã lưu giữ các bài nói chuyện và bài giảng của ông trên trang web Alan Watts để những đóng góp của ông cho hành tinh này có thể tiếp tục cho các thế hệ sau: <a href="https://alanwatts.org" target="_blank" rel="noopener">alanwatts.org</a>.</p>
+      </div>
+      <a class="tsite" href="https://alanwatts.org" target="_blank" rel="noopener">🌐 alanwatts.org ↗</a>
+    </article>
+    <article class="tcard rv" id="t-pamela-wilson" data-c="6" data-name="pamela wilson pamela wilson">
+      <div class="thead"><span class="tav" style="--tc:var(--c6)">PW</span><div><h3>PAMELA WILSON</h3><p class="tmeta"><span class="tq">💬 Được trích 3 lần</span><a class="tch" href="02-duoc-tiet-lo.html">Ch. 2</a><a class="tch" href="11-the-gioi-moi-thu-tot-dep.html">Ch. 11</a><a class="tch" href="12-ket-thuc-khong-co-hoi-ket.html">Ch. 12</a></p></div></div>
+      <div class="tbody">
+        <p>Pamela Wilson sống tại Bay Area, Bắc California và là học trò của Lester Levenson và Robert Adams. Trong hơn hai mươi năm, bà đã đi khắp Hoa Kỳ, Canada và Châu Âu để tổ chức các buổi tĩnh tâm, thuyết trình và các buổi riêng về truyền thống phi nhị nguyên. Bà là người ngọt ngào và giàu lòng trắc ẩn, và tôi đã rất may mắn khi được tham dự một số buổi thuyết trình của bà. Bà cũng được giới thiệu trong cuốn sách Bí ẩn của Sự tồn tại, trích từ Khoa học và phi nhị nguyên. Để biết thêm thông tin về Pamela, hãy truy cập trang web của bà để biết thêm nhiều bài giảng của bà: <a href="https://pamelasatsang.com" target="_blank" rel="noopener">pamelasatsang.com</a>.</p>
+      </div>
+      <a class="tsite" href="https://pamelasatsang.com" target="_blank" rel="noopener">🌐 pamelasatsang.com ↗</a>
+    </article>
+    <article class="tcard rv" id="t-paramahansa-yogananda" data-c="7" data-name="paramahansa yogananda paramahansa yogananda">
+      <div class="thead"><span class="tav" style="--tc:var(--c7)">PY</span><div><h3>PARAMAHANSA YOGANANDA</h3><p class="tmeta"><span class="tq">💬 Được trích 4 lần</span><a class="tch" href="04-ban-co-dang-mo.html">Ch. 4</a><a class="tch" href="10-hanh-phuc-vinh-cuu.html">Ch. 10</a><a class="tch" href="11-the-gioi-moi-thu-tot-dep.html">Ch. 11</a></p></div></div>
+      <div class="tbody">
+        <p>Trong hơn một trăm năm kể từ khi sinh ra, vị thầy được thế giới yêu mến này đã được công nhận là một trong những sứ giả vĩ đại nhất của trí tuệ cổ xưa của Ấn Độ đến phương Tây. Cuộc đời và những lời dạy của Yogananda vẫn tiếp tục là nguồn ánh sáng và cảm hứng cho mọi người thuộc mọi chủng tộc, nền văn hóa và tín ngưỡng. Trong số những người trở thành học trò của ông có nhiều nhân vật nổi tiếng trong lĩnh vực khoa học, kinh doanh và nghệ thuật, và ông đã được Tổng thống Calvin Coolidge chính thức tiếp đón tại Nhà Trắng. Lần đầu tiên tôi khám phá ra những lời dạy của Yogananda khi, giống như nhiều người khác, tôi đọc Tự truyện của một Yogi, một cuốn sách đã bán được hàng triệu bản. Đây là một cuốn sách khó quên đã khơi dậy một cuộc cách mạng tâm linh, và nó cũng có tác động sâu sắc đến tôi. Bạn có thể đọc Tự truyện của một Yogi trực tuyến trên trang web của Hội Tự thực hiện (do Yogananda sáng lập). Yogananda có nhiều cuốn sách khác, và thông qua đăng ký trên trang web của họ, bạn có thể nhận được Bài học SRF do chính Yogananda viết: <a href="https://yogananda.org" target="_blank" rel="noopener">yogananda.org</a></p>
+      </div>
+      <a class="tsite" href="https://yogananda.org" target="_blank" rel="noopener">🌐 yogananda.org ↗</a>
+    </article>
+    </div>
+    <p class="tnone" id="tnone" hidden>Không tìm thấy ai khớp. Thử gõ ngắn hơn nhé.</p>
+    <div class="totop"><a href="#top">↑ Về đầu trang</a></div>
+  </section>
+
+</main>
+
+<nav class="pager" aria-label="Chuyển phần">
+  <a class="prev" href="nhung-thuc-hanh.html"><span class="k">Phần trước</span>Phần cuối — Những thực hành Bí mật vĩ đại nhất</a>
+  <a class="home" href="index.html"><span class="k">Mục lục</span>Toàn bộ cuốn sách</a>
+  <a class="next" href="ve-tac-gia.html"><span class="k">Phần sau</span>Phần cuối — Về tác giả</a>
+</nav>
+<footer class="pagefoot"><p><strong>Bí mật vĩ đại nhất</strong> — Rhonda Byrne<br>Bản trình bày lại phục vụ việc đọc và ôn tập. Bản quyền nội dung thuộc về tác giả và nhà xuất bản.</p></footer>
+</div>
+<div id="fabs">
+  <button id="fabFind" type="button" aria-label="Tìm trong trang" title="Tìm trong trang (Ctrl+F)">🔍</button>
+  <button id="fabHl" type="button" aria-label="Xem các câu bôi vàng" title="Các câu bôi vàng">🖍️</button>
+  <button id="fabFont" type="button" aria-label="Đổi cỡ chữ" title="Cỡ chữ">🔤</button>
+  <button id="fabStill" type="button" aria-label="Tạm dừng chuyển động" aria-pressed="false" title="Tạm dừng chuyển động">⏸️</button>
+  <button id="fabDark" type="button" aria-label="Chế độ tối" aria-pressed="false" title="Chế độ tối">🌙</button>
+  <button id="fabTop" class="fab-top" type="button" aria-label="Về đầu trang" title="Về đầu trang">⬆️</button>
+</div>
+<div id="findbar" role="search"><input type="search" aria-label="Tìm trong trang" placeholder="Tìm trong trang…"><span class="fc"></span><button type="button" class="fp" aria-label="Kết quả trước">↑</button><button type="button" class="fn" aria-label="Kết quả sau">↓</button><button type="button" class="fx" aria-label="Đóng tìm kiếm">✕</button></div>
+<div id="hlpanel" role="dialog" aria-modal="true" aria-label="Các câu được bôi vàng"><div class="in"><button type="button" class="x" aria-label="Đóng">✕</button><h2>Các câu được bôi vàng</h2><p class="hs">Bấm vào một câu để nhảy tới đúng chỗ đó trong chương.</p><ol></ol></div></div>
+<nav id="rail" aria-label="Mục lục dính"><p class="rt">Trong chương này</p></nav>
+<script>(function(){
+  var root=document.documentElement, D=document; root.classList.add('js');
+  function $(s,c){return (c||D).querySelector(s)} function $$(s,c){return [].slice.call((c||D).querySelectorAll(s))}
+  function ls(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}}
+  var COLORS=['#FF3B30','#FF8A00','#FFD400','#28B446','#00B3A6','#0A84FF','#9B51E0','#FF2D78'];
+
+  /* ---- tắt chuyển động ---- */
+  var sb=$('#fabStill'), still=ls('bmvdn-still')==='1' || (matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches);
+  function setStill(v){still=v; root.classList.toggle('still',v);
+    if(sb){sb.textContent=v?'▶️':'⏸️'; sb.setAttribute('aria-pressed',v?'true':'false'); sb.title=v?'Bật lại chuyển động':'Tạm dừng chuyển động';}
+    if(v){$$('.rv').forEach(function(e){e.classList.add('in')}); $$('mark').forEach(function(m){m.classList.add('lit')});}
+    $$('svg').forEach(function(g){try{v?g.pauseAnimations():g.unpauseAnimations()}catch(e){}});
+    ls('bmvdn-still',v?'1':'0')}
+  setStill(still); if(sb)sb.addEventListener('click',function(){setStill(!still)});
+
+  /* ---- thanh tiến độ + nút lên đầu ---- */
+  var bar=$('#progress'), ft=$('#fabTop');
+  function prog(){var m=root.scrollHeight-root.clientHeight, y=root.scrollTop||D.body.scrollTop;
+    if(bar)bar.style.width=(m>0?y/m*100:0).toFixed(2)+'%'; if(ft)ft.classList.toggle('on',y>500)}
+  if(ft)ft.addEventListener('click',function(){scrollTo({top:0,behavior:still?'auto':'smooth'})});
+
+  /* ---- chế độ tối ---- */
+  var tb=$('#themeBtn'), fd=$('#fabDark');
+  function setDark(d){root.setAttribute('data-theme',d?'dark':'light');
+    if(tb){tb.textContent=d?'Chế độ sáng':'Chế độ đọc tối';tb.setAttribute('aria-pressed',d?'true':'false')}
+    if(fd){fd.textContent=d?'☀️':'🌙';fd.setAttribute('aria-pressed',d?'true':'false')}
+    ls('bmvdn-theme',d?'dark':'light')}
+  setDark(ls('bmvdn-theme')==='dark');
+  function tog(){setDark(root.getAttribute('data-theme')!=='dark')}
+  if(tb)tb.addEventListener('click',tog); if(fd)fd.addEventListener('click',tog);
+  var pb=$('#printBtn'); if(pb)pb.addEventListener('click',function(){print()});
+
+  /* ---- cỡ chữ ---- */
+  var fz=$('#fabFont'), steps=['','l','xl'], fi=Math.max(0,steps.indexOf(ls('bmvdn-fs')||''));
+  function setFs(){if(steps[fi])root.setAttribute('data-fs',steps[fi]);else root.removeAttribute('data-fs');ls('bmvdn-fs',steps[fi])}
+  setFs(); if(fz)fz.addEventListener('click',function(){fi=(fi+1)%steps.length;setFs()});
+
+  /* ---- hiện dần + bút dạ quang quét ---- */
+  $$('.body-card,blockquote,.concept,.example,.practice,.hint,.keyidea,.pause,.flow,figure.fig,.box,.willlearn,.sec-head,.chain,.pager > *,.stages li,nav.toc li')
+    .forEach(function(e){e.classList.add('rv')});
+  var IO='IntersectionObserver' in window;
+  if(IO && !still){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){
+      var t=e.target; t.classList.add('in'); io.unobserve(t);
+      if(t.classList.contains('chain')) $$('span',t).forEach(function(s,i){s.style.transitionDelay=(i*70)+'ms'});
+    }})},{threshold:.06,rootMargin:'0px 0px -5% 0px'});
+    var groups={}; $$('.rv').forEach(function(e){var p=e.parentNode; var k=groups[p.__k||(p.__k=Math.random())]=(groups[p.__k]||0)+1;
+      e.style.transitionDelay=(Math.min(k-1,5)*60)+'ms'; io.observe(e)});
+    var mo=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){
+      setTimeout(function(){e.target.classList.add('lit')},180); mo.unobserve(e.target)}})},{threshold:.9,rootMargin:'0px 0px -12% 0px'});
+    $$('mark').forEach(function(m){mo.observe(m)});
+  } else { $$('.rv').forEach(function(e){e.classList.add('in')}); $$('mark').forEach(function(m){m.classList.add('lit')}); }
+
+  /* ---- số liệu đếm lên ---- */
+  $$('.stat b[data-n]').forEach(function(b){var n=+b.getAttribute('data-n'); if(still||!n)return;
+    var t0=null; b.textContent='0'; function step(t){if(!t0)t0=t; var p=Math.min(1,(t-t0)/1100);
+      b.textContent=Math.round(n*(1-Math.pow(1-p,3))); if(p<1)requestAnimationFrame(step)}
+    setTimeout(function(){requestAnimationFrame(step)},350)});
+
+  /* ---- mục lục dính + phần đang đọc ---- */
+  var rail=$('#rail'), now=$('#nowsec'), toc=$('nav.toc'), items=[];
+  if(rail && toc){
+    $$('a',toc).forEach(function(a){var id=a.getAttribute('href').slice(1), s=D.getElementById(id); if(!s)return;
+      var c=a.cloneNode(true); rail.appendChild(c);
+      var n=$('.n',a), num=n?n.textContent:'', title=a.textContent.replace(num,'').trim();
+      items.push({a:c,s:s,num:num,title:title})});
+  }
+  function spy(){ if(!items.length)return;
+    var y=innerHeight*.32, cur=null; items.forEach(function(it){if(it.s.getBoundingClientRect().top<y)cur=it});
+    var tocBottom=toc.getBoundingClientRect().bottom;
+    rail.classList.toggle('on',tocBottom<0);
+    items.forEach(function(it){var on=it===cur; it.a.classList.toggle('act',on);
+      if(on){var cs=getComputedStyle(it.s), c=cs.getPropertyValue('--sc'), o=cs.getPropertyValue('--on'); it.a.style.setProperty('--rc',c&&c.trim()?c:'var(--ac)'); it.a.style.setProperty('--ron',o&&o.trim()?o:'#fff')}});
+    if(now){ if(cur&&tocBottom<0){now.textContent=cur.num+' · '+cur.title; now.classList.add('on')} else now.classList.remove('on') }
+    if(cur&&rail.classList.contains('on')){var r=cur.a.offsetTop-rail.clientHeight/2; if(Math.abs(rail.scrollTop-r)>80)rail.scrollTop=r}
+  }
+  var tick=false; function onScroll(){if(tick)return; tick=true; requestAnimationFrame(function(){tick=false; prog(); spy()})}
+  addEventListener('scroll',onScroll,{passive:true}); addEventListener('resize',onScroll); prog(); spy();
+
+  /* ---- confetti ---- */
+  function confetti(x,y){ if(still)return;
+    for(var i=0;i<28;i++){var c=D.createElement('i'); c.className='cf'; var a=Math.random()*Math.PI*2, r=60+Math.random()*90;
+      c.style.left=x+'px'; c.style.top=y+'px'; c.style.background=COLORS[i%8];
+      c.style.setProperty('--dx',Math.cos(a)*r+'px'); c.style.setProperty('--dy',(Math.sin(a)*r-40)+'px');
+      c.style.setProperty('--rt',(Math.random()*720-360)+'deg'); if(i%3===0)c.style.borderRadius='50%';
+      D.body.appendChild(c); setTimeout(function(n){return function(){n.remove()}}(c),1200)} }
+
+  /* ---- sao chép trích dẫn ---- */
+  function copyText(t){ if(navigator.clipboard&&isSecureContext) return navigator.clipboard.writeText(t);
+    return new Promise(function(ok){var ta=D.createElement('textarea'); ta.value=t; ta.style.position='fixed'; ta.style.opacity='0';
+      D.body.appendChild(ta); ta.select(); try{D.execCommand('copy')}catch(e){} ta.remove(); ok()}) }
+  $$('.cpy').forEach(function(b){b.addEventListener('click',function(){
+    var q=b.closest('blockquote'), ps=$$('p',q).map(function(p){return p.textContent.trim()}).join('\n'),
+        c=$('cite',q), who=c?c.textContent.trim():'';
+    copyText('“'+ps+'”'+(who?'\n— '+who:'')).then(function(){b.classList.add('ok'); b.setAttribute('aria-label','Đã sao chép');
+      var r=b.getBoundingClientRect(); confetti(r.left+r.width/2,r.top+r.height/2);
+      setTimeout(function(){b.classList.remove('ok'); b.setAttribute('aria-label','Sao chép trích dẫn')},1800)})})});
+
+  /* ---- đồng hồ 30 giây ---- */
+  function runTimer(p){ var t=$('.tmr',p); if(!t||still)return; var fg=$('.fg',t);
+    clearInterval(t.__iv); t.classList.remove('done'); p.classList.remove('go'); void fg.getBoundingClientRect(); p.classList.add('go');
+    var s=30; t.setAttribute('data-s',s); t.__iv=setInterval(function(){s--; t.setAttribute('data-s',s);
+      if(s<=0){clearInterval(t.__iv); t.classList.add('done')}},1000) }
+  if(IO){var po=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){runTimer(e.target); po.unobserve(e.target)}})},{threshold:.75});
+    $$('.pause').forEach(function(p){if($('.tmr',p))po.observe(p)})}
+  $$('.pause .tmr').forEach(function(t){function go(){runTimer(t.closest('.pause'))}
+    t.addEventListener('click',go); t.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();go()}})});
+
+  /* ---- bảng các câu bôi vàng ---- */
+  var hp=$('#hlpanel'), hb=$('#fabHl');
+  if(hp&&hb){ var ol=$('ol',hp);
+    $$('main mark').forEach(function(m,i){ if(!m.id)m.id='hl-'+(i+1);
+      var li=D.createElement('li'), a=D.createElement('a'); a.href='#'+m.id; a.textContent=m.textContent; li.appendChild(a); ol.appendChild(li);
+      a.addEventListener('click',function(ev){ev.preventDefault(); closeHl(); m.classList.add('lit');
+        m.scrollIntoView({behavior:still?'auto':'smooth',block:'center'}); m.classList.remove('flash'); void m.offsetWidth; m.classList.add('flash')})});
+    function openHl(){hp.classList.add('on'); var f=$('a',hp)||$('.x',hp); if(f)f.focus()}
+    function closeHl(){hp.classList.remove('on'); hb.focus({preventScroll:true})}
+    hb.addEventListener('click',openHl); $('.x',hp).addEventListener('click',closeHl);
+    hp.addEventListener('click',function(e){if(e.target===hp)closeHl()});
+    D.addEventListener('keydown',function(e){if(e.key==='Escape'&&hp.classList.contains('on'))closeHl()});
+  }
+
+  /* ---- tìm trong trang ---- */
+  var fb=$('#findbar'), ff=$('#fabFind');
+  if(fb&&ff){ var inp=$('input',fb), fc=$('.fc',fb), hits=[], hi=-1, scope=$('body > .wrap')||D.body;
+    function clear(){ hits.forEach(function(s){var p=s.parentNode; if(!p)return; p.replaceChild(D.createTextNode(s.textContent),s); p.normalize()}); hits=[]; hi=-1 }
+    function norm(s){return s.normalize('NFC').toLowerCase()}
+    function search(q){ clear(); q=norm(q.trim()); if(q.length<2){fc.textContent='';return}
+      var w=D.createTreeWalker(scope,NodeFilter.SHOW_TEXT,{acceptNode:function(n){
+        if(!n.nodeValue.trim())return NodeFilter.FILTER_REJECT; var p=n.parentNode;
+        if(p.closest('script,style,svg,#hlpanel,#findbar,.cpy'))return NodeFilter.FILTER_REJECT; return NodeFilter.FILTER_ACCEPT}});
+      var nodes=[]; while(w.nextNode())nodes.push(w.currentNode);
+      nodes.forEach(function(n){ var t=n.nodeValue, lt=norm(t), i=lt.indexOf(q); if(i<0)return;
+        var frag=D.createDocumentFragment(), last=0;
+        while(i>=0){ frag.appendChild(D.createTextNode(t.slice(last,i))); var s=D.createElement('span'); s.className='fnd';
+          s.textContent=t.slice(i,i+q.length); frag.appendChild(s); hits.push(s); last=i+q.length; i=lt.indexOf(q,last)}
+        frag.appendChild(D.createTextNode(t.slice(last))); n.parentNode.replaceChild(frag,n)});
+      $$('.rv',scope).forEach(function(e){e.classList.add('in')});
+      fc.textContent=hits.length?('0/'+hits.length):'Không thấy'; if(hits.length)go(0) }
+    function go(k){ if(!hits.length)return; if(hi>=0&&hits[hi])hits[hi].classList.remove('cur');
+      hi=(k+hits.length)%hits.length; var s=hits[hi]; s.classList.add('cur'); fc.textContent=(hi+1)+'/'+hits.length;
+      s.scrollIntoView({behavior:'auto',block:'center'}) }
+    var tmo; inp.addEventListener('input',function(){clearTimeout(tmo); tmo=setTimeout(function(){search(inp.value)},180)});
+    inp.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();go(hi+(e.shiftKey?-1:1))} if(e.key==='Escape')closeF()});
+    $('.fn',fb).addEventListener('click',function(){go(hi+1)}); $('.fp',fb).addEventListener('click',function(){go(hi-1)});
+    function openF(){fb.classList.add('on'); inp.focus(); inp.select()}
+    function closeF(){fb.classList.remove('on'); clear(); fc.textContent=''; ff.focus({preventScroll:true})}
+    $('.fx',fb).addEventListener('click',closeF); ff.addEventListener('click',function(){fb.classList.contains('on')?closeF():openF()});
+    D.addEventListener('keydown',function(e){if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='f'){e.preventDefault();openF()}});
+  }
+})();
+</script>
+<script>(function(){var q=document.getElementById('tq'); if(!q)return; var cs=[].slice.call(document.querySelectorAll('.tcard')), n=document.getElementById('tqn'), no=document.getElementById('tnone');
+function norm(s){return (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/đ/g,'d')}
+cs.forEach(function(c){c.__t=norm(c.getAttribute('data-name')+' '+c.textContent)});
+function run(){var v=norm(q.value.trim()), k=0; cs.forEach(function(c){var ok=!v||c.__t.indexOf(v)>=0; c.classList.toggle('hide',!ok); if(ok){k++; c.classList.add('in')}}); n.textContent=v?k+' / '+cs.length:cs.length+' người'; no.hidden=k>0}
+q.addEventListener('input',run); run()})();</script>
+</body>
+</html>
